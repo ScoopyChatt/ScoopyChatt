@@ -1,3 +1,7 @@
-import { createLogger, format, transports } from 'winston';
-const logger = createLogger({ level: 'info', format: format.combine(format.timestamp(), format.json()), transports: [new transports.Console()] });
+const logger = {
+  info: (...args) => console.log('[INFO]', new Date().toISOString(), ...args),
+  warn: (...args) => console.warn('[WARN]', new Date().toISOString(), ...args),
+  error: (...args) => console.error('[ERROR]', new Date().toISOString(), ...args),
+  debug: (...args) => console.log('[DEBUG]', new Date().toISOString(), ...args),
+};
 export default logger;
