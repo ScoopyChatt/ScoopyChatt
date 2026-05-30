@@ -21,7 +21,7 @@ export async function stream({ userId, systemPrompt, userMessage, requestId }) {
   contents.push({ role: 'user', parts });
   
   // Use v1 REST API directly - more compatible than SDK
-  const model = 'gemini-1.5-flash';
+  const model = 'gemini-2.0-flash';
   const url = `https://generativelanguage.googleapis.com/v1/models/${model}:streamGenerateContent?alt=sse&key=${apiKey}`;
   
   const response = await fetch(url, {
