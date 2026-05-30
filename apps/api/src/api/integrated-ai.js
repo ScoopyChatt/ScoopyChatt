@@ -9,18 +9,24 @@ export async function stream({ userId, systemPrompt, userMessage, requestId }) {
   if (!apiKey) throw new Error('GOOGLE_GENERATIVE_AI_API_KEY not configured');
   
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ 
-    model: 'gemini-1.5-flash',
-    systemInstruction: systemPrompt 
-  });
+  // Use gemini-pro - widely supported stable model
+  const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
   
-  const parts = (Array.isArray(userMessage) ? userMessage : [{ type: 'text', text: userMessage }])
-    .filter(msg => msg.type === 'text')
+  const parts = (Array.isArray(userMessage) ? userMessage : [{ type: 'text', text: String(userMessage) }])
+    .filter(msg => msg && msg.type === 'text' && msg.text)
     .map(msg => ({ text: msg.text }));
   
-  const result = await model.generateContentStream({ 
-    contents: [{ role: 'user', parts }] 
-  });
+  if (parts.length === 0) parts.push({ text: 'Hello' });
+  
+  // Add system prompt as first user message if provided
+  const contents = [];
+  if (systemPrompt) {
+    contents.push({ role: 'user', parts: [{ text: 'System: ' + systemPrompt }] });
+    contents.push({ role: 'model', parts: [{ text: 'Understood. I will follow these instructions.' }] });
+  }
+  contents.push({ role: 'user', parts });
+  
+  const result = await model.generateContentStream({ contents });
   
   const readable = new Readable({ read() {} });
   (async () => {
@@ -40,6 +46,4 @@ export async function stream({ userId, systemPrompt, userMessage, requestId }) {
   return readable;
 }
 
-export async function uploadImagesToPocketBase({ images }) {
-  return [];
-}
+export async function uploadImagesToPocketBase({ images }) { return []; }
