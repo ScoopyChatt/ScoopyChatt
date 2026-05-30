@@ -1,6 +1,9 @@
 [phases.setup]
 nixPkgs = ["curl", "unzip"]
 
+[phases.install]
+cmds = []
+
 [phases.build]
 cmds = ["bash scripts/setup.sh"]
 
