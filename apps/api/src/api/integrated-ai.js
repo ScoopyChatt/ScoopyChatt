@@ -66,7 +66,7 @@ export async function stream({ userId, systemPrompt, userMessage, requestId }) {
       readable.push(null);
     } catch (err) {
       logger.error('Stream error', { error: err.message });
-      readable.push('data: ' + JSON.stringify({ type: 'error', error: err.message }) + '\n\n');
+      readable.push('data: ' + JSON.stringify({ type: 'error', data: { content: err.message } }) + '\n\n');
       readable.push(null);
     }
   })();
