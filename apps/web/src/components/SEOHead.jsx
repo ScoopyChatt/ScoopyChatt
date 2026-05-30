@@ -27,7 +27,7 @@ const SEOHead = ({
     baseMeta = seoMetadata[path];
   }
 
-  const finalTitle = title || baseMeta.title || "Scoopy Doo LLC | Pet Waste Removal";
+  const finalTitle = title || baseMeta.title || "Dog Poop Removal & Pooper Scooper Service | Chattanooga TN";
   const finalDescription = description || baseMeta.description || "Professional pet waste removal and dog poop scooping services in Chattanooga, TN.";
   const finalCanonical = canonicalUrl || baseMeta.canonical || `${CANONICAL_BASE_URL}${path || ''}`;
   const finalImage = image || baseMeta.image || "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/8088ef4935a7739f1747caefac1fdcc6.jpg";
