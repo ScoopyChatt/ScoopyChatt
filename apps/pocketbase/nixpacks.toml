@@ -5,7 +5,7 @@ nixPkgs = ["curl", "unzip"]
 cmds = []
 
 [phases.build]
-cmds = ["bash scripts/setup.sh"]
+cmds = []
 
 [start]
-cmd = "./pocketbase serve --http=0.0.0.0:$PORT --dir=./pb_data"
+cmd = "bash scripts/setup.sh && ./pocketbase serve --http=0.0.0.0:$PORT --dir=./pb_data"
