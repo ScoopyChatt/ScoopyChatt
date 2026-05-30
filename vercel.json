@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm install --prefix apps/web && npm run build --prefix apps/web",
+  "outputDirectory": "dist/apps/web",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "redirects": [
+    { "source": "/pricing", "destination": "/quote", "permanent": true }
+  ]
+}

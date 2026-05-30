@@ -1,0 +1,7 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "./pocketbase serve --http=0.0.0.0:$PORT --dir=./pb_data"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3

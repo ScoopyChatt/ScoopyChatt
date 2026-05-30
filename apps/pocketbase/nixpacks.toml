@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["curl", "unzip"]
+
+[phases.build]
+cmds = ["bash scripts/setup.sh"]
+
+[start]
+cmd = "./pocketbase serve --http=0.0.0.0:$PORT --dir=./pb_data"
