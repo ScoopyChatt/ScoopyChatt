@@ -71,20 +71,7 @@ const ScoopyHelperWidget = () => {
         console.error('Failed to send lead email:', emailErr);
       }
       
-      // Ensure the user is authenticated in PocketBase so the AI chat can persist history
-      if (!pb.authStore.isValid) {
-        const guestEmail = `guest_${Date.now()}_${Math.random().toString(36).slice(2, 7)}@scoopychatt.com`;
-        const guestPassword = Math.random().toString(36).slice(-12) + 'Aa1!';
-        
-        await pb.collection('users').create({
-          email: guestEmail,
-          password: guestPassword,
-          passwordConfirm: guestPassword,
-          name: formData.name || 'Guest User'
-        }, { $autoCancel: false });
-        
-        await pb.collection('users').authWithPassword(guestEmail, guestPassword, { $autoCancel: false });
-      }
+      // PocketBase auth skipped - not required for AI chat
       
       setChatStartTime(new Date().toISOString());
     } catch (err) {
