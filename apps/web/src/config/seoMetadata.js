@@ -103,6 +103,12 @@ export const seoMetadata = {
     canonical: `${CANONICAL_BASE_URL}/blog`,
     ogType: "website"
   },
+  "/how-it-works": {
+    title: "How It Works | Scoopy Doo Pet Waste Removal Chattanooga",
+    description: "See exactly how Scoopy Doo's dog waste removal service works in 4 simple steps. Get a quote, we schedule and scoop, you enjoy a clean yard. No contracts.",
+    canonical: `${CANONICAL_BASE_URL}/how-it-works`,
+    ogType: "website"
+  },
   "/privacy-policy": {
     title: "Privacy Policy | Scoopy Doo LLC",
     description: "Read the privacy policy for Scoopy Doo LLC. We protect your personal information and never share it with third parties.",
