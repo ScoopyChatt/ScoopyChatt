@@ -1,6 +1,4 @@
 
-import { useEffect } from 'react';
-import { seoMetadata } from '@/config/seoMetadata.js';
 import React, { useEffect, Suspense } from 'react';
 import { Route, Routes, BrowserRouter as Router, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -121,7 +119,6 @@ function App() {
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
       
-      <SEOUpdater />
       <ScrollToTop />
       <RouteTracker />
       
