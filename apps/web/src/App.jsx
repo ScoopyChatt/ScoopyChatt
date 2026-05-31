@@ -50,6 +50,8 @@ const BlogArticle6 = React.lazy(() => import('@/pages/blog/BlogArticle6_LawnHeal
 const BlogArticle7 = React.lazy(() => import('@/pages/blog/BlogArticle7_HealthRisksOfPetWaste.jsx'));
 const BlogArticle8 = React.lazy(() => import('@/pages/blog/BlogArticle8_PetWasteManagementGuide.jsx'));
 const HowOftenScoopDogPoopChattanooga = React.lazy(() => import('@/pages/blog/HowOftenScoopDogPoopChattanooga.jsx'));
+const IsDogWasteBadForLawn = React.lazy(() => import('@/pages/blog/IsDogWasteBadForLawn.jsx'));
+const BestPooperScooperServicesChattanooga = React.lazy(() => import('@/pages/blog/BestPooperScooperServicesChattanooga.jsx'));
 const IsDogPoopHurtingYourChattanoogaYard = React.lazy(() => import('@/pages/blog/IsDogPoopHurtingYourChattanoogaYard.jsx'));
 
 const ChattanoogaHomeownersPage = React.lazy(() => import('@/pages/blog/ChattanoogaHomeownersPage.jsx'));
@@ -176,6 +178,8 @@ function App() {
               <Route path="/blog/health-risks-of-pet-waste" element={<BlogArticle7 />} />
               <Route path="/blog/pet-waste-management-guide" element={<BlogArticle8 />} />
               <Route path="/blog/how-often-scoop-dog-poop-chattanooga" element={<HowOftenScoopDogPoopChattanooga />} />
+                            <Route path="/blog/is-dog-waste-bad-for-lawn" element={<IsDogWasteBadForLawn />} />
+              <Route path="/blog/best-pooper-scooper-services-chattanooga" element={<BestPooperScooperServicesChattanooga />} />
               <Route path="/blog/is-dog-poop-hurting-your-chattanooga-yard" element={<IsDogPoopHurtingYourChattanoogaYard />} />
               <Route path="/blog/chattanooga-pet-waste-removal-homeowners" element={<ChattanoogaHomeownersPage />} />
           <Route path="/blog/commercial-pet-waste-removal-chattanooga" element={<CommercialPetWastePage />} />
