@@ -1,35 +1,50 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Calendar, User, ArrowLeft } from 'lucide-react';
+import Header from '@/components/Header.jsx';
+import Footer from '@/components/Footer.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
-import BlogPostTemplate from '@/components/BlogPostTemplate.jsx';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
-export default function HowOftenCleanYardPage() {
-  return (
-    <>
-      <SEOHead 
-        title="How Often Should You Have Your Yard Cleaned? Pet Waste Guide"
-        description="How often should you clean pet waste from your yard? Expert guide on cleaning schedules for healthy lawns. Scoopy Doo Chattanooga."
-        canonicalUrl={`${CANONICAL_BASE_URL}/blog/how-often-clean-yard`}
-      />
-      <BlogPostTemplate 
-        title="How Often Should You Clean Your Yard? Pet Waste Removal Guide"
-        description="Learn how often you should schedule pet waste removal and yard cleaning to keep your outdoor space safe and sanitary."
-        date="April 10, 2026"
-        author="Leighton Carter"
-        content={
-          <>
-            <p>When it comes to pet waste removal, one of the most common questions we hear is: "How often should I clean my yard?" The answer depends on several factors, including the number of dogs you have, the size of your yard, and how frequently your outdoor space is used.</p>
-            <h2>The General Rule of Thumb</h2>
-            <p>For a single-dog household, a weekly yard cleaning is typically sufficient to keep odors at bay and prevent the accumulation of dog waste. Weekly scooping ensures that your grass remains healthy and that you can enjoy your yard without constantly watching your step.</p>
-            <h2>Multiple Dogs Mean More Frequent Cleaning</h2>
-            <p>If you have two or more dogs, the amount of waste multiplies quickly. In these cases, we highly recommend twice-weekly professional service. Leaving dog waste in the yard for too long can lead to dead grass spots, unpleasant odors, and an increased risk of parasites and bacteria.</p>
-            <h2>Health and Environmental Factors</h2>
-            <p>Dog waste is not fertilizer. It is highly acidic and contains harmful bacteria like E. coli and salmonella. Regular pet waste removal is essential for protecting the local water supply and keeping your family and pets healthy. By maintaining a consistent cleaning schedule, you minimize these risks significantly.</p>
-            <p>Ultimately, hiring a professional pet waste removal service like Scoopy Chatt takes the guesswork out of yard maintenance. We offer flexible scheduling to ensure your yard is always clean, safe, and ready for play.</p>
-          </>
-        }
-      />
-    </>
-  );
-}
+const HowOftenCleanYard = () => (
+  <div className="min-h-screen flex flex-col bg-background">
+    <SEOHead title="How Often Should You Clean Your Yard of Pet Waste? | Scoopy Doo" description="Expert guidance on cleanup frequency based on dog count, yard size, and Chattanooga's climate. Most experts recommend at least once a week." canonicalUrl={`${CANONICAL_BASE_URL}/blog/how-often-clean-yard`} />
+    <Header />
+    <main className="flex-grow py-20">
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Link to="/blog" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary mb-10 transition-colors"><ArrowLeft className="w-4 h-4 mr-2" /> Back to all articles</Link>
+        <header className="mb-12">
+          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wider mb-6">Yard Tips</span>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-8 leading-tight">How Often Should You Clean Your Yard of Pet Waste?</h1>
+          <div className="flex flex-wrap items-center text-muted-foreground text-base gap-6 border-y border-border py-4">
+            <div className="flex items-center font-medium"><User className="w-5 h-5 mr-2 text-primary" />Scoopy Doo Team</div>
+            <div className="flex items-center"><Calendar className="w-5 h-5 mr-2 text-primary" />Nov 2025</div>
+          </div>
+        </header>
+        <div className="prose prose-lg max-w-none text-foreground space-y-6">
+          <p>If you have a dog, you already know the yard doesn't clean itself. But how often is often enough? The answer depends on a few key factors — and in Chattanooga's climate, the stakes are higher than in most places.</p>
+          <h2 className="text-2xl font-bold mt-10 mb-4">The General Rule: Once a Week Minimum</h2>
+          <p>Most veterinarians and lawn care professionals agree that weekly cleanup is the baseline for a single dog. Beyond that, frequency should scale with the number of dogs, yard size, and how much time your pets spend outside. Left longer than a week, waste builds up bacteria rapidly — especially in Tennessee's warm, humid conditions.</p>
+          <h2 className="text-2xl font-bold mt-10 mb-4">By Dog Count</h2>
+          <ul className="list-disc pl-6 space-y-2 my-4">
+            <li><strong>1 dog:</strong> Once per week minimum</li>
+            <li><strong>2 dogs:</strong> Once or twice per week</li>
+            <li><strong>3+ dogs:</strong> Twice per week or more</li>
+            <li><strong>Puppies:</strong> Every 2–3 days — they go far more frequently</li>
+          </ul>
+          <h2 className="text-2xl font-bold mt-10 mb-4">Why Chattanooga's Weather Changes the Math</h2>
+          <p>With over 50 inches of rain annually and summer temperatures regularly above 85°F, Chattanooga's climate accelerates everything. Bacteria in dog waste can double in as little as four hours during hot weather. What seems manageable after a few days becomes a genuine biohazard within a week. If your kids or pets spend time in the yard, regular removal isn't optional — it's essential.</p>
+          <h2 className="text-2xl font-bold mt-10 mb-4">The Easiest Solution</h2>
+          <p>Scoopy Doo handles the math for you. Our weekly and bi-weekly plans are designed around Chattanooga's climate and the most common household dog counts. We show up on schedule, walk the entire yard in a grid pattern, and remove all waste from your property. No reminders, no weekend chores, no odor.</p>
+          <div className="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
+            <p className="text-lg font-semibold text-foreground mb-2">Let us handle the schedule for you.</p>
+            <Link to="/quote" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold hover:bg-primary/90 transition-colors">Get a free quote from Scoopy Doo →</Link>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </div>
+);
+
+export default HowOftenCleanYard;
