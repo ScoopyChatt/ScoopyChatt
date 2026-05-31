@@ -1,30 +1,44 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import BlogPostTemplate from '@/components/BlogPostTemplate.jsx';
+import { Link } from 'react-router-dom';
+import { Calendar, User, ArrowLeft } from 'lucide-react';
+import Header from '@/components/Header.jsx';
+import Footer from '@/components/Footer.jsx';
+import SEOHead from '@/components/SEOHead.jsx';
+import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
-export default function BlogSoddyDaisyPage() {
-  return (
-    <>
-      <Helmet>
-        <title>Chattanooga, Tennessee Pet Waste Removal</title>
-        <meta name='description' content='Chattanooga, Tennessee Pet Waste Removal' />
-      </Helmet>
-      <BlogPostTemplate 
-        title="Pet Waste Removal in Soddy Daisy"
-        description="Discover reliable and affordable pet waste removal services in Soddy Daisy, TN with Scoopy Chatt."
-        date="March 20, 2026"
-        author="Brandon Carter"
-        content={
-          <>
-            <p>Soddy Daisy residents love their outdoor spaces and their pets. But combining the two often leads to a messy yard. Scoopy Chatt is proud to offer dedicated pet waste removal services throughout the Soddy Daisy area.</p>
-            <h2>Reliable Service You Can Count On</h2>
-            <p>We know that reliability is key when hiring a home service provider. Our technicians arrive on schedule, fully equipped to clean your yard thoroughly. We securely bag all waste and dispose of it properly, leaving your Soddy Daisy property spotless.</p>
-            <h2>Affordable Plans for Every Household</h2>
-            <p>Whether you have one small dog or a pack of large breeds, we offer affordable, customizable plans. Our weekly and twice-weekly services are incredibly popular among Soddy Daisy families who want to maintain a clean, odor-free environment year-round.</p>
-            <p>Reclaim your backyard today. Contact Scoopy Chatt for a free quote and experience the best pet waste removal service in Soddy Daisy.</p>
-          </>
-        }
-      />
-    </>
-  );
-}
+const Page = () => (
+  <div className="min-h-screen flex flex-col bg-background">
+    <SEOHead title="Pet Waste Removal in Soddy-Daisy, TN | Scoopy Doo" description="Professional dog poop removal and pet waste cleanup in Soddy-Daisy, TN. Reliable service with no long-term contracts. Get your free quote today." canonicalUrl={`${CANONICAL_BASE_URL}/blog/soddy-daisy`} />
+    <Header />
+    <main className="flex-grow py-20">
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Link to="/blog" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary mb-10 transition-colors"><ArrowLeft className="w-4 h-4 mr-2" /> Back to all articles</Link>
+        <header className="mb-12">
+          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wider mb-6">Service Areas</span>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-8 leading-tight">Pet Waste Removal in Soddy-Daisy, TN</h1>
+          <div className="flex flex-wrap items-center text-muted-foreground text-base gap-6 border-y border-border py-4">
+            <div className="flex items-center font-medium"><User className="w-5 h-5 mr-2 text-primary" />Scoopy Doo Team</div>
+            <div className="flex items-center"><Calendar className="w-5 h-5 mr-2 text-primary" />Nov 2025</div>
+          </div>
+        </header>
+        <div className="prose prose-lg max-w-none text-foreground space-y-6">
+          <p>Soddy-Daisy is a growing community just north of Chattanooga, and dog ownership in this area has grown right along with it. For pet owners across the Soddy-Daisy area, keeping yards clean and safe is a constant challenge — especially given Tennessee's warm, wet climate.</p>
+          <h2 className="text-2xl font-bold mt-10 mb-4">Professional Cleanup in Soddy-Daisy and Surrounding Areas</h2>
+          <p>Scoopy Doo serves residential neighborhoods throughout Soddy-Daisy, including properties near Chickamauga Lake and the surrounding communities. We handle yards of all sizes and work around your schedule — you don't even need to be home.</p>
+          <h2 className="text-2xl font-bold mt-10 mb-4">Why Pet Waste Removal Matters</h2>
+          <p>In Soddy-Daisy's humid climate, dog waste left on the lawn for more than a few days begins causing real problems: nitrogen burn kills grass, bacteria multiply rapidly in the heat, and heavy rains carry pathogens into local waterways. Weekly or bi-weekly professional removal prevents all of this before it becomes a problem.</p>
+          <h2 className="text-2xl font-bold mt-10 mb-4">Flexible Plans, No Contracts</h2>
+          <p>We offer weekly, bi-weekly, and one-time cleanup services with no long-term commitment required. Most Soddy-Daisy customers start with a one-time cleanup to see the difference, then sign up for recurring service. We bag and remove all waste from your property entirely — no smelly bags left by the gate.</p>
+          <p>Request your free quote today and we'll have pricing to you the same day.</p>
+          <div className="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
+            <p className="text-lg font-semibold text-foreground mb-2">Ready for a cleaner yard in Soddy-Daisy?</p>
+            <Link to="/quote" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold hover:bg-primary/90 transition-colors">Get your free quote →</Link>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </div>
+);
+
+export default Page;
