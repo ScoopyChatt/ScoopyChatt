@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ClipboardList, CalendarCheck, Star, ShieldCheck, ChevronDown, ChevronUp } from 'lucide-react';
+import { ClipboardList, CalendarCheck, MessageSquare, Camera, CreditCard, ShieldCheck, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
@@ -12,41 +12,62 @@ const steps = [
   {
     number: '01',
     icon: ClipboardList,
-    title: 'Get Your Free Quote',
-    desc: 'Fill out our quick online form with your zip code, number of dogs, and yard size. We respond the same day — usually within a few hours. No contracts, no commitments required to get started.',
-    detail: 'We serve all of Chattanooga and surrounding areas including Hixson, Ooltewah, East Brainerd, Signal Mountain, Red Bank, Soddy-Daisy, Ringgold, and Cleveland.',
+    title: 'Get a Free Quote Online',
+    desc: 'No phone calls, no waiting on hold. Fill out our quick form with your zip code, number of dogs, and yard size — and we send back your price, usually within a few hours.',
+    highlight: '💻 100% online — quote, schedule, and pay without picking up the phone.',
+    color: 'bg-blue-500/10 text-blue-600',
   },
   {
     number: '02',
-    icon: CalendarCheck,
-    title: 'We Schedule Your Service',
-    desc: 'Pick a recurring plan — weekly, bi-weekly, or one-time — and we put you on the schedule. You don't need to be home. As long as we have access to your backyard, we take care of the rest.',
-    detail: 'We'll send a reminder before each visit. If your gate is locked, just leave us a code or leave it unlocked on service day. We work around your preferences.',
+    icon: CreditCard,
+    title: 'Pick a Plan & Pay Online',
+    desc: "Choose weekly, bi-weekly, or one-time service. Pay securely online — no checks, no cash at the door, no awkward handoffs. We'll send your confirmation and put you on the schedule.",
+    highlight: '💳 Secure online payment. No contracts. Cancel anytime.',
+    color: 'bg-green-500/10 text-green-600',
   },
   {
     number: '03',
-    icon: ShieldCheck,
-    title: 'We Scoop Every Inch',
-    desc: 'Our technicians walk your entire yard in a systematic grid pattern — no shortcuts, no missed spots. We use sanitized equipment between every yard to prevent cross-contamination.',
-    detail: 'All waste is double-bagged and removed from your property entirely. We don't leave bags at the gate. Your yard is left clean, and your trash can stays odor-free.',
+    icon: MessageSquare,
+    title: 'We Text You "On the Way"',
+    desc: "Before every visit, you'll get a text letting you know we're heading to your yard. No surprise visits, no wondering if we showed up. You're always in the loop.",
+    highlight: '📱 Heads-up text before every single visit so you're never caught off guard.',
+    color: 'bg-purple-500/10 text-purple-600',
   },
   {
     number: '04',
-    icon: Star,
-    title: 'Enjoy Your Clean Yard',
-    desc: 'That's it. Your yard is clean, your family is safe, and you didn't have to do anything. We show up every week like clockwork so you never have to think about it again.',
-    detail: 'Most customers tell us the same thing after their first visit: "I can't believe I waited this long." A clean yard changes how you use your outdoor space.',
+    icon: ShieldCheck,
+    title: 'We Scoop Every Inch',
+    desc: 'Our techs walk your entire yard in a systematic grid — no shortcuts, no missed spots. All waste is double-bagged and hauled away from your property. Not left at the gate.',
+    highlight: '✅ Full yard coverage. Waste removed from property. Equipment sanitized between every yard.',
+    color: 'bg-amber-500/10 text-amber-600',
+  },
+  {
+    number: '05',
+    icon: Camera,
+    title: 'Gate Photo Sent When Done',
+    desc: "When we finish, we close and secure your gate and send you a photo as proof. You'll know your yard is clean and your gate is locked — without having to check yourself.",
+    highlight: '📸 Photo confirmation of your secured gate sent straight to your phone after every visit.',
+    color: 'bg-rose-500/10 text-rose-600',
   },
 ];
 
+const perks = [
+  { icon: '💻', label: 'Online Quotes', desc: 'Fast pricing with no phone tag' },
+  { icon: '💳', label: 'Online Payment', desc: 'Secure, no contracts, cancel anytime' },
+  { icon: '📱', label: '"On the Way" Texts', desc: 'Heads-up before every single visit' },
+  { icon: '📸', label: 'Gate Photo Proof', desc: 'Photo of your secured gate when done' },
+  { icon: '🧹', label: 'Full Yard Coverage', desc: 'Grid-pattern — zero missed spots' },
+  { icon: '🗑️', label: 'Waste Removed', desc: 'Hauled away, not left by the gate' },
+];
+
 const faqs = [
-  { q: 'Do I need to be home during the service?', a: 'No — as long as we have access to your backyard (unlocked gate or a code you provide), you don't need to be there. Most of our customers are at work when we show up.' },
-  { q: 'What happens to the waste after you scoop it?', a: 'We double-bag all waste and haul it away from your property entirely. It goes in our disposal system — not your trash can, not left by the gate.' },
-  { q: 'Do you service my neighborhood?', a: 'We cover all of Chattanooga and surrounding communities including Hixson, Ooltewah, East Brainerd, Signal Mountain, Red Bank, Soddy-Daisy, Ringgold, Cleveland, Highland Park, Apison, Collegedale, and more.' },
-  { q: 'What if it rains on my service day?', a: 'We scoop in the rain. Weather doesn't cancel your service — we show up regardless. In fact, rainy days are when cleanup matters most, since runoff carries bacteria across your lawn.' },
-  { q: 'How much does it cost?', a: 'Our pricing is based on dog count and service frequency. Weekly service for one dog starts at $20/visit. The fastest way to get exact pricing is to request a free quote — we respond the same day.' },
-  { q: 'Is there a contract?', a: 'No contracts, ever. You can pause, change, or cancel your service at any time. We keep customers by doing a great job, not by locking them in.' },
-  { q: 'Do you sanitize your equipment between yards?', a: 'Yes, always. We sanitize all scooping tools between every yard to prevent cross-contamination of bacteria and parasites. This is a standard part of our process, not an add-on.' },
+  { q: 'Do I need to be home during the service?', a: 'No. We just need access to your backyard — an unlocked gate or a code you provide. Most customers are at work when we show up. You'll get an "on the way" text before we arrive and a gate photo when we're done.' },
+  { q: 'How does the gate photo work?', a: 'After every visit, our tech closes and latches your gate, then snaps a photo and texts it to you. It's your confirmation that the job is done and your yard is secure — no need to check yourself.' },
+  { q: 'When exactly do I get the "on the way" text?', a: 'We send it when we're en route to your address, so you'll have a few minutes' heads-up. It lets you know we're coming without you having to guess which day or time we'll show.' },
+  { q: 'Can I pay online?', a: 'Yes — everything is handled online. You request a quote through the form, receive pricing via email, and pay securely online before service begins. No checks, no cash, no awkward in-person payment.' },
+  { q: 'Is there a contract?', a: 'No contracts, ever. You can pause, change, or cancel your service at any time. We keep customers by doing a great job — not by locking them in.' },
+  { q: 'What if it rains on my service day?', a: 'We show up rain or shine. Weather doesn't cancel your service — and rainy days are actually when cleanup matters most, since runoff carries bacteria across your lawn.' },
+  { q: 'Do you service my neighborhood?', a: 'We cover all of Chattanooga and surrounding areas: Hixson, Ooltewah, East Brainerd, Signal Mountain, Red Bank, Soddy-Daisy, Ringgold, Cleveland, Highland Park, Apison, Collegedale, and more.' },
 ];
 
 const FAQItem = ({ q, a }) => {
@@ -66,7 +87,7 @@ const HowItWorksPage = () => (
   <div className="min-h-screen flex flex-col bg-background">
     <SEOHead
       title="How It Works | Scoopy Doo Pet Waste Removal Chattanooga"
-      description="See how Scoopy Doo's dog waste removal service works — get a free quote, we schedule your service, scoop every inch, and you enjoy a clean yard. No contracts."
+      description="Easy online quotes, online payment, on-the-way texts, and a gate photo when we're done. See how simple Scoopy Doo's dog waste removal service really is."
       canonicalUrl={`${CANONICAL_BASE_URL}/how-it-works`}
     />
     <Header />
@@ -75,72 +96,82 @@ const HowItWorksPage = () => (
       {/* Hero */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/5 to-background text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="max-w-3xl mx-auto">
-          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wider mb-6">Simple Process</span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 leading-tight">How Scoopy Doo Works</h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">Four simple steps to a cleaner yard — and you barely have to lift a finger. No contracts, no hassle, no poop.</p>
+          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wider mb-6">Ridiculously Easy</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 leading-tight">Working With Us Is Simple</h1>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">Online quotes. Online payment. A text before we arrive. A photo of your secured gate when we leave. You don't have to do anything except enjoy your yard.</p>
           <Button asChild size="lg" className="rounded-xl px-8 h-14 text-base font-bold">
             <Link to="/quote">Get Your Free Quote →</Link>
           </Button>
         </motion.div>
       </section>
 
-      {/* Steps */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="space-y-8">
-          {steps.map((step, i) => (
-            <motion.div key={i} initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex flex-col md:flex-row gap-6 bg-card border border-border rounded-2xl p-8 hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4 md:w-2/3">
-                <div className="flex-shrink-0">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-                    <step.icon className="w-7 h-7 text-primary" />
-                  </div>
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-primary/60 tracking-widest uppercase mb-1">Step {step.number}</div>
-                  <h2 className="text-2xl font-bold text-foreground mb-3">{step.title}</h2>
-                  <p className="text-muted-foreground leading-relaxed">{step.desc}</p>
-                </div>
-              </div>
-              <div className="md:w-1/3 bg-primary/5 rounded-xl p-5 flex items-center">
-                <p className="text-sm text-foreground/80 leading-relaxed italic">"{step.detail}"</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Trust bar */}
-      <section className="py-16 bg-primary/5 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { stat: '100%', label: 'Grid-pattern coverage' },
-            { stat: 'Same day', label: 'Quote response' },
-            { stat: 'No contracts', label: 'Ever — cancel anytime' },
-            { stat: 'Year-round', label: 'Rain or shine service' },
-          ].map((item, i) => (
-            <div key={i}>
-              <div className="text-2xl md:text-3xl font-extrabold text-primary mb-1">{item.stat}</div>
-              <div className="text-sm text-muted-foreground">{item.label}</div>
+      {/* Perks bar */}
+      <section className="py-12 px-4 bg-card border-y border-border">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+          {perks.map((p, i) => (
+            <div key={i} className="flex flex-col items-center gap-2">
+              <span className="text-3xl">{p.icon}</span>
+              <div className="font-bold text-sm text-foreground">{p.label}</div>
+              <div className="text-xs text-muted-foreground">{p.desc}</div>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Steps */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-foreground text-center mb-14">From Quote to Clean Yard in 5 Steps</h2>
+        <div className="relative">
+          {/* Connector line */}
+          <div className="hidden md:block absolute left-7 top-8 bottom-8 w-0.5 bg-border" />
+          <div className="space-y-6">
+            {steps.map((step, i) => (
+              <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="flex gap-6 bg-card border border-border rounded-2xl p-6 hover:shadow-md transition-shadow">
+                <div className="flex-shrink-0 z-10">
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${step.color}`}>
+                    <step.icon className="w-7 h-7" />
+                  </div>
+                </div>
+                <div className="flex-grow">
+                  <div className="text-xs font-bold text-muted-foreground tracking-widest uppercase mb-1">Step {step.number}</div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-3">{step.desc}</p>
+                  <div className="inline-block bg-muted rounded-lg px-4 py-2 text-sm font-medium text-foreground">{step.highlight}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Social proof strip */}
+      <section className="py-14 bg-primary/5 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="flex justify-center gap-1 mb-4">
+            {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
+          </div>
+          <blockquote className="text-xl md:text-2xl font-medium text-foreground italic mb-4">
+            "I love getting the picture of my closed gate — it's such a small thing but it gives me total peace of mind."
+          </blockquote>
+          <cite className="text-muted-foreground not-italic">— Chattanooga customer, weekly service</cite>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-foreground text-center mb-12">Frequently Asked Questions</h2>
+        <h2 className="text-3xl font-bold text-foreground text-center mb-12">Common Questions</h2>
         <div className="space-y-3">
           {faqs.map((faq, i) => <FAQItem key={i} {...faq} />)}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-primary/5 text-center">
+      <section className="py-20 px-4 bg-primary text-primary-foreground text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">Ready to Get Started?</h2>
-          <p className="text-lg text-muted-foreground mb-8">Get a free quote in under 2 minutes. We serve all of Chattanooga and surrounding areas.</p>
-          <Button asChild size="lg" className="rounded-xl px-10 h-14 text-base font-bold">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Ready? It Takes 2 Minutes.</h2>
+          <p className="text-lg opacity-90 mb-8">Get a free quote online right now. No phone calls, no commitments. Just a clean yard.</p>
+          <Button asChild size="lg" variant="secondary" className="rounded-xl px-10 h-14 text-base font-bold">
             <Link to="/quote">Get My Free Quote →</Link>
           </Button>
         </div>
