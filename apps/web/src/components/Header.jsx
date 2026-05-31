@@ -10,6 +10,7 @@ const Header = () => {
   const mainLinks = [
     { name: 'Home', path: '/' },
     { name: 'Dog Poop Removal', path: '/services' },
+    { name: 'How It Works', path: '/how-it-works' },
     { name: 'Service Areas', path: '/near-me' },
     { name: 'One-Time Cleanup', path: '/one-time-cleanup' },
     { name: 'Blog', path: '/blog' },
