@@ -41,6 +41,14 @@ const BlogPostTemplate = React.lazy(() => import('@/components/BlogPostTemplate.
 // Specific/Working Blog Pages (Live)
 const HowOftenCleanYard = React.lazy(() => import('@/pages/blog/HowOftenCleanYardPage.jsx'));
 const PodcastBlogPost = React.lazy(() => import('@/pages/blog/PodcastBlogPost.jsx'));
+const BlogArticle1 = React.lazy(() => import('@/pages/blog/BlogArticle1_ProfessionalWasteRemovalBenefits.jsx'));
+const BlogArticle2 = React.lazy(() => import('@/pages/blog/BlogArticle2_SeasonalPetCareTips.jsx'));
+const BlogArticle3 = React.lazy(() => import('@/pages/blog/BlogArticle3_HealthBenefitsYardCleanup.jsx'));
+const BlogArticle4 = React.lazy(() => import('@/pages/blog/BlogArticle4_CustomerSuccessStories.jsx'));
+const BlogArticle5 = React.lazy(() => import('@/pages/blog/BlogArticle5_DIYVsProfessional.jsx'));
+const BlogArticle6 = React.lazy(() => import('@/pages/blog/BlogArticle6_LawnHealthAndPetWaste.jsx'));
+const BlogArticle7 = React.lazy(() => import('@/pages/blog/BlogArticle7_HealthRisksOfPetWaste.jsx'));
+const BlogArticle8 = React.lazy(() => import('@/pages/blog/BlogArticle8_PetWasteManagementGuide.jsx'));
 const HowOftenScoopDogPoopChattanooga = React.lazy(() => import('@/pages/blog/HowOftenScoopDogPoopChattanooga.jsx'));
 const IsDogPoopHurtingYourChattanoogaYard = React.lazy(() => import('@/pages/blog/IsDogPoopHurtingYourChattanoogaYard.jsx'));
 
@@ -159,7 +167,15 @@ function App() {
           <Route path="/service/:slug" element={<LocationTemplate />} />
 
           <Route path="/blog" element={<BlogListPage />} />
-                        <Route path="/blog/how-often-scoop-dog-poop-chattanooga" element={<HowOftenScoopDogPoopChattanooga />} />
+                                      <Route path="/blog/professional-waste-removal-benefits" element={<BlogArticle1 />} />
+              <Route path="/blog/seasonal-pet-care-tips" element={<BlogArticle2 />} />
+              <Route path="/blog/health-benefits-yard-cleanup" element={<BlogArticle3 />} />
+              <Route path="/blog/customer-success-stories" element={<BlogArticle4 />} />
+              <Route path="/blog/diy-vs-professional" element={<BlogArticle5 />} />
+              <Route path="/blog/lawn-health-and-pet-waste" element={<BlogArticle6 />} />
+              <Route path="/blog/health-risks-of-pet-waste" element={<BlogArticle7 />} />
+              <Route path="/blog/pet-waste-management-guide" element={<BlogArticle8 />} />
+              <Route path="/blog/how-often-scoop-dog-poop-chattanooga" element={<HowOftenScoopDogPoopChattanooga />} />
               <Route path="/blog/is-dog-poop-hurting-your-chattanooga-yard" element={<IsDogPoopHurtingYourChattanoogaYard />} />
               <Route path="/blog/chattanooga-pet-waste-removal-homeowners" element={<ChattanoogaHomeownersPage />} />
           <Route path="/blog/commercial-pet-waste-removal-chattanooga" element={<CommercialPetWastePage />} />
