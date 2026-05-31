@@ -16,6 +16,7 @@ const ServicesPage = () => {
   const services = [
     {
       title: 'Weekly Service',
+      mostPopular: true,
       description: 'Keep your yard consistently clean with our most popular service option.',
       benefits: [
         'Scheduled weekly visits at your preferred time',
