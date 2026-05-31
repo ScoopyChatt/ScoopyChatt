@@ -18,7 +18,7 @@ const DogParkGuideLandingPage = () => {
           Discover Chattanooga's Best Kept Secrets for Dog Owners!
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-          Stop guessing where to take your pup. Get our exclusive, fully-detailed guide to the best off-leash areas and hidden gems around the Scenic City—absolutely free.
+          Stop guessing where to take your pup. Get our exclusive, fully-detailed guide to the best off-leash areas and hidden gems around the Scenic Cityâabsolutely free.
         </p>
       </section>
 
@@ -113,6 +113,43 @@ const DogParkGuideLandingPage = () => {
           <div className="text-xl font-bold text-foreground">5.0 Average Rating</div>
           <p className="text-muted-foreground">Based on Google Reviews from local dog parents</p>
         </div>
+      </section>
+
+
+      {/* SEO Content Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-foreground mb-6">Chattanooga's Best Dog Parks & Off-Leash Areas</h2>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          Chattanooga is one of the most dog-friendly cities in Tennessee. From the Tennessee River waterfront to the mountain trails above the city, the Scenic City has no shortage of places to let your dog run, explore, and socialize. Here's your local insider guide to the best spots.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-foreground mb-4">Tennessee Riverpark Dog-Friendly Trail</h3>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          Stretching over 10 miles along the Tennessee River, the Riverpark is Chattanooga's most popular outdoor recreation area. Dogs are welcome on leashes throughout the paved trail system. You'll find water fountains, restrooms, and plenty of shaded areas — perfect for longer walks on hot Tennessee summer days. The trail connects Chickamauga Dam all the way to downtown, passing through several neighborhood greenways along the way.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-foreground mb-4">Warner Park & Stringer's Ridge</h3>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          Located just minutes from downtown, Warner Park and Stringer's Ridge offer miles of wooded hiking trails where leashed dogs are welcome. The ridge trails provide stunning views of the city and the Tennessee River valley. These natural areas are ideal for dogs who love to sniff, explore, and get their paws dirty. After a muddy trail hike, a proper yard cleanup back home becomes especially important.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-foreground mb-4">East Brainerd and Ooltewah Dog-Friendly Parks</h3>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          The suburban neighborhoods of East Brainerd, Ooltewah, and Collegedale are home to several community parks and greenways where dogs are welcome on leash. The East Brainerd Greenway is a favorite among local dog owners, offering a flat, paved path through a quiet residential corridor. These neighborhoods are also among Scoopy Doo's most popular service areas for weekly pet waste removal.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-foreground mb-4">Signal Mountain and Lookout Mountain Trails</h3>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          For the adventurous dog owner, the mountain communities above Chattanooga offer world-class trail access. Signal Mountain has miles of forest paths connecting to the Cumberland Trail, while Lookout Mountain features trails through Point Park and Reflection Riding Arboretum. Dogs must be leashed in most of these areas, and always bring water — the mountain trails are more strenuous than flatland walks.
+        </p>
+
+        <h3 className="text-2xl font-semibold text-foreground mb-4">Keep Your Yard Clean Between Park Visits</h3>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          All those dog park adventures mean your yard gets a workout too. Pet waste left on your lawn creates bacteria, attracts pests, and can make your yard unsafe for children and other pets. Scoopy Doo provides weekly, bi-weekly, and one-time yard cleanup services throughout Chattanooga and surrounding communities — so your yard stays as clean as the parks you love to visit.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Download our free Chattanooga Dog Park Guide above for a complete list of locations, hours, rules, and insider tips from local dog owners who've explored every corner of the Scenic City with their four-legged companions.
+        </p>
       </section>
     </div>
   );
