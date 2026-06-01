@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/dp/:path*",
+      "destination": "/api/dp-gone"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
@@ -9,11 +13,6 @@
     {
       "source": "/pricing",
       "destination": "/quote",
-      "permanent": true
-    },
-    {
-      "source": "/dp/(.*)",
-      "destination": "/",
       "permanent": true
     }
   ],
