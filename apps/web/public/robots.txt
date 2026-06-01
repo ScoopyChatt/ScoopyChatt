@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /dp/
+Disallow: /reddit-oauth-callback
+Disallow: /qb-oauth-callback
+Disallow: /thank-you
 Sitemap: https://scoopychatt.com/sitemap.xml
