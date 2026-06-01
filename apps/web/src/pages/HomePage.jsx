@@ -118,24 +118,36 @@ const HomePage = () => {
             </div>
           </section>
 
-          <section className="py-12 bg-card border-y border-border/50">
+          <section className="py-10 bg-card border-y border-border/50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div className="flex flex-col items-center">
-                  <Shield className="w-12 h-12 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Fully Insured</h3>
-                  <p className="text-muted-foreground">Peace of mind for your property and pets.</p>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div className="flex flex-col items-center gap-2 p-4">
+                  <span className="text-3xl">⭐</span>
+                  <div className="font-extrabold text-lg text-foreground">5-Star Rated</div>
+                  <div className="text-sm text-muted-foreground">on Google Reviews</div>
                 </div>
-                <div className="flex flex-col items-center">
-                  <Leaf className="w-12 h-12 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Eco-Friendly</h3>
-                  <p className="text-muted-foreground">Responsible waste disposal practices.</p>
+                <div className="flex flex-col items-center gap-2 p-4">
+                  <span className="text-3xl">👨‍👧</span>
+                  <div className="font-extrabold text-lg text-foreground">Family Owned</div>
+                  <div className="text-sm text-muted-foreground">Local father & daughter team</div>
                 </div>
-                <div className="flex flex-col items-center">
-                  <CheckCircle2 className="w-12 h-12 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Pet-Safe</h3>
-                  <p className="text-muted-foreground">Sanitized equipment to prevent cross-contamination.</p>
+                <div className="flex flex-col items-center gap-2 p-4">
+                  <span className="text-3xl">📍</span>
+                  <div className="font-extrabold text-lg text-foreground">17+ Communities</div>
+                  <div className="text-sm text-muted-foreground">Chattanooga metro & North GA</div>
                 </div>
+                <div className="flex flex-col items-center gap-2 p-4">
+                  <span className="text-3xl">🚫</span>
+                  <div className="font-extrabold text-lg text-foreground">No Contracts</div>
+                  <div className="text-sm text-muted-foreground">Cancel or change anytime</div>
+                </div>
+              </div>
+              <div className="mt-6 pt-6 border-t border-border/50 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> Online quotes & payment</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> On-the-way text before every visit</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> Gate photo sent when done</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> Residential, commercial & HOA service</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> Fully insured & equipment sanitized</span>
               </div>
             </div>
           </section>
