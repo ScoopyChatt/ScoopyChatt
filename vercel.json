@@ -12,6 +12,11 @@
       "source": "/pricing",
       "destination": "/quote",
       "permanent": true
+    },
+    {
+      "source": "/dp/:path*",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
