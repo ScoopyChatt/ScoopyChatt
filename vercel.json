@@ -1,6 +1,4 @@
 {
-  "buildCommand": "npm install --prefix apps/web && npm run build --prefix apps/web && node apps/web/tools/inject-seo.cjs",
-  "outputDirectory": "dist/apps/web",
   "rewrites": [
     {
       "source": "/(.*)",
@@ -14,7 +12,7 @@
       "permanent": true
     },
     {
-      "source": "/dp/:path*",
+      "source": "/dp/(.*)",
       "destination": "/",
       "permanent": true
     }
