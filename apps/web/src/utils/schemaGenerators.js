@@ -1,148 +1,172 @@
+// Schema.org structured data generators for Scoopy Doo LLC
 
-import { seoConfig, CANONICAL_BASE_URL } from '@/config/seoConfig.js';
-
-export const generateLocalBusinessSchema = (customData = {}) => {
+export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": customData.name || "Scoopy Doo LLC",
-    "image": customData.image || seoConfig.defaultImage,
-    "telephone": customData.telephone || seoConfig.phone,
-    "email": customData.email || seoConfig.email,
-    "url": customData.url || CANONICAL_BASE_URL,
-    "priceRange": customData.priceRange || "$$",
-    "description": customData.description || "Professional pet waste removal service in Chattanooga, TN",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://scoopychatt.com/#business",
+    "name": "Scoopy Doo LLC",
+    "alternateName": "Scoopy Doo Pet Waste Removal",
+    "description": "Professional dog poop removal and pet waste cleanup service in Chattanooga, TN and surrounding areas. Weekly, bi-weekly, and one-time service for residential and commercial properties.",
+    "url": "https://scoopychatt.com",
+    "telephone": "+14236005040",
+    "email": "info@scoopychatt.com",
+    "image": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png",
+    "logo": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": customData.streetAddress || seoConfig.address.streetAddress,
-      "addressLocality": customData.addressLocality || seoConfig.address.addressLocality,
-      "addressRegion": customData.addressRegion || "TN",
-      "postalCode": customData.postalCode || seoConfig.address.postalCode,
+      "addressLocality": "Chattanooga",
+      "addressRegion": "TN",
       "addressCountry": "US"
     },
-    "geo": customData.geo || {
+    "geo": {
       "@type": "GeoCoordinates",
-      "latitude": seoConfig.geo.latitude,
-      "longitude": seoConfig.geo.longitude
+      "latitude": 35.0456,
+      "longitude": -85.3097
     },
-    "areaServed": customData.areaServed || [
-      "Chattanooga", "Hixson", "Red Bank", "East Ridge", "Signal Mountain", "Ooltewah", 
-      "East Brainerd", "Ringgold", "Cleveland", "Lookout Mountain", "Apison", 
-      "Collegedale", "Flintstone", "Highland Park", "Rossville", "Soddy-Daisy", "Downtown"
-    ].map(city => ({
-      "@type": "City",
-      "name": city
-    })),
+    "areaServed": [
+      { "@type": "City", "name": "Chattanooga", "addressRegion": "TN" },
+      { "@type": "City", "name": "Hixson", "addressRegion": "TN" },
+      { "@type": "City", "name": "Ooltewah", "addressRegion": "TN" },
+      { "@type": "City", "name": "East Brainerd", "addressRegion": "TN" },
+      { "@type": "City", "name": "Red Bank", "addressRegion": "TN" },
+      { "@type": "City", "name": "East Ridge", "addressRegion": "TN" },
+      { "@type": "City", "name": "Signal Mountain", "addressRegion": "TN" },
+      { "@type": "City", "name": "Lookout Mountain", "addressRegion": "TN" },
+      { "@type": "City", "name": "Soddy-Daisy", "addressRegion": "TN" },
+      { "@type": "City", "name": "Ringgold", "addressRegion": "GA" },
+      { "@type": "City", "name": "Fort Oglethorpe", "addressRegion": "GA" },
+      { "@type": "City", "name": "Rossville", "addressRegion": "GA" }
+    ],
+    "serviceType": "Pet Waste Removal",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Pet Waste Removal Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Weekly Pet Waste Removal" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bi-Weekly Pet Waste Removal" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "One-Time Dog Waste Cleanup" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Pet Waste Removal" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HOA Pet Waste Station Service" } }
+      ]
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "128"
+      "ratingValue": "5",
+      "reviewCount": "85",
+      "bestRating": "5",
+      "worstRating": "1"
     },
-    "openingHoursSpecification": seoConfig.businessHours,
-    "sameAs": seoConfig.socialProfiles
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61578292444117",
+      "https://www.instagram.com/scoopychatt/",
+      "https://www.yelp.com/biz/scoopy-doo-ringgold"
+    ],
+    "priceRange": "$$"
   };
-};
+}
 
-export const generateServiceSchema = (serviceName, description, areaServed = "Chattanooga Metro", priceRange = "$$") => {
+export function generateServiceSchema(serviceName, description, url) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": serviceName,
+    "name": serviceName + " | Scoopy Doo LLC",
     "description": description,
+    "url": url,
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Scoopy Doo LLC",
-      "image": seoConfig.defaultImage,
-      "url": CANONICAL_BASE_URL
+      "@id": "https://scoopychatt.com/#business",
+      "name": "Scoopy Doo LLC"
     },
     "areaServed": {
-      "@type": "City",
-      "name": areaServed
+      "@type": "State",
+      "name": "Tennessee"
     },
     "offers": {
       "@type": "Offer",
-      "priceRange": priceRange,
-      "url": `${CANONICAL_BASE_URL}/services`
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
     }
   };
-};
+}
 
-export const generateArticleSchema = (title, description, datePublished, dateModified, author, content, image, url) => {
+export function generateFAQPageSchema(faqData) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(item => ({
+      "@type": "Question",
+      "name": item.question || item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer || item.a
+      }
+    }))
+  };
+}
+
+export function generateBreadcrumbSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+}
+
+export function generateArticleSchema(title, description, author, datePublished, dateModified, content, image, url) {
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": title,
-    "image": image || seoConfig.defaultImage,
+    "description": description,
     "author": {
       "@type": "Person",
       "name": author || "Scoopy Doo Team"
     },
     "publisher": {
       "@type": "Organization",
+      "@id": "https://scoopychatt.com/#business",
       "name": "Scoopy Doo LLC",
       "logo": {
         "@type": "ImageObject",
-        "url": seoConfig.defaultImage
+        "url": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png"
       }
     },
     "datePublished": datePublished,
     "dateModified": dateModified || datePublished,
-    "description": description,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": url || CANONICAL_BASE_URL
-    }
+    "image": image || "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/8088ef4935a7739f1747caefac1fdcc6.jpg",
+    "url": url,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": url }
   };
-};
+}
 
-export const generateFAQPageSchema = (faqArray = []) => {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqArray.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-};
-
-export const generateOrganizationSchema = () => {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Scoopy Doo LLC",
-    "url": CANONICAL_BASE_URL,
-    "logo": seoConfig.defaultImage,
-    "description": "Professional pet waste removal service in Chattanooga, TN",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": seoConfig.phone,
-      "contactType": "customer service",
-      "areaServed": "US",
-      "availableLanguage": "en"
-    },
-    "sameAs": seoConfig.socialProfiles
-  };
-};
-
-export const generatePriceRangeSchema = (serviceName = "Dog Poop Removal Service", lowPrice = "16", highPrice = "150", currency = "USD") => {
+export function generateLocationSchema(locationData) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": serviceName,
+    "name": "Dog Poop Removal in " + locationData.name,
+    "description": locationData.seoDescription,
     "provider": {
       "@type": "LocalBusiness",
+      "@id": "https://scoopychatt.com/#business",
       "name": "Scoopy Doo LLC"
     },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": currency,
-      "lowPrice": lowPrice,
-      "highPrice": highPrice
-    }
+    "areaServed": {
+      "@type": "City",
+      "name": locationData.name
+    },
+    "url": "https://scoopychatt.com/service/" + locationData.slug
   };
-};
+}
