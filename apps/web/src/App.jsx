@@ -90,28 +90,7 @@ const PageLoader = () => (
 );
 
 
-function SEOUpdater() {
-  const location = useLocation();
-  useEffect(() => {
-    const meta = seoMetadata[location.pathname];
-    if (meta) {
-      if (meta.title) document.title = meta.title;
-      const desc = document.querySelector('meta[name="description"]');
-      if (desc && meta.description) desc.content = meta.description;
-      let canonical = document.querySelector('link[rel="canonical"]');
-      if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-      if (meta.canonical) canonical.href = meta.canonical;
-      // Update OG tags
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle && meta.title) ogTitle.content = meta.title;
-      const ogDesc = document.querySelector('meta[property="og:description"]');
-      if (ogDesc && meta.description) ogDesc.content = meta.description;
-      const ogUrl = document.querySelector('meta[property="og:url"]');
-      if (ogUrl && meta.canonical) ogUrl.content = meta.canonical;
-    }
-  }, [location.pathname]);
-  return null;
-}
+
 
 function App() {
   useGTM('GTM-59B5PDXS');
