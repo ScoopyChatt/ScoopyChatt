@@ -11,7 +11,8 @@ import Footer from '@/components/Footer.jsx';
 import FloatingCTA from '@/components/FloatingCTA.jsx';
 import FAQSection from '@/components/FAQSection.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
-import { getCanonicalUrl, generateLocalBusinessSchema } from '@/utils/seoHelpers.js';
+import { getCanonicalUrl } from '@/utils/seoHelpers.js';
+import { generateLocalBusinessSchema, generateFAQPageSchema, generateBreadcrumbSchema, generateLocationSchema } from '@/utils/schemaGenerators.js';
 import { locations } from '@/data/locations.js';
 
 const LocationTemplate = ({ city: propCity }) => {
@@ -60,6 +61,13 @@ const LocationTemplate = ({ city: propCity }) => {
 
   const { name, seoTitle, seoDescription, serviceDescription, localContext, neighborhoods, testimonial, benefits, faqItems } = locationData;
   const canonicalUrl = getCanonicalUrl('/service/' + locationData.slug);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://scoopychatt.com/' },
+    { name: 'Service Areas', url: 'https://scoopychatt.com/service-areas' },
+    { name: name, url: canonicalUrl }
+  ]);
+  const faqSchema = faqItems && faqItems.length > 0 ? generateFAQPageSchema(faqItems) : null;
+  const locationSchema = generateLocationSchema(locationData);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -74,6 +82,17 @@ const LocationTemplate = ({ city: propCity }) => {
         <script type="application/ld+json">
           {JSON.stringify(generateLocalBusinessSchema())}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify(locationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
       </Helmet>
 
       <Header />
@@ -115,10 +134,10 @@ const LocationTemplate = ({ city: propCity }) => {
         <section className="py-8 bg-card border-b border-border">
           <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { icon: "💻", label: "Online Quotes & Pay" },
-              { icon: "📱", label: "On-the-Way Texts" },
-              { icon: "📸", label: "Gate Photo When Done" },
-              { icon: "🚫", label: "No Contracts" },
+              { icon: "ð»", label: "Online Quotes & Pay" },
+              { icon: "ð±", label: "On-the-Way Texts" },
+              { icon: "ð¸", label: "Gate Photo When Done" },
+              { icon: "ð«", label: "No Contracts" },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center gap-1">
                 <span className="text-2xl">{item.icon}</span>
@@ -188,7 +207,7 @@ const LocationTemplate = ({ city: propCity }) => {
               <blockquote className="text-xl md:text-2xl font-medium text-foreground italic mb-4">
                 "{testimonial.quote}"
               </blockquote>
-              <cite className="text-muted-foreground not-italic text-sm">— {testimonial.author}</cite>
+              <cite className="text-muted-foreground not-italic text-sm">â {testimonial.author}</cite>
             </div>
           </section>
         )}
