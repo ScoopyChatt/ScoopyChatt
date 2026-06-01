@@ -171,6 +171,45 @@ export const locations = [
     ]
   },
   { 
+    id: 'east-ridge', 
+    name: 'East Ridge, TN', 
+    slug: 'east-ridge', 
+    description: 'Professional pet waste removal for East Ridge neighborhoods.', 
+    seoTitle: 'Dog Poop Removal East Ridge TN | Scoopy Doo',
+    seoDescription: 'Reliable dog poop removal in East Ridge, TN. Scoopy Doo provides weekly pet waste pickup for residential yards. Get your free quote today.',
+    serviceDescription: 'Serving the East Ridge community with consistent, affordable dog waste removal. We know your neighborhood and work around your schedule.',
+    benefits: ['Same-day quote response', 'No contracts required', 'Waste hauled away from property', 'On-the-way text alerts every visit'],
+    faqItems: [
+      { question: 'Do you service East Ridge, TN?', answer: 'Yes — East Ridge is one of our core service areas. We have regular routes in East Ridge and can usually add new customers within a few days.' }
+    ]
+  },
+  { 
+    id: 'lookout-mountain', 
+    name: 'Lookout Mountain, TN', 
+    slug: 'lookout-mountain', 
+    description: 'Premium pet waste removal for Lookout Mountain properties.', 
+    seoTitle: 'Dog Poop Removal Lookout Mountain TN | Scoopy Doo',
+    seoDescription: 'Professional dog waste removal on Lookout Mountain, TN. Scoopy Doo handles the terrain so you can enjoy the view. Get your free quote.',
+    serviceDescription: 'We navigate Lookout Mountain terrain to provide complete, thorough pet waste removal for your property — no matter the grade or yard size.',
+    benefits: ['Experience with hilly terrain', 'Full yard grid coverage', 'Gate photo confirmation', 'Locally owned and insured'],
+    faqItems: [
+      { question: 'Do you service Lookout Mountain?', answer: 'Yes, we service Lookout Mountain, TN properties. Our techs are experienced with the terrain and can provide thorough cleanup regardless of yard layout.' }
+    ]
+  },
+  { 
+    id: 'fort-oglethorpe', 
+    name: 'Fort Oglethorpe, GA', 
+    slug: 'fort-oglethorpe', 
+    description: 'Dog waste removal services for Fort Oglethorpe, GA residents.', 
+    seoTitle: 'Dog Poop Removal Fort Oglethorpe GA | Scoopy Doo',
+    seoDescription: 'Dog poop removal in Fort Oglethorpe, GA from Scoopy Doo. Professional pet waste cleanup, weekly service available, no contracts. Get a free quote.',
+    serviceDescription: 'Scoopy Doo serves the Fort Oglethorpe area with reliable, tech-forward service — online quotes, on-the-way texts, and gate photo proof after every visit.',
+    benefits: ['Cross-state service coverage', 'Online quotes and payment', 'Text alerts before every visit', 'Satisfaction guaranteed'],
+    faqItems: [
+      { question: 'Do you serve Fort Oglethorpe, GA?', answer: 'Yes — Fort Oglethorpe is within our North Georgia service area. Request a free quote and we can usually start service within a few days.' }
+    ]
+  },
+  { 
     id: 'flintstone', 
     name: 'Flintstone, GA', 
     slug: 'flintstone', 
