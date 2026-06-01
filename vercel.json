@@ -2,9 +2,27 @@
   "buildCommand": "npm install --prefix apps/web && npm run build --prefix apps/web && node apps/web/tools/inject-seo.cjs",
   "outputDirectory": "dist/apps/web",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ],
   "redirects": [
-    { "source": "/pricing", "destination": "/quote", "permanent": true }
+    {
+      "source": "/pricing",
+      "destination": "/quote",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/dp/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
   ]
 }
