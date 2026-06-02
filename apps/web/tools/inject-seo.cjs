@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 try {
-const BASE = 'https://scoopychatt.com';
+const BASE = 'https://www.scoopychatt.com';
 const distDir = path.join(process.cwd(), 'dist', 'apps', 'web');
 const templatePath = path.join(distDir, 'index.html');
 
@@ -34,6 +34,25 @@ const routes = {
   '/blog': ['Pet Waste & Dog Care Blog | Scoopy Doo Chattanooga', 'Tips on pet waste removal, yard health, and dog care for Chattanooga homeowners.'],
   '/privacy-policy': ['Privacy Policy | Scoopy Doo LLC', 'Privacy policy for Scoopy Doo LLC.'],
   '/terms-of-service': ['Terms of Service | Scoopy Doo LLC', 'Terms of service for Scoopy Doo LLC pet waste removal.'],
+  '/blog/professional-waste-removal-benefits': ['Benefits of Professional Pet Waste Removal | Scoopy Doo Chattanooga', 'Why professional dog waste removal is safer and more thorough than DIY. Scoopy Doo serves Chattanooga and surrounding areas weekly.'],
+  '/blog/seasonal-pet-care-tips': ['Seasonal Pet Care Tips for Chattanooga Dog Owners | Scoopy Doo', 'Keep your yard clean and safe year-round with seasonal pet waste tips from Scoopy Doo LLC in Chattanooga, TN.'],
+  '/blog/health-benefits-yard-cleanup': ['Health Benefits of Regular Yard Cleanup for Pet Owners | Scoopy Doo', 'Regular dog waste removal protects your family from bacteria and parasites. Learn why weekly cleanup matters for Chattanooga homeowners.'],
+  '/blog/customer-success-stories': ['Customer Success Stories | Scoopy Doo Pet Waste Removal Chattanooga', 'Real stories from Chattanooga homeowners and HOAs who rely on Scoopy Doo for weekly pet waste removal.'],
+  '/blog/diy-vs-professional': ['DIY vs Professional Dog Waste Removal | Scoopy Doo Chattanooga', 'Compare DIY pet waste cleanup to professional pooper scooper service in Chattanooga, TN. See which option saves time and money.'],
+  '/blog/lawn-health-and-pet-waste': ['How Pet Waste Affects Your Lawn Health | Scoopy Doo Chattanooga', 'Dog waste kills grass and harms soil. Learn how regular professional cleanup protects your Chattanooga lawn from long-term damage.'],
+  '/blog/health-risks-of-pet-waste': ['Health Risks of Unmanaged Pet Waste | Scoopy Doo Chattanooga', 'Dog waste carries bacteria, hookworms, roundworms, and giardia. Learn the health risks and how Scoopy Doo protects Chattanooga families.'],
+  '/blog/pet-waste-management-guide': ['The Complete Pet Waste Management Guide for Dog Owners | Scoopy Doo', 'Everything Chattanooga dog owners need about pet waste management — frequency, disposal, health risks, and professional service options.'],
+  '/blog/how-often-scoop-dog-poop-chattanooga': ['How Often Should You Scoop Dog Poop in Chattanooga? | Scoopy Doo', 'Weekly scooping is the gold standard. Learn why cleanup frequency matters for lawn health and family safety in Chattanooga, TN.'],
+  '/blog/spring-pet-care-checklist': ['Spring Pet Care Checklist for Chattanooga Dog Owners | Scoopy Doo', 'Spring in Chattanooga means wet yards hiding months of pet waste. Use this checklist to get your yard cleaned up and ready.'],
+  '/blog/is-dog-waste-bad-for-lawn': ['Is Dog Waste Bad for Your Lawn? | Scoopy Doo Chattanooga', 'Yes — dog waste kills grass and damages soil. Learn what it does to your Chattanooga yard and how professional cleanup helps.'],
+  '/blog/best-pooper-scooper-services-chattanooga': ['Best Pooper Scooper Services in Chattanooga, TN | Scoopy Doo', 'Looking for the best dog poop removal in Chattanooga? Online quotes, on-the-way texts, gate photo confirmation. No contracts.'],
+  '/blog/is-dog-poop-hurting-your-chattanooga-yard': ['Is Dog Poop Hurting Your Chattanooga Yard? | Scoopy Doo', 'Dog waste damages grass and soil over time. Find out if your Chattanooga yard is being harmed and how Scoopy Doo can help.'],
+  '/blog/chattanooga-pet-waste-removal-homeowners': ['Pet Waste Removal Guide for Chattanooga Homeowners | Scoopy Doo', 'A complete guide for Chattanooga homeowners on pet waste management — health risks, lawn damage, waterway protection, and professional service.'],
+  '/blog/commercial-pet-waste-removal-chattanooga': ['Commercial Pet Waste Removal in Chattanooga, TN | Scoopy Doo', 'Professional pet waste removal for apartments, HOAs, and businesses in Chattanooga. Flexible scheduling, no contracts.'],
+  '/blog/how-often-clean-yard': ['How Often Should You Clean Your Yard of Dog Waste? | Scoopy Doo', 'Weekly is the gold standard. Learn the right cleanup frequency based on your dog count, yard size, and Chattanooga season.'],
+  '/blog/podcast-blog': ['Scoopy Doo on the Podcast | The Chattanooga Pet Waste Removal Story', 'Hear the Scoopy Doo LLC founder discuss starting a pet waste removal business in Chattanooga, TN.'],
+  '/blog/signal-mountain': ['Pet Waste Removal Tips for Signal Mountain, TN | Scoopy Doo Blog', 'Scoopy Doo serves Signal Mountain with thorough yard cleanup. We handle larger lots and wooded terrain every week.'],
+  '/blog/soddy-daisy': ['Pet Waste Removal in Soddy-Daisy, TN | Scoopy Doo Blog', 'Scoopy Doo serves Soddy-Daisy and Chickamauga Lake area homeowners. Waterfront cleanup protects the lake and your family.'],
 };
 
 const gaLocations = new Set(['ringgold','rossville','flintstone','fort-oglethorpe']);
