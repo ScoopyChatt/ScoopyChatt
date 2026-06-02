@@ -1,5 +1,5 @@
 
-export const CANONICAL_BASE_URL = 'https://scoopychatt.com';
+export const CANONICAL_BASE_URL = 'https://www.scoopychatt.com';
 
 export const seoConfig = {
   businessName: 'Scoopy Doo',
