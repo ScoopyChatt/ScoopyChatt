@@ -1,15 +1,12 @@
 
 import React, { useEffect, Suspense } from 'react';
 import { Route, Routes, BrowserRouter as Router, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
 import ScrollToTop from '@/components/ScrollToTop.jsx';
 import ScoopyHelperWidget from '@/components/ScoopyHelperWidget.jsx';
 
 import { useGTM } from '@/hooks/useGTM.js';
 import { usePixel } from '@/hooks/usePixel.js';
-import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
-import { generateLocalBusinessSchema } from '@/utils/seoHelpers.js';
 
 // Lazy loaded pages for code splitting
 const CoreServicePage = React.lazy(() => import('@/pages/CoreServicePage.jsx'));
@@ -90,32 +87,19 @@ const PageLoader = () => (
 );
 
 
-
-
 function App() {
   useGTM('GTM-59B5PDXS');
 
   return (
     <Router>
-      <Helmet>
-        <meta property="og:title" content="Scoopy Doo LLC" />
-        <meta property="og:description" content="Scoopy Doo, Chattanooga Pet Waste Removal" />
-        <meta property="og:image" content="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/8088ef4935a7739f1747caefac1fdcc6.jpg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={CANONICAL_BASE_URL} />
-        <script type="application/ld+json">
-          {JSON.stringify(generateLocalBusinessSchema())}
-        </script>
-      </Helmet>
-      
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
-      
+
       <ScrollToTop />
       <RouteTracker />
-      
+
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/sitemap.xml" element={<SitemapXML />} />
@@ -132,7 +116,7 @@ function App() {
           <Route path="/spring-special" element={<SpringSpecialPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-          
+
           <Route path="/dog-poop-removal-chattanooga" element={<DogPoopRemovalPage />} />
           <Route path="/pet-waste-removal-chattanooga" element={<PetWasteRemovalPage />} />
           <Route path="/dog-poop-scooping-chattanooga" element={<DogPoopScoopingPage />} />
@@ -140,37 +124,37 @@ function App() {
 
           <Route path="/pet-safe-checklist" element={<PetSafeChecklistLandingPage />} />
           <Route path="/dog-park-guide" element={<DogParkGuideLandingPage />} />
-          
+
           <Route path="/podcast" element={<PodcastPage />} />
 
           <Route path="/reddit-oauth-callback" element={<RedditOAuthCallbackPage />} />
           <Route path="/qb-oauth-callback" element={<QuickBooksOAuthCallbackPage />} />
-          
+
           <Route path="/service-areas" element={<ServiceAreasPage />} />
           <Route path="/service/:slug" element={<LocationTemplate />} />
 
           <Route path="/blog" element={<BlogListPage />} />
-                                      <Route path="/blog/professional-waste-removal-benefits" element={<BlogArticle1 />} />
-              <Route path="/blog/seasonal-pet-care-tips" element={<BlogArticle2 />} />
-              <Route path="/blog/health-benefits-yard-cleanup" element={<BlogArticle3 />} />
-              <Route path="/blog/customer-success-stories" element={<BlogArticle4 />} />
-              <Route path="/blog/diy-vs-professional" element={<BlogArticle5 />} />
-              <Route path="/blog/lawn-health-and-pet-waste" element={<BlogArticle6 />} />
-              <Route path="/blog/health-risks-of-pet-waste" element={<BlogArticle7 />} />
-              <Route path="/blog/pet-waste-management-guide" element={<BlogArticle8 />} />
-              <Route path="/blog/how-often-scoop-dog-poop-chattanooga" element={<HowOftenScoopDogPoopChattanooga />} />
-                            <Route path="/how-it-works" element={<HowItWorksPage />} />
-              <Route path="/blog/spring-pet-care-checklist" element={<SpringPetCareChecklist />} />
-              <Route path="/blog/is-dog-waste-bad-for-lawn" element={<IsDogWasteBadForLawn />} />
-              <Route path="/blog/best-pooper-scooper-services-chattanooga" element={<BestPooperScooperServicesChattanooga />} />
-              <Route path="/blog/is-dog-poop-hurting-your-chattanooga-yard" element={<IsDogPoopHurtingYourChattanoogaYard />} />
-              <Route path="/blog/chattanooga-pet-waste-removal-homeowners" element={<ChattanoogaHomeownersPage />} />
+          <Route path="/blog/professional-waste-removal-benefits" element={<BlogArticle1 />} />
+          <Route path="/blog/seasonal-pet-care-tips" element={<BlogArticle2 />} />
+          <Route path="/blog/health-benefits-yard-cleanup" element={<BlogArticle3 />} />
+          <Route path="/blog/customer-success-stories" element={<BlogArticle4 />} />
+          <Route path="/blog/diy-vs-professional" element={<BlogArticle5 />} />
+          <Route path="/blog/lawn-health-and-pet-waste" element={<BlogArticle6 />} />
+          <Route path="/blog/health-risks-of-pet-waste" element={<BlogArticle7 />} />
+          <Route path="/blog/pet-waste-management-guide" element={<BlogArticle8 />} />
+          <Route path="/blog/how-often-scoop-dog-poop-chattanooga" element={<HowOftenScoopDogPoopChattanooga />} />
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/blog/spring-pet-care-checklist" element={<SpringPetCareChecklist />} />
+          <Route path="/blog/is-dog-waste-bad-for-lawn" element={<IsDogWasteBadForLawn />} />
+          <Route path="/blog/best-pooper-scooper-services-chattanooga" element={<BestPooperScooperServicesChattanooga />} />
+          <Route path="/blog/is-dog-poop-hurting-your-chattanooga-yard" element={<IsDogPoopHurtingYourChattanoogaYard />} />
+          <Route path="/blog/chattanooga-pet-waste-removal-homeowners" element={<ChattanoogaHomeownersPage />} />
           <Route path="/blog/commercial-pet-waste-removal-chattanooga" element={<CommercialPetWastePage />} />
           <Route path="/blog/how-often-clean-yard" element={<HowOftenCleanYard />} />
           <Route path="/blog/podcast-blog" element={<PodcastBlogPost />} />
           <Route path="/blog/signal-mountain" element={<BlogSignalMountain />} />
           <Route path="/blog/soddy-daisy" element={<BlogSoddyDaisy />} />
-          
+
           <Route path="/blog/:slug" element={<BlogPostTemplate />} />
 
           <Route path="*" element={
@@ -184,7 +168,7 @@ function App() {
           } />
         </Routes>
       </Suspense>
-      
+
       <ScoopyHelperWidget />
       <Toaster />
     </Router>
