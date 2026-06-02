@@ -1,44 +1,97 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { CheckCircle2, Shield, Clock } from 'lucide-react';
+import { CheckCircle2, Shield, Clock, ChevronDown } from 'lucide-react';
 import SEOHead from '@/components/SEOHead.jsx';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import CTAButton from '@/components/CTAButton.jsx';
 import LocationSection from '@/components/LocationSection.jsx';
-import { generateLocalBusinessSchema, generateServiceSchema } from '@/utils/schemaGenerators.js';
+import { generateServiceSchema } from '@/utils/schemaGenerators.js';
+
+const faqs = [
+  {
+    question: "What is Scoopy Doo and what does the service include?",
+    answer: "Scoopy Doo LLC is Chattanooga's locally owned dog poop removal and pooper scooper service. Every visit includes a full grid-pattern yard sweep, double-bagged waste removal hauled off your property, gate closure, and a photo confirmation sent to you. No contracts â cancel or change anytime."
+  },
+  {
+    question: "How does Scoopy Doo pet waste removal work?",
+    answer: "It's simple: request a free quote online, we send you pricing based on yard size and number of dogs, and you pick a schedule. We show up on your day, text you when we're on the way, clean the entire yard, close your gate, and send a photo when done. Payment is handled online â no checks, no phone tag."
+  },
+  {
+    question: "Do you offer a scoopy poopy service near Chattanooga, TN?",
+    answer: "Yes â Scoopy Doo provides professional pooper scooper and scoopy poopy service throughout the Chattanooga metro including Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Lookout Mountain, Soddy-Daisy, and North Georgia communities like Ringgold, Rossville, and Fort Oglethorpe."
+  },
+  {
+    question: "How often should I schedule dog waste removal?",
+    answer: "Weekly service is our most popular option and works well for most one- or two-dog households. We also offer 2x weekly service for high-traffic yards and multiple dogs, bi-weekly for lower-use yards, and one-time cleanups if you need to start fresh before beginning a regular schedule."
+  },
+  {
+    question: "Is Scoopy Doo dog waste removal safe for kids and pets?",
+    answer: "Yes. We sanitize all scooping equipment between every yard to prevent cross-contamination. We never use harmful chemicals in your yard, and we haul all waste fully off the property. A clean yard is a safer yard â dog waste carries bacteria and parasites that are hazardous to children and other animals."
+  },
+  {
+    question: "How much does pooper scooper service cost in Chattanooga?",
+    answer: "Pricing is based on yard size and the number of dogs. Most Chattanooga homeowners pay between $15â$30 per weekly visit. The fastest way to get your exact price is to submit a free quote request â we respond the same day, usually within a few hours."
+  },
+  {
+    question: "Do you service HOAs and apartment communities?",
+    answer: "Yes. We service HOA common areas, dog-walking paths, and pet waste stations in addition to individual residential homes. We can invoice HOA boards directly and maintain visit records for compliance documentation."
+  }
+];
+
+const FAQItem = ({ question, answer }) => {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <div className="border border-border rounded-xl overflow-hidden">
+      <button
+        className="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-foreground hover:bg-muted/40 transition-colors"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+      >
+        <span>{question}</span>
+        <ChevronDown className={`w-5 h-5 text-muted-foreground flex-shrink-0 ml-4 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+      </button>
+      {open && (
+        <div className="px-6 pb-5 text-muted-foreground leading-relaxed border-t border-border/50 pt-4">
+          {answer}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const CoreServicePage = () => {
-  // Use correct argument structure mapping to the updated schemaGenerators.js
-  const localBusinessSchema = generateLocalBusinessSchema({
-    name: "Scoopy Doo LLC",
-    streetAddress: "100 Market Street",
-    addressLocality: "Chattanooga",
-    addressRegion: "TN",
-    postalCode: "37402",
-    telephone: "423-600-5040",
-    priceRange: "$$"
-  });
-  
   const serviceSchema = generateServiceSchema(
-    "Dog Poop Removal", 
-    "Professional weekly, bi-weekly, and one-time pet waste removal services.", 
-    "Chattanooga Metro", 
+    "Dog Poop Removal",
+    "Professional weekly, bi-weekly, and one-time pet waste removal services.",
+    "Chattanooga Metro",
     "$$"
   );
-  
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.answer
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      {/* Safely use pageKey to avoid undefined access on seoConfig */}
-      <SEOHead 
-        pageKey="services"
-        schema={[localBusinessSchema, serviceSchema]} 
+      <SEOHead
+        path="/"
+        schema={[serviceSchema, faqSchema]}
       />
       <Helmet>
         <script src="https://elfsightcdn.com/platform.js" async></script>
       </Helmet>
-      
+
       <Header />
 
       <main className="flex-grow">
@@ -47,12 +100,13 @@ const CoreServicePage = () => {
           <div className="absolute inset-0 bg-[url('https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/a31a7ef9578ab021774966b3677f99c1.jpg')] bg-cover bg-center opacity-5 mix-blend-multiply"></div>
           <div className="container-shell relative z-10 text-center max-w-4xl mx-auto">
             <h1 className="mb-8 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-balance">Professional Dog Poop Removal & Pooper Scooper Service</h1>
-            
+
             <div className="mb-10 mx-auto max-w-3xl">
-              <img 
-                src="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/img_8567-OZjoO.jpeg" 
-                alt="dog waste removal service in action" 
-                className="w-full h-auto rounded-2xl shadow-2xl border border-border/50 object-cover" 
+              <img
+                src="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/img_8567-OZjoO.jpeg"
+                alt="Dog waste removal service in action in Chattanooga, TN"
+                title="Scoopy Doo Professional Dog Poop Removal â Chattanooga, TN"
+                className="w-full h-auto rounded-2xl shadow-2xl border border-border/50 object-cover"
                 loading="eager"
                 fetchPriority="high"
               />
@@ -75,33 +129,34 @@ const CoreServicePage = () => {
               <div className="order-2 md:order-1">
                 <h2 className="mb-6 text-3xl font-bold">Pet Waste Removal Benefits</h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Leaving pet waste to accumulate isn't just an eyesore—it's a health hazard. As a dedicated poop pick up company, we know that dog waste carries harmful bacteria and parasites that can infect other pets and children. 
+                  Leaving pet waste to accumulate isn't just an eyesoreâit's a health hazard. As a dedicated poop pick up company, we know that dog waste carries harmful bacteria and parasites that can infect other pets and children.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center text-foreground font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 flex-shrink-0" /> 
+                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
                     <h3 className="text-base font-medium inline m-0">Consistent dog poop removal prevents lawn spots</h3>
                   </li>
                   <li className="flex items-center text-foreground font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 flex-shrink-0" /> 
+                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
                     <h3 className="text-base font-medium inline m-0">Eliminates foul yard odors</h3>
                   </li>
                   <li className="flex items-center text-foreground font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 flex-shrink-0" /> 
+                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
                     <h3 className="text-base font-medium inline m-0">Proper pet waste management reduces disease risk</h3>
                   </li>
                   <li className="flex items-center text-foreground font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 flex-shrink-0" /> 
+                    <CheckCircle2 className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
                     <h3 className="text-base font-medium inline m-0">Eco-friendly waste disposal</h3>
                   </li>
                 </ul>
               </div>
               <div className="order-1 md:order-2">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-border bg-muted">
-                  <img 
-                    src="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/img_9013-HYtyH.jpeg" 
-                    alt="professional poop scooping equipment" 
-                    className="w-full h-full object-cover" 
+                  <img
+                    src="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/img_9013-HYtyH.jpeg"
+                    alt="Professional pooper scooper equipment used by Scoopy Doo in Chattanooga"
+                    title="Professional Pet Waste Removal Equipment â Scoopy Doo LLC"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
                   />
@@ -111,7 +166,7 @@ const CoreServicePage = () => {
           </div>
         </section>
 
-        {/* Why Choose Us (Bento-style layout) */}
+        {/* Why Choose Us */}
         <section className="section-spacing bg-card border-y border-border">
           <div className="container-shell">
             <div className="text-center max-w-2xl mx-auto mb-16">
@@ -138,6 +193,23 @@ const CoreServicePage = () => {
           <div className="container-shell max-w-4xl">
             <h2 className="text-center mb-12 text-3xl font-bold">What Our Customers Say</h2>
             <div className="elfsight-app-8240dd2e-e144-493a-add7-52c8fd1b05f7" data-elfsight-app-lazy></div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-24 bg-muted/30 border-t border-border">
+          <div className="container-shell max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Everything you need to know about Scoopy Doo's dog poop removal and pooper scooper service in Chattanooga, TN.
+              </p>
+            </div>
+            <div className="space-y-3">
+              {faqs.map((faq, i) => (
+                <FAQItem key={i} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
           </div>
         </section>
 
