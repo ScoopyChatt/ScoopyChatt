@@ -59,6 +59,35 @@ const SEOHead = ({
     }
   }
 
+  
+// Auto-inject BlogPosting schema for /blog/ pages not covered by articleMetadata
+const isBlogPost = finalCanonical.includes('/blog/') && finalCanonical !== `${CANONICAL_BASE_URL}/blog`;
+if (isBlogPost) {
+  const hasArticle = schemasToRender.some(s => s['@type'] === 'BlogPosting' || s['@type'] === 'Article');
+  if (!hasArticle) {
+    schemasToRender.push({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": finalTitle.replace(' | Scoopy Doo', '').replace(' | Scoopy Doo LLC', ''),
+      "description": finalDescription,
+      "author": {
+        "@type": "Organization",
+        "name": "Scoopy Doo LLC",
+        "url": "https://www.scoopychatt.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Scoopy Doo LLC",
+        "url": "https://www.scoopychatt.com",
+        "logo": { "@type": "ImageObject", "url": "https://www.scoopychatt.com/scoopy-logo.png" }
+      },
+      "image": finalImage,
+      "url": finalCanonical,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": finalCanonical }
+    });
+  }
+}
+
   if (faqData) {
     const hasFaq = schemasToRender.some(s => s['@type'] === 'FAQPage');
     if (!hasFaq) {
