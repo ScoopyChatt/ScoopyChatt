@@ -15,7 +15,7 @@ export const seoMetadata = {
   },
   "/near-me": {
     title: "Pooper Scooper Service Near Me in Chattanooga, TN",
-    description: "Looking for a pooper scooper service near you in Chattanooga? Scoopy Doo offers reliable local dog waste removal. Check coverage and get a quote.",
+    description: "Looking for a pooper scooper service near you in Chattanooga, TN? Scoopy Doo offers reliable local dog waste removal. Check coverage and get a free quote.",
     canonical: `${CANONICAL_BASE_URL}/near-me`,
     ogType: "website"
   },
@@ -27,7 +27,7 @@ export const seoMetadata = {
   },
   "/dog-poop-removal-chattanooga": {
     title: "Dog Poop Removal in Chattanooga, TN | Scoopy Doo LLC",
-    description: "Professional dog poop removal in Chattanooga, TN. Dependable weekly service, fully insured, satisfaction guaranteed. Get your free quote today.",
+    description: "Professional dog poop removal service in Chattanooga, TN. Dependable weekly visits, fully insured, satisfaction guaranteed. Get your free quote today.",
     canonical: `${CANONICAL_BASE_URL}/dog-poop-removal-chattanooga`,
     ogType: "website"
   },
@@ -57,7 +57,7 @@ export const seoMetadata = {
   },
   "/about": {
     title: "About Scoopy Doo | Chattanooga Pet Waste Removal",
-    description: "Meet Scoopy Doo LLC, Chattanooga's locally owned pet waste removal company. Learn our story, values, and commitment to clean, safe yards.",
+    description: "Meet Scoopy Doo LLC, Chattanooga's locally owned pet waste removal company. Learn our story, values, and commitment to clean, safe yards. Get a quote!",
     canonical: `${CANONICAL_BASE_URL}/about`,
     ogType: "website"
   },
