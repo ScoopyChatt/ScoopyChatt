@@ -1,7 +1,60 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
+const { pathToFileURL } = require('url');
 
+// FAQ data for the keyword landing pages. Kept in sync with the visible
+// FAQAccordion content on each page so the FAQPage schema matches what users see.
+const landingFaqs = {
+  '/dog-poop-removal-chattanooga': [
+    { question: "How much does dog poop removal cost in Chattanooga?", answer: "Weekly dog poop removal starts at $20 per visit for your first dog, with twice-weekly service from $16 per visit and bi-weekly from $28. One-time cleanups start at $75. Each additional dog is a small add-on. You will see an exact price before you commit." },
+    { question: "How often should I schedule dog poop removal?", answer: "Most one and two dog homes do best with weekly visits, which keeps bacteria and odor in check and protects your lawn. Busy or multi-dog yards often prefer twice-weekly service, while smaller dogs or larger lots can work well bi-weekly." },
+    { question: "Do I need to be home for service?", answer: "No. As long as we can safely access your yard, you do not need to be there. We send an on-the-way text before every visit and a photo of your secured gate when we finish." },
+    { question: "What if my yard has not been cleaned in a while?", answer: "No problem. We start with a one-time initial cleanup to get your yard back to a clean baseline, then keep it that way on your regular schedule." },
+    { question: "Is there a contract?", answer: "Never. There are no contracts and you can pause or cancel anytime. You stay because your yard is always clean, not because you are locked in." }
+  ],
+  '/pet-waste-removal-chattanooga': [
+    { question: "Do you offer pet waste removal for HOAs and apartment communities?", answer: "Yes. We provide common-area pet waste removal for HOAs, condos, and apartment communities, and we can install and restock pet waste stations. Request a custom community quote and we will tailor a plan to your property." },
+    { question: "How do you price homes with multiple dogs?", answer: "Our base rates cover your first dog, with a small add-on per additional pet to account for the extra waste and time. You will always see the full price before you commit." },
+    { question: "Is pet waste really a health risk?", answer: "Yes. Pet waste can carry roundworms, hookworms, giardia, and E. coli that affect both pets and people, and it pollutes local waterways. Regular removal is the simplest way to reduce that risk." },
+    { question: "How do you dispose of the waste?", answer: "We bag the waste and haul it away for responsible, eco-friendly disposal. Nothing is left behind in your cans unless you prefer it that way." },
+    { question: "Do you sanitize between properties?", answer: "Yes. We sanitize our equipment between yards so we never carry bacteria from one property to the next, keeping every visit safe and hygienic." }
+  ],
+  '/dog-poop-scooping-chattanooga': [
+    { question: "What does a dog poop scooping visit include?", answer: "A full grid-walk of your yard, scooping and bagging all waste, hauling it away for eco-friendly disposal, an on-the-way text before we arrive, and a photo of your secured gate when we finish." },
+    { question: "Do you scoop in the rain?", answer: "Yes. We service on your scheduled day, rain or shine, so your yard stays clean no matter the weather." },
+    { question: "Will you close my gate?", answer: "Always. We are careful with gates and pets on every visit, and we send you a photo of the secured gate when the job is done." },
+    { question: "What if I have a large or wooded yard?", answer: "We grid-walk your yard regardless of size and quote based on the space and number of dogs, so you get a fair, accurate price." },
+    { question: "Can I change my schedule later?", answer: "Anytime. There are no contracts and no penalties. You can adjust, pause, or cancel your scooping schedule whenever you need to." }
+  ],
+  '/yard-cleanup-chattanooga': [
+    { question: "How much does a one-time yard cleanup cost in Chattanooga?", answer: "One-time dog waste yard cleanups start at $75 and are quoted based on your yard size and how much waste has accumulated. You will get an exact price before we begin." },
+    { question: "My yard is really bad. Is that a problem?", answer: "Not at all. Heavily overdue yards are exactly what one-time cleanups are for. We grid-walk the whole space and get it back to a clean baseline in a single visit." },
+    { question: "Do I have to sign up for recurring service?", answer: "No. The cleanup is fully standalone. If you would like to keep the results, ongoing weekly or bi-weekly service is one click away, with no contracts." },
+    { question: "How long does a cleanup take?", answer: "It depends on yard size and buildup, but most one-time cleanups are completed in a single same-day visit." },
+    { question: "Where does the waste go?", answer: "We bag everything and haul it away for responsible, eco-friendly disposal. Nothing is left behind." }
+  ]
+};
+
+function buildFaqSchema(faqs) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  };
+}
+
+function faqScriptTag(faqs) {
+  // Escape "<" to avoid any chance of breaking out of the <script> element.
+  const json = JSON.stringify(buildFaqSchema(faqs)).replace(/</g, '\\u003c');
+  return '<script type="application/ld+json">' + json + '</script>';
+}
+
+(async () => {
 try {
 const BASE = 'https://www.scoopychatt.com';
 const distDir = path.join(process.cwd(), 'dist', 'apps', 'web');
@@ -71,6 +124,25 @@ locationPages.forEach(loc => {
   ];
 });
 
+// Build the map of routes that should receive FAQPage JSON-LD.
+const faqByRoute = Object.assign({}, landingFaqs);
+
+// Pull the canonical /faq questions from the source data so the schema stays
+// in sync with the visible FAQ content. Non-fatal if it cannot be loaded.
+try {
+  const faqDataUrl = pathToFileURL(path.join(__dirname, '..', 'src', 'data', 'faqData.js')).href;
+  const faqMod = await import(faqDataUrl);
+  if (faqMod && typeof faqMod.getFaqData === 'function') {
+    const sections = faqMod.getFaqData('Chattanooga');
+    const allFaqs = sections.flatMap(s => s.faqs);
+    if (allFaqs.length) {
+      faqByRoute['/faq'] = allFaqs;
+    }
+  }
+} catch (e) {
+  console.error('SEO inject: could not load faqData for /faq schema:', e.message);
+}
+
 function injectMeta(html, title, desc, canonical) {
   return html
     .replace(/<title>[^<]*<\/title>/, '<title>' + title + '<\/title>')
@@ -86,7 +158,10 @@ function injectMeta(html, title, desc, canonical) {
 let count = 0;
 for (const [route, [title, desc]] of Object.entries(routes)) {
   const canonical = BASE + route;
-  const html = injectMeta(template, title, desc, canonical);
+  let html = injectMeta(template, title, desc, canonical);
+  if (faqByRoute[route]) {
+    html = html.replace('</head>', '    ' + faqScriptTag(faqByRoute[route]) + '\n  </head>');
+  }
   const dirPath = path.join(distDir, route);
   fs.mkdirSync(dirPath, { recursive: true });
   fs.writeFileSync(path.join(dirPath, 'index.html'), html);
@@ -97,3 +172,4 @@ console.log('SEO inject complete: ' + count + ' pages.');
   console.error('SEO inject warning:', e.message);
   process.exit(0);
 }
+})();
