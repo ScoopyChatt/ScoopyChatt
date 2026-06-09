@@ -2,7 +2,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Shield, Database, Lock, Eye, FileText, Bell, Phone, MapPin } from 'lucide-react';
+import { Shield, Database, Lock, Eye, FileText, Bell, Phone, MapPin, MessageSquare } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import FloatingCTA from '@/components/FloatingCTA.jsx';
@@ -10,7 +10,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
 
 const PrivacyPolicyPage = () => {
-  const lastUpdated = "April 29, 2026";
+  const lastUpdated = "June 7, 2026";
   const canonicalUrl = getCanonicalUrl('/privacy-policy');
   const pageTitle = "Privacy Policy | Scoopy Doo Pet Waste Removal";
   const pageDesc = "Read our privacy policy to understand how Scoopy Doo protects and uses your information while providing pet waste removal services.";
@@ -42,9 +42,38 @@ const PrivacyPolicyPage = () => {
           <ul className="list-disc pl-5 space-y-2">
             <li><strong className="text-foreground">Deliver Services:</strong> Route our technicians efficiently to your property and ensure they have the necessary access instructions.</li>
             <li><strong className="text-foreground">Communication:</strong> Send you service reminders, "on-the-way" notifications, completion confirmations, and billing invoices.</li>
-            <li><strong className="text-foreground">Marketing & Promotions:</strong> Occasionally send you special offers (like our Spring Special), referral discounts, or newsletters. <em className="text-foreground/80">You may opt out of marketing communications at any time by clicking the "unsubscribe" link in our emails or contacting us directly.</em></li>
+            <li><strong className="text-foreground">Marketing &amp; Promotions:</strong> Occasionally send you special offers, referral discounts, or newsletters. <em className="text-foreground/80">You may opt out of marketing communications at any time by replying STOP to any text message or clicking the "unsubscribe" link in our emails.</em></li>
             <li><strong className="text-foreground">Service Improvement:</strong> Analyze customer feedback and service patterns to enhance our offerings and training procedures.</li>
           </ul>
+        </div>
+      )
+    },
+    {
+      id: "sms-messaging",
+      icon: MessageSquare,
+      title: "SMS & Text Messaging (A2P)",
+      content: (
+        <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <p>Scoopy Doo LLC sends automated text messages (SMS) to customers who provide their mobile phone number. By providing your phone number and requesting or scheduling service, you consent to receive text messages from us at the number provided.</p>
+
+          <p><strong className="text-foreground">Types of messages we send:</strong></p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li><strong className="text-foreground">Transactional / Service Messages:</strong> Appointment confirmations, "on-the-way" arrival notifications, post-service completion confirmations, and gate-closed photo alerts. These are sent in connection with your active service.</li>
+            <li><strong className="text-foreground">Account &amp; Billing Notifications:</strong> Invoice reminders, payment receipts, and account updates.</li>
+            <li><strong className="text-foreground">Promotional Messages:</strong> Seasonal specials, referral offers, and service announcements. These are sent only to customers who have not opted out.</li>
+          </ul>
+
+          <p><strong className="text-foreground">Message frequency:</strong> Message frequency varies. Transactional messages are sent around each scheduled service visit. Promotional messages are sent no more than 4 times per month.</p>
+
+          <p><strong className="text-foreground">Message and data rates may apply.</strong> Standard SMS and data rates charged by your mobile carrier may apply to messages you send and receive from us.</p>
+
+          <p><strong className="text-foreground">How to opt out:</strong> You may opt out of receiving text messages from us at any time by replying <strong>STOP</strong> to any message we send. After opting out, you will receive one final confirmation text, and then no further messages. To opt back in, reply <strong>START</strong> or contact us directly.</p>
+
+          <p><strong className="text-foreground">Consent is not a condition of purchase.</strong> You are not required to consent to receiving promotional text messages as a condition of purchasing any services from Scoopy Doo LLC.</p>
+
+          <p><strong className="text-foreground">No third-party sharing of mobile information:</strong> We do not sell, rent, or share your mobile phone number or SMS opt-in data with third parties or affiliates for their own marketing purposes. Mobile information collected through our SMS program will not be shared with any third party for marketing or promotional purposes.</p>
+
+          <p>For help with our text messaging program, reply <strong>HELP</strong> to any message or contact us at <a href="tel:423-600-5040" className="text-primary hover:underline">(423) 600-5040</a> or <a href="mailto:info@scoopychatt.com" className="text-primary hover:underline">info@scoopychatt.com</a>.</p>
         </div>
       )
     },
@@ -72,7 +101,7 @@ const PrivacyPolicyPage = () => {
             <li>Routing and dispatch software providers to schedule our technicians.</li>
             <li>Email and SMS delivery services for service notifications.</li>
           </ul>
-          <p>These providers are contractually obligated to keep your information confidential and use it solely for the specific services they perform for Scoopy Doo.</p>
+          <p>These providers are contractually obligated to keep your information confidential and use it solely for the specific services they perform for Scoopy Doo. Mobile opt-in data and consent are never shared with third parties for marketing purposes.</p>
         </div>
       )
     },
@@ -121,9 +150,9 @@ const PrivacyPolicyPage = () => {
       <main className="flex-grow pb-24 md:pb-0">
         <section className="pt-20 pb-16 bg-gradient-to-br from-primary/5 via-background to-accent/5 border-b border-border/50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6">
@@ -144,7 +173,7 @@ const PrivacyPolicyPage = () => {
 
         <section className="py-16 md:py-24">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -158,7 +187,7 @@ const PrivacyPolicyPage = () => {
 
             <div className="space-y-12">
               {sections.map((section, index) => (
-                <motion.div 
+                <motion.div
                   key={section.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +209,7 @@ const PrivacyPolicyPage = () => {
               ))}
             </div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -191,14 +220,14 @@ const PrivacyPolicyPage = () => {
               <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
                 If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please don't hesitate to reach out to our team.
               </p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-lg mx-auto">
                 <a href="tel:423-600-5040" className="flex flex-col items-center p-6 bg-muted/50 rounded-xl hover:bg-primary/5 hover:text-primary transition-colors group">
                   <Phone className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
                   <span className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">423-600-5040</span>
                   <span className="text-sm text-muted-foreground mt-1">Call or Text</span>
                 </a>
-                
+
                 <div className="flex flex-col items-center p-6 bg-muted/50 rounded-xl">
                   <MapPin className="w-8 h-8 text-primary mb-3" />
                   <span className="font-bold text-lg text-foreground">Chattanooga, TN</span>
