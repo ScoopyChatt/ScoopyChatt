@@ -159,8 +159,8 @@ const PrivacyPolicyPage = () => {
                 <Shield className="w-8 h-8 text-primary" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance tracking-tight">
-                Privacy Policy
-              </h1>
+              Privacy Policy — How Scoopy Doo Protects Your Personal Information
+            </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 At Scoopy Doo, we respect your privacy as much as we respect your yard. This policy outlines how we handle your personal information with care and security.
               </p>
