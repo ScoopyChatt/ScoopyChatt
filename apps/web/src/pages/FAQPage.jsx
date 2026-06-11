@@ -55,8 +55,8 @@ transition={{ duration: 0.5 }}
 className="max-w-3xl mx-auto text-center"
 >
 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight mb-6 text-balance" style={{ letterSpacing: '-0.02em' }}>
-Frequently Asked Questions
-</h1>
+                Frequently Asked Questions About Pet Waste Removal in Chattanooga, TN
+              </h1>
 <p className="text-xl text-muted-foreground leading-relaxed">
 Everything you need to know about our professional pet waste removal services.
 </p>
