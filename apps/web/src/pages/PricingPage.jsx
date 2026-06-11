@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SEOHead from '@/components/SEOHead.jsx';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
@@ -92,6 +93,22 @@ const PricingPage = () => {
         </section>
       </main>
 
+      
+      <nav aria-label="Scoopy Doo site navigation" className="py-8 border-t border-border bg-muted/20">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Explore Scoopy Doo</p>
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 list-none m-0 p-0">
+            <li><Link to="/" className="text-primary hover:underline font-medium text-sm">Home</Link></li>
+            <li><Link to="/services" className="text-primary hover:underline font-medium text-sm">Services</Link></li>
+            <li><Link to="/pricing" className="text-primary hover:underline font-medium text-sm">Pricing</Link></li>
+            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get a Quote</Link></li>
+            <li><Link to="/faq" className="text-primary hover:underline font-medium text-sm">FAQ</Link></li>
+            <li><Link to="/reviews" className="text-primary hover:underline font-medium text-sm">Reviews</Link></li>
+            <li><Link to="/service-areas" className="text-primary hover:underline font-medium text-sm">Service Areas</Link></li>
+            <li><Link to="/blog" className="text-primary hover:underline font-medium text-sm">Blog</Link></li>
+          </ul>
+        </div>
+      </nav>
       <Footer />
     </div>
   );
