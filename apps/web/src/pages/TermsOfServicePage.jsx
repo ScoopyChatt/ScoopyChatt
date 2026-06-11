@@ -164,7 +164,7 @@ const TermsOfServicePage = () => {
 
           {/* Message and Data Rates */}
           <p className="mb-4 text-muted-foreground leading-relaxed">
-            <strong className="text-foreground">Message and Data Rates:</strong> Message and data rates may apply for messages sent to you from us and to us from you. Message frequency varies based on your service schedule, typically 1–3 messages per service visit plus occasional promotional messages no more than 4 times per month. For questions about your text plan or data plan, contact your wireless provider.
+            <strong className="text-foreground">Message and Data Rates:</strong> Message and data rates may apply for messages sent to you from us and to us from you. Message frequency varies based on your service schedule, typically 1â3 messages per service visit plus occasional promotional messages no more than 4 times per month. For questions about your text plan or data plan, contact your wireless provider.
           </p>
 
           {/* Privacy Policy Link */}
@@ -248,7 +248,8 @@ const TermsOfServicePage = () => {
                     <div className="bg-primary/10 p-3 rounded-xl">
                       {section.icon}
                     </div>
-                    <h2 className="text-2xl font-bold text-foreground">
+                    <h1 className="text-4xl font-extrabold text-foreground mb-4">Terms of Service — Scoopy Doo Pet Waste Removal in Chattanooga, TN</h1>
+              <h2 className="text-2xl font-bold text-foreground">
                       {section.title}
                     </h2>
                   </div>
