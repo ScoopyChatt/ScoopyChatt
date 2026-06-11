@@ -40,7 +40,7 @@ const QuoteRequestPage = () => {
                 className="text-center mb-12"
               >
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-balance" style={{ letterSpacing: '-0.02em' }}>
-                  Get a Quote
+                  Get a Free Pet Waste Removal Quote in Chattanooga, TN
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-[65ch] mx-auto">
                   Fill out the form below and we'll provide a customized quote for your property within 24 hours. No obligation, no pressure.
