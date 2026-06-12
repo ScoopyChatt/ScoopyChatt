@@ -1,182 +1,100 @@
 #!/usr/bin/env node
+import fs from "fs";
+import path from "path";
 
-import fs from 'fs';
-import path from 'path';
+// Static manifest approach: no JSX parsing, no encoding issues.
+// Update this list when new pages are added to inject-seo.cjs.
+// Excluded: OAuth callback routes and utility routes.
 
-const CLEAN_CONTENT_REGEX = {
-	comments: /\/\*[\s\S]*?\*\/|\/\/.*$/gm,
-	templateLiterals: /`[\s\S]*?`/g,
-	strings: /'[^']*'|"[^"]*"/g,
-	jsxExpressions: /\{.*?\}/g,
-	htmlEntities: {
-		quot: /&quot;/g,
-		amp: /&amp;/g,
-		lt: /&lt;/g,
-		gt: /&gt;/g,
-		apos: /&apos;/g
-	}
-};
+const SUMMARY =
+  "Scoopy Doo LLC is a locally owned pet waste removal company serving Chattanooga, TN " +
+  "and surrounding areas including Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, " +
+  "Soddy-Daisy, Cleveland, East Ridge, Lookout Mountain (TN), and Ringgold, Rossville, " +
+  "Flintstone, and Fort Oglethorpe (GA). Services include weekly, bi-weekly, one-time, " +
+  "commercial, and HOA dog poop removal and yard cleanup. Every visit includes on-the-way " +
+  "text notifications and a gate photo confirmation. No contracts required -- get a free " +
+  "online quote at scoopychatt.com/quote.";
 
-const EXTRACTION_REGEX = {
-	route: /<Route\s+[^>]*>/g,
-	path: /path=["']([^"']+)["']/,
-	element: /element=\{<(\w+)[^}]*\/?\s*>\}/,
-	helmet: /<Helmet[^>]*?>([\s\S]*?)<\/Helmet>/i,
-	helmetTest: /<Helmet[\s\S]*?<\/Helmet>/i,
-	title: /<title[^>]*?>\s*(.*?)\s*<\/title>/i,
-	description: /<meta\s+name=["']description["']\s+content=["'](.*?)["']/i
-};
+// [url, title, description]
+const PAGES = [
+  ["/", "Dog Poop Removal & Pooper Scooper Service | Chattanooga TN", "Professional dog poop removal and pooper scooper service in Chattanooga, TN. Reliable weekly pet waste cleanup with online quotes, on-the-way texts, and gate photo confirmation."],
+  ["/services", "Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo", "Weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga, TN. Professional dog poop scooping with online quotes and gate photo confirmation."],
+  ["/service-areas", "Service Areas | Pet Waste Removal Around Chattanooga, TN", "Scoopy Doo serves Chattanooga, Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, Cleveland, East Ridge, Lookout Mountain (TN), and Ringgold, Rossville, Flintstone, Fort Oglethorpe (GA)."],
+  ["/about", "About Scoopy Doo | Chattanooga Pet Waste Removal", "Meet Scoopy Doo LLC, Chattanooga's locally owned pet waste removal company. Learn about our mission, service standards, and why hundreds of families trust us weekly."],
+  ["/faq", "Pet Waste Removal FAQs | Scoopy Doo Chattanooga", "Answers to common questions about dog poop removal in Chattanooga: pricing, scheduling, service area, what to expect on each visit, and more."],
+  ["/quote", "Get a Free Pet Waste Removal Quote | Chattanooga, TN", "Get a fast, free quote for dog poop removal in Chattanooga, TN. No contracts required."],
+  ["/one-time-cleanup", "One-Time Dog Poop Cleanup in Chattanooga, TN | Scoopy Doo", "Get a one-time dog poop cleanup in Chattanooga, TN. Perfect for spring cleaning, first-time service, or move-out yard prep."],
+  ["/how-it-works", "How It Works | Scoopy Doo Pet Waste Removal Chattanooga", "Easy online quotes, secure online payment, on-the-way texts, and gate photo proof after every visit. Working with Scoopy Doo is simple."],
+  ["/near-me", "Pooper Scooper Service Near Me in Chattanooga, TN", "Looking for a pooper scooper service near you in Chattanooga? Scoopy Doo offers reliable local dog waste removal."],
+  ["/blog", "Pet Waste and Dog Care Blog | Scoopy Doo Chattanooga", "Tips on pet waste removal, yard health, and dog care for Chattanooga homeowners."],
+  ["/dog-poop-removal-chattanooga", "Dog Poop Removal in Chattanooga, TN | Scoopy Doo LLC", "Professional dog poop removal in Chattanooga, TN. Dependable weekly service, fully insured."],
+  ["/pet-waste-removal-chattanooga", "Pet Waste Removal in Chattanooga, TN | Scoopy Doo", "Expert pet waste removal in Chattanooga, TN for homes, HOAs and businesses. Request a free quote."],
+  ["/dog-poop-scooping-chattanooga", "Dog Poop Scooping Service in Chattanooga, TN | Scoopy Doo", "Reliable dog poop scooping in Chattanooga, TN. Weekly and bi-weekly pooper scooper service."],
+  ["/yard-cleanup-chattanooga", "Yard Cleanup for Pet Owners in Chattanooga, TN | Scoopy Doo", "Complete yard cleanup for pet owners in Chattanooga, TN. Book a one-time or recurring cleanup."],
+  ["/privacy-policy", "Privacy Policy | Scoopy Doo LLC", "Privacy policy for Scoopy Doo LLC, the pet waste removal company serving Chattanooga, TN."],
+  ["/terms-of-service", "Terms of Service | Scoopy Doo LLC", "Terms of service for Scoopy Doo LLC pet waste removal in Chattanooga, TN."],
+  ["/blog/professional-waste-removal-benefits", "Benefits of Professional Pet Waste Removal | Scoopy Doo Chattanooga", "Why professional dog waste removal is safer and more thorough than DIY. Scoopy Doo serves Chattanooga and surrounding areas weekly."],
+  ["/blog/seasonal-pet-care-tips", "Seasonal Pet Care Tips for Chattanooga Dog Owners | Scoopy Doo", "Keep your yard clean and safe year-round with seasonal pet waste tips from Scoopy Doo LLC in Chattanooga, TN."],
+  ["/blog/health-benefits-yard-cleanup", "Health Benefits of Regular Yard Cleanup for Pet Owners | Scoopy Doo", "Regular dog waste removal protects your family from bacteria and parasites. Learn why weekly cleanup matters for Chattanooga homeowners."],
+  ["/blog/customer-success-stories", "Customer Success Stories | Scoopy Doo Pet Waste Removal Chattanooga", "Real stories from Chattanooga homeowners and HOAs who rely on Scoopy Doo for weekly pet waste removal."],
+  ["/blog/diy-vs-professional", "DIY vs Professional Dog Waste Removal | Scoopy Doo Chattanooga", "Compare DIY pet waste cleanup to professional pooper scooper service in Chattanooga, TN. See which option saves time and money."],
+  ["/blog/lawn-health-and-pet-waste", "How Pet Waste Affects Your Lawn Health | Scoopy Doo Chattanooga", "Dog waste kills grass and harms soil. Learn how regular professional cleanup protects your Chattanooga lawn from long-term damage."],
+  ["/blog/health-risks-of-pet-waste", "Health Risks of Unmanaged Pet Waste | Scoopy Doo Chattanooga", "Dog waste carries bacteria, hookworms, roundworms, and giardia. Learn the health risks and how Scoopy Doo protects Chattanooga families."],
+  ["/blog/pet-waste-management-guide", "The Complete Pet Waste Management Guide for Dog Owners | Scoopy Doo", "Everything Chattanooga dog owners need about pet waste management -- frequency, disposal, health risks, and professional service options."],
+  ["/blog/how-often-scoop-dog-poop-chattanooga", "How Often Should You Scoop Dog Poop in Chattanooga? | Scoopy Doo", "Weekly scooping is the gold standard. Learn why cleanup frequency matters for lawn health and family safety in Chattanooga, TN."],
+  ["/blog/spring-pet-care-checklist", "Spring Pet Care Checklist for Chattanooga Dog Owners | Scoopy Doo", "Spring in Chattanooga means wet yards hiding months of pet waste. Use this checklist to get your yard cleaned up and ready."],
+  ["/blog/is-dog-waste-bad-for-lawn", "Is Dog Waste Bad for Your Lawn? | Scoopy Doo Chattanooga", "Yes -- dog waste kills grass and damages soil. Learn what it does to your Chattanooga yard and how professional cleanup helps."],
+  ["/blog/best-pooper-scooper-services-chattanooga", "Best Pooper Scooper Services in Chattanooga, TN | Scoopy Doo", "Looking for the best dog poop removal in Chattanooga? Online quotes, on-the-way texts, gate photo confirmation. No contracts."],
+  ["/blog/is-dog-poop-hurting-your-chattanooga-yard", "Is Dog Poop Hurting Your Chattanooga Yard? | Scoopy Doo", "Dog waste damages grass and soil over time. Find out if your Chattanooga yard is being harmed and how Scoopy Doo can help."],
+  ["/blog/chattanooga-pet-waste-removal-homeowners", "Pet Waste Removal Guide for Chattanooga Homeowners | Scoopy Doo", "A complete guide for Chattanooga homeowners on pet waste management -- health risks, lawn damage, waterway protection, and professional service."],
+  ["/blog/commercial-pet-waste-removal-chattanooga", "Commercial Pet Waste Removal in Chattanooga, TN | Scoopy Doo", "Professional pet waste removal for apartments, HOAs, and businesses in Chattanooga. Flexible scheduling, no contracts."],
+  ["/blog/how-often-clean-yard", "How Often Should You Clean Your Yard of Dog Waste? | Scoopy Doo", "Weekly is the gold standard. Learn the right cleanup frequency based on your dog count, yard size, and Chattanooga season."],
+  ["/blog/signal-mountain", "Pet Waste Removal Tips for Signal Mountain, TN | Scoopy Doo Blog", "Scoopy Doo serves Signal Mountain with thorough yard cleanup. We handle larger lots and wooded terrain every week."],
+  ["/blog/soddy-daisy", "Pet Waste Removal in Soddy-Daisy, TN | Scoopy Doo Blog", "Scoopy Doo serves Soddy-Daisy and Chickamauga Lake area homeowners. Waterfront cleanup protects the lake and your family."],
+];
 
-function cleanContent(content) {
-	return content
-		.replace(CLEAN_CONTENT_REGEX.comments, '')
-		.replace(CLEAN_CONTENT_REGEX.templateLiterals, '""')
-		.replace(CLEAN_CONTENT_REGEX.strings, '""');
-}
+// Location/service-area pages
+const GA_LOCS = new Set(["ringgold", "rossville", "flintstone", "fort-oglethorpe"]);
+const LOC_SLUGS = [
+  "chattanooga", "hixson", "red-bank", "signal-mountain", "ooltewah", "east-brainerd",
+  "soddy-daisy", "cleveland", "apison", "collegedale", "highland-park", "downtown",
+  "east-ridge", "lookout-mountain",
+  "ringgold", "rossville", "flintstone", "fort-oglethorpe"
+];
 
-function cleanText(text) {
-	if (!text) return text;
-
-	return text
-		.replace(CLEAN_CONTENT_REGEX.jsxExpressions, '')
-		.replace(CLEAN_CONTENT_REGEX.htmlEntities.quot, '"')
-		.replace(CLEAN_CONTENT_REGEX.htmlEntities.amp, '&')
-		.replace(CLEAN_CONTENT_REGEX.htmlEntities.lt, '<')
-		.replace(CLEAN_CONTENT_REGEX.htmlEntities.gt, '>')
-		.replace(CLEAN_CONTENT_REGEX.htmlEntities.apos, "'")
-		.trim();
-}
-
-function extractRoutes(appJsxPath) {
-	if (!fs.existsSync(appJsxPath)) return new Map();
-
-	try {
-		const content = fs.readFileSync(appJsxPath, 'utf8');
-		const routes = new Map();
-		const routeMatches = [...content.matchAll(EXTRACTION_REGEX.route)];
-
-		for (const match of routeMatches) {
-			const routeTag = match[0];
-			const pathMatch = routeTag.match(EXTRACTION_REGEX.path);
-			const elementMatch = routeTag.match(EXTRACTION_REGEX.element);
-			const isIndex = routeTag.includes('index');
-
-			if (elementMatch) {
-				const componentName = elementMatch[1];
-				let routePath;
-
-				if (isIndex) {
-					routePath = '/';
-				} else if (pathMatch) {
-					routePath = pathMatch[1].startsWith('/') ? pathMatch[1] : `/${pathMatch[1]}`;
-				}
-
-				routes.set(componentName, routePath);
-			}
-		}
-
-		return routes;
-	} catch (error) {
-		return new Map();
-	}
-}
-
-function findReactFiles(dir) {
-	return fs.readdirSync(dir).map(item => path.join(dir, item));
-}
-
-function extractHelmetData(content, filePath, routes) {
-	const cleanedContent = cleanContent(content);
-
-	if (!EXTRACTION_REGEX.helmetTest.test(cleanedContent)) {
-		return null;
-	}
-
-	const helmetMatch = content.match(EXTRACTION_REGEX.helmet);
-	if (!helmetMatch) return null;
-
-	const helmetContent = helmetMatch[1];
-	const titleMatch = helmetContent.match(EXTRACTION_REGEX.title);
-	const descMatch = helmetContent.match(EXTRACTION_REGEX.description);
-
-	const title = cleanText(titleMatch?.[1]);
-	const description = cleanText(descMatch?.[1]);
-
-	const fileName = path.basename(filePath, path.extname(filePath));
-	const url = routes.length && routes.has(fileName)
-		? routes.get(fileName)
-		: generateFallbackUrl(fileName);
-
-	return {
-		url,
-		title: title || 'Untitled Page',
-		description: description || 'No description available'
-	};
-}
-
-function generateFallbackUrl(fileName) {
-	const cleanName = fileName.replace(/Page$/, '').toLowerCase();
-	return cleanName === 'app' ? '/' : `/${cleanName}`;
-}
-
-function generateLlmsTxt(pages) {
-	const sortedPages = pages.sort((a, b) => a.title.localeCompare(b.title));
-	const pageEntries = sortedPages.map(page =>
-		`- [${page.title}](${page.url}): ${page.description}`
-	).join('\n');
-
-	return `## Pages\n${pageEntries}`;
-}
-
-function ensureDirectoryExists(dirPath) {
-	if (!fs.existsSync(dirPath)) {
-		fs.mkdirSync(dirPath, { recursive: true });
-	}
-}
-
-function processPageFile(filePath, routes) {
-	try {
-		const content = fs.readFileSync(filePath, 'utf8');
-		return extractHelmetData(content, filePath, routes);
-	} catch (error) {
-		console.error(`❌ Error processing ${filePath}:`, error.message);
-		return null;
-	}
+for (const slug of LOC_SLUGS) {
+  const city = slug.split("-").map(w => w[0].toUpperCase() + w.slice(1)).join(" ");
+  const state = GA_LOCS.has(slug) ? "GA" : "TN";
+  PAGES.push([
+    "/service/" + slug,
+    "Dog Poop Removal in " + city + ", " + state + " | Scoopy Doo",
+    "Professional pet waste removal in " + city + ", " + state + ". Weekly and bi-weekly pooper scooper service from Scoopy Doo. Get your free online quote today."
+  ]);
 }
 
 function main() {
-	const pagesDir = path.join(process.cwd(), 'src', 'pages');
-	const appJsxPath = path.join(process.cwd(), 'src', 'App.jsx');
+  const lines = [
+    "# Scoopy Doo LLC - Pet Waste Removal in Chattanooga, TN and North Georgia",
+    "",
+    SUMMARY,
+    "",
+    "## Pages"
+  ];
 
-	let pages = [];
+  for (const [url, title, desc] of PAGES) {
+    lines.push("- [" + title + "](" + url + "): " + desc);
+  }
 
-	if (!fs.existsSync(pagesDir)) {
-		pages.push(processPageFile(appJsxPath, []))
-		pages = pages.filter(Boolean);
-	} else {
-		const routes = extractRoutes(appJsxPath);
-		const reactFiles = findReactFiles(pagesDir);
-
-		pages = reactFiles
-			.map(filePath => processPageFile(filePath, routes))
-			.filter(Boolean);
-	}
-
-	if (pages.length === 0) {
-		console.error('❌ No pages with Helmet components found!');
-		process.exit(1);
-	}
-
-
-	const llmsTxtContent = generateLlmsTxt(pages);
-	const outputPath = path.join(process.cwd(), 'public', 'llms.txt');
-
-	ensureDirectoryExists(path.dirname(outputPath));
-	fs.writeFileSync(outputPath, llmsTxtContent, 'utf8');
+  const outputPath = path.join(process.cwd(), "public", "llms.txt");
+  const dir = path.dirname(outputPath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  fs.writeFileSync(outputPath, lines.join("\n") + "\n", "utf8");
+  console.log("llms.txt written: " + PAGES.length + " pages");
 }
 
-const isMainModule = import.meta.url === `file://${process.argv[1]}`;
-
-if (isMainModule) {
-	main();
+const isMain = import.meta.url === ("file://" + process.argv[1]);
+if (isMain) {
+  main();
 }
