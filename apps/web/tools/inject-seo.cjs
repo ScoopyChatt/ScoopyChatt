@@ -1,60 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const { pathToFileURL } = require('url');
 
-// FAQ data for the keyword landing pages. Kept in sync with the visible
-// FAQAccordion content on each page so the FAQPage schema matches what users see.
-const landingFaqs = {
-  '/dog-poop-removal-chattanooga': [
-    { question: "How much does dog poop removal cost in Chattanooga?", answer: "Weekly dog poop removal starts at $20 per visit for your first dog, with twice-weekly service from $16 per visit and bi-weekly from $28. One-time cleanups start at $75. Each additional dog is a small add-on. You will see an exact price before you commit." },
-    { question: "How often should I schedule dog poop removal?", answer: "Most one and two dog homes do best with weekly visits, which keeps bacteria and odor in check and protects your lawn. Busy or multi-dog yards often prefer twice-weekly service, while smaller dogs or larger lots can work well bi-weekly." },
-    { question: "Do I need to be home for service?", answer: "No. As long as we can safely access your yard, you do not need to be there. We send an on-the-way text before every visit and a photo of your secured gate when we finish." },
-    { question: "What if my yard has not been cleaned in a while?", answer: "No problem. We start with a one-time initial cleanup to get your yard back to a clean baseline, then keep it that way on your regular schedule." },
-    { question: "Is there a contract?", answer: "Never. There are no contracts and you can pause or cancel anytime. You stay because your yard is always clean, not because you are locked in." }
-  ],
-  '/pet-waste-removal-chattanooga': [
-    { question: "Do you offer pet waste removal for HOAs and apartment communities?", answer: "Yes. We provide common-area pet waste removal for HOAs, condos, and apartment communities, and we can install and restock pet waste stations. Request a custom community quote and we will tailor a plan to your property." },
-    { question: "How do you price homes with multiple dogs?", answer: "Our base rates cover your first dog, with a small add-on per additional pet to account for the extra waste and time. You will always see the full price before you commit." },
-    { question: "Is pet waste really a health risk?", answer: "Yes. Pet waste can carry roundworms, hookworms, giardia, and E. coli that affect both pets and people, and it pollutes local waterways. Regular removal is the simplest way to reduce that risk." },
-    { question: "How do you dispose of the waste?", answer: "We bag the waste and haul it away for responsible, eco-friendly disposal. Nothing is left behind in your cans unless you prefer it that way." },
-    { question: "Do you sanitize between properties?", answer: "Yes. We sanitize our equipment between yards so we never carry bacteria from one property to the next, keeping every visit safe and hygienic." }
-  ],
-  '/dog-poop-scooping-chattanooga': [
-    { question: "What does a dog poop scooping visit include?", answer: "A full grid-walk of your yard, scooping and bagging all waste, hauling it away for eco-friendly disposal, an on-the-way text before we arrive, and a photo of your secured gate when we finish." },
-    { question: "Do you scoop in the rain?", answer: "Yes. We service on your scheduled day, rain or shine, so your yard stays clean no matter the weather." },
-    { question: "Will you close my gate?", answer: "Always. We are careful with gates and pets on every visit, and we send you a photo of the secured gate when the job is done." },
-    { question: "What if I have a large or wooded yard?", answer: "We grid-walk your yard regardless of size and quote based on the space and number of dogs, so you get a fair, accurate price." },
-    { question: "Can I change my schedule later?", answer: "Anytime. There are no contracts and no penalties. You can adjust, pause, or cancel your scooping schedule whenever you need to." }
-  ],
-  '/yard-cleanup-chattanooga': [
-    { question: "How much does a one-time yard cleanup cost in Chattanooga?", answer: "One-time dog waste yard cleanups start at $75 and are quoted based on your yard size and how much waste has accumulated. You will get an exact price before we begin." },
-    { question: "My yard is really bad. Is that a problem?", answer: "Not at all. Heavily overdue yards are exactly what one-time cleanups are for. We grid-walk the whole space and get it back to a clean baseline in a single visit." },
-    { question: "Do I have to sign up for recurring service?", answer: "No. The cleanup is fully standalone. If you would like to keep the results, ongoing weekly or bi-weekly service is one click away, with no contracts." },
-    { question: "How long does a cleanup take?", answer: "It depends on yard size and buildup, but most one-time cleanups are completed in a single same-day visit." },
-    { question: "Where does the waste go?", answer: "We bag everything and haul it away for responsible, eco-friendly disposal. Nothing is left behind." }
-  ]
-};
-
-function buildFaqSchema(faqs) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(f => ({
-      "@type": "Question",
-      "name": f.question,
-      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
-    }))
-  };
-}
-
-function faqScriptTag(faqs) {
-  // Escape "<" to avoid any chance of breaking out of the <script> element.
-  const json = JSON.stringify(buildFaqSchema(faqs)).replace(/</g, '\\u003c');
-  return '<script type="application/ld+json">' + json + '</script>';
-}
-
-(async () => {
 try {
 const BASE = 'https://www.scoopychatt.com';
 const distDir = path.join(process.cwd(), 'dist', 'apps', 'web');
@@ -66,6 +13,23 @@ if (!fs.existsSync(templatePath)) {
 }
 
 const template = fs.readFileSync(templatePath, 'utf-8');
+
+// Static content blocks injected into <div id="root">.
+// React replaces this content on load; AI crawlers (no JS) see it directly.
+const SC = {
+  '/': '<main><h1>Dog Poop Removal &amp; Pooper Scooper Service in Chattanooga, TN</h1><p>Scoopy Doo LLC is a locally owned professional dog poop removal and pooper scooper service in Chattanooga, TN. We offer weekly, bi-weekly, one-time, commercial, and HOA pet waste cleanup 7 days a week in Chattanooga TN and North Georgia. Every visit includes an on-the-way text notification and a gate photo confirmation. No contracts required.</p><h2>Services</h2><ul><li>Weekly dog poop removal</li><li>Bi-weekly pooper scooper service</li><li>One-time yard cleanup</li><li>Commercial pet waste removal</li><li>HOA common area cleanup</li></ul><h2>Service Areas</h2><p>Chattanooga TN, Hixson TN, Red Bank TN, Signal Mountain TN, Ooltewah TN, East Brainerd TN, Soddy-Daisy TN, Cleveland TN, East Ridge TN, Lookout Mountain TN, Ringgold GA, Rossville GA, Flintstone GA, Fort Oglethorpe GA.</p><p>Father-daughter locally owned team. Fully insured. No contracts. Free quote at scoopychatt.com/quote.</p></main>',
+  '/services': '<main><h1>Pet Waste Removal Services in Chattanooga, TN</h1><p>Scoopy Doo offers professional pet waste removal for homes, businesses, and HOAs in Chattanooga TN and North Georgia.</p><h2>Weekly Dog Poop Removal</h2><p>Most popular service. A technician visits once per week, removes all dog waste, texts on the way, and sends a gate photo after each visit. Pricing based on yard size and number of dogs -- free quote at scoopychatt.com/quote.</p><h2>Bi-Weekly Pooper Scooper Service</h2><p>Every two weeks. Ideal for smaller yards or fewer dogs.</p><h2>One-Time Yard Cleanup</h2><p>Single deep-clean visit. Perfect for spring cleanup, before a party, or as a first visit. Book at scoopychatt.com/one-time-cleanup.</p><h2>Commercial Pet Waste Removal</h2><p>Regular scheduled service for apartment complexes, dog parks, and businesses.</p><h2>HOA Common Area Cleanup</h2><p>Scheduled pet waste removal for shared green spaces and common areas.</p><p>All services include on-the-way texts and gate photo confirmation. No contracts.</p></main>',
+  '/faq': '<main><h1>Pet Waste Removal FAQs -- Scoopy Doo Chattanooga</h1><h2>How much does dog poop removal cost in Chattanooga?</h2><p>Pricing depends on yard size, number of dogs, and frequency. Scoopy Doo provides free custom quotes at scoopychatt.com/quote -- no phone call required. No contracts or commitments.</p><h2>Do you serve North Georgia?</h2><p>Yes. Scoopy Doo serves Ringgold GA, Rossville GA, Flintstone GA, and Fort Oglethorpe GA in addition to Chattanooga and surrounding Tennessee cities.</p><h2>How often should I have my yard scooped?</h2><p>Weekly is the gold standard. It prevents waste buildup, protects your lawn from nitrogen damage, and eliminates bacteria and parasite risk.</p><h2>What happens during a Scoopy Doo visit?</h2><p>Your technician texts on the way so you can unlock the gate. They scoop all dog waste, bag and remove it, then send a gate photo confirmation. You never need to be home.</p><h2>Are there contracts?</h2><p>No. No long-term contracts. Pause or cancel service at any time.</p><h2>Is Scoopy Doo insured?</h2><p>Yes. Scoopy Doo LLC is fully insured.</p><h2>What areas do you serve?</h2><p>Chattanooga TN, Hixson TN, Red Bank TN, Signal Mountain TN, Ooltewah TN, East Brainerd TN, Soddy-Daisy TN, Cleveland TN, East Ridge TN, Lookout Mountain TN, Ringgold GA, Rossville GA, Flintstone GA, Fort Oglethorpe GA.</p></main>',
+  '/service-areas': '<main><h1>Scoopy Doo Service Areas -- Chattanooga TN and North Georgia</h1><p>Scoopy Doo provides weekly, bi-weekly, and one-time dog poop removal across Chattanooga TN and surrounding communities.</p><h2>Tennessee</h2><ul><li>Chattanooga, TN</li><li>Hixson, TN</li><li>Red Bank, TN</li><li>Signal Mountain, TN</li><li>Ooltewah, TN</li><li>East Brainerd, TN</li><li>Soddy-Daisy, TN</li><li>Cleveland, TN</li><li>East Ridge, TN</li><li>Lookout Mountain, TN</li></ul><h2>North Georgia</h2><ul><li>Ringgold, GA</li><li>Rossville, GA</li><li>Flintstone, GA</li><li>Fort Oglethorpe, GA</li></ul><p>Free quote at scoopychatt.com/quote.</p></main>',
+  '/about': '<main><h1>About Scoopy Doo -- Chattanooga Pet Waste Removal</h1><p>Scoopy Doo LLC is a locally owned, father-daughter pet waste removal company based in Chattanooga, TN. We provide reliable, professional pooper scooper service with on-the-way texts and gate photo confirmation after every visit. Fully insured. 7 days a week. No contracts.</p><p>We serve Chattanooga TN, Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, Cleveland, East Ridge, Lookout Mountain, and North Georgia including Ringgold, Rossville, Flintstone, and Fort Oglethorpe.</p><p>Free quote at scoopychatt.com/quote.</p></main>',
+  '/how-it-works': '<main><h1>How Scoopy Doo Works -- Pet Waste Removal in Chattanooga</h1><p>Getting started is simple. No phone calls, no contracts.</p><h2>Step 1: Get a Free Online Quote</h2><p>Visit scoopychatt.com/quote, enter your address, yard size, and number of dogs, and get a custom quote online.</p><h2>Step 2: Choose Your Service</h2><p>Pick weekly, bi-weekly, or one-time service. All pricing is transparent, no long-term contracts.</p><h2>Step 3: We Come to You</h2><p>Your technician texts on the way so you can unlock the gate. We scoop all dog waste, bag and remove it. You never need to be home.</p><h2>Step 4: Gate Photo Confirmation</h2><p>After every visit we send a gate photo so you know exactly when we were there and the job is done.</p></main>',
+  '/one-time-cleanup': '<main><h1>One-Time Dog Poop Cleanup in Chattanooga, TN</h1><p>Scoopy Doo offers one-time yard cleanups for Chattanooga TN and North Georgia homeowners -- no recurring service or contracts required.</p><h2>When to Book a One-Time Cleanup</h2><ul><li>Spring cleaning -- clear out winter waste buildup</li><li>Before a backyard party or event</li><li>First-time service to reset your yard</li><li>Move-in or move-out cleanup</li><li>After a long vacation</li></ul><p>Includes on-the-way text and gate photo confirmation. Free quote at scoopychatt.com/quote.</p></main>',
+  '/near-me': '<main><h1>Pooper Scooper Service Near Me in Chattanooga, TN</h1><p>Looking for a pooper scooper service near you in Chattanooga? Scoopy Doo is a locally owned pet waste removal company serving Chattanooga TN and surrounding areas. We offer weekly, bi-weekly, and one-time dog poop removal with on-the-way texts and gate photo confirmation. No contracts. Get a free quote at scoopychatt.com/quote.</p><p>Service areas: Chattanooga, Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, Cleveland, East Ridge, Lookout Mountain (TN), and Ringgold, Rossville, Flintstone, Fort Oglethorpe (GA).</p></main>',
+  '/dog-poop-removal-chattanooga': '<main><h1>Dog Poop Removal in Chattanooga, TN</h1><p>Scoopy Doo LLC provides professional dog poop removal in Chattanooga, TN. We offer weekly, bi-weekly, and one-time pooper scooper service for homes, HOAs, and businesses. Every visit includes on-the-way text notifications and gate photo confirmation. Fully insured. No contracts. Get a free quote at scoopychatt.com/quote.</p></main>',
+  '/pet-waste-removal-chattanooga': '<main><h1>Pet Waste Removal in Chattanooga, TN</h1><p>Scoopy Doo offers expert pet waste removal in Chattanooga, TN for homes, HOAs, and businesses. Weekly, bi-weekly, one-time, commercial, and HOA dog poop removal. On-the-way texts, gate photo confirmation, no contracts. Free quote at scoopychatt.com/quote.</p></main>',
+  '/dog-poop-scooping-chattanooga': '<main><h1>Dog Poop Scooping Service in Chattanooga, TN</h1><p>Reliable dog poop scooping in Chattanooga, TN by Scoopy Doo LLC. Weekly and bi-weekly pooper scooper service with on-the-way texts and gate photo confirmation. No contracts. Free quote at scoopychatt.com/quote.</p></main>',
+  '/yard-cleanup-chattanooga': '<main><h1>Yard Cleanup for Pet Owners in Chattanooga, TN</h1><p>Scoopy Doo provides complete yard cleanup for pet owners in Chattanooga, TN. Book a one-time or recurring cleanup. Includes on-the-way texts and gate photo confirmation. No contracts. Free quote at scoopychatt.com/quote.</p></main>',
+};
 
 const routes = {
   '/': ['Dog Poop Removal & Pooper Scooper Service | Chattanooga TN', 'Professional dog poop removal & pooper scooper service in Chattanooga, TN. Reliable weekly pet waste cleanup. Get your free quote from Scoopy Doo today.'],
@@ -94,19 +58,18 @@ const routes = {
   '/blog/diy-vs-professional': ['DIY vs Professional Dog Waste Removal | Scoopy Doo Chattanooga', 'Compare DIY pet waste cleanup to professional pooper scooper service in Chattanooga, TN. See which option saves time and money.'],
   '/blog/lawn-health-and-pet-waste': ['How Pet Waste Affects Your Lawn Health | Scoopy Doo Chattanooga', 'Dog waste kills grass and harms soil. Learn how regular professional cleanup protects your Chattanooga lawn from long-term damage.'],
   '/blog/health-risks-of-pet-waste': ['Health Risks of Unmanaged Pet Waste | Scoopy Doo Chattanooga', 'Dog waste carries bacteria, hookworms, roundworms, and giardia. Learn the health risks and how Scoopy Doo protects Chattanooga families.'],
-  '/blog/pet-waste-management-guide': ['The Complete Pet Waste Management Guide for Dog Owners | Scoopy Doo', 'Everything Chattanooga dog owners need about pet waste management â frequency, disposal, health risks, and professional service options.'],
+  '/blog/pet-waste-management-guide': ['The Complete Pet Waste Management Guide for Dog Owners | Scoopy Doo', 'Everything Chattanooga dog owners need about pet waste management: frequency, disposal, health risks, and professional service options.'],
   '/blog/how-often-scoop-dog-poop-chattanooga': ['How Often Should You Scoop Dog Poop in Chattanooga? | Scoopy Doo', 'Weekly scooping is the gold standard. Learn why cleanup frequency matters for lawn health and family safety in Chattanooga, TN.'],
   '/blog/spring-pet-care-checklist': ['Spring Pet Care Checklist for Chattanooga Dog Owners | Scoopy Doo', 'Spring in Chattanooga means wet yards hiding months of pet waste. Use this checklist to get your yard cleaned up and ready.'],
-  '/blog/is-dog-waste-bad-for-lawn': ['Is Dog Waste Bad for Your Lawn? | Scoopy Doo Chattanooga', 'Yes â dog waste kills grass and damages soil. Learn what it does to your Chattanooga yard and how professional cleanup helps.'],
+  '/blog/is-dog-waste-bad-for-lawn': ['Is Dog Waste Bad for Your Lawn? | Scoopy Doo Chattanooga', 'Yes -- dog waste kills grass and damages soil. Learn what it does to your Chattanooga yard and how professional cleanup helps.'],
   '/blog/best-pooper-scooper-services-chattanooga': ['Best Pooper Scooper Services in Chattanooga, TN | Scoopy Doo', 'Looking for the best dog poop removal in Chattanooga? Online quotes, on-the-way texts, gate photo confirmation. No contracts.'],
   '/blog/is-dog-poop-hurting-your-chattanooga-yard': ['Is Dog Poop Hurting Your Chattanooga Yard? | Scoopy Doo', 'Dog waste damages grass and soil over time. Find out if your Chattanooga yard is being harmed and how Scoopy Doo can help.'],
-  '/blog/chattanooga-pet-waste-removal-homeowners': ['Pet Waste Removal Guide for Chattanooga Homeowners | Scoopy Doo', 'A complete guide for Chattanooga homeowners on pet waste management â health risks, lawn damage, waterway protection, and professional service.'],
+  '/blog/chattanooga-pet-waste-removal-homeowners': ['Pet Waste Removal Guide for Chattanooga Homeowners | Scoopy Doo', 'A complete guide for Chattanooga homeowners on pet waste management: health risks, lawn damage, waterway protection, and professional service.'],
   '/blog/commercial-pet-waste-removal-chattanooga': ['Commercial Pet Waste Removal in Chattanooga, TN | Scoopy Doo', 'Professional pet waste removal for apartments, HOAs, and businesses in Chattanooga. Flexible scheduling, no contracts.'],
   '/blog/how-often-clean-yard': ['How Often Should You Clean Your Yard of Dog Waste? | Scoopy Doo', 'Weekly is the gold standard. Learn the right cleanup frequency based on your dog count, yard size, and Chattanooga season.'],
   '/blog/podcast-blog': ['Scoopy Doo on the Podcast | The Chattanooga Pet Waste Removal Story', 'Hear the Scoopy Doo LLC founder discuss starting a pet waste removal business in Chattanooga, TN.'],
   '/blog/signal-mountain': ['Pet Waste Removal Tips for Signal Mountain, TN | Scoopy Doo Blog', 'Scoopy Doo serves Signal Mountain with thorough yard cleanup. We handle larger lots and wooded terrain every week.'],
   '/blog/soddy-daisy': ['Pet Waste Removal in Soddy-Daisy, TN | Scoopy Doo Blog', 'Scoopy Doo serves Soddy-Daisy and Chickamauga Lake area homeowners. Waterfront cleanup protects the lake and your family.'],
-  '/blog/best-dog-parks-chattanooga-tn': ['7 Best Dog Parks in Chattanooga, TN (2026 Guide) | Scoopy Doo', 'Discover the 7 best dog parks in Chattanooga, TN for 2026 — off-leash areas, addresses, hours, amenities, and tips for keeping your yard clean.'],
 };
 
 const gaLocations = new Set(['ringgold','rossville','flintstone','fort-oglethorpe']);
@@ -123,30 +86,12 @@ locationPages.forEach(loc => {
     'Dog Poop Removal ' + city + ' ' + state + ' | Scoopy Doo',
     'Professional pet waste removal in ' + city + ', ' + state + '. Weekly & bi-weekly pooper scooper service. Get your free quote today.'
   ];
+  SC['/service/' + loc] = '<main><h1>Dog Poop Removal in ' + city + ', ' + state + ' | Scoopy Doo</h1><p>Scoopy Doo LLC provides professional dog poop removal and pooper scooper service in ' + city + ', ' + state + '. We offer weekly, bi-weekly, and one-time pet waste cleanup. Every visit includes an on-the-way text notification and a gate photo confirmation. No contracts required.</p><p>Get a free quote at scoopychatt.com/quote or visit scoopychatt.com/service-areas for our full service area.</p></main>';
 });
 
-// Build the map of routes that should receive FAQPage JSON-LD.
-const faqByRoute = Object.assign({}, landingFaqs);
-
-// Pull the canonical /faq questions from the source data so the schema stays
-// in sync with the visible FAQ content. Non-fatal if it cannot be loaded.
-try {
-  const faqDataUrl = pathToFileURL(path.join(__dirname, '..', 'src', 'data', 'faqData.js')).href;
-  const faqMod = await import(faqDataUrl);
-  if (faqMod && typeof faqMod.getFaqData === 'function') {
-    const sections = faqMod.getFaqData('Chattanooga');
-    const allFaqs = sections.flatMap(s => s.faqs);
-    if (allFaqs.length) {
-      faqByRoute['/faq'] = allFaqs;
-    }
-  }
-} catch (e) {
-  console.error('SEO inject: could not load faqData for /faq schema:', e.message);
-}
-
-function injectMeta(html, title, desc, canonical) {
-  return html
-    .replace(/<title>[^<]*<\/title>/, '<title>' + title + '<\/title>')
+function injectMeta(html, title, desc, canonical, staticHtml) {
+  let result = html
+    .replace(/<title>[^<]*</title>/, '<title>' + title + '</title>')
     .replace(/(<meta name="description" content=")[^"]*(")/,'$1' + desc + '$2')
     .replace(/(<link rel="canonical" href=")[^"]*(")/,'$1' + canonical + '$2')
     .replace(/(<meta property="og:title" content=")[^"]*(")/,'$1' + title + '$2')
@@ -154,15 +99,17 @@ function injectMeta(html, title, desc, canonical) {
     .replace(/(<meta property="og:url" content=")[^"]*(")/,'$1' + canonical + '$2')
     .replace(/(<meta name="twitter:title" content=")[^"]*(")/,'$1' + title + '$2')
     .replace(/(<meta name="twitter:description" content=")[^"]*(")/,'$1' + desc + '$2');
+  if (staticHtml) {
+    result = result.replace(/(<div id="root"[^>]*>)<\/div>/, '$1' + staticHtml + '<\/div>');
+  }
+  return result;
 }
 
 let count = 0;
 for (const [route, [title, desc]] of Object.entries(routes)) {
   const canonical = BASE + route;
-  let html = injectMeta(template, title, desc, canonical);
-  if (faqByRoute[route]) {
-    html = html.replace('</head>', '    ' + faqScriptTag(faqByRoute[route]) + '\n  </head>');
-  }
+  const staticHtml = SC[route] || '';
+  const html = injectMeta(template, title, desc, canonical, staticHtml);
   const dirPath = path.join(distDir, route);
   fs.mkdirSync(dirPath, { recursive: true });
   fs.writeFileSync(path.join(dirPath, 'index.html'), html);
@@ -173,4 +120,3 @@ console.log('SEO inject complete: ' + count + ' pages.');
   console.error('SEO inject warning:', e.message);
   process.exit(0);
 }
-})();
