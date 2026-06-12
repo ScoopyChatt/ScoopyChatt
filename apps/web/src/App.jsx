@@ -18,6 +18,7 @@ const OneTimeCleanupPage = React.lazy(() => import('@/pages/OneTimeCleanupPage.j
 const ServicesPage = React.lazy(() => import('@/pages/ServicesPage.jsx'));
 const AboutPage = React.lazy(() => import('@/pages/AboutPage.jsx'));
 const FAQPage = React.lazy(() => import('@/pages/FAQPage.jsx'));
+const ComparisonPage = React.lazy(() => import('@/pages/ComparisonPage.jsx'));
 const QuoteRequestPage = React.lazy(() => import('@/pages/QuoteRequestPage.jsx'));
 const ThankYouPage = React.lazy(() => import('@/pages/ThankYouPage.jsx'));
 const SpringSpecialPage = React.lazy(() => import('@/pages/SpringSpecialPage.jsx'));
@@ -109,7 +110,8 @@ function App() {
 
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/faq" element={<FAQPage />
+          <Route path="/comparison" element={<ComparisonPage />} />} />
           <Route path="/quote" element={<QuoteRequestPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/spring-special" element={<SpringSpecialPage />} />
