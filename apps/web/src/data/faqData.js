@@ -10,6 +10,14 @@ export const getFaqData = (location = 'Chattanooga') => {
           answer: "Booking is easy! Visit our Quote Request page, fill out your details including your yard size and number of dogs, and we'll get back to you within 24 hours to confirm your schedule and pricing."
         },
         {
+          question: "Does Scoopy Doo serve North Georgia?",
+          answer: "Yes. Scoopy Doo serves Ringgold, Rossville, Fort Oglethorpe, and Flintstone in Catoosa and Walker counties, Georgia. North Georgia locations are covered at the same rates as Tennessee — no extra fees for crossing the state line. We run regular North Georgia routes and most new customers can start within 2-5 days."
+        },
+        {
+          question: "Is there a contract or long-term commitment?",
+          answer: "No contracts, ever. Scoopy Doo service is completely flexible — you can start, pause, or cancel at any time with no cancellation fees. We keep customers by doing a great job, not by locking them in. Most clients stay with us for years simply because the service works."
+        },
+        {
           question: "How much does it cost?",
           answer: "Our pet waste removal services start at just $16 per service. Pricing varies slightly based on the number of dogs, yard size, and frequency of visits. Contact us for a quick, personalized quote!"
         },
