@@ -31,6 +31,12 @@ const SC = {
   '/yard-cleanup-chattanooga': '<main><h1>Yard Cleanup for Pet Owners in Chattanooga, TN</h1><p>Scoopy Doo provides complete yard cleanup for pet owners in Chattanooga, TN. One-time or recurring cleanup. On-the-way texts and gate photo confirmation. No contracts. Free quote at scoopychatt.com/quote.</p></main>',
 };
 
+
+// Extra JSON-LD schema blocks injected per route (in addition to LocalBusiness in index.html)
+const SCHEMA = {
+  '/faq': "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does dog poop removal cost in Chattanooga?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Pricing depends on yard size, number of dogs, and service frequency. Scoopy Doo provides free custom quotes online at scoopychatt.com/quote. No contracts required.\"}},{\"@type\":\"Question\",\"name\":\"Does Scoopy Doo serve North Georgia?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Scoopy Doo serves Ringgold GA, Rossville GA, Flintstone GA, and Fort Oglethorpe GA in addition to Chattanooga TN and surrounding Tennessee communities.\"}},{\"@type\":\"Question\",\"name\":\"How often should I have my yard scooped?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Weekly service is the gold standard for most yards. It prevents waste buildup, protects your lawn from nitrogen damage, and eliminates bacteria and parasite risk.\"}},{\"@type\":\"Question\",\"name\":\"What happens during a Scoopy Doo visit?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Your technician texts you on the way so you can unlock the gate. They scoop all dog waste, bag and remove it, then send a gate photo confirmation when finished. You never need to be home.\"}},{\"@type\":\"Question\",\"name\":\"Are there contracts?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. Scoopy Doo has no long-term contracts. You can pause or cancel service at any time.\"}},{\"@type\":\"Question\",\"name\":\"Is Scoopy Doo insured?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. Scoopy Doo LLC is fully insured.\"}},{\"@type\":\"Question\",\"name\":\"Do I need to be home during service?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. You just need the gate accessible. Scoopy Doo texts when on the way and sends a gate photo after each visit as confirmation.\"}},{\"@type\":\"Question\",\"name\":\"What areas does Scoopy Doo serve?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Scoopy Doo serves Chattanooga TN, Hixson TN, Red Bank TN, Signal Mountain TN, Ooltewah TN, East Brainerd TN, Soddy-Daisy TN, Cleveland TN, East Ridge TN, Lookout Mountain TN, Ringgold GA, Rossville GA, Flintstone GA, and Fort Oglethorpe GA.\"}}]}</script>",
+  '/services': "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"serviceType\":\"Pet Waste Removal\",\"provider\":{\"@type\":\"ProfessionalService\",\"name\":\"Scoopy Doo LLC\",\"url\":\"https://www.scoopychatt.com\"},\"areaServed\":[{\"@type\":\"City\",\"name\":\"Chattanooga\"},{\"@type\":\"City\",\"name\":\"Hixson\"},{\"@type\":\"City\",\"name\":\"Red Bank\"},{\"@type\":\"City\",\"name\":\"Signal Mountain\"},{\"@type\":\"City\",\"name\":\"Ooltewah\"},{\"@type\":\"City\",\"name\":\"East Brainerd\"},{\"@type\":\"City\",\"name\":\"Soddy-Daisy\"},{\"@type\":\"City\",\"name\":\"Cleveland\"},{\"@type\":\"City\",\"name\":\"East Ridge\"},{\"@type\":\"City\",\"name\":\"Lookout Mountain\"},{\"@type\":\"City\",\"name\":\"Ringgold\"},{\"@type\":\"City\",\"name\":\"Rossville\"},{\"@type\":\"City\",\"name\":\"Flintstone\"},{\"@type\":\"City\",\"name\":\"Fort Oglethorpe\"}],\"hasOfferCatalog\":{\"@type\":\"OfferCatalog\",\"name\":\"Pet Waste Removal Services\",\"itemListElement\":[{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Weekly Dog Poop Removal\",\"description\":\"Weekly scheduled pooper scooper service with on-the-way texts and gate photo confirmation.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Bi-Weekly Pooper Scooper Service\",\"description\":\"Every two weeks pet waste removal for residential yards.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"One-Time Yard Cleanup\",\"description\":\"Single deep-clean visit for spring cleaning, events, or first-time service.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"Commercial Pet Waste Removal\",\"description\":\"Regular scheduled service for apartments, dog parks, and businesses.\"}},{\"@type\":\"Offer\",\"itemOffered\":{\"@type\":\"Service\",\"name\":\"HOA Common Area Cleanup\",\"description\":\"Scheduled pet waste removal for shared green spaces and HOA common areas.\"}}]}}</script>"
+};
 const routes = {
   '/': ['Dog Poop Removal & Pooper Scooper Service | Chattanooga TN', 'Professional dog poop removal & pooper scooper service in Chattanooga, TN. Reliable weekly pet waste cleanup. Get your free quote from Scoopy Doo today.'],
   '/services': ['Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo', 'Weekly, bi-weekly & one-time dog poop removal in Chattanooga. See what Scoopy Doo offers and book today.'],
@@ -96,7 +102,7 @@ locationPages.forEach(loc => {
 const BODY_CLOSE = '<' + '/body>';
 const DIV_CLOSE = '<' + '/div>';
 
-function injectMeta(html, title, desc, canonical, staticHtml) {
+function injectMeta(html, title, desc, canonical, staticHtml, schemaHtml) {
   let result = html
     .replace(/<title>[^<]*<\/title>/, '<title>' + title + '<' + '/title>')
     .replace(/(<meta name="description" content=")[^"]*(")/,'$1' + desc + '$2')
@@ -106,6 +112,9 @@ function injectMeta(html, title, desc, canonical, staticHtml) {
     .replace(/(<meta property="og:url" content=")[^"]*(")/,'$1' + canonical + '$2')
     .replace(/(<meta name="twitter:title" content=")[^"]*(")/,'$1' + title + '$2')
     .replace(/(<meta name="twitter:description" content=")[^"]*(")/,'$1' + desc + '$2');
+  if (schemaHtml) {
+    result = result.replace('</head>', schemaHtml + '</head>');
+  }
   if (staticHtml) {
     result = result.replace(BODY_CLOSE,
       '<div id="scoopy-content" style="display:none" aria-hidden="true">' + staticHtml + DIV_CLOSE + BODY_CLOSE
@@ -118,7 +127,8 @@ let count = 0;
 for (const [route, [title, desc]] of Object.entries(routes)) {
   const canonical = BASE + route;
   const staticHtml = SC[route] || '';
-  const html = injectMeta(template, title, desc, canonical, staticHtml);
+  const schemaHtml = SCHEMA[route] || '';
+  const html = injectMeta(template, title, desc, canonical, staticHtml, schemaHtml);
   const dirPath = path.join(distDir, route);
   fs.mkdirSync(dirPath, { recursive: true });
   fs.writeFileSync(path.join(dirPath, 'index.html'), html);
