@@ -14,6 +14,66 @@
       "source": "/pricing",
       "destination": "/quote",
       "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/our-services",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/our-services/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/quote",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/quote",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/quote",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/quote",
+      "permanent": true
+    },
+    {
+      "source": "/service-area",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/",
+      "destination": "/service-areas",
+      "permanent": true
+    },
+    {
+      "source": "/quoterequest",
+      "destination": "/quote",
+      "permanent": true
+    },
+    {
+      "source": "/quoterequest/",
+      "destination": "/quote",
+      "permanent": true
     }
   ],
   "headers": [
