@@ -46,6 +46,7 @@ const ChattanoogaHomeownersPage = React.lazy(() => import('@/pages/blog/Chattano
 const CommercialPetWastePage = React.lazy(() => import('@/pages/blog/CommercialPetWastePage.jsx'));
 const BlogSignalMountain = React.lazy(() => import('@/pages/blog/BlogSignalMountainPage.jsx'));
 const BlogSoddyDaisy = React.lazy(() => import('@/pages/blog/BlogSoddyDaisyPage.jsx'));
+const DogPoopCleanupSummerHeat = React.lazy(() => import('@/pages/blog/DogPoopCleanupSummerHeatChattanooga.jsx'));
 const DogParksChattanooga = React.lazy(() => import('@/pages/blog/DogParksChattanoogaPage.jsx'));
 
 // Media / Utilities
@@ -142,6 +143,7 @@ function App() {
           <Route path="/blog/podcast-blog" element={<PodcastBlogPost />} />
           <Route path="/blog/signal-mountain" element={<BlogSignalMountain />} />
           <Route path="/blog/soddy-daisy" element={<BlogSoddyDaisy />} />
+          <Route path="/blog/dog-poop-cleanup-chattanooga-summer-heat" element={<DogPoopCleanupSummerHeat />} />
           <Route path="/blog/best-dog-parks-chattanooga-tn" element={<DogParksChattanooga />} />
           
           <Route path="/blog/:slug" element={<BlogPostTemplate />} />
