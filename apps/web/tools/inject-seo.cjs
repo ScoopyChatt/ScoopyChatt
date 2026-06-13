@@ -109,6 +109,7 @@ const routes = {
   '/blog/how-often-clean-yard': ['How Often Should You Clean Your Yard of Dog Waste? | Scoopy Doo', 'Weekly is the gold standard. Learn the right cleanup frequency based on your dog count, yard size, and Chattanooga season.'],
   '/blog/podcast-blog': ['Scoopy Doo on the Podcast | The Chattanooga Pet Waste Removal Story', 'Hear the Scoopy Doo LLC founder discuss starting a pet waste removal business in Chattanooga, TN.'],
   '/blog/signal-mountain': ['Pet Waste Removal Tips for Signal Mountain, TN | Scoopy Doo Blog', 'Scoopy Doo serves Signal Mountain with thorough yard cleanup. We handle larger lots and wooded terrain every week.'],
+  '/blog/dog-poop-cleanup-chattanooga-summer-heat': ['Dog Poop Cleanup in Chattanooga During Hot, Humid Weather | Scoopy Doo', 'Summer heat and humidity make dog waste more dangerous. Learn why Chattanooga yards need regular cleanup during the hot months and how Scoopy Doo can help.'],
   '/blog/soddy-daisy': ['Pet Waste Removal in Soddy-Daisy, TN | Scoopy Doo Blog', 'Scoopy Doo serves Soddy-Daisy and Chickamauga Lake area homeowners. Waterfront cleanup protects the lake and your family.'],
 };
 
