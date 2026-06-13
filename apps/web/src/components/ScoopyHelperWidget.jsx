@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from &rsquo;react&rsquo;;
-import { motion, AnimatePresence } from &rsquo;framer-motion&rsquo;;
-import { MessageCircle, X, Send, Loader2, ShieldCheck } from &rsquo;lucide-react&rsquo;;
-import IntegratedAiChat from &rsquo;@/components/integrated-ai-chat.jsx&rsquo;;
-import { useLeadCapture } from &rsquo;@/hooks/useLeadCapture.js&rsquo;;
-import { Button } from &rsquo;@/components/ui/button&rsquo;;
-import { Input } from &rsquo;@/components/ui/input&rsquo;;
-import { Label } from &rsquo;@/components/ui/label&rsquo;;
-import pb from &rsquo;@/lib/pocketbaseClient.js&rsquo;;
-import apiServerClient from &rsquo;@/lib/apiServerClient.js&rsquo;;
-import { toast } from &rsquo;sonner&rsquo;;
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MessageCircle, X, Send, Loader2, ShieldCheck } from 'lucide-react';
+import IntegratedAiChat from '@/components/integrated-ai-chat.jsx';
+import { useLeadCapture } from '@/hooks/useLeadCapture.js';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import pb from '@/lib/pocketbaseClient.js';
+import apiServerClient from '@/lib/apiServerClient.js';
+import { toast } from 'sonner';
 
 const ScoopyHelperWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +20,10 @@ const ScoopyHelperWidget = () => {
   const { submitLead, isLeadCaptured, isLoading } = useLeadCapture();
   
   const [formData, setFormData] = useState({
-    name: &rsquo;&rsquo;,
-    phone: &rsquo;&rsquo;,
-    zipCode: &rsquo;&rsquo;,
-    numberOfDogs: &rsquo;1&rsquo;
+    name: '',
+    phone: '',
+    zipCode: '',
+    numberOfDogs: '1'
   });
 
   // Auto-open after 3 seconds
@@ -61,21 +61,21 @@ const ScoopyHelperWidget = () => {
       
       // Send lead email immediately
       try {
-        await apiServerClient.fetch(&rsquo;/lead-email&rsquo;, {
-          method: &rsquo;POST&rsquo;,
-          headers: { &rsquo;Content-Type&rsquo;: &rsquo;application/json&rsquo; },
+        await apiServerClient.fetch('/lead-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(contextData)
         });
-        toast.success(&rsquo;Lead information sent!&rsquo;);
+        toast.success('Lead information sent!');
       } catch (emailErr) {
-        console.error(&rsquo;Failed to send lead email:&rsquo;, emailErr);
+        console.error('Failed to send lead email:', emailErr);
       }
       
       // PocketBase auth skipped - not required for AI chat
       
       setChatStartTime(new Date().toISOString());
     } catch (err) {
-      console.error(&rsquo;Failed to initialize chat session:&rsquo;, err);
+      console.error('Failed to initialize chat session:', err);
     } finally {
       setIsAuthenticating(false);
     }
@@ -85,24 +85,24 @@ const ScoopyHelperWidget = () => {
     try {
       if (!pb.authStore.isValid) return;
 
-      const records = await pb.collection(&rsquo;_integratedAiMessages&rsquo;).getFullList({
-        sort: &rsquo;created&rsquo;,
+      const records = await pb.collection('_integratedAiMessages').getFullList({
+        sort: 'created',
         $autoCancel: false
       });
 
       if (!records || records.length === 0) return;
 
       const formattedMessages = records.map(record => {
-        let textContent = &rsquo;&rsquo;;
+        let textContent = '';
         if (Array.isArray(record.content)) {
           textContent = record.content
-            .filter(b => b.type === &rsquo;text&rsquo; || b.type === &rsquo;content&rsquo;)
-            .map(b => b.text || b.data?.content || &rsquo;&rsquo;)
-            .join(&rsquo;\n&rsquo;);
+            .filter(b => b.type === 'text' || b.type === 'content')
+            .map(b => b.text || b.data?.content || '')
+            .join('\n');
         }
         return {
           role: record.role,
-          content: textContent || &rsquo;[Complex Content]&rsquo;
+          content: textContent || '[Complex Content]'
         };
       });
 
@@ -114,9 +114,9 @@ const ScoopyHelperWidget = () => {
         zipCode: customerContext?.zipCode || formData.zipCode || null
       };
 
-      await apiServerClient.fetch(&rsquo;/chatbot-transcript&rsquo;, {
-        method: &rsquo;POST&rsquo;,
-        headers: { &rsquo;Content-Type&rsquo;: &rsquo;application/json&rsquo; },
+      await apiServerClient.fetch('/chatbot-transcript', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: formattedMessages,
           customerInfo,
@@ -125,7 +125,7 @@ const ScoopyHelperWidget = () => {
       });
     } catch (err) {
       // Silent fail
-      console.error(&rsquo;Failed to send chatbot transcript silently:&rsquo;, err);
+      console.error('Failed to send chatbot transcript silently:', err);
     }
   };
 
@@ -139,7 +139,7 @@ const ScoopyHelperWidget = () => {
   const isFormLoading = isLoading || isAuthenticating;
 
   return (
-    <div className=&rdquo;fixed bottom-6 right-6 z-50 flex flex-col items-end&rdquo;>
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -147,118 +147,118 @@ const ScoopyHelperWidget = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className=&rdquo;mb-4 w-[350px] sm:w-[400px] h-[600px] max-h-[85vh] bg-background rounded-2xl shadow-2xl border border-border overflow-hidden flex flex-col&rdquo;
+            className="mb-4 w-[350px] sm:w-[400px] h-[600px] max-h-[85vh] bg-background rounded-2xl shadow-2xl border border-border overflow-hidden flex flex-col"
           >
             {/* Widget Header */}
-            <div className=&rdquo;bg-primary text-primary-foreground p-4 flex items-center justify-between shrink-0&rdquo;>
-              <div className=&rdquo;flex items-center space-x-2&rdquo;>
-                <div className=&rdquo;bg-white/20 p-1.5 rounded-full&rdquo;>
-                  <MessageCircle className=&rdquo;w-5 h-5&rdquo; />
+            <div className="bg-primary text-primary-foreground p-4 flex items-center justify-between shrink-0">
+              <div className="flex items-center space-x-2">
+                <div className="bg-white/20 p-1.5 rounded-full">
+                  <MessageCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className=&rdquo;font-bold text-sm&rdquo;>Scoopy Helper</h3>
-                  <p className=&rdquo;text-xs text-primary-foreground/80&rdquo;>Online & ready to help</p>
+                  <h3 className="font-bold text-sm">Scoopy Helper</h3>
+                  <p className="text-xs text-primary-foreground/80">Online & ready to help</p>
                 </div>
               </div>
               <Button 
-                variant=&rdquo;ghost&rdquo; 
-                size=&rdquo;icon&rdquo; 
-                className=&rdquo;text-primary-foreground hover:bg-white/20 hover:text-white rounded-full h-8 w-8&rdquo;
+                variant="ghost" 
+                size="icon" 
+                className="text-primary-foreground hover:bg-white/20 hover:text-white rounded-full h-8 w-8"
                 onClick={handleClose}
               >
-                <X className=&rdquo;w-5 h-5&rdquo; />
+                <X className="w-5 h-5" />
               </Button>
             </div>
 
             {/* Widget Body */}
-            <div className=&rdquo;flex-1 overflow-hidden flex flex-col bg-muted/30&rdquo;>
+            <div className="flex-1 overflow-hidden flex flex-col bg-muted/30">
               {!isLeadCaptured ? (
-                <div className=&rdquo;p-6 flex-1 overflow-y-auto&rdquo;>
-                  <div className=&rdquo;mb-6 text-center&rdquo;>
-                    <div className=&rdquo;inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3&rdquo;>
-                      <ShieldCheck className=&rdquo;w-6 h-6&rdquo; />
+                <div className="p-6 flex-1 overflow-y-auto">
+                  <div className="mb-6 text-center">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">
+                      <ShieldCheck className="w-6 h-6" />
                     </div>
-                    <h4 className=&rdquo;text-lg font-semibold text-foreground mb-2&rdquo;>Let&rsquo;s get started!</h4>
-                    <p className=&rdquo;text-sm text-muted-foreground&rdquo;>
+                    <h4 className="text-lg font-semibold text-foreground mb-2">Let's get started!</h4>
+                    <p className="text-sm text-muted-foreground">
                       Please provide a few details so we can give you the most accurate service information for your area.
                     </p>
                   </div>
 
-                  <form onSubmit={handleLeadSubmit} className=&rdquo;space-y-4&rdquo;>
-                    <div className=&rdquo;space-y-2&rdquo;>
-                      <Label htmlFor=&rdquo;name&rdquo;>Full Name</Label>
+                  <form onSubmit={handleLeadSubmit} className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Full Name</Label>
                       <Input 
-                        id=&rdquo;name&rdquo; 
-                        name=&rdquo;name&rdquo; 
+                        id="name" 
+                        name="name" 
                         required 
-                        placeholder=&rdquo;Maya Chen&rdquo;
+                        placeholder="Maya Chen"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className=&rdquo;bg-background text-foreground placeholder:text-muted-foreground&rdquo;
+                        className="bg-background text-foreground placeholder:text-muted-foreground"
                       />
                     </div>
-                    <div className=&rdquo;space-y-2&rdquo;>
-                      <Label htmlFor=&rdquo;phone&rdquo;>Phone Number</Label>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number</Label>
                       <Input 
-                        id=&rdquo;phone&rdquo; 
-                        name=&rdquo;phone&rdquo; 
-                        type=&rdquo;tel&rdquo;
+                        id="phone" 
+                        name="phone" 
+                        type="tel"
                         required 
-                        placeholder=&rdquo;(423) 555-0123&rdquo;
+                        placeholder="(423) 555-0123"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className=&rdquo;bg-background text-foreground placeholder:text-muted-foreground&rdquo;
+                        className="bg-background text-foreground placeholder:text-muted-foreground"
                       />
                     </div>
-                    <div className=&rdquo;grid grid-cols-2 gap-4&rdquo;>
-                      <div className=&rdquo;space-y-2&rdquo;>
-                        <Label htmlFor=&rdquo;zipCode&rdquo;>Zip Code</Label>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="zipCode">Zip Code</Label>
                         <Input 
-                          id=&rdquo;zipCode&rdquo; 
-                          name=&rdquo;zipCode&rdquo; 
+                          id="zipCode" 
+                          name="zipCode" 
                           required 
-                          placeholder=&rdquo;37402&rdquo;
+                          placeholder="37402"
                           value={formData.zipCode}
                           onChange={handleInputChange}
-                          className=&rdquo;bg-background text-foreground placeholder:text-muted-foreground&rdquo;
+                          className="bg-background text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
-                      <div className=&rdquo;space-y-2&rdquo;>
-                        <Label htmlFor=&rdquo;numberOfDogs&rdquo;>Number of Dogs</Label>
+                      <div className="space-y-2">
+                        <Label htmlFor="numberOfDogs">Number of Dogs</Label>
                         <Input 
-                          id=&rdquo;numberOfDogs&rdquo; 
-                          name=&rdquo;numberOfDogs&rdquo; 
-                          type=&rdquo;number&rdquo;
-                          min=&rdquo;1&rdquo;
-                          max=&rdquo;20&rdquo;
+                          id="numberOfDogs" 
+                          name="numberOfDogs" 
+                          type="number"
+                          min="1"
+                          max="20"
                           required 
-                          placeholder=&rdquo;1&rdquo;
+                          placeholder="1"
                           value={formData.numberOfDogs}
                           onChange={handleInputChange}
-                          className=&rdquo;bg-background text-foreground placeholder:text-muted-foreground&rdquo;
+                          className="bg-background text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
                     </div>
                     <Button 
-                      type=&rdquo;submit&rdquo; 
-                      className=&rdquo;w-full mt-4&rdquo; 
+                      type="submit" 
+                      className="w-full mt-4" 
                       disabled={isFormLoading}
                     >
                       {isFormLoading ? (
                         <>
-                          <Loader2 className=&rdquo;mr-2 h-4 w-4 animate-spin&rdquo; />
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                           Connecting...
                         </>
                       ) : (
                         <>
-                          Start Chat <Send className=&rdquo;ml-2 h-4 w-4&rdquo; />
+                          Start Chat <Send className="ml-2 h-4 w-4" />
                         </>
                       )}
                     </Button>
                   </form>
                 </div>
               ) : (
-                <div className=&rdquo;flex-1 overflow-hidden [&>div]:h-full [&>div>div:first-child]:hidden&rdquo;>
+                <div className="flex-1 overflow-hidden [&>div]:h-full [&>div>div:first-child]:hidden">
                   {/* Pass the extracted customer context down to IntegratedAiChat */}
                   <IntegratedAiChat customerContext={customerContext} />
                 </div>
@@ -273,29 +273,29 @@ const ScoopyHelperWidget = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={isOpen ? handleClose : () => setIsOpen(true)}
-        className=&rdquo;bg-primary text-primary-foreground w-14 h-14 rounded-full shadow-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary&rdquo;
-        aria-label={isOpen ? &rdquo;Close chat&rdquo; : &rdquo;Open chat&rdquo;}
+        className="bg-primary text-primary-foreground w-14 h-14 rounded-full shadow-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+        aria-label={isOpen ? "Close chat" : "Open chat"}
       >
-        <AnimatePresence mode=&rdquo;wait&rdquo;>
+        <AnimatePresence mode="wait">
           {isOpen ? (
             <motion.div
-              key=&rdquo;close&rdquo;
+              key="close"
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.15 }}
             >
-              <X className=&rdquo;w-6 h-6&rdquo; />
+              <X className="w-6 h-6" />
             </motion.div>
           ) : (
             <motion.div
-              key=&rdquo;open&rdquo;
+              key="open"
               initial={{ rotate: 90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.15 }}
             >
-              <MessageCircle className=&rdquo;w-6 h-6&rdquo; />
+              <MessageCircle className="w-6 h-6" />
             </motion.div>
           )}
         </AnimatePresence>
