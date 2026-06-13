@@ -146,13 +146,16 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPostTemplate />} />
 
           <Route path="*" element={
-            <div className="min-h-screen flex items-center justify-center bg-background">
+            <>
+              <Helmet><meta name="robots" content="noindex, nofollow" /></Helmet>
+              <div className="min-h-screen flex items-center justify-center bg-background">
               <div className="text-center">
                 <h1 className="mb-4 text-4xl font-bold">404 - Page Not Found</h1>
                 <p className="text-muted-foreground mb-6">The page you're looking for doesn't exist.</p>
                 <a href="/" className="text-primary hover:underline font-bold">Back to home</a>
               </div>
             </div>
+          </>
           } />
         </Routes>
       </Suspense>
