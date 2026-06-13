@@ -15,7 +15,7 @@ const BlogArticle5_DIYVsProfessional = () => {
   const content = `
     <h2>The Time Investment of DIY</h2>
     <p>
-      When you decide to handle pet waste removal yourself, the biggest hidden cost is your time. For a household with two dogs, a thorough yard cleaning takes an average of 30 to 45 minutes a week. That equates to roughly 26 to 39 hours a year—nearly a full work week spent just picking up dog poop. Professional services operate with efficient routing, specialized tools, and trained eyes to complete the job swiftly and thoroughly, giving you back those precious hours for family, hobbies, or simply relaxing.
+      When you decide to handle pet waste removal yourself, the biggest hidden cost is your time. For a household with two dogs, a thorough yard cleaning takes an average of 30 to 45 minutes a week. That equates to roughly 26 to 39 hours a year&mdash;nearly a full work week spent just picking up dog poop. Professional services operate with efficient routing, specialized tools, and trained eyes to complete the job swiftly and thoroughly, giving you back those precious hours for family, hobbies, or simply relaxing.
     </p>
 
     <h2>Health and Safety Risks of DIY</h2>
@@ -25,7 +25,7 @@ const BlogArticle5_DIYVsProfessional = () => {
 
     <blockquote>
       "I spent every weekend managing waste until I realized how much time I was losing. It was the chore everyone in the house fought over. Professional service is worth every penny just for the peace in our household."
-      <br/>— Robert M. from Soddy-Daisy
+      <br/>&mdash; Robert M. from Soddy-Daisy
     </blockquote>
 
     <h2>Cost Comparison: Materials vs. Service</h2>
@@ -40,7 +40,7 @@ const BlogArticle5_DIYVsProfessional = () => {
 
     <blockquote>
       "We tried to do it ourselves, but we always fell behind. One week turned into three, and the yard became a disaster zone. Since hiring Scoopy Chatt, the yard is just magically clean every Thursday."
-      <br/>— The Garcia Family from Cleveland
+      <br/>&mdash; The Garcia Family from Cleveland
     </blockquote>
 
     <h2>Environmental Disposal Considerations</h2>
