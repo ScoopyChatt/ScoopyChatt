@@ -1,20 +1,20 @@
-import * as React from &rdquo;react&rdquo;
-import { cva } from &rdquo;class-variance-authority&rdquo;;
+import * as React from "react"
+import { cva } from "class-variance-authority";
 
-import { cn } from &rdquo;@/lib/utils&rdquo;
+import { cn } from "@/lib/utils"
 
 const alertVariants = cva(
-  &rdquo;relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7&rdquo;,
+  "relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7",
   {
     variants: {
       variant: {
-        default: &rdquo;bg-background text-foreground&rdquo;,
+        default: "bg-background text-foreground",
         destructive:
-          &rdquo;border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive&rdquo;,
+          "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
       },
     },
     defaultVariants: {
-      variant: &rdquo;default&rdquo;,
+      variant: "default",
     },
   }
 )
@@ -22,26 +22,26 @@ const alertVariants = cva(
 const Alert = React.forwardRef(({ className, variant, ...props }, ref) => (
   <div
     ref={ref}
-    role=&rdquo;alert&rdquo;
+    role="alert"
     className={cn(alertVariants({ variant }), className)}
     {...props} />
 ))
-Alert.displayName = &rdquo;Alert&rdquo;
+Alert.displayName = "Alert"
 
 const AlertTitle = React.forwardRef(({ className, ...props }, ref) => (
   <h5
     ref={ref}
-    className={cn(&rdquo;mb-1 font-medium leading-none tracking-tight&rdquo;, className)}
+    className={cn("mb-1 font-medium leading-none tracking-tight", className)}
     {...props} />
 ))
-AlertTitle.displayName = &rdquo;AlertTitle&rdquo;
+AlertTitle.displayName = "AlertTitle"
 
 const AlertDescription = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(&rdquo;text-sm [&_p]:leading-relaxed&rdquo;, className)}
+    className={cn("text-sm [&_p]:leading-relaxed", className)}
     {...props} />
 ))
-AlertDescription.displayName = &rdquo;AlertDescription&rdquo;
+AlertDescription.displayName = "AlertDescription"
 
 export { Alert, AlertTitle, AlertDescription }
