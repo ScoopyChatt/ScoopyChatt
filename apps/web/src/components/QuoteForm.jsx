@@ -1,23 +1,23 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { toast } from 'sonner';
-import apiServerClient from '@/lib/apiServerClient.js';
+import React from &rsquo;react&rsquo;;
+import { useNavigate } from &rsquo;react-router-dom&rsquo;;
+import { useForm } from &rsquo;react-hook-form&rsquo;;
+import { zodResolver } from &rsquo;@hookform/resolvers/zod&rsquo;;
+import * as z from &rsquo;zod&rsquo;;
+import { Button } from &rsquo;@/components/ui/button&rsquo;;
+import { Input } from &rsquo;@/components/ui/input&rsquo;;
+import { Textarea } from &rsquo;@/components/ui/textarea&rsquo;;
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from &rsquo;@/components/ui/select&rsquo;;
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from &rsquo;@/components/ui/form&rsquo;;
+import { toast } from &rsquo;sonner&rsquo;;
+import apiServerClient from &rsquo;@/lib/apiServerClient.js&rsquo;;
 
 const formSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(10, 'Please enter a valid phone number'),
-  serviceZipCode: z.string().regex(/^\d{5}$/, 'Must be a valid 5-digit zip code'),
-  serviceType: z.string().min(1, 'Please select a service type'),
-  numberOfDogs: z.string().min(1, 'Please select the number of dogs'),
+  name: z.string().min(2, &rsquo;Name must be at least 2 characters&rsquo;),
+  email: z.string().email(&rsquo;Please enter a valid email address&rsquo;),
+  phone: z.string().min(10, &rsquo;Please enter a valid phone number&rsquo;),
+  serviceZipCode: z.string().regex(/^\d{5}$/, &rsquo;Must be a valid 5-digit zip code&rsquo;),
+  serviceType: z.string().min(1, &rsquo;Please select a service type&rsquo;),
+  numberOfDogs: z.string().min(1, &rsquo;Please select the number of dogs&rsquo;),
   additionalNotes: z.string().optional(),
 });
 
@@ -26,15 +26,15 @@ const QuoteForm = () => {
 
   const form = useForm({
     resolver: zodResolver(formSchema),
-    mode: 'onChange',
+    mode: &rsquo;onChange&rsquo;,
     defaultValues: {
-      name: '',
-      email: '',
-      phone: '',
-      serviceZipCode: '',
-      serviceType: '',
-      numberOfDogs: '',
-      additionalNotes: '',
+      name: &rsquo;&rsquo;,
+      email: &rsquo;&rsquo;,
+      phone: &rsquo;&rsquo;,
+      serviceZipCode: &rsquo;&rsquo;,
+      serviceType: &rsquo;&rsquo;,
+      numberOfDogs: &rsquo;&rsquo;,
+      additionalNotes: &rsquo;&rsquo;,
     },
   });
 
@@ -49,14 +49,14 @@ const QuoteForm = () => {
         numberOfDogs: parseInt(values.numberOfDogs, 10),
       };
 
-      const response = await apiServerClient.fetch('/quote-webhook', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await apiServerClient.fetch(&rsquo;/quote-webhook&rsquo;, {
+        method: &rsquo;POST&rsquo;,
+        headers: { &rsquo;Content-Type&rsquo;: &rsquo;application/json&rsquo; },
         body: JSON.stringify(submitData)
       });
 
       if (!response.ok) {
-        let errorMessage = 'Failed to submit quote request';
+        let errorMessage = &rsquo;Failed to submit quote request&rsquo;;
         try {
           const errorData = await response.json();
           if (errorData.error) errorMessage = errorData.error;
@@ -69,35 +69,35 @@ const QuoteForm = () => {
       // Await successful response parsing as per requirements
       await response.json();
       
-      toast.success('Quote submitted successfully');
+      toast.success(&rsquo;Quote submitted successfully&rsquo;);
       form.reset();
       
       // Redirect to thank you page after successful submission
-      navigate('/thank-you');
+      navigate(&rsquo;/thank-you&rsquo;);
     } catch (error) {
-      console.error('Submission error:', error);
-      toast.error(error.message || 'Connection failed. Please try again.');
+      console.error(&rsquo;Submission error:&rsquo;, error);
+      toast.error(error.message || &rsquo;Connection failed. Please try again.&rsquo;);
     }
   };
 
   const onError = () => {
-    toast.error('Please fill in all required fields correctly.');
+    toast.error(&rsquo;Please fill in all required fields correctly.&rsquo;);
   };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit, onError)} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form onSubmit={form.handleSubmit(onSubmit, onError)} className=&rdquo;space-y-6&rdquo;>
+        <div className=&rdquo;grid grid-cols-1 md:grid-cols-2 gap-6&rdquo;>
           <FormField
             control={form.control}
-            name="name"
+            name=&rdquo;name&rdquo;
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Full Name *</FormLabel>
                 <FormControl>
                   <Input 
-                    placeholder="Enter your full name" 
-                    className="text-foreground" 
+                    placeholder=&rdquo;Enter your full name&rdquo; 
+                    className=&rdquo;text-foreground&rdquo; 
                     {...field} 
                   />
                 </FormControl>
@@ -108,15 +108,15 @@ const QuoteForm = () => {
 
           <FormField
             control={form.control}
-            name="email"
+            name=&rdquo;email&rdquo;
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Email Address *</FormLabel>
                 <FormControl>
                   <Input 
-                    type="email" 
-                    placeholder="your.email@example.com" 
-                    className="text-foreground" 
+                    type=&rdquo;email&rdquo; 
+                    placeholder=&rdquo;your.email@example.com&rdquo; 
+                    className=&rdquo;text-foreground&rdquo; 
                     {...field} 
                   />
                 </FormControl>
@@ -127,15 +127,15 @@ const QuoteForm = () => {
 
           <FormField
             control={form.control}
-            name="phone"
+            name=&rdquo;phone&rdquo;
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Phone Number *</FormLabel>
                 <FormControl>
                   <Input 
-                    type="tel" 
-                    placeholder="(555) 123-4567" 
-                    className="text-foreground" 
+                    type=&rdquo;tel&rdquo; 
+                    placeholder=&rdquo;(555) 123-4567&rdquo; 
+                    className=&rdquo;text-foreground&rdquo; 
                     {...field} 
                   />
                 </FormControl>
@@ -146,16 +146,16 @@ const QuoteForm = () => {
 
           <FormField
             control={form.control}
-            name="serviceZipCode"
+            name=&rdquo;serviceZipCode&rdquo;
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Service Zip Code *</FormLabel>
                 <FormControl>
                   <Input 
-                    inputMode="numeric"
+                    inputMode=&rdquo;numeric&rdquo;
                     maxLength={5}
-                    placeholder="e.g. 37402" 
-                    className="text-foreground" 
+                    placeholder=&rdquo;e.g. 37402&rdquo; 
+                    className=&rdquo;text-foreground&rdquo; 
                     {...field} 
                   />
                 </FormControl>
@@ -166,22 +166,22 @@ const QuoteForm = () => {
 
           <FormField
             control={form.control}
-            name="serviceType"
+            name=&rdquo;serviceType&rdquo;
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Service Type *</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="text-foreground">
-                      <SelectValue placeholder="Select a service" />
+                    <SelectTrigger className=&rdquo;text-foreground&rdquo;>
+                      <SelectValue placeholder=&rdquo;Select a service&rdquo; />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="twice-weekly">2X Weekly Service</SelectItem>
-                    <SelectItem value="weekly">Weekly Service</SelectItem>
-                    <SelectItem value="biweekly">Bi-Weekly Service</SelectItem>
-                    <SelectItem value="onetime">One-Time Cleanup</SelectItem>
-                    <SelectItem value="custom">Custom Service</SelectItem>
+                    <SelectItem value=&rdquo;twice-weekly&rdquo;>2X Weekly Service</SelectItem>
+                    <SelectItem value=&rdquo;weekly&rdquo;>Weekly Service</SelectItem>
+                    <SelectItem value=&rdquo;biweekly&rdquo;>Bi-Weekly Service</SelectItem>
+                    <SelectItem value=&rdquo;onetime&rdquo;>One-Time Cleanup</SelectItem>
+                    <SelectItem value=&rdquo;custom&rdquo;>Custom Service</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -191,20 +191,20 @@ const QuoteForm = () => {
 
           <FormField
             control={form.control}
-            name="numberOfDogs"
+            name=&rdquo;numberOfDogs&rdquo;
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Number of Dogs *</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="text-foreground">
-                      <SelectValue placeholder="Select number of dogs" />
+                    <SelectTrigger className=&rdquo;text-foreground&rdquo;>
+                      <SelectValue placeholder=&rdquo;Select number of dogs&rdquo; />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                       <SelectItem key={num} value={num.toString()}>
-                        {num} {num === 1 ? 'Dog' : 'Dogs'}
+                        {num} {num === 1 ? &rsquo;Dog&rsquo; : &rsquo;Dogs&rsquo;}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -217,14 +217,14 @@ const QuoteForm = () => {
 
         <FormField
           control={form.control}
-          name="additionalNotes"
+          name=&rdquo;additionalNotes&rdquo;
           render={({ field }) => (
             <FormItem>
               <FormLabel>Additional Notes</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder="Tell us about your yard size, gate access, or any special requirements..." 
-                  className="text-foreground resize-none" 
+                  placeholder=&rdquo;Tell us about your yard size, gate access, or any special requirements...&rdquo; 
+                  className=&rdquo;text-foreground resize-none&rdquo; 
                   rows={4}
                   {...field} 
                 />
@@ -236,20 +236,20 @@ const QuoteForm = () => {
 
         {/* Wrapper div to capture clicks when button is disabled so we can show the toast */}
         <div 
-          className="relative" 
+          className=&rdquo;relative&rdquo; 
           onClick={() => {
             if (!isValid && !isSubmitting) {
-              toast.error('Please fill in all required fields correctly.');
+              toast.error(&rsquo;Please fill in all required fields correctly.&rsquo;);
               form.trigger();
             }
           }}
         >
           <Button 
-            type="submit" 
+            type=&rdquo;submit&rdquo; 
             disabled={!isValid || isSubmitting} 
-            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base disabled:opacity-50 disabled:cursor-not-allowed"
+            className=&rdquo;w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base disabled:opacity-50 disabled:cursor-not-allowed&rdquo;
           >
-            {isSubmitting ? 'Submitting...' : 'Request Free Quote'}
+            {isSubmitting ? &rsquo;Submitting...&rsquo; : &rsquo;Request Free Quote&rsquo;}
           </Button>
         </div>
       </form>
