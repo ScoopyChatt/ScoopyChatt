@@ -18,7 +18,7 @@ const DogParkGuideLandingPage = () => {
           Discover Chattanooga's Best Kept Secrets for Dog Owners!
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-          Stop guessing where to take your pup. Get our exclusive, fully-detailed guide to the best off-leash areas and hidden gems around the Scenic Cityâabsolutely free.
+          Stop guessing where to take your pup. Get our exclusive, fully-detailed guide to the best off-leash areas and hidden gems around the Scenic City—absolutely free.
         </p>
       </section>
 
