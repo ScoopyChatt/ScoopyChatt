@@ -1,18 +1,18 @@
-import { useCallback, useEffect, useRef, useState } from &rsquo;react&rsquo;;
-import { toast } from &rsquo;@/hooks/use-toast&rsquo;;
-import { integratedAiClient } from &rsquo;@/lib/integratedAiClient&rsquo;;
-import { pocketbaseClient } from &rsquo;@/lib/pocketbaseClient&rsquo;;
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { toast } from '@/hooks/use-toast';
+import { integratedAiClient } from '@/lib/integratedAiClient';
+import { pocketbaseClient } from '@/lib/pocketbaseClient';
 
 /**
  * @typedef {object} TextContentBlock
  * @property {string} text
- * @property {&rsquo;text&rsquo;} type
+ * @property {'text'} type
  */
 
 /**
  * @typedef {object} ImageContentBlock
  * @property {string} image
- * @property {&rsquo;image&rsquo;} type
+ * @property {'image'} type
  */
 
 /**
@@ -21,21 +21,21 @@ import { pocketbaseClient } from &rsquo;@/lib/pocketbaseClient&rsquo;;
 
 /**
  * @typedef {object} SSEEventContent
- * @property {&rsquo;content&rsquo;} type
+ * @property {'content'} type
  * @property {{ content: string }} data
  * @property {{ agentName?: string }} [metadata]
  */
 
 /**
  * @typedef {object} SSEEventToolUse
- * @property {&rsquo;tool_use&rsquo;} type
+ * @property {'tool_use'} type
  * @property {{ toolId: string, toolName: string, inputParams: Record<string, any> }} data
  * @property {{ agentName?: string }} [metadata]
  */
 
 /**
  * @typedef {object} SSEEventToolResult
- * @property {&rsquo;tool_result&rsquo;} type
+ * @property {'tool_result'} type
  * @property {{ toolCallId: string, content: string }} data
  * @property {{ agentName?: string }} [metadata]
  */
@@ -55,25 +55,25 @@ import { pocketbaseClient } from &rsquo;@/lib/pocketbaseClient&rsquo;;
  */
 
 const MessageRole = Object.freeze({
-	User: &rsquo;user&rsquo;,
-	Assistant: &rsquo;assistant&rsquo;,
-	Tool: &rsquo;tool&rsquo;,
+	User: 'user',
+	Assistant: 'assistant',
+	Tool: 'tool',
 });
 
 const ContentBlockType = Object.freeze({
-	Text: &rsquo;text&rsquo;,
-	Image: &rsquo;image&rsquo;,
+	Text: 'text',
+	Image: 'image',
 });
 
 const SSEEventType = Object.freeze({
-	Content: &rsquo;content&rsquo;,
-	Reasoning: &rsquo;reasoning&rsquo;,
-	ToolUse: &rsquo;tool_use&rsquo;,
-	ToolResult: &rsquo;tool_result&rsquo;,
-	Usage: &rsquo;usage&rsquo;,
-	Error: &rsquo;error&rsquo;,
-	Done: &rsquo;done&rsquo;,
-	Completed: &rsquo;completed&rsquo;,
+	Content: 'content',
+	Reasoning: 'reasoning',
+	ToolUse: 'tool_use',
+	ToolResult: 'tool_result',
+	Usage: 'usage',
+	Error: 'error',
+	Done: 'done',
+	Completed: 'completed',
 });
 
 /**
@@ -85,14 +85,14 @@ const SSEEventType = Object.freeze({
  */
 function extractGeneratedImages(msg, history) {
 	const images = [];
-	if (msg.role !== &rsquo;assistant&rsquo;) {
+	if (msg.role !== 'assistant') {
 		return images;
 	}
 
-	const generateImageToolCall = msg.tool_calls?.find(toolCall => toolCall.function.name === &rsquo;generate_image&rsquo;);
+	const generateImageToolCall = msg.tool_calls?.find(toolCall => toolCall.function.name === 'generate_image');
 
 	if (generateImageToolCall) {
-		const generateImageToolCallResult = history.find(historyMessage => historyMessage.role === &rsquo;tool&rsquo; && historyMessage.tool_call_id === generateImageToolCall.id)?.content;
+		const generateImageToolCallResult = history.find(historyMessage => historyMessage.role === 'tool' && historyMessage.tool_call_id === generateImageToolCall.id)?.content;
 		if (generateImageToolCallResult) {
 			images.push(generateImageToolCallResult);
 		}
@@ -111,7 +111,7 @@ function mapUserMessage({ message }) {
 
 	return {
 		role: MessageRole.User,
-		content: textParts.join(&rsquo;\n&rsquo;),
+		content: textParts.join('\n'),
 		...(images.length > 0 && { images }),
 	};
 }
@@ -143,7 +143,7 @@ function mapAssistantMessages({ message }) {
 			...(event.type === SSEEventType.ToolUse && {
 				tool_calls: event.data.tool_calls.map(toolCall => ({
 					id: toolCall.id,
-					type: &rsquo;function&rsquo;,
+					type: 'function',
 					function: {
 						name: toolCall.name,
 						arguments: JSON.stringify(toolCall.input),
@@ -173,8 +173,8 @@ function useIntegratedAi() {
 					return [];
 				}
 			
-				const records = await pocketbaseClient.collection(&rsquo;_integratedAiMessages&rsquo;).getFullList({
-					sort: &rsquo;created&rsquo;,
+				const records = await pocketbaseClient.collection('_integratedAiMessages').getFullList({
+					sort: 'created',
 				});
 			
 				/** @type {HistoryMessage[]} */
@@ -190,7 +190,7 @@ function useIntegratedAi() {
 				}
 			
 				const chatMessages = historyMessages
-					.filter(msg => msg.role === &rsquo;user&rsquo; || msg.role === &rsquo;assistant&rsquo;)
+					.filter(msg => msg.role === 'user' || msg.role === 'assistant')
 					.map((msg) => {
 						const images = [...(msg.images || []), ...extractGeneratedImages(msg, historyMessages)];
 
@@ -204,8 +204,8 @@ function useIntegratedAi() {
 				setMessages(chatMessages);
 			} catch (err) {
 				toast({
-					variant: &rsquo;destructive&rsquo;,
-					title: &rsquo;Error&rsquo;,
+					variant: 'destructive',
+					title: 'Error',
 					description: err.message,
 				});
 			} finally {
@@ -239,7 +239,7 @@ function useIntegratedAi() {
 		}
 
 		if (parsed.type === SSEEventType.ToolResult) {
-			const isImageResult = parsed.data.tool_name === &rsquo;generate_image&rsquo; && parsed.data.content;
+			const isImageResult = parsed.data.tool_name === 'generate_image' && parsed.data.content;
 
 			if (isImageResult) {
 				setMessages((prev) => {
@@ -262,28 +262,28 @@ function useIntegratedAi() {
 		setMessages(prev => [
 			...prev,
 			{
-				role: &rsquo;user&rsquo;,
+				role: 'user',
 				content: userMessage,
 				...(images.length > 0 && {
 					images: images.map(img => URL.createObjectURL(img)),
 				}),
 			},
-			{ role: &rsquo;assistant&rsquo;, content: &rsquo;&rsquo; },
+			{ role: 'assistant', content: '' },
 		]);
 
 		const abortController = new AbortController();
 		abortControllerRef.current = abortController;
 
 		try {
-			const response = await integratedAiClient.stream(&rsquo;/integrated-ai/stream&rsquo;, {
-				body: { message: [{ text: userMessage, type: &rsquo;text&rsquo; }] },
+			const response = await integratedAiClient.stream('/integrated-ai/stream', {
+				body: { message: [{ text: userMessage, type: 'text' }] },
 				signal: abortController.signal,
 				images,
 			});
 
 			const reader = response.body.getReader();
 			const decoder = new TextDecoder();
-			let buffer = &rsquo;&rsquo;;
+			let buffer = '';
 
 			while (true) {
 				const { done, value } = await reader.read();
@@ -294,19 +294,19 @@ function useIntegratedAi() {
 
 				buffer += decoder.decode(value, { stream: true });
 
-				const events = buffer.split(&rsquo;\n\n&rsquo;);
-				buffer = events.pop() || &rsquo;&rsquo;;
+				const events = buffer.split('\n\n');
+				buffer = events.pop() || '';
 
 				for (const event of events) {
 					if (!event.trim()) {
 						continue;
 					}
 
-					const lines = event.split(&rsquo;\n&rsquo;);
-					let eventData = &rsquo;&rsquo;;
+					const lines = event.split('\n');
+					let eventData = '';
 
 					for (const line of lines) {
-						if (line.startsWith(&rsquo;data: &rsquo;)) {
+						if (line.startsWith('data: ')) {
 							eventData += line.slice(6);
 						}
 					}
@@ -330,15 +330,15 @@ function useIntegratedAi() {
 			}
 		} catch (err) {
 			toast({
-				variant: &rsquo;destructive&rsquo;,
-				title: &rsquo;Error&rsquo;,
+				variant: 'destructive',
+				title: 'Error',
 				description: err.message,
 			});
 
 			setMessages(prev => {
 				const updated = [...prev];
 				const last = updated[updated.length - 1];
-				if (last?.role === &rsquo;assistant&rsquo; && !last.content) {
+				if (last?.role === 'assistant' && !last.content) {
 					updated.pop();
 				}
 				return updated;
