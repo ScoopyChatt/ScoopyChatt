@@ -1,32 +1,32 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import SEOHead from '@/components/SEOHead.jsx';
-import Header from '@/components/Header.jsx';
-import Footer from '@/components/Footer.jsx';
-import CTAButton from '@/components/CTAButton.jsx';
-import TestimonialCard from '@/components/TestimonialCard.jsx';
-import LocationSection from '@/components/LocationSection.jsx';
+import React from &rsquo;react&rsquo;;
+import { Link } from &rsquo;react-router-dom&rsquo;;
+import SEOHead from &rsquo;@/components/SEOHead.jsx&rsquo;;
+import Header from &rsquo;@/components/Header.jsx&rsquo;;
+import Footer from &rsquo;@/components/Footer.jsx&rsquo;;
+import CTAButton from &rsquo;@/components/CTAButton.jsx&rsquo;;
+import TestimonialCard from &rsquo;@/components/TestimonialCard.jsx&rsquo;;
+import LocationSection from &rsquo;@/components/LocationSection.jsx&rsquo;;
 
 const NearMePage = () => {
   const localReviews = [
-    { author: "Michael T.", location: "Signal Mountain", quote: "Fast, local, and incredibly dependable. The best scooping service near me." },
-    { author: "Jessica R.", location: "Hixson", quote: "Love supporting a local business that does exactly what they promise." },
-    { author: "David P.", location: "East Brainerd", quote: "They always lock the gate and leave the yard spotless. Highly recommended in the area." }
+    { author: &rdquo;Michael T.&rdquo;, location: &rdquo;Signal Mountain&rdquo;, quote: &rdquo;Fast, local, and incredibly dependable. The best scooping service near me.&rdquo; },
+    { author: &rdquo;Jessica R.&rdquo;, location: &rdquo;Hixson&rdquo;, quote: &rdquo;Love supporting a local business that does exactly what they promise.&rdquo; },
+    { author: &rdquo;David P.&rdquo;, location: &rdquo;East Brainerd&rdquo;, quote: &rdquo;They always lock the gate and leave the yard spotless. Highly recommended in the area.&rdquo; }
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <SEOHead path="/near-me" />
+    <div className=&rdquo;min-h-screen flex flex-col bg-background&rdquo;>
+      <SEOHead path=&rdquo;/near-me&rdquo; />
       
       <Header />
 
-      <main className="flex-grow">
-        <section className="pt-24 pb-16 bg-card border-b border-border">
-          <div className="container-shell text-center max-w-4xl mx-auto">
-            <h1 className="mb-6 text-foreground">Pooper Scooper Service Near Me in Chattanooga, TN</h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              We're your local, neighborhood pet waste removal experts. Proudly serving Chattanooga and surrounding areas so you never have to search for a scooper again.
+      <main className=&rdquo;flex-grow&rdquo;>
+        <section className=&rdquo;pt-24 pb-16 bg-card border-b border-border&rdquo;>
+          <div className=&rdquo;container-shell text-center max-w-4xl mx-auto&rdquo;>
+            <h1 className=&rdquo;mb-6 text-foreground&rdquo;>Pooper Scooper Service Near Me in Chattanooga, TN</h1>
+            <p className=&rdquo;text-xl text-muted-foreground mb-8&rdquo;>
+              We&rsquo;re your local, neighborhood pet waste removal experts. Proudly serving Chattanooga and surrounding areas so you never have to search for a scooper again.
             </p>
             <CTAButton>Check My Zip Code</CTAButton>
           </div>
@@ -34,12 +34,12 @@ const NearMePage = () => {
 
         <LocationSection />
 
-        <section className="section-spacing bg-background">
-          <div className="container-shell">
-            <h2 className="text-center mb-12">Trusted by Neighbors Near You</h2>
-            <div className="testimonial-masonry">
+        <section className=&rdquo;section-spacing bg-background&rdquo;>
+          <div className=&rdquo;container-shell&rdquo;>
+            <h2 className=&rdquo;text-center mb-12&rdquo;>Trusted by Neighbors Near You</h2>
+            <div className=&rdquo;testimonial-masonry&rdquo;>
               {localReviews.map((review, i) => (
-                <div key={i} className="break-inside-avoid">
+                <div key={i} className=&rdquo;break-inside-avoid&rdquo;>
                   <TestimonialCard {...review} />
                 </div>
               ))}
@@ -47,30 +47,30 @@ const NearMePage = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-muted/50 border-t border-border">
-          <div className="container-shell text-center max-w-2xl">
-            <h2 className="mb-6">Local Service, Professional Standards</h2>
-            <p className="text-muted-foreground mb-8 text-lg">
-              Being local means we understand the area, the weather, and our community. We respond quickly and provide a level of service national franchises can't match.
+        <section className=&rdquo;py-20 bg-muted/50 border-t border-border&rdquo;>
+          <div className=&rdquo;container-shell text-center max-w-2xl&rdquo;>
+            <h2 className=&rdquo;mb-6&rdquo;>Local Service, Professional Standards</h2>
+            <p className=&rdquo;text-muted-foreground mb-8 text-lg&rdquo;>
+              Being local means we understand the area, the weather, and our community. We respond quickly and provide a level of service national franchises can&rsquo;t match.
             </p>
-            <CTAButton variant="default">Hire Your Local Scooper</CTAButton>
+            <CTAButton variant=&rdquo;default&rdquo;>Hire Your Local Scooper</CTAButton>
           </div>
         </section>
       </main>
 
       
-      <nav aria-label="Scoopy Doo site navigation" className="py-8 border-t border-border bg-muted/20">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Explore Scoopy Doo</p>
-          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 list-none m-0 p-0">
-            <li><Link to="/" className="text-primary hover:underline font-medium text-sm">Home</Link></li>
-            <li><Link to="/services" className="text-primary hover:underline font-medium text-sm">Services</Link></li>
-            <li><Link to="/pricing" className="text-primary hover:underline font-medium text-sm">Pricing</Link></li>
-            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get a Quote</Link></li>
-            <li><Link to="/faq" className="text-primary hover:underline font-medium text-sm">FAQ</Link></li>
-            <li><Link to="/reviews" className="text-primary hover:underline font-medium text-sm">Reviews</Link></li>
-            <li><Link to="/service-areas" className="text-primary hover:underline font-medium text-sm">Service Areas</Link></li>
-            <li><Link to="/blog" className="text-primary hover:underline font-medium text-sm">Blog</Link></li>
+      <nav aria-label=&rdquo;Scoopy Doo site navigation&rdquo; className=&rdquo;py-8 border-t border-border bg-muted/20&rdquo;>
+        <div className=&rdquo;max-w-5xl mx-auto px-4 text-center&rdquo;>
+          <p className=&rdquo;text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3&rdquo;>Explore Scoopy Doo</p>
+          <ul className=&rdquo;flex flex-wrap justify-center gap-x-6 gap-y-2 list-none m-0 p-0&rdquo;>
+            <li><Link to=&rdquo;/&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Home</Link></li>
+            <li><Link to=&rdquo;/services&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Services</Link></li>
+            <li><Link to=&rdquo;/pricing&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Pricing</Link></li>
+            <li><Link to=&rdquo;/quote&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Get a Quote</Link></li>
+            <li><Link to=&rdquo;/faq&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>FAQ</Link></li>
+            <li><Link to=&rdquo;/reviews&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Reviews</Link></li>
+            <li><Link to=&rdquo;/service-areas&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Service Areas</Link></li>
+            <li><Link to=&rdquo;/blog&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Blog</Link></li>
           </ul>
         </div>
       </nav>
