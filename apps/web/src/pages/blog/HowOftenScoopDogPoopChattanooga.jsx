@@ -11,7 +11,7 @@ const HowOftenScoopDogPoopChattanooga = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
         title="How Often Should You Scoop Dog Poop in Chattanooga?"
-        description="Wondering how often to scoop dog poop in Chattanooga? Most vets and yard experts say at least once a week. Here's why — and how Scoopy Doo makes it effortless."
+        description="Wondering how often to scoop dog poop in Chattanooga? Most vets and yard experts say at least once a week. Here's why &mdash; and how Scoopy Doo makes it effortless."
         canonicalUrl={`${CANONICAL_BASE_URL}/blog/how-often-scoop-dog-poop-chattanooga`}
       />
       <Header />
@@ -42,19 +42,19 @@ const HowOftenScoopDogPoopChattanooga = () => {
           </header>
 
           <div className="prose prose-lg max-w-none text-foreground">
-            <p>If you have a dog in Chattanooga, you already know the drill: someone has to go out back and handle business. But how often is often enough? Once a week? After every potty break? The answer matters more than most people realize — and it has a lot to do with Chattanooga's climate.</p>
+            <p>If you have a dog in Chattanooga, you already know the drill: someone has to go out back and handle business. But how often is often enough? Once a week? After every potty break? The answer matters more than most people realize &mdash; and it has a lot to do with Chattanooga's climate.</p>
 
             <h2 className="text-2xl font-bold mt-10 mb-4">The Short Answer: At Least Once a Week</h2>
-            <p>Most veterinarians and lawn care experts agree that once a week is the minimum for most households with one or two dogs. If you have three or more dogs, or a small yard, twice a week is better. Left any longer, waste builds up, bacteria multiply, and your yard becomes a genuine health hazard — not just an eyesore.</p>
+            <p>Most veterinarians and lawn care experts agree that once a week is the minimum for most households with one or two dogs. If you have three or more dogs, or a small yard, twice a week is better. Left any longer, waste builds up, bacteria multiply, and your yard becomes a genuine health hazard &mdash; not just an eyesore.</p>
 
             <h2 className="text-2xl font-bold mt-10 mb-4">Why Chattanooga's Weather Makes This Urgent</h2>
-            <p>Chattanooga averages over 50 inches of rain per year, well above the national average. That matters for one simple reason: rainwater carries dog waste bacteria — including E. coli, salmonella, and giardia — directly into your lawn, your garden soil, and through storm drains into local waterways like the Tennessee River.</p>
+            <p>Chattanooga averages over 50 inches of rain per year, well above the national average. That matters for one simple reason: rainwater carries dog waste bacteria &mdash; including E. coli, salmonella, and giardia &mdash; directly into your lawn, your garden soil, and through storm drains into local waterways like the Tennessee River.</p>
             <p>During the warm, humid summers here, bacteria in dog waste can double in as little as four hours. What looked like a manageable mess on Monday can become a breeding ground by Thursday. If your kids play in the backyard or you walk barefoot on the grass, that's a real exposure risk.</p>
 
             <h2 className="text-2xl font-bold mt-10 mb-4">What Happens If You Let It Go Too Long</h2>
             <p>Beyond the bacteria, dog waste that sits for more than a week starts to cause other problems:</p>
             <ul className="list-disc pl-6 space-y-2 my-4">
-              <li><strong>Lawn burn.</strong> Dog poop is high in nitrogen. In concentrated spots over time, it kills grass — leaving yellow and brown dead patches that are expensive to reseed.</li>
+              <li><strong>Lawn burn.</strong> Dog poop is high in nitrogen. In concentrated spots over time, it kills grass &mdash; leaving yellow and brown dead patches that are expensive to reseed.</li>
               <li><strong>Parasite eggs.</strong> Roundworms and hookworms can survive in soil for months after the waste itself has decomposed. Regular scooping removes the eggs before they have a chance to spread.</li>
               <li><strong>Odor buildup.</strong> Once waste has baked in summer heat for more than a few days, the smell embeds into the soil itself. That's hard to undo.</li>
               <li><strong>Fly attraction.</strong> Flies lay eggs in dog waste within hours. More waste means more flies around your patio, grill, and back door.</li>
@@ -65,7 +65,7 @@ const HowOftenScoopDogPoopChattanooga = () => {
               <li><strong>1 dog:</strong> Once a week minimum</li>
               <li><strong>2 dogs:</strong> Once or twice a week</li>
               <li><strong>3+ dogs:</strong> Twice a week or more</li>
-              <li><strong>Puppies:</strong> Every 2–3 days — they go far more frequently than adult dogs</li>
+              <li><strong>Puppies:</strong> Every 2&ndash;3 days &mdash; they go far more frequently than adult dogs</li>
             </ul>
             <p>If you host outdoor events, have young children, or have neighbors whose property abuts your yard, err on the side of more frequent cleanups.</p>
 
@@ -73,7 +73,7 @@ const HowOftenScoopDogPoopChattanooga = () => {
             <p>Chattanooga winters are mild compared to much of the country, but it can get cold enough that waste freezes and seems to "disappear" under leaves or frost. Don't be fooled. It's still there, and when spring thaw hits, weeks' worth of bacteria thaw right along with it. Maintaining a weekly schedule year-round is the best approach.</p>
 
             <h2 className="text-2xl font-bold mt-10 mb-4">Don't Want to Do It Yourself? We've Got You.</h2>
-            <p>Scoopy Doo offers weekly, bi-weekly, and one-time dog poop removal throughout Chattanooga, TN. We scoop in a grid pattern so nothing gets missed, remove the waste from your property entirely, and leave your yard clean and safe — rain or shine, summer or winter.</p>
+            <p>Scoopy Doo offers weekly, bi-weekly, and one-time dog poop removal throughout Chattanooga, TN. We scoop in a grid pattern so nothing gets missed, remove the waste from your property entirely, and leave your yard clean and safe &mdash; rain or shine, summer or winter.</p>
             <p>Most customers who sign up for weekly service tell us the same thing: "I can't believe I waited this long." Your yard, your kids, and your nose will all thank you.</p>
 
             <div className="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
