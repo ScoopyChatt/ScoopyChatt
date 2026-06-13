@@ -1,5 +1,5 @@
-import { animate } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { animate } from &rsquo;framer-motion&rsquo;;
+import { useEffect, useRef, useState } from &rsquo;react&rsquo;;
 
 function useAnimatedText(text) {
 	const [cursor, setCursor] = useState(0);
@@ -15,7 +15,7 @@ function useAnimatedText(text) {
 
 		const controls = animate(from, to, {
 			duration: 2,
-			ease: 'easeOut',
+			ease: &rsquo;easeOut&rsquo;,
 			onUpdate(latest) {
 				const nextCursor = Math.floor(latest);
 				cursorRef.current = nextCursor;
