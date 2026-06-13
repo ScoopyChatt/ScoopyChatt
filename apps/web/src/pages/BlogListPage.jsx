@@ -7,6 +7,7 @@ import SEOHead from '@/components/SEOHead.jsx';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
 const allPosts = [
+    { slug: '/blog/dog-poop-cleanup-chattanooga-summer-heat', title: 'Why Chattanooga Yards Need Regular Dog Poop Cleanup During Hot, Humid Weather', desc: 'Summer heat and humidity make dog waste smell worse, grow bacteria faster, and attract flies. Here is why Chattanooga dog owners need to stay on top of yard cleanup in summer.', date: 'Jun 2026', cat: 'Yard Tips' },
   { slug: '/blog/how-often-scoop-dog-poop-chattanooga', title: 'How Often Should You Scoop Dog Poop in Chattanooga?', desc: 'Most vets and yard experts say at least once a week. Here\'s why &mdash; and how Scoopy Doo makes it effortless.', date: 'Jun 2026', cat: 'Yard Tips' },
   { slug: '/blog/is-dog-poop-hurting-your-chattanooga-yard', title: 'Is Dog Poop Hurting Your Chattanooga Yard?', desc: 'Dog poop doesn\'t just smell bad &mdash; it kills grass, spreads parasites, and pollutes local water.', date: 'Jun 2026', cat: 'Lawn Health' },
   { slug: '/blog/chattanooga-pet-waste-removal-homeowners', title: 'Why Chattanooga Homeowners Are Hiring Pet Waste Removal Services', desc: 'Discover why more Chattanooga families are turning to professional pet waste removal to protect their yards.', date: 'May 2026', cat: 'Homeowner Tips' },
