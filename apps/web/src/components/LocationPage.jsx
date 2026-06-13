@@ -1,21 +1,21 @@
 
-import React from &rsquo;react&rsquo;;
-import { useParams } from &rsquo;react-router-dom&rsquo;;
-import Header from &rsquo;@/components/Header.jsx&rsquo;;
-import Footer from &rsquo;@/components/Footer.jsx&rsquo;;
-import SEOHead from &rsquo;@/components/SEOHead.jsx&rsquo;;
-import LocationTemplate from &rsquo;@/components/LocationTemplate.jsx&rsquo;;
-import { CANONICAL_BASE_URL } from &rsquo;@/config/seoConfig.js&rsquo;;
-import { generateLocalBusinessSchema } from &rsquo;@/utils/schemaGenerators.js&rsquo;;
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import Header from '@/components/Header.jsx';
+import Footer from '@/components/Footer.jsx';
+import SEOHead from '@/components/SEOHead.jsx';
+import LocationTemplate from '@/components/LocationTemplate.jsx';
+import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
+import { generateLocalBusinessSchema } from '@/utils/schemaGenerators.js';
 
 const LocationPage = () => {
   const { slug } = useParams();
   
-  // Format slug string (e.g., &rsquo;east-brainerd&rsquo; -> &rsquo;East Brainerd&rsquo;)
+  // Format slug string (e.g., 'east-brainerd' -> 'East Brainerd')
   const formattedName = slug
-    .split(&rsquo;-&rsquo;)
+    .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(&rsquo; &rsquo;);
+    .join(' ');
   
   // Generate heavily localized Schema for this specific Service Area
   const localBizSchema = generateLocalBusinessSchema({
@@ -25,14 +25,14 @@ const LocationPage = () => {
     description: `Professional pet waste removal and dog poop scooping service in ${formattedName}, TN.`,
     areaServed: [
       {
-        &rdquo;@type&rdquo;: &rdquo;City&rdquo;,
-        &rdquo;name&rdquo;: formattedName
+        "@type": "City",
+        "name": formattedName
       }
     ]
   });
 
   return (
-    <div className=&rdquo;min-h-screen flex flex-col bg-background&rdquo;>
+    <div className="min-h-screen flex flex-col bg-background">
       <SEOHead 
         title={`Dog Poop Removal in ${formattedName} | Scoopy Doo`}
         description={`Scoopy Doo offers professional dog poop removal and yard cleanup in ${formattedName}. Get a free quote for pet waste removal today!`}
@@ -40,7 +40,7 @@ const LocationPage = () => {
         schema={[localBizSchema]}
       />
       <Header />
-      <main className=&rdquo;flex-grow&rdquo;>
+      <main className="flex-grow">
         <LocationTemplate locationName={formattedName} />
       </main>
       <Footer />
