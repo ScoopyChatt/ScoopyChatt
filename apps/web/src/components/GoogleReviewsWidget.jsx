@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Star, AlertCircle, RefreshCw, ExternalLink, MessageSquare as MessageSquareOff, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Skeleton } from '@/components/ui/skeleton';
-import apiServerClient from '@/lib/apiServerClient.js';
+import React, { useState, useEffect } from &rsquo;react&rsquo;;
+import { motion, AnimatePresence } from &rsquo;framer-motion&rsquo;;
+import { Star, AlertCircle, RefreshCw, ExternalLink, MessageSquare as MessageSquareOff, Quote, ChevronLeft, ChevronRight } from &rsquo;lucide-react&rsquo;;
+import { Button } from &rsquo;@/components/ui/button&rsquo;;
+import { Avatar, AvatarFallback } from &rsquo;@/components/ui/avatar&rsquo;;
+import { Skeleton } from &rsquo;@/components/ui/skeleton&rsquo;;
+import apiServerClient from &rsquo;@/lib/apiServerClient.js&rsquo;;
 
 const ITEMS_PER_PAGE = 9;
 
@@ -18,7 +18,7 @@ const GoogleReviewsWidget = ({ limit }) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await apiServerClient.fetch('/google-reviews');
+      const response = await apiServerClient.fetch(&rsquo;/google-reviews&rsquo;);
       
       if (!response.ok) {
         const errorText = await response.text();
@@ -34,11 +34,11 @@ const GoogleReviewsWidget = ({ limit }) => {
           reviews: data.reviews
         });
       } else {
-        throw new Error('Unexpected response format: Expected an object with a reviews array.');
+        throw new Error(&rsquo;Unexpected response format: Expected an object with a reviews array.&rsquo;);
       }
     } catch (err) {
-      console.error('[GoogleReviewsWidget] Fetch error:', err);
-      setError(err.message || 'An error occurred while loading reviews.');
+      console.error(&rsquo;[GoogleReviewsWidget] Fetch error:&rsquo;, err);
+      setError(err.message || &rsquo;An error occurred while loading reviews.&rsquo;);
     } finally {
       setIsLoading(false);
     }
@@ -49,23 +49,23 @@ const GoogleReviewsWidget = ({ limit }) => {
   }, []);
 
   const formatDate = (dateString) => {
-    if (!dateString) return '';
+    if (!dateString) return &rsquo;&rsquo;;
     try {
       const date = new Date(dateString);
-      if (isNaN(date.getTime())) return '';
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
+      if (isNaN(date.getTime())) return &rsquo;&rsquo;;
+      return date.toLocaleDateString(&rsquo;en-US&rsquo;, {
+        year: &rsquo;numeric&rsquo;,
+        month: &rsquo;short&rsquo;,
+        day: &rsquo;numeric&rsquo;
       });
     } catch {
-      return '';
+      return &rsquo;&rsquo;;
     }
   };
 
   const getInitials = (name) => {
-    if (!name || name === 'Anonymous') return 'U';
-    const parts = name.split(' ').filter(Boolean);
+    if (!name || name === &rsquo;Anonymous&rsquo;) return &rsquo;U&rsquo;;
+    const parts = name.split(&rsquo; &rsquo;).filter(Boolean);
     if (parts.length >= 2) {
       return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
     }
@@ -74,23 +74,23 @@ const GoogleReviewsWidget = ({ limit }) => {
 
   if (isLoading) {
     return (
-      <section className="py-24 bg-muted/30 border-y border-border/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center gap-4 mb-12">
-            <Skeleton className="h-10 w-3/4 max-w-lg" />
-            <Skeleton className="h-6 w-1/2 max-w-md" />
+      <section className=&rdquo;py-24 bg-muted/30 border-y border-border/50&rdquo;>
+        <div className=&rdquo;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8&rdquo;>
+          <div className=&rdquo;flex flex-col items-center gap-4 mb-12&rdquo;>
+            <Skeleton className=&rdquo;h-10 w-3/4 max-w-lg&rdquo; />
+            <Skeleton className=&rdquo;h-6 w-1/2 max-w-md&rdquo; />
           </div>
-          <div className="flex items-center gap-4 mb-10">
-            <Skeleton className="h-14 w-14 rounded-full" />
-            <div className="space-y-2">
-              <Skeleton className="h-8 w-24" />
-              <Skeleton className="h-4 w-48" />
+          <div className=&rdquo;flex items-center gap-4 mb-10&rdquo;>
+            <Skeleton className=&rdquo;h-14 w-14 rounded-full&rdquo; />
+            <div className=&rdquo;space-y-2&rdquo;>
+              <Skeleton className=&rdquo;h-8 w-24&rdquo; />
+              <Skeleton className=&rdquo;h-4 w-48&rdquo; />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className=&rdquo;grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6&rdquo;>
             {[...Array(6)].map((_, i) => (
-              <div key={i} className="mb-6">
-                <Skeleton className="h-64 w-full rounded-2xl" />
+              <div key={i} className=&rdquo;mb-6&rdquo;>
+                <Skeleton className=&rdquo;h-64 w-full rounded-2xl&rdquo; />
               </div>
             ))}
           </div>
@@ -101,16 +101,16 @@ const GoogleReviewsWidget = ({ limit }) => {
 
   if (error) {
     return (
-      <section className="py-24 bg-muted/30 border-y border-border/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-full bg-destructive/5 border border-destructive/20 rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[300px]">
-            <AlertCircle className="w-12 h-12 text-destructive mb-4" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">Unable to load reviews</h3>
-            <p className="text-muted-foreground mb-6 max-w-md">
+      <section className=&rdquo;py-24 bg-muted/30 border-y border-border/50&rdquo;>
+        <div className=&rdquo;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8&rdquo;>
+          <div className=&rdquo;w-full bg-destructive/5 border border-destructive/20 rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[300px]&rdquo;>
+            <AlertCircle className=&rdquo;w-12 h-12 text-destructive mb-4&rdquo; />
+            <h3 className=&rdquo;text-lg font-semibold text-foreground mb-2&rdquo;>Unable to load reviews</h3>
+            <p className=&rdquo;text-muted-foreground mb-6 max-w-md&rdquo;>
               {error}
             </p>
-            <Button onClick={fetchReviews} variant="outline" className="gap-2">
-              <RefreshCw className="w-4 h-4" />
+            <Button onClick={fetchReviews} variant=&rdquo;outline&rdquo; className=&rdquo;gap-2&rdquo;>
+              <RefreshCw className=&rdquo;w-4 h-4&rdquo; />
               Retry Connection
             </Button>
           </div>
@@ -124,16 +124,16 @@ const GoogleReviewsWidget = ({ limit }) => {
   
   if (!displayReviews || displayReviews.length === 0) {
     return (
-      <section className="py-24 bg-muted/30 border-y border-border/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-full bg-card shadow-sm border border-border/50 rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[300px]">
-            <MessageSquareOff className="w-12 h-12 text-muted-foreground mb-4" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">No reviews found</h3>
-            <p className="text-muted-foreground mb-6 max-w-md">
+      <section className=&rdquo;py-24 bg-muted/30 border-y border-border/50&rdquo;>
+        <div className=&rdquo;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8&rdquo;>
+          <div className=&rdquo;w-full bg-card shadow-sm border border-border/50 rounded-2xl p-8 text-center flex flex-col items-center justify-center min-h-[300px]&rdquo;>
+            <MessageSquareOff className=&rdquo;w-12 h-12 text-muted-foreground mb-4&rdquo; />
+            <h3 className=&rdquo;text-lg font-semibold text-foreground mb-2&rdquo;>No reviews found</h3>
+            <p className=&rdquo;text-muted-foreground mb-6 max-w-md&rdquo;>
               Be the first to share your experience with Scoopy Doo!
             </p>
             <Button asChild>
-              <a href="https://www.google.com/maps/place/ChIJS6mO-bZgYYgRba6PiaitAAM/reviews" target="_blank" rel="noopener noreferrer">
+              <a href=&rdquo;https://www.google.com/maps/place/ChIJS6mO-bZgYYgRba6PiaitAAM/reviews&rdquo; target=&rdquo;_blank&rdquo; rel=&rdquo;noopener noreferrer&rdquo;>
                 Leave a Review
               </a>
             </Button>
@@ -150,19 +150,19 @@ const GoogleReviewsWidget = ({ limit }) => {
   const handlePrevPage = () => {
     setCurrentPage(prev => Math.max(prev - 1, 1));
     // Scroll to top of widget for better UX
-    document.getElementById('reviews-widget-header')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById(&rsquo;reviews-widget-header&rsquo;)?.scrollIntoView({ behavior: &rsquo;smooth&rsquo;, block: &rsquo;start&rsquo; });
   };
 
   const handleNextPage = () => {
     setCurrentPage(prev => Math.min(prev + 1, totalPages));
-    document.getElementById('reviews-widget-header')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById(&rsquo;reviews-widget-header&rsquo;)?.scrollIntoView({ behavior: &rsquo;smooth&rsquo;, block: &rsquo;start&rsquo; });
   };
 
   return (
-    <section className="py-24 bg-muted/30 border-y border-border/50 overflow-hidden relative">
-      <div className="absolute inset-0 bg-[url('https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/noise.png')] opacity-[0.01] mix-blend-multiply pointer-events-none"></div>
+    <section className=&rdquo;py-24 bg-muted/30 border-y border-border/50 overflow-hidden relative&rdquo;>
+      <div className=&rdquo;absolute inset-0 bg-[url(&rsquo;https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/noise.png&rsquo;)] opacity-[0.01] mix-blend-multiply pointer-events-none&rdquo;></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" id="reviews-widget-header">
+      <div className=&rdquo;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10&rdquo; id=&rdquo;reviews-widget-header&rdquo;>
         
         {/* Header Text */}
         <motion.div 
@@ -170,94 +170,94 @@ const GoogleReviewsWidget = ({ limit }) => {
           whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true }} 
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className=&rdquo;text-center mb-12&rdquo;
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance text-foreground tracking-tight">
+          <h2 className=&rdquo;text-3xl md:text-4xl font-bold mb-4 text-balance text-foreground tracking-tight&rdquo;>
             Trusted by Pet Parents Across Greater Chattanooga
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg mb-8 leading-relaxed">
+          <p className=&rdquo;text-muted-foreground max-w-2xl mx-auto text-lg mb-8 leading-relaxed&rdquo;>
             See why our neighbors rate us 5 stars for keeping their yards fresh, safe, and poop-free.
           </p>
           <Button 
             asChild 
-            size="lg" 
-            className="bg-[#FF9E30] text-white hover:bg-[#FF9E30]/90 transition-all duration-200 h-14 px-8 text-lg rounded-xl shadow-lg"
+            size=&rdquo;lg&rdquo; 
+            className=&rdquo;bg-[#FF9E30] text-white hover:bg-[#FF9E30]/90 transition-all duration-200 h-14 px-8 text-lg rounded-xl shadow-lg&rdquo;
           >
             <a 
-              href="https://www.google.com/maps/place/ChIJS6mO-bZgYYgRba6PiaitAAM/reviews" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
+              href=&rdquo;https://www.google.com/maps/place/ChIJS6mO-bZgYYgRba6PiaitAAM/reviews&rdquo; 
+              target=&rdquo;_blank&rdquo; 
+              rel=&rdquo;noopener noreferrer&rdquo;
+              className=&rdquo;flex items-center gap-2&rdquo;
             >
               Leave Us a Review
-              <ExternalLink className="w-5 h-5" />
+              <ExternalLink className=&rdquo;w-5 h-5&rdquo; />
             </a>
           </Button>
         </motion.div>
 
         {/* Rating Summary */}
-        <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start mb-10 gap-4">
-          <div className="flex items-center gap-4 bg-background px-6 py-4 rounded-2xl shadow-sm border border-border/50">
-            <div className="bg-yellow-400/10 p-3 rounded-full flex-shrink-0">
-              <Star className="w-8 h-8 text-yellow-500 fill-current" />
+        <div className=&rdquo;flex flex-col sm:flex-row items-center justify-center md:justify-start mb-10 gap-4&rdquo;>
+          <div className=&rdquo;flex items-center gap-4 bg-background px-6 py-4 rounded-2xl shadow-sm border border-border/50&rdquo;>
+            <div className=&rdquo;bg-yellow-400/10 p-3 rounded-full flex-shrink-0&rdquo;>
+              <Star className=&rdquo;w-8 h-8 text-yellow-500 fill-current&rdquo; />
             </div>
             <div>
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-foreground tabular-nums tracking-tight">
+              <div className=&rdquo;flex items-baseline gap-2&rdquo;>
+                <span className=&rdquo;text-3xl font-bold text-foreground tabular-nums tracking-tight&rdquo;>
                   {overallRating}
                 </span>
-                <span className="text-muted-foreground font-medium">out of 5</span>
+                <span className=&rdquo;text-muted-foreground font-medium&rdquo;>out of 5</span>
               </div>
-              <p className="text-sm font-medium text-muted-foreground">Based on {totalReviews} Google reviews</p>
+              <p className=&rdquo;text-sm font-medium text-muted-foreground&rdquo;>Based on {totalReviews} Google reviews</p>
             </div>
           </div>
         </div>
 
         {/* Paginated Grid of Reviews */}
-        <div className="min-h-[600px]">
-          <AnimatePresence mode="wait">
+        <div className=&rdquo;min-h-[600px]&rdquo;>
+          <AnimatePresence mode=&rdquo;wait&rdquo;>
             <motion.div
               key={currentPage}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className=&rdquo;grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6&rdquo;
             >
               {currentReviews.map((review, index) => (
                 <div 
                   key={`${review.author}-${index}`}
-                  className="bg-card rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md border border-border/50 flex flex-col relative group transition-shadow duration-300 h-full"
+                  className=&rdquo;bg-card rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md border border-border/50 flex flex-col relative group transition-shadow duration-300 h-full&rdquo;
                 >
-                  <Quote className="absolute top-6 right-6 w-10 h-10 text-muted/30 rotate-180 transition-transform group-hover:scale-110 duration-500 pointer-events-none" />
+                  <Quote className=&rdquo;absolute top-6 right-6 w-10 h-10 text-muted/30 rotate-180 transition-transform group-hover:scale-110 duration-500 pointer-events-none&rdquo; />
                   
-                  <div className="flex items-center gap-4 mb-5 relative z-10">
-                    <Avatar className="h-12 w-12 border border-primary/10 shadow-sm">
-                      <AvatarFallback className="bg-primary/5 text-primary font-bold text-lg">
+                  <div className=&rdquo;flex items-center gap-4 mb-5 relative z-10&rdquo;>
+                    <Avatar className=&rdquo;h-12 w-12 border border-primary/10 shadow-sm&rdquo;>
+                      <AvatarFallback className=&rdquo;bg-primary/5 text-primary font-bold text-lg&rdquo;>
                         {getInitials(review.author)}
                       </AvatarFallback>
                     </Avatar>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-semibold text-foreground text-base truncate pr-8">{review.author}</h4>
-                      <div className="flex text-yellow-400 mt-1" aria-label={`Rating: ${review.rating} out of 5 stars`}>
+                    <div className=&rdquo;flex-1 min-w-0&rdquo;>
+                      <h4 className=&rdquo;font-semibold text-foreground text-base truncate pr-8&rdquo;>{review.author}</h4>
+                      <div className=&rdquo;flex text-yellow-400 mt-1&rdquo; aria-label={`Rating: ${review.rating} out of 5 stars`}>
                         {[...Array(5)].map((_, i) => (
                           <Star 
                             key={i} 
-                            className={`w-4 h-4 ${i < review.rating ? 'fill-current text-yellow-500' : 'text-muted-foreground/30'}`} 
+                            className={`w-4 h-4 ${i < review.rating ? &rsquo;fill-current text-yellow-500&rsquo; : &rsquo;text-muted-foreground/30&rsquo;}`} 
                           />
                         ))}
                       </div>
                     </div>
                   </div>
                   
-                  <div className="flex-1 relative z-10">
-                    <p className="text-muted-foreground text-base leading-relaxed whitespace-pre-wrap">
-                      "{review.text}"
+                  <div className=&rdquo;flex-1 relative z-10&rdquo;>
+                    <p className=&rdquo;text-muted-foreground text-base leading-relaxed whitespace-pre-wrap&rdquo;>
+                      &rdquo;{review.text}&rdquo;
                     </p>
                   </div>
                   
                   {review.date && formatDate(review.date) && (
-                    <div className="mt-6 pt-4 border-t border-border/50 text-xs text-muted-foreground font-medium tracking-wide uppercase relative z-10 shrink-0">
+                    <div className=&rdquo;mt-6 pt-4 border-t border-border/50 text-xs text-muted-foreground font-medium tracking-wide uppercase relative z-10 shrink-0&rdquo;>
                       {formatDate(review.date)}
                     </div>
                   )}
@@ -269,32 +269,32 @@ const GoogleReviewsWidget = ({ limit }) => {
 
         {/* Pagination Controls */}
         {!limit && totalPages > 1 && (
-          <div className="flex items-center justify-center mt-12 gap-4">
+          <div className=&rdquo;flex items-center justify-center mt-12 gap-4&rdquo;>
             <Button
-              variant="outline"
-              size="icon"
+              variant=&rdquo;outline&rdquo;
+              size=&rdquo;icon&rdquo;
               onClick={handlePrevPage}
               disabled={currentPage === 1}
-              className="rounded-full w-12 h-12 border-border/50 hover:bg-muted"
-              aria-label="Previous page of reviews"
+              className=&rdquo;rounded-full w-12 h-12 border-border/50 hover:bg-muted&rdquo;
+              aria-label=&rdquo;Previous page of reviews&rdquo;
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className=&rdquo;w-5 h-5&rdquo; />
             </Button>
             
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-foreground">Page {currentPage}</span>
-              <span className="text-sm text-muted-foreground">of {totalPages}</span>
+            <div className=&rdquo;flex items-center gap-2&rdquo;>
+              <span className=&rdquo;text-sm font-medium text-foreground&rdquo;>Page {currentPage}</span>
+              <span className=&rdquo;text-sm text-muted-foreground&rdquo;>of {totalPages}</span>
             </div>
 
             <Button
-              variant="outline"
-              size="icon"
+              variant=&rdquo;outline&rdquo;
+              size=&rdquo;icon&rdquo;
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
-              className="rounded-full w-12 h-12 border-border/50 hover:bg-muted"
-              aria-label="Next page of reviews"
+              className=&rdquo;rounded-full w-12 h-12 border-border/50 hover:bg-muted&rdquo;
+              aria-label=&rdquo;Next page of reviews&rdquo;
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className=&rdquo;w-5 h-5&rdquo; />
             </Button>
           </div>
         )}
