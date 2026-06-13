@@ -1,11 +1,11 @@
 
-import React from &rsquo;react&rsquo;;
-import ReactDOM from &rsquo;react-dom/client&rsquo;;
-import { HelmetProvider } from &rsquo;react-helmet-async&rsquo;;
-import App from &rsquo;@/App&rsquo;;
-import &rsquo;@/index.css&rsquo;;
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
+import App from '@/App';
+import '@/index.css';
 
-ReactDOM.createRoot(document.getElementById(&rsquo;root&rsquo;)).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <HelmetProvider>
     <App />
   </HelmetProvider>
