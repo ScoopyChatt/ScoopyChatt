@@ -1,14 +1,14 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils.js';
+import React from &rsquo;react&rsquo;;
+import { Link } from &rsquo;react-router-dom&rsquo;;
+import { Button } from &rsquo;@/components/ui/button&rsquo;;
+import { cn } from &rsquo;@/lib/utils.js&rsquo;;
 
 const CTAButton = ({ 
-  to = '/quote', 
-  children = 'Get a Free Quote', 
-  variant = 'default', 
-  size = 'lg', 
+  to = &rsquo;/quote&rsquo;, 
+  children = &rsquo;Get a Free Quote&rsquo;, 
+  variant = &rsquo;default&rsquo;, 
+  size = &rsquo;lg&rsquo;, 
   className,
   icon: Icon,
   ...props 
@@ -19,16 +19,16 @@ const CTAButton = ({
       size={size} 
       variant={variant}
       className={cn(
-        "transition-all duration-300 active:scale-[0.98] font-bold shadow-lg hover:shadow-xl",
-        variant === 'default' && "bg-primary text-primary-foreground hover:bg-primary/90",
-        variant === 'outline' && "border-2 hover:bg-muted",
+        &rdquo;transition-all duration-300 active:scale-[0.98] font-bold shadow-lg hover:shadow-xl&rdquo;,
+        variant === &rsquo;default&rsquo; && &rdquo;bg-primary text-primary-foreground hover:bg-primary/90&rdquo;,
+        variant === &rsquo;outline&rsquo; && &rdquo;border-2 hover:bg-muted&rdquo;,
         className
       )}
       {...props}
     >
-      <Link to={to} className="flex items-center justify-center">
+      <Link to={to} className=&rdquo;flex items-center justify-center&rdquo;>
         {children}
-        {Icon && <Icon className="ml-2 h-5 w-5" />}
+        {Icon && <Icon className=&rdquo;ml-2 h-5 w-5&rdquo; />}
       </Link>
     </Button>
   );
