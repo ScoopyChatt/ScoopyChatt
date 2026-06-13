@@ -1,50 +1,50 @@
-import * as React from "react"
+import * as React from &rdquo;react&rdquo;
 
-import { cn } from "@/lib/utils"
+import { cn } from &rdquo;@/lib/utils&rdquo;
 
 const Card = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("rounded-xl border bg-card text-card-foreground shadow", className)}
+    className={cn(&rdquo;rounded-xl border bg-card text-card-foreground shadow&rdquo;, className)}
     {...props} />
 ))
-Card.displayName = "Card"
+Card.displayName = &rdquo;Card&rdquo;
 
 const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    className={cn(&rdquo;flex flex-col space-y-1.5 p-6&rdquo;, className)}
     {...props} />
 ))
-CardHeader.displayName = "CardHeader"
+CardHeader.displayName = &rdquo;CardHeader&rdquo;
 
 const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("font-semibold leading-none tracking-tight", className)}
+    className={cn(&rdquo;font-semibold leading-none tracking-tight&rdquo;, className)}
     {...props} />
 ))
-CardTitle.displayName = "CardTitle"
+CardTitle.displayName = &rdquo;CardTitle&rdquo;
 
 const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn(&rdquo;text-sm text-muted-foreground&rdquo;, className)}
     {...props} />
 ))
-CardDescription.displayName = "CardDescription"
+CardDescription.displayName = &rdquo;CardDescription&rdquo;
 
 const CardContent = React.forwardRef(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+  <div ref={ref} className={cn(&rdquo;p-6 pt-0&rdquo;, className)} {...props} />
 ))
-CardContent.displayName = "CardContent"
+CardContent.displayName = &rdquo;CardContent&rdquo;
 
 const CardFooter = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
+    className={cn(&rdquo;flex items-center p-6 pt-0&rdquo;, className)}
     {...props} />
 ))
-CardFooter.displayName = "CardFooter"
+CardFooter.displayName = &rdquo;CardFooter&rdquo;
 
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
