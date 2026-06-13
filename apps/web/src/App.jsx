@@ -158,7 +158,8 @@ function App() {
             </div>
           </>
           } />
-        </Routes>
+                  <Route path="/how-it-works" element={<HowItWorksPage />} />
+          </Routes>
       </Suspense>
       
       <ScoopyHelperWidget />
