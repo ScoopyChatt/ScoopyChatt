@@ -207,7 +207,7 @@ const LocationTemplate = ({ city: propCity }) => {
               <blockquote className="text-xl md:text-2xl font-medium text-foreground italic mb-4">
                 "{testimonial.quote}"
               </blockquote>
-              <cite className="text-muted-foreground not-italic text-sm">â {testimonial.author}</cite>
+              <cite className="text-muted-foreground not-italic text-sm">— {testimonial.author}</cite>
             </div>
           </section>
         )}
