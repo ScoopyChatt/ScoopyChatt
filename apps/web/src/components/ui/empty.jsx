@@ -1,6 +1,6 @@
-import { cva } from &rdquo;class-variance-authority&rdquo;;
+import { cva } from "class-variance-authority";
 
-import { cn } from &rdquo;@/lib/utils&rdquo;
+import { cn } from "@/lib/utils"
 
 function Empty({
   className,
@@ -8,9 +8,9 @@ function Empty({
 }) {
   return (
     <div
-      data-slot=&rdquo;empty&rdquo;
+      data-slot="empty"
       className={cn(
-        &rdquo;flex min-w-0 flex-1 flex-col items-center justify-center gap-6 text-balance rounded-lg border-dashed p-6 text-center md:p-12&rdquo;,
+        "flex min-w-0 flex-1 flex-col items-center justify-center gap-6 text-balance rounded-lg border-dashed p-6 text-center md:p-12",
         className
       )}
       {...props} />
@@ -23,35 +23,35 @@ function EmptyHeader({
 }) {
   return (
     <div
-      data-slot=&rdquo;empty-header&rdquo;
-      className={cn(&rdquo;flex max-w-sm flex-col items-center gap-2 text-center&rdquo;, className)}
+      data-slot="empty-header"
+      className={cn("flex max-w-sm flex-col items-center gap-2 text-center", className)}
       {...props} />
   );
 }
 
 const emptyMediaVariants = cva(
-  &rdquo;mb-2 flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0&rdquo;,
+  "mb-2 flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: &rdquo;bg-transparent&rdquo;,
-        icon: &rdquo;bg-muted text-foreground flex size-10 shrink-0 items-center justify-center rounded-lg [&_svg:not([class*=&rsquo;size-&rsquo;])]:size-6&rdquo;,
+        default: "bg-transparent",
+        icon: "bg-muted text-foreground flex size-10 shrink-0 items-center justify-center rounded-lg [&_svg:not([class*='size-'])]:size-6",
       },
     },
     defaultVariants: {
-      variant: &rdquo;default&rdquo;,
+      variant: "default",
     },
   }
 )
 
 function EmptyMedia({
   className,
-  variant = &rdquo;default&rdquo;,
+  variant = "default",
   ...props
 }) {
   return (
     <div
-      data-slot=&rdquo;empty-icon&rdquo;
+      data-slot="empty-icon"
       data-variant={variant}
       className={cn(emptyMediaVariants({ variant, className }))}
       {...props} />
@@ -64,8 +64,8 @@ function EmptyTitle({
 }) {
   return (
     <div
-      data-slot=&rdquo;empty-title&rdquo;
-      className={cn(&rdquo;text-lg font-medium tracking-tight&rdquo;, className)}
+      data-slot="empty-title"
+      className={cn("text-lg font-medium tracking-tight", className)}
       {...props} />
   );
 }
@@ -76,9 +76,9 @@ function EmptyDescription({
 }) {
   return (
     <div
-      data-slot=&rdquo;empty-description&rdquo;
+      data-slot="empty-description"
       className={cn(
-        &rdquo;text-muted-foreground [&>a:hover]:text-primary text-sm/relaxed [&>a]:underline [&>a]:underline-offset-4&rdquo;,
+        "text-muted-foreground [&>a:hover]:text-primary text-sm/relaxed [&>a]:underline [&>a]:underline-offset-4",
         className
       )}
       {...props} />
@@ -91,9 +91,9 @@ function EmptyContent({
 }) {
   return (
     <div
-      data-slot=&rdquo;empty-content&rdquo;
+      data-slot="empty-content"
       className={cn(
-        &rdquo;flex w-full min-w-0 max-w-sm flex-col items-center gap-4 text-balance text-sm&rdquo;,
+        "flex w-full min-w-0 max-w-sm flex-col items-center gap-4 text-balance text-sm",
         className
       )}
       {...props} />
