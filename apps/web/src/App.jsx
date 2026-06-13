@@ -55,6 +55,7 @@ const QuickBooksOAuthCallbackPage = React.lazy(() => import(&rsquo;@/pages/Quick
 
 // Sitemap Route
 const SitemapXML = React.lazy(() => import(&rsquo;@/pages/SitemapXML.jsx&rsquo;));
+import HowItWorksPage from '@/pages/HowItWorksPage.jsx';
 
 const RouteTracker = () => {
   const location = useLocation();
