@@ -1,111 +1,111 @@
 
-import React from &rsquo;react&rsquo;;
-import { Link } from &rsquo;react-router-dom&rsquo;;
-import SEOHead from &rsquo;@/components/SEOHead.jsx&rsquo;;
-import Header from &rsquo;@/components/Header.jsx&rsquo;;
-import Footer from &rsquo;@/components/Footer.jsx&rsquo;;
-import PricingTable from &rsquo;@/components/PricingTable.jsx&rsquo;;
-import FAQAccordion from &rsquo;@/components/FAQAccordion.jsx&rsquo;;
-import CTAButton from &rsquo;@/components/CTAButton.jsx&rsquo;;
-import { generatePriceRangeSchema } from &rsquo;@/utils/schemaGenerators.js&rsquo;;
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SEOHead from '@/components/SEOHead.jsx';
+import Header from '@/components/Header.jsx';
+import Footer from '@/components/Footer.jsx';
+import PricingTable from '@/components/PricingTable.jsx';
+import FAQAccordion from '@/components/FAQAccordion.jsx';
+import CTAButton from '@/components/CTAButton.jsx';
+import { generatePriceRangeSchema } from '@/utils/schemaGenerators.js';
 
 const PricingPage = () => {
-  const priceRangeSchema = generatePriceRangeSchema(&rdquo;Dog Poop Removal Service&rdquo;, &rdquo;16&rdquo;, &rdquo;150&rdquo;, &rdquo;USD&rdquo;);
+  const priceRangeSchema = generatePriceRangeSchema("Dog Poop Removal Service", "16", "150", "USD");
 
   const pricingTiers = [
     {
-      name: &rdquo;2X Weekly Service&rdquo;,
-      description: &rdquo;Twice weekly professional cleaning for homes that need more frequent maintenance.&rdquo;,
-      price: &rdquo;16&rdquo;,
-      frequency: &rdquo;per visit / 1st dog&rdquo;,
-      benefits: [&rdquo;Cleaned twice per week&rdquo;, &rdquo;Maximum yard cleanliness&rdquo;, &rdquo;Text alert when en route&rdquo;, &rdquo;Gates always secured&rdquo;]
+      name: "2X Weekly Service",
+      description: "Twice weekly professional cleaning for homes that need more frequent maintenance.",
+      price: "16",
+      frequency: "per visit / 1st dog",
+      benefits: ["Cleaned twice per week", "Maximum yard cleanliness", "Text alert when en route", "Gates always secured"]
     },
     {
-      name: &rdquo;Weekly Service&rdquo;,
-      description: &rdquo;Consistent yard maintenance for a spotless lawn.&rdquo;,
-      price: &rdquo;20&rdquo;,
-      frequency: &rdquo;per visit / 1st dog&rdquo;,
-      benefits: [&rdquo;Cleaned once every week&rdquo;, &rdquo;Perfect for 1-2 dogs&rdquo;, &rdquo;Detailed grid walk&rdquo;, &rdquo;Eco-friendly disposal&rdquo;],
+      name: "Weekly Service",
+      description: "Consistent yard maintenance for a spotless lawn.",
+      price: "20",
+      frequency: "per visit / 1st dog",
+      benefits: ["Cleaned once every week", "Perfect for 1-2 dogs", "Detailed grid walk", "Eco-friendly disposal"],
       recommended: true
     },
     {
-      name: &rdquo;Bi-Weekly Service&rdquo;,
-      description: &rdquo;For small dogs or large yards.&rdquo;,
-      price: &rdquo;28&rdquo;,
-      frequency: &rdquo;per visit / 1st dog&rdquo;,
-      benefits: [&rdquo;Cleaned every other week&rdquo;, &rdquo;Budget-friendly option&rdquo;, &rdquo;Detailed grid walk&rdquo;, &rdquo;Gates always secured&rdquo;]
+      name: "Bi-Weekly Service",
+      description: "For small dogs or large yards.",
+      price: "28",
+      frequency: "per visit / 1st dog",
+      benefits: ["Cleaned every other week", "Budget-friendly option", "Detailed grid walk", "Gates always secured"]
     },
     {
-      name: &rdquo;One-Time Cleanup&rdquo;,
-      description: &rdquo;Deep clean for events or seasonal refresh.&rdquo;,
-      price: &rdquo;75&rdquo;,
-      frequency: &rdquo;base starting price&rdquo;,
-      benefits: [&rdquo;Comprehensive deep clean&rdquo;, &rdquo;Removal of all accumulated waste&rdquo;, &rdquo;Before event prep&rdquo;, &rdquo;No ongoing commitment&rdquo;]
+      name: "One-Time Cleanup",
+      description: "Deep clean for events or seasonal refresh.",
+      price: "75",
+      frequency: "base starting price",
+      benefits: ["Comprehensive deep clean", "Removal of all accumulated waste", "Before event prep", "No ongoing commitment"]
     }
   ];
 
   const faqs = [
-    { question: &rdquo;Are there any hidden fees or contracts?&rdquo;, answer: &rdquo;No! We believe in transparent pricing. There are no contracts, and you can cancel or pause service anytime.&rdquo; },
-    { question: &rdquo;How does billing work?&rdquo;, answer: &rdquo;We securely keep a card on file and bill automatically after each service is completed. You&rsquo;ll receive a receipt via email.&rdquo; },
-    { question: &rdquo;Does the price change if I have multiple dogs?&rdquo;, answer: &rdquo;Yes, our base rates shown above are for 1 dog. We charge a small additional fee per extra dog to account for the additional waste and time required to thoroughly clean your yard.&rdquo; },
-    { question: &rdquo;What if my yard is overgrown or very large?&rdquo;, answer: &rdquo;We provide custom quotes for significantly oversized yards or properties with tall grass/weeds that make scooping significantly more difficult.&rdquo; },
-    { question: &rdquo;Do you charge extra for initial cleanups?&rdquo;, answer: &rdquo;If it has been a long time since the yard was last cleaned, an initial spring-cleaning fee may apply to get your yard to a maintainable baseline before regular visit rates kick in.&rdquo; }
+    { question: "Are there any hidden fees or contracts?", answer: "No! We believe in transparent pricing. There are no contracts, and you can cancel or pause service anytime." },
+    { question: "How does billing work?", answer: "We securely keep a card on file and bill automatically after each service is completed. You'll receive a receipt via email." },
+    { question: "Does the price change if I have multiple dogs?", answer: "Yes, our base rates shown above are for 1 dog. We charge a small additional fee per extra dog to account for the additional waste and time required to thoroughly clean your yard." },
+    { question: "What if my yard is overgrown or very large?", answer: "We provide custom quotes for significantly oversized yards or properties with tall grass/weeds that make scooping significantly more difficult." },
+    { question: "Do you charge extra for initial cleanups?", answer: "If it has been a long time since the yard was last cleaned, an initial spring-cleaning fee may apply to get your yard to a maintainable baseline before regular visit rates kick in." }
   ];
 
   return (
-    <div className=&rdquo;min-h-screen flex flex-col bg-background&rdquo;>
+    <div className="min-h-screen flex flex-col bg-background">
       <SEOHead 
-        path=&rdquo;/pricing&rdquo;
+        path="/pricing"
         schema={[priceRangeSchema]}
       />
       
       <Header />
 
-      <main className=&rdquo;flex-grow&rdquo;>
-        <section className=&rdquo;pt-24 pb-16 bg-muted/20 border-b border-border&rdquo;>
-          <div className=&rdquo;container-shell text-center max-w-3xl mx-auto&rdquo;>
-            <h1 className=&rdquo;mb-6&rdquo;>Simple, Transparent Pricing</h1>
-            <p className=&rdquo;text-xl text-muted-foreground&rdquo;>
+      <main className="flex-grow">
+        <section className="pt-24 pb-16 bg-muted/20 border-b border-border">
+          <div className="container-shell text-center max-w-3xl mx-auto">
+            <h1 className="mb-6">Simple, Transparent Pricing</h1>
+            <p className="text-xl text-muted-foreground">
               Fair rates based on your yard size and number of dogs. No contracts, cancel anytime.
             </p>
           </div>
         </section>
 
-        <section className=&rdquo;section-spacing&rdquo;>
-          <div className=&rdquo;container-shell max-w-5xl&rdquo;>
+        <section className="section-spacing">
+          <div className="container-shell max-w-5xl">
             <PricingTable tiers={pricingTiers} />
           </div>
         </section>
 
-        <section className=&rdquo;section-spacing bg-card border-y border-border&rdquo;>
-          <div className=&rdquo;container-shell max-w-3xl&rdquo;>
-            <h2 className=&rdquo;text-center mb-10&rdquo;>Frequently Asked Questions</h2>
+        <section className="section-spacing bg-card border-y border-border">
+          <div className="container-shell max-w-3xl">
+            <h2 className="text-center mb-10">Frequently Asked Questions</h2>
             <FAQAccordion faqs={faqs} />
           </div>
         </section>
 
-        <section className=&rdquo;py-20 text-center&rdquo;>
-          <div className=&rdquo;container-shell&rdquo;>
-            <h2 className=&rdquo;mb-6&rdquo;>Need a custom quote?</h2>
-            <p className=&rdquo;text-muted-foreground mb-8 text-lg&rdquo;>Every yard is unique. Let us give you an exact price tailored to your property.</p>
+        <section className="py-20 text-center">
+          <div className="container-shell">
+            <h2 className="mb-6">Need a custom quote?</h2>
+            <p className="text-muted-foreground mb-8 text-lg">Every yard is unique. Let us give you an exact price tailored to your property.</p>
             <CTAButton>Get Your Exact Price Now</CTAButton>
           </div>
         </section>
       </main>
 
       
-      <nav aria-label=&rdquo;Scoopy Doo site navigation&rdquo; className=&rdquo;py-8 border-t border-border bg-muted/20&rdquo;>
-        <div className=&rdquo;max-w-5xl mx-auto px-4 text-center&rdquo;>
-          <p className=&rdquo;text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3&rdquo;>Explore Scoopy Doo</p>
-          <ul className=&rdquo;flex flex-wrap justify-center gap-x-6 gap-y-2 list-none m-0 p-0&rdquo;>
-            <li><Link to=&rdquo;/&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Home</Link></li>
-            <li><Link to=&rdquo;/services&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Services</Link></li>
-            <li><Link to=&rdquo;/pricing&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Pricing</Link></li>
-            <li><Link to=&rdquo;/quote&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Get a Quote</Link></li>
-            <li><Link to=&rdquo;/faq&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>FAQ</Link></li>
-            <li><Link to=&rdquo;/reviews&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Reviews</Link></li>
-            <li><Link to=&rdquo;/service-areas&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Service Areas</Link></li>
-            <li><Link to=&rdquo;/blog&rdquo; className=&rdquo;text-primary hover:underline font-medium text-sm&rdquo;>Blog</Link></li>
+      <nav aria-label="Scoopy Doo site navigation" className="py-8 border-t border-border bg-muted/20">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Explore Scoopy Doo</p>
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 list-none m-0 p-0">
+            <li><Link to="/" className="text-primary hover:underline font-medium text-sm">Home</Link></li>
+            <li><Link to="/services" className="text-primary hover:underline font-medium text-sm">Services</Link></li>
+            <li><Link to="/pricing" className="text-primary hover:underline font-medium text-sm">Pricing</Link></li>
+            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get a Quote</Link></li>
+            <li><Link to="/faq" className="text-primary hover:underline font-medium text-sm">FAQ</Link></li>
+            <li><Link to="/reviews" className="text-primary hover:underline font-medium text-sm">Reviews</Link></li>
+            <li><Link to="/service-areas" className="text-primary hover:underline font-medium text-sm">Service Areas</Link></li>
+            <li><Link to="/blog" className="text-primary hover:underline font-medium text-sm">Blog</Link></li>
           </ul>
         </div>
       </nav>
