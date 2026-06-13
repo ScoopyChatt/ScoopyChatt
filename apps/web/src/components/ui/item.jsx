@@ -1,9 +1,9 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva } from "class-variance-authority";
+import * as React from &rdquo;react&rdquo;
+import { Slot } from &rdquo;@radix-ui/react-slot&rdquo;
+import { cva } from &rdquo;class-variance-authority&rdquo;;
 
-import { cn } from "@/lib/utils"
-import { Separator } from "@/components/ui/separator"
+import { cn } from &rdquo;@/lib/utils&rdquo;
+import { Separator } from &rdquo;@/components/ui/separator&rdquo;
 
 function ItemGroup({
   className,
@@ -11,9 +11,9 @@ function ItemGroup({
 }) {
   return (
     <div
-      role="list"
-      data-slot="item-group"
-      className={cn("group/item-group flex flex-col", className)}
+      role=&rdquo;list&rdquo;
+      data-slot=&rdquo;item-group&rdquo;
+      className={cn(&rdquo;group/item-group flex flex-col&rdquo;, className)}
       {...props} />
   );
 }
@@ -24,45 +24,45 @@ function ItemSeparator({
 }) {
   return (
     <Separator
-      data-slot="item-separator"
-      orientation="horizontal"
-      className={cn("my-0", className)}
+      data-slot=&rdquo;item-separator&rdquo;
+      orientation=&rdquo;horizontal&rdquo;
+      className={cn(&rdquo;my-0&rdquo;, className)}
       {...props} />
   );
 }
 
 const itemVariants = cva(
-  "group/item [a]:hover:bg-accent/50 focus-visible:border-ring focus-visible:ring-ring/50 [a]:transition-colors flex flex-wrap items-center rounded-md border border-transparent text-sm outline-none transition-colors duration-100 focus-visible:ring-[3px]",
+  &rdquo;group/item [a]:hover:bg-accent/50 focus-visible:border-ring focus-visible:ring-ring/50 [a]:transition-colors flex flex-wrap items-center rounded-md border border-transparent text-sm outline-none transition-colors duration-100 focus-visible:ring-[3px]&rdquo;,
   {
     variants: {
       variant: {
-        default: "bg-transparent",
-        outline: "border-border",
-        muted: "bg-muted/50",
+        default: &rdquo;bg-transparent&rdquo;,
+        outline: &rdquo;border-border&rdquo;,
+        muted: &rdquo;bg-muted/50&rdquo;,
       },
       size: {
-        default: "gap-4 p-4 ",
-        sm: "gap-2.5 px-4 py-3",
+        default: &rdquo;gap-4 p-4 &rdquo;,
+        sm: &rdquo;gap-2.5 px-4 py-3&rdquo;,
       },
     },
     defaultVariants: {
-      variant: "default",
-      size: "default",
+      variant: &rdquo;default&rdquo;,
+      size: &rdquo;default&rdquo;,
     },
   }
 )
 
 function Item({
   className,
-  variant = "default",
-  size = "default",
+  variant = &rdquo;default&rdquo;,
+  size = &rdquo;default&rdquo;,
   asChild = false,
   ...props
 }) {
-  const Comp = asChild ? Slot : "div"
+  const Comp = asChild ? Slot : &rdquo;div&rdquo;
   return (
     <Comp
-      data-slot="item"
+      data-slot=&rdquo;item&rdquo;
       data-variant={variant}
       data-size={size}
       className={cn(itemVariants({ variant, size, className }))}
@@ -71,30 +71,30 @@ function Item({
 }
 
 const itemMediaVariants = cva(
-  "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:translate-y-0.5 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none",
+  &rdquo;flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:translate-y-0.5 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none&rdquo;,
   {
     variants: {
       variant: {
-        default: "bg-transparent",
-        icon: "bg-muted size-8 rounded-sm border [&_svg:not([class*='size-'])]:size-4",
+        default: &rdquo;bg-transparent&rdquo;,
+        icon: &rdquo;bg-muted size-8 rounded-sm border [&_svg:not([class*=&rsquo;size-&rsquo;])]:size-4&rdquo;,
         image:
-          "size-10 overflow-hidden rounded-sm [&_img]:size-full [&_img]:object-cover",
+          &rdquo;size-10 overflow-hidden rounded-sm [&_img]:size-full [&_img]:object-cover&rdquo;,
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: &rdquo;default&rdquo;,
     },
   }
 )
 
 function ItemMedia({
   className,
-  variant = "default",
+  variant = &rdquo;default&rdquo;,
   ...props
 }) {
   return (
     <div
-      data-slot="item-media"
+      data-slot=&rdquo;item-media&rdquo;
       data-variant={variant}
       className={cn(itemMediaVariants({ variant, className }))}
       {...props} />
@@ -107,9 +107,9 @@ function ItemContent({
 }) {
   return (
     <div
-      data-slot="item-content"
+      data-slot=&rdquo;item-content&rdquo;
       className={cn(
-        "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none",
+        &rdquo;flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none&rdquo;,
         className
       )}
       {...props} />
@@ -122,9 +122,9 @@ function ItemTitle({
 }) {
   return (
     <div
-      data-slot="item-title"
+      data-slot=&rdquo;item-title&rdquo;
       className={cn(
-        "flex w-fit items-center gap-2 text-sm font-medium leading-snug",
+        &rdquo;flex w-fit items-center gap-2 text-sm font-medium leading-snug&rdquo;,
         className
       )}
       {...props} />
@@ -137,10 +137,10 @@ function ItemDescription({
 }) {
   return (
     <p
-      data-slot="item-description"
+      data-slot=&rdquo;item-description&rdquo;
       className={cn(
-        "text-muted-foreground line-clamp-2 text-balance text-sm font-normal leading-normal",
-        "[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4",
+        &rdquo;text-muted-foreground line-clamp-2 text-balance text-sm font-normal leading-normal&rdquo;,
+        &rdquo;[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4&rdquo;,
         className
       )}
       {...props} />
@@ -153,8 +153,8 @@ function ItemActions({
 }) {
   return (
     <div
-      data-slot="item-actions"
-      className={cn("flex items-center gap-2", className)}
+      data-slot=&rdquo;item-actions&rdquo;
+      className={cn(&rdquo;flex items-center gap-2&rdquo;, className)}
       {...props} />
   );
 }
@@ -165,8 +165,8 @@ function ItemHeader({
 }) {
   return (
     <div
-      data-slot="item-header"
-      className={cn("flex basis-full items-center justify-between gap-2", className)}
+      data-slot=&rdquo;item-header&rdquo;
+      className={cn(&rdquo;flex basis-full items-center justify-between gap-2&rdquo;, className)}
       {...props} />
   );
 }
@@ -177,8 +177,8 @@ function ItemFooter({
 }) {
   return (
     <div
-      data-slot="item-footer"
-      className={cn("flex basis-full items-center justify-between gap-2", className)}
+      data-slot=&rdquo;item-footer&rdquo;
+      className={cn(&rdquo;flex basis-full items-center justify-between gap-2&rdquo;, className)}
       {...props} />
   );
 }
