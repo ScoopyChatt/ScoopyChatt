@@ -1,23 +1,23 @@
-import React, { useEffect } from &rsquo;react&rsquo;;
+import React, { useEffect } from 'react';
 
 const ElfsightReviewsWidget = () => {
   useEffect(() => {
-    const scriptId = &rsquo;elfsight-platform-script&rsquo;;
+    const scriptId = 'elfsight-platform-script';
     
     const initWidget = () => {
       if (window.ELFSight) {
         try {
           window.ELFSight.reload();
         } catch (err) {
-          console.error(&rsquo;Error reloading Elfsight widget:&rsquo;, err);
+          console.error('Error reloading Elfsight widget:', err);
         }
       }
     };
 
     if (!document.getElementById(scriptId)) {
-      const script = document.createElement(&rsquo;script&rsquo;);
+      const script = document.createElement('script');
       script.id = scriptId;
-      script.src = &rsquo;https://elfsightcdn.com/platform.js&rsquo;;
+      script.src = 'https://elfsightcdn.com/platform.js';
       script.async = true;
       
       script.onload = () => {
@@ -25,7 +25,7 @@ const ElfsightReviewsWidget = () => {
       };
       
       script.onerror = (err) => {
-        console.error(&rsquo;Failed to load Elfsight reviews script:&rsquo;, err);
+        console.error('Failed to load Elfsight reviews script:', err);
       };
       
       document.body.appendChild(script);
@@ -37,7 +37,7 @@ const ElfsightReviewsWidget = () => {
 
   return (
     <div 
-      className=&rdquo;elfsight-app-8240dd2e-e144-493a-add7-52c8fd1b05f7&rdquo; 
+      className="elfsight-app-8240dd2e-e144-493a-add7-52c8fd1b05f7" 
       data-elfsight-app-lazy 
     ></div>
   );
