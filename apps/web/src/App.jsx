@@ -1,60 +1,60 @@
 
-import React, { useEffect, Suspense } from 'react';
-import { Route, Routes, BrowserRouter as Router, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { Toaster } from '@/components/ui/sonner';
-import ScrollToTop from '@/components/ScrollToTop.jsx';
-import ScoopyHelperWidget from '@/components/ScoopyHelperWidget.jsx';
+import React, { useEffect, Suspense } from &rsquo;react&rsquo;;
+import { Route, Routes, BrowserRouter as Router, useLocation } from &rsquo;react-router-dom&rsquo;;
+import { Helmet } from &rsquo;react-helmet-async&rsquo;;
+import { Toaster } from &rsquo;@/components/ui/sonner&rsquo;;
+import ScrollToTop from &rsquo;@/components/ScrollToTop.jsx&rsquo;;
+import ScoopyHelperWidget from &rsquo;@/components/ScoopyHelperWidget.jsx&rsquo;;
 
-import { useGTM } from '@/hooks/useGTM.js';
-import { usePixel } from '@/hooks/usePixel.js';
-import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
-import { generateLocalBusinessSchema } from '@/utils/seoHelpers.js';
+import { useGTM } from &rsquo;@/hooks/useGTM.js&rsquo;;
+import { usePixel } from &rsquo;@/hooks/usePixel.js&rsquo;;
+import { CANONICAL_BASE_URL } from &rsquo;@/config/seoConfig.js&rsquo;;
+import { generateLocalBusinessSchema } from &rsquo;@/utils/seoHelpers.js&rsquo;;
 
 // Lazy loaded pages for code splitting
-const CoreServicePage = React.lazy(() => import('@/pages/CoreServicePage.jsx'));
-const NearMePage = React.lazy(() => import('@/pages/NearMePage.jsx'));
-const OneTimeCleanupPage = React.lazy(() => import('@/pages/OneTimeCleanupPage.jsx'));
-const ServicesPage = React.lazy(() => import('@/pages/ServicesPage.jsx'));
-const AboutPage = React.lazy(() => import('@/pages/AboutPage.jsx'));
-const FAQPage = React.lazy(() => import('@/pages/FAQPage.jsx'));
-const ComparisonPage = React.lazy(() => import('@/pages/ComparisonPage.jsx'));
-const QuoteRequestPage = React.lazy(() => import('@/pages/QuoteRequestPage.jsx'));
-const ThankYouPage = React.lazy(() => import('@/pages/ThankYouPage.jsx'));
-const SpringSpecialPage = React.lazy(() => import('@/pages/SpringSpecialPage.jsx'));
-const PrivacyPolicyPage = React.lazy(() => import('@/pages/PrivacyPolicyPage.jsx'));
-const TermsOfServicePage = React.lazy(() => import('@/pages/TermsOfServicePage.jsx'));
-const PetSafeChecklistLandingPage = React.lazy(() => import('@/pages/PetSafeChecklistLandingPage.jsx'));
-const DogParkGuideLandingPage = React.lazy(() => import('@/pages/DogParkGuideLandingPage.jsx'));
-const DogPoopRemovalPage = React.lazy(() => import('@/pages/DogPoopRemovalPage.jsx'));
-const PetWasteRemovalPage = React.lazy(() => import('@/pages/PetWasteRemovalPage.jsx'));
-const DogPoopScoopingPage = React.lazy(() => import('@/pages/DogPoopScoopingPage.jsx'));
-const YardCleanupPage = React.lazy(() => import('@/pages/YardCleanupPage.jsx'));
-const ServiceAreasPage = React.lazy(() => import('@/pages/ServiceAreasPage.jsx'));
+const CoreServicePage = React.lazy(() => import(&rsquo;@/pages/CoreServicePage.jsx&rsquo;));
+const NearMePage = React.lazy(() => import(&rsquo;@/pages/NearMePage.jsx&rsquo;));
+const OneTimeCleanupPage = React.lazy(() => import(&rsquo;@/pages/OneTimeCleanupPage.jsx&rsquo;));
+const ServicesPage = React.lazy(() => import(&rsquo;@/pages/ServicesPage.jsx&rsquo;));
+const AboutPage = React.lazy(() => import(&rsquo;@/pages/AboutPage.jsx&rsquo;));
+const FAQPage = React.lazy(() => import(&rsquo;@/pages/FAQPage.jsx&rsquo;));
+const ComparisonPage = React.lazy(() => import(&rsquo;@/pages/ComparisonPage.jsx&rsquo;));
+const QuoteRequestPage = React.lazy(() => import(&rsquo;@/pages/QuoteRequestPage.jsx&rsquo;));
+const ThankYouPage = React.lazy(() => import(&rsquo;@/pages/ThankYouPage.jsx&rsquo;));
+const SpringSpecialPage = React.lazy(() => import(&rsquo;@/pages/SpringSpecialPage.jsx&rsquo;));
+const PrivacyPolicyPage = React.lazy(() => import(&rsquo;@/pages/PrivacyPolicyPage.jsx&rsquo;));
+const TermsOfServicePage = React.lazy(() => import(&rsquo;@/pages/TermsOfServicePage.jsx&rsquo;));
+const PetSafeChecklistLandingPage = React.lazy(() => import(&rsquo;@/pages/PetSafeChecklistLandingPage.jsx&rsquo;));
+const DogParkGuideLandingPage = React.lazy(() => import(&rsquo;@/pages/DogParkGuideLandingPage.jsx&rsquo;));
+const DogPoopRemovalPage = React.lazy(() => import(&rsquo;@/pages/DogPoopRemovalPage.jsx&rsquo;));
+const PetWasteRemovalPage = React.lazy(() => import(&rsquo;@/pages/PetWasteRemovalPage.jsx&rsquo;));
+const DogPoopScoopingPage = React.lazy(() => import(&rsquo;@/pages/DogPoopScoopingPage.jsx&rsquo;));
+const YardCleanupPage = React.lazy(() => import(&rsquo;@/pages/YardCleanupPage.jsx&rsquo;));
+const ServiceAreasPage = React.lazy(() => import(&rsquo;@/pages/ServiceAreasPage.jsx&rsquo;));
 
 // Location Template for dynamic routing
-const LocationTemplate = React.lazy(() => import('@/components/LocationTemplate.jsx'));
+const LocationTemplate = React.lazy(() => import(&rsquo;@/components/LocationTemplate.jsx&rsquo;));
 
 // Blogs
-const BlogListPage = React.lazy(() => import('@/pages/BlogListPage.jsx'));
-const BlogPostTemplate = React.lazy(() => import('@/components/BlogPostTemplate.jsx'));
+const BlogListPage = React.lazy(() => import(&rsquo;@/pages/BlogListPage.jsx&rsquo;));
+const BlogPostTemplate = React.lazy(() => import(&rsquo;@/components/BlogPostTemplate.jsx&rsquo;));
 
 // Specific/Working Blog Pages (Live)
-const HowOftenCleanYard = React.lazy(() => import('@/pages/blog/HowOftenCleanYardPage.jsx'));
-const PodcastBlogPost = React.lazy(() => import('@/pages/blog/PodcastBlogPost.jsx'));
-const ChattanoogaHomeownersPage = React.lazy(() => import('@/pages/blog/ChattanoogaHomeownersPage.jsx'));
-const CommercialPetWastePage = React.lazy(() => import('@/pages/blog/CommercialPetWastePage.jsx'));
-const BlogSignalMountain = React.lazy(() => import('@/pages/blog/BlogSignalMountainPage.jsx'));
-const BlogSoddyDaisy = React.lazy(() => import('@/pages/blog/BlogSoddyDaisyPage.jsx'));
-const DogParksChattanooga = React.lazy(() => import('@/pages/blog/DogParksChattanoogaPage.jsx'));
+const HowOftenCleanYard = React.lazy(() => import(&rsquo;@/pages/blog/HowOftenCleanYardPage.jsx&rsquo;));
+const PodcastBlogPost = React.lazy(() => import(&rsquo;@/pages/blog/PodcastBlogPost.jsx&rsquo;));
+const ChattanoogaHomeownersPage = React.lazy(() => import(&rsquo;@/pages/blog/ChattanoogaHomeownersPage.jsx&rsquo;));
+const CommercialPetWastePage = React.lazy(() => import(&rsquo;@/pages/blog/CommercialPetWastePage.jsx&rsquo;));
+const BlogSignalMountain = React.lazy(() => import(&rsquo;@/pages/blog/BlogSignalMountainPage.jsx&rsquo;));
+const BlogSoddyDaisy = React.lazy(() => import(&rsquo;@/pages/blog/BlogSoddyDaisyPage.jsx&rsquo;));
+const DogParksChattanooga = React.lazy(() => import(&rsquo;@/pages/blog/DogParksChattanoogaPage.jsx&rsquo;));
 
 // Media / Utilities
-const PodcastPage = React.lazy(() => import('@/pages/PodcastPage.jsx'));
-const RedditOAuthCallbackPage = React.lazy(() => import('@/pages/RedditOAuthCallbackPage.jsx'));
-const QuickBooksOAuthCallbackPage = React.lazy(() => import('@/pages/QuickBooksOAuthCallbackPage.jsx'));
+const PodcastPage = React.lazy(() => import(&rsquo;@/pages/PodcastPage.jsx&rsquo;));
+const RedditOAuthCallbackPage = React.lazy(() => import(&rsquo;@/pages/RedditOAuthCallbackPage.jsx&rsquo;));
+const QuickBooksOAuthCallbackPage = React.lazy(() => import(&rsquo;@/pages/QuickBooksOAuthCallbackPage.jsx&rsquo;));
 
 // Sitemap Route
-const SitemapXML = React.lazy(() => import('@/pages/SitemapXML.jsx'));
+const SitemapXML = React.lazy(() => import(&rsquo;@/pages/SitemapXML.jsx&rsquo;));
 
 const RouteTracker = () => {
   const location = useLocation();
@@ -68,26 +68,26 @@ const RouteTracker = () => {
 };
 
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-background">
-    <div className="animate-pulse flex flex-col items-center">
-      <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
-      <p className="text-muted-foreground font-medium">Loading...</p>
+  <div className=&rdquo;min-h-screen flex items-center justify-center bg-background&rdquo;>
+    <div className=&rdquo;animate-pulse flex flex-col items-center&rdquo;>
+      <div className=&rdquo;w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4&rdquo;></div>
+      <p className=&rdquo;text-muted-foreground font-medium&rdquo;>Loading...</p>
     </div>
   </div>
 );
 
 function App() {
-  useGTM('GTM-59B5PDXS');
+  useGTM(&rsquo;GTM-59B5PDXS&rsquo;);
 
   return (
     <Router>
       <Helmet>
-        <meta property="og:title" content="Scoopy Doo LLC" />
-        <meta property="og:description" content="Scoopy Doo, Chattanooga Pet Waste Removal" />
-        <meta property="og:image" content="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/8088ef4935a7739f1747caefac1fdcc6.jpg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={CANONICAL_BASE_URL} />
-        <script type="application/ld+json">
+        <meta property=&rdquo;og:title&rdquo; content=&rdquo;Scoopy Doo LLC&rdquo; />
+        <meta property=&rdquo;og:description&rdquo; content=&rdquo;Scoopy Doo, Chattanooga Pet Waste Removal&rdquo; />
+        <meta property=&rdquo;og:image&rdquo; content=&rdquo;https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/8088ef4935a7739f1747caefac1fdcc6.jpg&rdquo; />
+        <meta property=&rdquo;og:type&rdquo; content=&rdquo;website&rdquo; />
+        <meta property=&rdquo;og:url&rdquo; content={CANONICAL_BASE_URL} />
+        <script type=&rdquo;application/ld+json&rdquo;>
           {JSON.stringify(generateLocalBusinessSchema())}
         </script>
       </Helmet>
@@ -102,57 +102,57 @@ function App() {
       
       <Suspense fallback={<PageLoader />}>
         <Routes>
-          <Route path="/sitemap.xml" element={<SitemapXML />} />
+          <Route path=&rdquo;/sitemap.xml&rdquo; element={<SitemapXML />} />
 
-          <Route path="/" element={<CoreServicePage />} />
-          <Route path="/near-me" element={<NearMePage />} />
-          <Route path="/one-time-cleanup" element={<OneTimeCleanupPage />} />
+          <Route path=&rdquo;/&rdquo; element={<CoreServicePage />} />
+          <Route path=&rdquo;/near-me&rdquo; element={<NearMePage />} />
+          <Route path=&rdquo;/one-time-cleanup&rdquo; element={<OneTimeCleanupPage />} />
 
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/faq" element={<FAQPage />
-          <Route path="/comparison" element={<ComparisonPage />} />} />
-          <Route path="/quote" element={<QuoteRequestPage />} />
-          <Route path="/thank-you" element={<ThankYouPage />} />
-          <Route path="/spring-special" element={<SpringSpecialPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+          <Route path=&rdquo;/services&rdquo; element={<ServicesPage />} />
+          <Route path=&rdquo;/about&rdquo; element={<AboutPage />} />
+          <Route path=&rdquo;/faq&rdquo; element={<FAQPage />
+          <Route path=&rdquo;/comparison&rdquo; element={<ComparisonPage />} />} />
+          <Route path=&rdquo;/quote&rdquo; element={<QuoteRequestPage />} />
+          <Route path=&rdquo;/thank-you&rdquo; element={<ThankYouPage />} />
+          <Route path=&rdquo;/spring-special&rdquo; element={<SpringSpecialPage />} />
+          <Route path=&rdquo;/privacy-policy&rdquo; element={<PrivacyPolicyPage />} />
+          <Route path=&rdquo;/terms-of-service&rdquo; element={<TermsOfServicePage />} />
           
-          <Route path="/dog-poop-removal-chattanooga" element={<DogPoopRemovalPage />} />
-          <Route path="/pet-waste-removal-chattanooga" element={<PetWasteRemovalPage />} />
-          <Route path="/dog-poop-scooping-chattanooga" element={<DogPoopScoopingPage />} />
-          <Route path="/yard-cleanup-chattanooga" element={<YardCleanupPage />} />
+          <Route path=&rdquo;/dog-poop-removal-chattanooga&rdquo; element={<DogPoopRemovalPage />} />
+          <Route path=&rdquo;/pet-waste-removal-chattanooga&rdquo; element={<PetWasteRemovalPage />} />
+          <Route path=&rdquo;/dog-poop-scooping-chattanooga&rdquo; element={<DogPoopScoopingPage />} />
+          <Route path=&rdquo;/yard-cleanup-chattanooga&rdquo; element={<YardCleanupPage />} />
 
-          <Route path="/pet-safe-checklist" element={<PetSafeChecklistLandingPage />} />
-          <Route path="/dog-park-guide" element={<DogParkGuideLandingPage />} />
+          <Route path=&rdquo;/pet-safe-checklist&rdquo; element={<PetSafeChecklistLandingPage />} />
+          <Route path=&rdquo;/dog-park-guide&rdquo; element={<DogParkGuideLandingPage />} />
           
-          <Route path="/podcast" element={<PodcastPage />} />
+          <Route path=&rdquo;/podcast&rdquo; element={<PodcastPage />} />
 
-          <Route path="/reddit-oauth-callback" element={<RedditOAuthCallbackPage />} />
-          <Route path="/qb-oauth-callback" element={<QuickBooksOAuthCallbackPage />} />
+          <Route path=&rdquo;/reddit-oauth-callback&rdquo; element={<RedditOAuthCallbackPage />} />
+          <Route path=&rdquo;/qb-oauth-callback&rdquo; element={<QuickBooksOAuthCallbackPage />} />
           
-          <Route path="/service-areas" element={<ServiceAreasPage />} />
-          <Route path="/service/:slug" element={<LocationTemplate />} />
+          <Route path=&rdquo;/service-areas&rdquo; element={<ServiceAreasPage />} />
+          <Route path=&rdquo;/service/:slug&rdquo; element={<LocationTemplate />} />
 
-          <Route path="/blog" element={<BlogListPage />} />
-          <Route path="/blog/chattanooga-pet-waste-removal-homeowners" element={<ChattanoogaHomeownersPage />} />
-          <Route path="/blog/commercial-pet-waste-removal-chattanooga" element={<CommercialPetWastePage />} />
-          <Route path="/blog/how-often-clean-yard" element={<HowOftenCleanYard />} />
-          <Route path="/blog/podcast-blog" element={<PodcastBlogPost />} />
-          <Route path="/blog/signal-mountain" element={<BlogSignalMountain />} />
-          <Route path="/blog/soddy-daisy" element={<BlogSoddyDaisy />} />
-          <Route path="/blog/best-dog-parks-chattanooga-tn" element={<DogParksChattanooga />} />
+          <Route path=&rdquo;/blog&rdquo; element={<BlogListPage />} />
+          <Route path=&rdquo;/blog/chattanooga-pet-waste-removal-homeowners&rdquo; element={<ChattanoogaHomeownersPage />} />
+          <Route path=&rdquo;/blog/commercial-pet-waste-removal-chattanooga&rdquo; element={<CommercialPetWastePage />} />
+          <Route path=&rdquo;/blog/how-often-clean-yard&rdquo; element={<HowOftenCleanYard />} />
+          <Route path=&rdquo;/blog/podcast-blog&rdquo; element={<PodcastBlogPost />} />
+          <Route path=&rdquo;/blog/signal-mountain&rdquo; element={<BlogSignalMountain />} />
+          <Route path=&rdquo;/blog/soddy-daisy&rdquo; element={<BlogSoddyDaisy />} />
+          <Route path=&rdquo;/blog/best-dog-parks-chattanooga-tn&rdquo; element={<DogParksChattanooga />} />
           
-          <Route path="/blog/:slug" element={<BlogPostTemplate />} />
+          <Route path=&rdquo;/blog/:slug&rdquo; element={<BlogPostTemplate />} />
 
-          <Route path="*" element={
+          <Route path=&rdquo;*&rdquo; element={
             <>
-              <Helmet><meta name="robots" content="noindex, nofollow" /></Helmet>
-              <div className="min-h-screen flex items-center justify-center bg-background">
-              <div className="text-center">
-                <h1 className="mb-4 text-4xl font-bold">404 - Page Not Found</h1>
-                <p className="text-muted-foreground mb-6">The page you're looking for doesn't exist.</p>
-                <a href="/" className="text-primary hover:underline font-bold">Back to home</a>
+              <Helmet><meta name=&rdquo;robots&rdquo; content=&rdquo;noindex, nofollow&rdquo; /></Helmet>
+              <div className=&rdquo;min-h-screen flex items-center justify-center bg-background&rdquo;>
+              <div className=&rdquo;text-center&rdquo;>
+                <h1 className=&rdquo;mb-4 text-4xl font-bold&rdquo;>404 - Page Not Found</h1>
+                <p className=&rdquo;text-muted-foreground mb-6&rdquo;>The page you&rsquo;re looking for doesn&rsquo;t exist.</p>
+                <a href=&rdquo;/&rdquo; className=&rdquo;text-primary hover:underline font-bold&rdquo;>Back to home</a>
               </div>
             </div>
           </>
