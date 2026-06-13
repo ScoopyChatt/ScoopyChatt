@@ -15,7 +15,7 @@ const BlogArticle6_LawnHealthAndPetWaste = () => {
   const content = `
     <h2>The Myth of Natural Fertilizer</h2>
     <p>
-      Many homeowners assume that because cow manure is used as fertilizer, dog waste must be good for the grass too. Unfortunately, this is a common misconception that can quickly ruin a beautiful yard. Unlike cows, which are herbivores, dogs have a high-protein diet. This diet results in waste that is highly acidic and packed with excess nitrogen. When left on your lawn, it doesn't fertilize the grass—it burns it.
+      Many homeowners assume that because cow manure is used as fertilizer, dog waste must be good for the grass too. Unfortunately, this is a common misconception that can quickly ruin a beautiful yard. Unlike cows, which are herbivores, dogs have a high-protein diet. This diet results in waste that is highly acidic and packed with excess nitrogen. When left on your lawn, it doesn't fertilize the grass&mdash;it burns it.
     </p>
 
     <h2>Understanding Nitrogen Burn and pH Imbalances</h2>
@@ -41,7 +41,7 @@ const BlogArticle6_LawnHealthAndPetWaste = () => {
 
     <h2>The Scoopy Doo Solution</h2>
     <p>
-      At Scoopy Doo (Scoopy Chatt), we understand the investment you've made in your landscaping. Our professional pet waste removal service is designed to protect that investment. By visiting your property weekly or bi-weekly, we ensure that acidic waste is removed promptly, giving your grass the chance to thrive. Don't let pet waste ruin your outdoor oasis—let our team handle the cleanup so you can enjoy a healthy, vibrant yard all season long.
+      At Scoopy Doo (Scoopy Chatt), we understand the investment you've made in your landscaping. Our professional pet waste removal service is designed to protect that investment. By visiting your property weekly or bi-weekly, we ensure that acidic waste is removed promptly, giving your grass the chance to thrive. Don't let pet waste ruin your outdoor oasis&mdash;let our team handle the cleanup so you can enjoy a healthy, vibrant yard all season long.
     </p>
   `;
 
