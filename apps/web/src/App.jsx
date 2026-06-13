@@ -111,8 +111,8 @@ function App() {
 
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/faq" element={<FAQPage />
-          <Route path="/comparison" element={<ComparisonPage />} />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/comparison" element={<ComparisonPage />} />
           <Route path="/quote" element={<QuoteRequestPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/spring-special" element={<SpringSpecialPage />} />
