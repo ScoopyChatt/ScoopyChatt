@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/faq",
+      "destination": "/faq/index.html"
+    },
+    {
+      "source": "/comparison",
+      "destination": "/comparison/index.html"
+    },
+    {
       "source": "/dp/:path*",
       "destination": "/api/dp-gone"
     },
