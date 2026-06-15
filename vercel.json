@@ -103,6 +103,32 @@
           "value": "noindex, nofollow"
         }
       ]
+    },
+    {
+      "source": "/faq",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        }
+      ]
+    },
+    {
+      "source": "/comparison",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        }
+      ]
     }
   ],
   "buildCommand": "npm install --prefix apps/web && npm run build --prefix apps/web && node apps/web/tools/create-static-pages.cjs && node apps/web/tools/inject-seo.cjs && node apps/web/tools/generate-sitemap.cjs",
