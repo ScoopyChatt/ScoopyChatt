@@ -146,7 +146,8 @@ function App() {
           <Route path="/blog/dog-poop-cleanup-chattanooga-summer-heat" element={<DogPoopCleanupSummerHeat />} />
           <Route path="/blog/best-dog-parks-chattanooga-tn" element={<DogParksChattanooga />} />
           
-          <Route path="/blog/:slug" element={<BlogPostTemplate />} />
+          <Route path="/blog/pooper-scooper-cost-chattanooga" element={<PooperScooperCostChattanooga />} />
+            <Route path="/blog/:slug" element={<BlogPostTemplate />} />
 
           <Route path="*" element={
             <>
