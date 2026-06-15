@@ -64,7 +64,7 @@ for (var i = 0; i < pages.length; i++) {
     var p = pages[i];
     var html = template;
     html = html.replace(/<title>[^<]*<\/title>/, '<title>' + p.title + '<\/title>');
-    html = html.replace(/(<meta name="description" content=")[^"]*(")/, '$1' + p.desc + '$2');
+    html = html.replace(/(<meta name="description" content=")[^"]*(")/, function(m,a,b){return a+p.desc+b;});
     html = html.replace(/(<link rel="canonical" href=")[^"]*(")/, '$1' + p.canonical + '$2');
     html = html.replace('</body>', '<div id="scoopy-geo" style="display:none" aria-hidden="true">' + p.body + '</div></body>');
     var outDir = path.join(DIST, p.slug);
