@@ -12,7 +12,12 @@ export const generateLocalBusinessSchema = () => {
     "url": "https://scoopychatt.com",
     "areaServed": "Chattanooga, TN and surrounding areas",
     "telephone": "423-600-5040",
-    "image": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/8088ef4935a7739f1747caefac1fdcc6.jpg"
+    "image": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/8088ef4935a7739f1747caefac1fdcc6.jpg",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61578292444117",
+      "https://www.instagram.com/scoopychatt/",
+      "https://www.yelp.com/biz/scoopy-doo-ringgold"
+    ]
   };
 };
 
