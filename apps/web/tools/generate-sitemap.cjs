@@ -61,8 +61,8 @@ const urls = [
     'signal-mountain',
     'soddy-daisy',
   ].map(slug => ({ loc: BASE + '/blog/' + slug, priority: '0.7', changefreq: 'monthly' }))),
-  '/blog/pooper-scooper-cost-chattanooga',
-  '/blog/pet-waste-removal-north-georgia',
+  { loc: BASE + '/blog/pooper-scooper-cost-chattanooga', priority: '0.7', changefreq: 'monthly' },
+  { loc: BASE + '/blog/pet-waste-removal-north-georgia', priority: '0.7', changefreq: 'monthly' },
 ];
 
 function escapeXml(str) {
