@@ -42,16 +42,16 @@ const HowOftenScoopDogPoopChattanooga = () => {
           </header>
 
           <div className="prose prose-lg max-w-none text-foreground">
-            <p>If you have a dog in Chattanooga, you already know the drill: someone has to go out back and handle business. But how often is often enough? Once a week? After every potty break? The answer matters more than most people realize &mdash; and it has a lot to do with Chattanooga's climate.</p>
+            <p>Most veterinarians and yard care professionals recommend scooping dog poop at least once per week in Chattanooga &mdash; more often if you have multiple dogs or a small yard. Waiting longer than a week allows bacteria to multiply, parasites to establish in soil, and nitrogen burn to kill your grass. Here is exactly how often to clean up based on your household and why Chattanooga's climate makes the schedule matter more than most homeowners realize.</p>
 
             <h2 className="text-2xl font-bold mt-10 mb-4">The Short Answer: At Least Once a Week</h2>
             <p>Most veterinarians and lawn care experts agree that once a week is the minimum for most households with one or two dogs. If you have three or more dogs, or a small yard, twice a week is better. Left any longer, waste builds up, bacteria multiply, and your yard becomes a genuine health hazard &mdash; not just an eyesore.</p>
 
-            <h2 className="text-2xl font-bold mt-10 mb-4">Why Chattanooga's Weather Makes This Urgent</h2>
-            <p>Chattanooga averages over 50 inches of rain per year, well above the national average. That matters for one simple reason: rainwater carries dog waste bacteria &mdash; including E. coli, salmonella, and giardia &mdash; directly into your lawn, your garden soil, and through storm drains into local waterways like the Tennessee River.</p>
-            <p>During the warm, humid summers here, bacteria in dog waste can double in as little as four hours. What looked like a manageable mess on Monday can become a breeding ground by Thursday. If your kids play in the backyard or you walk barefoot on the grass, that's a real exposure risk.</p>
+            <h2 className="text-2xl font-bold mt-10 mb-4">Why Chattanooga's Climate Makes Scooping More Urgent Than Most Cities</h2>
+            <p>Chattanooga averages over 50 inches of rain per year &mdash; well above the U.S. average of 38 inches. Every rainfall event carries dog waste bacteria directly through storm drains into Chattanooga Creek and the Tennessee River without treatment. The pathogens involved &mdash; E. coli, Salmonella, Giardia &mdash; do not need to travel far to reach soil your family walks on.</p>
+            <p>Above 80&deg;F, bacteria in dog waste doubles roughly every 4 hours. Fly populations around unremoved deposits can triple within 48 hours. Chattanooga averages more than 100 days per year above 80&deg;F &mdash; meaning summer waste left over a weekend can host a bacterial colony far larger than the original deposit by Monday morning.</p>
 
-            <h2 className="text-2xl font-bold mt-10 mb-4">What Happens If You Let It Go Too Long</h2>
+            <h2 className="text-2xl font-bold mt-10 mb-4">What Happens to Your Yard When You Skip a Week?</h2>
             <p>Beyond the bacteria, dog waste that sits for more than a week starts to cause other problems:</p>
             <ul className="list-disc pl-6 space-y-2 my-4">
               <li><strong>Lawn burn.</strong> Dog poop is high in nitrogen. In concentrated spots over time, it kills grass &mdash; leaving yellow and brown dead patches that are expensive to reseed.</li>
@@ -79,7 +79,7 @@ const HowOftenScoopDogPoopChattanooga = () => {
             <div className="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
               <p className="text-lg font-semibold text-foreground mb-2">Ready for a cleaner yard?</p>
               <Link to="/quote" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold hover:bg-primary/90 transition-colors">
-                Get a free quote from Scoopy Doo →
+                Get a free quote from Scoopy Doo â
               </Link>
             </div>
           </div>
