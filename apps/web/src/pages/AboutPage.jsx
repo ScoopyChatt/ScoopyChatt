@@ -83,7 +83,7 @@ const AboutPage = () => {
                 <div className="rounded-2xl overflow-hidden border border-border shadow-lg aspect-[4/3] bg-muted flex items-center justify-center">
                   <img
                     src="/team-chattanooga-mural.jpg"
-                    alt="Scoopy Doo LLC owners &mdash; father and daughter team &mdash; in front of the Chattanooga Scenic City mural"
+                    alt="Scoopy Doo LLC owners in front of the Chattanooga Scenic City mural &mdash; local pet waste removal company serving Chattanooga TN"
                     className="w-full h-full object-cover"
                     onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
                   />
