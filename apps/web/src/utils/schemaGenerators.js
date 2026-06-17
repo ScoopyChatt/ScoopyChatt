@@ -6,7 +6,7 @@ export function generateLocalBusinessSchema() {
     "@type": ["LocalBusiness", "ProfessionalService"],
     "@id": "https://scoopychatt.com/#business",
     "name": "Scoopy Doo LLC",
-    "alternateName": "Scoopy Doo Pet Waste Removal",
+    "alternateName": "Scoopy Chatt",
     "description": "Professional dog poop removal and pet waste cleanup service in Chattanooga, TN and surrounding areas. Weekly, bi-weekly, and one-time service for residential and commercial properties.",
     "url": "https://scoopychatt.com",
     "telephone": "+14236005040",
@@ -25,18 +25,18 @@ export function generateLocalBusinessSchema() {
       "longitude": -85.3097
     },
     "areaServed": [
-      { "@type": "City", "name": "Chattanooga", "addressRegion": "TN" },
-      { "@type": "City", "name": "Hixson", "addressRegion": "TN" },
-      { "@type": "City", "name": "Ooltewah", "addressRegion": "TN" },
+      { "@type": "City", "name": "Chattanooga", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Chattanooga,_Tennessee" },
+      { "@type": "City", "name": "Hixson", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Hixson,_Tennessee" },
+      { "@type": "City", "name": "Ooltewah", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Ooltewah,_Tennessee" },
       { "@type": "City", "name": "East Brainerd", "addressRegion": "TN" },
-      { "@type": "City", "name": "Red Bank", "addressRegion": "TN" },
-      { "@type": "City", "name": "East Ridge", "addressRegion": "TN" },
-      { "@type": "City", "name": "Signal Mountain", "addressRegion": "TN" },
-      { "@type": "City", "name": "Lookout Mountain", "addressRegion": "TN" },
-      { "@type": "City", "name": "Soddy-Daisy", "addressRegion": "TN" },
-      { "@type": "City", "name": "Ringgold", "addressRegion": "GA" },
-      { "@type": "City", "name": "Fort Oglethorpe", "addressRegion": "GA" },
-      { "@type": "City", "name": "Rossville", "addressRegion": "GA" }
+      { "@type": "City", "name": "Red Bank", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Red_Bank,_Tennessee" },
+      { "@type": "City", "name": "East Ridge", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/East_Ridge,_Tennessee" },
+      { "@type": "City", "name": "Signal Mountain", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Signal_Mountain,_Tennessee" },
+      { "@type": "City", "name": "Lookout Mountain", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Lookout_Mountain,_Tennessee" },
+      { "@type": "City", "name": "Soddy-Daisy", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Soddy-Daisy,_Tennessee" },
+      { "@type": "City", "name": "Ringgold", "addressRegion": "GA", "sameAs": "https://en.wikipedia.org/wiki/Ringgold,_Georgia" },
+      { "@type": "City", "name": "Fort Oglethorpe", "addressRegion": "GA", "sameAs": "https://en.wikipedia.org/wiki/Fort_Oglethorpe,_Georgia" },
+      { "@type": "City", "name": "Rossville", "addressRegion": "GA", "sameAs": "https://en.wikipedia.org/wiki/Rossville,_Georgia" }
     ],
     "serviceType": "Pet Waste Removal",
     "hasOfferCatalog": {
