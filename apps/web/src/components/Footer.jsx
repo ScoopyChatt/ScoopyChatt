@@ -91,11 +91,11 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">Chattanooga, TN & Surrounding Areas</span>
+                <span className="text-sm">Serving Chattanooga, TN and North Georgia, including Ringgold, Rossville, and Fort Oglethorpe, GA</span>
               </li>
               <li className="flex items-start">
                 <Clock className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">24/7 Always available for ð service</span>
+                <span className="text-sm">24/7 Always available for Ã°ÂÂÂ service</span>
               </li>
               <li className="flex items-start">
                 <a href="https://share.google/sOBVeLPqRabhfffPg" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors text-sm">
