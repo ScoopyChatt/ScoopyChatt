@@ -48,6 +48,7 @@ const BlogSignalMountain = React.lazy(() => import('@/pages/blog/BlogSignalMount
 const BlogSoddyDaisy = React.lazy(() => import('@/pages/blog/BlogSoddyDaisyPage.jsx'));
 const DogPoopCleanupSummerHeat = React.lazy(() => import('@/pages/blog/DogPoopCleanupSummerHeatChattanooga.jsx'));
 const DogParksChattanooga = React.lazy(() => import('@/pages/blog/DogParksChattanoogaPage.jsx'));
+const PooperScooperCostChattanooga = React.lazy(() => import('@/pages/blog/PooperScooperCostChattanooga.jsx'));
 
 // Media / Utilities
 const PodcastPage = React.lazy(() => import('@/pages/PodcastPage.jsx'));
