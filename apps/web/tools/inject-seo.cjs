@@ -77,6 +77,7 @@ const routes = {
   '/services': ['Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo', 'Weekly, bi-weekly & one-time dog poop removal in Chattanooga. See what Scoopy Doo offers and book today.'],
   '/near-me': ['Pooper Scooper Service Near Me in Chattanooga, TN', 'Looking for a pooper scooper service near you in Chattanooga? Scoopy Doo offers reliable local dog waste removal.'],
   '/one-time-cleanup': ['One-Time Dog Poop Cleanup in Chattanooga, TN | Scoopy Doo', 'Get a one-time dog poop cleanup in Chattanooga, TN. Perfect for spring cleaning or first-time service.'],
+  "/cost-calculator": ["Dog Poop Cost Calculator | Chattanooga TN | Scoopy Doo", "Estimate weekly, twice-weekly, and one-time pooper scooper pricing in Chattanooga and North Georgia, then get a free exact quote from Scoopy Doo."],
   '/how-it-works': ['How It Works | Scoopy Doo Pet Waste Removal Chattanooga', 'Easy online quotes, secure online payment, on-the-way texts, and gate photo proof after every visit. Working with Scoopy Doo is simple.'],
   '/dog-poop-removal-chattanooga': ['Dog Poop Removal in Chattanooga, TN | Scoopy Doo LLC', 'Professional dog poop removal in Chattanooga, TN. Dependable weekly service, fully insured.'],
   '/pet-waste-removal-chattanooga': ['Pet Waste Removal in Chattanooga, TN | Scoopy Doo', 'Expert pet waste removal in Chattanooga, TN for homes, HOAs & businesses. Request a free quote.'],
@@ -150,6 +151,38 @@ function injectMeta(html, title, desc, canonical, staticHtml, schemaHtml) {
 }
 
 var count = 0;
+
+// --- GEO schema injection (added) ---
+var FAQ_PAIRS = [
+  ["How do I schedule pet waste removal service?","Request a free quote at scoopychatt.com/quote with your yard details and number of dogs. We respond the same day and most new customers start within 2 to 5 days."],
+  ["Does Scoopy Doo serve North Georgia?","Yes. We serve Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA along with Chattanooga and surrounding Tennessee areas, with no extra charge for North Georgia service."],
+  ["Is there a contract or long-term commitment?","No. Scoopy Doo never requires a contract. You can pause, reschedule, or cancel anytime with no cancellation fees."],
+  ["How much does dog poop removal cost in Chattanooga?","Pricing depends on how many dogs you have and how often we visit. We offer weekly, twice-weekly, every-other-week, one-time, commercial, and HOA options. Use the cost calculator at scoopychatt.com/cost-calculator or request a free quote for exact pricing."],
+  ["How often should I have my yard cleaned?","Weekly service is the most popular and keeps your yard consistently clean and safe. Homes with multiple dogs or heavy use often choose twice-weekly, while every-other-week works for lighter needs."],
+  ["What happens on each visit?","You get an on-the-way text before we arrive, a full grid-pattern sweep of your entire yard, double-bagged waste hauled completely off your property, and a gate photo confirmation when we finish."],
+  ["Do you offer one-time cleanups?","Yes. One-time yard cleanups are great for spring cleaning, move-outs, or before an event, and a good way to start fresh before beginning recurring service."],
+  ["Do you handle commercial and HOA properties?","Yes. Scoopy Doo provides pet waste removal for apartments, HOAs, dog parks, and shared common areas with flexible scheduling and no contracts."]
+];
+function ldScript(obj){return '<script type="application/ld+json">'+JSON.stringify(obj)+'</'+'script>';}
+function faqSchema(pairs){var items=[];for(var i=0;i<pairs.length;i++){items.push({"@type":"Question","name":pairs[i][0],"acceptedAnswer":{"@type":"Answer","text":pairs[i][1]}});}return {"@context":"https://schema.org","@type":"FAQPage","mainEntity":items};}
+function titleCaseSlug(slug){return slug.split("-").map(function(w){return w.charAt(0).toUpperCase()+w.slice(1);}).join(" ");}
+function routeSchema(route){
+  var base="https://www.scoopychatt.com";
+  if(route==="/faq"){return ldScript(faqSchema(FAQ_PAIRS));}
+  if(route.indexOf("/service/")===0){
+    var slug=route.slice(9);
+    var d=(typeof LOC!=="undefined")?LOC[slug]:null;
+    if(!d){return "";}
+    var city=titleCaseSlug(slug);
+    var svc={"@context":"https://schema.org","@type":"Service","serviceType":"Pet waste removal","name":"Dog Poop Removal in "+city,"description":d.desc,"url":base+route,"areaServed":{"@type":"City","name":city},"provider":{"@type":"LocalBusiness","name":"Scoopy Doo LLC","telephone":"+1-423-600-5040","url":base,"priceRange":"$$"}};
+    var out=ldScript(svc);
+    if(d.faqs&&d.faqs.length){out+=ldScript(faqSchema(d.faqs));}
+    return out;
+  }
+  return "";
+}
+// --- end GEO schema injection ---
+
 for (var route in routes) {
   var parts = routes[route];
   var title = parts[0];
@@ -161,7 +194,8 @@ for (var route in routes) {
   var html = injectMeta(template, title, desc, canonical, staticHtml, schemaHtml);
   var dirPath = path.join(distDir, route);
   fs.mkdirSync(dirPath, { recursive: true });
-  fs.writeFileSync(path.join(dirPath, 'index.html'), html);
+  var __s = routeSchema(route); if (__s) { html = html.replace("</head>", __s + "</head>"); }
+      fs.writeFileSync(path.join(dirPath, 'index.html'), html);
   count++;
 }
 console.log('SEO inject complete: ' + count + ' pages.');
