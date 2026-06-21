@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "How much does pooper scooper service cost in Chattanooga?",
-    answer: "Pricing is based on yard size and the number of dogs. Most Chattanooga homeowners pay between $15&ndash;$30 per weekly visit. The fastest way to get your exact price is to submit a free quote request &mdash; we respond the same day, usually within a few hours."
+    answer: "Pricing is based on yard size and the number of dogs. Most Chattanooga homeowners pay between &ndash;0&ndash;$30 per weekly visit. The fastest way to get your exact price is to submit a free quote request &mdash; we respond the same day, usually within a few hours."
   },
   {
     question: "Do you service HOAs and apartment communities?",
