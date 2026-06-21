@@ -14,6 +14,7 @@ import { generateLocalBusinessSchema } from '@/utils/seoHelpers.js';
 // Lazy loaded pages for code splitting
 const CoreServicePage = React.lazy(() => import('@/pages/CoreServicePage.jsx'));
 const NearMePage = React.lazy(() => import('@/pages/NearMePage.jsx'));
+const CostCalculatorPage = React.lazy(() => import('@/pages/CostCalculatorPage.jsx'));
 const OneTimeCleanupPage = React.lazy(() => import('@/pages/OneTimeCleanupPage.jsx'));
 const ServicesPage = React.lazy(() => import('@/pages/ServicesPage.jsx'));
 const AboutPage = React.lazy(() => import('@/pages/AboutPage.jsx'));
@@ -110,6 +111,7 @@ function App() {
           <Route path="/" element={<CoreServicePage />} />
           <Route path="/near-me" element={<NearMePage />} />
           <Route path="/one-time-cleanup" element={<OneTimeCleanupPage />} />
+          <Route path="/cost-calculator" element={<CostCalculatorPage />} />
 
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<AboutPage />} />
