@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "How often should I schedule dog waste removal?",
-    answer: "Weekly service is our most popular option and works well for most one- or two-dog households. We also offer 2x weekly service for high-traffic yards and multiple dogs, bi-weekly for lower-use yards, and one-time cleanups if you need to start fresh before beginning a regular schedule."
+    answer: "Weekly service is our most popular option and works well for most one- or two-dog households. We also offer 2x weekly service for high-traffic yards and multiple dogs, every-other-week for lower-use yards, and one-time cleanups if you need to start fresh before beginning a regular schedule."
   },
   {
     question: "Is Scoopy Doo dog waste removal safe for kids and pets?",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "How much does pooper scooper service cost in Chattanooga?",
-    answer: "Pricing is based on yard size and the number of dogs. Most Chattanooga homeowners pay between &ndash;0&ndash;$30 per weekly visit. The fastest way to get your exact price is to submit a free quote request &mdash; we respond the same day, usually within a few hours."
+    answer: "Pricing is based on yard size and the number of dogs. Most Chattanooga homeowners pay between $18 and $36 per visit. The fastest way to get your exact price is to submit a free quote request &mdash; we respond the same day, usually within a few hours."
   },
   {
     question: "Do you service HOAs and apartment communities?",
@@ -64,7 +64,7 @@ const FAQItem = ({ question, answer }) => {
 const CoreServicePage = () => {
   const serviceSchema = generateServiceSchema(
     "Dog Poop Removal",
-    "Professional weekly, bi-weekly, and one-time pet waste removal services.",
+    "Professional weekly, every-other-week, and one-time pet waste removal services.",
     "Chattanooga Metro",
     "$$"
   );
