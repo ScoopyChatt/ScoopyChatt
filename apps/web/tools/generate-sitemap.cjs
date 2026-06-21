@@ -20,6 +20,7 @@ const urls = [
   { loc: BASE + '/service-areas',                  priority: '0.8', changefreq: 'monthly' },
   { loc: BASE + '/near-me',                        priority: '0.8', changefreq: 'monthly' },
   { loc: BASE + '/one-time-cleanup',               priority: '0.8', changefreq: 'monthly' },
+  { loc: BASE + '/cost-calculator',               priority: '0.8', changefreq: 'monthly' },
   { loc: BASE + '/how-it-works',                   priority: '0.7', changefreq: 'monthly' },
   { loc: BASE + '/dog-poop-removal-chattanooga',   priority: '0.9', changefreq: 'monthly' },
   { loc: BASE + '/pet-waste-removal-chattanooga',  priority: '0.9', changefreq: 'monthly' },
