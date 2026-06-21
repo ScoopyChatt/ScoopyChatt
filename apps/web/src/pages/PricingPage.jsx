@@ -38,7 +38,7 @@ const PricingPage = () => {
     {
       name: "One-Time Cleanup",
       description: "Deep clean for events or seasonal refresh.",
-      price: "75",
+      price: "85",
       frequency: "base starting price",
       benefits: ["Comprehensive deep clean", "Removal of all accumulated waste", "Before event prep", "No ongoing commitment"]
     }
