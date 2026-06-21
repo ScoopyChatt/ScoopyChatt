@@ -54,56 +54,123 @@
   
   
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://www.scoopychatt.com/#business",
-    "name": "Scoopy Doo LLC",
-    "url": "https://www.scoopychatt.com",
-    "telephone": "+1-423-600-5040",
-    "email": "info@scoopychatt.com",
-    "priceRange": "$",
-    "description": "Premium, reliable pet waste removal and pooper scooper services for residential yards, HOAs, and commercial properties. A local father-daughter team serving the Greater Chattanooga area and North Georgia.",
-    "logo": "https://www.scoopychatt.com/logo.png",
-    "image": "https://www.scoopychatt.com/hero-image.png",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Chattanooga",
-      "addressRegion": "TN",
-      "postalCode": "37421",
-      "addressCountry": "US"
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.scoopychatt.com/#business",
+  "name": "Scoopy Doo LLC",
+  "url": "https://www.scoopychatt.com",
+  "telephone": "+1-423-600-5040",
+  "email": "info@scoopychatt.com",
+  "priceRange": "$",
+  "description": "Premium, reliable pet waste removal and pooper scooper services for residential yards, HOAs, and commercial properties. A local father-daughter team serving the Greater Chattanooga area and North Georgia.",
+  "logo": "https://www.scoopychatt.com/logo.png",
+  "image": "https://www.scoopychatt.com/hero-image.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chattanooga",
+    "addressRegion": "TN",
+    "postalCode": "37421",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.0456,
+    "longitude": -85.3097
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Chattanooga",
+      "sameAs": "https://en.wikipedia.org/wiki/Chattanooga,_Tennessee"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 35.0456,
-      "longitude": -85.3097
+    {
+      "@type": "City",
+      "name": "Hixson",
+      "sameAs": "https://en.wikipedia.org/wiki/Hixson,_Tennessee"
     },
-    "areaServed": [
-      { "@type": "City", "name": "Chattanooga", "sameAs": "https://en.wikipedia.org/wiki/Chattanooga,_Tennessee" },
-      { "@type": "City", "name": "Hixson", "sameAs": "https://en.wikipedia.org/wiki/Hixson,_Tennessee" },
-      { "@type": "City", "name": "Ooltewah", "sameAs": "https://en.wikipedia.org/wiki/Ooltewah,_Tennessee" },
-      { "@type": "City", "name": "East Brainerd", "sameAs": "https://en.wikipedia.org/wiki/East_Brainerd,_Tennessee" },
-      { "@type": "City", "name": "Soddy-Daisy", "sameAs": "https://en.wikipedia.org/wiki/Soddy-Daisy,_Tennessee" },
-      { "@type": "City", "name": "Signal Mountain", "sameAs": "https://en.wikipedia.org/wiki/Signal_Mountain,_Tennessee" },
-      { "@type": "City", "name": "Ringgold", "sameAs": "https://en.wikipedia.org/wiki/Ringgold,_Georgia" },
-      { "@type": "City", "name": "Fort Oglethorpe", "sameAs": "https://en.wikipedia.org/wiki/Fort_Oglethorpe,_Georgia" }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Pet Waste Removal Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Weekly Residential Pooper Scooper Service", "description": "Recurring weekly dog poop removal for residential yards in Chattanooga and surrounding areas." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bi-Weekly Pooper Scooper Service", "description": "Bi-weekly pet waste pickup for residential properties." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "One-Time Dog Poop Cleanup", "description": "One-time yard cleanup for move-outs, spring cleaning, or first-time customers." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial and HOA Pet Waste Station Maintenance", "description": "Pet waste station stocking and grounds cleanup for HOAs, apartment complexes, and commercial properties." } }
-      ]
+    {
+      "@type": "City",
+      "name": "Ooltewah",
+      "sameAs": "https://en.wikipedia.org/wiki/Ooltewah,_Tennessee"
     },
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61578292444117",
-      "https://share.google/qZ8AFwG3qiRu6lvwi"
+    {
+      "@type": "City",
+      "name": "East Brainerd",
+      "sameAs": "https://en.wikipedia.org/wiki/East_Brainerd,_Tennessee"
+    },
+    {
+      "@type": "City",
+      "name": "Soddy-Daisy",
+      "sameAs": "https://en.wikipedia.org/wiki/Soddy-Daisy,_Tennessee"
+    },
+    {
+      "@type": "City",
+      "name": "Signal Mountain",
+      "sameAs": "https://en.wikipedia.org/wiki/Signal_Mountain,_Tennessee"
+    },
+    {
+      "@type": "City",
+      "name": "Ringgold",
+      "sameAs": "https://en.wikipedia.org/wiki/Ringgold,_Georgia"
+    },
+    {
+      "@type": "City",
+      "name": "Fort Oglethorpe",
+      "sameAs": "https://en.wikipedia.org/wiki/Fort_Oglethorpe,_Georgia"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Pet Waste Removal Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Weekly Residential Pooper Scooper Service",
+          "description": "Recurring weekly dog poop removal for residential yards in Chattanooga and surrounding areas."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Bi-Weekly Pooper Scooper Service",
+          "description": "Bi-weekly pet waste pickup for residential properties."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "One-Time Dog Poop Cleanup",
+          "description": "One-time yard cleanup for move-outs, spring cleaning, or first-time customers."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial and HOA Pet Waste Station Maintenance",
+          "description": "Pet waste station stocking and grounds cleanup for HOAs, apartment complexes, and commercial properties."
+        }
+      }
     ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61578292444117",
+    "https://share.google/qZ8AFwG3qiRu6lvwi"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "85",
+    "bestRating": "5",
+    "worstRating": "1"
   }
-  </script>
+}
+</script>
   </head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
