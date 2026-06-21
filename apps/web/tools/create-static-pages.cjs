@@ -29,10 +29,10 @@ var compBody = '<h1>Pet Waste Removal Services in Chattanooga, TN: 2026 Comparis
   '<table><thead><tr><th>Service</th><th>Service Area</th><th>Frequency</th><th>Starting Price</th><th>Notable</th></tr></thead>' +
   '<tbody>' +
   '<tr><td>Scoopy Doo</td><td>Chattanooga, Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, Cleveland, East Ridge, Lookout Mountain TN; Ringgold, Rossville, Fort Oglethorpe, Flintstone GA</td><td>Weekly, bi-weekly, twice-weekly, one-time</td><td>Weekly from $20/visit (1 dog)</td><td>On-the-way texts; gate photo every visit; waste hauled off property; no contracts; 7-day availability; locally owned father-daughter team</td></tr>' +
-  '<tr><td>ChattaPoo</td><td>Chattanooga TN, Signal Mountain TN</td><td>Weekly, bi-weekly, one-time</td><td>Weekly from $20/visit (1 dog)</td><td>Also offers dog walking, boarding, vet transport</td></tr>' +
+  '<tr><td>ChattaPoo</td><td>Chattanooga TN, Signal Mountain TN</td><td>Weekly, bi-weekly, one-time</td><td>Weekly from $21/visit (1 dog)</td><td>Also offers dog walking, boarding, vet transport</td></tr>' +
   '<tr><td>PooTagic</td><td>Chattanooga TN; Ringgold, Rossville, Fort Oglethorpe GA</td><td>Not listed</td><td>Quote required</td><td>Deodorizing and sanitizing available; 20% neighbor discount</td></tr>' +
   '<tr><td>Doo Doo Blues</td><td>Chattanooga area</td><td>Not listed</td><td>Not listed</td><td>Grid-pattern scooping; national franchise</td></tr>' +
-  '<tr><td>Cooper Scoopers</td><td>Chattanooga TN</td><td>Weekly, one-time</td><td>Not listed</td><td>Residential, HOA, and commercial</td></tr>' +
+  '<tr><td>Cooper Scoopers</td><td>Chattanooga TN</td><td>Weekly, bi-weekly, one-time</td><td>From $19/visit</td><td>Residential, HOA, and commercial</td></tr>' +
   '<tr><td>Scoop Smart</td><td>Chattanooga TN and North Georgia</td><td>Twice-weekly, weekly, bi-weekly, monthly</td><td>Not listed</td><td>Broad frequency options including monthly</td></tr>' +
   '</tbody></table>' +
   '<h2>About Scoopy Doo</h2>' +
