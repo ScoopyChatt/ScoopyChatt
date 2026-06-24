@@ -18,6 +18,7 @@ const CostCalculatorPage = React.lazy(() => import('@/pages/CostCalculatorPage.j
 const OneTimeCleanupPage = React.lazy(() => import('@/pages/OneTimeCleanupPage.jsx'));
 const ServicesPage = React.lazy(() => import('@/pages/ServicesPage.jsx'));
 const AboutPage = React.lazy(() => import('@/pages/AboutPage.jsx'));
+const PressPage = React.lazy(() => import('@/pages/PressPage.jsx'));
 const FAQPage = React.lazy(() => import('@/pages/FAQPage.jsx'));
 const ComparisonPage = React.lazy(() => import('@/pages/ComparisonPage.jsx'));
 const QuoteRequestPage = React.lazy(() => import('@/pages/QuoteRequestPage.jsx'));
@@ -115,6 +116,7 @@ function App() {
 
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/press" element={<PressPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/comparison" element={<ComparisonPage />} />
           <Route path="/quote" element={<QuoteRequestPage />} />
