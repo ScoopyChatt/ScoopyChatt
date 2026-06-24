@@ -95,6 +95,15 @@ const CoreServicePage = () => {
       <Header />
 
       <main className="flex-grow">
+        {/* As Featured In bar */}
+        <section className="bg-muted/40 border-b border-border">
+          <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-center gap-x-3 gap-y-1 text-center text-sm">
+            <span className="uppercase tracking-wide text-xs font-semibold text-muted-foreground">As Featured In</span>
+            <a href="https://www.chattanoogan.com/2026/6/23/520251/14-Year-Old-Entrepreneur-Builds.aspx" target="_blank" rel="noopener" className="font-semibold text-foreground hover:text-primary">Chattanoogan.com</a>
+            <span className="hidden sm:inline text-muted-foreground" aria-hidden="true">&mdash;</span>
+            <a href="/press" className="text-primary font-medium hover:underline">Chattanooga&apos;s largest pet waste removal company &rarr;</a>
+          </div>
+        </section>
         {/* Hero Section */}
         <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-muted/30">
           <div className="absolute inset-0 bg-[url('https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/a31a7ef9578ab021774966b3677f99c1.jpg')] bg-cover bg-center opacity-5 mix-blend-multiply"></div>
