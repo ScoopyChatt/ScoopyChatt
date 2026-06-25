@@ -12,6 +12,8 @@ const today = new Date().toISOString().split('T')[0];
 
 const urls = [
   { loc: BASE + '/press',                         priority: '0.7', changefreq: 'monthly' },
+  { loc: BASE + '/comparison', priority: '0.9', changefreq: 'monthly' },
+  { loc: BASE + '/podcast', priority: '0.6', changefreq: 'monthly' },
   // Core pages
   { loc: BASE + '/',                               priority: '1.0', changefreq: 'weekly'  },
   { loc: BASE + '/services',                       priority: '0.9', changefreq: 'monthly' },
