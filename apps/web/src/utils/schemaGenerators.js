@@ -43,8 +43,7 @@ export function generateLocalBusinessSchema() {
       "@type": "OfferCatalog",
       "name": "Pet Waste Removal Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service",
-    serviceType: 'Pet Waste Removal', "name": "Weekly Pet Waste Removal" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Weekly Pet Waste Removal" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bi-Weekly Pet Waste Removal" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "One-Time Dog Waste Cleanup" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Pet Waste Removal" } },
@@ -88,7 +87,10 @@ export function generateServiceSchema(serviceName, description, url) {
       "@id": "https://scoopychatt.com/#business",
       "name": "Scoopy Doo LLC"
     },
-    areaServed: [{ '@type': 'City', name: locationData.name }].concat((locationData.neighborhoods || []).map(function (n) { return { '@type': 'Place', name: n + ', ' + locationData.name }; })),
+    "areaServed": {
+      "@type": "State",
+      "name": "Tennessee"
+    },
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
@@ -156,6 +158,7 @@ export function generateLocationSchema(locationData) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    serviceType: "Pet Waste Removal",
     "name": "Dog Poop Removal in " + locationData.name,
     "description": locationData.seoDescription,
     "provider": {
@@ -163,10 +166,7 @@ export function generateLocationSchema(locationData) {
       "@id": "https://scoopychatt.com/#business",
       "name": "Scoopy Doo LLC"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": locationData.name
-    },
+    areaServed: [{ "@type": "City", name: locationData.name }].concat((locationData.neighborhoods || []).map(function (n) { return { "@type": "Place", name: n + ", " + locationData.name }; })),
     "url": "https://scoopychatt.com/service/" + locationData.slug
   };
 }
