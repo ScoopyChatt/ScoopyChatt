@@ -12,34 +12,43 @@ const services = [
     url: "https://www.scoopychatt.com",
     local: true,
     area: "Chattanooga + 13 TN suburbs + Ringgold, Rossville, Fort Oglethorpe, Flintstone GA",
-    frequency: "Weekly, bi-weekly, one-time",
-    price: "$16/visit",
+    frequency: "Weekly, twice-weekly, every-other-week, one-time",
+    price: "Weekly $20/visit; twice-weekly $16/visit (1st dog)",
     notable: "7-day availability; on-the-way texts standard; gate photo after every visit standard; waste hauled off property; no contracts; local father-daughter team",
   },
   {
     name: "PooTagic",
     url: "https://pootagic.com",
     local: true,
-    area: "Chattanooga + suburbs + Ringgold, Rossville, Fort Oglethorpe GA",
+    area: "Chattanooga + many TN suburbs + Ringgold, Rossville, Fort Oglethorpe, Chickamauga GA",
     frequency: "Not listed",
     price: "Quote required",
-    notable: "Local family-owned; eco-friendly practices; Poo-Fume sanitizing add-on",
+    notable: "Local family-owned; Poo-Fume sanitizing and deodorizing add-on; scoops rain or shine; flat monthly billing",
+  },
+  {
+    name: "ChattaPoo",
+    url: "https://chattapoo.com",
+    local: true,
+    area: "Chattanooga TN/GA metro; based on Signal Mountain",
+    frequency: "Weekly, every-other-week, one-time",
+    price: "Weekly $21/visit (1st dog)",
+    notable: "Pet waste bag station installation and maintenance; public park maintenance; 10% discount on auto-billed monthly plan",
   },
   {
     name: "Cooper's Scoopers",
-    url: "https://coopersscoopers.com/chattanooga-tn/",
+    url: "https://coopersscoopers.com/",
     local: false,
-    area: "Chattanooga, Hixson, Signal Mountain, Lookout Mountain + rural TN areas",
+    area: "Chattanooga TN (dedicated city page offline as of July 2026)",
     frequency: "Weekly, bi-weekly, one-time",
     price: "Not listed",
-    notable: "Franchise chain; deodorizing add-on available",
+    notable: "National franchise headquartered in Virginia Beach VA; book online, by text, or phone",
   },
   {
     name: "Doo Doo Blues",
     url: "https://doodooblues.com/pet-waste-pickup-locations/chattanooga-tn/",
     local: false,
     area: "Chattanooga TN (North Georgia not listed)",
-    frequency: "Weekly, bi-weekly",
+    frequency: "Weekly",
     price: "Starting $9.99",
     notable: "First cleaning free; national franchise; no contracts; sanitizes before each yard",
   },
@@ -73,8 +82,12 @@ const descriptions = [
     text: "PooTagic is a family-owned Chattanooga-area company with an eco-friendly focus and a professional sanitizing and deodorizing add-on service called Poo-Fume. They cover several North Georgia communities alongside their Tennessee areas. Pricing is not listed publicly on their website.",
   },
   {
+    name: "ChattaPoo",
+    text: "ChattaPoo is based on Signal Mountain and serves the greater Chattanooga TN/GA metro area. Published rates start at $21 per weekly visit for one dog, with every-other-week and one-time options. Beyond yard cleanups, the company installs and maintains pet waste bag stations for parks, neighborhoods, and businesses, and its auto-billed monthly plan carries a 10% discount.",
+  },
+  {
     name: "Cooper's Scoopers",
-    text: "Cooper's Scoopers is a franchise operation with a Chattanooga-area location. They cover the city and several Tennessee communities including Hixson, Signal Mountain, and Lookout Mountain, plus some rural TN areas. A deodorizing add-on is available. Pricing was not listed on their site at the time this page was written.",
+    text: "Cooper's Scoopers is a national pooper scooper franchise headquartered in Virginia Beach, VA. The brand offers one-time, weekly, and bi-weekly service booked online, by text, or by phone. As of July 2026 its dedicated Chattanooga location page was offline and no local pricing was published, so confirm availability directly before booking.",
   },
   {
     name: "Doo Doo Blues",
@@ -93,7 +106,7 @@ const descriptions = [
 const ComparisonPage = () => {
   const canonicalUrl = getCanonicalUrl('/comparison');
   const title = "Pet Waste Removal Services in Chattanooga, TN &mdash; 2026 Comparison | Scoopy Doo";
-  const desc = "Side-by-side comparison of pet waste removal services in Chattanooga TN and North Georgia: pricing, service areas, frequency options, and notable features for 6 local providers.";
+  const desc = "Side-by-side comparison of pet waste removal services in Chattanooga TN and North Georgia: pricing, service areas, frequency options, and notable features for 7 local providers.";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
