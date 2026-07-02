@@ -10,6 +10,7 @@ import FloatingCTA from '@/components/FloatingCTA.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
 import FAQAccordion from '@/components/FAQAccordion.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
+import { generateServiceSchema } from "@/utils/schemaGenerators.js";
 
 const PetWasteRemovalPage = () => {
   const faqs = [
@@ -22,7 +23,7 @@ const PetWasteRemovalPage = () => {
 
   return (
     <>
-      <SEOHead path="/pet-waste-removal-chattanooga" faqData={faqs} />
+      <SEOHead path="/pet-waste-removal-chattanooga" faqData={faqs} schema={generateServiceSchema("Pet Waste Removal", "Full-service pet waste removal in Chattanooga TN and North Georgia with weekly, twice-weekly, every-other-week, and one-time visits. All waste is double-bagged and hauled off the property.", "https://www.scoopychatt.com/pet-waste-removal-chattanooga")} />
 
       <div className="min-h-screen flex flex-col">
         <Header />
