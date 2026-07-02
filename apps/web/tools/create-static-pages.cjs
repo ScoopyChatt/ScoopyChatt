@@ -97,6 +97,10 @@ if (fs.existsSync(distIndex)) {
   process.exit(0);
 }
 
+var SVC_LD_CSP = {
+  'dog-poop-removal-chattanooga': '<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Dog poop removal","name":"Dog Poop Removal - Scoopy Doo LLC","description":"Professional dog poop removal for homes, HOAs, and commercial properties in Chattanooga TN and North Georgia. Weekly, twice-weekly, every-other-week, and one-time cleanups with on-the-way texts and gate photo confirmation.","url":"https://www.scoopychatt.com/dog-poop-removal-chattanooga","provider":{"@type":"ProfessionalService","name":"Scoopy Doo LLC","url":"https://www.scoopychatt.com","telephone":"+14236005040"},"areaServed":"Chattanooga TN and North Georgia"}</' + 'script>',
+  'pet-waste-removal-chattanooga': '<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Pet waste removal","name":"Pet Waste Removal - Scoopy Doo LLC","description":"Full-service pet waste removal in Chattanooga TN and North Georgia with weekly, twice-weekly, every-other-week, and one-time visits. All waste is double-bagged and hauled off the property.","url":"https://www.scoopychatt.com/pet-waste-removal-chattanooga","provider":{"@type":"ProfessionalService","name":"Scoopy Doo LLC","url":"https://www.scoopychatt.com","telephone":"+14236005040"},"areaServed":"Chattanooga TN and North Georgia"}</' + 'script>'
+};
 for (var i = 0; i < pages.length; i++) {
   try {
     var p = pages[i];
@@ -108,6 +112,7 @@ for (var i = 0; i < pages.length; i++) {
     var outDir = path.join(DIST, p.slug);
     fs.mkdirSync(outDir, { recursive: true });
     if (pages[i] && pages[i].slug === "faq") { html = html.replace("</head>", FAQ_LD + "</head>"); }
+      if (SVC_LD_CSP[p.slug]) { html = html.replace('</head>', SVC_LD_CSP[p.slug] + '</head>'); }
       fs.writeFileSync(path.join(outDir, 'index.html'), html);
     console.log('[csp] wrote /' + p.slug + ' (' + html.length + ' bytes)');
   } catch(e) {
