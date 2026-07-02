@@ -121,7 +121,7 @@ const Footer = () => {
             &copy; {currentYear} Scoopy Doo LLC. All rights reserved.
           </p>
           <a href="https://www.bbb.org/us/ga/ringgold/profile/pet-waste-removal/scoopy-doo-llc-0483-80013696/#sealclick" id="bbblink" className="sehzbum" target="_blank" rel="nofollow noopener">
-            <img src="https://seal-chattanooga.bbb.org/logo/sehzbum/bbb-80013696.png" style={{ border: 0, maxHeight: "60px" }} alt="Scoopy Doo, LLC BBB Business Review" loading="lazy" />
+            <img src="https://seal-chattanooga.bbb.org/logo/sehzbum/bbb-80013696.png" style={{ border: 0, maxHeight: "60px" }} alt="Scoopy Doo, LLC BBB Business Review" />
           </a>
           <div className="flex space-x-4 text-sm text-slate-500">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
