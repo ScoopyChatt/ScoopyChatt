@@ -10,6 +10,7 @@ import FloatingCTA from '@/components/FloatingCTA.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
 import FAQAccordion from '@/components/FAQAccordion.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
+import { generateServiceSchema } from "@/utils/schemaGenerators.js";
 
 const DogPoopScoopingPage = () => {
   const faqs = [
@@ -22,7 +23,7 @@ const DogPoopScoopingPage = () => {
 
   return (
     <>
-      <SEOHead path="/dog-poop-scooping-chattanooga" faqData={faqs} />
+      <SEOHead path="/dog-poop-scooping-chattanooga" faqData={faqs} schema={generateServiceSchema("Dog Poop Scooping", "Reliable pooper scooper service in Chattanooga TN and North Georgia. Every visit includes a full yard sweep in a grid pattern and a gate photo confirmation when the job is done.", "https://www.scoopychatt.com/dog-poop-scooping-chattanooga")} />
 
       <div className="min-h-screen flex flex-col">
         <Header />
