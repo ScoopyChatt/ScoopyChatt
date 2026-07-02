@@ -8,6 +8,7 @@ import Footer from '@/components/Footer.jsx';
 import ServiceCard from '@/components/ServiceCard.jsx';
 import { Button } from '@/components/ui/button';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
+import { generateServiceSchema } from "@/utils/schemaGenerators.js";
 
 const SectionHeader = ({ icon: Icon, title, subtitle }) => (
   <div className="text-center mb-12">
@@ -53,6 +54,7 @@ const ServicesPage = () => {
         <meta property="og:title" content="Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo" />
         <meta property="og:description" content="Weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga, TN. Get your free quote today." />
         <meta property="og:url" content={canonicalUrl} />
+              <script type="application/ld+json">{JSON.stringify(generateServiceSchema("Pet Waste Removal Services", "Weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga TN and North Georgia with on-the-way texts and gate photo confirmation.", "https://www.scoopychatt.com/services"))}</script>
       </Helmet>
 
       <Header />
