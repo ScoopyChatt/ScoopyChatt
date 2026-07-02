@@ -10,6 +10,7 @@ import FloatingCTA from '@/components/FloatingCTA.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
 import FAQAccordion from '@/components/FAQAccordion.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
+import { generateServiceSchema } from "@/utils/schemaGenerators.js";
 
 const YardCleanupPage = () => {
   const faqs = [
@@ -22,7 +23,7 @@ const YardCleanupPage = () => {
 
   return (
     <>
-      <SEOHead path="/yard-cleanup-chattanooga" faqData={faqs} />
+      <SEOHead path="/yard-cleanup-chattanooga" faqData={faqs} schema={generateServiceSchema("Dog Waste Yard Cleanup", "One-time and recurring dog waste yard cleanup in Chattanooga TN and North Georgia. No contracts required and free quotes online.", "https://www.scoopychatt.com/yard-cleanup-chattanooga")} />
 
       <div className="min-h-screen flex flex-col">
         <Header />
