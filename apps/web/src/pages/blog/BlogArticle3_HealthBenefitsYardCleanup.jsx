@@ -25,7 +25,7 @@ const BlogArticle3_HealthBenefitsYardCleanup = () => {
 
     <blockquote>
       "As parents of two young kids and three dogs, this service is essential. We feel confident letting our children play outside barefoot, knowing the yard is actually clean."
-      <br/>&mdash; David & Lisa K. from Downtown Chattanooga
+      <br/>— David & Lisa K. from Downtown Chattanooga
     </blockquote>
 
     <h2>Pet Health Benefits</h2>
@@ -35,7 +35,7 @@ const BlogArticle3_HealthBenefitsYardCleanup = () => {
 
     <blockquote>
       "Our vet actually recommended professional waste removal to reduce our dog's parasite exposure. Since we started, her checkups have been perfectly clear."
-      <br/>&mdash; Emily R. from Ringgold
+      <br/>— Emily R. from Ringgold
     </blockquote>
 
     <h2>Mental Health and Property Value</h2>

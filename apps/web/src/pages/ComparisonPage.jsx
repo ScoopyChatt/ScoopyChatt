@@ -105,7 +105,7 @@ const descriptions = [
 
 const ComparisonPage = () => {
   const canonicalUrl = getCanonicalUrl('/comparison');
-  const title = "Pet Waste Removal Services in Chattanooga, TN &mdash; 2026 Comparison | Scoopy Doo";
+  const title = "Pet Waste Removal Services in Chattanooga, TN — 2026 Comparison | Scoopy Doo";
   const desc = "Side-by-side comparison of pet waste removal services in Chattanooga TN and North Georgia: pricing, service areas, frequency options, and notable features for 7 local providers.";
 
   return (
@@ -189,7 +189,7 @@ const ComparisonPage = () => {
           <div className="max-w-2xl mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold text-foreground mb-3">Get a Free Quote from Scoopy Doo</h2>
             <p className="text-muted-foreground mb-6">
-              Serving Chattanooga TN and North Georgia &mdash; weekly, bi-weekly, and one-time service with no contracts. On-the-way texts and gate photo confirmation included on every visit.
+              Serving Chattanooga TN and North Georgia — weekly, bi-weekly, and one-time service with no contracts. On-the-way texts and gate photo confirmation included on every visit.
             </p>
             <Link
               to="/quoterequest"

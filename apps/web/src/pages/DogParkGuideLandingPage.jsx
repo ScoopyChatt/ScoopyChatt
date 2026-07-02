@@ -18,7 +18,7 @@ const DogParkGuideLandingPage = () => {
           Discover Chattanooga's Best Kept Secrets for Dog Owners!
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-          Stop guessing where to take your pup. Get our exclusive, fully-detailed guide to the best off-leash areas and hidden gems around the Scenic City&mdash;absolutely free.
+          Stop guessing where to take your pup. Get our exclusive, fully-detailed guide to the best off-leash areas and hidden gems around the Scenic City—absolutely free.
         </p>
       </section>
 
@@ -125,7 +125,7 @@ const DogParkGuideLandingPage = () => {
 
         <h3 className="text-2xl font-semibold text-foreground mb-4">Tennessee Riverpark Dog-Friendly Trail</h3>
         <p className="text-muted-foreground leading-relaxed mb-6">
-          Stretching over 10 miles along the Tennessee River, the Riverpark is Chattanooga's most popular outdoor recreation area. Dogs are welcome on leashes throughout the paved trail system. You'll find water fountains, restrooms, and plenty of shaded areas &mdash; perfect for longer walks on hot Tennessee summer days. The trail connects Chickamauga Dam all the way to downtown, passing through several neighborhood greenways along the way.
+          Stretching over 10 miles along the Tennessee River, the Riverpark is Chattanooga's most popular outdoor recreation area. Dogs are welcome on leashes throughout the paved trail system. You'll find water fountains, restrooms, and plenty of shaded areas — perfect for longer walks on hot Tennessee summer days. The trail connects Chickamauga Dam all the way to downtown, passing through several neighborhood greenways along the way.
         </p>
 
         <h3 className="text-2xl font-semibold text-foreground mb-4">Warner Park & Stringer's Ridge</h3>
@@ -140,12 +140,12 @@ const DogParkGuideLandingPage = () => {
 
         <h3 className="text-2xl font-semibold text-foreground mb-4">Signal Mountain and Lookout Mountain Trails</h3>
         <p className="text-muted-foreground leading-relaxed mb-6">
-          For the adventurous dog owner, the mountain communities above Chattanooga offer world-class trail access. Signal Mountain has miles of forest paths connecting to the Cumberland Trail, while Lookout Mountain features trails through Point Park and Reflection Riding Arboretum. Dogs must be leashed in most of these areas, and always bring water &mdash; the mountain trails are more strenuous than flatland walks.
+          For the adventurous dog owner, the mountain communities above Chattanooga offer world-class trail access. Signal Mountain has miles of forest paths connecting to the Cumberland Trail, while Lookout Mountain features trails through Point Park and Reflection Riding Arboretum. Dogs must be leashed in most of these areas, and always bring water — the mountain trails are more strenuous than flatland walks.
         </p>
 
         <h3 className="text-2xl font-semibold text-foreground mb-4">Keep Your Yard Clean Between Park Visits</h3>
         <p className="text-muted-foreground leading-relaxed mb-6">
-          All those dog park adventures mean your yard gets a workout too. Pet waste left on your lawn creates bacteria, attracts pests, and can make your yard unsafe for children and other pets. Scoopy Doo provides weekly, bi-weekly, and one-time yard cleanup services throughout Chattanooga and surrounding communities &mdash; so your yard stays as clean as the parks you love to visit.
+          All those dog park adventures mean your yard gets a workout too. Pet waste left on your lawn creates bacteria, attracts pests, and can make your yard unsafe for children and other pets. Scoopy Doo provides weekly, bi-weekly, and one-time yard cleanup services throughout Chattanooga and surrounding communities — so your yard stays as clean as the parks you love to visit.
         </p>
         <p className="text-muted-foreground leading-relaxed">
           Download our free Chattanooga Dog Park Guide above for a complete list of locations, hours, rules, and insider tips from local dog owners who've explored every corner of the Scenic City with their four-legged companions.

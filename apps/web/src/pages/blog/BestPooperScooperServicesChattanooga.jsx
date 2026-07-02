@@ -8,7 +8,7 @@ import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
 const BestPooperScooperServicesChattanooga = () => (
   <div className="min-h-screen flex flex-col bg-background">
-    <SEOHead title="Best Pooper Scooper Services in Chattanooga | Scoopy Doo" description="Looking for the best pooper scooper service in Chattanooga? Here's what to look for &mdash; and why Scoopy Doo is the area's top-rated choice." canonicalUrl={`${CANONICAL_BASE_URL}/blog/best-pooper-scooper-services-chattanooga`} />
+    <SEOHead title="Best Pooper Scooper Services in Chattanooga | Scoopy Doo" description="Looking for the best pooper scooper service in Chattanooga? Here's what to look for — and why Scoopy Doo is the area's top-rated choice." canonicalUrl={`${CANONICAL_BASE_URL}/blog/best-pooper-scooper-services-chattanooga`} />
     <Header />
     <main className="flex-grow py-20">
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,18 +22,18 @@ const BestPooperScooperServicesChattanooga = () => (
           </div>
         </header>
         <div className="prose prose-lg max-w-none text-foreground space-y-6">
-          <p>Chattanooga has a growing population of dog owners &mdash; and with that comes the need for reliable, professional pet waste removal. If you've been doing it yourself or putting it off entirely, you're not alone. But how do you find the right pooper scooper service for your home? Here's what to look for.</p>
+          <p>Chattanooga has a growing population of dog owners — and with that comes the need for reliable, professional pet waste removal. If you've been doing it yourself or putting it off entirely, you're not alone. But how do you find the right pooper scooper service for your home? Here's what to look for.</p>
 
           <h2 className="text-2xl font-bold mt-10 mb-4">What Makes a Great Pooper Scooper Service?</h2>
           <p>Not all yard cleanup services are created equal. When evaluating options in the Chattanooga area, here are the key factors that separate professional operations from fly-by-night alternatives:</p>
           <ul className="space-y-3 my-4">
             {[
-              'Grid-pattern scooping &mdash; not just a walk-through. Every corner of your yard should be checked.',
-              'Waste removed from your property entirely &mdash; not just bagged and left by the gate.',
-              'Consistent scheduling &mdash; weekly or bi-weekly service you can rely on.',
-              'Local ownership &mdash; a company with roots in the Chattanooga community that stands behind its work.',
-              'Transparent pricing &mdash; no hidden fees, no contracts required.',
-              'Verified customer reviews &mdash; especially from neighborhoods you recognize.',
+              'Grid-pattern scooping — not just a walk-through. Every corner of your yard should be checked.',
+              'Waste removed from your property entirely — not just bagged and left by the gate.',
+              'Consistent scheduling — weekly or bi-weekly service you can rely on.',
+              'Local ownership — a company with roots in the Chattanooga community that stands behind its work.',
+              'Transparent pricing — no hidden fees, no contracts required.',
+              'Verified customer reviews — especially from neighborhoods you recognize.',
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -43,16 +43,16 @@ const BestPooperScooperServicesChattanooga = () => (
           </ul>
 
           <h2 className="text-2xl font-bold mt-10 mb-4">Service Areas to Look For</h2>
-          <p>The best Chattanooga pooper scooper services cover a wide footprint &mdash; including the suburbs where dog ownership rates are highest. Look for coverage in East Brainerd, Hixson, Ooltewah, Signal Mountain, Red Bank, Ringgold, and Soddy-Daisy, not just downtown zip codes.</p>
-          <p>Scoopy Doo serves all of these areas and more. If you're not sure whether your neighborhood is covered, the fastest way to find out is to request a free quote &mdash; turnaround is usually the same day.</p>
+          <p>The best Chattanooga pooper scooper services cover a wide footprint — including the suburbs where dog ownership rates are highest. Look for coverage in East Brainerd, Hixson, Ooltewah, Signal Mountain, Red Bank, Ringgold, and Soddy-Daisy, not just downtown zip codes.</p>
+          <p>Scoopy Doo serves all of these areas and more. If you're not sure whether your neighborhood is covered, the fastest way to find out is to request a free quote — turnaround is usually the same day.</p>
 
           <h2 className="text-2xl font-bold mt-10 mb-4">Weekly vs. Bi-Weekly: What's Right for You?</h2>
-          <p>For most Chattanooga households with one or two dogs, weekly service is the sweet spot &mdash; enough to keep bacteria and odor under control without being excessive. If you have three or more dogs, a small yard, or young children who play outside regularly, weekly is strongly recommended.</p>
+          <p>For most Chattanooga households with one or two dogs, weekly service is the sweet spot — enough to keep bacteria and odor under control without being excessive. If you have three or more dogs, a small yard, or young children who play outside regularly, weekly is strongly recommended.</p>
           <p>Bi-weekly works well for single-dog households with larger yards, especially if the dog tends to use the same area consistently. One-time cleanups are also available for spring cleaning, move-outs, pre-event yard prep, or simply trying the service before committing to a schedule.</p>
 
           <h2 className="text-2xl font-bold mt-10 mb-4">Why Scoopy Doo?</h2>
           <p>Scoopy Doo is Chattanooga's locally owned and operated pet waste removal company. We serve residential yards, HOAs, apartment complexes, and commercial properties throughout the greater Chattanooga area. Our customers consistently mention three things: thoroughness, reliability, and the fact that we actually haul the waste away rather than leaving bagged waste behind.</p>
-          <p>We're also fully insured, we use sanitized equipment between yards, and we offer flexible scheduling with no long-term contracts. Most customers find that having a clean yard &mdash; without doing the work themselves &mdash; makes the service worth every dollar within the first visit.</p>
+          <p>We're also fully insured, we use sanitized equipment between yards, and we offer flexible scheduling with no long-term contracts. Most customers find that having a clean yard — without doing the work themselves — makes the service worth every dollar within the first visit.</p>
 
           <div className="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
             <p className="text-lg font-semibold text-foreground mb-2">See why Chattanooga dog owners choose Scoopy Doo.</p>

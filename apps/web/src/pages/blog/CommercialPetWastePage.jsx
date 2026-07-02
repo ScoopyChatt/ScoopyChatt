@@ -97,7 +97,7 @@ const CommercialPetWastePage = () => {
 
             <h2>4. Advanced Sanitation and Odor Control</h2>
             <p>
-              A full waste station doesn't just look bad&mdash;it creates a severe odor problem, especially during hot Tennessee summers. Professional services do more than just trash bag replacement; they include area sanitizing. We treat the stations and surrounding grass to eliminate lingering odors and neutralize harmful bacteria, ensuring the amenity remains usable and pleasant.
+              A full waste station doesn't just look bad—it creates a severe odor problem, especially during hot Tennessee summers. Professional services do more than just trash bag replacement; they include area sanitizing. We treat the stations and surrounding grass to eliminate lingering odors and neutralize harmful bacteria, ensuring the amenity remains usable and pleasant.
             </p>
 
             <h2>5. Enhancing the Overall Tenant Experience</h2>

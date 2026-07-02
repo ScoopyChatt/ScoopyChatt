@@ -14,14 +14,14 @@ const steps = [
     icon: ClipboardList,
     title: 'Get a Free Quote Online',
     desc: "No phone calls, no waiting on hold. Fill out our quick form with your zip code, number of dogs, and yard size and we send back your price, usually within a few hours.",
-    highlight: "100% online &mdash; quote, schedule, and pay without picking up the phone.",
+    highlight: "100% online — quote, schedule, and pay without picking up the phone.",
     color: 'bg-blue-500/10 text-blue-600',
   },
   {
     number: '02',
     icon: CreditCard,
     title: 'Pick a Plan & Pay Online',
-    desc: "Choose weekly, bi-weekly, or one-time service. Pay securely online &mdash; no checks, no cash at the door. We send your confirmation and put you on the schedule.",
+    desc: "Choose weekly, bi-weekly, or one-time service. Pay securely online — no checks, no cash at the door. We send your confirmation and put you on the schedule.",
     highlight: "Secure online payment. No contracts. Cancel anytime.",
     color: 'bg-green-500/10 text-green-600',
   },
@@ -37,7 +37,7 @@ const steps = [
     number: '04',
     icon: ShieldCheck,
     title: 'We Scoop Every Inch',
-    desc: "Our techs walk your entire yard in a systematic grid &mdash; no shortcuts, no missed spots. All waste is double-bagged and hauled away from your property.",
+    desc: "Our techs walk your entire yard in a systematic grid — no shortcuts, no missed spots. All waste is double-bagged and hauled away from your property.",
     highlight: "Full yard coverage. Waste removed from property. Equipment sanitized between every yard.",
     color: 'bg-amber-500/10 text-amber-600',
   },
@@ -56,17 +56,17 @@ const perks = [
   { icon: '💳', label: 'Online Payment', desc: 'Secure, no contracts, cancel anytime' },
   { icon: '📱', label: 'On the Way Texts', desc: 'Heads-up before every single visit' },
   { icon: '📸', label: 'Gate Photo Proof', desc: 'Photo of your secured gate when done' },
-  { icon: '🧹', label: 'Full Yard Coverage', desc: 'Grid-pattern &mdash; zero missed spots' },
+  { icon: '🧹', label: 'Full Yard Coverage', desc: 'Grid-pattern — zero missed spots' },
   { icon: '🗑️', label: 'Waste Removed', desc: 'Hauled away, not left by the gate' },
 ];
 
 const faqs = [
-  { q: 'Do I need to be home during the service?', a: "No. We just need access to your backyard &mdash; an unlocked gate or a code you provide. Most customers are at work when we show up. You get an on-the-way text before we arrive and a gate photo when we are done." },
+  { q: 'Do I need to be home during the service?', a: "No. We just need access to your backyard — an unlocked gate or a code you provide. Most customers are at work when we show up. You get an on-the-way text before we arrive and a gate photo when we are done." },
   { q: 'How does the gate photo work?', a: "After every visit, our tech closes and latches your gate, then snaps a photo and texts it to you. It is your confirmation that the job is done and your yard is secure." },
   { q: 'When do I get the on-the-way text?', a: "We send it when we are en route to your address, so you have a few minutes notice. It lets you know we are coming without you having to guess which day or time." },
-  { q: 'Can I pay online?', a: "Yes &mdash; everything is handled online. You request a quote, receive pricing by email, and pay securely online before service begins. No checks, no cash, no awkward in-person payment." },
+  { q: 'Can I pay online?', a: "Yes — everything is handled online. You request a quote, receive pricing by email, and pay securely online before service begins. No checks, no cash, no awkward in-person payment." },
   { q: 'Is there a contract?', a: "No contracts, ever. You can pause, change, or cancel your service at any time." },
-  { q: 'What if it rains on my service day?', a: "We show up rain or shine. Weather does not cancel your service &mdash; rainy days are actually when cleanup matters most, since runoff carries bacteria across your lawn." },
+  { q: 'What if it rains on my service day?', a: "We show up rain or shine. Weather does not cancel your service — rainy days are actually when cleanup matters most, since runoff carries bacteria across your lawn." },
   { q: 'Do you service my neighborhood?', a: "We cover all of Chattanooga and surrounding areas: Hixson, Ooltewah, East Brainerd, Signal Mountain, Red Bank, Soddy-Daisy, Ringgold, Cleveland, Highland Park, Apison, Collegedale, Fort Oglethorpe, Rossville, and more." },
 ];
 
@@ -144,9 +144,9 @@ const HowItWorksPage = () => (
             {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
           </div>
           <blockquote className="text-xl md:text-2xl font-medium text-foreground italic mb-4">
-            "I love getting the picture of my closed gate &mdash; it gives me total peace of mind."
+            "I love getting the picture of my closed gate — it gives me total peace of mind."
           </blockquote>
-          <cite className="text-muted-foreground not-italic">&mdash; Chattanooga customer, weekly service</cite>
+          <cite className="text-muted-foreground not-italic">— Chattanooga customer, weekly service</cite>
         </div>
       </section>
 

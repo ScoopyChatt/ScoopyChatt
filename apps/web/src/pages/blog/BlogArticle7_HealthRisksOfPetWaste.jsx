@@ -13,21 +13,21 @@ const BlogArticle7_HealthRisksOfPetWaste = () => {
   };
 
   const content = `
-    <h2>Dog Waste Is an EPA-Classified Pollutant &mdash; Here Is What That Means for Your Yard</h2>
+    <h2>Dog Waste Is an EPA-Classified Pollutant — Here Is What That Means for Your Yard</h2>
     <p>
-      A single gram of dog feces contains up to 23 million fecal coliform bacteria &mdash; including E. coli, Salmonella, and Campylobacter. The EPA classifies dog waste alongside toxic chemicals and oil spills as a dangerous non-point source pollutant. In Chattanooga's warm, wet climate, averaging over 50 inches of rain per year, these pathogens spread through soil, onto patios, and into your home on shoes and paws within days.
+      A single gram of dog feces contains up to 23 million fecal coliform bacteria — including E. coli, Salmonella, and Campylobacter. The EPA classifies dog waste alongside toxic chemicals and oil spills as a dangerous non-point source pollutant. In Chattanooga's warm, wet climate, averaging over 50 inches of rain per year, these pathogens spread through soil, onto patios, and into your home on shoes and paws within days.
     </p>
 
     <h2>Which Diseases Can Humans Catch from Dog Waste?</h2>
     <p>Dog feces transmit at least 11 pathogens that infect humans, including:</p>
     <ul>
-      <li><strong>E. coli O157:H7</strong> &mdash; severe intestinal illness; spreads via soil contact and contaminated surfaces</li>
-      <li><strong>Toxocara canis (roundworm)</strong> &mdash; eggs survive in soil for up to 5 years; children who play in dirt are at highest risk</li>
-      <li><strong>Ancylostoma (hookworm)</strong> &mdash; larvae penetrate bare skin directly and cause cutaneous larva migrans</li>
-      <li><strong>Giardia</strong> &mdash; spreads to other pets and humans; survives in moist soil for up to 3 months</li>
-      <li><strong>Salmonella</strong> &mdash; shed in feces even by dogs that appear completely healthy</li>
+      <li><strong>E. coli O157:H7</strong> — severe intestinal illness; spreads via soil contact and contaminated surfaces</li>
+      <li><strong>Toxocara canis (roundworm)</strong> — eggs survive in soil for up to 5 years; children who play in dirt are at highest risk</li>
+      <li><strong>Ancylostoma (hookworm)</strong> — larvae penetrate bare skin directly and cause cutaneous larva migrans</li>
+      <li><strong>Giardia</strong> — spreads to other pets and humans; survives in moist soil for up to 3 months</li>
+      <li><strong>Salmonella</strong> — shed in feces even by dogs that appear completely healthy</li>
     </ul>
-    <p>Children under 5 are at highest risk because they play close to the ground and touch their faces frequently. According to the CDC, Toxocara infects an estimated 14% of the U.S. population &mdash; most without knowing it.</p>
+    <p>Children under 5 are at highest risk because they play close to the ground and touch their faces frequently. According to the CDC, Toxocara infects an estimated 14% of the U.S. population — most without knowing it.</p>
 
     <h2>How Long Do Bacteria from Dog Waste Survive in Soil?</h2>
     <p>
@@ -36,12 +36,12 @@ const BlogArticle7_HealthRisksOfPetWaste = () => {
 
     <h2>Does Dog Waste Contaminate Local Waterways?</h2>
     <p>
-      Yes. Chattanooga receives over 50 inches of rain annually &mdash; well above the U.S. average of 38 inches. Every rainfall event washes accumulated waste into storm drains that empty directly into Chattanooga Creek and the Tennessee River without treatment. Research has found pet waste accounts for up to 20&ndash;30% of bacterial contamination in urban waterways. This affects water quality used for recreation and wildlife downstream of every Chattanooga neighborhood.
+      Yes. Chattanooga receives over 50 inches of rain annually — well above the U.S. average of 38 inches. Every rainfall event washes accumulated waste into storm drains that empty directly into Chattanooga Creek and the Tennessee River without treatment. Research has found pet waste accounts for up to 20–30% of bacterial contamination in urban waterways. This affects water quality used for recreation and wildlife downstream of every Chattanooga neighborhood.
     </p>
 
-    <h2>Is Dog Waste a Fertilizer? No &mdash; Here Is Why</h2>
+    <h2>Is Dog Waste a Fertilizer? No — Here Is Why</h2>
     <p>
-      Unlike composted livestock manure, dog waste is not a fertilizer. Dogs are primarily carnivores; their waste is highly acidic with nitrogen concentration so dense it burns rather than feeds grass. Spots where dogs eliminate repeatedly develop yellow or brown dead patches &mdash; nitrogen burn. In summer heat above 80&deg;F, grass death from a single unremoved deposit can occur within 72 hours.
+      Unlike composted livestock manure, dog waste is not a fertilizer. Dogs are primarily carnivores; their waste is highly acidic with nitrogen concentration so dense it burns rather than feeds grass. Spots where dogs eliminate repeatedly develop yellow or brown dead patches — nitrogen burn. In summer heat above 80&deg;F, grass death from a single unremoved deposit can occur within 72 hours.
     </p>
 
     <h2>How Often Does Waste Need to Be Removed to Keep Your Yard Safe?</h2>

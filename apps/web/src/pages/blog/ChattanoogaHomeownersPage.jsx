@@ -77,7 +77,7 @@ const ChattanoogaHomeownersPage = () => {
             </p>
             
             <p>
-              Whether you live in Ooltewah, Hixson, or across the border in Ringgold GA, a pooper scooper service is no longer viewed as an extravagant luxury&mdash;it is a practical solution for busy families.
+              Whether you live in Ooltewah, Hixson, or across the border in Ringgold GA, a pooper scooper service is no longer viewed as an extravagant luxury—it is a practical solution for busy families.
             </p>
 
             <h2>1. Winning Back Your Free Time</h2>
@@ -97,7 +97,7 @@ const ChattanoogaHomeownersPage = () => {
 
             <h2>4. Stopping Tracked-In Messes</h2>
             <p>
-              We have all experienced the horror of a family member&mdash;or worse, the dog&mdash;stepping in a fresh pile and tracking it across the living room rug. Routine dog waste removal service acts as an insurance policy for your indoor carpets and hardwood floors. Consistent cleanings mean fewer accidents and significantly less time spent scrubbing your floors.
+              We have all experienced the horror of a family member—or worse, the dog—stepping in a fresh pile and tracking it across the living room rug. Routine dog waste removal service acts as an insurance policy for your indoor carpets and hardwood floors. Consistent cleanings mean fewer accidents and significantly less time spent scrubbing your floors.
             </p>
 
             <h2>5. Reclaiming Backyard Enjoyment and Curb Appeal</h2>

@@ -31,7 +31,7 @@ const BlogArticle8_PetWasteManagementGuide = () => {
       Many pet owners hesitate to hire a professional pet waste removal service because they view it as an unnecessary luxury. However, a quick cost-benefit analysis often changes their minds. 
     </p>
     <p>
-      Consider the value of your time. If you spend 45 minutes a week cleaning the yard, that's nearly 40 hours a year&mdash;a full work week&mdash;spent dealing with dog waste. When you factor in the cost of heavy-duty bags, specialized tools, and the sheer unpleasantness of the task, a professional service is incredibly cost-effective. For a modest weekly fee, you reclaim your time and guarantee a consistently clean yard.
+      Consider the value of your time. If you spend 45 minutes a week cleaning the yard, that's nearly 40 hours a year—a full work week—spent dealing with dog waste. When you factor in the cost of heavy-duty bags, specialized tools, and the sheer unpleasantness of the task, a professional service is incredibly cost-effective. For a modest weekly fee, you reclaim your time and guarantee a consistently clean yard.
     </p>
 
     <h2>Tips for Maintaining a Clean Yard Between Services</h2>
@@ -46,7 +46,7 @@ const BlogArticle8_PetWasteManagementGuide = () => {
 
     <h2>How Scoopy Doo Fits Your Lifestyle</h2>
     <p>
-      At Scoopy Doo, we designed our services specifically for busy pet owners in Chattanooga. We offer flexible scheduling&mdash;weekly, bi-weekly, or twice a week&mdash;to match your specific needs and the number of dogs you have. You don't even need to be home when we visit; as long as we have access to the yard, we'll handle the dirty work and leave a note letting you know your yard is clean and safe. Reclaim your weekends and enjoy your outdoor space again with our reliable, professional cleanup service.
+      At Scoopy Doo, we designed our services specifically for busy pet owners in Chattanooga. We offer flexible scheduling—weekly, bi-weekly, or twice a week—to match your specific needs and the number of dogs you have. You don't even need to be home when we visit; as long as we have access to the yard, we'll handle the dirty work and leave a note letting you know your yard is clean and safe. Reclaim your weekends and enjoy your outdoor space again with our reliable, professional cleanup service.
     </p>
   `;
 

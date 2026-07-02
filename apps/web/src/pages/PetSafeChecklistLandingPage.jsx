@@ -110,7 +110,7 @@ const PetSafeChecklistLandingPage = () => {
                   marginHeight="0" 
                   marginWidth="0"
                 >
-                  Loading&hellip;
+                  Loading…
                 </iframe>
               </div>
             </motion.div>
