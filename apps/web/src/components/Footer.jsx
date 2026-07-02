@@ -104,7 +104,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Clock className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">24/7 Always available for ÃÂ°ÃÂÃÂÃÂ service</span>
+                <span className="text-sm">24/7 Always available for service</span>
               </li>
               <li className="flex items-start">
                 <a href="https://share.google/sOBVeLPqRabhfffPg" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors text-sm">
@@ -120,6 +120,9 @@ const Footer = () => {
           <p className="text-sm text-slate-500">
             &copy; {currentYear} Scoopy Doo LLC. All rights reserved.
           </p>
+          <a href="https://www.bbb.org/us/ga/ringgold/profile/pet-waste-removal/scoopy-doo-llc-0483-80013696/#sealclick" id="bbblink" className="sehzbum" target="_blank" rel="nofollow noopener">
+            <img src="https://seal-chattanooga.bbb.org/logo/sehzbum/bbb-80013696.png" style={{ border: 0, maxHeight: "60px" }} alt="Scoopy Doo, LLC BBB Business Review" loading="lazy" />
+          </a>
           <div className="flex space-x-4 text-sm text-slate-500">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
