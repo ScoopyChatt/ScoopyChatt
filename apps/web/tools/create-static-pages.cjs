@@ -6,7 +6,7 @@ console.log('[csp] DIST=' + DIST + ' exists=' + fs.existsSync(DIST));
 
 var faqBody = '<h1>Frequently Asked Questions About Dog Poop Removal in Chattanooga</h1>' +
   '<h2>How much does dog poop removal cost in Chattanooga?</h2>' +
-  '<p>Scoopy Doo weekly service starts at $20 per visit for one dog. Every-other-week service is $33 per visit. One-time yard cleanups start at $85. All pricing is based on yard size and dog count. Every quote is free at scoopychatt.com/quoterequest. No contracts required.</p>' +
+  '<p>Scoopy Doo weekly service starts at $20 per visit for one dog. Twice-weekly service is $18 per visit. Every-other-week service is $33 per visit. One-time yard cleanups start at $85. All pricing is based on yard size and dog count. Every quote is free at scoopychatt.com/quoterequest. No contracts required.</p>' +
   '<h2>Does Scoopy Doo serve North Georgia?</h2>' +
   '<p>Yes. Scoopy Doo serves Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA in addition to Chattanooga, Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, Cleveland, East Ridge, and Lookout Mountain TN.</p>' +
   '<h2>What happens on each service visit?</h2>' +
@@ -52,7 +52,7 @@ var FAQ_PAIRS_CS = [
   ["How do I schedule pet waste removal service?","Request a free quote at scoopychatt.com/quote with your yard details and number of dogs. We respond the same day and most new customers start within 2 to 5 days."],
   ["Does Scoopy Doo serve North Georgia?","Yes. We serve Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA along with Chattanooga and surrounding Tennessee areas, with no extra charge for North Georgia service."],
   ["Is there a contract or long-term commitment?","No. Scoopy Doo never requires a contract. You can pause, reschedule, or cancel anytime with no cancellation fees."],
-  ["How much does dog poop removal cost in Chattanooga?","Pricing depends on how many dogs you have and how often we visit. We offer weekly, twice-weekly, every-other-week, one-time, commercial, and HOA options. Use the cost calculator at scoopychatt.com/cost-calculator or request a free quote for exact pricing."],
+  ["How much does dog poop removal cost in Chattanooga?","Pet waste removal pricing is per visit: weekly service starts at $20 per visit for one dog, twice-weekly service is $18 per visit, and every-other-week service is $33 per visit. One-time yard cleanups start at $85. Final pricing depends on yard size and number of dogs, and there are no contracts. Request a free quote for exact pricing."],
   ["How often should I have my yard cleaned?","Weekly service is the most popular and keeps your yard consistently clean and safe. Homes with multiple dogs or heavy use often choose twice-weekly, while every-other-week works for lighter needs."],
   ["What happens on each visit?","You get an on-the-way text before we arrive, a full grid-pattern sweep of your entire yard, double-bagged waste hauled completely off your property, and a gate photo confirmation when we finish."],
   ["Do you offer one-time cleanups?","Yes. One-time yard cleanups are great for spring cleaning, move-outs, or before an event, and a good way to start fresh before beginning recurring service."],
