@@ -12,15 +12,15 @@ import { generateServiceSchema } from '@/utils/schemaGenerators.js';
 const faqs = [
   {
     question: "What is Scoopy Doo and what does the service include?",
-    answer: "Scoopy Doo LLC is Chattanooga's locally owned dog poop removal and pooper scooper service. Every visit includes a full grid-pattern yard sweep, double-bagged waste removal hauled off your property, gate closure, and a photo confirmation sent to you. No contracts &mdash; cancel or change anytime."
+    answer: "Scoopy Doo LLC is Chattanooga's locally owned dog poop removal and pooper scooper service. Every visit includes a full grid-pattern yard sweep, double-bagged waste removal hauled off your property, gate closure, and a photo confirmation sent to you. No contracts - cancel or change anytime."
   },
   {
     question: "How does Scoopy Doo pet waste removal work?",
-    answer: "It's simple: request a free quote online, we send you pricing based on yard size and number of dogs, and you pick a schedule. We show up on your day, text you when we're on the way, clean the entire yard, close your gate, and send a photo when done. Payment is handled online &mdash; no checks, no phone tag."
+    answer: "It's simple: request a free quote online, we send you pricing based on yard size and number of dogs, and you pick a schedule. We show up on your day, text you when we're on the way, clean the entire yard, close your gate, and send a photo when done. Payment is handled online - no checks, no phone tag."
   },
   {
     question: "Do you offer a scoopy poopy service near Chattanooga, TN?",
-    answer: "Yes &mdash; Scoopy Doo provides professional pooper scooper and scoopy poopy service throughout the Chattanooga metro including Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Lookout Mountain, Soddy-Daisy, and North Georgia communities like Ringgold, Rossville, and Fort Oglethorpe."
+    answer: "Yes - Scoopy Doo provides professional pooper scooper and scoopy poopy service throughout the Chattanooga metro including Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Lookout Mountain, Soddy-Daisy, and North Georgia communities like Ringgold, Rossville, and Fort Oglethorpe."
   },
   {
     question: "How often should I schedule dog waste removal?",
@@ -28,11 +28,11 @@ const faqs = [
   },
   {
     question: "Is Scoopy Doo dog waste removal safe for kids and pets?",
-    answer: "Yes. We sanitize all scooping equipment between every yard to prevent cross-contamination. We never use harmful chemicals in your yard, and we haul all waste fully off the property. A clean yard is a safer yard &mdash; dog waste carries bacteria and parasites that are hazardous to children and other animals."
+    answer: "Yes. We sanitize all scooping equipment between every yard to prevent cross-contamination. We never use harmful chemicals in your yard, and we haul all waste fully off the property. A clean yard is a safer yard - dog waste carries bacteria and parasites that are hazardous to children and other animals."
   },
   {
     question: "How much does pooper scooper service cost in Chattanooga?",
-    answer: "Pricing is based on yard size and the number of dogs. Most Chattanooga homeowners pay between $18 and $36 per visit. The fastest way to get your exact price is to submit a free quote request &mdash; we respond the same day, usually within a few hours."
+    answer: "Pricing is based on yard size and the number of dogs. Most Chattanooga homeowners pay between $18 and $36 per visit. The fastest way to get your exact price is to submit a free quote request - we respond the same day, usually within a few hours."
   },
   {
     question: "Do you service HOAs and apartment communities?",
@@ -100,7 +100,7 @@ const CoreServicePage = () => {
           <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-center gap-x-3 gap-y-1 text-center text-sm">
             <span className="uppercase tracking-wide text-xs font-semibold text-muted-foreground">As Featured In</span>
             <a href="https://www.chattanoogan.com/2026/6/23/520251/14-Year-Old-Entrepreneur-Builds.aspx" target="_blank" rel="noopener" className="font-semibold text-foreground hover:text-primary">Chattanoogan.com</a>
-            <span className="hidden sm:inline text-muted-foreground" aria-hidden="true">&mdash;</span>
+            <span className="hidden sm:inline text-muted-foreground" aria-hidden="true"> - </span>
             <a href="/press" className="text-primary font-medium hover:underline">Chattanooga&apos;s largest pet waste removal company &rarr;</a>
           </div>
         </section>
@@ -114,7 +114,7 @@ const CoreServicePage = () => {
               <img
                 src="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/img_8567-OZjoO.jpeg"
                 alt="Dog waste removal service in action in Chattanooga, TN"
-                title="Scoopy Doo Professional Dog Poop Removal &mdash; Chattanooga, TN"
+                title="Scoopy Doo Professional Dog Poop Removal - Chattanooga, TN"
                 className="w-full h-auto rounded-2xl shadow-2xl border border-border/50 object-cover"
                 loading="eager"
                 fetchPriority="high"
@@ -138,7 +138,7 @@ const CoreServicePage = () => {
               <div className="order-2 md:order-1">
                 <h2 className="mb-6 text-3xl font-bold">Pet Waste Removal Benefits</h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Leaving pet waste to accumulate isn't just an eyesore&mdash;it's a health hazard. As a dedicated poop pick up company, we know that dog waste carries harmful bacteria and parasites that can infect other pets and children.
+                  Leaving pet waste to accumulate isn't just an eyesore - it's a health hazard. As a dedicated poop pick up company, we know that dog waste carries harmful bacteria and parasites that can infect other pets and children.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center text-foreground font-medium">
@@ -164,7 +164,7 @@ const CoreServicePage = () => {
                   <img
                     src="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/img_9013-HYtyH.jpeg"
                     alt="Professional pooper scooper equipment used by Scoopy Doo in Chattanooga"
-                    title="Professional Pet Waste Removal Equipment &mdash; Scoopy Doo LLC"
+                    title="Professional Pet Waste Removal Equipment - Scoopy Doo LLC"
                     className="w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"

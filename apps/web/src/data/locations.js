@@ -221,23 +221,23 @@ export const locations = [
     name: "Cleveland, TN",
     slug: "cleveland",
     seoTitle: "Dog Poop Removal in Cleveland, TN | Scoopy Doo Pet Waste Removal",
-    seoDescription: "Professional dog waste removal in Cleveland, TN. Scoopy Doo serves Bradley County with weekly and bi-weekly pet waste pickup. No contracts — get your free quote today.",
-    serviceDescription: "Cleveland is the heart of Bradley County and one of the fastest-growing cities in the region, with new neighborhoods expanding in every direction. Scoopy Doo serves Cleveland families with the same professional, tech-forward pet waste removal that Chattanooga trusts — on-the-way texts, gate photo confirmation, and waste hauled fully off your property every visit.",
+    seoDescription: "Professional dog waste removal in Cleveland, TN. Scoopy Doo serves Bradley County with weekly and bi-weekly pet waste pickup. No contracts - get your free quote today.",
+    serviceDescription: "Cleveland is the heart of Bradley County and one of the fastest-growing cities in the region, with new neighborhoods expanding in every direction. Scoopy Doo serves Cleveland families with the same professional, tech-forward pet waste removal that Chattanooga trusts - on-the-way texts, gate photo confirmation, and waste hauled fully off your property every visit.",
     localContext: "Cleveland has grown significantly in recent years, with newer subdivisions bringing more dogs and more of the pet waste challenge that comes with suburban life. Many Cleveland families have larger lots than the average Chattanooga yard, which means more ground to cover and waste that is genuinely easy to miss without a systematic approach. Scoopy Doo handles the whole yard every visit.",
     neighborhoods: ["Cleveland proper", "Lee University area", "North Cleveland", "White Oak area", "Blythe Ferry Road corridor", "Westside"],
     testimonial: { quote: "I did not think a service like this would come out to Cleveland but they do, every single week. Great communication and fair prices.", author: "Rachel S., Cleveland" },
     benefits: [
-      "Regular Bradley County routes — no extra fees",
+      "Regular Bradley County routes - no extra fees",
       "Weekly and bi-weekly service available",
       "On-the-way text before every visit",
       "Gate secured and photo sent after every cleanup",
       "Waste hauled fully off the property",
-      "No contracts — cancel anytime"
+      "No contracts - cancel anytime"
     ],
     faqItems: [
-      { question: "Do you service Cleveland, TN?", answer: "Yes — Cleveland is within our service area. We run routes throughout Cleveland and Bradley County and do not charge extra for distance from Chattanooga. Request a free quote online and we will confirm availability in your neighborhood." },
+      { question: "Do you service Cleveland, TN?", answer: "Yes - Cleveland is within our service area. We run routes throughout Cleveland and Bradley County and do not charge extra for distance from Chattanooga. Request a free quote online and we will confirm availability in your neighborhood." },
       { question: "How quickly can I start service in Cleveland?", answer: "Most Cleveland customers can be added to a route within 2-5 days of requesting a quote. We respond to quote requests the same day, usually within a few hours." },
-      { question: "Do you haul the waste away or leave it bagged at the gate?", answer: "We haul all waste fully off your property — double-bagged and removed in our vehicle. It does not go in your trash can or stay by the gate. Your yard is left completely clean." },
+      { question: "Do you haul the waste away or leave it bagged at the gate?", answer: "We haul all waste fully off your property - double-bagged and removed in our vehicle. It does not go in your trash can or stay by the gate. Your yard is left completely clean." },
       { question: "Is there a contract for Cleveland service?", answer: "No contracts, ever. You can start, skip, or cancel service at any time. We keep customers by doing a great job, not by locking them in." }
     ]
   },
@@ -246,8 +246,8 @@ export const locations = [
     name: "Apison, TN",
     slug: "apison",
     seoTitle: "Dog Poop Removal in Apison, TN | Scoopy Doo Pet Waste Removal",
-    seoDescription: "Pet waste removal in Apison, TN. Scoopy Doo serves Apison homeowners with professional weekly dog poop pickup. Larger lots, multiple dogs — no problem. Free quote.",
-    serviceDescription: "Apison is one of Hamilton County's quieter but fast-growing communities, with newer residential developments, larger lots, and families who have traded city density for a bit more space. Those larger lots make professional pet waste removal especially valuable — more yard means more ground to cover and waste that is genuinely easy to miss without a systematic approach. Scoopy Doo handles the whole yard, every visit.",
+    seoDescription: "Pet waste removal in Apison, TN. Scoopy Doo serves Apison homeowners with professional weekly dog poop pickup. Larger lots, multiple dogs - no problem. Free quote.",
+    serviceDescription: "Apison is one of Hamilton County's quieter but fast-growing communities, with newer residential developments, larger lots, and families who have traded city density for a bit more space. Those larger lots make professional pet waste removal especially valuable - more yard means more ground to cover and waste that is genuinely easy to miss without a systematic approach. Scoopy Doo handles the whole yard, every visit.",
     localContext: "Apison sits in the eastern corridor of Hamilton County, between East Brainerd and the Ooltewah area. New subdivisions have brought growing families and more dogs to the area over the past decade. Scoopy Doo runs East Hamilton County routes regularly and serves Apison as part of the same coverage that includes East Brainerd, Ooltewah, and Collegedale.",
     neighborhoods: ["Apison Pike corridor", "Standifer Gap Road area", "Hamilton County rural east", "Harrison vicinity", "East Hamilton corridor"],
     testimonial: { quote: "We have three dogs and almost an acre. I was spending an hour every week on cleanup. Now I just get a text saying Scoopy Doo is on the way, and it gets done.", author: "Mark W., Apison" },
@@ -257,7 +257,7 @@ export const locations = [
       "Multiple dog households welcome",
       "On-the-way text before every visit",
       "Gate photo confirmation after every cleanup",
-      "No contracts — cancel anytime"
+      "No contracts - cancel anytime"
     ],
     faqItems: [
       { question: "Do you service Apison, TN?", answer: "Yes. Apison is within our East Hamilton County service area. We run regular routes through the area and can typically start new customers within 2-5 days of a quote request." },
@@ -271,21 +271,21 @@ export const locations = [
     name: "Collegedale, TN",
     slug: "collegedale",
     seoTitle: "Dog Poop Removal in Collegedale, TN | Scoopy Doo Pet Waste Removal",
-    seoDescription: "Pet waste removal in Collegedale, TN. Scoopy Doo serves Collegedale homeowners with professional weekly dog poop pickup. No contracts — free quote.",
-    serviceDescription: "Collegedale is a small, community-focused city east of Chattanooga with well-maintained neighborhoods and high standards for how the community looks. Scoopy Doo serves Collegedale families with reliable weekly and bi-weekly pet waste removal — the kind of service that keeps your yard looking great without taking up your weekend.",
+    seoDescription: "Pet waste removal in Collegedale, TN. Scoopy Doo serves Collegedale homeowners with professional weekly dog poop pickup. No contracts - free quote.",
+    serviceDescription: "Collegedale is a small, community-focused city east of Chattanooga with well-maintained neighborhoods and high standards for how the community looks. Scoopy Doo serves Collegedale families with reliable weekly and bi-weekly pet waste removal - the kind of service that keeps your yard looking great without taking up your weekend.",
     localContext: "Collegedale sits in the eastern Hamilton County corridor near Ooltewah and East Brainerd. It is a tight-knit community where neighbors pay attention to how properties are maintained. Regular pet waste pickup is one of the easiest ways to keep your yard in top shape year-round. Scoopy Doo runs East Hamilton County routes regularly and serves Collegedale as part of that coverage.",
     neighborhoods: ["Collegedale proper", "Southern Adventist University area", "McDonald Road corridor", "Apison Pike vicinity", "East Hamilton corridor"],
     testimonial: { quote: "Collegedale is a small town and everyone notices everything. Having Scoopy Doo come every week has made a real difference in how our yard looks.", author: "Laura K., Collegedale" },
     benefits: [
       "Serving Collegedale and East Hamilton County",
       "Weekly and bi-weekly service available",
-      "Consistent scheduling — same day every week",
+      "Consistent scheduling - same day every week",
       "Gate photo confirmation after every visit",
       "Waste removed from property entirely",
       "No hidden fees, no contracts"
     ],
     faqItems: [
-      { question: "Do you service Collegedale, TN?", answer: "Yes — Collegedale is within our East Hamilton County service area. We run regular routes through the area and do not charge extra for East Hamilton County locations." },
+      { question: "Do you service Collegedale, TN?", answer: "Yes - Collegedale is within our East Hamilton County service area. We run regular routes through the area and do not charge extra for East Hamilton County locations." },
       { question: "Are there any hidden fees in Collegedale?", answer: "No hidden fees. Our pricing is based on yard size and number of dogs, and your quote is exactly what you pay. No fuel surcharges, no seasonal fees." },
       { question: "How consistent is the schedule?", answer: "Very consistent. You are assigned a regular day, and we show up on that day every week or every other week depending on your plan. You get an on-the-way text before each visit so you always know we are coming." },
       { question: "Do you service homes near Southern Adventist University?", answer: "Yes. We service all Collegedale neighborhoods including areas near the university, along McDonald Road, and throughout the city." }
@@ -296,9 +296,9 @@ export const locations = [
     name: "Highland Park, TN",
     slug: "highland-park",
     seoTitle: "Dog Poop Removal in Highland Park, Chattanooga | Scoopy Doo Pet Waste Removal",
-    seoDescription: "Pet waste removal in Highland Park, Chattanooga. Scoopy Doo serves Highland Park homeowners with professional weekly dog poop pickup. Urban yards welcome — free quote.",
-    serviceDescription: "Highland Park is one of Chattanooga's most vibrant historic neighborhoods — tree-lined streets, revitalized bungalows, and a strong sense of community. With urban lots and neighbors who care about their blocks, consistent pet waste pickup matters more here than almost anywhere. Scoopy Doo runs regular Chattanooga routes through Highland Park and keeps urban yards clean without any fuss.",
-    localContext: "Highland Park has seen significant reinvestment over the past decade, with homeowners taking pride in properties that had long been overlooked. Smaller urban lots mean pet waste is more visible and more of an issue — what your dogs leave behind in a compact yard is hard to miss, and it affects the whole block. Scoopy Doo makes sure it never becomes a problem.",
+    seoDescription: "Pet waste removal in Highland Park, Chattanooga. Scoopy Doo serves Highland Park homeowners with professional weekly dog poop pickup. Urban yards welcome - free quote.",
+    serviceDescription: "Highland Park is one of Chattanooga's most vibrant historic neighborhoods - tree-lined streets, revitalized bungalows, and a strong sense of community. With urban lots and neighbors who care about their blocks, consistent pet waste pickup matters more here than almost anywhere. Scoopy Doo runs regular Chattanooga routes through Highland Park and keeps urban yards clean without any fuss.",
+    localContext: "Highland Park has seen significant reinvestment over the past decade, with homeowners taking pride in properties that had long been overlooked. Smaller urban lots mean pet waste is more visible and more of an issue - what your dogs leave behind in a compact yard is hard to miss, and it affects the whole block. Scoopy Doo makes sure it never becomes a problem.",
     neighborhoods: ["Highland Park proper", "McCallie Avenue corridor", "Third Street area", "Dodds Avenue vicinity", "Glass Street area", "Orchard Knob nearby"],
     testimonial: { quote: "I have two dogs in a small Highland Park yard. Scoopy Doo cleans it every week and I can actually use my yard again. Worth every penny.", author: "James T., Highland Park" },
     benefits: [
@@ -306,14 +306,14 @@ export const locations = [
       "Weekly service prevents waste from accumulating",
       "On-the-way text before every visit",
       "Gate photo confirmation when done",
-      "Waste removed from property — not left behind",
+      "Waste removed from property - not left behind",
       "Locally owned Chattanooga business"
     ],
     faqItems: [
       { question: "Do you service small urban yards in Highland Park?", answer: "Yes. We service yards of all sizes, including the smaller urban lots typical in Highland Park. Smaller yards often mean waste is more concentrated and more important to keep clean consistently." },
       { question: "How often should I have service in Highland Park?", answer: "For most Highland Park households with one or two dogs, weekly service is the best choice. Smaller yards fill up quickly, and weekly pickup keeps odor and accumulation completely under control." },
       { question: "Do you service fenced urban yards?", answer: "Yes. Most Highland Park properties are fenced. We work with any gate setup you provide, always close the gate after cleaning, and send a photo confirmation." },
-      { question: "Is Highland Park within the Chattanooga service area?", answer: "Yes — Highland Park is one of our established Chattanooga neighborhoods. We run regular city routes and Highland Park is well within our coverage area." }
+      { question: "Is Highland Park within the Chattanooga service area?", answer: "Yes - Highland Park is one of our established Chattanooga neighborhoods. We run regular city routes and Highland Park is well within our coverage area." }
     ]
   },
   {
@@ -321,21 +321,21 @@ export const locations = [
     name: "Flintstone, GA",
     slug: "flintstone",
     seoTitle: "Dog Poop Removal in Flintstone, GA | Scoopy Doo Pet Waste Removal",
-    seoDescription: "Pet waste removal in Flintstone, GA. Scoopy Doo serves Walker County homeowners with professional dog poop pickup. No extra Georgia fees — free quote.",
+    seoDescription: "Pet waste removal in Flintstone, GA. Scoopy Doo serves Walker County homeowners with professional dog poop pickup. No extra Georgia fees - free quote.",
     serviceDescription: "Flintstone is a Walker County community nestled in the hills of North Georgia, with a mix of rural homesteads and established residential neighborhoods. Scoopy Doo serves Flintstone as part of our North Georgia coverage, bringing the same professional, reliable pet waste removal to Walker County that our Chattanooga and Catoosa County customers depend on.",
-    localContext: "Flintstone sits in Walker County along the US-27 corridor between Chattanooga and LaFayette, Georgia. It is a quieter North Georgia community where many residents have larger properties and multiple dogs. Consistent professional cleanup is the practical choice for anyone with a sizable yard or a few dogs — and Scoopy Doo makes the logistics simple with online quotes, on-the-way texts, and no contracts.",
+    localContext: "Flintstone sits in Walker County along the US-27 corridor between Chattanooga and LaFayette, Georgia. It is a quieter North Georgia community where many residents have larger properties and multiple dogs. Consistent professional cleanup is the practical choice for anyone with a sizable yard or a few dogs - and Scoopy Doo makes the logistics simple with online quotes, on-the-way texts, and no contracts.",
     neighborhoods: ["Flintstone proper", "US-27 corridor", "Walker County residential", "Lookout Valley vicinity", "Cloud Springs Road area"],
     testimonial: { quote: "I was not sure anyone would come out to Flintstone but Scoopy Doo comes every single week. Equipment is clean, they close the gate, and I get a photo. Really professional.", author: "Karen B., Flintstone" },
     benefits: [
-      "North Georgia service — no extra Walker County fees",
+      "North Georgia service - no extra Walker County fees",
       "Experienced with rural and larger properties",
       "Equipment sanitized between every yard",
       "On-the-way text before every visit",
       "Gate photo confirmation when done",
-      "No contracts — cancel anytime"
+      "No contracts - cancel anytime"
     ],
     faqItems: [
-      { question: "Do you service Flintstone, GA?", answer: "Yes. Flintstone is within our North Georgia service coverage. We do not charge extra fees for Walker County locations — pricing is based on yard size and number of dogs, just like our Tennessee service areas." },
+      { question: "Do you service Flintstone, GA?", answer: "Yes. Flintstone is within our North Georgia service coverage. We do not charge extra fees for Walker County locations - pricing is based on yard size and number of dogs, just like our Tennessee service areas." },
       { question: "Do you sanitize your equipment between yards?", answer: "Yes, always. We sanitize all tools and footwear between every single yard to prevent the spread of bacteria and parasites. This is standard on every visit." },
       { question: "Can you handle larger rural properties in Walker County?", answer: "Yes. We service a range of property sizes including larger rural lots. We price based on the area to be cleaned and use a grid-pattern approach to make sure nothing is missed." },
       { question: "How do I get a quote for Flintstone service?", answer: "Request a free quote at scoopychatt.com. We respond the same day and can typically start new Flintstone customers within a few days." }
@@ -346,18 +346,18 @@ export const locations = [
     name: "Downtown Chattanooga, TN",
     slug: "downtown",
     seoTitle: "Dog Poop Removal in Downtown Chattanooga | Scoopy Doo Pet Waste Removal",
-    seoDescription: "Pet waste removal for downtown Chattanooga homes, condos, and private yards. Scoopy Doo provides professional weekly dog poop pickup in the urban core. Free quote — no contracts.",
+    seoDescription: "Pet waste removal for downtown Chattanooga homes, condos, and private yards. Scoopy Doo provides professional weekly dog poop pickup in the urban core. Free quote - no contracts.",
     serviceDescription: "Downtown Chattanooga is one of the most walkable, dog-friendly urban environments in Tennessee, and private yards and green spaces in the urban core fill up fast with multiple dogs in a compact area. Scoopy Doo provides professional pet waste removal for downtown homes, condos with private outdoor spaces, and townhomes throughout the core and adjacent neighborhoods.",
     localContext: "The Tennessee River waterfront runs directly through downtown Chattanooga, making pet waste runoff a genuine environmental concern in the urban core. Storm drains in downtown neighborhoods connect directly to the river, and consistent cleanup is one of the most direct ways residents can protect the water quality everyone enjoys. Scoopy Doo serves downtown customers with the same commitment to thoroughness we bring to every neighborhood in the city.",
     neighborhoods: ["Downtown proper", "Bluff View", "Southside", "MLK District", "North Shore", "Riverfront area"],
     testimonial: { quote: "I live in a downtown townhome with a small private yard. Scoopy Doo comes every week, leaves a gate photo, and I never have to think about it. Perfect for urban living.", author: "Alicia M., Downtown Chattanooga" },
     benefits: [
       "Urban service for private yards, condos, and townhomes",
-      "Waterfront area — responsible waste removal protects the Tennessee River",
+      "Waterfront area - responsible waste removal protects the Tennessee River",
       "Weekly service for high-traffic compact spaces",
       "Gate photo confirmation after every visit",
       "Waste removed from property entirely",
-      "Online quotes and payment — no phone calls needed"
+      "Online quotes and payment - no phone calls needed"
     ],
     faqItems: [
       { question: "Do you service downtown Chattanooga homes and condos?", answer: "Yes. We service private yards, townhome outdoor spaces, and residential properties throughout downtown Chattanooga and adjacent neighborhoods including Southside, Bluff View, and the MLK District." },

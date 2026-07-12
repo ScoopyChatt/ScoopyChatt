@@ -40,7 +40,7 @@ const OneTimeCleanupPage = () => {
               className="text-center max-w-3xl mx-auto"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-balance text-foreground" style={{ letterSpacing: '-0.02em' }}>
-                One-Time Dog Waste Cleanup in Chattanooga, TN &mdash; No Contract Required
+                One-Time Dog Waste Cleanup in Chattanooga, TN - No Contract Required
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-[55ch] mx-auto font-medium mb-8">
                 Perfect for special events, spring cleaning, or just getting your yard back to a manageable state.

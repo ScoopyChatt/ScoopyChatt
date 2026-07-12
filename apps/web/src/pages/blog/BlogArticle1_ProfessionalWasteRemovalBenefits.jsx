@@ -25,7 +25,7 @@ const BlogArticle1_ProfessionalWasteRemovalBenefits = () => {
     
     <blockquote>
       "Our yard smells so much better! Between working full-time and kids' sports, we just couldn't keep up. The service has been a game-changer for our family." 
-      <br/>— Sarah M. from Signal Mountain
+      <br/> - Sarah M. from Signal Mountain
     </blockquote>
 
     <h2>Health Risks of Accumulated Pet Waste</h2>
@@ -35,7 +35,7 @@ const BlogArticle1_ProfessionalWasteRemovalBenefits = () => {
 
     <blockquote>
       "I don't have to worry about bacteria in my kids' play area anymore. It's the best investment we make every month."
-      <br/>— John D. from Hixson
+      <br/> - John D. from Hixson
     </blockquote>
 
     <h2>Cost-Benefit Analysis: Professional Service vs. DIY</h2>

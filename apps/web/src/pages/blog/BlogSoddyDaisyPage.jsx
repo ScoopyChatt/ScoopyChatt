@@ -22,13 +22,13 @@ const Page = () => (
           </div>
         </header>
         <div className="prose prose-lg max-w-none text-foreground space-y-6">
-          <p>Soddy-Daisy is a growing community just north of Chattanooga, and dog ownership in this area has grown right along with it. For pet owners across the Soddy-Daisy area, keeping yards clean and safe is a constant challenge — especially given Tennessee's warm, wet climate.</p>
+          <p>Soddy-Daisy is a growing community just north of Chattanooga, and dog ownership in this area has grown right along with it. For pet owners across the Soddy-Daisy area, keeping yards clean and safe is a constant challenge - especially given Tennessee's warm, wet climate.</p>
           <h2 className="text-2xl font-bold mt-10 mb-4">Professional Cleanup in Soddy-Daisy and Surrounding Areas</h2>
-          <p>Scoopy Doo serves residential neighborhoods throughout Soddy-Daisy, including properties near Chickamauga Lake and the surrounding communities. We handle yards of all sizes and work around your schedule — you don't even need to be home.</p>
+          <p>Scoopy Doo serves residential neighborhoods throughout Soddy-Daisy, including properties near Chickamauga Lake and the surrounding communities. We handle yards of all sizes and work around your schedule - you don't even need to be home.</p>
           <h2 className="text-2xl font-bold mt-10 mb-4">Why Pet Waste Removal Matters</h2>
           <p>In Soddy-Daisy's humid climate, dog waste left on the lawn for more than a few days begins causing real problems: nitrogen burn kills grass, bacteria multiply rapidly in the heat, and heavy rains carry pathogens into local waterways. Weekly or bi-weekly professional removal prevents all of this before it becomes a problem.</p>
           <h2 className="text-2xl font-bold mt-10 mb-4">Flexible Plans, No Contracts</h2>
-          <p>We offer weekly, bi-weekly, and one-time cleanup services with no long-term commitment required. Most Soddy-Daisy customers start with a one-time cleanup to see the difference, then sign up for recurring service. We bag and remove all waste from your property entirely — no smelly bags left by the gate.</p>
+          <p>We offer weekly, bi-weekly, and one-time cleanup services with no long-term commitment required. Most Soddy-Daisy customers start with a one-time cleanup to see the difference, then sign up for recurring service. We bag and remove all waste from your property entirely - no smelly bags left by the gate.</p>
           <p>Request your free quote today and we'll have pricing to you the same day.</p>
           <div className="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
             <p className="text-lg font-semibold text-foreground mb-2">Ready for a cleaner yard in Soddy-Daisy?</p>

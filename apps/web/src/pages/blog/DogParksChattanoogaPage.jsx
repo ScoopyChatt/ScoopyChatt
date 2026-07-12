@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
 
 const pageTitle = "7 Best Dog Parks in Chattanooga, TN (2026 Guide)";
-const pageDesc = "Discover the 7 best dog parks in Chattanooga, TN for 2026 — off-leash areas, addresses, hours, amenities, and tips for keeping your home yard just as clean.";
+const pageDesc = "Discover the 7 best dog parks in Chattanooga, TN for 2026 - off-leash areas, addresses, hours, amenities, and tips for keeping your home yard just as clean.";
 const canonicalPath = "/blog/best-dog-parks-chattanooga-tn";
 const publishDate = "2026-06-07";
 const authorName = "Scoopy Doo LLC";
@@ -29,14 +29,14 @@ const parks = [
     tag: "Newest and Best-Equipped",
     tagColor: "bg-primary/10 text-primary",
     highlights: [
-      "1.2 acres — one of the largest in the area",
+      "1.2 acres - one of the largest in the area",
       "Splash pad and sandbox (unique to this park)",
       "Agility equipment and shaded benches",
       "On-site dog wash station",
       "Pet waste stations with free bags",
       "Access to 40 miles of trails in Enterprise South Nature Park",
     ],
-    description: "Opened in 2023, Barks and Tails is the newest and most feature-packed public dog park in Chattanooga. Tucked inside the sprawling Enterprise South Nature Park in northeast Chattanooga, it covers 1.2 acres with amenities you will not find anywhere else in town — including a splash pad and a sandbox. After your dog is done playing, the on-site wash station lets you clean up before heading home. If you live near Ooltewah or East Brainerd, this is your closest top-tier park.",
+    description: "Opened in 2023, Barks and Tails is the newest and most feature-packed public dog park in Chattanooga. Tucked inside the sprawling Enterprise South Nature Park in northeast Chattanooga, it covers 1.2 acres with amenities you will not find anywhere else in town - including a splash pad and a sandbox. After your dog is done playing, the on-site wash station lets you clean up before heading home. If you live near Ooltewah or East Brainerd, this is your closest top-tier park.",
     serviceLink: "/service/ooltewah",
     serviceName: "Ooltewah",
   },
@@ -99,7 +99,7 @@ const parks = [
     tagColor: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
     highlights: [
       "3 acres of fenced off-leash space",
-      "Natural wooded terrain — great for sniffers",
+      "Natural wooded terrain - great for sniffers",
       "Separate zones for small and large dogs",
       "Double-gated entries",
       "Water stations (warm months)",
@@ -128,7 +128,7 @@ const parks = [
       "Summer water fountains",
       "Walking distance to Chattanooga Market",
     ],
-    description: "Chattanooga Chew Chew Canine Park is the only dog park right in the middle of downtown Chattanooga, sitting adjacent to Chattanooga Market and the Skate Park. It punches above its weight with fire hydrants, tunnels, agility structures, and tire hoops — all free to use. It is the go-to spot for Southside and downtown residents and visitors who want to wear their dog out before dinner on the waterfront.",
+    description: "Chattanooga Chew Chew Canine Park is the only dog park right in the middle of downtown Chattanooga, sitting adjacent to Chattanooga Market and the Skate Park. It punches above its weight with fire hydrants, tunnels, agility structures, and tire hoops - all free to use. It is the go-to spot for Southside and downtown residents and visitors who want to wear their dog out before dinner on the waterfront.",
     serviceLink: "/service/chattanooga",
     serviceName: "Chattanooga",
   },
@@ -151,7 +151,7 @@ const parks = [
       "Ranger staff on duty at all times",
       "Pools, misters, and heaters by season",
     ],
-    description: "Play Wash Pint is in a category of its own. This members-only dog park and bar on the Southside combines 12,000 square feet of turf play space with an indoor/outdoor bar, a professional self-wash station, and a full-time ranger staff. Dogs must be vaccinated, spayed/neutered if over one year, and at least 4 months old. If you want a premium, fully staffed experience — and you enjoy a cold beer while your dog runs — this is the place.",
+    description: "Play Wash Pint is in a category of its own. This members-only dog park and bar on the Southside combines 12,000 square feet of turf play space with an indoor/outdoor bar, a professional self-wash station, and a full-time ranger staff. Dogs must be vaccinated, spayed/neutered if over one year, and at least 4 months old. If you want a premium, fully staffed experience - and you enjoy a cold beer while your dog runs - this is the place.",
     serviceLink: "/service/chattanooga",
     serviceName: "Chattanooga",
   },
@@ -174,7 +174,7 @@ const parks = [
       "Open and friendly community vibe",
       "Easy drive from Ringgold and Rossville",
     ],
-    description: "Just across the Georgia line in Fort Oglethorpe, Bark City Dog Park is a free, spacious, community-run park that is well worth the short drive from Ringgold or Rossville. It has separate big and small dog zones, a basic agility course, water access, and shaded seating. The vibe is relaxed and welcoming — great for dogs who need space without the stimulation of a busier park.",
+    description: "Just across the Georgia line in Fort Oglethorpe, Bark City Dog Park is a free, spacious, community-run park that is well worth the short drive from Ringgold or Rossville. It has separate big and small dog zones, a basic agility course, water access, and shaded seating. The vibe is relaxed and welcoming - great for dogs who need space without the stimulation of a busier park.",
     serviceLink: "/service/ringgold",
     serviceName: "Ringgold and Fort Oglethorpe",
   },
@@ -183,7 +183,7 @@ const parks = [
 const faqs = [
   {
     question: "Are all dog parks in Chattanooga free?",
-    answer: "Most are free, including Barks and Tails, Heritage Park, Red Bank, Greenway Farms, and Chattanooga Chew Chew Canine Park. Play Wash Pint is the exception — it requires a day pass or membership, but offers a premium experience with ranger staff, a self-wash station, and an on-site bar.",
+    answer: "Most are free, including Barks and Tails, Heritage Park, Red Bank, Greenway Farms, and Chattanooga Chew Chew Canine Park. Play Wash Pint is the exception - it requires a day pass or membership, but offers a premium experience with ranger staff, a self-wash station, and an on-site bar.",
   },
   {
     question: "Which Chattanooga dog park is best for small dogs?",
@@ -198,8 +198,8 @@ const faqs = [
     answer: "Yes, all of the parks listed are open year-round. Note that water stations at some parks (like Greenway Farms) are only available during warm months. Barks and Tails opens at 7 AM daily; most parks operate dawn to dusk.",
   },
   {
-    question: "My dog just visited a dog park — how do I keep my yard clean too?",
-    answer: "After regular park visits, dogs tend to do more of their business at home too. Scoopy Doo handles weekly, bi-weekly, and one-time yard cleanups throughout the Chattanooga area and North Georgia — so you never have to worry about it. Get a free quote at scoopychatt.com.",
+    question: "My dog just visited a dog park - how do I keep my yard clean too?",
+    answer: "After regular park visits, dogs tend to do more of their business at home too. Scoopy Doo handles weekly, bi-weekly, and one-time yard cleanups throughout the Chattanooga area and North Georgia - so you never have to worry about it. Get a free quote at scoopychatt.com.",
   },
 ];
 
@@ -296,7 +296,7 @@ const DogParksChattanoogaPage = () => {
                 <span className="block text-primary mt-1">(2026 Guide)</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed max-w-3xl">
-                Chattanooga is one of the most dog-friendly cities in the Southeast. From a splash pad and sandbox in northeast Chattanooga to a dog park bar on the Southside, here are the seven best places to let your pup run free in 2026 — with verified hours, addresses, and what makes each one worth the trip.
+                Chattanooga is one of the most dog-friendly cities in the Southeast. From a splash pad and sandbox in northeast Chattanooga to a dog park bar on the Southside, here are the seven best places to let your pup run free in 2026 - with verified hours, addresses, and what makes each one worth the trip.
               </p>
               <div className="flex items-center space-x-4 text-sm text-slate-400">
                 <span>By Scoopy Doo LLC</span>
@@ -334,7 +334,7 @@ const DogParksChattanoogaPage = () => {
               With thousands of dog owners living across Hamilton County, the demand for quality off-leash spaces has never been higher. The good news: Chattanooga has invested heavily in dog-friendly infrastructure over the past few years, and the options are genuinely excellent.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Whether you are in Hixson, downtown, East Brainerd, or just across the Georgia line in Ringgold, there is a great dog park within easy driving distance. Here is everything you need to know — verified hours, real addresses, what to expect, and which neighborhoods each park serves best.
+              Whether you are in Hixson, downtown, East Brainerd, or just across the Georgia line in Ringgold, there is a great dog park within easy driving distance. Here is everything you need to know - verified hours, real addresses, what to expect, and which neighborhoods each park serves best.
             </p>
           </motion.div>
         </section>
@@ -437,10 +437,10 @@ const DogParksChattanoogaPage = () => {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                  "Pick up immediately — don't rely on the park's waste stations being stocked",
+                  "Pick up immediately - don't rely on the park's waste stations being stocked",
                   "Keep vaccinations current and bring proof if required (Play Wash Pint enforces this)",
                   "Remove retractable leashes before entering the off-leash area",
-                  "Watch your dog at all times — no phone scrolling while your dog plays",
+                  "Watch your dog at all times - no phone scrolling while your dog plays",
                   "If your dog is sick or in heat, skip the visit and come back next week",
                   "Spayed or neutered dogs over 1 year old are required at Play Wash Pint",
                 ].map((tip, i) => (
@@ -485,7 +485,7 @@ const DogParksChattanoogaPage = () => {
                 Dog parks are great for your pup, but regular visits mean more cleanup at home too.
                 Scoopy Doo handles weekly, bi-weekly, and one-time yard cleanups across Chattanooga,
                 Hixson, Red Bank, East Brainerd, Ringgold, and surrounding areas. We scoop, bag, and
-                dispose — so your yard is always ready.
+                dispose - so your yard is always ready.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg">

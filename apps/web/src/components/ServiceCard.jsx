@@ -39,7 +39,7 @@ const ServiceCard = ({ title, description, benefits, mostPopular }) => {
               
               {/* Badge container */}
               <div className="relative bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-3 rounded-full font-bold text-lg shadow-2xl shadow-primary/40 border-2 border-primary-foreground/20 flex items-center gap-2 whitespace-nowrap">
-                <span className="text-2xl">â­</span>
+                <span className="text-2xl">⭐</span>
                 <span className="tracking-wide text-xl">MOST POOPULAR</span>
               </div>
             </div>

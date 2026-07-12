@@ -22,15 +22,15 @@ const SpringPetCareChecklist = () => (
           </div>
         </header>
         <div className="prose prose-lg max-w-none text-foreground space-y-6">
-          <p>Spring in Chattanooga arrives fast — and with it comes warmer weather, more time outdoors, and a backyard that's been accumulating winter waste under leaves and frost. Before your dog reclaims the yard, run through this checklist to make sure your outdoor space is safe, clean, and ready for the season.</p>
+          <p>Spring in Chattanooga arrives fast - and with it comes warmer weather, more time outdoors, and a backyard that's been accumulating winter waste under leaves and frost. Before your dog reclaims the yard, run through this checklist to make sure your outdoor space is safe, clean, and ready for the season.</p>
           <h2 className="text-2xl font-bold mt-10 mb-4">Yard Safety Checklist</h2>
           {[
-            { item: 'Deep-clean winter waste', detail: "Winter waste doesn't disappear — it freezes and thaws. A spring deep-clean removes months of accumulated bacteria before warmer temps accelerate bacterial growth." },
+            { item: 'Deep-clean winter waste', detail: "Winter waste doesn't disappear - it freezes and thaws. A spring deep-clean removes months of accumulated bacteria before warmer temps accelerate bacterial growth." },
             { item: 'Check for toxic spring plants', detail: "Azaleas, sago palms, and lantana are common in Chattanooga landscaping and highly toxic to dogs. Walk your yard and identify anything that bloomed over winter." },
             { item: 'Inspect your fence line', detail: "Winter weather can shift fence posts and create gaps. Check every section, especially near the bottom, before letting your dog out unsupervised." },
             { item: 'Review lawn care products', detail: "Pre-emergent weed killers and fertilizers applied in spring can be dangerous to pets. Choose pet-safe formulas and keep dogs off treated areas for the recommended drying time." },
             { item: 'Schedule routine vet visits', detail: "Spring is heartworm and tick season in Tennessee. Make sure preventatives are current before outdoor time increases." },
-            { item: 'Start a regular waste removal schedule', detail: "If you let cleanup slide over winter, spring is the perfect time to establish a routine — or hand it off to a professional service." },
+            { item: 'Start a regular waste removal schedule', detail: "If you let cleanup slide over winter, spring is the perfect time to establish a routine - or hand it off to a professional service." },
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-4 p-4 bg-card border border-border rounded-xl">
               <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
@@ -41,7 +41,7 @@ const SpringPetCareChecklist = () => (
             </div>
           ))}
           <h2 className="text-2xl font-bold mt-10 mb-4">Don't Start Spring Behind on Waste</h2>
-          <p>One of the biggest spring yard mistakes Chattanooga dog owners make is waiting too long to address winter waste buildup. By the time temperatures hit the mid-70s, bacteria from months of accumulated waste are already multiplying rapidly. A one-time spring cleanup — followed by a regular weekly schedule — gets your yard back to a healthy baseline fast.</p>
+          <p>One of the biggest spring yard mistakes Chattanooga dog owners make is waiting too long to address winter waste buildup. By the time temperatures hit the mid-70s, bacteria from months of accumulated waste are already multiplying rapidly. A one-time spring cleanup - followed by a regular weekly schedule - gets your yard back to a healthy baseline fast.</p>
           <p>Scoopy Doo offers one-time cleanups and ongoing weekly or bi-weekly service throughout Chattanooga and surrounding areas. We handle the cleanup so you can focus on enjoying the season with your dog.</p>
           <div className="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
             <p className="text-lg font-semibold text-foreground mb-2">Start spring with a clean yard.</p>

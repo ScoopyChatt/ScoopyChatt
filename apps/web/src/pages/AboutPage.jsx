@@ -20,9 +20,9 @@ const AboutPage = () => {
   ];
 
   const values = [
-    { title: "We show up, every time", body: "Rain, cold, heat — we are on your route every scheduled week without exception. Our customers never have to wonder if we showed up." },
+    { title: "We show up, every time", body: "Rain, cold, heat - we are on your route every scheduled week without exception. Our customers never have to wonder if we showed up." },
     { title: "We treat your property with respect", body: "We close and photograph your gate after every visit. We sanitize our equipment between every yard. We haul all waste off your property entirely." },
-    { title: "We are genuinely local", body: "We live in the Chattanooga area. We know the neighborhoods, the terrain, and the community. This is not a franchise — it is our business and our reputation." },
+    { title: "We are genuinely local", body: "We live in the Chattanooga area. We know the neighborhoods, the terrain, and the community. This is not a franchise - it is our business and our reputation." },
     { title: "No contracts, no games", body: "We earn your business every single week. There are no lock-in contracts, no cancellation fees, and no confusing pricing. You get what you pay for and nothing you did not agree to." },
   ];
 
@@ -30,10 +30,10 @@ const AboutPage = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
         <title>About Scoopy Doo | Chattanooga Pet Waste Removal</title>
-        <meta name="description" content="Meet Scoopy Doo LLC — Chattanooga's locally owned father and daughter pet waste removal company. 80+ five-star reviews, two branded service vehicles, serving 17+ communities." />
+        <meta name="description" content="Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company. 80+ five-star reviews, two branded service vehicles, serving 17+ communities." />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content="About Scoopy Doo | Chattanooga Pet Waste Removal" />
-        <meta property="og:description" content="Meet Scoopy Doo LLC — Chattanooga's locally owned father and daughter pet waste removal company." />
+        <meta property="og:description" content="Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company." />
         <meta property="og:url" content={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(generateLocalBusinessSchema())}</script>
       </Helmet>
@@ -47,7 +47,7 @@ const AboutPage = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="max-w-3xl mx-auto">
             <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wider mb-6">Locally Owned</span>
             <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-6">
-                About Scoopy Doo — Chattanooga, TN Pet Waste Removal Company
+                About Scoopy Doo - Chattanooga, TN Pet Waste Removal Company
               </h1>
             <p className="text-lg md:text-xl text-muted-foreground">A father and daughter business built on showing up, doing the work right, and making Chattanooga yards a little cleaner every week. Scoopy Doo LLC is accredited by the Better Business Bureau and fully insured.</p>
           </motion.div>
@@ -71,24 +71,24 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                 <h2 className="text-3xl font-bold text-foreground mb-6">Our Story</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">Scoopy Doo LLC — the company behind Scoopy Chatt — was founded by a Chattanooga-area father and daughter who saw a real need in their community and decided to fill it. What started as a simple idea has grown into a service that hundreds of Chattanooga families rely on every week.</p>
-                <p className="text-muted-foreground leading-relaxed mb-4">We run two branded service vehicles across 17+ communities in the Chattanooga metro area and North Georgia. Our team shows up in uniform, follows a systematic grid-pattern process on every yard, and never cuts corners — because this is our community too, and our name is on every truck.</p>
+                <p className="text-muted-foreground leading-relaxed mb-4">Scoopy Doo LLC - the company behind Scoopy Chatt - was founded by a Chattanooga-area father and daughter who saw a real need in their community and decided to fill it. What started as a simple idea has grown into a service that hundreds of Chattanooga families rely on every week.</p>
+                <p className="text-muted-foreground leading-relaxed mb-4">We run two branded service vehicles across 17+ communities in the Chattanooga metro area and North Georgia. Our team shows up in uniform, follows a systematic grid-pattern process on every yard, and never cuts corners - because this is our community too, and our name is on every truck.</p>
                 <p className="text-muted-foreground leading-relaxed mb-6">We built the business around a simple promise: make it easy. Online quotes. Online payment. A text when we are on the way. A photo of your secured gate when we are done. No contracts. No surprises.</p>
                 <Button asChild size="lg" className="rounded-xl px-8 font-bold">
                   <Link to="/quote">Get Your Free Quote</Link>
                 </Button>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-4">
-                {/* Team photo — Chattanooga mural */}
+                {/* Team photo - Chattanooga mural */}
                 <div className="rounded-2xl overflow-hidden border border-border shadow-lg aspect-[4/3] bg-muted flex items-center justify-center">
                   <img
                     src="/team-chattanooga-mural.jpg"
-                    alt="Scoopy Doo LLC owners in front of the Chattanooga Scenic City mural — local pet waste removal company serving Chattanooga TN"
+                    alt="Scoopy Doo LLC owners in front of the Chattanooga Scenic City mural - local pet waste removal company serving Chattanooga TN"
                     className="w-full h-full object-cover"
                     onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
                   />
                   <div style={{display:'none'}} className="w-full h-full items-center justify-center text-muted-foreground text-sm p-8 text-center">
-                    <span>Father and daughter owners — Chattanooga, TN</span>
+                    <span>Father and daughter owners - Chattanooga, TN</span>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -114,14 +114,14 @@ const AboutPage = () => {
             <p className="text-muted-foreground mb-8">Hundreds of Chattanooga families trust us with their yards every week. Here is what they say.</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
               {[
-                { quote: "I have two big dogs and a small yard. Scoopy Doo shows up every week without fail — I literally never think about it anymore.", author: "Sarah M.", location: "Highland Park" },
+                { quote: "I have two big dogs and a small yard. Scoopy Doo shows up every week without fail - I literally never think about it anymore.", author: "Sarah M.", location: "Highland Park" },
                 { quote: "Our HOA was getting complaints about dog waste in the common areas. Scoopy Doo solved it in week one. We have had zero complaints since.", author: "HOA Board", location: "Cambridge Square, Ooltewah" },
                 { quote: "I was skeptical at first but after the first visit I was sold. They get every single spot. My yard looks better than it has in years.", author: "Tony R.", location: "East Ridge" },
               ].map((review, i) => (
                 <div key={i} className="bg-card border border-border rounded-2xl p-6">
                   <div className="flex gap-0.5 mb-3">{[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
                   <p className="text-foreground text-sm leading-relaxed mb-4 italic">"{review.quote}"</p>
-                  <div className="text-xs text-muted-foreground font-medium">{review.author} — {review.location}</div>
+                  <div className="text-xs text-muted-foreground font-medium">{review.author} - {review.location}</div>
                 </div>
               ))}
             </div>

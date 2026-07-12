@@ -47,6 +47,7 @@ const urls = [
   // Blog posts
   ...([
     'dog-poop-cleanup-chattanooga-summer-heat',
+    'dog-poop-laws-chattanooga',
     'how-often-scoop-dog-poop-chattanooga',
     'is-dog-poop-hurting-your-chattanooga-yard',
     'chattanooga-pet-waste-removal-homeowners',
