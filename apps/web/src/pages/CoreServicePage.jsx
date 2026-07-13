@@ -100,6 +100,8 @@ const CoreServicePage = () => {
           <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-center gap-x-3 gap-y-1 text-center text-sm">
             <span className="uppercase tracking-wide text-xs font-semibold text-muted-foreground">As Featured In</span>
             <a href="https://www.chattanoogan.com/2026/6/23/520251/14-Year-Old-Entrepreneur-Builds.aspx" target="_blank" rel="noopener" className="font-semibold text-foreground hover:text-primary">Chattanoogan.com</a>
+            <span className="hidden sm:inline text-muted-foreground">&amp;</span>
+            <a href="https://www.wdef.com/scoopy-doo-llc-pet-waste-removal/" target="_blank" rel="noopener" className="font-semibold text-foreground hover:text-primary">WDEF News 12</a>
             <span className="hidden sm:inline text-muted-foreground" aria-hidden="true"> - </span>
             <a href="/press" className="text-primary font-medium hover:underline">Chattanooga&apos;s largest pet waste removal company &rarr;</a>
           </div>
