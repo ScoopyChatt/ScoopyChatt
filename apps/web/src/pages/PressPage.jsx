@@ -7,6 +7,7 @@ import { ExternalLink, Newspaper, Star } from "lucide-react";
 
 const BASE = "https://www.scoopychatt.com";
 const ARTICLE_URL = "https://www.chattanoogan.com/2026/6/23/520251/14-Year-Old-Entrepreneur-Builds.aspx";
+const WDEF_URL = "https://www.wdef.com/scoopy-doo-llc-pet-waste-removal/";
 
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -35,15 +36,27 @@ const articleSchema = {
   "mainEntityOfPage": ARTICLE_URL
 };
 
+const wdefArticleSchema = {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Scoopy Doo LLC, pet waste removal",
+  "url": WDEF_URL,
+  "datePublished": "2026-07-02",
+  "author": { "@type": "Person", "name": "Mackenzie Johnson" },
+  "publisher": { "@type": "NewsMediaOrganization", "name": "WDEF News 12", "url": "https://www.wdef.com" },
+  "about": { "@type": "LocalBusiness", "name": "Scoopy Doo LLC", "url": BASE },
+  "mainEntityOfPage": WDEF_URL
+};
+
 export default function PressPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
         path="/press"
         title="Scoopy Doo in the News | Press and Media Coverage | Chattanooga Pet Waste Removal"
-        description="See the news coverage of Scoopy Doo LLC, the largest pet waste removal company in the Chattanooga area. Featured in the Chattanoogan in June 2026."
+        description="See the news coverage of Scoopy Doo LLC, the largest pet waste removal company in the Chattanooga area. Featured in the Chattanoogan and on WDEF News 12."
         canonicalUrl={BASE + "/press"}
-        schema={[collectionSchema, articleSchema]}
+        schema={[collectionSchema, articleSchema, wdefArticleSchema]}
       />
       <Header />
       <main className="flex-grow">
@@ -53,7 +66,7 @@ export default function PressPage() {
               <Newspaper className="w-5 h-5" /> Press &amp; Media
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Scoopy Doo in the News: Chattanooga&apos;s Largest Pet Waste Removal Company, Featured in the Chattanoogan
+              Scoopy Doo in the News: Chattanooga&apos;s Largest Pet Waste Removal Company, Featured in the Chattanoogan and on WDEF News 12
             </h1>
             <p className="text-lg text-muted-foreground">
               Scoopy Doo LLC is the largest and fastest-growing pet waste removal company in the Chattanooga, TN area, serving more than 150 clients with 86 five-star reviews across Chattanooga and North Georgia.
@@ -81,6 +94,27 @@ export default function PressPage() {
                 </p>
                 <a href={ARTICLE_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
                   Read the full article on Chattanoogan.com <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </article>
+
+            <article className="mt-8 border border-border rounded-2xl overflow-hidden shadow-sm">
+              <div className="p-6 md:p-8">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-3">
+                  <span className="font-semibold text-foreground">WDEF News 12</span>
+                  <span>&bull;</span>
+                  <span>July 2, 2026</span>
+                  <span>&bull;</span>
+                  <span>Local News</span>
+                </div>
+                <h2 className="text-2xl font-bold text-foreground mb-3">
+                  Father and Daughter Team Featured on WDEF News 12
+                </h2>
+                <p className="text-muted-foreground mb-5">
+                  WDEF News 12 shared the story of how 14-year-old Leighton Carter came to her dad, Brandon, wanting to start her own company, and how Scoopy Doo LLC was born. The father and daughter team now run Scoopy Doo full-time, serving more than 150 customers across the Chattanooga area with a team of three, offering weekly, bi-weekly, and twice-a-week yard cleanings.
+                </p>
+                <a href={WDEF_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+                  Watch the story on WDEF.com <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
             </article>
