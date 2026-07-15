@@ -123,6 +123,7 @@ const routes = {
   '/blog/dog-poop-cleanup-chattanooga-summer-heat': ['Dog Poop Cleanup in Chattanooga During Hot, Humid Weather | Scoopy Doo', 'Summer heat and humidity make dog waste more dangerous. Learn why Chattanooga yards need regular cleanup during the hot months and how Scoopy Doo can help.'],
   '/blog/dog-poop-laws-chattanooga': ['Is It Illegal to Not Pick Up Dog Poop in Chattanooga? | Scoopy Doo', 'Yes, Chattanooga law requires dog owners to pick up after their pets. Here is what City Code Chapter 7 says, the fines you could face, and how to stay compliant.'],
   '/blog/soddy-daisy': ['Pet Waste Removal in Soddy-Daisy, TN | Scoopy Doo Blog', 'Scoopy Doo serves Soddy-Daisy and Chickamauga Lake area homeowners. Waterfront cleanup protects the lake and your family.'],
+  '/blog/one-time-dog-poop-cleanup-chattanooga': ['One-Time Dog Poop Cleanup in Chattanooga: Cost & How It Works | Scoopy Doo', 'What a one-time dog poop cleanup costs in Chattanooga, when to book one, and how it works. One-time yard cleanups from $85 with no contract. Call 423-600-5040.'],
 };
 
 const gaLocations = new Set(['ringgold','rossville','flintstone','fort-oglethorpe']);
