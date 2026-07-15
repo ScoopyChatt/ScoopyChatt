@@ -52,7 +52,7 @@ const DogPoopCleanupSummerHeat = React.lazy(() => import('@/pages/blog/DogPoopCl
 const DogPoopLawsChattanooga = React.lazy(() => import('@/pages/blog/DogPoopLawsChattanooga.jsx'));
 const DogParksChattanooga = React.lazy(() => import('@/pages/blog/DogParksChattanoogaPage.jsx'));
 const PooperScooperCostChattanooga = React.lazy(() => import('@/pages/blog/PooperScooperCostChattanooga.jsx'));
-const OneTimeDogPoopCleanupChattanooga = lazy(() => import('@/pages/blog/OneTimeDogPoopCleanupChattanooga.jsx'));
+const OneTimeDogPoopCleanupChattanooga = React.lazy(() => import('@/pages/blog/OneTimeDogPoopCleanupChattanooga.jsx'));
 
 // Media / Utilities
 const PodcastPage = React.lazy(() => import('@/pages/PodcastPage.jsx'));
