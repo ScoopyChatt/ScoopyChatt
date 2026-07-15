@@ -99,7 +99,7 @@ const LocationTemplate = ({ city: propCity }) => {
 
       <main className="flex-grow">
         {/* Hero */}
-        <section className="relative pt-24 pb-32 lg:pt-36 lg:pb-40 overflow-hidden bg-slate-950">
+        <section className="relative pt-24 pb-32 lg:pt-36 lg:pb-40 overflow-hidden bg-muted">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] rounded-full bg-primary/10 blur-3xl opacity-50 mix-blend-screen" />
             <div className="absolute -bottom-1/2 -left-1/4 w-[800px] h-[800px] rounded-full bg-blue-900/20 blur-3xl opacity-50 mix-blend-screen" />
@@ -111,17 +111,17 @@ const LocationTemplate = ({ city: propCity }) => {
                   <MapPin className="w-4 h-4" />
                   <span>Now Serving {name} & Surrounding Areas</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 text-balance" style={{ letterSpacing: '-0.02em' }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight mb-6 text-balance" style={{ letterSpacing: '-0.02em' }}>
                   Dog Poop Removal in {name}
                 </h1>
-                <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
+                <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl">
                   {serviceDescription}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
                     <Link to="/quote">Get a Free Quote</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="bg-transparent border-slate-700 text-white hover:bg-slate-800 hover:text-white h-14 px-8 text-lg rounded-xl transition-all active:scale-[0.98]">
+                  <Button asChild variant="outline" size="lg" className="bg-transparent border-border text-foreground hover:bg-muted hover:text-foreground h-14 px-8 text-lg rounded-xl transition-all active:scale-[0.98]">
                     <a href="tel:423-600-5040">Call (423) 600-5040</a>
                   </Button>
                 </div>
