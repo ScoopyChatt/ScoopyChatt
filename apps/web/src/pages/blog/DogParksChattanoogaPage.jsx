@@ -273,32 +273,32 @@ const DogParksChattanoogaPage = () => {
       <main className="flex-grow">
 
         {/* Hero */}
-        <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-slate-950">
+        <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-muted">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] rounded-full bg-primary/10 blur-3xl opacity-50" />
             <div className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] rounded-full bg-blue-900/20 blur-3xl opacity-50" />
           </div>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <nav className="flex items-center space-x-2 text-sm text-slate-400 mb-6">
-                <Link to="/" className="hover:text-white transition-colors">Home</Link>
+              <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
+                <Link to="/" className="hover:text-primary transition-colors">Home</Link>
                 <span>/</span>
-                <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
+                <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
                 <span>/</span>
-                <span className="text-slate-300">Dog Parks Chattanooga</span>
+                <span className="text-muted-foreground">Dog Parks Chattanooga</span>
               </nav>
               <div className="inline-flex items-center space-x-2 bg-primary/20 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-6 border border-primary/30">
                 <MapPin className="w-4 h-4" />
                 <span>Chattanooga, TN Guide</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 text-balance leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight mb-6 text-balance leading-tight">
                 7 Best Dog Parks in Chattanooga, TN
                 <span className="block text-primary mt-1">(2026 Guide)</span>
               </h1>
-              <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed max-w-3xl">
+              <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed max-w-3xl">
                 Chattanooga is one of the most dog-friendly cities in the Southeast. From a splash pad and sandbox in northeast Chattanooga to a dog park bar on the Southside, here are the seven best places to let your pup run free in 2026 - with verified hours, addresses, and what makes each one worth the trip.
               </p>
-              <div className="flex items-center space-x-4 text-sm text-slate-400">
+              <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                 <span>By Scoopy Doo LLC</span>
                 <span>|</span>
                 <span>Updated June 2026</span>
@@ -352,7 +352,7 @@ const DogParksChattanoogaPage = () => {
               className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm"
             >
               {/* Card Header */}
-              <div className="bg-slate-950 px-8 py-6 flex items-start justify-between gap-4">
+              <div className="bg-muted px-8 py-6 flex items-start justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-4xl font-black text-primary/30 leading-none">{park.number}</span>
@@ -360,8 +360,8 @@ const DogParksChattanoogaPage = () => {
                       {park.tag}
                     </span>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-extrabold text-white leading-tight">{park.name}</h2>
-                  <p className="text-slate-400 mt-1 flex items-center gap-1.5 text-sm">
+                  <h2 className="text-2xl md:text-3xl font-extrabold text-foreground leading-tight">{park.name}</h2>
+                  <p className="text-muted-foreground mt-1 flex items-center gap-1.5 text-sm">
                     <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
                     {park.location}
                   </p>
@@ -472,16 +472,16 @@ const DogParksChattanoogaPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-slate-950">
+        <section className="py-20 bg-muted">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/20 rounded-2xl mb-6">
                 <Dog className="w-7 h-7 text-primary" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
                 Keep Your Home Yard as Clean as the Park
               </h2>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 Dog parks are great for your pup, but regular visits mean more cleanup at home too.
                 Scoopy Doo handles weekly, bi-weekly, and one-time yard cleanups across Chattanooga,
                 Hixson, Red Bank, East Brainerd, Ringgold, and surrounding areas. We scoop, bag, and
@@ -491,7 +491,7 @@ const DogParksChattanoogaPage = () => {
                 <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg">
                   <Link to="/quote">Get a Free Quote</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="bg-transparent border-slate-700 text-white hover:bg-slate-800 h-14 px-8 text-lg rounded-xl">
+                <Button asChild variant="outline" size="lg" className="bg-transparent border-border text-foreground hover:bg-muted h-14 px-8 text-lg rounded-xl">
                   <Link to="/service-areas">View All Service Areas</Link>
                 </Button>
               </div>
