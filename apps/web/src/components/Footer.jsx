@@ -7,7 +7,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-slate-950 text-slate-300 py-12 md:py-16 mt-auto">
+    <footer className="bg-slate-100 text-slate-600 py-12 md:py-16 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
           {/* Brand */}
@@ -17,7 +17,7 @@ const Footer = () => {
               alt="Scoopy Chatt - Professional Pooper Scooper Service Logo" 
               className="w-32 h-auto bg-white/10 rounded-lg p-2" 
             />
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-slate-500 leading-relaxed">
               Professional pet waste removal service making yards cleaner, safer, and more enjoyable for families and their pets. We are your trusted poop pick up company.
             </p>
             {/* Social Media Links */}
@@ -27,7 +27,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-300 hover:bg-primary hover:text-white transition-all duration-200 active:scale-95"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-primary hover:text-white transition-all duration-200 active:scale-95"
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -36,7 +36,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-300 hover:bg-primary hover:text-white transition-all duration-200 active:scale-95"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-primary hover:text-white transition-all duration-200 active:scale-95"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -45,7 +45,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Review us on Yelp"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-300 hover:bg-[#d32323] hover:text-white transition-all duration-200 active:scale-95"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-[#d32323] hover:text-white transition-all duration-200 active:scale-95"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.16 12.73l-4.46 1.44a1.2 1.2 0 0 1-1.52-.79 1.2 1.2 0 0 1 .08-.92l2.23-4.08a.5.5 0 0 1 .68-.19c1.98 1.08 3.14 2.66 3 4.54zm-5.1 3.57l3.61 3.06a.5.5 0 0 1 .06.7c-1.22 1.51-2.97 2.2-4.86 1.83a1.2 1.2 0 0 1-.97-1.39l.71-4.63a1.2 1.2 0 0 1 1.45-.57zm-3.6-.38l-4.7.35a1.2 1.2 0 0 1-1.27-1.1c-.12-1.9.65-3.7 2.21-4.9a.5.5 0 0 1 .7.08l2.93 3.72a1.2 1.2 0 0 1-.87 1.85zM9.1 10.1l-3.43-3.3a.5.5 0 0 1 0-.71C7 4.76 8.85 4.2 10.7 4.6a1.2 1.2 0 0 1 .94 1.41L10.34 9.6a1.2 1.2 0 0 1-1.24.5zm2.44 1.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>
               </a>
@@ -54,7 +54,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Find us on Bing"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-300 hover:bg-[#0078d4] hover:text-white transition-all duration-200 active:scale-95"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-[#0078d4] hover:text-white transition-all duration-200 active:scale-95"
               >
                 <Globe className="w-5 h-5" />
               </a>
@@ -63,7 +63,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="text-slate-900 font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="hover:text-primary transition-colors text-sm">Home</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Dog Poop Removal</Link></li>
@@ -76,7 +76,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Our Services</h3>
+            <h3 className="text-slate-900 font-bold text-lg mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Pooper Scooper Service</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Dog Poop Removal</Link></li>
@@ -88,7 +88,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Contact Us</h3>
+            <h3 className="text-slate-900 font-bold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
@@ -116,7 +116,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">
             &copy; {currentYear} Scoopy Doo LLC. All rights reserved.
           </p>
@@ -124,8 +124,8 @@ const Footer = () => {
             <img src="https://seal-chattanooga.bbb.org/logo/sehzbum/bbb-80013696.png" style={{ border: 0, maxHeight: "60px" }} alt="Scoopy Doo, LLC BBB Business Review" />
           </a>
           <div className="flex space-x-4 text-sm text-slate-500">
-            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
