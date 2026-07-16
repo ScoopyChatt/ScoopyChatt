@@ -49,16 +49,17 @@ const WEBHOOK_URL =
 
 const PRICING = {
   'weekly': { base: 20, extra: 2, cadence: '/ visit', note: 'weekly service' },
-  'twice-weekly': { base: 16, extra: 1, cadence: '/ visit', note: 'twice-weekly service' },
+  'twice-weekly': { base: 18, extra: 1, cadence: '/ visit', note: 'twice-weekly service' },
   'biweekly': { base: 33, extra: 3, cadence: '/ visit', note: 'every-other-week service' },
   'onetime': { base: 125, extra: 0, cadence: 'one-time', note: 'a one-time cleanup' },
 };
 
-function computeQuote(serviceType, dogs) {
+function computeQuote(serviceType, dogs, takeAway) {
   const p = PRICING[serviceType];
   const n = parseInt(dogs, 10) || 1;
   if (!p) return { price: null };
-  return { price: p.base + (n - 1) * p.extra, cadence: p.cadence, note: p.note };
+  const price = p.base + (n - 1) * p.extra + (takeAway ? 5 : 0);
+  return { price, cadence: p.cadence, note: p.note, takeAway: !!takeAway };
 }
 
 const formSchema = z.object({
@@ -75,6 +76,7 @@ const QuoteForm = () => {
   const navigate = useNavigate();
   const honeypotRef = useRef(null);
   const [quote, setQuote] = useState(null);
+  const [takeAway, setTakeAway] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -112,7 +114,7 @@ const QuoteForm = () => {
           service_area: entry ? entry.area : '',
           route_day: entry && entry.day ? entry.day : '',
           quoted_price: quote && quote.price ? quote.price : '',
-          ready_to_book: true, lead_stage: 'Ready to Book', company_website: '',
+          ready_to_book: true, lead_stage: 'Ready to Book', take_away: takeAway ? 'Yes (+$5/visit)' : 'No', company_website: '',
           source: 'scoopychatt.com/quote', submitted_at: new Date().toISOString(),
         }),
       });
@@ -137,6 +139,7 @@ const QuoteForm = () => {
       number_of_dogs: parseInt(values.numberOfDogs, 10),
       additional_notes: values.additionalNotes || '',
       lead_stage: 'New Website Lead',
+      take_away: takeAway ? 'Yes (+$5/visit)' : 'No',
       service_area: SERVICE_AREA[values.serviceZipCode] ? SERVICE_AREA[values.serviceZipCode].area : '',
       route_day: SERVICE_AREA[values.serviceZipCode] && SERVICE_AREA[values.serviceZipCode].day ? SERVICE_AREA[values.serviceZipCode].day : '',
       in_service_area: !!SERVICE_AREA[values.serviceZipCode],
@@ -157,7 +160,7 @@ const QuoteForm = () => {
         throw new Error('Request failed with status ' + response.status);
       }
 
-      setQuote(computeQuote(values.serviceType, values.numberOfDogs));
+      setQuote(computeQuote(values.serviceType, values.numberOfDogs, takeAway));
       toast.success('Got it - here is your instant price!');
     } catch (error) {
       console.error('Submission error:', error);
@@ -178,7 +181,7 @@ const QuoteForm = () => {
           {quote.price ? (
             <>
               <p className="text-4xl font-bold text-foreground">{'$' + quote.price}<span className="text-lg font-medium text-muted-foreground"> {quote.cadence}</span></p>
-              <p className="text-sm text-muted-foreground mt-2">For {quote.note}{entry && entry.day ? (' - our trucks are in ' + entry.area + ' on ' + entry.day + 's') : ''}.</p>
+              <p className="text-sm text-muted-foreground mt-2">For {quote.note}{quote.takeAway ? ' with waste haul-away' : ''}{entry && entry.day ? (' - our trucks are in ' + entry.area + ' on ' + entry.day + 's') : ''}.</p>
               <p className="text-xs text-muted-foreground mt-3">Most yards start the same week. A one-time initial cleanup may apply for very overgrown yards - we will confirm before your first visit.</p>
             </>
           ) : (
@@ -356,6 +359,11 @@ const QuoteForm = () => {
             </FormItem>
           )}
         />
+
+        <label className="flex items-start gap-3 rounded-lg border border-border bg-muted/30 p-4 cursor-pointer">
+          <input type="checkbox" checked={takeAway} onChange={(e) => setTakeAway(e.target.checked)} className="mt-1 h-4 w-4 accent-orange-500" />
+          <span className="text-sm text-foreground">Haul the waste away for me <span className="text-muted-foreground">(+$5 per visit)</span>. Otherwise we double-bag it and leave it in your bin.</span>
+        </label>
 
         {/* Wrapper div to capture clicks when button is disabled so we can show the toast */}
         <div 
