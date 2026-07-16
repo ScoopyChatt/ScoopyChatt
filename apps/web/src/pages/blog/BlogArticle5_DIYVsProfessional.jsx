@@ -30,7 +30,7 @@ const BlogArticle5_DIYVsProfessional = () => {
 
     <h2>Is Professional Pooper Scooper Service Worth the Cost in Chattanooga?</h2>
     <p>
-      Scoopy Doo's weekly service starts at $16 per visit for one dog. DIY supplies - bags, scoopers that break every few months, deodorizers - cost roughly $8 to $12 per month. That leaves a gap of roughly $4 to $8 per week between professional and DIY. Against 20 to 45 minutes of labor eliminated each week, professional service costs under $0.50 per hour of time saved. For most Chattanooga households, it is one of the highest-value recurring services available.
+      Scoopy Doo's weekly service starts at $20 per visit for one dog. DIY supplies - bags, scoopers that break every few months, deodorizers - cost roughly $8 to $12 per month. That leaves a gap of roughly $4 to $8 per week between professional and DIY. Against 20 to 45 minutes of labor eliminated each week, professional service costs under $0.50 per hour of time saved. For most Chattanooga households, it is one of the highest-value recurring services available.
     </p>
 
     <h2>What Are the Hidden Costs of DIY Waste Removal?</h2>
