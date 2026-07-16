@@ -1,128 +1,44 @@
 {
   "rewrites": [
-    {
-      "source": "/faq",
-      "destination": "/faq/index.html"
-    },
-    {
-      "source": "/comparison",
-      "destination": "/comparison/index.html"
-    },
-    {
-      "source": "/dp/:path*",
-      "destination": "/api/dp-gone"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/faq", "destination": "/faq/index.html" },
+    { "source": "/comparison", "destination": "/comparison/index.html" },
+    { "source": "/dp/:path*", "destination": "/api/dp-gone" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "redirects": [
-    {
-      "source": "/products/:path*",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/pricing",
-      "destination": "/quote",
-      "permanent": true
-    },
-    {
-      "source": "/about-us",
-      "destination": "/about",
-      "permanent": true
-    },
-    {
-      "source": "/about-us/",
-      "destination": "/about",
-      "permanent": true
-    },
-    {
-      "source": "/our-services",
-      "destination": "/services",
-      "permanent": true
-    },
-    {
-      "source": "/our-services/",
-      "destination": "/services",
-      "permanent": true
-    },
-    {
-      "source": "/contact",
-      "destination": "/quote",
-      "permanent": true
-    },
-    {
-      "source": "/contact/",
-      "destination": "/quote",
-      "permanent": true
-    },
-    {
-      "source": "/contact-us",
-      "destination": "/quote",
-      "permanent": true
-    },
-    {
-      "source": "/contact-us/",
-      "destination": "/quote",
-      "permanent": true
-    },
-    {
-      "source": "/service-area",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/service-area/",
-      "destination": "/service-areas",
-      "permanent": true
-    },
-    {
-      "source": "/quoterequest",
-      "destination": "/quote",
-      "permanent": true
-    },
-    {
-      "source": "/quoterequest/",
-      "destination": "/quote",
-      "permanent": true
-    }
+    { "source": "/products/:path*", "destination": "/", "permanent": true },
+    { "source": "/about-us", "destination": "/about", "permanent": true },
+    { "source": "/about-us/", "destination": "/about", "permanent": true },
+    { "source": "/our-services", "destination": "/services", "permanent": true },
+    { "source": "/our-services/", "destination": "/services", "permanent": true },
+    { "source": "/contact", "destination": "/quote", "permanent": true },
+    { "source": "/contact/", "destination": "/quote", "permanent": true },
+    { "source": "/contact-us", "destination": "/quote", "permanent": true },
+    { "source": "/contact-us/", "destination": "/quote", "permanent": true },
+    { "source": "/service-area", "destination": "/service-areas", "permanent": true },
+    { "source": "/service-area/", "destination": "/service-areas", "permanent": true },
+    { "source": "/quoterequest", "destination": "/quote", "permanent": true },
+    { "source": "/quoterequest/", "destination": "/quote", "permanent": true }
   ],
   "headers": [
     {
       "source": "/dp/(.*)",
       "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
       ]
     },
     {
       "source": "/faq",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        },
-        {
-          "key": "Pragma",
-          "value": "no-cache"
-        }
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Pragma", "value": "no-cache" }
       ]
     },
     {
       "source": "/comparison",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
-        },
-        {
-          "key": "Pragma",
-          "value": "no-cache"
-        }
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Pragma", "value": "no-cache" }
       ]
     }
   ],
