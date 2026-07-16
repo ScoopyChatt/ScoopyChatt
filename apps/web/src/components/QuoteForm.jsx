@@ -112,7 +112,7 @@ const QuoteForm = () => {
           service_area: entry ? entry.area : '',
           route_day: entry && entry.day ? entry.day : '',
           quoted_price: quote && quote.price ? quote.price : '',
-          ready_to_book: true, company_website: '',
+          ready_to_book: true, lead_stage: 'Ready to Book', company_website: '',
           source: 'scoopychatt.com/quote', submitted_at: new Date().toISOString(),
         }),
       });
@@ -136,6 +136,8 @@ const QuoteForm = () => {
       service_type: values.serviceType,
       number_of_dogs: parseInt(values.numberOfDogs, 10),
       additional_notes: values.additionalNotes || '',
+      lead_stage: 'New Website Lead',
+      lead_stage: 'New Website Lead',
       service_area: SERVICE_AREA[values.serviceZipCode] ? SERVICE_AREA[values.serviceZipCode].area : '',
       route_day: SERVICE_AREA[values.serviceZipCode] && SERVICE_AREA[values.serviceZipCode].day ? SERVICE_AREA[values.serviceZipCode].day : '',
       in_service_area: !!SERVICE_AREA[values.serviceZipCode],
