@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -9,7 +9,31 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { toast } from 'sonner';
-import apiServerClient from '@/lib/apiServerClient.js';
+import { AnimatePresence, motion } from 'framer-motion';
+import { CheckCircle2, MapPin } from 'lucide-react';
+
+const ZIP_ROUTE_DAYS = {
+  '37421': 'Mondays & Thursdays',
+  '37411': 'Mondays & Thursdays',
+  '37412': 'Mondays',
+  '37416': 'Thursdays',
+  '37405': 'Tuesdays',
+  '37415': 'Tuesdays',
+  '37343': 'Tuesdays',
+  '37377': 'Wednesdays',
+  '37379': 'Wednesdays',
+  '37363': 'Wednesdays',
+  '37402': 'Fridays',
+  '37404': 'Fridays',
+  '37419': 'Fridays',
+  '30736': 'Fridays',
+  '30742': 'Fridays',
+  '30741': 'Fridays',
+};
+
+const WEBHOOK_URL =
+  import.meta.env.VITE_QUOTE_WEBHOOK_URL ||
+  'https://hook.us2.make.com/nsb476cxnhmejirr5aq6em1ce4royvla';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -23,6 +47,7 @@ const formSchema = z.object({
 
 const QuoteForm = () => {
   const navigate = useNavigate();
+  const honeypotRef = useRef(null);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -40,43 +65,50 @@ const QuoteForm = () => {
 
   const { isValid, isSubmitting } = form.formState;
 
-  const onSubmit = async (values) => {
-    try {
-      // Ensure numberOfDogs is sent as a number if needed by the backend, 
-      // though Zapier often accepts strings. We will cast it based on standard practices.
-      const submitData = {
-        ...values,
-        numberOfDogs: parseInt(values.numberOfDogs, 10),
-      };
+  const zipValue = form.watch('serviceZipCode');
+  const isCompleteZip = (zipValue || '').length === 5;
+  const matchedDays = isCompleteZip ? ZIP_ROUTE_DAYS[zipValue] : undefined;
 
-      const response = await apiServerClient.fetch('/quote-webhook', {
+  const onSubmit = async (values) => {
+    // Honeypot: real people never fill this. If it has a value, drop silently.
+    if (honeypotRef.current && honeypotRef.current.value) {
+      form.reset();
+      navigate('/thank-you');
+      return;
+    }
+
+    const payload = {
+      full_name: values.name,
+      email: values.email,
+      phone: values.phone,
+      service_zip: values.serviceZipCode,
+      service_type: values.serviceType,
+      number_of_dogs: parseInt(values.numberOfDogs, 10),
+      additional_notes: values.additionalNotes || '',
+      route_days: ZIP_ROUTE_DAYS[values.serviceZipCode] || '',
+      company_website: '',
+      source: 'scoopychatt.com/quote',
+      page_url: typeof window !== 'undefined' ? window.location.href : '',
+      submitted_at: new Date().toISOString(),
+    };
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(submitData)
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
-        let errorMessage = 'Failed to submit quote request';
-        try {
-          const errorData = await response.json();
-          if (errorData.error) errorMessage = errorData.error;
-        } catch (e) {
-          // If response is not JSON, fallback to generic error
-        }
-        throw new Error(errorMessage);
+        throw new Error('Request failed with status ' + response.status);
       }
-      
-      // Await successful response parsing as per requirements
-      await response.json();
-      
-      toast.success('Quote submitted successfully');
+
+      toast.success('Quote request sent! We will be in touch shortly.');
       form.reset();
-      
-      // Redirect to thank you page after successful submission
       navigate('/thank-you');
     } catch (error) {
       console.error('Submission error:', error);
-      toast.error(error.message || 'Connection failed. Please try again.');
+      toast.error('Connection failed. Please call or text us at 423-600-5040.');
     }
   };
 
@@ -87,6 +119,8 @@ const QuoteForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit, onError)} className="space-y-6">
+        {/* Honeypot - hidden from humans; bots fill it and get dropped */}
+        <input ref={honeypotRef} type="text" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 opacity-0" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
             control={form.control}
@@ -160,6 +194,20 @@ const QuoteForm = () => {
                   />
                 </FormControl>
                 <FormMessage />
+                <AnimatePresence mode="wait">
+                  {isCompleteZip && matchedDays && (
+                    <motion.div key="matched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="mt-2 flex items-start gap-2 rounded-lg border border-accent/30 bg-accent/10 px-3 py-2 text-sm text-foreground">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
+                      <span>Nice! Our trucks are in {zipValue} every <strong>{matchedDays}</strong>. We can easily fit you in.</span>
+                    </motion.div>
+                  )}
+                  {isCompleteZip && !matchedDays && (
+                    <motion.div key="unmatched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="mt-2 flex items-start gap-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-sm text-muted-foreground">
+                      <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                      <span>We serve the greater Chattanooga and North Georgia area. Send your details and we will confirm your service day with your quote.</span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </FormItem>
             )}
           />
