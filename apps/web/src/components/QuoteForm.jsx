@@ -13,34 +13,34 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { CheckCircle2, MapPin } from 'lucide-react';
 
 const SERVICE_AREA = {
-  '37302': 'Apison',
-  '37315': 'Collegedale',
-  '37336': 'Lookout Mountain',
-  '37341': 'Lupton City',
-  '37343': 'Hixson',
-  '37363': 'Ooltewah',
-  '37377': 'Signal Mountain',
-  '37379': 'Soddy-Daisy',
-  '37402': 'Downtown Chattanooga',
-  '37403': 'the Southside',
-  '37404': 'Highland Park',
-  '37405': 'North Chattanooga',
-  '37406': 'East Chattanooga',
-  '37407': 'Alton Park',
-  '37408': 'Jefferson Heights',
-  '37409': 'St. Elmo',
-  '37410': 'South Chattanooga',
-  '37411': 'Brainerd',
-  '37412': 'East Ridge',
-  '37415': 'Red Bank',
-  '37416': 'Harrison',
-  '37419': 'Lookout Valley',
-  '37421': 'East Brainerd',
-  '30707': 'Chickamauga',
-  '30725': 'Flintstone',
-  '30736': 'Ringgold',
-  '30741': 'Rossville',
-  '30742': 'Fort Oglethorpe',
+  '37302': { area: 'Apison', day: 'Friday' },
+  '37315': { area: 'Collegedale', day: null },
+  '37336': { area: 'Lookout Mountain', day: null },
+  '37341': { area: 'Lupton City', day: 'Thursday' },
+  '37343': { area: 'Hixson', day: 'Wednesday' },
+  '37363': { area: 'Ooltewah', day: 'Friday' },
+  '37377': { area: 'Signal Mountain', day: 'Thursday' },
+  '37379': { area: 'Soddy-Daisy', day: 'Wednesday' },
+  '37402': { area: 'Downtown Chattanooga', day: null },
+  '37403': { area: 'the Southside', day: null },
+  '37404': { area: 'Highland Park', day: null },
+  '37405': { area: 'North Chattanooga', day: 'Monday' },
+  '37406': { area: 'East Chattanooga', day: 'Monday' },
+  '37407': { area: 'Alton Park', day: null },
+  '37408': { area: 'Jefferson Heights', day: 'Monday' },
+  '37409': { area: 'St. Elmo', day: null },
+  '37410': { area: 'South Chattanooga', day: null },
+  '37411': { area: 'Brainerd', day: null },
+  '37412': { area: 'East Ridge', day: 'Friday' },
+  '37415': { area: 'Red Bank', day: 'Wednesday' },
+  '37416': { area: 'Harrison', day: 'Thursday' },
+  '37419': { area: 'Lookout Valley', day: 'Tuesday' },
+  '37421': { area: 'East Brainerd', day: null },
+  '30707': { area: 'Chickamauga', day: null },
+  '30725': { area: 'Flintstone', day: null },
+  '30736': { area: 'Ringgold', day: null },
+  '30741': { area: 'Rossville', day: null },
+  '30742': { area: 'Fort Oglethorpe', day: 'Thursday' },
 };
 
 const WEBHOOK_URL =
@@ -79,7 +79,9 @@ const QuoteForm = () => {
 
   const zipValue = form.watch('serviceZipCode');
   const isCompleteZip = (zipValue || '').length === 5;
-  const matchedArea = isCompleteZip ? SERVICE_AREA[zipValue] : undefined;
+  const areaEntry = isCompleteZip ? SERVICE_AREA[zipValue] : undefined;
+  const matchedArea = areaEntry ? areaEntry.area : undefined;
+  const matchedDay = areaEntry ? areaEntry.day : null;
 
   const onSubmit = async (values) => {
     // Honeypot: real people never fill this. If it has a value, drop silently.
@@ -97,7 +99,8 @@ const QuoteForm = () => {
       service_type: values.serviceType,
       number_of_dogs: parseInt(values.numberOfDogs, 10),
       additional_notes: values.additionalNotes || '',
-      service_area: SERVICE_AREA[values.serviceZipCode] || '',
+      service_area: SERVICE_AREA[values.serviceZipCode] ? SERVICE_AREA[values.serviceZipCode].area : '',
+      route_day: SERVICE_AREA[values.serviceZipCode] && SERVICE_AREA[values.serviceZipCode].day ? SERVICE_AREA[values.serviceZipCode].day : '',
       in_service_area: !!SERVICE_AREA[values.serviceZipCode],
       company_website: '',
       source: 'scoopychatt.com/quote',
@@ -211,7 +214,7 @@ const QuoteForm = () => {
                   {isCompleteZip && matchedArea && (
                     <motion.div key="matched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="mt-2 flex items-start gap-2 rounded-lg border border-accent/30 bg-accent/10 px-3 py-2 text-sm text-foreground">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
-                      <span>Great news - we service <strong>{matchedArea}</strong> ({zipValue}) regularly! We can easily fit you in, and we will confirm your service day when we send your quote.</span>
+                      <span>{matchedDay ? (<>Great news - we service <strong>{matchedArea}</strong> ({zipValue}) every <strong>{matchedDay}</strong>! We can easily fit you into that route.</>) : (<>Great news - we service <strong>{matchedArea}</strong> ({zipValue}) regularly! We can easily fit you in, and we will confirm your service day when we send your quote.</>)}</span>
                     </motion.div>
                   )}
                   {isCompleteZip && !matchedArea && (
