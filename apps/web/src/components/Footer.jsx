@@ -66,6 +66,7 @@ const Footer = () => {
             <h3 className="text-slate-900 font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="hover:text-primary transition-colors text-sm">Home</Link></li>
+<li><Link to="/pricing" className="hover:text-primary transition-colors text-sm">Pricing</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Dog Poop Removal</Link></li>
               <li><Link to="/near-me" className="hover:text-primary transition-colors text-sm">Service Areas</Link></li>
               <li><Link to="/blog" className="hover:text-primary transition-colors text-sm">Blog</Link></li>
@@ -82,7 +83,7 @@ const Footer = () => {
               <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Dog Poop Removal</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Pet Waste Removal</Link></li>
               <li><Link to="/one-time-cleanup" className="hover:text-primary transition-colors text-sm">One-Time Poop Pick Up Service</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Commercial Pet Waste Management</Link></li>
+              <li><Link to="/commercial" className="hover:text-primary transition-colors text-sm">Commercial &amp; HOA Service</Link></li>
             </ul>
           </div>
 
