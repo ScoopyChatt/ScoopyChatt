@@ -13,7 +13,7 @@ const services = [
     local: true,
     area: "Chattanooga + 13 TN suburbs + Ringgold, Rossville, Fort Oglethorpe, Flintstone GA",
     frequency: "Weekly, twice-weekly, every-other-week, one-time",
-    price: "Weekly $20/visit; twice-weekly $16/visit (1st dog)",
+    price: "Weekly $20/visit; twice-weekly $18/visit (1st dog)",
     notable: "7-day availability; on-the-way texts standard; gate photo after every visit standard; waste hauled off property; no contracts; local father-daughter team",
   },
   {
