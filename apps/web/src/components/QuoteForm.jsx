@@ -277,7 +277,7 @@ const QuoteForm = () => {
                   {isCompleteZip && matchedArea && (
                     <motion.div key="matched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="mt-2 flex items-start gap-2 rounded-lg border border-accent/30 bg-accent/10 px-3 py-2 text-sm text-foreground">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
-                      <span>{matchedDay ? (<>Great news - we service <strong>{matchedArea}</strong> ({zipValue}) every <strong>{matchedDay}</strong>! We can easily fit you into that route.</>) : (<>Great news - we service <strong>{matchedArea}</strong> ({zipValue}) regularly! We can easily fit you in, and we will confirm your service day when we send your quote.</>)}</span>
+                      <span>{matchedDay ? (<>Great news - our trucks are in <strong>{matchedArea}</strong> ({zipValue}) this coming <strong>{matchedDay}</strong>! We batch neighbors on the same route day, so entering your info now locks in your spot on that run.</>) : (<>Great news - we service <strong>{matchedArea}</strong> ({zipValue}) regularly! Enter your info to see your price and reserve your spot, and we will confirm your exact service day when we send your quote.</>)}</span>
                     </motion.div>
                   )}
                   {isCompleteZip && !matchedArea && (
