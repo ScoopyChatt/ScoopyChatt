@@ -12,23 +12,35 @@ import { toast } from 'sonner';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CheckCircle2, MapPin } from 'lucide-react';
 
-const ZIP_ROUTE_DAYS = {
-  '37421': 'Mondays & Thursdays',
-  '37411': 'Mondays & Thursdays',
-  '37412': 'Mondays',
-  '37416': 'Thursdays',
-  '37405': 'Tuesdays',
-  '37415': 'Tuesdays',
-  '37343': 'Tuesdays',
-  '37377': 'Wednesdays',
-  '37379': 'Wednesdays',
-  '37363': 'Wednesdays',
-  '37402': 'Fridays',
-  '37404': 'Fridays',
-  '37419': 'Fridays',
-  '30736': 'Fridays',
-  '30742': 'Fridays',
-  '30741': 'Fridays',
+const SERVICE_AREA = {
+  '37302': 'Apison',
+  '37315': 'Collegedale',
+  '37336': 'Lookout Mountain',
+  '37341': 'Lupton City',
+  '37343': 'Hixson',
+  '37363': 'Ooltewah',
+  '37377': 'Signal Mountain',
+  '37379': 'Soddy-Daisy',
+  '37402': 'Downtown Chattanooga',
+  '37403': 'the Southside',
+  '37404': 'Highland Park',
+  '37405': 'North Chattanooga',
+  '37406': 'East Chattanooga',
+  '37407': 'Alton Park',
+  '37408': 'Jefferson Heights',
+  '37409': 'St. Elmo',
+  '37410': 'South Chattanooga',
+  '37411': 'Brainerd',
+  '37412': 'East Ridge',
+  '37415': 'Red Bank',
+  '37416': 'Harrison',
+  '37419': 'Lookout Valley',
+  '37421': 'East Brainerd',
+  '30707': 'Chickamauga',
+  '30725': 'Flintstone',
+  '30736': 'Ringgold',
+  '30741': 'Rossville',
+  '30742': 'Fort Oglethorpe',
 };
 
 const WEBHOOK_URL =
@@ -67,7 +79,7 @@ const QuoteForm = () => {
 
   const zipValue = form.watch('serviceZipCode');
   const isCompleteZip = (zipValue || '').length === 5;
-  const matchedDays = isCompleteZip ? ZIP_ROUTE_DAYS[zipValue] : undefined;
+  const matchedArea = isCompleteZip ? SERVICE_AREA[zipValue] : undefined;
 
   const onSubmit = async (values) => {
     // Honeypot: real people never fill this. If it has a value, drop silently.
@@ -85,7 +97,8 @@ const QuoteForm = () => {
       service_type: values.serviceType,
       number_of_dogs: parseInt(values.numberOfDogs, 10),
       additional_notes: values.additionalNotes || '',
-      route_days: ZIP_ROUTE_DAYS[values.serviceZipCode] || '',
+      service_area: SERVICE_AREA[values.serviceZipCode] || '',
+      in_service_area: !!SERVICE_AREA[values.serviceZipCode],
       company_website: '',
       source: 'scoopychatt.com/quote',
       page_url: typeof window !== 'undefined' ? window.location.href : '',
@@ -195,13 +208,13 @@ const QuoteForm = () => {
                 </FormControl>
                 <FormMessage />
                 <AnimatePresence mode="wait">
-                  {isCompleteZip && matchedDays && (
+                  {isCompleteZip && matchedArea && (
                     <motion.div key="matched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="mt-2 flex items-start gap-2 rounded-lg border border-accent/30 bg-accent/10 px-3 py-2 text-sm text-foreground">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
-                      <span>Nice! Our trucks are in {zipValue} every <strong>{matchedDays}</strong>. We can easily fit you in.</span>
+                      <span>Great news - we service <strong>{matchedArea}</strong> ({zipValue}) regularly! We can easily fit you in, and we will confirm your service day when we send your quote.</span>
                     </motion.div>
                   )}
-                  {isCompleteZip && !matchedDays && (
+                  {isCompleteZip && !matchedArea && (
                     <motion.div key="unmatched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="mt-2 flex items-start gap-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-sm text-muted-foreground">
                       <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                       <span>We serve the greater Chattanooga and North Georgia area. Send your details and we will confirm your service day with your quote.</span>
