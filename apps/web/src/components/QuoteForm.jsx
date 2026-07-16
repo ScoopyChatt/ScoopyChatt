@@ -51,14 +51,15 @@ const PRICING = {
   'weekly': { base: 20, extra: 2, cadence: '/ visit', note: 'weekly service' },
   'twice-weekly': { base: 18, extra: 1, cadence: '/ visit', note: 'twice-weekly service' },
   'biweekly': { base: 33, extra: 3, cadence: '/ visit', note: 'every-other-week service' },
-  'onetime': { base: 125, extra: 0, cadence: 'one-time', note: 'a one-time cleanup' },
+  'onetime': { base: 125, extra: 15, inc: 3, cadence: 'one-time', note: 'a one-time cleanup' },
 };
 
 function computeQuote(serviceType, dogs, takeAway) {
   const p = PRICING[serviceType];
   const n = parseInt(dogs, 10) || 1;
   if (!p) return { price: null };
-  const price = p.base + (n - 1) * p.extra + (takeAway ? 5 : 0);
+  const inc = p.inc || 1;
+  const price = p.base + Math.max(0, n - inc) * p.extra + (takeAway ? 5 : 0);
   return { price, cadence: p.cadence, note: p.note, takeAway: !!takeAway };
 }
 
