@@ -33,6 +33,8 @@ const PetWasteRemovalPage = React.lazy(() => import('@/pages/PetWasteRemovalPage
 const DogPoopScoopingPage = React.lazy(() => import('@/pages/DogPoopScoopingPage.jsx'));
 const YardCleanupPage = React.lazy(() => import('@/pages/YardCleanupPage.jsx'));
 const ServiceAreasPage = React.lazy(() => import('@/pages/ServiceAreasPage.jsx'));
+const PricingPage = React.lazy(() => import('@/pages/PricingPage.jsx'));
+const CommercialPage = React.lazy(() => import('@/pages/CommercialPage.jsx'));
 
 // Location Template for dynamic routing
 const LocationTemplate = React.lazy(() => import('@/components/LocationTemplate.jsx'));
@@ -117,6 +119,8 @@ function App() {
           <Route path="/cost-calculator" element={<CostCalculatorPage />} />
 
           <Route path="/services" element={<ServicesPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/commercial" element={<CommercialPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/press" element={<PressPage />} />
           <Route path="/faq" element={<FAQPage />} />
