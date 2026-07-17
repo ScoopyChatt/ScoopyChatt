@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -77,6 +77,12 @@ const QuoteForm = () => {
   const navigate = useNavigate();
   const honeypotRef = useRef(null);
   const [quote, setQuote] = useState(null);
+  const resultRef = useRef(null);
+  useEffect(() => {
+    if (quote) {
+      resultRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [quote]);
   const [takeAway, setTakeAway] = useState(false);
 
   const form = useForm({
@@ -186,7 +192,7 @@ const QuoteForm = () => {
           <p className="text-sm font-medium text-muted-foreground mb-1">Your instant price</p>
           {quote.price ? (
             <>
-              <p className="text-4xl font-bold text-foreground">{'$' + quote.price}<span className="text-lg font-medium text-muted-foreground"> {quote.cadence}</span></p>
+              <p ref={resultRef} className="text-4xl font-bold text-foreground">{'$' + quote.price}<span className="text-lg font-medium text-muted-foreground"> {quote.cadence}</span></p>
               <p className="text-sm text-muted-foreground mt-2">For {quote.note}{quote.takeAway ? ' with waste haul-away' : ''}{entry && entry.day ? (' - our trucks are in ' + entry.area + ' on ' + entry.day + 's') : ''}.</p>
               <p className="text-xs text-muted-foreground mt-3">Most yards start the same week. A one-time initial cleanup may apply for very overgrown yards - we will confirm before your first visit.</p>
             </>
