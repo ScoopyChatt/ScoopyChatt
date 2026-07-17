@@ -150,6 +150,7 @@ const QuoteForm = () => {
       service_type: values.serviceType,
       number_of_dogs: parseInt(values.numberOfDogs, 10),
       additional_notes: values.additionalNotes || '',
+      quoted_price: computeQuote(values.serviceType, values.numberOfDogs, takeAway).price,
       lead_stage: 'New Website Lead',
       take_away: takeAway ? 'Yes (+$5/visit)' : 'No',
       service_area: SERVICE_AREA[values.serviceZipCode] ? SERVICE_AREA[values.serviceZipCode].area : '',
