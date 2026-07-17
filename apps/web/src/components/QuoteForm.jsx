@@ -124,6 +124,11 @@ const QuoteForm = () => {
   };
 
   const onSubmit = async (values) => {
+    // Service-area gate: reject out-of-area zips before submitting
+    if (!SERVICE_AREA[values.serviceZipCode]) {
+      alert("Sorry - Scoopy Doo is not in your service area yet. We currently serve the greater Chattanooga, TN and North Georgia area. If you think this is a mistake, please call or text us at 423-600-5040.");
+      return;
+    }
     // Honeypot: real people never fill this. If it has a value, drop silently.
     if (honeypotRef.current && honeypotRef.current.value) {
       form.reset();
