@@ -13,6 +13,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { CheckCircle2, MapPin } from 'lucide-react';
 
 const SERVICE_AREA = {
+  "37350": { area: "Lookout Mountain", day: "Tuesday" },
+  "30750": { area: "Lookout Mountain", day: "Tuesday" },
   '37302': { area: 'Apison', day: 'Friday' },
   '37315': { area: 'Collegedale', day: null },
   '37336': { area: 'Lookout Mountain', day: null },
