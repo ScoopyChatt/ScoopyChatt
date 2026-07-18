@@ -126,13 +126,22 @@ const QuoteForm = () => {
       ready_to_book: true, lead_stage: 'Ready to Book', take_away: takeAway ? 'Yes (+$5/visit)' : 'No', company_website: '',
       source: 'scoopychatt.com/quote', submitted_at: new Date().toISOString(),
     };
-    const postReady = (url) => fetch(url, {
+    const postJson = (url) => fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(readyPayload),
     });
+    // Zapier catch hooks reject the application/json CORS preflight from browsers.
+    // Send form-encoded (a simple request, no preflight) so the data actually lands.
+    const postForm = (url) => fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams(
+        Object.fromEntries(Object.entries(readyPayload).map(([k, val]) => [k, String(val)]))
+      ),
+    });
     try {
-      await Promise.allSettled([postReady(WEBHOOK_URL), postReady(JOBBER_ZAPIER_URL)]);
+      await Promise.allSettled([postJson(WEBHOOK_URL), postForm(JOBBER_ZAPIER_URL)]);
     } catch (error) { console.error(error); }
     navigate('/thank-you');
   };
