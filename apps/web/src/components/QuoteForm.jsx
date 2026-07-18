@@ -49,6 +49,10 @@ const WEBHOOK_URL =
   import.meta.env.VITE_QUOTE_WEBHOOK_URL ||
   'https://hook.us2.make.com/nsb476cxnhmejirr5aq6em1ce4royvla';
 
+const JOBBER_ZAPIER_URL =
+  import.meta.env.VITE_JOBBER_ZAPIER_URL ||
+  'https://hooks.zapier.com/hooks/catch/3191509/444yusn/';
+
 const PRICING = {
   'weekly': { base: 20, extra: 2, cadence: '/ visit', note: 'weekly service' },
   'twice-weekly': { base: 18, extra: 1, cadence: '/ visit', note: 'twice-weekly service' },
@@ -112,21 +116,23 @@ const QuoteForm = () => {
   const requestStart = async () => {
     const v = form.getValues();
     const entry = SERVICE_AREA[v.serviceZipCode];
+    const readyPayload = {
+      full_name: v.name, email: v.email, phone: v.phone,
+      service_zip: v.serviceZipCode, service_type: v.serviceType,
+      number_of_dogs: parseInt(v.numberOfDogs, 10),
+      service_area: entry ? entry.area : '',
+      route_day: entry && entry.day ? entry.day : '',
+      quoted_price: quote && quote.price ? quote.price : '',
+      ready_to_book: true, lead_stage: 'Ready to Book', take_away: takeAway ? 'Yes (+$5/visit)' : 'No', company_website: '',
+      source: 'scoopychatt.com/quote', submitted_at: new Date().toISOString(),
+    };
+    const postReady = (url) => fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(readyPayload),
+    });
     try {
-      await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          full_name: v.name, email: v.email, phone: v.phone,
-          service_zip: v.serviceZipCode, service_type: v.serviceType,
-          number_of_dogs: parseInt(v.numberOfDogs, 10),
-          service_area: entry ? entry.area : '',
-          route_day: entry && entry.day ? entry.day : '',
-          quoted_price: quote && quote.price ? quote.price : '',
-          ready_to_book: true, lead_stage: 'Ready to Book', take_away: takeAway ? 'Yes (+$5/visit)' : 'No', company_website: '',
-          source: 'scoopychatt.com/quote', submitted_at: new Date().toISOString(),
-        }),
-      });
+      await Promise.allSettled([postReady(WEBHOOK_URL), postReady(JOBBER_ZAPIER_URL)]);
     } catch (error) { console.error(error); }
     navigate('/thank-you');
   };
