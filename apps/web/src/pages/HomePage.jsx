@@ -38,11 +38,11 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Dog Poop Removal & Pooper Scooper Service | Chattanooga TN</title>
-        <meta name="description" content="Professional dog poop removal & pooper scooper service in Chattanooga, TN. Reliable weekly pet waste cleanup. Get your free quote from Scoopy Doo today." />
+        <title>Pet Waste Removal & Dog Poop Removal | Chattanooga TN | Scoopy Doo</title>
+        <meta name="description" content="Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 86+ Google reviews. Weekly service from $20 per visit. Free quotes." />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Dog Poop Removal & Pooper Scooper Service | Chattanooga TN" />
-        <meta property="og:description" content="Professional dog poop removal & pooper scooper service in Chattanooga, TN. Reliable weekly pet waste cleanup. Get your free quote from Scoopy Doo today." />
+        <meta property="og:title" content="Pet Waste Removal & Dog Poop Removal | Chattanooga TN | Scoopy Doo" />
+        <meta property="og:description" content="Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 86+ Google reviews. Weekly service from $20 per visit. Free quotes." />
         <meta property="og:url" content={canonicalUrl} />
         <meta name="twitter:card" content="summary" />
       </Helmet>
@@ -95,7 +95,7 @@ const HomePage = () => {
                 className="max-w-4xl mx-auto text-center mt-4 mb-16"
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance" style={{ letterSpacing: '-0.02em' }}>
-                  Dog Poop Removal in Chattanooga, TN
+                  Pet Waste Removal & Dog Poop Removal in Chattanooga, TN
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4 max-w-[65ch] mx-auto">
                   Spend more time enjoying your yard and less time cleaning it. Our reliable <Link to="/services" className="text-primary hover:underline">pooper scooper service</Link> keeps your outdoor space clean, safe, and ready for your family and pets. We specialize in professional <Link to="/dog-poop-removal-chattanooga" className="text-primary hover:underline">dog poop removal</Link> and comprehensive <Link to="/pet-waste-removal-chattanooga" className="text-primary hover:underline">pet waste removal</Link> services.
@@ -122,22 +122,22 @@ const HomePage = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                 <div className="flex flex-col items-center gap-2 p-4">
-                  <span className="text-3xl">⭐</span>
+                  <span className="text-3xl">â­</span>
                   <div className="font-extrabold text-lg text-foreground">5-Star Rated</div>
                   <div className="text-sm text-muted-foreground">on Google Reviews</div>
                 </div>
                 <div className="flex flex-col items-center gap-2 p-4">
-                  <span className="text-3xl">👨‍👧</span>
+                  <span className="text-3xl">ð¨âð§</span>
                   <div className="font-extrabold text-lg text-foreground">Family Owned</div>
                   <div className="text-sm text-muted-foreground">Local father & daughter team</div>
                 </div>
                 <div className="flex flex-col items-center gap-2 p-4">
-                  <span className="text-3xl">📍</span>
+                  <span className="text-3xl">ð</span>
                   <div className="font-extrabold text-lg text-foreground">17+ Communities</div>
                   <div className="text-sm text-muted-foreground">Chattanooga metro & North GA</div>
                 </div>
                 <div className="flex flex-col items-center gap-2 p-4">
-                  <span className="text-3xl">🚫</span>
+                  <span className="text-3xl">ð«</span>
                   <div className="font-extrabold text-lg text-foreground">No Contracts</div>
                   <div className="text-sm text-muted-foreground">Cancel or change anytime</div>
                 </div>
@@ -231,6 +231,41 @@ const HomePage = () => {
                 <Link to="/service/east-brainerd" className="px-4 py-2 bg-card border border-border rounded-full text-sm hover:border-primary hover:text-primary transition-colors">East Brainerd</Link>
                 <Link to="/service/ringgold" className="px-4 py-2 bg-card border border-border rounded-full text-sm hover:border-primary hover:text-primary transition-colors">Ringgold, GA</Link>
                 <Link to="/service/cleveland" className="px-4 py-2 bg-card border border-border rounded-full text-sm hover:border-primary hover:text-primary transition-colors">Cleveland, TN</Link>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-24 bg-background border-b border-border/50">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Chattanooga Pet Waste Removal Questions, Answered</h2>
+              <p className="text-lg text-muted-foreground mb-10 text-center leading-relaxed">
+                Scoopy Doo is a locally owned, fully insured, father-daughter pooper scooper business serving Chattanooga, TN and North Georgia seven days a week. Whether you need weekly dog poop removal, every-other-week service, or a one-time yard cleanup, we make it easy to enjoy a clean, waste-free yard without lifting a finger. Explore our <Link to="/services" className="text-primary underline">services</Link>, check <Link to="/pricing" className="text-primary underline">pricing</Link>, or see all <Link to="/service-areas" className="text-primary underline">service areas</Link>.
+              </p>
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">How much does pet waste removal cost in Chattanooga?</h3>
+                  <p className="text-muted-foreground leading-relaxed">Weekly dog poop removal starts at $20 per visit. Pricing depends on yard size, number of dogs, and visit frequency. Every quote is free and personalized, and there are no long-term contracts or cancellation fees.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">What areas does Scoopy Doo serve?</h3>
+                  <p className="text-muted-foreground leading-relaxed">We scoop yards across Chattanooga, Hixson, East Brainerd, Red Bank, Soddy-Daisy, Signal Mountain, Ooltewah, Collegedale, Apison, and Cleveland in Tennessee, plus Ringgold, Rossville, Fort Oglethorpe, and Flintstone in North Georgia.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Do I need to be home during my cleanup?</h3>
+                  <p className="text-muted-foreground leading-relaxed">No. You receive a text when your technician is on the way. We clean the entire yard, secure the gate, and send a photo confirmation when the job is done.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">What happens to the dog waste after you scoop?</h3>
+                  <p className="text-muted-foreground leading-relaxed">All waste is double-bagged and hauled completely off your property. Scooping tools and footwear are sanitized between every yard to prevent the spread of bacteria and parasites.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Do you offer one-time or every-other-week cleanups?</h3>
+                  <p className="text-muted-foreground leading-relaxed">Yes. Along with weekly service, we offer every-other-week plans and one-time cleanups for overgrown yards, move-outs, and special occasions.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Why choose Scoopy Doo over other pooper scooper services?</h3>
+                  <p className="text-muted-foreground leading-relaxed">Scoopy Doo is rated 5 stars across more than 86 Google reviews. We are locally owned, fully insured, and available seven days a week, with no contracts and no cancellation fees.</p>
+                </div>
               </div>
             </div>
           </section>
