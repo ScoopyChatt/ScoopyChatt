@@ -110,7 +110,7 @@ const CoreServicePage = () => {
         <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-muted/30">
           <div className="absolute inset-0 bg-[url('https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/a31a7ef9578ab021774966b3677f99c1.jpg')] bg-cover bg-center opacity-5 mix-blend-multiply"></div>
           <div className="container-shell relative z-10 text-center max-w-4xl mx-auto">
-            <h1 className="mb-8 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-balance">Professional Dog Poop Removal & Pooper Scooper Service</h1>
+            <h1 className="mb-8 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-balance">Professional Pet Waste Removal & Dog Poop Removal in Chattanooga, TN</h1>
 
             <div className="mb-10 mx-auto max-w-3xl">
               <img
