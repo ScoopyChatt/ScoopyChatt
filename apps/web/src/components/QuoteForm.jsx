@@ -60,6 +60,13 @@ const PRICING = {
   'onetime': { base: 125, extra: 15, inc: 3, cadence: 'one-time', note: 'a one-time cleanup' },
 };
 
+const SERVICE_LABELS = {
+  'weekly': 'Weekly Pet Waste Removal',
+  'twice-weekly': 'Twice-Weekly Pet Waste Removal',
+  'biweekly': 'Bi-Weekly Pet Waste Removal',
+  'onetime': 'One-Time Yard Cleanup',
+};
+
 function computeQuote(serviceType, dogs, takeAway) {
   const p = PRICING[serviceType];
   const n = parseInt(dogs, 10) || 1;
@@ -123,6 +130,9 @@ const QuoteForm = () => {
       service_area: entry ? entry.area : '',
       route_day: entry && entry.day ? entry.day : '',
       quoted_price: quote && quote.price ? quote.price : '',
+      base_price: quote && quote.price != null ? quote.price - (takeAway ? 5 : 0) : '',
+      takeaway_fee: takeAway ? 5 : 0,
+      service_label: SERVICE_LABELS[v.serviceType] || 'Custom Pet Waste Removal Service',
       ready_to_book: true, lead_stage: 'Ready to Book', take_away: takeAway ? 'Yes (+$5/visit)' : 'No', company_website: '',
       source: 'scoopychatt.com/quote', submitted_at: new Date().toISOString(),
     };
