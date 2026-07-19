@@ -7,7 +7,7 @@ export function generateLocalBusinessSchema() {
     "@id": "https://www.scoopychatt.com/#business",
     "name": "Scoopy Doo LLC",
     "alternateName": "Scoopy Chatt",
-    "description": "Professional dog poop removal and pet waste cleanup service in Chattanooga, TN and surrounding areas. Twice-weekly, weekly, bi-weekly, and one-time service for residential and commercial properties.",
+    "description": "Professional dog poop removal and pet waste cleanup service in Chattanooga, TN and surrounding areas. Weekly, bi-weekly, and one-time service for residential and commercial properties.",
     "url": "https://www.scoopychatt.com",
     "telephone": "+14236005040",
     "email": "info@scoopychatt.com",
@@ -43,8 +43,7 @@ export function generateLocalBusinessSchema() {
       "@type": "OfferCatalog",
       "name": "Pet Waste Removal Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "2X Weekly Pet Waste Removal" } },
-{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Weekly Pet Waste Removal" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Weekly Pet Waste Removal" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bi-Weekly Pet Waste Removal" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "One-Time Dog Waste Cleanup" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Pet Waste Removal" } },
