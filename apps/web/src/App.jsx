@@ -4,6 +4,7 @@ import { Route, Routes, BrowserRouter as Router, useLocation } from 'react-route
 import { Helmet } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
 import ScrollToTop from '@/components/ScrollToTop.jsx';
+import ChatWidgetGate from '@/components/ChatWidgetGate.jsx';
 
 import { useGTM } from '@/hooks/useGTM.js';
 import { usePixel } from '@/hooks/usePixel.js';
@@ -106,6 +107,7 @@ function App() {
       `}</style>
       
       <ScrollToTop />
+        <ChatWidgetGate />
       <RouteTracker />
       
       <Suspense fallback={<PageLoader />}>
