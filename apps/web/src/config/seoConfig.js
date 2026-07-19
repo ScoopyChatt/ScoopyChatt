@@ -33,13 +33,13 @@ export const seoConfig = {
   pages: {
     home: {
       title: 'Pet Waste Removal Chattanooga TN | Scoopy Doo',
-      description: 'Professional pet waste removal and dog poop scooping services in Chattanooga, TN. Weekly, bi-weekly, and one-time cleanups available. Get a free quote!',
+      description: 'Professional pet waste removal and dog poop scooping services in Chattanooga, TN. Twice-weekly, weekly, bi-weekly, and one-time cleanups available. Get a free quote!',
       canonical: `${CANONICAL_BASE_URL}/`,
       ogType: 'website'
     },
     pricing: {
       title: 'Pricing | Pet Waste Removal Service Plans | Scoopy Doo',
-      description: 'View affordable pricing for dog poop removal services in Chattanooga. Transparent rates for weekly, bi-weekly, and one-time cleanups. No hidden fees.',
+      description: 'View affordable pricing for dog poop removal services in Chattanooga. Transparent rates for twice-weekly, weekly, bi-weekly, and one-time cleanups. No hidden fees.',
       canonical: `${CANONICAL_BASE_URL}/pricing`,
       ogType: 'website'
     },
