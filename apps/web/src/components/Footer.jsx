@@ -104,6 +104,10 @@ const Footer = () => {
                 <span className="text-sm">Serving Chattanooga, TN and North Georgia, including Ringgold, Rossville, and Fort Oglethorpe, GA</span>
               </li>
               <li className="flex items-start">
+                <MapPin className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                <span className="text-sm">429 Gentry Road, Ringgold, GA 30736</span>
+              </li>
+              <li className="flex items-start">
                 <Clock className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
                 <span className="text-sm">24/7 Always available for service</span>
               </li>
