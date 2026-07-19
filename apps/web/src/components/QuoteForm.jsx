@@ -97,6 +97,8 @@ const QuoteForm = () => {
     }
   }, [quote]);
   const [takeAway, setTakeAway] = useState(false);
+  const [streetAddress, setStreetAddress] = useState('');
+  const isAddressValid = streetAddress.trim().length >= 5;
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -121,11 +123,16 @@ const QuoteForm = () => {
   const matchedDay = areaEntry ? areaEntry.day : null;
 
   const requestStart = async () => {
+    if (!isAddressValid) {
+      toast.error('Please enter your street address so we can schedule your visit.');
+      return;
+    }
     const v = form.getValues();
     const entry = SERVICE_AREA[v.serviceZipCode];
     const readyPayload = {
       full_name: v.name, email: v.email, phone: v.phone,
       service_zip: v.serviceZipCode, service_type: v.serviceType,
+      street_address: streetAddress.trim(),
       number_of_dogs: parseInt(v.numberOfDogs, 10),
       service_area: entry ? entry.area : '',
       route_day: entry && entry.day ? entry.day : '',
@@ -228,7 +235,27 @@ const QuoteForm = () => {
             <p className="text-xl font-semibold text-foreground">We will put together a custom quote for you.</p>
           )}
         </div>
-        <Button onClick={requestStart} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base">Request my start date</Button>
+        <div className="text-left">
+            <label className="mb-1 block text-sm font-medium text-foreground">Service Address *</label>
+            <input
+              type="text"
+              value={streetAddress}
+              onChange={(e) => setStreetAddress(e.target.value)}
+              placeholder="123 Main St"
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground"
+            />
+            <p className="mt-1 text-xs text-muted-foreground">We need your street address to schedule your first visit - it is not shared or used for anything else.</p>
+          </div>
+          <div
+            className="relative"
+            onClick={() => {
+              if (!isAddressValid) {
+                toast.error('Please enter your street address so we can schedule your visit.');
+              }
+            }}
+          >
+            <Button onClick={requestStart} disabled={!isAddressValid} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base disabled:opacity-50 disabled:cursor-not-allowed">Request my start date</Button>
+          </div>
         <button type="button" onClick={() => setQuote(null)} className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors">Back to edit my details</button>
       </div>
     );
