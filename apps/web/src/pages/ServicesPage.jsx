@@ -49,12 +49,12 @@ const ServicesPage = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
         <title>Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo</title>
-        <meta name="description" content="Twice-weekly, weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga, TN. Professional dog poop scooping with online quotes, on-the-way texts, and gate photo confirmation." />
+        <meta name="description" content="Weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga, TN. Professional dog poop scooping with online quotes, on-the-way texts, and gate photo confirmation." />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content="Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo" />
-        <meta property="og:description" content="Twice-weekly, weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga, TN. Get your free quote today." />
+        <meta property="og:description" content="Weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga, TN. Get your free quote today." />
         <meta property="og:url" content={canonicalUrl} />
-              <script type="application/ld+json">{JSON.stringify(generateServiceSchema("Pet Waste Removal Services", "Twice-weekly, weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga TN and North Georgia with on-the-way texts and gate photo confirmation.", "https://www.scoopychatt.com/services"))}</script>
+              <script type="application/ld+json">{JSON.stringify(generateServiceSchema("Pet Waste Removal Services", "Weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga TN and North Georgia with on-the-way texts and gate photo confirmation.", "https://www.scoopychatt.com/services"))}</script>
       </Helmet>
 
       <Header />
@@ -68,7 +68,7 @@ const ServicesPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 leading-tight">
                 Pet Waste Removal Services in Chattanooga, TN
               </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">Twice-weekly, weekly, bi-weekly, one-time, commercial, and HOA service - all with online quotes, on-the-way texts, and gate photo confirmation. No contracts, ever.</p>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8">Weekly, bi-weekly, one-time, commercial, and HOA service - all with online quotes, on-the-way texts, and gate photo confirmation. No contracts, ever.</p>
             <Button asChild size="lg" className="rounded-xl px-8 h-14 text-base font-bold">
               <Link to="/quote">Get Your Free Quote</Link>
             </Button>
