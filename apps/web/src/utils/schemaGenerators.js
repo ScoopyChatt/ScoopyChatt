@@ -68,6 +68,7 @@ export function generateLocalBusinessSchema() {
       "https://www.instagram.com/scoopychatt/",
       "https://www.yelp.com/biz/scoopy-doo-ringgold",
       "https://www.bing.com/maps?ss=ypid.YNF8F072A96778C51B",
+      "https://nextdoor.com/page/scoopy-doo-llc-ringgold-ga",
       "https://share.google/sOBVeLPqRabhfffPg"
     ],
     "priceRange": "$$"
