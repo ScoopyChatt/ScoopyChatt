@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Globe, Facebook, Instagram } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Globe, Facebook, Instagram, Home } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -57,6 +57,15 @@ const Footer = () => {
                 className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-[#0078d4] hover:text-white transition-all duration-200 active:scale-95"
               >
                 <Globe className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://nextdoor.com/page/scoopy-doo-llc-ringgold-ga" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Find us on Nextdoor"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-[#8ED500] hover:text-white transition-all duration-200 active:scale-95"
+              >
+                <Home className="w-5 h-5" />
               </a>
             </div>
           </div>
