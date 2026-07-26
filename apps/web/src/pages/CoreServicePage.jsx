@@ -136,12 +136,15 @@ const CoreServicePage = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View our BBB Accredited Business profile, A- rating"
-              className="mt-8 inline-flex items-center gap-3 rounded-full border-2 border-primary/20 bg-background px-6 py-3 shadow-md hover:shadow-lg hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200"
+              className="mt-8 inline-flex flex-col items-center gap-2 rounded-2xl bg-background border border-border px-6 py-4 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
             >
-              <Shield className="w-7 h-7 text-primary flex-shrink-0" />
-              <span className="text-base md:text-lg font-semibold text-foreground">
-                BBB Accredited Business <span className="text-primary font-bold">A-</span> Rating
-              </span>
+              <img
+                src="https://m.bbb.org/brand/seals/Accredited_Business_Seal_NoRating_RGB.svg?tx=w_175"
+                alt="BBB Accredited Business Seal"
+                className="h-24 sm:h-28 w-auto"
+                loading="lazy"
+              />
+              <span className="text-sm font-semibold text-foreground">A- Rating</span>
             </a>
           </div>
         </section>
