@@ -130,6 +130,19 @@ const CoreServicePage = () => {
               <CTAButton size="lg" className="h-14 px-8 text-lg w-full sm:w-auto">Get Your Free Quote</CTAButton>
               <CTAButton size="lg" variant="outline" to="/services" className="h-14 px-8 text-lg w-full sm:w-auto bg-background/50 backdrop-blur">View Services</CTAButton>
             </div>
+
+            <a
+              href="https://www.bbb.org/us/ga/ringgold/profile/pet-waste-removal/scoopy-doo-llc-0483-80013696"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View our BBB Accredited Business profile, A- rating"
+              className="mt-8 inline-flex items-center gap-3 rounded-full border-2 border-primary/20 bg-background px-6 py-3 shadow-md hover:shadow-lg hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200"
+            >
+              <Shield className="w-7 h-7 text-primary flex-shrink-0" />
+              <span className="text-base md:text-lg font-semibold text-foreground">
+                BBB Accredited Business <span className="text-primary font-bold">A-</span> Rating
+              </span>
+            </a>
           </div>
         </section>
 
