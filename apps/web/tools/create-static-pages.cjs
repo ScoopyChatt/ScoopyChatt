@@ -56,7 +56,8 @@ var FAQ_PAIRS_CS = [
   ["How often should I have my yard cleaned?","Weekly service is the most popular and keeps your yard consistently clean and safe. Homes with multiple dogs or heavy use often choose twice-weekly, while every-other-week works for lighter needs."],
   ["What happens on each visit?","You get an on-the-way text before we arrive, a full grid-pattern sweep of your entire yard, double-bagged waste hauled completely off your property, and a gate photo confirmation when we finish."],
   ["Do you offer one-time cleanups?","Yes. One-time yard cleanups are great for spring cleaning, move-outs, or before an event, and a good way to start fresh before beginning recurring service."],
-  ["Do you handle commercial and HOA properties?","Yes. Scoopy Doo provides pet waste removal for apartments, HOAs, dog parks, and shared common areas with flexible scheduling and no contracts."]
+  ["Do you handle commercial and HOA properties?","Yes. Scoopy Doo provides pet waste removal for apartments, HOAs, dog parks, and shared common areas with flexible scheduling and no contracts."],
+  ["Is Scoopy Doo LLC BBB accredited?","Yes. Scoopy Doo LLC is a BBB Accredited Business with an A- rating from the Better Business Bureau of Southeast Tennessee & Northwest Georgia, accredited since June 2026."]
 ];
 function faqLdCS(){var items=[];for(var i=0;i<FAQ_PAIRS_CS.length;i++){items.push({"@type":"Question","name":FAQ_PAIRS_CS[i][0],"acceptedAnswer":{"@type":"Answer","text":FAQ_PAIRS_CS[i][1]}});}var o={"@context":"https://schema.org","@type":"FAQPage","mainEntity":items};return '<script type="application/ld+json">'+JSON.stringify(o)+'</'+'script>';}
 var FAQ_LD = faqLdCS();
