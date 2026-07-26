@@ -28,6 +28,10 @@ export const getFaqData = (location = 'Chattanooga') => {
         {
           question: `How much does pooper scooper service cost in ${baseLocation}?`,
           answer: `Pooper scooper service costs in the ${baseLocation} area typically range from $18 to $36 per visit for weekly service, depending on several factors. Yard size significantly impacts pricing - larger properties require more time and effort. The number of dogs you have directly affects service cost, as more dogs generate more waste. Service frequency also matters; weekly service is more economical per visit than one-time cleanups. Most ${baseLocation} pet waste removal companies offer discounts for recurring weekly or every-other-week service. While DIY scooping seems cheaper upfront, professional service saves time, reduces health risks, and prevents costly lawn damage. Scoopy Doo LLC offers competitive, transparent pricing tailored to your yard size and dog count, making professional pet waste removal an affordable investment in your family's health and your yard's appearance.`
+        },
+        {
+          question: "Is Scoopy Doo LLC BBB accredited?",
+          answer: "Yes. Scoopy Doo LLC is a BBB Accredited Business with an A- rating from the Better Business Bureau of Southeast Tennessee & Northwest Georgia, accredited since June 2026. You can view our full BBB Business Review at bbb.org."
         }
       ]
     },
