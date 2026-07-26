@@ -12,7 +12,7 @@ const SUMMARY =
   "Soddy-Daisy, Cleveland, East Ridge, Lookout Mountain (TN), and Ringgold, Rossville, " +
   "Flintstone, and Fort Oglethorpe (GA). Services include weekly, bi-weekly, one-time, " +
   "commercial, and HOA dog poop removal and yard cleanup. Every visit includes on-the-way " +
-  "text notifications and a gate photo confirmation. No contracts required -- get a free " +
+  "text notifications and a gate photo confirmation. Scoopy Doo LLC is a BBB Accredited Business (A- rating). No contracts required -- get a free " +
   "online quote at scoopychatt.com/quote.";
 
 // [url, title, description]
