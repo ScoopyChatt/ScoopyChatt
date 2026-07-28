@@ -70,7 +70,8 @@ export function generateLocalBusinessSchema() {
       "https://www.bbb.org/us/ga/ringgold/profile/pet-waste-removal/scoopy-doo-llc-0483-80013696",
       "https://www.bing.com/maps?ss=ypid.YNF8F072A96778C51B",
       "https://nextdoor.com/page/scoopy-doo-llc-ringgold-ga",
-      "https://share.google/sOBVeLPqRabhfffPg"
+      "https://share.google/sOBVeLPqRabhfffPg",
+      "https://www.pooppages.com/directory/georgia/ringgold/scoopy-doo-c37smt"
     ],
     "priceRange": "$$"
   };
