@@ -48,6 +48,7 @@ const HowOftenCleanYard = React.lazy(() => import('@/pages/blog/HowOftenCleanYar
 const PodcastBlogPost = React.lazy(() => import('@/pages/blog/PodcastBlogPost.jsx'));
 const ChattanoogaHomeownersPage = React.lazy(() => import('@/pages/blog/ChattanoogaHomeownersPage.jsx'));
 const CommercialPetWastePage = React.lazy(() => import('@/pages/blog/CommercialPetWastePage.jsx'));
+const FallYardCareChecklistChattanooga = React.lazy(() => import('@/pages/blog/FallYardCareChecklistChattanooga.jsx'));
 const BlogSignalMountain = React.lazy(() => import('@/pages/blog/BlogSignalMountainPage.jsx'));
 const BlogSoddyDaisy = React.lazy(() => import('@/pages/blog/BlogSoddyDaisyPage.jsx'));
 const DogPoopCleanupSummerHeat = React.lazy(() => import('@/pages/blog/DogPoopCleanupSummerHeatChattanooga.jsx'));
@@ -152,6 +153,7 @@ function App() {
           <Route path="/blog" element={<BlogListPage />} />
           <Route path="/blog/chattanooga-pet-waste-removal-homeowners" element={<ChattanoogaHomeownersPage />} />
           <Route path="/blog/commercial-pet-waste-removal-chattanooga" element={<CommercialPetWastePage />} />
+        <Route path="/blog/fall-yard-care-checklist-chattanooga" element={<FallYardCareChecklistChattanooga />} />
           <Route path="/blog/how-often-clean-yard" element={<HowOftenCleanYard />} />
           <Route path="/blog/podcast-blog" element={<PodcastBlogPost />} />
           <Route path="/blog/signal-mountain" element={<BlogSignalMountain />} />
