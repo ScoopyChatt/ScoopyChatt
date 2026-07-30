@@ -157,12 +157,20 @@ const QuoteForm = () => {
   const addressFieldRef = useRef(null);
   const addressDebounceRef = useRef(null);
   const addressRequestIdRef = useRef(0);
+  const skipNextAutocompleteRef = useRef(false);
 
   // Google Places Autocomplete (New) - suggests real addresses as the customer types
   // so we get a clean, validated street address instead of free-typed text (this is
   // what broke Jobber's property creation before - see sanitizeStreetAddress above).
   useEffect(() => {
     if (addressDebounceRef.current) clearTimeout(addressDebounceRef.current);
+    if (skipNextAutocompleteRef.current) {
+      // The streetAddress change that triggered this effect came from picking a
+      // suggestion, not typing - don't immediately re-query and reopen the dropdown.
+      skipNextAutocompleteRef.current = false;
+      setSuggestionsLoading(false);
+      return;
+    }
     const query = streetAddress.trim();
     if (query.length < 4) {
       setAddressSuggestions([]);
@@ -224,6 +232,7 @@ const QuoteForm = () => {
   const selectAddressSuggestion = (suggestion) => {
     // Just the street (main text) - we already have city/state/zip from the zip field,
     // and this keeps the value clean for Jobber regardless of what the full prediction contains.
+    skipNextAutocompleteRef.current = true;
     setStreetAddress(suggestion.mainText);
     setAddressSuggestions([]);
     setShowSuggestions(false);
