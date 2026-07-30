@@ -88,6 +88,16 @@ function sanitizeStreetAddress(raw, zip) {
   return s.replace(/[.,\s]+$/, '').trim();
 }
 
+// Restricted (HTTP referrer: scoopychatt.com only) client-side key, Places API (New) enabled.
+// Safe to ship in the bundle - the restriction, not secrecy, is what protects it.
+const GOOGLE_PLACES_API_KEY =
+  import.meta.env.VITE_GOOGLE_PLACES_API_KEY ||
+  'AIzaSyCPG4BafhslOYkpRx0ue3nB5mOkWZE5gAM';
+
+// Center of the Chattanooga / North Georgia service area, used to bias Places
+// Autocomplete suggestions toward addresses we actually service.
+const SERVICE_AREA_CENTER = { latitude: 35.0456, longitude: -85.3097 };
+
 const WEBHOOK_URL =
   import.meta.env.VITE_QUOTE_WEBHOOK_URL ||
   'https://hook.us2.make.com/nsb476cxnhmejirr5aq6em1ce4royvla';
@@ -141,6 +151,83 @@ const QuoteForm = () => {
   }, [quote]);
   const [takeAway, setTakeAway] = useState(false);
   const [streetAddress, setStreetAddress] = useState('');
+  const [addressSuggestions, setAddressSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [suggestionsLoading, setSuggestionsLoading] = useState(false);
+  const addressFieldRef = useRef(null);
+  const addressDebounceRef = useRef(null);
+  const addressRequestIdRef = useRef(0);
+
+  // Google Places Autocomplete (New) - suggests real addresses as the customer types
+  // so we get a clean, validated street address instead of free-typed text (this is
+  // what broke Jobber's property creation before - see sanitizeStreetAddress above).
+  useEffect(() => {
+    if (addressDebounceRef.current) clearTimeout(addressDebounceRef.current);
+    const query = streetAddress.trim();
+    if (query.length < 4) {
+      setAddressSuggestions([]);
+      setSuggestionsLoading(false);
+      return;
+    }
+    setSuggestionsLoading(true);
+    const requestId = ++addressRequestIdRef.current;
+    addressDebounceRef.current = setTimeout(async () => {
+      try {
+        const res = await fetch('https://places.googleapis.com/v1/places:autocomplete', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Goog-Api-Key': GOOGLE_PLACES_API_KEY,
+            'X-Goog-FieldMask': 'suggestions.placePrediction.placeId,suggestions.placePrediction.structuredFormat',
+          },
+          body: JSON.stringify({
+            input: query,
+            includedRegionCodes: ['us'],
+            locationBias: { circle: { center: SERVICE_AREA_CENTER, radius: 50000.0 } },
+          }),
+        });
+        if (requestId !== addressRequestIdRef.current) return; // a newer keystroke superseded this request
+        if (!res.ok) { setAddressSuggestions([]); return; }
+        const data = await res.json();
+        const preds = (data.suggestions || [])
+          .map((s) => s.placePrediction)
+          .filter(Boolean)
+          .map((p) => ({
+            placeId: p.placeId,
+            mainText: p.structuredFormat && p.structuredFormat.mainText ? p.structuredFormat.mainText.text : '',
+            secondaryText: p.structuredFormat && p.structuredFormat.secondaryText ? p.structuredFormat.secondaryText.text : '',
+          }))
+          .filter((p) => p.mainText);
+        setAddressSuggestions(preds);
+        setShowSuggestions(true);
+      } catch (err) {
+        console.error('Address autocomplete error:', err);
+        if (requestId === addressRequestIdRef.current) setAddressSuggestions([]);
+      } finally {
+        if (requestId === addressRequestIdRef.current) setSuggestionsLoading(false);
+      }
+    }, 300);
+    return () => clearTimeout(addressDebounceRef.current);
+  }, [streetAddress]);
+
+  // Close the suggestions dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (addressFieldRef.current && !addressFieldRef.current.contains(e.target)) {
+        setShowSuggestions(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const selectAddressSuggestion = (suggestion) => {
+    // Just the street (main text) - we already have city/state/zip from the zip field,
+    // and this keeps the value clean for Jobber regardless of what the full prediction contains.
+    setStreetAddress(suggestion.mainText);
+    setAddressSuggestions([]);
+    setShowSuggestions(false);
+  };
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -281,17 +368,38 @@ const QuoteForm = () => {
             <p className="text-xl font-semibold text-foreground">We will put together a custom quote for you.</p>
           )}
         </div>
-        <div className="text-left">
+        <div className="text-left relative" ref={addressFieldRef}>
             <label className="mb-1 block text-sm font-medium text-foreground">Street Address *</label>
             <input
               type="text"
               required
+              autoComplete="off"
               value={streetAddress}
               onChange={(e) => setStreetAddress(e.target.value)}
-              placeholder="Street number and name only, e.g. 123 Main St"
+              onFocus={() => { if (addressSuggestions.length) setShowSuggestions(true); }}
+              placeholder="Start typing your address..."
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground"
             />
-            <p className="mt-1 text-xs text-muted-foreground">Street number and name only - please don't include city, state, or zip, we already have those. We need this to schedule your first visit; it is not shared or used for anything else.</p>
+            {showSuggestions && (suggestionsLoading || addressSuggestions.length > 0) && (
+              <div className="absolute z-10 mt-1 w-full rounded-md border border-input bg-background shadow-lg overflow-hidden">
+                {suggestionsLoading && addressSuggestions.length === 0 ? (
+                  <div className="px-3 py-2 text-sm text-muted-foreground">Searching...</div>
+                ) : (
+                  addressSuggestions.map((s) => (
+                    <button
+                      type="button"
+                      key={s.placeId}
+                      onClick={() => selectAddressSuggestion(s)}
+                      className="flex w-full flex-col items-start px-3 py-2 text-left text-sm hover:bg-accent/10 transition-colors"
+                    >
+                      <span className="text-foreground">{s.mainText}</span>
+                      {s.secondaryText ? <span className="text-xs text-muted-foreground">{s.secondaryText}</span> : null}
+                    </button>
+                  ))
+                )}
+              </div>
+            )}
+            <p className="mt-1 text-xs text-muted-foreground">Pick your address from the dropdown, or type the street number and name only (no city, state, or zip - we already have those). We need this to schedule your first visit; it is not shared or used for anything else.</p>
             {addressWasTrimmed ? (
               <p className="mt-1 text-xs text-muted-foreground">We'll use: <span className="font-medium text-foreground">{sanitizedStreetAddress}</span></p>
             ) : null}
