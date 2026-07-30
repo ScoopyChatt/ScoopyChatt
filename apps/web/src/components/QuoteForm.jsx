@@ -45,6 +45,49 @@ const SERVICE_AREA = {
   '30742': { area: 'Fort Oglethorpe', day: 'Thursday' },
 };
 
+// Real municipality per zip - matches the city lookup table already used on the
+// Zapier side (Website Booking -> Jobber Lead Zap). Kept in sync manually; if that
+// Zap's lookup table changes, update this too.
+const REAL_CITY_BY_ZIP = {
+  '30707': 'Chickamauga',
+  '30725': 'Flintstone',
+  '30736': 'Ringgold',
+  '30741': 'Rossville',
+  '30742': 'Fort Oglethorpe',
+};
+const cityForZip = (zip) => REAL_CITY_BY_ZIP[zip] || 'Chattanooga';
+
+// Some customers type/paste their whole address (street + city + state + zip) into
+// the street-address box instead of just the street. Jobber's property-creation API
+// rejects a street1 value like that outright (confirmed 2026-07-29: a booking with
+// street1 = "3312 Tarlton Ave. Chattanooga. TN 37410" errored the whole Zap and no
+// Jobber quote was ever created). Strip a trailing city/state/zip the customer
+// already gave us elsewhere so we always send Jobber a clean street-only value,
+// regardless of how they formatted it.
+function sanitizeStreetAddress(raw, zip) {
+  let s = (raw || '').trim();
+  const city = cityForZip(zip);
+  const patterns = [
+    zip ? new RegExp('[\\s.,]+' + zip + '\\s*$') : null,
+    new RegExp('[\\s.,]+(TN|GA)\\s*$', 'i'),
+    new RegExp('[\\s.,]+' + city + '\\s*$', 'i'),
+  ].filter(Boolean);
+  let changed = true;
+  let guard = 0;
+  while (changed && guard < 6) {
+    changed = false;
+    for (const re of patterns) {
+      const next = s.replace(re, '');
+      if (next !== s) {
+        s = next;
+        changed = true;
+      }
+    }
+    guard++;
+  }
+  return s.replace(/[.,\s]+$/, '').trim();
+}
+
 const WEBHOOK_URL =
   import.meta.env.VITE_QUOTE_WEBHOOK_URL ||
   'https://hook.us2.make.com/nsb476cxnhmejirr5aq6em1ce4royvla';
@@ -98,7 +141,6 @@ const QuoteForm = () => {
   }, [quote]);
   const [takeAway, setTakeAway] = useState(false);
   const [streetAddress, setStreetAddress] = useState('');
-  const isAddressValid = streetAddress.trim().length >= 5;
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -122,6 +164,10 @@ const QuoteForm = () => {
   const matchedArea = areaEntry ? areaEntry.area : undefined;
   const matchedDay = areaEntry ? areaEntry.day : null;
 
+  const sanitizedStreetAddress = sanitizeStreetAddress(streetAddress, zipValue);
+  const isAddressValid = sanitizedStreetAddress.length >= 5;
+  const addressWasTrimmed = sanitizedStreetAddress && sanitizedStreetAddress !== streetAddress.trim();
+
   const requestStart = async () => {
     if (!isAddressValid) {
       toast.error('Please enter your street address so we can schedule your visit.');
@@ -132,7 +178,7 @@ const QuoteForm = () => {
     const readyPayload = {
       full_name: v.name, email: v.email, phone: v.phone,
       service_zip: v.serviceZipCode, service_type: v.serviceType,
-      street_address: streetAddress.trim(),
+      street_address: sanitizedStreetAddress,
       number_of_dogs: parseInt(v.numberOfDogs, 10),
       service_area: entry ? entry.area : '',
       route_day: entry && entry.day ? entry.day : '',
@@ -236,15 +282,19 @@ const QuoteForm = () => {
           )}
         </div>
         <div className="text-left">
-            <label className="mb-1 block text-sm font-medium text-foreground">Service Address *</label>
+            <label className="mb-1 block text-sm font-medium text-foreground">Street Address *</label>
             <input
               type="text"
+              required
               value={streetAddress}
               onChange={(e) => setStreetAddress(e.target.value)}
-              placeholder="123 Main St"
+              placeholder="Street number and name only, e.g. 123 Main St"
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground"
             />
-            <p className="mt-1 text-xs text-muted-foreground">We need your street address to schedule your first visit - it is not shared or used for anything else.</p>
+            <p className="mt-1 text-xs text-muted-foreground">Street number and name only - please don't include city, state, or zip, we already have those. We need this to schedule your first visit; it is not shared or used for anything else.</p>
+            {addressWasTrimmed ? (
+              <p className="mt-1 text-xs text-muted-foreground">We'll use: <span className="font-medium text-foreground">{sanitizedStreetAddress}</span></p>
+            ) : null}
           </div>
           <div
             className="relative"
