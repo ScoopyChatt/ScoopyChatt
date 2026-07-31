@@ -72,7 +72,7 @@ const Header = () => {
               <span>423-600-5040</span>
             </a>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 px-6 rounded-xl font-bold shadow-md">
-              <Link to="/quote">Get Free Quote</Link>
+              <Link to="/quote">Get INSTANT Quote</Link>
             </Button>
           </div>
 
