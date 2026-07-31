@@ -42,7 +42,7 @@ const Header = () => {
                 <Phone className="h-5 w-5" />
               </a>
               <Button asChild size="sm" className="bg-primary text-primary-foreground font-bold shadow-md h-9">
-                <Link to="/quote">Get Quote</Link>
+                <Link to="/quote">Get INSTANT Quote</Link>
               </Button>
             </div>
           </div>
