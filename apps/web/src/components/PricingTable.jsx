@@ -47,7 +47,7 @@ const PricingTable = ({ tiers }) => {
           
           <div className="lg:w-1/6 flex justify-end w-full">
             <CTAButton to="/quote" variant={tier.recommended ? "default" : "outline"} className="w-full">
-              Get Quote
+              Get INSTANT Quote
             </CTAButton>
           </div>
         </div>
