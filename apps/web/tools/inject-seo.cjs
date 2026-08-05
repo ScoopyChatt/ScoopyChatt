@@ -103,6 +103,7 @@ const routes = {
   '/privacy-policy': ['Privacy Policy | Scoopy Doo LLC', 'Privacy policy for Scoopy Doo LLC.'],
   '/terms-of-service': ['Terms of Service | Scoopy Doo LLC', 'Terms of service for Scoopy Doo LLC pet waste removal.'],
   '/blog/professional-waste-removal-benefits': ['Benefits of Professional Pet Waste Removal | Scoopy Doo Chattanooga', 'Why professional dog waste removal is safer and more thorough than DIY. Scoopy Doo serves Chattanooga and surrounding areas weekly.'],
+  '/blog/winter-dog-poop-cleanup-chattanooga': ['Winter Dog Poop Cleanup in Chattanooga | Scoopy Doo', 'Cold weather does not stop dog waste from piling up. Learn why Chattanooga yards need winter pet waste removal and what Scoopy Doo service costs from 18 dollars a visit.'],
   '/blog/seasonal-pet-care-tips': ['Seasonal Pet Care Tips for Chattanooga Dog Owners | Scoopy Doo', 'Keep your yard clean and safe year-round with seasonal pet waste tips from Scoopy Doo LLC in Chattanooga, TN.'],
   '/blog/health-benefits-yard-cleanup': ['Health Benefits of Regular Yard Cleanup for Pet Owners | Scoopy Doo', 'Regular dog waste removal protects your family from bacteria and parasites. Learn why weekly cleanup matters for Chattanooga homeowners.'],
   '/blog/customer-success-stories': ['Customer Success Stories | Scoopy Doo Pet Waste Removal Chattanooga', 'Real stories from Chattanooga homeowners and HOAs who rely on Scoopy Doo for weekly pet waste removal.'],
