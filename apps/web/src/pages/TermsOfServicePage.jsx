@@ -151,7 +151,7 @@ const TermsOfServicePage = () => {
 
           {/* Help Instructions */}
           <p className="mb-4 text-muted-foreground leading-relaxed">
-            <strong className="text-foreground">Need Help?</strong> If you experience any issues with the messaging program, reply with the keyword <strong className="text-foreground">HELPO</strong> for assistance. You can also reach our support team directly at{" "}
+            <strong className="text-foreground">Need Help?</strong> If you experience any issues with the messaging program, reply with the keyword <strong className="text-foreground">HELP</strong> for assistance. You can also reach our support team directly at{" "}
             <a href="tel:423-600-5040" className="text-primary hover:underline font-medium">(423) 600-5040</a>
             {" "}or{" "}
             <a href="mailto:info@scoopychatt.com" className="text-primary hover:underline font-medium">info@scoopychatt.com</a>.
@@ -248,7 +248,7 @@ const TermsOfServicePage = () => {
                     <div className="bg-primary/10 p-3 rounded-xl">
                       {section.icon}
                     </div>
-                    <h1 className="text-4xl font-extrabold text-foreground mb-4">Terms of Service - Scoopy Doo Pet Waste Removal in Chattanooga, TN</h1>
+                    
               <h2 className="text-2xl font-bold text-foreground">
                       {section.title}
                     </h2>
