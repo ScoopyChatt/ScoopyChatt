@@ -126,6 +126,7 @@ const routes = {
   '/blog/dog-poop-laws-chattanooga': ['Is It Illegal to Not Pick Up Dog Poop in Chattanooga? | Scoopy Doo', 'Yes, Chattanooga law requires dog owners to pick up after their pets. Here is what City Code Chapter 7 says, the fines you could face, and how to stay compliant.'],
   '/blog/soddy-daisy': ['Pet Waste Removal in Soddy-Daisy, TN | Scoopy Doo Blog', 'Scoopy Doo serves Soddy-Daisy and Chickamauga Lake area homeowners. Waterfront cleanup protects the lake and your family.'],
   '/blog/one-time-dog-poop-cleanup-chattanooga': ['One-Time Dog Poop Cleanup in Chattanooga: Cost & How It Works | Scoopy Doo', 'What a one-time dog poop cleanup costs in Chattanooga, when to book one, and how it works. One-time yard cleanups from $85 with no contract. Call 423-600-5040.'],
+  '/blog/hoa-pet-waste-removal-chattanooga': ['HOA Pet Waste Removal in Chattanooga: A Board Guide | Scoopy Doo', 'How HOA and community pet waste removal works in Chattanooga: what is included, how pricing is quoted, and how to set up service for common areas and dog stations. Call 423-600-5040.'],
   '/blog/dog-poop-removal-north-georgia': ["Dog Poop Removal in Ringgold, Fort Oglethorpe and North Georgia | Scoopy Doo", "Scoopy Doo provides dog poop removal in Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA. Weekly service from $20 per visit, no contracts required."],
 };
 
