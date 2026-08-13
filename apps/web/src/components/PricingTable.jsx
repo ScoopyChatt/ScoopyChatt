@@ -1,12 +1,19 @@
 
 import React from 'react';
-import { CheckCircle2, Info } from 'lucide-react';
+import { CheckCircle2, Info, ShieldCheck } from 'lucide-react';
 import CTAButton from '@/components/CTAButton.jsx';
 import { cn } from '@/lib/utils.js';
 
 const PricingTable = ({ tiers }) => {
   return (
     <div className="space-y-6">
+      <div className="bg-primary/5 border border-primary/20 p-6 rounded-2xl flex items-start space-x-4">
+        <ShieldCheck className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+        <p className="text-sm text-foreground">
+          <strong>100% Satisfaction Guarantee:</strong> If we ever miss a spot, let us know within 24 hours and we'll come back and re-clean it at no extra charge. No contracts, no cancellation fees — cancel or pause anytime.
+        </p>
+      </div>
+
       {tiers.map((tier, index) => (
         <div 
           key={index} 
