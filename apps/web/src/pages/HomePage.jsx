@@ -120,7 +120,7 @@ const HomePage = () => {
 
           <section className="py-10 bg-card border-y border-border/50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
                 <div className="flex flex-col items-center gap-2 p-4">
                   <span className="text-3xl">â­</span>
                   <div className="font-extrabold text-lg text-foreground">5-Star Rated</div>
@@ -140,6 +140,11 @@ const HomePage = () => {
                   <span className="text-3xl">ð«</span>
                   <div className="font-extrabold text-lg text-foreground">No Contracts</div>
                   <div className="text-sm text-muted-foreground">Cancel or change anytime</div>
+                </div>
+                <div className="flex flex-col items-center gap-2 p-4">
+                  <Shield className="w-8 h-8 text-primary" />
+                  <div className="font-extrabold text-lg text-foreground">100% Guarantee</div>
+                  <div className="text-sm text-muted-foreground">Miss a spot? We re-clean free</div>
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t border-border/50 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-muted-foreground">
