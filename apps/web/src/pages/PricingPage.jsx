@@ -14,11 +14,11 @@ const PricingPage = () => {
 
   const pricingTiers = [
     {
-      name: "2X Weekly Service",
-      description: "Twice weekly professional cleaning for homes that need more frequent maintenance.",
-      price: "18",
+      name: "Bi-Weekly Service",
+      description: "For small dogs or large yards.",
+      price: "33",
       frequency: "per visit / 1st dog",
-      benefits: ["Cleaned twice per week", "Maximum yard cleanliness", "Text alert when en route", "Gates always secured"]
+      benefits: ["Cleaned every other week", "Budget-friendly option", "Detailed grid walk", "Gates always secured"]
     },
     {
       name: "Weekly Service",
@@ -29,11 +29,11 @@ const PricingPage = () => {
       recommended: true
     },
     {
-      name: "Bi-Weekly Service",
-      description: "For small dogs or large yards.",
-      price: "33",
+      name: "2X Weekly Service",
+      description: "Twice weekly professional cleaning for homes that need more frequent maintenance.",
+      price: "18",
       frequency: "per visit / 1st dog",
-      benefits: ["Cleaned every other week", "Budget-friendly option", "Detailed grid walk", "Gates always secured"]
+      benefits: ["Cleaned twice per week", "Maximum yard cleanliness", "Text alert when en route", "Gates always secured"]
     },
     {
       name: "One-Time Cleanup",
