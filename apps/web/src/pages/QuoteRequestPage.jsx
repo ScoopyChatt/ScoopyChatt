@@ -44,7 +44,7 @@ const QuoteRequestPage = () => {
                   Get a Free Pet Waste Removal Quote in Chattanooga, TN
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-[65ch] mx-auto">
-                  Fill out the form below and we'll provide a customized quote for your property within 24 hours. No obligation, no pressure.
+                  Answer a few quick questions below and see your price instantly, right on this page. No obligation, no pressure.
                 </p>
               </motion.div>
 
