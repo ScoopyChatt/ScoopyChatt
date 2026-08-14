@@ -14,7 +14,7 @@ const services = [
     area: "Chattanooga + 13 TN suburbs + Ringgold, Rossville, Fort Oglethorpe, Flintstone GA",
     frequency: "Weekly, twice-weekly, every-other-week, one-time",
     price: "Weekly $20/visit; twice-weekly $18/visit (1st dog)",
-    notable: "7-day availability; on-the-way texts standard; gate photo after every visit standard; waste hauled off property; no contracts; 100% satisfaction guarantee (miss a spot, free re-clean within 24 hours); local father-daughter team",
+    notable: "7-day availability; on-the-way texts standard; gate photo after every visit standard; waste hauled off property; no contracts; 100% satisfaction guarantee (miss a spot, free re-clean within 24 hours); local father-daughter team; 90 Google reviews",
   },
   {
     name: "PooTagic",
@@ -23,7 +23,7 @@ const services = [
     area: "Chattanooga + many TN suburbs + Ringgold, Rossville, Fort Oglethorpe, Chickamauga GA",
     frequency: "Not listed",
     price: "Quote required",
-    notable: "Local family-owned; Poo-Fume sanitizing and deodorizing add-on; scoops rain or shine; flat monthly billing",
+    notable: "Local family-owned; Poo-Fume sanitizing and deodorizing add-on; scoops rain or shine; flat monthly billing; 49 Google reviews",
   },
   {
     name: "ChattaPoo",
@@ -32,7 +32,7 @@ const services = [
     area: "Chattanooga TN/GA metro; based on Signal Mountain",
     frequency: "Weekly, every-other-week, one-time",
     price: "Weekly $21/visit (1st dog)",
-    notable: "Pet waste bag station installation and maintenance; public park maintenance; 10% discount on auto-billed monthly plan",
+    notable: "Pet waste bag station installation and maintenance; public park maintenance; 10% discount on auto-billed monthly plan; 1 Google review",
   },
   {
     name: "Cooper's Scoopers",
@@ -75,15 +75,15 @@ const services = [
 const descriptions = [
   {
     name: "Scoopy Doo",
-    text: "Scoopy Doo is a locally owned father-daughter team and the only provider on this list with confirmed service across both Tennessee suburbs and North Georgia Catoosa and Walker County communities. On-the-way texts and gate photo confirmation are standard on every visit, not add-ons. Waste is hauled fully off the property. Service runs 7 days a week with no contracts.",
+    text: "Scoopy Doo is a locally owned father-daughter team and the only provider on this list with confirmed service across both Tennessee suburbs and North Georgia Catoosa and Walker County communities. On-the-way texts and gate photo confirmation are standard on every visit, not add-ons. Waste is hauled fully off the property. Service runs 7 days a week with no contracts. Scoopy Doo has 90 Google reviews.",
   },
   {
     name: "PooTagic",
-    text: "PooTagic is a family-owned Chattanooga-area company with an eco-friendly focus and a professional sanitizing and deodorizing add-on service called Poo-Fume. They cover several North Georgia communities alongside their Tennessee areas. Pricing is not listed publicly on their website.",
+    text: "PooTagic is a family-owned Chattanooga-area company with an eco-friendly focus and a professional sanitizing and deodorizing add-on service called Poo-Fume. They cover several North Georgia communities alongside their Tennessee areas. Pricing is not listed publicly on their website. PooTagic has 49 Google reviews.",
   },
   {
     name: "ChattaPoo",
-    text: "ChattaPoo is based on Signal Mountain and serves the greater Chattanooga TN/GA metro area. Published rates start at $21 per weekly visit for one dog, with every-other-week and one-time options. Beyond yard cleanups, the company installs and maintains pet waste bag stations for parks, neighborhoods, and businesses, and its auto-billed monthly plan carries a 10% discount.",
+    text: "ChattaPoo is based on Signal Mountain and serves the greater Chattanooga TN/GA metro area. Published rates start at $21 per weekly visit for one dog, with every-other-week and one-time options. Beyond yard cleanups, the company installs and maintains pet waste bag stations for parks, neighborhoods, and businesses, and its auto-billed monthly plan carries a 10% discount. ChattaPoo has 1 Google review.",
   },
   {
     name: "Cooper's Scoopers",
@@ -129,7 +129,7 @@ const ComparisonPage = () => {
               <span className="block text-2xl md:text-3xl font-semibold text-muted-foreground mt-2">2026 Comparison</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mt-4">
-              Six providers currently operating in the Chattanooga area, compared by service area, frequency options, published pricing, and standout features. Pricing marked "Not listed" was not published on the provider's website as of June 2026.
+              Seven providers currently operating in the Chattanooga area, compared by service area, frequency options, published pricing, and standout features. Pricing marked "Not listed" was not published on the provider's website as of June 2026.
             </p>
           </div>
         </section>
