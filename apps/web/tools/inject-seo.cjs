@@ -129,6 +129,7 @@ const routes = {
   '/blog/hoa-pet-waste-removal-chattanooga': ['HOA Pet Waste Removal in Chattanooga: A Board Guide | Scoopy Doo', 'How HOA and community pet waste removal works in Chattanooga: what is included, how pricing is quoted, and how to set up service for common areas and dog stations. Call 423-600-5040.'],
   '/blog/new-puppy-pet-waste-removal-chattanooga': ['New Puppy Owner Guide: Pet Waste Cleanup in Chattanooga | Scoopy Doo', 'Bringing home a new puppy in Chattanooga? Here is how to set up a pet waste cleanup routine, why it matters for house training and health, and what professional service costs.'],
   '/blog/dog-poop-removal-north-georgia': ["Dog Poop Removal in Ringgold, Fort Oglethorpe and North Georgia | Scoopy Doo", "Scoopy Doo provides dog poop removal in Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA. Weekly service from $20 per visit, no contracts required."],
+'/blog/yard-cleanup-before-selling-home-chattanooga': ["Do You Need to Clean Up Dog Waste Before Selling Your Chattanooga Home? | Scoopy Doo", "Selling a home in Chattanooga? Here is why yard cleanup and pet waste removal matter before listing photos and showings, plus a pre-listing checklist and pricing."],
 };
 
 const gaLocations = new Set(['ringgold','rossville','flintstone','fort-oglethorpe']);
