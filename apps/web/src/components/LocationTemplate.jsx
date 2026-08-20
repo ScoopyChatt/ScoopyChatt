@@ -3,7 +3,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { MapPin, CheckCircle2, Loader2, AlertCircle, Star, MessageSquare } from 'lucide-react';
+import { MapPin, CheckCircle2, Loader2, Star, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Header from '@/components/Header.jsx';
@@ -14,6 +14,7 @@ import ReviewsSection from '@/components/ReviewsSection.jsx';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
 import { generateFAQPageSchema, generateBreadcrumbSchema, generateLocationSchema } from '@/utils/schemaGenerators.js';
 import { locations } from '@/data/locations.js';
+import NotFoundPage from '@/pages/NotFoundPage.jsx';
 
 const LocationTemplate = ({ city: propCity }) => {
   const { slug } = useParams();
@@ -42,28 +43,18 @@ const LocationTemplate = ({ city: propCity }) => {
 
   if (!locationData) {
     return (
-      <div className="min-h-screen flex flex-col bg-background">
-        <Header />
-        <main className="flex-grow flex items-center justify-center py-20">
-          <div className="text-center flex flex-col items-center max-w-md px-4">
-            <AlertCircle className="w-12 h-12 text-destructive mb-4" />
-            <h2 className="text-2xl font-bold mb-2">Location Not Found</h2>
-            <p className="text-muted-foreground mb-6">We could not find the service area you are looking for. We serve the greater Chattanooga area and North Georgia.</p>
-            <Button asChild>
-              <Link to="/service-areas">View All Service Areas</Link>
-            </Button>
-          </div>
-        </main>
-        <Footer />
-      </div>
+      <NotFoundPage
+        title="Service area not found"
+        message="We could not find that service area. Scoopy Doo serves the greater Chattanooga area and North Georgia."
+      />
     );
   }
 
   const { name, seoTitle, seoDescription, serviceDescription, localContext, neighborhoods, testimonial, benefits, faqItems } = locationData;
   const canonicalUrl = getCanonicalUrl('/service/' + locationData.slug);
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://scoopychatt.com/' },
-    { name: 'Service Areas', url: 'https://scoopychatt.com/service-areas' },
+    { name: 'Home', url: 'https://www.scoopychatt.com/' },
+    { name: 'Service Areas', url: 'https://www.scoopychatt.com/service-areas' },
     { name: name, url: canonicalUrl }
   ]);
   const faqSchema = faqItems && faqItems.length > 0 ? generateFAQPageSchema(faqItems) : null;

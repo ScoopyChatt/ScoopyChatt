@@ -124,7 +124,7 @@ const HOAPetWasteRemovalChattanooga = () => {
             If dog waste complaints keep coming up at board meetings, a scheduled service usually
             costs less in staff time and resident goodwill than it seems. Request a free walkthrough
             and quote at{' '}
-            <a className="text-green-700 underline font-semibold" href="https://scoopychatt.com/quoterequest">
+            <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quoterequest">
               scoopychatt.com/quoterequest
             </a>{' '}
             or call{' '}

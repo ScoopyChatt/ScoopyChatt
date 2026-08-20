@@ -12,7 +12,7 @@ const PodcastBlogPost = () => {
     "@type": "BlogPosting",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://scoopychatt.com/blog/podcast-episode"
+      "@id": "https://www.scoopychatt.com/blog/podcast-blog"
     },
     "headline": "Scoopy Doo LLC Founder Discusses Pet Waste Management on Recent Podcast",
     "description": "Listen to the Scoopy Doo LLC founder discuss pet waste management, yard cleanup, and business insights on this recent podcast episode.",
@@ -111,7 +111,7 @@ const PodcastBlogPost = () => {
       <SEOHead 
         title="Scoopy Doo LLC Founder Discusses Pet Waste Management on Recent Podcast"
         description="Listen to the Scoopy Doo LLC founder discuss pet waste management, yard cleanup, and business insights on this recent podcast episode."
-        canonicalUrl={`${CANONICAL_BASE_URL}/blog/podcast-episode`}
+        canonicalUrl={`${CANONICAL_BASE_URL}/blog/podcast-blog`}
         schema={schemaData}
       />
       <BlogPostTemplate 

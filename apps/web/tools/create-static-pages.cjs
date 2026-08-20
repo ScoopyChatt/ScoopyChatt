@@ -98,12 +98,31 @@ var pages = [
   { slug: 'reviews', title: 'Scoopy Doo Reviews | 90 Five-Star Reviews in Chattanooga, TN', desc: 'See why Chattanooga trusts Scoopy Doo for pet waste removal. 90 five-star Google reviews from homeowners across Chattanooga and North Georgia.', canonical: 'https://www.scoopychatt.com/reviews', body: '<h1>Scoopy Doo Reviews - 90 Five-Star Reviews in Chattanooga, TN</h1><p>Scoopy Doo LLC has 90 five-star reviews from homeowners, HOAs, and businesses across Chattanooga and North Georgia. Customers consistently mention reliable weekly visits, a thorough grid-pattern yard sweep, and gate photo confirmation after every service.</p><h2>What Chattanooga Customers Say</h2><p>Reviewers highlight consistent quality with no cut corners, professional and fully insured service, and a family-owned father-daughter team that treats every yard like their own. Read the full set of reviews on Google, or request a free quote to join over 150 active Scoopy Doo customers at scoopychatt.com/quoterequest.</p>' },
 ];
 
+// Removes the per-page content inject-seo.cjs adds to the homepage so this script
+// can reuse dist/index.html as a neutral template.
+function stripHomepageInjections(html) {
+  var out = html.replace(/<div id="scoopy-content"[\s\S]*?<\/div>/g, '');
+  out = out.replace(/<script type="application\/ld\+json">(?:(?!<\/script>)[\s\S])*?"@type":"FAQPage"(?:(?!<\/script>)[\s\S])*?<\/script>/g, '');
+  return out;
+}
+
+// Replacement values go through a function, never a '$1...$2' string: a price like
+// "$20 per visit" would otherwise be read as a capture-group reference.
+function setAttr(html, pattern, value) {
+  return html.replace(pattern, function (m, before, after) { return before + value + after; });
+}
+
 var template = null;
 var distIndex = path.join(DIST, 'index.html');
 var srcIndex = path.join(__dirname, '..', 'index.html');
 if (fs.existsSync(distIndex)) {
   template = fs.readFileSync(distIndex, 'utf8');
-  console.log('[csp] template from dist (' + template.length + ' bytes)');
+  // inject-seo.cjs has already written the homepage into dist/index.html, so the
+  // template arrives carrying the homepage's crawlable block and its FAQPage schema.
+  // Both are page-specific: left in place they duplicate homepage copy onto every
+  // page below and attach FAQ structured data that does not match the page.
+  template = stripHomepageInjections(template);
+  console.log('[csp] template from dist (' + template.length + ' bytes, homepage injections stripped)');
 } else if (fs.existsSync(srcIndex)) {
   template = fs.readFileSync(srcIndex, 'utf8');
   console.log('[csp] template from src (' + template.length + ' bytes)');
@@ -119,10 +138,19 @@ var SVC_LD_CSP = {
 for (var i = 0; i < pages.length; i++) {
   try {
     var p = pages[i];
+    // inject-seo.cjs owns the homepage: it writes dist/index.html with the homepage's
+    // crawlable block and FAQPage schema. Writing it again from the stripped template
+    // here would overwrite both with a second copy of the same content.
+    if (!p.slug) { console.log('[csp] skipping homepage (owned by inject-seo.cjs)'); continue; }
     var html = template;
-    html = html.replace(/<title>[^<]*<\/title>/, '<title>' + p.title + '<\/title>');
-    html = html.replace(/(<meta name="description" content=")[^"]*(")/, function(m,a,b){return a+p.desc+b;});
-    html = html.replace(/(<link rel="canonical" href=")[^"]*(")/, '$1' + p.canonical + '$2');
+    html = html.replace(/<title>[^<]*<\/title>/, function(){ return '<title>' + p.title + '<\/title>'; });
+    html = setAttr(html, /(<meta name="description" content=")[^"]*(")/, p.desc);
+    html = setAttr(html, /(<link rel="canonical" href=")[^"]*(")/, p.canonical);
+    html = setAttr(html, /(<meta property="og:title" content=")[^"]*(")/, p.title);
+    html = setAttr(html, /(<meta property="og:description" content=")[^"]*(")/, p.desc);
+    html = setAttr(html, /(<meta property="og:url" content=")[^"]*(")/, p.canonical);
+    html = setAttr(html, /(<meta name="twitter:title" content=")[^"]*(")/, p.title);
+    html = setAttr(html, /(<meta name="twitter:description" content=")[^"]*(")/, p.desc);
     html = html.replace('</body>', '<div id="scoopy-geo" style="display:none" aria-hidden="true">' + p.body + '</div></body>');
     var outDir = path.join(DIST, p.slug);
     fs.mkdirSync(outDir, { recursive: true });

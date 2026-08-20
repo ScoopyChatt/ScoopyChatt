@@ -15,6 +15,8 @@ const SUMMARY =
   "text notifications and a gate photo confirmation. Scoopy Doo LLC is a BBB Accredited Business (A- rating). No contracts required -- get a free " +
   "online quote at scoopychatt.com/quote.";
 
+const BASE = "https://www.scoopychatt.com";
+
 // [url, title, description]
 const PAGES = [
   ["/", "Dog Poop Removal & Pooper Scooper Service | Chattanooga TN", "Professional dog poop removal and pooper scooper service in Chattanooga, TN. Reliable weekly pet waste cleanup with online quotes, on-the-way texts, and gate photo confirmation."],
@@ -55,6 +57,25 @@ const PAGES = [
   ["/blog/how-often-clean-yard", "How Often Should You Clean Your Yard of Dog Waste? | Scoopy Doo", "Weekly is the gold standard. Learn the right cleanup frequency based on your dog count, yard size, and Chattanooga season."],
   ["/blog/signal-mountain", "Pet Waste Removal Tips for Signal Mountain, TN | Scoopy Doo Blog", "Scoopy Doo serves Signal Mountain with thorough yard cleanup. We handle larger lots and wooded terrain every week."],
   ["/blog/soddy-daisy", "Pet Waste Removal in Soddy-Daisy, TN | Scoopy Doo Blog", "Scoopy Doo serves Soddy-Daisy and Chickamauga Lake area homeowners. Waterfront cleanup protects the lake and your family."],
+  ["/pricing", "Dog Poop Removal Pricing in Chattanooga, TN | Scoopy Doo", "Simple, transparent pricing for weekly, twice-weekly, bi-weekly, and one-time dog poop removal in Chattanooga TN. Weekly from $20 per visit. No contracts, no hidden fees."],
+  ["/commercial", "Commercial and HOA Pet Waste Removal in Chattanooga, TN | Scoopy Doo", "Commercial and HOA pet waste removal in Chattanooga TN. Scheduled cleanup and pet waste stations for apartments, HOAs, dog parks, and businesses. Fully insured, no contracts."],
+  ["/reviews", "Scoopy Doo Reviews | 90 Five-Star Reviews in Chattanooga, TN", "See why Chattanooga trusts Scoopy Doo for pet waste removal. 90 five-star Google reviews from homeowners across Chattanooga and North Georgia."],
+  ["/podcast", "The Scoopy Doo Podcast | Chattanooga Pet Waste Removal", "Behind the scenes of Scoopy Doo LLC, the father-daughter pet waste removal company serving Chattanooga TN and North Georgia."],
+  ["/cost-calculator", "Dog Poop Cost Calculator | Chattanooga TN | Scoopy Doo", "Estimate weekly, twice-weekly, and one-time pooper scooper pricing in Chattanooga and North Georgia, then get a free exact quote from Scoopy Doo."],
+  ["/spring-special", "Spring Special: Buy 2 Months, Get 1 Free | Scoopy Doo", "Limited-time Chattanooga spring special from Scoopy Doo."],
+  ["/pet-safe-checklist", "Pet-Safe Yard Checklist | Scoopy Doo Chattanooga", "A free pet-safe yard checklist for Chattanooga dog owners."],
+  ["/dog-park-guide", "Chattanooga Dog Park Guide for Dog Owners | Scoopy Doo", "Discover Chattanooga's best dog parks. A local guide from Scoopy Doo."],
+  ["/blog/dog-poop-cleanup-chattanooga-summer-heat", "Dog Poop Cleanup in Chattanooga During Hot, Humid Weather | Scoopy Doo", "Summer heat and humidity make dog waste more dangerous. Learn why Chattanooga yards need regular cleanup during the hot months and how Scoopy Doo can help."],
+  ["/blog/best-dog-parks-chattanooga-tn", "7 Best Dog Parks in Chattanooga, TN (2026 Guide) | Scoopy Doo", "The best dog parks in Chattanooga TN for 2026, including Barks and Tails, Greenway Farms, and Bark City, with verified hours and addresses."],
+  ["/blog/winter-dog-poop-cleanup-chattanooga", "Winter Dog Poop Cleanup in Chattanooga: Why You Still Need Scooping Service | Scoopy Doo", "Cold weather does not break down dog waste. Here is why Chattanooga yards still need pet waste removal through winter, and what happens if you skip it."],
+  ["/blog/fall-yard-care-checklist-chattanooga", "Fall Yard Care Checklist for Chattanooga Dog Owners | Scoopy Doo", "Falling leaves hide dog waste and rain washes it into storm drains. Here is a fall yard care checklist for Chattanooga and North Georgia dog owners."],
+  ["/blog/hoa-pet-waste-removal-chattanooga", "HOA Pet Waste Removal in Chattanooga: A Guide for Community Boards | Scoopy Doo", "Scoopy Doo handles pet waste removal for HOAs, condo associations, and apartment communities across Chattanooga and North Georgia."],
+  ["/blog/one-time-dog-poop-cleanup-chattanooga", "One-Time Dog Poop Cleanup in Chattanooga: Cost and How It Works | Scoopy Doo", "One-time dog poop cleanups in Chattanooga start at $85. Here is what is included, when it makes sense, and how to book a single visit."],
+  ["/blog/new-puppy-pet-waste-removal-chattanooga", "New Puppy Owner Guide: Pet Waste Cleanup in Chattanooga | Scoopy Doo", "Bringing home a new puppy in Chattanooga? Here is how to set up a pet waste cleanup routine, why it matters for house training and health, and what professional service costs."],
+  ["/blog/yard-cleanup-before-selling-home-chattanooga", "Do You Need to Clean Up Dog Waste Before Selling Your Chattanooga Home? | Scoopy Doo", "Selling a home in Chattanooga? Here is why yard cleanup and pet waste removal matter before listing photos and showings, plus a pre-listing checklist and pricing."],
+  ["/blog/pooper-scooper-cost-chattanooga", "How Much Does Pooper Scooper Service Cost in Chattanooga? | Scoopy Doo", "Scoopy Doo weekly service starts at $20 per visit for one dog. 2026 pricing for weekly, every-other-week, and one-time pet waste removal in Chattanooga TN."],
+  ["/blog/dog-poop-removal-north-georgia", "Pet Waste Removal in Ringgold, Rossville and North Georgia | Scoopy Doo", "Scoopy Doo serves Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA. Same weekly pet waste removal as Chattanooga. Starting at $20/visit. No contracts."],
+  ["/blog/podcast-blog", "Scoopy Doo Discusses Pet Waste Management on a Recent Podcast | Scoopy Doo", "Scoopy Doo father-daughter team discusses pet waste management, lawn health, and building a pet waste removal company in Chattanooga."],
 ];
 
 // Location/service-area pages
@@ -86,7 +107,7 @@ function main() {
   ];
 
   for (const [url, title, desc] of PAGES) {
-    lines.push("- [" + title + "](" + url + "): " + desc);
+    lines.push("- [" + title + "](" + BASE + url + "): " + desc);
   }
 
   const outputPath = path.join(process.cwd(), "public", "llms.txt");

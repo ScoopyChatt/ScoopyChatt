@@ -36,13 +36,13 @@ const YardCleanupPage = React.lazy(() => import('@/pages/YardCleanupPage.jsx'));
 const ServiceAreasPage = React.lazy(() => import('@/pages/ServiceAreasPage.jsx'));
 const PricingPage = React.lazy(() => import('@/pages/PricingPage.jsx'));
 const CommercialPage = React.lazy(() => import('@/pages/CommercialPage.jsx'));
+const ReviewsPage = React.lazy(() => import('@/pages/ReviewsPage.jsx'));
 
 // Location Template for dynamic routing
 const LocationTemplate = React.lazy(() => import('@/components/LocationTemplate.jsx'));
 
 // Blogs
 const BlogListPage = React.lazy(() => import('@/pages/BlogListPage.jsx'));
-const BlogPostTemplate = React.lazy(() => import('@/components/BlogPostTemplate.jsx'));
 
 // Specific/Working Blog Pages (Live)
 const HowOftenCleanYard = React.lazy(() => import('@/pages/blog/HowOftenCleanYardPage.jsx'));
@@ -63,6 +63,22 @@ const HOAPetWasteRemovalChattanooga = React.lazy(() => import('@/pages/blog/HOAP
 const NewPuppyOwnerGuideChattanooga = React.lazy(() => import('@/pages/blog/NewPuppyOwnerGuideChattanooga.jsx'));
 const YardCleanupBeforeSellingHomeChattanooga = React.lazy(() => import('@/pages/blog/YardCleanupBeforeSellingHomeChattanooga.jsx'));
 
+// Blog posts that shipped as components but were never routed (they used to fall
+// through to /blog/:slug and render an empty template titled "undefined")
+const ProfessionalWasteRemovalBenefits = React.lazy(() => import('@/pages/blog/BlogArticle1_ProfessionalWasteRemovalBenefits.jsx'));
+const SeasonalPetCareTips = React.lazy(() => import('@/pages/blog/BlogArticle2_SeasonalPetCareTips.jsx'));
+const HealthBenefitsYardCleanup = React.lazy(() => import('@/pages/blog/BlogArticle3_HealthBenefitsYardCleanup.jsx'));
+const CustomerSuccessStories = React.lazy(() => import('@/pages/blog/BlogArticle4_CustomerSuccessStories.jsx'));
+const DIYVsProfessional = React.lazy(() => import('@/pages/blog/BlogArticle5_DIYVsProfessional.jsx'));
+const LawnHealthAndPetWaste = React.lazy(() => import('@/pages/blog/BlogArticle6_LawnHealthAndPetWaste.jsx'));
+const HealthRisksOfPetWaste = React.lazy(() => import('@/pages/blog/BlogArticle7_HealthRisksOfPetWaste.jsx'));
+const PetWasteManagementGuide = React.lazy(() => import('@/pages/blog/BlogArticle8_PetWasteManagementGuide.jsx'));
+const HowOftenScoopDogPoopChattanooga = React.lazy(() => import('@/pages/blog/HowOftenScoopDogPoopChattanooga.jsx'));
+const IsDogWasteBadForLawn = React.lazy(() => import('@/pages/blog/IsDogWasteBadForLawn.jsx'));
+const IsDogPoopHurtingYourChattanoogaYard = React.lazy(() => import('@/pages/blog/IsDogPoopHurtingYourChattanoogaYard.jsx'));
+const BestPooperScooperServicesChattanooga = React.lazy(() => import('@/pages/blog/BestPooperScooperServicesChattanooga.jsx'));
+const SpringPetCareChecklist = React.lazy(() => import('@/pages/blog/SpringPetCareChecklist.jsx'));
+
 // Media / Utilities
 const PodcastPage = React.lazy(() => import('@/pages/PodcastPage.jsx'));
 const RedditOAuthCallbackPage = React.lazy(() => import('@/pages/RedditOAuthCallbackPage.jsx'));
@@ -70,6 +86,7 @@ const QuickBooksOAuthCallbackPage = React.lazy(() => import('@/pages/QuickBooksO
 
 // Sitemap Route
 const SitemapXML = React.lazy(() => import('@/pages/SitemapXML.jsx'));
+const NotFoundPage = React.lazy(() => import('@/pages/NotFoundPage.jsx'));
 import HowItWorksPage from '@/pages/HowItWorksPage.jsx';
 
 const RouteTracker = () => {
@@ -126,6 +143,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/commercial" element={<CommercialPage />} />
+          <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/press" element={<PressPage />} />
           <Route path="/faq" element={<FAQPage />} />
@@ -173,21 +191,23 @@ function App() {
           <Route path="/blog/hoa-pet-waste-removal-chattanooga" element={<HOAPetWasteRemovalChattanooga />} />
 <Route path="/blog/new-puppy-pet-waste-removal-chattanooga" element={<NewPuppyOwnerGuideChattanooga />} />
 <Route path="/blog/yard-cleanup-before-selling-home-chattanooga" element={<YardCleanupBeforeSellingHomeChattanooga />} />
-            <Route path="/blog/:slug" element={<BlogPostTemplate />} />
+          <Route path="/blog/professional-waste-removal-benefits" element={<ProfessionalWasteRemovalBenefits />} />
+          <Route path="/blog/seasonal-pet-care-tips" element={<SeasonalPetCareTips />} />
+          <Route path="/blog/health-benefits-yard-cleanup" element={<HealthBenefitsYardCleanup />} />
+          <Route path="/blog/customer-success-stories" element={<CustomerSuccessStories />} />
+          <Route path="/blog/diy-vs-professional" element={<DIYVsProfessional />} />
+          <Route path="/blog/lawn-health-and-pet-waste" element={<LawnHealthAndPetWaste />} />
+          <Route path="/blog/health-risks-of-pet-waste" element={<HealthRisksOfPetWaste />} />
+          <Route path="/blog/pet-waste-management-guide" element={<PetWasteManagementGuide />} />
+          <Route path="/blog/how-often-scoop-dog-poop-chattanooga" element={<HowOftenScoopDogPoopChattanooga />} />
+          <Route path="/blog/is-dog-waste-bad-for-lawn" element={<IsDogWasteBadForLawn />} />
+          <Route path="/blog/is-dog-poop-hurting-your-chattanooga-yard" element={<IsDogPoopHurtingYourChattanoogaYard />} />
+          <Route path="/blog/best-pooper-scooper-services-chattanooga" element={<BestPooperScooperServicesChattanooga />} />
+          <Route path="/blog/spring-pet-care-checklist" element={<SpringPetCareChecklist />} />
 
-          <Route path="*" element={
-            <>
-              <Helmet><meta name="robots" content="noindex, nofollow" /></Helmet>
-              <div className="min-h-screen flex items-center justify-center bg-background">
-              <div className="text-center">
-                <h1 className="mb-4 text-4xl font-bold">404 - Page Not Found</h1>
-                <p className="text-muted-foreground mb-6">The page you're looking for doesn't exist.</p>
-                <a href="/" className="text-primary hover:underline font-bold">Back to home</a>
-              </div>
-            </div>
-          </>
-          } />
-                  <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
+
+          <Route path="*" element={<NotFoundPage />} />
           </Routes>
       </Suspense>
       

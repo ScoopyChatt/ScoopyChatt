@@ -6,16 +6,18 @@ export const seoConfig = {
   legalName: 'Scoopy Doo LLC',
   phone: '423-600-5040',
   email: 'info@scoopychatt.com',
+  // Service-area business: based in Ringgold GA, serving the greater Chattanooga
+  // area and North Georgia. No street address is published (no walk-in location),
+  // which keeps schema consistent with the Google Business Profile listing.
   address: {
-    streetAddress: '100 Market Street',
-    addressLocality: 'Chattanooga',
-    addressRegion: 'TN',
-    postalCode: '37402',
+    addressLocality: 'Ringgold',
+    addressRegion: 'GA',
+    postalCode: '30736',
     addressCountry: 'US'
   },
   geo: {
-    latitude: '35.0456',
-    longitude: '-85.3097'
+    latitude: '34.9159',
+    longitude: '-85.1091'
   },
   businessHours: [
     {

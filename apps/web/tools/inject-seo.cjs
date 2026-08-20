@@ -90,6 +90,7 @@ const routes = {
   '/press': ['Scoopy Doo in the News | Press and Media Coverage | Chattanooga Pet Waste Removal', 'See news coverage of Scoopy Doo LLC, the largest pet waste removal company in the Chattanooga area. Featured in the Chattanoogan and on WDEF News 12.'],
   '/': ['Pet Waste Removal & Dog Poop Removal | Chattanooga TN | Scoopy Doo', 'Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 90+ Google reviews. Weekly service from $20 per visit. Free quotes.'],
   '/services': ['Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo', 'Weekly, every-other-week & one-time dog poop removal in Chattanooga. See what Scoopy Doo offers and book today.'],
+  '/podcast': ["The Scoopy Doo Podcast | Chattanooga Pet Waste Removal", "Behind the scenes of Scoopy Doo LLC, the father-daughter pet waste removal company serving Chattanooga TN and North Georgia."],
   '/near-me': ['Pooper Scooper Service Near Me in Chattanooga, TN', 'Looking for a pooper scooper service near you in Chattanooga? Scoopy Doo offers reliable local dog waste removal.'],
   '/one-time-cleanup': ['One-Time Dog Poop Cleanup in Chattanooga, TN | Scoopy Doo', 'Get a one-time dog poop cleanup in Chattanooga, TN. Perfect for spring cleaning or first-time service.'],
   "/cost-calculator": ["Dog Poop Cost Calculator | Chattanooga TN | Scoopy Doo", "Estimate weekly, twice-weekly, and one-time pooper scooper pricing in Chattanooga and North Georgia, then get a free exact quote from Scoopy Doo."],
@@ -163,23 +164,28 @@ const IMAGES = {
   '/doggy-doors': { url: 'https://www.scoopychatt.com/images/doggy-doors-hero.jpg', w: 1376, h: 768, alt: 'Dog using a professionally installed Scoopy Doo Doggy Door with app-controlled smart collar access.' }
 };
 
+// Replacement values are passed through a function rather than a '$1...$2' string:
+// a value containing a dollar figure like "$20 per visit" would otherwise be read
+// as a capture-group reference and mangle the tag (it turned "$20" into '"0').
+function setAttr(html, pattern, value) {
+  return html.replace(pattern, function (m, before, after) { return before + value + after; });
+}
+
 function injectMeta(html, title, desc, canonical, staticHtml, schemaHtml, image) {
-  var result = html
-    .replace(/<title>[^<]*<\/title>/, '<title>' + title + '<\/title>')
-    .replace(/(<meta name="description" content=")[^"]*(")/,'$1' + desc + '$2')
-    .replace(/(<link rel="canonical" href=")[^"]*(")/,'$1' + canonical + '$2')
-    .replace(/(<meta property="og:title" content=")[^"]*(")/,'$1' + title + '$2')
-    .replace(/(<meta property="og:description" content=")[^"]*(")/,'$1' + desc + '$2')
-    .replace(/(<meta property="og:url" content=")[^"]*(")/,'$1' + canonical + '$2')
-    .replace(/(<meta name="twitter:title" content=")[^"]*(")/,'$1' + title + '$2')
-    .replace(/(<meta name="twitter:description" content=")[^"]*(")/,'$1' + desc + '$2');
+  var result = html.replace(/<title>[^<]*<\/title>/, function () { return '<title>' + title + '<\/title>'; });
+  result = setAttr(result, /(<meta name="description" content=")[^"]*(")/, desc);
+  result = setAttr(result, /(<link rel="canonical" href=")[^"]*(")/, canonical);
+  result = setAttr(result, /(<meta property="og:title" content=")[^"]*(")/, title);
+  result = setAttr(result, /(<meta property="og:description" content=")[^"]*(")/, desc);
+  result = setAttr(result, /(<meta property="og:url" content=")[^"]*(")/, canonical);
+  result = setAttr(result, /(<meta name="twitter:title" content=")[^"]*(")/, title);
+  result = setAttr(result, /(<meta name="twitter:description" content=")[^"]*(")/, desc);
   if (image) {
-    result = result
-      .replace(/(<meta property="og:image" content=")[^"]*(")/,'$1' + image.url + '$2')
-      .replace(/(<meta property="og:image:width" content=")[^"]*(")/,'$1' + image.w + '$2')
-      .replace(/(<meta property="og:image:height" content=")[^"]*(")/,'$1' + image.h + '$2')
-      .replace(/(<meta property="og:image:alt" content=")[^"]*(")/,'$1' + image.alt + '$2')
-      .replace(/(<meta name="twitter:image" content=")[^"]*(")/,'$1' + image.url + '$2');
+    result = setAttr(result, /(<meta property="og:image" content=")[^"]*(")/, image.url);
+    result = setAttr(result, /(<meta property="og:image:width" content=")[^"]*(")/, image.w);
+    result = setAttr(result, /(<meta property="og:image:height" content=")[^"]*(")/, image.h);
+    result = setAttr(result, /(<meta property="og:image:alt" content=")[^"]*(")/, image.alt);
+    result = setAttr(result, /(<meta name="twitter:image" content=")[^"]*(")/, image.url);
   }
   if (staticHtml) {
     result = result.replace(BODY_CLOSE, '<div id="scoopy-content" style="display:none" aria-hidden="true">' + staticHtml + DIV_CLOSE + BODY_CLOSE);

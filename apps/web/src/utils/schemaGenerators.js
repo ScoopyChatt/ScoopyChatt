@@ -16,14 +16,15 @@ export function generateLocalBusinessSchema() {
     "logo": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Chattanooga",
-      "addressRegion": "TN",
+      "addressLocality": "Ringgold",
+      "addressRegion": "GA",
+      "postalCode": "30736",
       "addressCountry": "US"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 35.0456,
-      "longitude": -85.3097
+      "latitude": 34.9159,
+      "longitude": -85.1091
     },
     "areaServed": [
       { "@type": "City", "name": "Chattanooga", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Chattanooga,_Tennessee" },

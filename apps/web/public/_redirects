@@ -1,6 +1,0 @@
-
-# Redirect www to non-www
-https://www.scoopychatt.com/* https://scoopychatt.com/:splat 301!
-
-# Fallback for SPA routing
-/* /index.html 200
