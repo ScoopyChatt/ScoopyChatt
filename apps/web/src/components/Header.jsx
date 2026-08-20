@@ -15,6 +15,7 @@ const Header = () => {
     { name: 'How It Works', path: '/how-it-works' },
     { name: 'Service Areas', path: '/near-me' },
     { name: 'One-Time Cleanup', path: '/one-time-cleanup' },
+    { name: 'Doggy Doors', path: '/doggy-doors' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/quote' }
   ];

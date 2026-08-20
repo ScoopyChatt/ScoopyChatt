@@ -101,6 +101,7 @@ const Footer = () => {
               <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Dog Poop Removal</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Pet Waste Removal</Link></li>
               <li><Link to="/one-time-cleanup" className="hover:text-primary transition-colors text-sm">One-Time Poop Pick Up Service</Link></li>
+              <li><Link to="/doggy-doors" className="hover:text-primary transition-colors text-sm">Doggy Door Installation</Link></li>
               <li><Link to="/commercial" className="hover:text-primary transition-colors text-sm">Commercial &amp; HOA Service</Link></li>
             </ul>
           </div>
