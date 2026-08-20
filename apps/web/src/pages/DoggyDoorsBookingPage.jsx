@@ -162,6 +162,14 @@ const DoggyDoorsBookingPage = () => {
 
     setSubmitting(true);
     const entry = SERVICE_AREA[form.zip];
+    const detailLines = [
+      `Tier: ${tier.name} - ${tier.product} ($${tier.price} installed)`,
+      `Door location: ${form.doorLocation || 'Not specified'}`,
+      `Dog: ${form.dog || 'Not specified'}`,
+      `Preferred install window: ${form.installWindow || 'Flexible'}`,
+    ];
+    if (form.notes) detailLines.push(`Customer notes: ${form.notes}`);
+    const installSummary = detailLines.join('\n');
     const payload = {
       full_name: form.name,
       email: form.email,
@@ -177,7 +185,11 @@ const DoggyDoorsBookingPage = () => {
       door_location: form.doorLocation || 'Not specified',
       dog_breed_weight: form.dog || 'Not specified',
       preferred_install_window: form.installWindow || 'Flexible',
-      additional_notes: form.notes || '',
+      // The install details also go out as one preformatted block. The individual
+      // fields above stay for anyone mapping them separately, but this means a
+      // single mapped field carries everything needed to do the job.
+      additional_notes: installSummary,
+      customer_notes: form.notes || '',
       service_area: entry ? entry.area : '',
       route_day: entry && entry.day ? entry.day : '',
       number_of_dogs: '',
