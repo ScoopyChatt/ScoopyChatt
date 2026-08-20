@@ -149,7 +149,14 @@ locationPages.forEach(function(loc) {
   ];
 });
 
-function injectMeta(html, title, desc, canonical, staticHtml, schemaHtml) {
+// Per-route social share image. Routes not listed here keep the site default
+// og:image from index.html. Crawlers read this static HTML, not the React app,
+// so a route needs an entry here for its link preview to differ.
+const IMAGES = {
+  '/doggy-doors': { url: 'https://www.scoopychatt.com/images/doggy-doors-hero.png', w: 1376, h: 768, alt: 'Dog using a professionally installed Scoopy Doo Doggy Door with app-controlled smart collar access.' }
+};
+
+function injectMeta(html, title, desc, canonical, staticHtml, schemaHtml, image) {
   var result = html
     .replace(/<title>[^<]*<\/title>/, '<title>' + title + '<\/title>')
     .replace(/(<meta name="description" content=")[^"]*(")/,'$1' + desc + '$2')
@@ -159,6 +166,14 @@ function injectMeta(html, title, desc, canonical, staticHtml, schemaHtml) {
     .replace(/(<meta property="og:url" content=")[^"]*(")/,'$1' + canonical + '$2')
     .replace(/(<meta name="twitter:title" content=")[^"]*(")/,'$1' + title + '$2')
     .replace(/(<meta name="twitter:description" content=")[^"]*(")/,'$1' + desc + '$2');
+  if (image) {
+    result = result
+      .replace(/(<meta property="og:image" content=")[^"]*(")/,'$1' + image.url + '$2')
+      .replace(/(<meta property="og:image:width" content=")[^"]*(")/,'$1' + image.w + '$2')
+      .replace(/(<meta property="og:image:height" content=")[^"]*(")/,'$1' + image.h + '$2')
+      .replace(/(<meta property="og:image:alt" content=")[^"]*(")/,'$1' + image.alt + '$2')
+      .replace(/(<meta name="twitter:image" content=")[^"]*(")/,'$1' + image.url + '$2');
+  }
   if (staticHtml) {
     result = result.replace(BODY_CLOSE, '<div id="scoopy-content" style="display:none" aria-hidden="true">' + staticHtml + DIV_CLOSE + BODY_CLOSE);
   }
@@ -210,7 +225,7 @@ for (var route in routes) {
   var locSlug = route.startsWith('/service/') ? route.replace('/service/', '') : null;
   var staticHtml = SC[route] || (locSlug ? makeLocContent(locSlug) : '');
   var schemaHtml = SCHEMA[route] || '';
-  var html = injectMeta(template, title, desc, canonical, staticHtml, schemaHtml);
+  var html = injectMeta(template, title, desc, canonical, staticHtml, schemaHtml, IMAGES[route]);
   var dirPath = path.join(distDir, route);
   fs.mkdirSync(dirPath, { recursive: true });
   var __s = routeSchema(route); if (__s) { html = html.replace("</head>", __s + "</head>"); }

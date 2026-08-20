@@ -149,6 +149,17 @@ const DoggyDoorsPage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
+                  <div className="rounded-3xl border border-border shadow-xl overflow-hidden mb-8">
+                    <img
+                      src="/images/doggy-doors-hero.png"
+                      alt="Dog using a professionally installed Scoopy Doo Doggy Door with app-controlled smart collar access."
+                      width={1376}
+                      height={768}
+                      loading="eager"
+                      className="w-full h-auto block"
+                    />
+                  </div>
+
                   <div className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-bold text-primary mb-6 tracking-wide uppercase">
                     <PawPrint className="mr-2 h-4 w-4" />
                     New From Scoopy Doo - Founding Customer Launch
