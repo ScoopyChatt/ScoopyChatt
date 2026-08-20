@@ -116,6 +116,13 @@ export const seoMetadata = {
     image: "https://www.scoopychatt.com/images/doggy-doors-hero.jpg",
     ogType: "website"
   },
+  "/doggy-doors/book": {
+    title: "Book Your Doggy Door Install | Scoopy Doo",
+    description: "Book a professional dog door or pet door installation in Chattanooga, TN and North Georgia. We confirm your install date within 1 business day.",
+    canonical: `${CANONICAL_BASE_URL}/doggy-doors/book`,
+    noindex: true,
+    ogType: "website"
+  },
   "/privacy-policy": {
     title: "Privacy Policy | Scoopy Doo LLC",
     description: "Read the privacy policy for Scoopy Doo LLC. We protect your personal information and never share it with third parties.",

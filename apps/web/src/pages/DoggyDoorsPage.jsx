@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   PawPrint,
@@ -21,54 +22,13 @@ import Footer from '@/components/Footer.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
 import apiServerClient from '@/lib/apiServerClient.js';
+import { TIERS } from '@/data/doggyDoorTiers.js';
 
-// Good / Better / Best lineup - see project notes for the pricing math behind these numbers.
-const TIERS = [
-  {
-    key: 'good',
-    name: 'GOOD',
-    tagline: 'Reliable and affordable',
-    price: 399,
-    product: 'Endura Flap door-mount pet door',
-    features: [
-      'Soft flap with a weatherproof seal',
-      'Lifetime manufacturer warranty on the door itself',
-      'Professionally measured and installed for your dog',
-      'Great fit for one or two smaller dogs',
-    ],
-  },
-  {
-    key: 'better',
-    name: 'BETTER',
-    tagline: 'Our most-installed option',
-    price: 649,
-    product: 'PlexiDor rigid door-mount pet door',
-    features: [
-      'Rigid locking panel, keeps other animals out when locked',
-      '10-year manufacturer warranty',
-      'Better insulation and security than a flap door',
-      'Professionally measured and installed for your dog',
-    ],
-    popular: true,
-  },
-  {
-    key: 'best',
-    name: 'BEST',
-    tagline: 'Smart, app-controlled access',
-    price: 749,
-    product: 'PetSafe SmartDoor, app-controlled',
-    features: [
-      'Lock and unlock access from your phone',
-      'Set a schedule for when your dog can go out',
-      'Get a text alert every time your dog uses it',
-      'Professionally measured, installed, and paired with your WiFi',
-    ],
-  },
-];
 
 const TIER_ICONS = { good: Wrench, better: Lock, best: Wifi };
 
 const DoggyDoorsPage = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({ name: '', email: '', phone: '', zip: '' });
   const [honeypot, setHoneypot] = useState('');
   const [unlocked, setUnlocked] = useState(false);
@@ -121,10 +81,17 @@ const DoggyDoorsPage = () => {
   const handleChooseTier = async (tier) => {
     setChosenTier(tier.key);
     setConfirming(true);
-    await sendLead(
-      `ZIP ${form.zip} - Chose ${tier.name} tier ($${tier.price}, ${tier.product}) - Doggy Door Founding Customer`
-    );
+    // Fire the lead notification, but never let it block the booking hand-off -
+    // the customer must always reach the booking form.
+    try {
+      await sendLead(
+        `ZIP ${form.zip} - Chose ${tier.name} tier ($${tier.price}, ${tier.product}) - Doggy Door Founding Customer`
+      );
+    } catch (err) {
+      console.error('Lead notification failed (continuing to booking):', err);
+    }
     setConfirming(false);
+    navigate(`/doggy-doors/book?tier=${tier.key}`);
   };
 
   return (

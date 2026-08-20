@@ -12,7 +12,7 @@ import { toast } from 'sonner';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CheckCircle2, MapPin } from 'lucide-react';
 
-const SERVICE_AREA = {
+export const SERVICE_AREA = {
   "37350": { area: "Lookout Mountain", day: "Tuesday" },
   "30750": { area: "Lookout Mountain", day: "Tuesday" },
   '37302': { area: 'Apison', day: 'Friday' },
@@ -64,7 +64,7 @@ const cityForZip = (zip) => REAL_CITY_BY_ZIP[zip] || 'Chattanooga';
 // Jobber quote was ever created). Strip a trailing city/state/zip the customer
 // already gave us elsewhere so we always send Jobber a clean street-only value,
 // regardless of how they formatted it.
-function sanitizeStreetAddress(raw, zip) {
+export function sanitizeStreetAddress(raw, zip) {
   let s = (raw || '').trim();
   const city = cityForZip(zip);
   const patterns = [
@@ -90,19 +90,19 @@ function sanitizeStreetAddress(raw, zip) {
 
 // Restricted (HTTP referrer: scoopychatt.com only) client-side key, Places API (New) enabled.
 // Safe to ship in the bundle - the restriction, not secrecy, is what protects it.
-const GOOGLE_PLACES_API_KEY =
+export const GOOGLE_PLACES_API_KEY =
   import.meta.env.VITE_GOOGLE_PLACES_API_KEY ||
   'AIzaSyCPG4BafhslOYkpRx0ue3nB5mOkWZE5gAM';
 
 // Center of the Chattanooga / North Georgia service area, used to bias Places
 // Autocomplete suggestions toward addresses we actually service.
-const SERVICE_AREA_CENTER = { latitude: 35.0456, longitude: -85.3097 };
+export const SERVICE_AREA_CENTER = { latitude: 35.0456, longitude: -85.3097 };
 
-const WEBHOOK_URL =
+export const WEBHOOK_URL =
   import.meta.env.VITE_QUOTE_WEBHOOK_URL ||
   'https://hook.us2.make.com/nsb476cxnhmejirr5aq6em1ce4royvla';
 
-const JOBBER_ZAPIER_URL =
+export const JOBBER_ZAPIER_URL =
   import.meta.env.VITE_JOBBER_ZAPIER_URL ||
   'https://hooks.zapier.com/hooks/catch/3191509/444yusn/';
 

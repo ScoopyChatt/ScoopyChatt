@@ -24,6 +24,7 @@ const QuoteRequestPage = React.lazy(() => import('@/pages/QuoteRequestPage.jsx')
 const ThankYouPage = React.lazy(() => import('@/pages/ThankYouPage.jsx'));
 const SpringSpecialPage = React.lazy(() => import('@/pages/SpringSpecialPage.jsx'));
 const DoggyDoorsPage = React.lazy(() => import('@/pages/DoggyDoorsPage.jsx'));
+const DoggyDoorsBookingPage = React.lazy(() => import('@/pages/DoggyDoorsBookingPage.jsx'));
 const PrivacyPolicyPage = React.lazy(() => import('@/pages/PrivacyPolicyPage.jsx'));
 const TermsOfServicePage = React.lazy(() => import('@/pages/TermsOfServicePage.jsx'));
 const PetSafeChecklistLandingPage = React.lazy(() => import('@/pages/PetSafeChecklistLandingPage.jsx'));
@@ -133,6 +134,7 @@ function App() {
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/spring-special" element={<SpringSpecialPage />} />
           <Route path="/doggy-doors" element={<DoggyDoorsPage />} />
+          <Route path="/doggy-doors/book" element={<DoggyDoorsBookingPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-service" element={<TermsOfServicePage />} />
           
