@@ -160,10 +160,10 @@ const AboutPage = () => {
             <h2 className="text-2xl font-bold text-foreground text-center mb-8">Scoopy Doo In Action</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { src: "/images/service-action-yard.jpg", alt: "Scoopy Doo technician cleaning a Chattanooga yard" },
-                { src: "/images/service-bags-removed.jpg", alt: "Waste double-bagged and removed from property" },
-                { src: "/images/service-luxury-home.jpg", alt: "Scoopy Doo servicing a luxury property" },
-                { src: "/images/happy-customers.jpg", alt: "Happy Scoopy Doo customers with clean yard" },
+                { src: "/service-action-yard.jpg", alt: "Scoopy Doo technician cleaning a Chattanooga yard" },
+                { src: "/service-bags-removed.jpg", alt: "Waste double-bagged and removed from property" },
+                { src: "/service-luxury-home.jpg", alt: "Scoopy Doo servicing a luxury property" },
+                { src: "/happy-customers.jpg", alt: "Happy Scoopy Doo customers with clean yard" },
               ].map((img, i) => (
                 <div key={i} className="rounded-xl overflow-hidden border border-border shadow aspect-square bg-muted">
                   <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
