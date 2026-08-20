@@ -153,7 +153,7 @@ locationPages.forEach(function(loc) {
 // og:image from index.html. Crawlers read this static HTML, not the React app,
 // so a route needs an entry here for its link preview to differ.
 const IMAGES = {
-  '/doggy-doors': { url: 'https://www.scoopychatt.com/images/doggy-doors-hero.png', w: 1376, h: 768, alt: 'Dog using a professionally installed Scoopy Doo Doggy Door with app-controlled smart collar access.' }
+  '/doggy-doors': { url: 'https://www.scoopychatt.com/images/doggy-doors-hero.jpg', w: 1376, h: 768, alt: 'Dog using a professionally installed Scoopy Doo Doggy Door with app-controlled smart collar access.' }
 };
 
 function injectMeta(html, title, desc, canonical, staticHtml, schemaHtml, image) {

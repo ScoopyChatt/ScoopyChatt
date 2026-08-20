@@ -151,7 +151,7 @@ const DoggyDoorsPage = () => {
                 >
                   <div className="rounded-3xl border border-border shadow-xl overflow-hidden mb-8">
                     <img
-                      src="/images/doggy-doors-hero.png"
+                      src="/images/doggy-doors-hero.jpg"
                       alt="Dog using a professionally installed Scoopy Doo Doggy Door with app-controlled smart collar access."
                       width={1376}
                       height={768}

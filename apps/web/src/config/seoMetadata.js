@@ -113,7 +113,7 @@ export const seoMetadata = {
     title: "Professional Dog Door Installation in Chattanooga, TN | Scoopy Doo Doggy Doors",
     description: "Scoopy Doo Doggy Doors installs professional dog doors in Chattanooga and North Georgia homes. Good, Better, and Best options, professionally measured and installed. Founding Customer pricing for the first 20 installs.",
     canonical: `${CANONICAL_BASE_URL}/doggy-doors`,
-    image: "https://www.scoopychatt.com/images/doggy-doors-hero.png",
+    image: "https://www.scoopychatt.com/images/doggy-doors-hero.jpg",
     ogType: "website"
   },
   "/privacy-policy": {
