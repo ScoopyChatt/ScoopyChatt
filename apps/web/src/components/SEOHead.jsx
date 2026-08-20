@@ -3,7 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { seoMetadata, getBlogPostMetadata } from '@/config/seoMetadata.js';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
-import { generateLocalBusinessSchema, generateArticleSchema, generateFAQPageSchema } from '@/utils/schemaGenerators.js';
+import { generateArticleSchema, generateFAQPageSchema } from '@/utils/schemaGenerators.js';
 
 const SEOHead = ({ 
   path,
@@ -38,10 +38,6 @@ const SEOHead = ({
   const schemasToRender = [...inputSchemas];
 
   // Auto-inject schemas based on props/path
-  const hasLocalBiz = schemasToRender.some(s => s['@type'] === 'LocalBusiness');
-  if (!hasLocalBiz) {
-    schemasToRender.push(generateLocalBusinessSchema());
-  }
 
   if (articleMetadata) {
     const hasArticle = schemasToRender.some(s => s['@type'] === 'BlogPosting' || s['@type'] === 'Article');

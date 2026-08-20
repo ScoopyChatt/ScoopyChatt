@@ -12,7 +12,7 @@ import FloatingCTA from '@/components/FloatingCTA.jsx';
 import FAQSection from '@/components/FAQSection.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
-import { generateLocalBusinessSchema, generateFAQPageSchema, generateBreadcrumbSchema, generateLocationSchema } from '@/utils/schemaGenerators.js';
+import { generateFAQPageSchema, generateBreadcrumbSchema, generateLocationSchema } from '@/utils/schemaGenerators.js';
 import { locations } from '@/data/locations.js';
 
 const LocationTemplate = ({ city: propCity }) => {
@@ -79,9 +79,6 @@ const LocationTemplate = ({ city: propCity }) => {
         <meta property="og:description" content={seoDescription} />
         <meta property="og:url" content={canonicalUrl} />
         <meta name="twitter:card" content="summary" />
-        <script type="application/ld+json">
-          {JSON.stringify(generateLocalBusinessSchema())}
-        </script>
         <script type="application/ld+json">
           {JSON.stringify(locationSchema)}
         </script>

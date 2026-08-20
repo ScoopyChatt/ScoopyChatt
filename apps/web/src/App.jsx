@@ -9,7 +9,6 @@ import ChatWidgetGate from '@/components/ChatWidgetGate.jsx';
 import { useGTM } from '@/hooks/useGTM.js';
 import { usePixel } from '@/hooks/usePixel.js';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
-import { generateLocalBusinessSchema } from '@/utils/seoHelpers.js';
 
 // Lazy loaded pages for code splitting
 const CoreServicePage = React.lazy(() => import('@/pages/CoreServicePage.jsx'));
@@ -103,9 +102,6 @@ function App() {
         <meta property="og:image" content="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/8088ef4935a7739f1747caefac1fdcc6.jpg" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL_BASE_URL} />
-        <script type="application/ld+json">
-          {JSON.stringify(generateLocalBusinessSchema())}
-        </script>
       </Helmet>
       
       <style>{`

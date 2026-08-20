@@ -7,7 +7,6 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import { Button } from '@/components/ui/button';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
-import { generateLocalBusinessSchema } from '@/utils/schemaGenerators.js';
 
 const AboutPage = () => {
   const canonicalUrl = getCanonicalUrl('/about');
@@ -35,7 +34,6 @@ const AboutPage = () => {
         <meta property="og:title" content="About Scoopy Doo | Chattanooga Pet Waste Removal" />
         <meta property="og:description" content="Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company." />
         <meta property="og:url" content={canonicalUrl} />
-        <script type="application/ld+json">{JSON.stringify(generateLocalBusinessSchema())}</script>
       </Helmet>
 
       <Header />
