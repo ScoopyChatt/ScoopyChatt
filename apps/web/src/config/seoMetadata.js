@@ -109,6 +109,12 @@ export const seoMetadata = {
     canonical: `${CANONICAL_BASE_URL}/how-it-works`,
     ogType: "website"
   },
+  "/doggy-doors": {
+    title: "Professional Dog Door Installation in Chattanooga, TN | Scoopy Doo Doggy Doors",
+    description: "Scoopy Doo Doggy Doors installs professional dog doors in Chattanooga and North Georgia homes. Good, Better, and Best options, professionally measured and installed. Founding Customer pricing for the first 20 installs.",
+    canonical: `${CANONICAL_BASE_URL}/doggy-doors`,
+    ogType: "website"
+  },
   "/privacy-policy": {
     title: "Privacy Policy | Scoopy Doo LLC",
     description: "Read the privacy policy for Scoopy Doo LLC. We protect your personal information and never share it with third parties.",
