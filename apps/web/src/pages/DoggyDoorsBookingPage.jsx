@@ -224,6 +224,13 @@ const DoggyDoorsBookingPage = () => {
     } catch (err) {
       console.error(err);
     }
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'Schedule', {
+        content_name: `Doggy Door Install Booked - ${tier.name}`,
+        value: tier.price,
+        currency: 'USD',
+      });
+    }
     setSubmitting(false);
     navigate('/thank-you');
   };

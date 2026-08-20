@@ -70,6 +70,9 @@ const DoggyDoorsPage = () => {
 
     setSubmitting(true);
     await sendLead(`ZIP ${form.zip} - Doggy Door Founding Customer interest (pricing viewed)`);
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'Lead', { content_name: 'Doggy Door Pricing Unlock' });
+    }
     setSubmitting(false);
     setUnlocked(true);
     setTimeout(() => {
@@ -88,6 +91,13 @@ const DoggyDoorsPage = () => {
       );
     } catch (err) {
       console.error('Lead notification failed (continuing to booking):', err);
+    }
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'InitiateCheckout', {
+        content_name: `Doggy Door - ${tier.name}`,
+        value: tier.price,
+        currency: 'USD',
+      });
     }
     setConfirming(false);
     navigate(`/doggy-doors/book?tier=${tier.key}`);
