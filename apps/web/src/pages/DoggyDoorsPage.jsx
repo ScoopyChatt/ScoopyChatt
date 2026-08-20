@@ -179,7 +179,7 @@ const DoggyDoorsPage = () => {
                   <ul className="space-y-3 mb-8">
                     {[
                       'Professionally measured and installed for your dog',
-                      'Good, Better, and Best options at a set price - no quote calls',
+                      'Good, Better, and Best options starting at $399 installed - no quote calls',
                       'You already trust us with your yard - now let us handle the door',
                     ].map((line, i) => (
                       <li key={i} className="flex items-start text-foreground">
