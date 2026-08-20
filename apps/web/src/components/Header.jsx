@@ -11,7 +11,6 @@ const Header = () => {
     { name: 'Home', path: '/' },
     { name: 'Dog Poop Removal', path: '/services' },
 { name: 'Pricing', path: '/pricing' },
-{ name: 'Commercial', path: '/commercial' },
     { name: 'How It Works', path: '/how-it-works' },
     { name: 'Service Areas', path: '/near-me' },
     { name: 'One-Time Cleanup', path: '/one-time-cleanup' },
@@ -24,11 +23,11 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between py-3 lg:h-20 lg:py-0 gap-3 lg:gap-0">
+      <div className="max-w-7xl min-[1400px]:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col min-[1400px]:flex-row items-center justify-between py-3 min-[1400px]:h-20 min-[1400px]:py-0 gap-3 min-[1400px]:gap-0">
           
           {/* Logo & CTA Row (Mobile view keeps them inline) */}
-          <div className="flex items-center justify-between w-full lg:w-auto">
+          <div className="flex items-center justify-between w-full min-[1400px]:w-auto shrink-0">
             <Link to="/" className="flex items-center space-x-2 transition-opacity hover:opacity-90 outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary">
               <img 
                 src="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png" 
@@ -38,7 +37,7 @@ const Header = () => {
             </Link>
             
             {/* Mobile Actions */}
-            <div className="flex lg:hidden items-center space-x-3">
+            <div className="flex min-[1400px]:hidden items-center space-x-3">
               <a href="tel:423-600-5040" className="text-primary hover:text-primary/80 transition-colors p-2">
                 <Phone className="h-5 w-5" />
               </a>
@@ -49,12 +48,12 @@ const Header = () => {
           </div>
 
           {/* Horizontal Navigation */}
-          <nav className="flex items-center justify-start lg:justify-center space-x-1 sm:space-x-2 overflow-x-auto no-scrollbar w-full lg:w-auto -mx-4 px-4 lg:mx-0 lg:px-0 pb-1 lg:pb-0" aria-label="Main Navigation">
+          <nav className="flex items-center justify-start min-[1400px]:justify-center space-x-1 sm:space-x-2 min-[1400px]:space-x-1 overflow-x-auto no-scrollbar w-full min-[1400px]:w-auto min-w-0 -mx-4 px-4 min-[1400px]:mx-0 min-[1400px]:px-0 pb-1 min-[1400px]:pb-0" aria-label="Main Navigation">
             {mainLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 sm:px-4 py-2 text-sm font-semibold whitespace-nowrap rounded-lg transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary shrink-0 ${
+                className={`px-3 sm:px-4 min-[1400px]:px-2.5 py-2 text-sm font-semibold whitespace-nowrap rounded-lg transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary shrink-0 ${
                   isActive(link.path) ? 'text-primary bg-primary/10' : 'text-foreground hover:text-primary hover:bg-muted'
                 }`}
               >
@@ -64,7 +63,7 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden min-[1400px]:flex items-center space-x-4 shrink-0">
             <a
               href="tel:423-600-5040"
               className="flex items-center space-x-2 px-3 py-2 text-sm font-bold text-foreground hover:text-primary transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
