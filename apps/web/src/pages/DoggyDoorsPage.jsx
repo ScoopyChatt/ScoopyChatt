@@ -172,7 +172,7 @@ const DoggyDoorsPage = () => {
                         exit={{ opacity: 0 }}
                       >
                         <h2 className="text-xl md:text-2xl font-bold text-foreground mb-1">
-                          See Good, Better, and Best Pricing
+                          See Your Price
                         </h2>
                         <p className="text-sm text-muted-foreground mb-6">
                           Enter your info below to unlock pricing and your Founding Customer offer.
@@ -312,7 +312,7 @@ const DoggyDoorsPage = () => {
                   <Lock className="w-10 h-10 text-muted-foreground mx-auto mb-4" />
                   <h2 className="text-2xl font-bold text-foreground mb-2">Pricing is Locked</h2>
                   <p className="text-muted-foreground">
-                    Enter your info above to see Good, Better, and Best pricing.
+                    Enter your info above to see your price.
                   </p>
                 </div>
               ) : (
