@@ -10,7 +10,6 @@ import {
   Sparkles,
   CheckCircle2,
   ArrowRight,
-  PhoneCall,
   Star,
   PartyPopper,
 } from 'lucide-react';
@@ -398,38 +397,13 @@ const DoggyDoorsPage = () => {
                             disabled={confirming}
                             className="w-full font-bold"
                           >
-                            {isChosen ? 'You Chose This' : `Choose ${tier.name}`}
+                            {isChosen && confirming ? 'Opening booking...' : `Choose ${tier.name}`}
                           </Button>
                         </motion.div>
                       );
                     })}
                   </div>
 
-                  <AnimatePresence>
-                    {chosenTier && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="max-w-2xl mx-auto mt-10 bg-secondary/10 border border-secondary/30 rounded-2xl p-6 text-center"
-                      >
-                        <h3 className="text-lg font-bold text-foreground mb-2">
-                          You are all set, {form.name.split(' ')[0]}!
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          We got your {TIERS.find((t) => t.key === chosenTier)?.name} request and your
-                          Founding Customer upgrade. We will reach out within 1 business day to confirm
-                          your dog's size and pick an install date.
-                        </p>
-                        <a
-                          href="tel:4236005040"
-                          className="inline-flex items-center justify-center gap-2 text-primary font-semibold hover:underline"
-                        >
-                          <PhoneCall className="w-4 h-4" />
-                          Prefer to talk now? Call or text 423-600-5040
-                        </a>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </>
               )}
             </div>
