@@ -84,14 +84,61 @@ Always use double-quoted strings for any string that contains contractions or ap
 
 ## Adding a New Page — Checklist
 
-Do ALL of these or the page will be missing SEO/nav/sitemap:
+A page has to be registered in **eight** places. Miss one and the failure is usually
+silent: the page works when you click it locally and is broken for crawlers.
 
-1. Create `apps/web/src/pages/YourPage.jsx`
-2. Add lazy import + Route to `apps/web/src/App.jsx`
-3. Add nav link to `apps/web/src/components/Header.jsx` if needed
-4. Add entry to `apps/web/src/config/seoMetadata.js`
-5. Add to routes object in `apps/web/tools/inject-seo.cjs`
-6. Add URL to `apps/web/public/sitemap.xml`
+**Always:**
+
+1. Create the component — `apps/web/src/pages/YourPage.jsx`, or
+   `apps/web/src/pages/blog/YourPost.jsx` for a blog post. Copy the imports from a
+   sibling file rather than writing them from memory.
+2. `apps/web/src/App.jsx` — lazy import **and** `<Route>`. Two separate edits.
+3. `apps/web/tools/route-manifest.cjs` — add the slug to `PAGES`, `SERVICE_AREAS`, or
+   `BLOG_POSTS`. This is the source of truth: `generate-sitemap.cjs` and
+   `verify-routes.cjs` both read it, so the sitemap follows automatically.
+4. `middleware.js` (repo root) — same list, same slug. **The one that gets missed.**
+   The middleware 404s anything outside its allowlist, so without this the React route
+   works in a browser while the edge serves Googlebot a 404. Invisible locally.
+5. `apps/web/tools/inject-seo.cjs` — `routes` object, `['<title>', '<meta description>']`.
+   Skip it and the page inherits the homepage title tag.
+6. `apps/web/tools/create-static-pages.cjs` — the crawlable prerendered body. This is a
+   React SPA with no SSR, so without it a crawler sees an empty shell.
+7. `apps/web/tools/generate-llms.js` — `PAGES`, so AI crawlers can find it. This is the
+   GEO surface; it is what ChatGPT and Perplexity read.
+8. `apps/web/src/utils/sitemapGenerator.js` — `liveBlogSlugs`, for blog posts. Powers the
+   runtime `/sitemap.xml` route in `SitemapXML.jsx`, which is separate from the generated
+   file in step 3. Both need the slug.
+
+**When it applies:**
+
+- `apps/web/src/components/Header.jsx` — nav link, for top-level pages.
+- `apps/web/src/pages/BlogListPage.jsx` — `allPosts`, for blog posts, or the post exists
+  but nothing links to it.
+- `apps/web/src/config/seoMetadata.js` — only for pages using `<SEOHead path="..." />`.
+  Pages that set their own `<Helmet>` (most blog posts) do not need it.
+- Richer SEO for a commercial page: `inject-seo.cjs` also has an `SC` object (crawlable
+  content block) and a `SCHEMA` object (JSON-LD). Attach `aggregateRating` to nothing but
+  the canonical business node — reference it as
+  `"provider":{"@id":"https://www.scoopychatt.com/#business"}` rather than inlining a copy,
+  or Search Console flags duplicate ratings.
+
+**Then verify — do not skip this:**
+
+```
+npm install --prefix apps/web && npm run build --prefix apps/web \
+  && node apps/web/tools/inject-seo.cjs \
+  && node apps/web/tools/generate-sitemap.cjs \
+  && node apps/web/tools/create-static-pages.cjs \
+  && node apps/web/tools/verify-routes.cjs
+```
+
+`verify-routes.cjs` cross-checks the manifest against App.jsx and middleware.js and
+catches steps 2, 3 and 4 — it exits non-zero and names the offending URL. It cannot see
+steps 5 through 8, so check those by hand: after the build, confirm
+`dist/apps/web/<slug>/index.html` exists and carries the right `<title>` and canonical.
+
+There is no `apps/web/public/sitemap.xml`. The sitemap is generated into `dist` by
+`generate-sitemap.cjs` from the route manifest; editing a static file would do nothing.
 
 ---
 
