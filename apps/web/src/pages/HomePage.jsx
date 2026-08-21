@@ -261,7 +261,7 @@ const HomePage = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">What happens to the dog waste after you scoop?</h3>
-                  <p className="text-muted-foreground leading-relaxed">All waste is double-bagged and hauled completely off your property. Scooping tools and footwear are sanitized between every yard to prevent the spread of bacteria and parasites.</p>
+                  <p className="text-muted-foreground leading-relaxed">All waste is double-bagged and placed in your outdoor bin, or hauled completely off your property for $5 per visit. One-time cleanups always include haul-away. Scooping tools and footwear are sanitized between every yard to prevent the spread of bacteria and parasites.</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Do you offer one-time or every-other-week cleanups?</h3>

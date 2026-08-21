@@ -12,7 +12,7 @@ import { generateServiceSchema } from '@/utils/schemaGenerators.js';
 const faqs = [
   {
     question: "What is Scoopy Doo and what does the service include?",
-    answer: "Scoopy Doo LLC is Chattanooga's locally owned dog poop removal and pooper scooper service. Every visit includes a full grid-pattern yard sweep, double-bagged waste removal hauled off your property, gate closure, and a photo confirmation sent to you. No contracts - cancel or change anytime."
+    answer: "Scoopy Doo LLC is Chattanooga's locally owned dog poop removal and pooper scooper service. Every visit includes a full grid-pattern yard sweep, all waste double-bagged into your outdoor bin, gate closure, and a photo confirmation sent to you. Waste takeaway, where we haul the bags off the property instead, is $5 per visit and is included free on one-time cleanups. No contracts - cancel or change anytime."
   },
   {
     question: "How does Scoopy Doo pet waste removal work?",

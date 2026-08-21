@@ -160,7 +160,8 @@ const PetWasteStationsApartmentsHOAsChattanooga = () => {
           <p className="mb-4">
             On each scheduled visit, Scoopy Doo restocks every dispenser with bags, empties and
             re-lines every receptacle, wipes down the units, and hauls all waste completely off the
-            property rather than moving it to your dumpster. On the same trip we sweep the common
+            property rather than moving it to your dumpster. Off-site disposal is included in the
+            per-station servicing rate on commercial properties. On the same trip we sweep the common
             areas in a grid pattern, which is where the waste that never made it into a station ends
             up. Property contacts get confirmation the visit happened, the same way residential
             customers get an on-the-way text and a gate photo.

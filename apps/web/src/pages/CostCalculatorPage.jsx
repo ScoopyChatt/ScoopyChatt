@@ -11,7 +11,7 @@ import { getCanonicalUrl } from '@/utils/seoHelpers.js';
 const TAKEAWAY_FEE = 5;
 
 const FREQUENCIES = [
-  { id: 'twice', label: 'Twice a week', sub: 'Maximum freshness', base: 18, extra: 2, perMonth: 8.67 },
+  { id: 'twice', label: 'Twice a week', sub: 'Maximum freshness', base: 18, extra: 1, perMonth: 8.67 },
   { id: 'weekly', label: 'Weekly', sub: 'Most popular', base: 20, extra: 2, perMonth: 4.33 },
   { id: 'biweekly', label: 'Every other week', sub: 'Budget friendly', base: 33, extra: 3, perMonth: 2.17 },
   { id: 'onetime', label: 'One-time cleanup', sub: 'No commitment', base: 85, extra: 0, perMonth: 0 },

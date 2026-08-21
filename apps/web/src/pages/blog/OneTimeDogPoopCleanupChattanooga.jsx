@@ -100,7 +100,8 @@ const OneTimeDogPoopCleanupChattanooga = () => {
             We keep it simple and low-hassle. Before we arrive, you get an on-the-way text
             so you are never guessing when we will show up. Our technician walks the entire
             yard, not just the obvious spots, and scoops everything, then bags and hauls the
-            waste away so nothing is left behind in your cans unless you ask. When we finish,
+            waste away at no extra charge. Haul-away is included on every one-time cleanup, so
+            nothing is left behind in your cans unless you ask. When we finish,
             we close the gate securely and send you a gate photo so you can see for yourself
             that it is latched. If you have dogs, you can leave them inside or out. We work
             around them safely.

@@ -153,7 +153,7 @@ const ServicesPage = () => {
                 <ul className="space-y-4">
                   {[
                     { title: "Flexible scheduling", desc: "Daily, several times per week, or weekly - based on usage levels." },
-                    { title: "Complete waste removal", desc: "All waste hauled off-site, not collected into on-site bins." },
+                    { title: "Complete waste removal", desc: "Double-bagged into your outdoor bin, or hauled off-site for $5 per visit." },
                     { title: "Equipment sanitation", desc: "Tools sanitized between every property to prevent contamination." },
                     { title: "Service records", desc: "Documentation of every visit for HOA boards and property managers." },
                     { title: "Direct billing", desc: "Invoice-based billing for commercial accounts." }

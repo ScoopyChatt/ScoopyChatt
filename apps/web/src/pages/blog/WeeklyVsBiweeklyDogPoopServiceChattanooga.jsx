@@ -44,7 +44,7 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
         "name": "How much does weekly dog poop removal cost in Chattanooga compared to every other week?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Scoopy Doo weekly service is $20 per visit for the first dog and every-other-week service is $33 per visit for the first dog. Over a full year that is $1,040 for weekly versus $858 for every-other-week, a difference of about $15 a month for twice as many visits. Twice-weekly service is $18 per visit. All prices are per visit with no contract."
+          "text": "Scoopy Doo weekly service is $20 per visit for the first dog and every-other-week service is $33 per visit for the first dog. That is about $87 a month for weekly and $72 a month for every-other-week, or $1,040 versus $858 a year, a difference of about $15 a month for twice as many visits. Twice-weekly service is $18 per visit, about $156 a month. Pricing is per visit and billing is monthly, with no contract."
         }
       },
       {
@@ -123,8 +123,9 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
 
           <h2 className="text-2xl font-semibold mt-8 mb-3">What each plan costs in Chattanooga</h2>
           <p className="mb-4">
-            Scoopy Doo bills per visit, not as a flat monthly subscription, so you are never
-            paying for a visit that did not happen. Here is the full picture for one dog:
+            We price per visit because that is the number you can actually compare between
+            companies, and we bill once a month. Here is the full picture for one dog, per visit,
+            per month, and per year:
           </p>
 
           <div className="overflow-x-auto mb-6">
@@ -133,7 +134,7 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
                 <tr>
                   <th className="border border-gray-200 px-4 py-2 font-semibold">Plan</th>
                   <th className="border border-gray-200 px-4 py-2 font-semibold">Per visit (1 dog)</th>
-                  <th className="border border-gray-200 px-4 py-2 font-semibold">Visits per year</th>
+                  <th className="border border-gray-200 px-4 py-2 font-semibold">Per month</th>
                   <th className="border border-gray-200 px-4 py-2 font-semibold">Per year</th>
                   <th className="border border-gray-200 px-4 py-2 font-semibold">Best for</th>
                 </tr>
@@ -142,21 +143,21 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
                 <tr>
                   <td className="border border-gray-200 px-4 py-2">Twice weekly</td>
                   <td className="border border-gray-200 px-4 py-2">$18</td>
-                  <td className="border border-gray-200 px-4 py-2">104</td>
+                  <td className="border border-gray-200 px-4 py-2">$156</td>
                   <td className="border border-gray-200 px-4 py-2">$1,872</td>
                   <td className="border border-gray-200 px-4 py-2">Three or more dogs, small yards, summer</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-200 px-4 py-2">Weekly</td>
                   <td className="border border-gray-200 px-4 py-2">$20</td>
-                  <td className="border border-gray-200 px-4 py-2">52</td>
+                  <td className="border border-gray-200 px-4 py-2">$87</td>
                   <td className="border border-gray-200 px-4 py-2">$1,040</td>
                   <td className="border border-gray-200 px-4 py-2">Most homes with one or two dogs</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-200 px-4 py-2">Every other week</td>
                   <td className="border border-gray-200 px-4 py-2">$33</td>
-                  <td className="border border-gray-200 px-4 py-2">26</td>
+                  <td className="border border-gray-200 px-4 py-2">$72</td>
                   <td className="border border-gray-200 px-4 py-2">$858</td>
                   <td className="border border-gray-200 px-4 py-2">One dog, larger yard, lighter use</td>
                 </tr>
@@ -226,10 +227,11 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
           <p className="mb-4">
             Whichever schedule you pick, the visit itself is identical. You get a text when the
             technician is on the way. The whole yard is walked in a grid pattern rather than spot
-            checked. All waste is double-bagged and hauled off your property instead of left in
-            your bin. The gate is latched and you get a photo of it so you know. You do not need
-            to be home, and you can leave your dogs out if that is easier. See the full process on
-            the{' '}
+            checked. All waste is double-bagged and, by default, left in your outdoor bin. If you
+            would rather it not go in your own cans, waste takeaway is $5 per visit and we haul it
+            off the property instead. The gate is latched and you get a photo of it so you know.
+            You do not need to be home, and you can leave your dogs out if that is easier. See the
+            full process on the{' '}
             <Link className="text-green-700 underline font-semibold" to="/services">
               Scoopy Doo services page
             </Link>{' '}
@@ -259,9 +261,15 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
 
           <h3 className="text-xl font-semibold mt-6 mb-2">Do you charge more for extra dogs?</h3>
           <p className="mb-4">
-            Yes. The rates above are for the first dog, and each additional dog adds a small per-visit
-            fee because there is more waste and more time involved. The exact amount comes back with
-            your quote, so you see the real number before you commit to anything.
+            Yes, and the amount depends on the plan. Weekly adds $2 per visit per additional dog,
+            twice-weekly adds $1, and every-other-week adds $3. Your first dog is included in the
+            base rate. So weekly for two dogs is $22 a visit, and for three dogs $24 a visit.
+          </p>
+          <p className="mb-4">
+            Worth noticing: twice-weekly absorbs extra dogs the most cheaply of the three, at $1 a
+            dog, because more frequent visits mean less accumulation per stop. Every-other-week
+            charges the most per dog, at $3, for the same reason in reverse. If you have three or
+            four dogs, the gap between the plans narrows more than the headline rates suggest.
           </p>
 
           <h3 className="text-xl font-semibold mt-6 mb-2">Do you serve North Georgia on the same schedule?</h3>

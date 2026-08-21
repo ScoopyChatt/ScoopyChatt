@@ -40,7 +40,7 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
         "name": "Can someone clean up my yard before a party this weekend in Chattanooga or North Georgia?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Scoopy Doo books one-time yard cleanups seven days a week across Chattanooga TN and North Georgia, and most new customers are on the schedule within two to five days. For a weekend event, request a quote by Tuesday or Wednesday to be safe. Same-week bookings are often possible, and short-notice requests are worth asking about because the schedule shifts daily."
+          "text": "Yes. Scoopy Doo books one-time yard cleanups seven days a week across Chattanooga TN and North Georgia, and most new customers are on the schedule within two to five days. For a weekend event, request a quote by Tuesday or Wednesday to be safe. Same-week bookings are often possible, and short-notice requests are worth asking about because the schedule shifts daily. Haul-away is included in every one-time cleanup, so nothing is left sitting in your bin during the party."
         }
       },
       {
@@ -176,8 +176,9 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
             You get a text when the technician is on the way, so you are not waiting around on the
             day before your party. The entire yard is walked in a grid pattern rather than spot
             checked, which matters most in the corners and along fence lines where guests tend to
-            wander. All waste is double-bagged and hauled off your property, not left in your bin
-            to sit through the event in August heat. The gate is latched and you get a photo of it.
+            wander. All waste is double-bagged and hauled off the property, which is included in
+            every one-time cleanup rather than being an add-on. Nothing is left to sit in your bin
+            through the event in August heat. The gate is latched and you get a photo of it.
             You do not need to be home, which is usually the point when you are running errands the
             day before.
           </p>

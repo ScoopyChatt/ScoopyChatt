@@ -5,8 +5,7 @@ No reciprocal link exchanges, link pools, or third-party auto-publishing tools a
 part of this plan.
 
 Pricing referenced throughout comes from `apps/web/src/pages/PricingPage.jsx`:
-weekly $20/visit (1st dog), twice-weekly $18/visit, every-other-week $33/visit,
-one-time cleanup from $85, plus the add-on rates in section 5.
+see the full rate table in section 5, which is the source of truth for every page.
 
 ---
 
@@ -39,8 +38,10 @@ these are search-result-level facts, not full-site crawls. Treat published price
    remaining gap.
 3. **Waste stations are a real commercial differentiator** that ChattaPoo markets
    and we offer but barely write about. Fixed by post #2 below.
-4. **Competitors bill flat monthly; we bill per visit.** Nobody has written the
-   "per-visit vs flat monthly" explainer. That is a decision-stage keyword nobody owns.
+4. **Everyone bills monthly, including us — but we quote per visit.** That is a
+   deliberate sales choice: $20 lands better than $87. Nobody has written the
+   explainer that reconciles the two numbers for a buyer, and it is a decision-stage
+   keyword nobody owns.
 5. **"First service free" is Call of Doody's and Doo Doo Blues' hook.** Our honest
    counter is no contracts plus a one-time cleanup you can stop after.
 
@@ -59,7 +60,7 @@ verifiable from this environment. **P1** = build next, **P2** = this quarter,
 |---|---|---|---|
 | A1 | Weekly vs Every-Other-Week Dog Poop Service in Chattanooga: Which One Do You Actually Need? | weekly vs bi-weekly dog poop removal chattanooga | **P1 — DRAFTED** |
 | A2 | Pooper Scooper Pricing for 2, 3, or 4 Dogs in Chattanooga: What Extra Dogs Actually Cost | pooper scooper price for 3 dogs chattanooga | P1 |
-| A3 | Per-Visit vs Flat Monthly Billing for Pet Waste Removal: Which Costs Less? | pet waste removal monthly vs per visit pricing | P1 |
+| A3 | Why Pooper Scooper Prices Look Different Everywhere: Per-Visit vs Monthly Quotes | pet waste removal monthly vs per visit pricing | P1 |
 | A4 | Switching Pooper Scooper Services in Chattanooga: How to Change Without a Gap in Service | switching pet waste removal company chattanooga | P2 |
 | A5 | Why the First Cleanup Costs More: Initial Cleanup Fees Explained | initial cleanup fee pooper scooper service | P2 |
 | A6 | Do I Need to Be Home for Pooper Scooper Service? Gate Access, Dogs Outside, and Locked Fences | do I need to be home pooper scooper | P2 |
@@ -147,16 +148,32 @@ From `apps/web/src/pages/PricingPage.jsx` plus the two add-on rates confirmed by
 Brandon in August 2026. Every page and schema block on the site should agree with
 this table; if a rate changes, grep for the figure rather than editing one page.
 
-| Item | Rate |
+**Priced per visit, billed monthly.** The per-visit number is what we quote because
+it is comparable between companies; the customer is charged once a month.
+
+| Plan | Per visit, 1st dog | Each extra dog | Approx. per month |
+|---|---|---|---|
+| Twice weekly | $18 | +$1 | ~$156 |
+| Weekly | $20 | +$2 | ~$87 |
+| Every other week | $33 | +$3 | ~$72 |
+| One-time cleanup | from $85 | — | — |
+
+Monthly figures use 4.33 weekly visits per month. Note the extra-dog rate is
+*inverse* to frequency: twice-weekly absorbs extra dogs most cheaply at $1 because
+there is less accumulation per stop.
+
+| Add-on | Rate |
 |---|---|
-| Weekly | $20 per visit, first dog |
-| Twice weekly | $18 per visit, first dog |
-| Every other week | $33 per visit, first dog |
-| One-time cleanup | from $85 |
+| Waste takeaway (recurring plans) | $5 per visit |
+| Waste takeaway (one-time cleanups) | included, no charge |
 | Yard deodorizing and sanitizing | $20 per visit |
 | Pet waste station | from $299 per station installed |
 | Pet waste station servicing | $10 per station per week |
 | Common-area sweep, commercial and HOA | quoted per property |
+
+**Waste takeaway is an add-on, not standard.** By default the double-bagged waste
+goes into the customer's own outdoor bin. This was previously described across ~40
+places on the site as always included; corrected in August 2026.
 
 Note on positioning: Call of Doody publishes yard deodorizing at $15/visit, below
 our $20. Our advantage there is that ours is priced in public and theirs requires a
@@ -171,8 +188,29 @@ call — worth not picking a price fight we do not win on the number alone.
 - **A3 is the sharpest of those.** Every competitor that publishes anything bills a
   flat monthly rate; we bill per visit. Nobody has written that comparison, and it is
   the exact question a buyer asks when PooTagic quotes them a flat monthly number.
+- **One-time cleanup price is inconsistent in the code** — see section 7.
 - **Competitor prices in the comparison page are July 2026 vintage.** They still
   match what search results show, but they should be re-verified quarterly.
 - **The comparison page does not list our add-on rates.** Now that stations and
   deodorizing are priced, the table could carry them — worth doing when the
   quarterly competitor re-verification happens.
+
+
+---
+
+## 7. Open discrepancy: one-time cleanup price
+
+The two pricing surfaces disagree, and this one was not resolved in August 2026.
+
+| Surface | One-time cleanup |
+|---|---|
+| `QuoteForm.jsx` (the live instant quote) | **$125** base, includes up to 3 dogs, +$15 per dog beyond 3 |
+| `CostCalculatorPage.jsx`, `/pricing`, every blog post, all JSON-LD | **from $85** |
+
+A visitor reading "$85" on the pricing page and then getting $125 from the quote
+form on the same site is a conversion problem and a trust problem. One of the two
+is wrong and Brandon needs to say which. Everything else on the site now agrees
+with the quote form, which is the authoritative implementation.
+
+Separately, `CostCalculatorPage.jsx` had the twice-weekly extra-dog rate at $2 when
+the quote form and Brandon both say $1. Fixed in August 2026.

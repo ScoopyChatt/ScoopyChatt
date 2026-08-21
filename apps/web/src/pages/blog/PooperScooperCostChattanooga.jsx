@@ -75,7 +75,7 @@ const PooperScooperCostChattanooga = () => {
           <ul className="list-disc pl-6 mb-4 space-y-2">
             <li>On-the-way text when your technician is heading to your yard</li>
             <li>Full yard scooped in a systematic grid pattern</li>
-            <li>All waste double-bagged and hauled completely off your property</li>
+            <li>All waste double-bagged into your outdoor bin, or hauled off the property for $5 per visit</li>
             <li>Gate photo confirmation sent after every visit</li>
           </ul>
           <p className="mb-4">No contracts. Cancel or pause any time with no fees.</p>

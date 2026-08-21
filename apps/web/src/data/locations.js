@@ -9,7 +9,7 @@ export const locations = [
     localContext: "With the Tennessee River running through the heart of Chattanooga, dog waste runoff is more than an eyesore — it is a waterway pollution problem. The EPA classifies dog waste in the same category as toxic chemicals, and every storm drain in your neighborhood connects directly to the water. Scoopy Doo helps Chattanooga families do their part while getting their weekends back.",
     neighborhoods: ['North Shore', 'Highland Park', 'St. Elmo', 'Southside', 'Normal Park', 'Missionary Ridge', 'Brainerd', 'East Lake', 'Ridgeside', 'Lookout Valley'],
     testimonial: { quote: "I have two big dogs and a small yard in Highland Park. Scoopy Doo shows up every week without fail — I literally never think about it anymore.", author: "Sarah M., Highland Park" },
-    benefits: ['Weekly and bi-weekly routes throughout the city', 'Gate secured and photo sent after every visit', 'Waste hauled fully off your property', 'Equipment sanitized between every yard', 'Online quotes and payment — no phone tag', 'Family-owned Chattanooga business'],
+    benefits: ['Weekly and bi-weekly routes throughout the city', 'Gate secured and photo sent after every visit', 'Waste double-bagged into your bin, or hauled away for $5 a visit', 'Equipment sanitized between every yard', 'Online quotes and payment — no phone tag', 'Family-owned Chattanooga business'],
     faqItems: [
       { question: 'Do you service all Chattanooga neighborhoods?', answer: "Yes — we run regular routes across Chattanooga including North Shore, Highland Park, Missionary Ridge, St. Elmo, Normal Park, Brainerd, Southside, and more. If you are in the city limits, we can almost certainly serve you." },
       { question: 'How does the on-the-way text work?', answer: "Before every visit, you get a text when we are heading your way. When we finish, we close your gate and send a photo. You always know your yard was cleaned and your gate is secured." },
@@ -31,7 +31,7 @@ export const locations = [
     faqItems: [
       { question: 'Do you service wooded yards in Hixson?', answer: "Absolutely. Our technicians use a systematic grid-pattern approach that covers your entire yard, including wooded sections and areas near tree lines where waste is easiest to miss." },
       { question: 'How soon can you start in Hixson?', answer: "Most new Hixson customers can be added to a route within 2-5 days of getting a quote. We have established routes throughout Hixson and surrounding areas." },
-      { question: 'Do you remove the waste from the property?', answer: "Yes, always. We double-bag all waste and haul it away from your property entirely — not left by your gate or in your trash can." },
+      { question: 'Do you remove the waste from the property?', answer: "We double-bag every bit of it and, by default, place it in your outdoor bin — never left by your gate. If you would rather it not go in your own cans, waste takeaway is $5 per visit and we haul it off the property entirely." },
       { question: 'Is there a contract for Hixson service?', answer: "No contracts, ever. You can start, pause, or cancel service at any time. We keep customers by doing a great job, not by locking them in." }
     ]
   },
@@ -121,7 +121,7 @@ export const locations = [
     faqItems: [
       { question: 'Do you service large or steeply graded Signal Mountain properties?', answer: "Yes. Our technicians are experienced with the terrain unique to Signal Mountain — wooded sections, sloped yards, and large properties. We take the time to cover every area thoroughly." },
       { question: 'How do you handle properties with heavy leaf cover?', answer: "We work carefully through ground cover and leaf areas to find and remove all waste. Our systematic grid approach is especially important on properties where waste is easily hidden." },
-      { question: 'Do you remove the waste or just bag it at the gate?', answer: "We remove all waste from the property entirely — hauled away in our vehicle. We never leave bags at your gate or in your trash can." },
+      { question: 'Do you remove the waste or just bag it at the gate?', answer: "Never at the gate. Everything is double-bagged and placed in your outdoor bin as standard, or hauled away in our vehicle for $5 per visit if you prefer it off the property." },
       { question: 'Is Signal Mountain service available year-round?', answer: "Yes. We provide year-round service on Signal Mountain regardless of weather conditions. Consistent pickup actually matters more in wet seasons when runoff is highest." }
     ]
   },
@@ -194,7 +194,7 @@ export const locations = [
       { question: 'Do you service Rossville, GA?', answer: "Yes. Rossville is within our North Georgia service area. We run regular routes and do not charge additional fees for Georgia locations." },
       { question: 'Do you service homes with multiple large dogs?', answer: "Absolutely. Multi-dog households are some of our best customers. Our pricing scales reasonably for additional dogs, and we cover the full yard every visit." },
       { question: 'How do I get started in Rossville?', answer: "Request a free quote online. We respond the same day with pricing, and most Rossville customers can start within a few days." },
-      { question: 'Do you remove the waste from the property?', answer: "Yes. We double-bag all waste and haul it away — it does not go in your trash can or stay by your gate. Your property is left fully clean." }
+      { question: 'Do you remove the waste from the property?', answer: "We double-bag all waste and place it in your outdoor bin as standard — it is never left by your gate. Waste takeaway is $5 per visit if you would rather it leave the property with us." }
     ]
   },
   {
@@ -222,7 +222,7 @@ export const locations = [
     slug: "cleveland",
     seoTitle: "Dog Poop Removal in Cleveland, TN | Scoopy Doo Pet Waste Removal",
     seoDescription: "Professional dog waste removal in Cleveland, TN. Scoopy Doo serves Bradley County with weekly and bi-weekly pet waste pickup. No contracts - get your free quote today.",
-    serviceDescription: "Cleveland is the heart of Bradley County and one of the fastest-growing cities in the region, with new neighborhoods expanding in every direction. Scoopy Doo serves Cleveland families with the same professional, tech-forward pet waste removal that Chattanooga trusts - on-the-way texts, gate photo confirmation, and waste hauled fully off your property every visit.",
+    serviceDescription: "Cleveland is the heart of Bradley County and one of the fastest-growing cities in the region, with new neighborhoods expanding in every direction. Scoopy Doo serves Cleveland families with the same professional, tech-forward pet waste removal that Chattanooga trusts - on-the-way texts, gate photo confirmation, and every bit of waste double-bagged into your bin or hauled off the property for $5 a visit.",
     localContext: "Cleveland has grown significantly in recent years, with newer subdivisions bringing more dogs and more of the pet waste challenge that comes with suburban life. Many Cleveland families have larger lots than the average Chattanooga yard, which means more ground to cover and waste that is genuinely easy to miss without a systematic approach. Scoopy Doo handles the whole yard every visit.",
     neighborhoods: ["Cleveland proper", "Lee University area", "North Cleveland", "White Oak area", "Blythe Ferry Road corridor", "Westside"],
     testimonial: { quote: "I did not think a service like this would come out to Cleveland but they do, every single week. Great communication and fair prices.", author: "Rachel S., Cleveland" },
@@ -231,13 +231,13 @@ export const locations = [
       "Weekly and bi-weekly service available",
       "On-the-way text before every visit",
       "Gate secured and photo sent after every cleanup",
-      "Waste hauled fully off the property",
+      "Waste double-bagged into your bin, or hauled away for $5 a visit",
       "No contracts - cancel anytime"
     ],
     faqItems: [
       { question: "Do you service Cleveland, TN?", answer: "Yes - Cleveland is within our service area. We run routes throughout Cleveland and Bradley County and do not charge extra for distance from Chattanooga. Request a free quote online and we will confirm availability in your neighborhood." },
       { question: "How quickly can I start service in Cleveland?", answer: "Most Cleveland customers can be added to a route within 2-5 days of requesting a quote. We respond to quote requests the same day, usually within a few hours." },
-      { question: "Do you haul the waste away or leave it bagged at the gate?", answer: "We haul all waste fully off your property - double-bagged and removed in our vehicle. It does not go in your trash can or stay by the gate. Your yard is left completely clean." },
+      { question: "Do you haul the waste away or leave it bagged at the gate?", answer: "Never at the gate. Everything is double-bagged and placed in your outdoor bin as standard. Waste takeaway is $5 per visit if you would rather we remove it in our vehicle. Either way your yard is left completely clean." },
       { question: "Is there a contract for Cleveland service?", answer: "No contracts, ever. You can start, skip, or cancel service at any time. We keep customers by doing a great job, not by locking them in." }
     ]
   },

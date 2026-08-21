@@ -46,8 +46,8 @@ const PricingPage = () => {
 
   const faqs = [
     { question: "Are there any hidden fees or contracts?", answer: "No! We believe in transparent pricing. There are no contracts, and you can cancel or pause service anytime." },
-    { question: "How does billing work?", answer: "We securely keep a card on file and bill automatically after each service is completed. You'll receive a receipt via email." },
-    { question: "Does the price change if I have multiple dogs?", answer: "Yes, our base rates shown above are for 1 dog. We charge a small additional fee per extra dog to account for the additional waste and time required to thoroughly clean your yard." },
+    { question: "How does billing work?", answer: "We price per visit so the number is easy to compare, and we bill monthly. We securely keep a card on file, charge once a month for that month of service, and email you a receipt. There is no contract, so you can pause or cancel anytime." },
+    { question: "Does the price change if I have multiple dogs?", answer: "Yes. The rates above include your first dog. Weekly service adds $2 per visit for each additional dog, twice-weekly adds $1, and every-other-week adds $3. So weekly service for two dogs is $22 per visit and for three dogs is $24 per visit." },
     { question: "What if my yard is overgrown or very large?", answer: "We provide custom quotes for significantly oversized yards or properties with tall grass/weeds that make scooping significantly more difficult." },
     { question: "Do you charge extra for initial cleanups?", answer: "If it has been a long time since the yard was last cleaned, an initial spring-cleaning fee may apply to get your yard to a maintainable baseline before regular visit rates kick in." },
     { question: "Do you offer yard deodorizing?", answer: "Yes. Deodorizing and sanitizing is $20 per visit. It neutralizes the odor compounds and bacteria left behind in the soil after the waste itself is removed, and it can be added to any recurring plan or to a one-time cleanup. It is most worthwhile for heavily used yards, areas near a patio, and yards being prepped for an event or a home sale." },
@@ -80,6 +80,8 @@ const PricingPage = () => {
             <div className="mt-10 max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold mb-3">Add-ons</h2>
               <ul className="space-y-2 text-muted-foreground">
+                <li><strong className="text-foreground">Waste takeaway - $5 per visit.</strong> By default we double-bag the waste and leave it in your outdoor bin. If you would rather it not go in your own cans, we haul it off the property instead.</li>
+                <li><strong className="text-foreground">Additional dogs - $2 per visit weekly, $1 twice-weekly, $3 every-other-week.</strong> Your first dog is included in the rates above.</li>
                 <li><strong className="text-foreground">Yard deodorizing and sanitizing - $20 per visit.</strong> Neutralizes the odor compounds and bacteria left in the soil after the waste is gone. Add it to any plan or to a one-time cleanup.</li>
                 <li><strong className="text-foreground">Pet waste stations - from $299 per station installed, then $10 per station per week to service.</strong> For HOAs, apartment communities, and dog parks. Installation covers the station, post, mounting, and first stock of bags. Servicing covers weekly restocking, emptying, and off-site disposal.</li>
               </ul>

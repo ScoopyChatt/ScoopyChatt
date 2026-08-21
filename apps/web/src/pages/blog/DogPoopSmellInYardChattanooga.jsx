@@ -105,14 +105,14 @@ const DogPoopSmellInYardChattanooga = () => {
           <figure className="mb-6">
             <img
               src="/service-bags-removed.jpg"
-              alt="Double-bagged dog waste being hauled off a Chattanooga property, the first step in removing yard odor at its source"
+              alt="Double-bagged dog waste removed from a Chattanooga yard, the first step in clearing odor at its source"
               className="w-full rounded-lg border border-gray-200"
               loading="lazy"
               width="1200"
               height="675"
             />
             <figcaption className="text-sm text-gray-600 mt-2">
-              Hauling the waste off the property matters. Bagged waste left in a bin keeps producing odor.
+              Getting the waste out of the yard is step one. Where the bag ends up is step two.
             </figcaption>
           </figure>
 
@@ -137,9 +137,10 @@ const DogPoopSmellInYardChattanooga = () => {
             time to work into the soil.
           </p>
           <p className="mb-4">
-            Then get the bags off the property. A bag of waste sitting in a bin by the back door in
-            August is still producing odor, and it is producing it right where you sit outside. This
-            is why every Scoopy Doo visit hauls the waste away rather than leaving it in your can.
+            Then think about where the bag ends up. A bag of waste sitting in a bin by the back door
+            in August is still producing odor, and it is producing it right where you sit outside.
+            If your bin is close to the patio, move it, or add waste takeaway at $5 per visit and we
+            haul the bags off the property instead of leaving them in your cans.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-3">Step 2: water it, more than feels reasonable</h2>

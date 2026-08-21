@@ -18,7 +18,7 @@ const YardCleanupPage = () => {
     { question: "My yard is really bad. Is that a problem?", answer: "Not at all. Heavily overdue yards are exactly what one-time cleanups are for. We grid-walk the whole space and get it back to a clean baseline in a single visit." },
     { question: "Do I have to sign up for recurring service?", answer: "No. The cleanup is fully standalone. If you would like to keep the results, ongoing weekly or bi-weekly service is one click away, with no contracts." },
     { question: "How long does a cleanup take?", answer: "It depends on yard size and buildup, but most one-time cleanups are completed in a single same-day visit." },
-    { question: "Where does the waste go?", answer: "We bag everything and haul it away for responsible, eco-friendly disposal. Nothing is left behind." }
+    { question: "Where does the waste go?", answer: "One-time cleanups include haul-away: we bag everything and remove it for responsible, eco-friendly disposal at no extra charge. On recurring plans the double-bagged waste goes in your outdoor bin by default, and waste takeaway is $5 per visit if you would rather it leave with us." }
   ];
 
   return (

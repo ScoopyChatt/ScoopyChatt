@@ -14,7 +14,7 @@ import { generateServiceSchema } from "@/utils/schemaGenerators.js";
 
 const DogPoopScoopingPage = () => {
   const faqs = [
-    { question: "What does a dog poop scooping visit include?", answer: "A full grid-walk of your yard, scooping and bagging all waste, hauling it away for eco-friendly disposal, an on-the-way text before we arrive, and a photo of your secured gate when we finish." },
+    { question: "What does a dog poop scooping visit include?", answer: "A full grid-walk of your yard, scooping and double-bagging all waste into your outdoor bin, an on-the-way text before we arrive, and a photo of your secured gate when we finish. Waste takeaway for eco-friendly off-site disposal is $5 per visit if you would rather it not go in your cans." },
     { question: "Do you scoop in the rain?", answer: "Yes. We service on your scheduled day, rain or shine, so your yard stays clean no matter the weather." },
     { question: "Will you close my gate?", answer: "Always. We are careful with gates and pets on every visit, and we send you a photo of the secured gate when the job is done." },
     { question: "What if I have a large or wooded yard?", answer: "We grid-walk your yard regardless of size and quote based on the space and number of dogs, so you get a fair, accurate price." },
@@ -87,7 +87,7 @@ const DogPoopScoopingPage = () => {
                 <div className="bg-background p-8 rounded-2xl border border-border">
                   <Shield className="w-10 h-10 text-primary mb-4" />
                   <h3 className="text-xl font-bold mb-3">2. We Grid-Walk & Scoop</h3>
-                  <p className="text-muted-foreground leading-relaxed">We methodically cover your whole yard in a grid so nothing gets missed, then scoop, bag, and haul it away.</p>
+                  <p className="text-muted-foreground leading-relaxed">We methodically cover your whole yard in a grid so nothing gets missed, then scoop and double-bag. Bags go in your bin, or off the property for $5 a visit.</p>
                 </div>
                 <div className="bg-background p-8 rounded-2xl border border-border">
                   <CheckCircle2 className="w-10 h-10 text-primary mb-4" />

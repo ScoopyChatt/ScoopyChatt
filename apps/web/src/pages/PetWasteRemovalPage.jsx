@@ -15,9 +15,9 @@ import { generateServiceSchema } from "@/utils/schemaGenerators.js";
 const PetWasteRemovalPage = () => {
   const faqs = [
     { question: "Do you offer pet waste removal for HOAs and apartment communities?", answer: "Yes. We provide common-area pet waste removal for HOAs, condos, and apartment communities, and we can install and restock pet waste stations. Request a custom community quote and we will tailor a plan to your property." },
-    { question: "How do you price homes with multiple dogs?", answer: "Our base rates cover your first dog, with a small add-on per additional pet to account for the extra waste and time. You will always see the full price before you commit." },
+    { question: "How do you price homes with multiple dogs?", answer: "Our base rates cover your first dog. Weekly service adds $2 per visit per additional dog, twice-weekly adds $1, and every-other-week adds $3. You will always see the full price before you commit." },
     { question: "Is pet waste really a health risk?", answer: "Yes. Pet waste can carry roundworms, hookworms, giardia, and E. coli that affect both pets and people, and it pollutes local waterways. Regular removal is the simplest way to reduce that risk." },
-    { question: "How do you dispose of the waste?", answer: "We bag the waste and haul it away for responsible, eco-friendly disposal. Nothing is left behind in your cans unless you prefer it that way." },
+    { question: "How do you dispose of the waste?", answer: "We double-bag the waste and place it in your outdoor bin by default. If you would rather it not go in your own cans, waste takeaway is $5 per visit and we haul it off the property for responsible, eco-friendly disposal." },
     { question: "Do you sanitize between properties?", answer: "Yes. We sanitize our equipment between yards so we never carry bacteria from one property to the next, keeping every visit safe and hygienic." }
   ];
 
