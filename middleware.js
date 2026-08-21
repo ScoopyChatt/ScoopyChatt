@@ -90,6 +90,9 @@ const LEGACY = [
 ];
 
 const known = new Set([
+  // The SPA shell is a real file. Requesting it directly serves the home page, whose
+  // canonical points at "/", so it is a duplicate Google consolidates - not a 404.
+  '/index.html',
   ...PAGES,
   ...BLOG_POSTS.map((s) => `/blog/${s}`),
   ...SERVICE_AREAS.map((s) => `/service/${s}`),
@@ -125,6 +128,16 @@ const NOT_FOUND_HTML = `<!doctype html>
 </body>
 </html>`;
 
+// Extensions that belong to real static files this site serves. Anything else with an
+// extension - .html, .php, .aspx and friends - is a legacy Hostinger or spam URL and gets
+// a 404 rather than the SPA shell. Serving those 200 is what Google files as a soft 404.
+const STATIC_EXT = new Set([
+  'css', 'js', 'mjs', 'map', 'json', 'webmanifest',
+  'jpg', 'jpeg', 'png', 'gif', 'svg', 'webp', 'avif', 'ico', 'bmp',
+  'woff', 'woff2', 'ttf', 'otf', 'eot',
+  'txt', 'xml', 'pdf', 'mp4', 'webm', 'mp3', 'wasm',
+]);
+
 export default function middleware(request) {
   try {
     const { pathname } = new URL(request.url);
@@ -135,10 +148,16 @@ export default function middleware(request) {
       pathname.startsWith('/assets/') ||
       pathname.startsWith('/images/') ||
       pathname.startsWith('/_vercel/') ||
-      pathname.startsWith('/dp/') ||
-      pathname.includes('.')
+      pathname.startsWith('/dp/')
     ) {
       return;
+    }
+
+    // A real static file passes through untouched. A path with any other extension is
+    // a legacy or spam URL, so it falls through to the 404 below instead of the shell.
+    const dot = pathname.lastIndexOf('.');
+    if (dot > pathname.lastIndexOf('/') + 1) {
+      if (STATIC_EXT.has(pathname.slice(dot + 1).toLowerCase())) return;
     }
 
     // Trailing slashes and legacy prefixed paths resolve to the same page.
@@ -162,5 +181,5 @@ export default function middleware(request) {
 }
 
 export const config = {
-  matcher: '/((?!api|assets|images|_vercel|.*\\.).*)',
+  matcher: '/((?!api/|assets/|images/|_vercel/).*)',
 };
