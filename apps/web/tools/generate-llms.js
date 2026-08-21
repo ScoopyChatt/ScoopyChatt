@@ -87,6 +87,18 @@ const PAGES = [
 ];
 
 // Location/service-area pages
+const NEIGHBORHOODS = {
+  "st-elmo": ["St. Elmo", "the historic neighborhood at the foot of Lookout Mountain"],
+  "north-chattanooga": ["North Chattanooga", "the Northshore, near Frazier Avenue and Coolidge Park"],
+  "southside": ["Southside", "the Main Street district south of downtown"],
+  "lookout-valley": ["Lookout Valley", "west of Lookout Mountain along the I-24 corridor"],
+  "riverview": ["Riverview", "an established North Chattanooga neighborhood"],
+  "normal-park": ["Normal Park", "a family neighborhood in North Chattanooga"],
+  "brainerd": ["Brainerd", "East Chattanooga along the Brainerd Road corridor"],
+  "downtown": ["Downtown Chattanooga", "the city center"],
+  "highland-park": ["Highland Park", "a historic neighborhood just east of downtown"],
+};
+
 const GA_LOCS = new Set(["ringgold", "rossville", "flintstone", "fort-oglethorpe"]);
 const LOC_SLUGS = [
   "chattanooga", "hixson", "red-bank", "signal-mountain", "ooltewah", "east-brainerd",
@@ -100,11 +112,21 @@ const LOC_SLUGS = [
 for (const slug of LOC_SLUGS) {
   const city = slug.split("-").map(w => w[0].toUpperCase() + w.slice(1)).join(" ");
   const state = GA_LOCS.has(slug) ? "GA" : "TN";
-  PAGES.push([
-    "/service/" + slug,
-    "Dog Poop Removal in " + city + ", " + state + " | Scoopy Doo",
-    "Professional pet waste removal in " + city + ", " + state + ". Weekly and bi-weekly pooper scooper service from Scoopy Doo. Get your free online quote today."
-  ]);
+  var override = NEIGHBORHOODS[slug];
+  if (override) {
+    PAGES.push([
+      "/service/" + slug,
+      "Dog Poop Removal in " + override[0] + (override[0].indexOf("Chattanooga") >= 0 ? ", TN" : ", Chattanooga TN") + " | Scoopy Doo",
+      "Professional pet waste removal in " + override[0] + ", " + override[1] +
+        ". Weekly, twice-weekly, every-other-week, and one-time dog waste removal from Scoopy Doo. Free online quote."
+    ]);
+  } else {
+    PAGES.push([
+      "/service/" + slug,
+      "Dog Poop Removal in " + city + ", " + state + " | Scoopy Doo",
+      "Professional pet waste removal in " + city + ", " + state + ". Weekly and bi-weekly pooper scooper service from Scoopy Doo. Get your free online quote today."
+    ]);
+  }
 }
 
 function main() {
