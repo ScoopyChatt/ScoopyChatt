@@ -73,6 +73,9 @@ const BLOG_POSTS = [
   'signal-mountain',
   'soddy-daisy',
   'dog-door-installation-chattanooga',
+  'weekly-vs-biweekly-dog-poop-service-chattanooga',
+  'pet-waste-stations-apartments-hoas-chattanooga',
+  'yard-cleanup-before-a-party-chattanooga',
 ];
 
 module.exports = { PAGES, SERVICE_AREAS, BLOG_POSTS };

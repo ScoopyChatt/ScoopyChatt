@@ -80,7 +80,10 @@ export const generateSitemapData = async () => {
     'lawn-health-and-pet-waste',
     'health-risks-of-pet-waste',
     'pet-waste-management-guide',
-    'dog-door-installation-chattanooga'
+    'dog-door-installation-chattanooga',
+    'weekly-vs-biweekly-dog-poop-service-chattanooga',
+    'pet-waste-stations-apartments-hoas-chattanooga',
+    'yard-cleanup-before-a-party-chattanooga'
   ];
 
   liveBlogSlugs.forEach(slug => {

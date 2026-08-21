@@ -56,6 +56,7 @@ const PricingPage = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead 
         path="/pricing"
+        faqData={faqs}
         schema={[priceRangeSchema]}
       />
       
@@ -81,6 +82,23 @@ const PricingPage = () => {
           <div className="container-shell max-w-3xl">
             <h2 className="text-center mb-10">Frequently Asked Questions</h2>
             <FAQAccordion faqs={faqs} />
+          </div>
+        </section>
+
+        <section className="section-spacing">
+          <div className="container-shell max-w-3xl">
+            <h2 className="mb-4">Weekly or every other week?</h2>
+            <p className="text-muted-foreground mb-4">
+              The per-visit rates make weekly look far more expensive than every-other-week, but
+              they are much closer over a year: $1,040 for weekly versus $858 for every-other-week
+              with one dog, a difference of about $15 a month for twice the visits. Every-other-week
+              costs more per stop because two weeks of waste is a bigger job.
+            </p>
+            <p>
+              <Link to="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga" className="text-primary hover:underline font-semibold">
+                See the full weekly vs every-other-week breakdown
+              </Link>
+            </p>
           </div>
         </section>
 

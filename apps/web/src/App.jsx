@@ -61,6 +61,9 @@ const NorthGeorgiaDogPoopRemoval = React.lazy(() => import('@/pages/blog/NorthGe
 const OneTimeDogPoopCleanupChattanooga = React.lazy(() => import('@/pages/blog/OneTimeDogPoopCleanupChattanooga.jsx'));
 const HOAPetWasteRemovalChattanooga = React.lazy(() => import('@/pages/blog/HOAPetWasteRemovalChattanooga.jsx'));
 const DogDoorInstallationChattanooga = React.lazy(() => import('@/pages/blog/DogDoorInstallationChattanooga.jsx'));
+const WeeklyVsBiweeklyDogPoopServiceChattanooga = React.lazy(() => import('@/pages/blog/WeeklyVsBiweeklyDogPoopServiceChattanooga.jsx'));
+const PetWasteStationsApartmentsHOAsChattanooga = React.lazy(() => import('@/pages/blog/PetWasteStationsApartmentsHOAsChattanooga.jsx'));
+const YardCleanupBeforePartyChattanoogaNorthGeorgia = React.lazy(() => import('@/pages/blog/YardCleanupBeforePartyChattanoogaNorthGeorgia.jsx'));
 const NewPuppyOwnerGuideChattanooga = React.lazy(() => import('@/pages/blog/NewPuppyOwnerGuideChattanooga.jsx'));
 const YardCleanupBeforeSellingHomeChattanooga = React.lazy(() => import('@/pages/blog/YardCleanupBeforeSellingHomeChattanooga.jsx'));
 
@@ -191,6 +194,9 @@ function App() {
           <Route path="/blog/one-time-dog-poop-cleanup-chattanooga" element={<OneTimeDogPoopCleanupChattanooga />} />
           <Route path="/blog/hoa-pet-waste-removal-chattanooga" element={<HOAPetWasteRemovalChattanooga />} />
           <Route path="/blog/dog-door-installation-chattanooga" element={<DogDoorInstallationChattanooga />} />
+          <Route path="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga" element={<WeeklyVsBiweeklyDogPoopServiceChattanooga />} />
+          <Route path="/blog/pet-waste-stations-apartments-hoas-chattanooga" element={<PetWasteStationsApartmentsHOAsChattanooga />} />
+          <Route path="/blog/yard-cleanup-before-a-party-chattanooga" element={<YardCleanupBeforePartyChattanoogaNorthGeorgia />} />
 <Route path="/blog/new-puppy-pet-waste-removal-chattanooga" element={<NewPuppyOwnerGuideChattanooga />} />
 <Route path="/blog/yard-cleanup-before-selling-home-chattanooga" element={<YardCleanupBeforeSellingHomeChattanooga />} />
           <Route path="/blog/professional-waste-removal-benefits" element={<ProfessionalWasteRemovalBenefits />} />

@@ -293,6 +293,24 @@ const ServicesPage = () => {
           </div>
         </section>
 
+        {/* Related reading */}
+        <section className="py-16 px-4 bg-muted/20 border-t border-border">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold mb-4">Not sure how often you need service?</h2>
+            <p className="text-muted-foreground mb-4">
+              Weekly service is $20 per visit for the first dog and every-other-week service is
+              $33 per visit. Over a full year that is $1,040 versus $858, so the two plans are only
+              about $15 a month apart for twice as many visits. Weekly suits most homes with one or
+              two dogs; every-other-week works for a single dog on a larger yard.
+            </p>
+            <p>
+              <Link to="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga" className="text-primary hover:underline font-semibold">
+                Read the full comparison: weekly vs every-other-week dog poop service in Chattanooga
+              </Link>
+            </p>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="py-20 px-4 bg-primary text-primary-foreground text-center">
           <div className="max-w-2xl mx-auto">

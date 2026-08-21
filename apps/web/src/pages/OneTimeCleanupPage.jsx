@@ -74,6 +74,23 @@ const OneTimeCleanupPage = () => {
           </div>
         </section>
 
+        <section className="py-16 border-t border-border bg-muted/20">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold mb-4">Cleaning up before an event?</h2>
+            <p className="text-muted-foreground mb-4">
+              Book the cleanup for one to two days before the party, not the morning of. That is
+              close enough that a dog cannot undo the work and far enough that the grass dries and
+              any lingering smell fades. Mow first, then have us come, then water the heavily used
+              areas. One-time cleanups start at $85 with no contract.
+            </p>
+            <p>
+              <Link to="/blog/yard-cleanup-before-a-party-chattanooga" className="text-primary hover:underline font-semibold">
+                Read the full guide: one-time yard cleanup before a party in Chattanooga or North Georgia
+              </Link>
+            </p>
+          </div>
+        </section>
+
         <ReviewsSection />
       </main>
 

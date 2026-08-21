@@ -68,13 +68,25 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   serviceType: 'Commercial and HOA Pet Waste Removal',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'Scoopy Doo LLC',
-    telephone: '423-600-5040',
-    url: 'https://www.scoopychatt.com',
-  },
-  areaServed: 'Chattanooga, TN and North Georgia',
+  provider: { '@id': 'https://www.scoopychatt.com/#business' },
+  areaServed: [
+    { '@type': 'City', name: 'Chattanooga', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'Hixson', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'Red Bank', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'Signal Mountain', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'Ooltewah', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'East Brainerd', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'Soddy-Daisy', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'Cleveland', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'East Ridge', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'Collegedale', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'Apison', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'Lookout Mountain', containedInPlace: 'Tennessee' },
+    { '@type': 'City', name: 'Ringgold', containedInPlace: 'Georgia' },
+    { '@type': 'City', name: 'Rossville', containedInPlace: 'Georgia' },
+    { '@type': 'City', name: 'Fort Oglethorpe', containedInPlace: 'Georgia' },
+    { '@type': 'City', name: 'Flintstone', containedInPlace: 'Georgia' },
+  ],
   description:
     'Commercial and HOA pet waste removal in Chattanooga, TN. Scheduled cleanup and pet waste stations for apartments, HOAs, dog parks, and businesses. Fully insured with no long-term contracts.',
   url: 'https://www.scoopychatt.com/commercial',
@@ -206,6 +218,23 @@ export default function CommercialPage() {
                 <a href="tel:423-600-5040">Call or Text 423-600-5040</a>
               </Button>
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 border-t border-border bg-muted/20">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold mb-4">Planning pet waste stations for your property?</h2>
+            <p className="text-muted-foreground mb-4">
+              A practical starting point is one station for every 40 to 50 pet-friendly units,
+              placed so no resident walks more than about 150 feet off their normal dog-walking
+              route. Servicing matters more than the hardware: an empty bag dispenser or an
+              overflowing receptacle teaches residents the rule is not enforced.
+            </p>
+            <p>
+              <Link to="/blog/pet-waste-stations-apartments-hoas-chattanooga" className="text-primary hover:underline font-semibold">
+                Read the full guide to pet waste stations for Chattanooga apartments and HOAs
+              </Link>
+            </p>
           </div>
         </section>
       </main>

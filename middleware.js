@@ -66,6 +66,7 @@ const BLOG_POSTS = [
   'new-puppy-pet-waste-removal-chattanooga',
   'one-time-dog-poop-cleanup-chattanooga',
   'pet-waste-management-guide',
+  'pet-waste-stations-apartments-hoas-chattanooga',
   'podcast-blog',
   'pooper-scooper-cost-chattanooga',
   'professional-waste-removal-benefits',
@@ -73,6 +74,8 @@ const BLOG_POSTS = [
   'signal-mountain',
   'soddy-daisy',
   'spring-pet-care-checklist',
+  'weekly-vs-biweekly-dog-poop-service-chattanooga',
+  'yard-cleanup-before-a-party-chattanooga',
   'winter-dog-poop-cleanup-chattanooga',
   'yard-cleanup-before-selling-home-chattanooga',
 ];
