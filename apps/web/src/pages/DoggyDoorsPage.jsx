@@ -350,9 +350,9 @@ const DoggyDoorsPage = () => {
                       </h3>
                       <p className="text-sm text-foreground/90">
                         You already trust Scoopy Doo with your yard. Book as a Founding Customer and
-                        we will bump your install up one tier, free: Good becomes Better, and Better
-                        becomes Best. Already going with Best? We will add a free 2-year Scoopy Doo
-                        installation and electronics protection plan instead.
+                        get an extra perk on us. Choose Better and we will bump you up to Best, free.
+                        Choose Good or Best and we will add a free 2-year Scoopy Doo installation and
+                        electronics protection plan instead.
                       </p>
                     </div>
                   </motion.div>
@@ -387,6 +387,9 @@ const DoggyDoorsPage = () => {
                           <div className="mb-4">
                             <span className="text-4xl font-extrabold text-foreground">${tier.price}</span>
                             <span className="text-muted-foreground text-sm ml-1">installed</span>
+                            {tier.sizeNote && (
+                              <p className="text-xs text-muted-foreground mt-1">{tier.sizeNote}</p>
+                            )}
                           </div>
 
                           <p className="text-sm font-semibold text-foreground mb-4">{tier.product}</p>
