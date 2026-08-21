@@ -77,3 +77,33 @@ promotional content, so check each group before posting.
 > Tuesday or Wednesday to be safe, but ask anyway if it is later than that.
 >
 > Timing guide: scoopychatt.com/blog/yard-cleanup-before-a-party-chattanooga
+
+---
+
+## Post 4 — pairs with the yard odor article
+
+**Suggested groups:** Chattanooga and North Georgia community groups, local dog owner groups, lawn and garden groups
+
+> If your yard still smells after you scoop it, you did not miss anything. The smell
+> is coming out of the ground, not off the waste.
+>
+> Bacteria and ammonia compounds soak into the thatch and the top inch of soil and
+> stay there after the solids are gone. Our humidity keeps them lifting off the
+> ground instead of staying put, and the clay soil around here drains slow enough
+> that it all sits near the surface. A dry yard in a dry climate stops smelling on
+> its own. Ours does not.
+>
+> The fix most people skip: after you clear it, soak the bad areas. Really soak
+> them, like a heavy rain, not a sprinkle. That carries the compounds down past the
+> root zone instead of leaving them where your nose is. Give it two or three days.
+> For a yard that gets cleaned on any kind of regular schedule, that is the whole
+> thing, and it costs nothing.
+>
+> What does not work: lime (not an odor treatment, and it will burn your lawn if you
+> overdo it), scented sprays (a few hours, then you have two smells), bleach (please
+> do not).
+>
+> We do sell a deodorizing treatment for the yards where water alone will not cut it,
+> but if yours is on a normal schedule you honestly do not need it. Try the hose first.
+>
+> Full rundown: scoopychatt.com/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga

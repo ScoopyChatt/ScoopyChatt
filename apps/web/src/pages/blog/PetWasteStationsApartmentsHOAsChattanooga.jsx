@@ -57,7 +57,7 @@ const PetWasteStationsApartmentsHOAsChattanooga = () => {
         "name": "How much does pet waste station service cost for an HOA in Chattanooga?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pet waste stations start at $299 per station installed, which covers the station, post, mounting, and initial bag stock. Ongoing servicing is quoted per property rather than published as a flat rate, because cost depends on the number of stations, how much common-area ground is swept, and how often the property is serviced. Scoopy Doo provides a free walkthrough and a written quote, and most commercial clients run month-to-month with no long-term contract."
+          "text": "Pet waste stations start at $299 per station installed, which covers the station, post, mounting, and initial bag stock. Servicing is $10 per station per week, so a community with four stations is $40 a week or about $173 a month. The common-area sweep that runs alongside the stations is quoted per property after a free walkthrough, since it depends on how much ground is covered and how often. Most commercial clients run month-to-month with no long-term contract."
         }
       },
       {
@@ -178,8 +178,14 @@ const PetWasteStationsApartmentsHOAsChattanooga = () => {
             stations is looking at roughly $598 up front rather than an open-ended number.
           </p>
           <p className="mb-4">
-            Ongoing servicing is quoted per property rather than published as a flat rate, because
-            three things drive it and they vary enormously between communities:
+            Servicing is $10 per station per week. A community with four stations is $40 a week,
+            which is about $173 a month or $2,080 a year. That covers restocking, emptying,
+            re-lining, and hauling the waste off site every week.
+          </p>
+          <p className="mb-4">
+            What is quoted per property rather than published is the common-area sweep that runs
+            alongside the stations, because three things drive it and they vary enormously between
+            communities:
           </p>
           <ol className="list-decimal pl-6 mb-4 space-y-1">
             <li>How many stations are installed and serviced</li>
@@ -188,11 +194,10 @@ const PetWasteStationsApartmentsHOAsChattanooga = () => {
           </ol>
           <p className="mb-4">
             A 60-unit HOA with two stations and a small common lawn is a very different job from a
-            300-unit community with a dog park, and one published service price would be wrong for
-            both. We do a free walkthrough, then send a written quote covering the scheduled route
-            alongside the $299-per-station installation. Most commercial clients run month-to-month
-            with no long-term contract, so a board can trial a season before committing budget.
-            Full details are on the{' '}
+            300-unit community with a dog park, so the sweep is priced after we walk it. The station
+            numbers do not move: $299 to install each one, $10 per station per week to service it.
+            Most commercial clients run month-to-month with no long-term contract, so a board can
+            trial a season before committing budget. Full details are on the{' '}
             <Link className="text-green-700 underline font-semibold" to="/commercial">
               commercial and HOA pet waste removal page
             </Link>.

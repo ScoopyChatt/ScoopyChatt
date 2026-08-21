@@ -63,7 +63,7 @@ verifiable from this environment. **P1** = build next, **P2** = this quarter,
 | A4 | Switching Pooper Scooper Services in Chattanooga: How to Change Without a Gap in Service | switching pet waste removal company chattanooga | P2 |
 | A5 | Why the First Cleanup Costs More: Initial Cleanup Fees Explained | initial cleanup fee pooper scooper service | P2 |
 | A6 | Do I Need to Be Home for Pooper Scooper Service? Gate Access, Dogs Outside, and Locked Fences | do I need to be home pooper scooper | P2 |
-| A7 | How to Get Rid of Dog Poop Smell in a Chattanooga Yard (What Actually Works) | how to get rid of dog poop smell in yard | **P1 — unblocked, deodorizing is $20/visit** |
+| A7 | How to Get Rid of Dog Poop Smell in a Chattanooga Yard (What Actually Works) | how to get rid of dog poop smell in yard | **P1 — DRAFTED** |
 | A8 | Can I Pause Pet Waste Removal While I Travel? | pause pooper scooper service vacation | P3 |
 | A9 | Weekly Dog Poop Removal in Hixson and Red Bank: Cost and Scheduling | weekly dog poop pickup hixson tn | P3 |
 | A10 | Is a Pooper Scooper Service Worth It? A Straight Cost-vs-Time Answer | is pooper scooper service worth it | P3 |
@@ -119,6 +119,7 @@ verifiable from this environment. **P1** = build next, **P2** = this quarter,
 
 | Post | Slug | Pillar | Service page linking back |
 |---|---|---|---|
+| How to Get Rid of Dog Poop Smell in a Chattanooga Yard | `/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga` | A | `/services` |
 | Weekly vs Every-Other-Week Dog Poop Service in Chattanooga | `/blog/weekly-vs-biweekly-dog-poop-service-chattanooga` | A | `/services`, `/pricing` |
 | Pet Waste Stations for Chattanooga Apartments and HOAs | `/blog/pet-waste-stations-apartments-hoas-chattanooga` | C + D | `/commercial` |
 | One-Time Yard Cleanup Before a Party | `/blog/yard-cleanup-before-a-party-chattanooga` | B | `/one-time-cleanup` |
@@ -154,7 +155,8 @@ this table; if a rate changes, grep for the figure rather than editing one page.
 | One-time cleanup | from $85 |
 | Yard deodorizing and sanitizing | $20 per visit |
 | Pet waste station | from $299 per station installed |
-| Station servicing, commercial and HOA | quoted per property |
+| Pet waste station servicing | $10 per station per week |
+| Common-area sweep, commercial and HOA | quoted per property |
 
 Note on positioning: Call of Doody publishes yard deodorizing at $15/visit, below
 our $20. Our advantage there is that ours is priced in public and theirs requires a
@@ -162,9 +164,15 @@ call — worth not picking a price fight we do not win on the number alone.
 
 ## 6. Open items for Brandon
 
-- **Post A7 (yard odor) is now the clearest remaining gap** and is unblocked by the
-  $20/visit rate. It is the only pillar-A P1 with no draft.
-- **Station servicing has no published rate**, only the $299 install. A per-station
-  monthly servicing figure would complete the picture for boards comparing vendors.
+- **Next P1s with no draft:** A2 (multi-dog pricing), A3 (per-visit vs flat monthly
+  billing), B2 (move-out / rental deposit), B3 (neglected yard deep clean), C2
+  (apartment dog park contracts), C3 (what a commercial quote includes), D1 (getting
+  board approval), D2 (HOA cost per unit).
+- **A3 is the sharpest of those.** Every competitor that publishes anything bills a
+  flat monthly rate; we bill per visit. Nobody has written that comparison, and it is
+  the exact question a buyer asks when PooTagic quotes them a flat monthly number.
 - **Competitor prices in the comparison page are July 2026 vintage.** They still
   match what search results show, but they should be re-verified quarterly.
+- **The comparison page does not list our add-on rates.** Now that stations and
+  deodorizing are priced, the table could carry them — worth doing when the
+  quarterly competitor re-verification happens.

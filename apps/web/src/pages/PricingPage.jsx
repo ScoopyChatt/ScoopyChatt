@@ -51,7 +51,7 @@ const PricingPage = () => {
     { question: "What if my yard is overgrown or very large?", answer: "We provide custom quotes for significantly oversized yards or properties with tall grass/weeds that make scooping significantly more difficult." },
     { question: "Do you charge extra for initial cleanups?", answer: "If it has been a long time since the yard was last cleaned, an initial spring-cleaning fee may apply to get your yard to a maintainable baseline before regular visit rates kick in." },
     { question: "Do you offer yard deodorizing?", answer: "Yes. Deodorizing and sanitizing is $20 per visit. It neutralizes the odor compounds and bacteria left behind in the soil after the waste itself is removed, and it can be added to any recurring plan or to a one-time cleanup. It is most worthwhile for heavily used yards, areas near a patio, and yards being prepped for an event or a home sale." },
-    { question: "What do pet waste stations cost for an HOA or apartment community?", answer: "Pet waste stations start at $299 per station installed, which covers the station, post, mounting, and initial bag stock. Ongoing servicing is quoted per property based on station count, common-area size, and frequency. Request a free walkthrough for an exact number." }
+    { question: "What do pet waste stations cost for an HOA or apartment community?", answer: "Pet waste stations are $299 per station installed and $10 per station per week to service. Installation covers the station, post, mounting, and initial bag stock; servicing covers restocking, emptying, and hauling the waste off site each week. A four-station community runs $40 a week. Any common-area sweep alongside the stations is quoted separately after a free walkthrough." }
   ];
 
   return (
@@ -81,7 +81,7 @@ const PricingPage = () => {
               <h2 className="text-2xl font-bold mb-3">Add-ons</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong className="text-foreground">Yard deodorizing and sanitizing - $20 per visit.</strong> Neutralizes the odor compounds and bacteria left in the soil after the waste is gone. Add it to any plan or to a one-time cleanup.</li>
-                <li><strong className="text-foreground">Pet waste stations - from $299 per station installed.</strong> For HOAs, apartment communities, and dog parks. Covers the station, post, mounting, and first stock of bags; ongoing servicing is quoted per property.</li>
+                <li><strong className="text-foreground">Pet waste stations - from $299 per station installed, then $10 per station per week to service.</strong> For HOAs, apartment communities, and dog parks. Installation covers the station, post, mounting, and first stock of bags. Servicing covers weekly restocking, emptying, and off-site disposal.</li>
               </ul>
             </div>
           </div>

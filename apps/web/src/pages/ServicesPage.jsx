@@ -217,7 +217,7 @@ const ServicesPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-muted-foreground leading-relaxed mb-6">Pet waste removal eliminates the source of the problem, but the bacteria and odor compounds it leaves behind in the soil can persist long after the waste is gone. Deodorizing and sanitizing treatments neutralize those residual effects and leave your yard genuinely clean - not just visually clean.</p>
-                <p className="text-muted-foreground leading-relaxed mb-6">Deodorizing and sanitizing is $20 per visit and can be added to any recurring plan or to a one-time cleanup. It is especially valuable for yards with years of accumulated contamination, areas near patios or high-traffic zones, or properties being prepared for sale or an event.</p>
+                <p className="text-muted-foreground leading-relaxed mb-6">Deodorizing and sanitizing is $20 per visit and can be added to any recurring plan or to a one-time cleanup. It is especially valuable for yards with years of accumulated contamination, areas near patios or high-traffic zones, or properties being prepared for sale or an event. For most yards, removing the waste and watering the affected areas heavily clears the smell on its own - <Link to="/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga" className="text-primary hover:underline font-semibold">here is what actually works, in order</Link>, including when this treatment is and is not worth paying for.</p>
                 <ul className="space-y-3">
                   {[
                     "Neutralizes odor compounds in soil and grass",

@@ -60,6 +60,7 @@ const BLOG_POSTS = [
   'hoa-pet-waste-removal-chattanooga',
   'how-often-clean-yard',
   'how-often-scoop-dog-poop-chattanooga',
+  'how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga',
   'is-dog-poop-hurting-your-chattanooga-yard',
   'is-dog-waste-bad-for-lawn',
   'lawn-health-and-pet-waste',
