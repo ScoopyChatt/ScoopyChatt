@@ -42,6 +42,13 @@ export function generateLocalBusinessSchema() {
       { "@type": "City", "name": "Signal Mountain", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Signal_Mountain,_Tennessee" },
       { "@type": "City", "name": "Lookout Mountain", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Lookout_Mountain,_Tennessee" },
       { "@type": "City", "name": "Soddy-Daisy", "addressRegion": "TN", "sameAs": "https://en.wikipedia.org/wiki/Soddy-Daisy,_Tennessee" },
+      { "@type": "Place", "name": "St. Elmo, Chattanooga", "addressRegion": "TN" },
+      { "@type": "Place", "name": "North Chattanooga, Chattanooga", "addressRegion": "TN" },
+      { "@type": "Place", "name": "Southside, Chattanooga", "addressRegion": "TN" },
+      { "@type": "Place", "name": "Lookout Valley, Chattanooga", "addressRegion": "TN" },
+      { "@type": "Place", "name": "Riverview, Chattanooga", "addressRegion": "TN" },
+      { "@type": "Place", "name": "Normal Park, Chattanooga", "addressRegion": "TN" },
+      { "@type": "Place", "name": "Brainerd, Chattanooga", "addressRegion": "TN" },
       { "@type": "City", "name": "Ringgold", "addressRegion": "GA", "sameAs": "https://en.wikipedia.org/wiki/Ringgold,_Georgia" },
       { "@type": "City", "name": "Fort Oglethorpe", "addressRegion": "GA", "sameAs": "https://en.wikipedia.org/wiki/Fort_Oglethorpe,_Georgia" },
       { "@type": "City", "name": "Rossville", "addressRegion": "GA", "sameAs": "https://en.wikipedia.org/wiki/Rossville,_Georgia" }
