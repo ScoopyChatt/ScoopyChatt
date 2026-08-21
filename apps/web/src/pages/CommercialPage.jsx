@@ -186,6 +186,20 @@ export default function CommercialPage() {
           </div>
         </section>
 
+        <section className="py-12 bg-muted/30">
+          <div className="max-w-3xl mx-auto px-4 text-center">
+            <figure>
+              <blockquote className="text-lg text-muted-foreground italic leading-relaxed">
+                &ldquo;Scoopy Doo does a great job collecting at our community! Thank you for the
+                attention to detail and keeping our apartments clean!&rdquo;
+              </blockquote>
+              <figcaption className="mt-4 text-sm font-semibold text-foreground">
+                &mdash; Populus Waterside, property manager
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
         <ReviewsSection />
 
         <section className="py-20">

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget.jsx';
+import { testimonials } from '@/data/testimonials.js';
 import SEOHead from '@/components/SEOHead.jsx';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
@@ -59,6 +60,34 @@ const ReviewsPage = () => {
             </div>
           </section>
           
+          <section className="py-12 bg-background">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
+                What Chattanooga Customers Say
+              </h2>
+              <div className="grid gap-6 md:grid-cols-2">
+                {testimonials.map((t, i) => (
+                  <figure key={i} className="rounded-2xl border border-border bg-card p-6">
+                    <div className="text-primary mb-3" aria-label="Five out of five stars">
+                      &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+                    <blockquote className="text-muted-foreground leading-relaxed">
+                      &ldquo;{t.quote}&rdquo;
+                    </blockquote>
+                    <figcaption className="mt-4 text-sm">
+                      <span className="font-semibold text-foreground">{t.author}</span>
+                      <span className="text-muted-foreground"> &middot; {t.date}</span>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+              <p className="mt-6 text-xs text-muted-foreground text-center">
+                Reviews published on the Scoopy Doo Google Business Profile and quoted as written.
+                Excerpts are marked with an ellipsis.
+              </p>
+            </div>
+          </section>
+
           {/* Main Widget Section */}
           {/* The widget provides its own container and background styling */}
           <GoogleReviewsWidget />
