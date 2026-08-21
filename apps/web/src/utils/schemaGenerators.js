@@ -11,7 +11,7 @@ export function generateLocalBusinessSchema() {
     "url": "https://www.scoopychatt.com",
     "telephone": "+14236005040",
     "email": "info@scoopychatt.com",
-    "founder": [{ "@type": "Person", "name": "Leighton Carter" }, { "@type": "Person", "name": "Brandon Carter" }],
+    "founder": [{ "@type": "Person", "name": "Leighton Carter", "jobTitle": "President" }, { "@type": "Person", "name": "Brandon Carter", "jobTitle": "Owner" }],
     "image": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png",
     "logo": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png",
     "memberOf": {

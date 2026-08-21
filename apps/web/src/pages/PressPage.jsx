@@ -144,6 +144,38 @@ export default function PressPage() {
                     secured gate when the visit is complete. No contracts are required.
                   </p>
                 </div>
+                <figure className="mt-6 border-l-4 border-primary/40 pl-5">
+                  <blockquote className="text-muted-foreground italic">
+                    &ldquo;Joining aPaws was an easy decision for us. When Leighton and I started Scoopy
+                    Doo, we quickly realized that pet waste removal is becoming a real professional
+                    service industry, but it&apos;s still young enough that the companies doing things the
+                    right way have an opportunity to help shape what it becomes. We wanted to be part of
+                    an organization that promotes professionalism, education, better operating standards,
+                    and collaboration between companies across the country. We&apos;ve learned an
+                    incredible amount building Scoopy Doo, and we&apos;re still learning every day. Being
+                    part of aPaws gives us the opportunity to learn from other great operators, share what
+                    has worked for us, and help raise the bar for the entire industry.&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-3 text-sm font-semibold text-foreground">
+                    &mdash; Brandon Carter, Owner, Scoopy Doo
+                  </figcaption>
+                </figure>
+
+                <figure className="mt-6 border-l-4 border-primary/40 pl-5">
+                  <blockquote className="text-muted-foreground italic">
+                    &ldquo;What I like most about joining aPaws is that it connects us with other people
+                    who are serious about building great businesses and making this industry better.
+                    Scoopy Doo has grown incredibly fast, and I&apos;ve gotten to learn about marketing,
+                    customer service, leadership, and entrepreneurship much earlier than I ever expected.
+                    I think there&apos;s a lot we can learn from other aPaws members, but I also think we
+                    have experiences and ideas we can contribute. It&apos;s exciting to be part of a
+                    community that wants to see this industry grow and become even more professional.&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-3 text-sm font-semibold text-foreground">
+                    &mdash; Leighton Carter, President, Scoopy Doo
+                  </figcaption>
+                </figure>
+
                 <div className="mt-6 flex flex-wrap gap-4">
                   <a
                     href="https://apaws.org/search/details.aspx?id=3031"
