@@ -178,6 +178,14 @@ const CostCalculatorPage = () => {
             Most Chattanooga households pay between $18 and $36 per visit for recurring pooper scooper service, depending on how often they want visits and how many dogs they have. Scoopy Doo twice-weekly service starts at $18 per visit, weekly service starts at $20 per visit, and every-other-week service starts at $33 per visit, each plus a small charge for every additional dog. Optional waste takeaway, where we haul the bagged waste completely off your property, is $5 per visit. One-time yard cleanups start at $85.
           </p>
           <p className="text-muted-foreground mb-4">
+            Comparing this against a monthly quote from another company? Weekly service averages
+            4.33 visits a month, not 4, so a 4-visit monthly plan covers 48 visits a year against a
+            true weekly 52. Convert both to an annual figure before you decide.{' '}
+            <Link to="/blog/pooper-scooper-price-per-visit-vs-monthly-chattanooga" className="text-primary hover:underline font-semibold">
+              Here is the math, plus six questions to ask any company.
+            </Link>
+          </p>
+          <p className="text-muted-foreground mb-4">
             Every Scoopy Doo visit includes a full grid-pattern sweep of the yard, double-bagged waste, an on-the-way text, and a gate photo when the job is done. There are no contracts and no cancellation fees. Prices in this calculator are estimates; your final quote is confirmed free with no obligation.
           </p>
           <div className="bg-muted rounded-2xl p-6 text-center">

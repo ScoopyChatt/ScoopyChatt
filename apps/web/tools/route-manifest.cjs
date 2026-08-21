@@ -77,6 +77,7 @@ const BLOG_POSTS = [
   'pet-waste-stations-apartments-hoas-chattanooga',
   'yard-cleanup-before-a-party-chattanooga',
   'how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga',
+  'pooper-scooper-price-per-visit-vs-monthly-chattanooga',
 ];
 
 module.exports = { PAGES, SERVICE_AREAS, BLOG_POSTS };

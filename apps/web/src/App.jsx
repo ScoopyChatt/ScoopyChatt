@@ -65,6 +65,7 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = React.lazy(() => import('@/pag
 const PetWasteStationsApartmentsHOAsChattanooga = React.lazy(() => import('@/pages/blog/PetWasteStationsApartmentsHOAsChattanooga.jsx'));
 const YardCleanupBeforePartyChattanoogaNorthGeorgia = React.lazy(() => import('@/pages/blog/YardCleanupBeforePartyChattanoogaNorthGeorgia.jsx'));
 const DogPoopSmellInYardChattanooga = React.lazy(() => import('@/pages/blog/DogPoopSmellInYardChattanooga.jsx'));
+const PerVisitVsMonthlyPricingChattanooga = React.lazy(() => import('@/pages/blog/PerVisitVsMonthlyPricingChattanooga.jsx'));
 const NewPuppyOwnerGuideChattanooga = React.lazy(() => import('@/pages/blog/NewPuppyOwnerGuideChattanooga.jsx'));
 const YardCleanupBeforeSellingHomeChattanooga = React.lazy(() => import('@/pages/blog/YardCleanupBeforeSellingHomeChattanooga.jsx'));
 
@@ -199,6 +200,7 @@ function App() {
           <Route path="/blog/pet-waste-stations-apartments-hoas-chattanooga" element={<PetWasteStationsApartmentsHOAsChattanooga />} />
           <Route path="/blog/yard-cleanup-before-a-party-chattanooga" element={<YardCleanupBeforePartyChattanoogaNorthGeorgia />} />
           <Route path="/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga" element={<DogPoopSmellInYardChattanooga />} />
+          <Route path="/blog/pooper-scooper-price-per-visit-vs-monthly-chattanooga" element={<PerVisitVsMonthlyPricingChattanooga />} />
 <Route path="/blog/new-puppy-pet-waste-removal-chattanooga" element={<NewPuppyOwnerGuideChattanooga />} />
 <Route path="/blog/yard-cleanup-before-selling-home-chattanooga" element={<YardCleanupBeforeSellingHomeChattanooga />} />
           <Route path="/blog/professional-waste-removal-benefits" element={<ProfessionalWasteRemovalBenefits />} />

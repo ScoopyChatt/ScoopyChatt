@@ -60,7 +60,7 @@ verifiable from this environment. **P1** = build next, **P2** = this quarter,
 |---|---|---|---|
 | A1 | Weekly vs Every-Other-Week Dog Poop Service in Chattanooga: Which One Do You Actually Need? | weekly vs bi-weekly dog poop removal chattanooga | **P1 — DRAFTED** |
 | A2 | Pooper Scooper Pricing for 2, 3, or 4 Dogs in Chattanooga: What Extra Dogs Actually Cost | pooper scooper price for 3 dogs chattanooga | P1 |
-| A3 | Why Pooper Scooper Prices Look Different Everywhere: Per-Visit vs Monthly Quotes | pet waste removal monthly vs per visit pricing | P1 |
+| A3 | Per-Visit vs Monthly Pooper Scooper Quotes: How to Actually Compare Prices | pet waste removal monthly vs per visit pricing | **P1 — DRAFTED** |
 | A4 | Switching Pooper Scooper Services in Chattanooga: How to Change Without a Gap in Service | switching pet waste removal company chattanooga | P2 |
 | A5 | Why the First Cleanup Costs More: Initial Cleanup Fees Explained | initial cleanup fee pooper scooper service | P2 |
 | A6 | Do I Need to Be Home for Pooper Scooper Service? Gate Access, Dogs Outside, and Locked Fences | do I need to be home pooper scooper | P2 |
@@ -121,6 +121,7 @@ verifiable from this environment. **P1** = build next, **P2** = this quarter,
 | Post | Slug | Pillar | Service page linking back |
 |---|---|---|---|
 | How to Get Rid of Dog Poop Smell in a Chattanooga Yard | `/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga` | A | `/services` |
+| Per-Visit vs Monthly Pooper Scooper Quotes | `/blog/pooper-scooper-price-per-visit-vs-monthly-chattanooga` | A | `/pricing`, `/cost-calculator` |
 | Weekly vs Every-Other-Week Dog Poop Service in Chattanooga | `/blog/weekly-vs-biweekly-dog-poop-service-chattanooga` | A | `/services`, `/pricing` |
 | Pet Waste Stations for Chattanooga Apartments and HOAs | `/blog/pet-waste-stations-apartments-hoas-chattanooga` | C + D | `/commercial` |
 | One-Time Yard Cleanup Before a Party | `/blog/yard-cleanup-before-a-party-chattanooga` | B | `/one-time-cleanup` |
@@ -182,13 +183,13 @@ call — worth not picking a price fight we do not win on the number alone.
 
 ## 6. Open items for Brandon
 
-- **Next P1s with no draft:** A2 (multi-dog pricing), A3 (per-visit vs flat monthly
-  billing), B2 (move-out / rental deposit), B3 (neglected yard deep clean), C2
-  (apartment dog park contracts), C3 (what a commercial quote includes), D1 (getting
-  board approval), D2 (HOA cost per unit).
-- **A3 is the sharpest of those.** Every competitor that publishes anything bills a
-  flat monthly rate; we bill per visit. Nobody has written that comparison, and it is
-  the exact question a buyer asks when PooTagic quotes them a flat monthly number.
+- **Next P1s with no draft:** A2 (multi-dog pricing), B2 (move-out / rental deposit),
+  B3 (neglected yard deep clean), C2 (apartment dog park contracts), C3 (what a
+  commercial quote includes), D1 (getting board approval), D2 (HOA cost per unit).
+- **A2 is now the sharpest.** A3 published the per-dog rates as a side effect, so a
+  dedicated multi-dog post has the numbers ready and one genuinely counterintuitive
+  hook: the per-dog surcharge is *inverse* to frequency ($1 twice-weekly, $3
+  every-other-week), so multi-dog homes close the gap between plans.
 - **Competitor prices in the comparison page are July 2026 vintage.** They still
   match what search results show, but they should be re-verified quarterly.
 - **The comparison page does not list our add-on rates.** Now that stations and

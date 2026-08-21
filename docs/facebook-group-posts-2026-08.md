@@ -107,3 +107,31 @@ promotional content, so check each group before posting.
 > but if yours is on a normal schedule you honestly do not need it. Try the hose first.
 >
 > Full rundown: scoopychatt.com/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga
+
+---
+
+## Post 5 — pairs with the per-visit vs monthly quote article
+
+**Suggested groups:** Chattanooga and North Georgia community groups, local dog owner groups, budget/frugal living groups
+
+> If you are shopping pooper scooper quotes right now, here is the bit of math that
+> trips almost everybody up. A month is not four weeks.
+>
+> There are 52 weeks in a year and 12 months, so weekly service averages 4.33 visits
+> a month, not 4. That sounds like nitpicking until you compare quotes. A company
+> charging a flat monthly rate built on 4 visits is giving you 48 cleanings a year.
+> True weekly is 52. That gap is four visits, basically a free month, and you cannot
+> see it when you are looking at two numbers on two different websites.
+>
+> So convert everything to a yearly figure before you decide. Per visit times 52 for
+> weekly, times 104 for twice a week, times 26 for every other week. Monthly times 12.
+> Yearly is the only number that cannot hide a visit count.
+>
+> And ask all of them the same four questions: is that price for one dog, what does
+> each extra dog cost, does the waste actually leave my property or go in my bin, and
+> is there a catch-up fee for a yard that has gone a while. Those four are where two
+> quotes usually stop being comparable.
+>
+> This applies to us as much as anyone — go ahead and run the math on ours.
+>
+> Full breakdown: scoopychatt.com/blog/pooper-scooper-price-per-visit-vs-monthly-chattanooga

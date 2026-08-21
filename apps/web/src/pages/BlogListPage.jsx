@@ -7,6 +7,7 @@ import SEOHead from '@/components/SEOHead.jsx';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
 const allPosts = [
+  { slug: '/blog/pooper-scooper-price-per-visit-vs-monthly-chattanooga', title: 'Per-Visit vs Monthly Pooper Scooper Quotes: How to Actually Compare Prices', desc: 'A month is not four weeks. Weekly service averages 4.33 visits a month, so a 4-visit monthly plan is four cleanings short over a year. Here is the math and what to ask.', date: 'Aug 2026', cat: 'Pricing' },
   { slug: '/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga', title: 'How to Get Rid of Dog Poop Smell in a Chattanooga Yard (What Actually Works)', desc: 'The smell comes from the soil, not the waste. What actually clears it, what does not work, and when a $20 deodorizing treatment is worth paying for.', date: 'Aug 2026', cat: 'Yard Tips' },
   { slug: '/blog/weekly-vs-biweekly-dog-poop-service-chattanooga', title: 'Weekly vs Every-Other-Week Dog Poop Service in Chattanooga: Which Do You Need?', desc: 'Weekly is $20 per visit and every-other-week is $33 per visit for one dog. Over a year that is only about $15 a month apart for twice the visits. How to choose.', date: 'Aug 2026', cat: 'Pricing' },
   { slug: '/blog/pet-waste-stations-apartments-hoas-chattanooga', title: 'Pet Waste Stations for Chattanooga Apartments and HOAs: Placement, Servicing, and Cost', desc: 'How many stations a community needs, where to put them, what scheduled servicing includes, and how commercial and HOA pricing is quoted.', date: 'Aug 2026', cat: 'Commercial' },

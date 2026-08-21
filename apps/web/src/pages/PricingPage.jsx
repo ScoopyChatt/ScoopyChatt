@@ -98,6 +98,18 @@ const PricingPage = () => {
 
         <section className="section-spacing">
           <div className="container-shell max-w-3xl">
+            <h2 className="mb-4">Comparing us against another quote?</h2>
+            <p className="text-muted-foreground mb-4">
+              We quote per visit and bill monthly. If another company quoted you a monthly number,
+              convert before you compare: weekly service averages 4.33 visits a month, not 4, so a
+              4-visit monthly plan is 48 visits a year against a true weekly 52. Our weekly runs
+              about $87 a month and $1,040 a year, and you get all 52.
+            </p>
+            <p className="mb-8">
+              <Link to="/blog/pooper-scooper-price-per-visit-vs-monthly-chattanooga" className="text-primary hover:underline font-semibold">
+                How to compare per-visit and monthly pooper scooper quotes
+              </Link>
+            </p>
             <h2 className="mb-4">Weekly or every other week?</h2>
             <p className="text-muted-foreground mb-4">
               The per-visit rates make weekly look far more expensive than every-other-week, but

@@ -69,6 +69,7 @@ const BLOG_POSTS = [
   'pet-waste-management-guide',
   'pet-waste-stations-apartments-hoas-chattanooga',
   'podcast-blog',
+  'pooper-scooper-price-per-visit-vs-monthly-chattanooga',
   'pooper-scooper-cost-chattanooga',
   'professional-waste-removal-benefits',
   'seasonal-pet-care-tips',

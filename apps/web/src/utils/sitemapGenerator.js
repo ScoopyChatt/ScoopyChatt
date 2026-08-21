@@ -84,7 +84,8 @@ export const generateSitemapData = async () => {
     'weekly-vs-biweekly-dog-poop-service-chattanooga',
     'pet-waste-stations-apartments-hoas-chattanooga',
     'yard-cleanup-before-a-party-chattanooga',
-    'how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga'
+    'how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga',
+    'pooper-scooper-price-per-visit-vs-monthly-chattanooga'
   ];
 
   liveBlogSlugs.forEach(slug => {
