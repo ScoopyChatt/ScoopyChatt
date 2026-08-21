@@ -1,6 +1,6 @@
 # CLAUDE.md — Scoopy Doo LLC Website Project
 
-> Last updated: 2026-05-31. Read this at the start of every session.
+> Last updated: 2026-08-21. Read this at the start of every session.
 
 ---
 
@@ -22,7 +22,7 @@
 - **Host:** Vercel (project: `scoopy-chatt`, account: `scoopychatts-projects`)
 - **Root:** `apps/web/`
 - **Node version:** 24.x (Vercel dashboard setting — do NOT add nodeVersion to vercel.json, it is an invalid property that breaks builds)
-- **Build command in vercel.json:** `npm install --prefix apps/web && npm run build --prefix apps/web && node apps/web/tools/inject-seo.cjs`
+- **Build command in vercel.json:** `npm install --prefix apps/web && npm run build --prefix apps/web && node apps/web/tools/inject-seo.cjs && node apps/web/tools/generate-sitemap.cjs && node apps/web/tools/create-static-pages.cjs && node apps/web/tools/verify-routes.cjs`
 - **Output dir:** `dist/apps/web`
 - **Path alias:** `@` = `apps/web/src/`
 
@@ -49,6 +49,20 @@ ScoopyChatt/
 ├── vercel.json        # Vercel config — routing, redirects, build command
 └── package.json       # npm workspaces root
 ```
+
+### Dependencies — install with --prefix, always
+
+`apps/web/package-lock.json` is committed and pins all 557 packages. Without it every deploy re-resolved ~72 caret ranges against whatever was newest at build time, so a dependency could break a deploy with no change on our side.
+
+**Always install with `npm install --prefix apps/web`. Never run a bare `npm install` from the repo root.**
+
+The root package.json declares `workspaces: ["apps/*"]`, so npm run from the repo root (or from inside apps/web without --prefix) resolves through workspaces and ignores `apps/web/package-lock.json` — it will write a *second, competing* `package-lock.json` at the root. Vercel's buildCommand uses `--prefix apps/web`, which treats apps/web as standalone and reads the committed lockfile. Only the apps/web one is real; never commit a root lockfile.
+
+Same reason `npm ci` fails from inside apps/web: it walks up to the workspace root and finds no lockfile there.
+
+Adding or upgrading a package: `npm install <pkg> --prefix apps/web`, then commit the lockfile change with the code. On a merge conflict in the lockfile, do not hand-edit — delete it, re-run the install, commit the regenerated file.
+
+apps/api on Railway has no lockfile yet and carries the same drift risk.
 
 ---
 
