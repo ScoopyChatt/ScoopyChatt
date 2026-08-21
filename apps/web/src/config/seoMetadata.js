@@ -111,7 +111,7 @@ export const seoMetadata = {
   },
   "/doggy-doors": {
     title: "Dog Door & Pet Door Installation in Chattanooga, TN | Scoopy Doo",
-    description: "Dog door and pet door installation in Chattanooga, TN and North Georgia. Locally owned, not a franchise. Set pricing from $399 installed, no quote calls.",
+    description: "Dog door and pet door installation in Chattanooga, TN and North Georgia. Locally owned, not a franchise. Set pricing from $529 installed, no quote calls.",
     canonical: `${CANONICAL_BASE_URL}/doggy-doors`,
     image: "https://www.scoopychatt.com/images/doggy-doors-hero.jpg",
     ogType: "website"
