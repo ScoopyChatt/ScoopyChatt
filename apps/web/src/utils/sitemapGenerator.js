@@ -79,7 +79,8 @@ export const generateSitemapData = async () => {
     'diy-vs-professional',
     'lawn-health-and-pet-waste',
     'health-risks-of-pet-waste',
-    'pet-waste-management-guide'
+    'pet-waste-management-guide',
+    'dog-door-installation-chattanooga'
   ];
 
   liveBlogSlugs.forEach(slug => {

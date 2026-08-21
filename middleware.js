@@ -50,6 +50,7 @@ const BLOG_POSTS = [
   'commercial-pet-waste-removal-chattanooga',
   'customer-success-stories',
   'diy-vs-professional',
+  'dog-door-installation-chattanooga',
   'dog-poop-cleanup-chattanooga-summer-heat',
   'dog-poop-laws-chattanooga',
   'dog-poop-removal-north-georgia',

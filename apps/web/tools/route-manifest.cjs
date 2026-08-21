@@ -72,6 +72,7 @@ const BLOG_POSTS = [
   'podcast-blog',
   'signal-mountain',
   'soddy-daisy',
+  'dog-door-installation-chattanooga',
 ];
 
 module.exports = { PAGES, SERVICE_AREAS, BLOG_POSTS };

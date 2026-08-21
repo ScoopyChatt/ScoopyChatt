@@ -7,6 +7,7 @@ import SEOHead from '@/components/SEOHead.jsx';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
 const allPosts = [
+  { slug: '/blog/dog-door-installation-chattanooga', title: 'Dog Door Installation in Chattanooga, TN: Cost, Sizing & What to Expect', desc: 'How much does dog door installation cost in Chattanooga? Good, Better, and Best options from $529 installed, professionally measured, sealed, and tested.', date: 'Aug 2026', cat: 'Doggy Doors' },
 { slug: '/blog/dog-poop-laws-chattanooga', title: 'Is It Illegal to Not Pick Up Dog Poop in Chattanooga?', desc: 'Chattanooga city code requires owners to pick up after their dogs. Here is what the law says, what fines look like, and how HOA rules go further.', date: 'Jul 2026', cat: 'Local Guide' },
     { slug: '/blog/dog-poop-cleanup-chattanooga-summer-heat', title: 'Why Chattanooga Yards Need Regular Dog Poop Cleanup During Hot, Humid Weather', desc: 'Summer heat and humidity make dog waste smell worse, grow bacteria faster, and attract flies. Here is why Chattanooga dog owners need to stay on top of yard cleanup in summer.', date: 'Jun 2026', cat: 'Yard Tips' },
   { slug: '/blog/how-often-scoop-dog-poop-chattanooga', title: 'How Often Should You Scoop Dog Poop in Chattanooga?', desc: 'Most vets and yard experts say at least once a week. Here\'s why - and how Scoopy Doo makes it effortless.', date: 'Jun 2026', cat: 'Yard Tips' },
