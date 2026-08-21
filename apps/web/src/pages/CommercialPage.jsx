@@ -48,11 +48,11 @@ const faqs = [
   },
   {
     question: 'Do you install and maintain pet waste stations?',
-    answer: 'Yes. We install pet waste stations, keep them stocked with bags, and empty them on a regular schedule so they never overflow. This is one of the most popular add-ons for apartments and HOAs.',
+    answer: 'Yes. Pet waste stations start at $299 per station installed, which covers the station, post, mounting, and initial bag stock. From there we keep them stocked with bags and empty them on a regular schedule so they never overflow. This is one of the most popular add-ons for apartments and HOAs.',
   },
   {
     question: 'How is commercial pricing determined?',
-    answer: 'Commercial pricing is based on property size, number of common areas or stations, and how often you need service. Reach out for a free walkthrough and a custom quote.',
+    answer: 'Commercial pricing is based on property size, number of common areas or stations, and how often you need service. Pet waste stations start at $299 per station installed, and yard deodorizing is available at $20 per visit. Reach out for a free walkthrough and a custom quote.',
   },
   {
     question: 'What areas do you cover for commercial service?',
@@ -177,7 +177,7 @@ export default function CommercialPage() {
               </div>
               <div className="bg-card p-8 rounded-2xl shadow-sm border border-border">
                 <h3 className="text-xl font-bold mb-3">Waste stations included</h3>
-                <p className="text-muted-foreground">We install, stock, and empty pet waste stations so they never overflow and residents always have bags.</p>
+                <p className="text-muted-foreground">Stations start at $299 installed. We stock and empty them on schedule so they never overflow and residents always have bags.</p>
               </div>
               <div className="bg-card p-8 rounded-2xl shadow-sm border border-border">
                 <h3 className="text-xl font-bold mb-3">Flexible, no long contracts</h3>
@@ -227,8 +227,9 @@ export default function CommercialPage() {
             <p className="text-muted-foreground mb-4">
               A practical starting point is one station for every 40 to 50 pet-friendly units,
               placed so no resident walks more than about 150 feet off their normal dog-walking
-              route. Servicing matters more than the hardware: an empty bag dispenser or an
-              overflowing receptacle teaches residents the rule is not enforced.
+              route. Stations start at $299 each installed, but servicing matters more than the
+              hardware: an empty bag dispenser or an overflowing receptacle teaches residents the
+              rule is not enforced.
             </p>
             <p>
               <Link to="/blog/pet-waste-stations-apartments-hoas-chattanooga" className="text-primary hover:underline font-semibold">

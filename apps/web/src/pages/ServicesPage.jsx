@@ -217,7 +217,7 @@ const ServicesPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-muted-foreground leading-relaxed mb-6">Pet waste removal eliminates the source of the problem, but the bacteria and odor compounds it leaves behind in the soil can persist long after the waste is gone. Deodorizing and sanitizing treatments neutralize those residual effects and leave your yard genuinely clean - not just visually clean.</p>
-                <p className="text-muted-foreground leading-relaxed mb-6">This service is especially valuable for yards with years of accumulated contamination, areas near patios or high-traffic zones, or properties being prepared for sale or events. Ask about adding it to your regular service plan.</p>
+                <p className="text-muted-foreground leading-relaxed mb-6">Deodorizing and sanitizing is $20 per visit and can be added to any recurring plan or to a one-time cleanup. It is especially valuable for yards with years of accumulated contamination, areas near patios or high-traffic zones, or properties being prepared for sale or an event.</p>
                 <ul className="space-y-3">
                   {[
                     "Neutralizes odor compounds in soil and grass",
@@ -233,8 +233,8 @@ const ServicesPage = () => {
               </div>
               <div className="bg-card border border-border rounded-2xl p-8 text-center">
                 <Droplets className="w-16 h-16 text-primary mx-auto mb-4 opacity-80" />
-                <h3 className="text-xl font-bold text-foreground mb-3">Ask About Add-On Sanitizing</h3>
-                <p className="text-muted-foreground text-sm mb-6">Deodorizing and sanitizing is available as a standalone service or as an add-on to any recurring plan. Mention it when requesting your quote.</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">Add-On Sanitizing - $20 per visit</h3>
+                <p className="text-muted-foreground text-sm mb-6">Deodorizing and sanitizing is $20 per visit, available as a standalone service or as an add-on to any recurring plan. Mention it when requesting your quote.</p>
                 <Button asChild className="w-full rounded-xl font-bold">
                   <Link to="/quote">Request a Quote with Sanitizing</Link>
                 </Button>

@@ -49,7 +49,9 @@ const PricingPage = () => {
     { question: "How does billing work?", answer: "We securely keep a card on file and bill automatically after each service is completed. You'll receive a receipt via email." },
     { question: "Does the price change if I have multiple dogs?", answer: "Yes, our base rates shown above are for 1 dog. We charge a small additional fee per extra dog to account for the additional waste and time required to thoroughly clean your yard." },
     { question: "What if my yard is overgrown or very large?", answer: "We provide custom quotes for significantly oversized yards or properties with tall grass/weeds that make scooping significantly more difficult." },
-    { question: "Do you charge extra for initial cleanups?", answer: "If it has been a long time since the yard was last cleaned, an initial spring-cleaning fee may apply to get your yard to a maintainable baseline before regular visit rates kick in." }
+    { question: "Do you charge extra for initial cleanups?", answer: "If it has been a long time since the yard was last cleaned, an initial spring-cleaning fee may apply to get your yard to a maintainable baseline before regular visit rates kick in." },
+    { question: "Do you offer yard deodorizing?", answer: "Yes. Deodorizing and sanitizing is $20 per visit. It neutralizes the odor compounds and bacteria left behind in the soil after the waste itself is removed, and it can be added to any recurring plan or to a one-time cleanup. It is most worthwhile for heavily used yards, areas near a patio, and yards being prepped for an event or a home sale." },
+    { question: "What do pet waste stations cost for an HOA or apartment community?", answer: "Pet waste stations start at $299 per station installed, which covers the station, post, mounting, and initial bag stock. Ongoing servicing is quoted per property based on station count, common-area size, and frequency. Request a free walkthrough for an exact number." }
   ];
 
   return (
@@ -75,6 +77,13 @@ const PricingPage = () => {
         <section className="section-spacing">
           <div className="container-shell max-w-5xl">
             <PricingTable tiers={pricingTiers} />
+            <div className="mt-10 max-w-3xl mx-auto">
+              <h2 className="text-2xl font-bold mb-3">Add-ons</h2>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><strong className="text-foreground">Yard deodorizing and sanitizing - $20 per visit.</strong> Neutralizes the odor compounds and bacteria left in the soil after the waste is gone. Add it to any plan or to a one-time cleanup.</li>
+                <li><strong className="text-foreground">Pet waste stations - from $299 per station installed.</strong> For HOAs, apartment communities, and dog parks. Covers the station, post, mounting, and first stock of bags; ongoing servicing is quoted per property.</li>
+              </ul>
+            </div>
           </div>
         </section>
 

@@ -64,7 +64,7 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
         "name": "Will a one-time cleanup get rid of the smell in my yard?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Removing the waste removes the source, which handles most of it. In Chattanooga humidity a heavily used yard can still hold some odor in the grass and topsoil right after a cleanup, and the reliable fix is time plus water: clean a day or two ahead and water the affected areas well. That is another reason not to leave the cleanup until the morning of the party."
+          "text": "Removing the waste removes the source, which handles most of it. In Chattanooga humidity a heavily used yard can still hold odor compounds in the grass and topsoil right after a cleanup. For most yards the fix is time plus water: clean a day or two ahead and water the affected areas well. For yards with years of buildup, Scoopy Doo also offers deodorizing and sanitizing at $20 per visit, which neutralizes those compounds rather than masking them."
         }
       }
     ]
@@ -186,10 +186,17 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
           <p className="mb-4">
             Chattanooga and North Georgia humidity is the reason a party cleanup is different from
             a spring cleanup. Removing the waste removes the source, and that handles most of the
-            problem. But a heavily used yard can hold some odor in the grass and topsoil right
-            after a cleanup. The fix is not a spray, it is time and water. Clean a day or two ahead
+            problem. But a heavily used yard can hold odor compounds in the grass and topsoil right
+            after a cleanup. For most yards, time and water finish the job: clean a day or two ahead
             and soak the heavily used areas well after we leave. That is the single biggest reason
             not to schedule this for the morning of.
+          </p>
+          <p className="mb-4">
+            If the yard has years of buildup, or the party is happening right next to the worst
+            patch, we also offer deodorizing and sanitizing at $20 per visit. It neutralizes the
+            odor compounds and bacteria left in the soil rather than masking them, and it is worth
+            adding when watering alone is not going to be enough. It is optional, and for a yard
+            that is kept up you probably do not need it.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-3">Short notice in North Georgia</h2>

@@ -6,7 +6,7 @@ part of this plan.
 
 Pricing referenced throughout comes from `apps/web/src/pages/PricingPage.jsx`:
 weekly $20/visit (1st dog), twice-weekly $18/visit, every-other-week $33/visit,
-one-time cleanup from $85.
+one-time cleanup from $85, plus the add-on rates in section 5.
 
 ---
 
@@ -32,8 +32,11 @@ these are search-result-level facts, not full-site crawls. Treat published price
 1. **Almost nobody publishes real numbers.** Three of six competitors publish no
    pricing at all. Our per-visit rates in plain text are a durable advantage for
    both AI citation and price-comparison searches — keep leaning on it.
-2. **Deodorizing is a published add-on for two competitors and we have zero content
-   on yard odor.** That is the single clearest content hole.
+2. **Deodorizing is a published add-on for two competitors.** We offer it too — there
+   is a section on `/services` — but it had no price and no blog content behind it.
+   Now priced at $20/visit. That is above Call of Doody at $15/visit, so the pitch
+   has to be the treatment and the transparency, not the number. Post A7 is the
+   remaining gap.
 3. **Waste stations are a real commercial differentiator** that ChattaPoo markets
    and we offer but barely write about. Fixed by post #2 below.
 4. **Competitors bill flat monthly; we bill per visit.** Nobody has written the
@@ -60,7 +63,7 @@ verifiable from this environment. **P1** = build next, **P2** = this quarter,
 | A4 | Switching Pooper Scooper Services in Chattanooga: How to Change Without a Gap in Service | switching pet waste removal company chattanooga | P2 |
 | A5 | Why the First Cleanup Costs More: Initial Cleanup Fees Explained | initial cleanup fee pooper scooper service | P2 |
 | A6 | Do I Need to Be Home for Pooper Scooper Service? Gate Access, Dogs Outside, and Locked Fences | do I need to be home pooper scooper | P2 |
-| A7 | How to Get Rid of Dog Poop Smell in a Chattanooga Yard (What Actually Works) | how to get rid of dog poop smell in yard | P2 |
+| A7 | How to Get Rid of Dog Poop Smell in a Chattanooga Yard (What Actually Works) | how to get rid of dog poop smell in yard | **P1 — unblocked, deodorizing is $20/visit** |
 | A8 | Can I Pause Pet Waste Removal While I Travel? | pause pooper scooper service vacation | P3 |
 | A9 | Weekly Dog Poop Removal in Hixson and Red Bank: Cost and Scheduling | weekly dog poop pickup hixson tn | P3 |
 | A10 | Is a Pooper Scooper Service Worth It? A Straight Cost-vs-Time Answer | is pooper scooper service worth it | P3 |
@@ -137,14 +140,31 @@ both the React page and the prerendered crawlable HTML that non-JS AI crawlers r
 
 ---
 
-## 5. Open items for Brandon
+## 5. Published pricing (source of truth)
 
-- **Pet waste station pricing is not published anywhere on the site.** Post C1 says
-  it is quoted per property, which is accurate, but a starting price (per station
-  installed, per station serviced) would convert better and is what AI assistants
-  quote. If you have a number, we should publish it.
-- **Yard odor / deodorizing.** Two competitors sell this as a paid add-on and we
-  have no content on it. Worth deciding whether we offer it as a service before
-  writing A7.
+From `apps/web/src/pages/PricingPage.jsx` plus the two add-on rates confirmed by
+Brandon in August 2026. Every page and schema block on the site should agree with
+this table; if a rate changes, grep for the figure rather than editing one page.
+
+| Item | Rate |
+|---|---|
+| Weekly | $20 per visit, first dog |
+| Twice weekly | $18 per visit, first dog |
+| Every other week | $33 per visit, first dog |
+| One-time cleanup | from $85 |
+| Yard deodorizing and sanitizing | $20 per visit |
+| Pet waste station | from $299 per station installed |
+| Station servicing, commercial and HOA | quoted per property |
+
+Note on positioning: Call of Doody publishes yard deodorizing at $15/visit, below
+our $20. Our advantage there is that ours is priced in public and theirs requires a
+call — worth not picking a price fight we do not win on the number alone.
+
+## 6. Open items for Brandon
+
+- **Post A7 (yard odor) is now the clearest remaining gap** and is unblocked by the
+  $20/visit rate. It is the only pillar-A P1 with no draft.
+- **Station servicing has no published rate**, only the $299 install. A per-station
+  monthly servicing figure would complete the picture for boards comparing vendors.
 - **Competitor prices in the comparison page are July 2026 vintage.** They still
   match what search results show, but they should be re-verified quarterly.
