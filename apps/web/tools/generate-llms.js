@@ -9,7 +9,7 @@ import path from "path";
 const SUMMARY =
   "Scoopy Doo LLC is a locally owned pet waste removal company serving Chattanooga, TN " +
   "and surrounding areas including Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, " +
-  "Soddy-Daisy, Cleveland, East Ridge, Lookout Mountain (TN), and Ringgold, Rossville, " +
+  "Soddy-Daisy, East Ridge, Lookout Mountain (TN), and Ringgold, Rossville, " +
   "Flintstone, and Fort Oglethorpe (GA). Services include weekly, bi-weekly, one-time, " +
   "commercial, and HOA dog poop removal and yard cleanup. Every visit includes on-the-way " +
   "text notifications and a gate photo confirmation. Scoopy Doo LLC is a BBB Accredited Business "  +
@@ -23,7 +23,7 @@ const BASE = "https://www.scoopychatt.com";
 const PAGES = [
   ["/", "Dog Poop Removal & Pooper Scooper Service | Chattanooga TN", "Professional dog poop removal and pooper scooper service in Chattanooga, TN. Reliable weekly pet waste cleanup with online quotes, on-the-way texts, and gate photo confirmation."],
   ["/services", "Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo", "Weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga, TN. Professional dog poop scooping with online quotes and gate photo confirmation."],
-  ["/service-areas", "Service Areas | Pet Waste Removal Around Chattanooga, TN", "Scoopy Doo serves Chattanooga, Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, Cleveland, East Ridge, Lookout Mountain (TN), and Ringgold, Rossville, Flintstone, Fort Oglethorpe (GA)."],
+  ["/service-areas", "Service Areas | Pet Waste Removal Around Chattanooga, TN", "Scoopy Doo serves Chattanooga, Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, East Ridge, Lookout Mountain (TN), and Ringgold, Rossville, Flintstone, Fort Oglethorpe (GA)."],
   ["/about", "About Scoopy Doo | Chattanooga Pet Waste Removal", "Meet Scoopy Doo LLC, Chattanooga's locally owned pet waste removal company. Learn about our mission, service standards, and why hundreds of families trust us weekly."],
   ["/faq", "Pet Waste Removal FAQs | Scoopy Doo Chattanooga", "Answers to common questions about dog poop removal in Chattanooga: pricing, scheduling, service area, what to expect on each visit, and more."],
   ["/comparison", "Pet Waste Removal Services Compared in Chattanooga, TN (2026) | Scoopy Doo", "Side-by-side comparison of Chattanooga pet waste removal companies (Scoopy Doo, ChattaPoo, PooTagic, Doo Doo Blues, Cooper Scoopers, Scoop Smart) by service area, frequency, and pricing."],
@@ -89,8 +89,10 @@ const PAGES = [
 const GA_LOCS = new Set(["ringgold", "rossville", "flintstone", "fort-oglethorpe"]);
 const LOC_SLUGS = [
   "chattanooga", "hixson", "red-bank", "signal-mountain", "ooltewah", "east-brainerd",
-  "soddy-daisy", "cleveland", "apison", "collegedale", "highland-park", "downtown",
+  "soddy-daisy", "apison", "collegedale", "highland-park", "downtown",
   "east-ridge", "lookout-mountain",
+  "st-elmo", "north-chattanooga", "southside", "lookout-valley", "riverview",
+  "normal-park", "brainerd",
   "ringgold", "rossville", "flintstone", "fort-oglethorpe"
 ];
 

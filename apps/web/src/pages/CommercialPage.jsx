@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     question: 'What areas do you cover for commercial service?',
-    answer: 'We serve the entire Chattanooga metro and North Georgia, including Hixson, Ooltewah, East Brainerd, Red Bank, Signal Mountain, Cleveland, Ringgold, Rossville, and Fort Oglethorpe, with no extra charge for Georgia.',
+    answer: 'We serve the entire Chattanooga metro and North Georgia, including Hixson, Ooltewah, East Brainerd, Red Bank, Signal Mountain, Ringgold, Rossville, and Fort Oglethorpe, with no extra charge for Georgia.',
   },
   {
     question: 'Are you insured?',
@@ -77,7 +77,6 @@ const serviceSchema = {
     { '@type': 'City', name: 'Ooltewah', containedInPlace: 'Tennessee' },
     { '@type': 'City', name: 'East Brainerd', containedInPlace: 'Tennessee' },
     { '@type': 'City', name: 'Soddy-Daisy', containedInPlace: 'Tennessee' },
-    { '@type': 'City', name: 'Cleveland', containedInPlace: 'Tennessee' },
     { '@type': 'City', name: 'East Ridge', containedInPlace: 'Tennessee' },
     { '@type': 'City', name: 'Collegedale', containedInPlace: 'Tennessee' },
     { '@type': 'City', name: 'Apison', containedInPlace: 'Tennessee' },

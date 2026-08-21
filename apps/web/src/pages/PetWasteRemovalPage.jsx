@@ -132,7 +132,7 @@ const PetWasteRemovalPage = () => {
               <MapPin className="w-10 h-10 text-primary mx-auto mb-4" />
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">Serving Homes & Businesses Across Chattanooga</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We serve Chattanooga, Hixson, Ooltewah, Signal Mountain, Red Bank, East Brainerd, East Ridge, Soddy-Daisy, Collegedale, and Cleveland, TN, plus Ringgold, Rossville, and Fort Oglethorpe, GA. Check your address when you request a free quote.
+                We serve Chattanooga, Hixson, Ooltewah, Signal Mountain, Red Bank, East Brainerd, East Ridge, Soddy-Daisy, and Collegedale, TN, plus Ringgold, Rossville, and Fort Oglethorpe, GA. Check your address when you request a free quote.
               </p>
             </div>
           </section>

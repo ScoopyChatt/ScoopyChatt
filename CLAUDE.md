@@ -181,7 +181,9 @@ GA cities (must NOT say TN): ringgold, rossville, flintstone, fort-oglethorpe
 
 Dynamic route: /service/:slug via LocationTemplate.jsx → src/data/locations.js
 
-Active slugs: chattanooga, hixson, red-bank, signal-mountain, ooltewah, east-brainerd, soddy-daisy, cleveland, apison, collegedale, highland-park, downtown, east-ridge, lookout-mountain, ringgold (GA), rossville (GA), flintstone (GA), fort-oglethorpe (GA)
+Active slugs: chattanooga, hixson, red-bank, signal-mountain, ooltewah, east-brainerd, soddy-daisy, apison, collegedale, highland-park, downtown, east-ridge, lookout-mountain, st-elmo, north-chattanooga, southside, lookout-valley, riverview, normal-park, brainerd, ringgold (GA), rossville (GA), flintstone (GA), fort-oglethorpe (GA)
+
+Cleveland TN is NOT a service area. It was removed in Aug 2026 and /service/cleveland 301s to /service-areas. Do not re-add it to city lists or schema.
 
 ---
 

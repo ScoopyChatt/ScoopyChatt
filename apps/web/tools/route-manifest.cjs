@@ -37,8 +37,11 @@ const PAGES = [
 const SERVICE_AREAS = [
   'chattanooga', 'hixson', 'red-bank', 'signal-mountain', 'ooltewah', 'east-brainerd',
   'soddy-daisy', 'east-ridge', 'lookout-mountain', 'downtown', 'highland-park',
-  'cleveland', 'apison', 'collegedale', 'ringgold', 'rossville', 'flintstone',
+  'apison', 'collegedale', 'ringgold', 'rossville', 'flintstone',
   'fort-oglethorpe',
+  // Chattanooga neighborhoods covered on the aPaws member listing
+  'st-elmo', 'north-chattanooga', 'southside', 'lookout-valley', 'riverview',
+  'normal-park', 'brainerd',
 ];
 
 const BLOG_POSTS = [

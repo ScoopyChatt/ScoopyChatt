@@ -156,18 +156,26 @@ const Footer = () => {
           <a href="https://www.bbb.org/us/ga/ringgold/profile/pet-waste-removal/scoopy-doo-llc-0483-80013696/#sealclick" id="bbblink" className="sehzbum" target="_blank" rel="nofollow noopener">
             <img src="https://seal-chattanooga.bbb.org/logo/sehzbum/bbb-80013696.png" style={{ border: 0, maxHeight: "60px" }} alt="Scoopy Doo, LLC BBB Business Review" />
           </a>
-          <p className="text-sm text-slate-500 text-center md:text-left">
-            Proud member of{' '}
+          <div className="flex flex-col items-center gap-2">
             <a
               href="https://apaws.org/search/details.aspx?id=3031"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary transition-colors underline"
+              aria-label="Scoopy Doo LLC member listing at aPaws, the Association of Professional Animal Waste Specialists"
             >
-              aPaws
+              <img
+                src="/images/apaws-proud-member.png"
+                alt="aPaws Proud Member - Association of Professional Animal Waste Specialists"
+                width="220"
+                height="104"
+                loading="lazy"
+                className="h-auto w-[180px] sm:w-[220px]"
+              />
             </a>
-            , the Association of Professional Animal Waste Specialists.
-          </p>
+            <p className="text-xs text-slate-500 text-center">
+              Proud member of the Association of Professional Animal Waste Specialists
+            </p>
+          </div>
           <div className="flex space-x-4 text-sm text-slate-500">
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>

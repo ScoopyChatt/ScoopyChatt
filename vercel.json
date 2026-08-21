@@ -18,6 +18,7 @@
     { "source": "/service-area", "destination": "/service-areas", "permanent": true },
     { "source": "/service-area/", "destination": "/service-areas", "permanent": true },
     { "source": "/quoterequest", "destination": "/quote", "permanent": true },
+    { "source": "/service/cleveland", "destination": "/service-areas", "permanent": true },
     { "source": "/quoterequest/", "destination": "/quote", "permanent": true }
   ],
   "headers": [

@@ -52,7 +52,9 @@ export const generateSitemapData = async () => {
   // 3. Location Pages
   const locations = [
     'hixson', 'red-bank', 'east-ridge', 'signal-mountain', 'ooltewah', 
-    'east-brainerd', 'ringgold', 'cleveland', 'lookout-mountain', 'apison', 
+    'east-brainerd', 'ringgold', 'lookout-mountain', 'apison',
+    'st-elmo', 'north-chattanooga', 'southside', 'lookout-valley', 'riverview',
+    'normal-park', 'brainerd', 
     'collegedale', 'flintstone', 'highland-park', 'rossville', 'soddy-daisy', 'downtown'
   ];
 

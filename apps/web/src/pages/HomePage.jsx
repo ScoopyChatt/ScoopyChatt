@@ -235,7 +235,6 @@ const HomePage = () => {
                 <Link to="/service/ooltewah" className="px-4 py-2 bg-card border border-border rounded-full text-sm hover:border-primary hover:text-primary transition-colors">Ooltewah</Link>
                 <Link to="/service/east-brainerd" className="px-4 py-2 bg-card border border-border rounded-full text-sm hover:border-primary hover:text-primary transition-colors">East Brainerd</Link>
                 <Link to="/service/ringgold" className="px-4 py-2 bg-card border border-border rounded-full text-sm hover:border-primary hover:text-primary transition-colors">Ringgold, GA</Link>
-                <Link to="/service/cleveland" className="px-4 py-2 bg-card border border-border rounded-full text-sm hover:border-primary hover:text-primary transition-colors">Cleveland, TN</Link>
               </div>
             </div>
           </section>
@@ -253,7 +252,7 @@ const HomePage = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">What areas does Scoopy Doo serve?</h3>
-                  <p className="text-muted-foreground leading-relaxed">We scoop yards across Chattanooga, Hixson, East Brainerd, Red Bank, Soddy-Daisy, Signal Mountain, Ooltewah, Collegedale, Apison, and Cleveland in Tennessee, plus Ringgold, Rossville, Fort Oglethorpe, and Flintstone in North Georgia.</p>
+                  <p className="text-muted-foreground leading-relaxed">We scoop yards across Chattanooga, Hixson, East Brainerd, Red Bank, Soddy-Daisy, Signal Mountain, Ooltewah, Collegedale, and Apison in Tennessee, plus Ringgold, Rossville, Fort Oglethorpe, and Flintstone in North Georgia.</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Do I need to be home during my cleanup?</h3>

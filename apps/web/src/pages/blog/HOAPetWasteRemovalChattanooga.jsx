@@ -88,7 +88,7 @@ const HOAPetWasteRemovalChattanooga = () => {
             Scoopy Doo services HOAs, condo associations, and apartment communities throughout the
             Chattanooga metro and North Georgia, including Chattanooga, Hixson, Ooltewah, East
             Brainerd, Red Bank, East Ridge, Signal Mountain, Lookout Mountain, Soddy-Daisy,
-            Collegedale, Cleveland, Apison, and Highland Park in Tennessee, and Ringgold, Rossville,
+            Collegedale, Apison, and Highland Park in Tennessee, and Ringgold, Rossville,
             Fort Oglethorpe, and Flintstone in Georgia.
           </p>
 

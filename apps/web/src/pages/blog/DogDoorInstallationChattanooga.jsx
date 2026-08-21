@@ -97,7 +97,7 @@ const DogDoorInstallationChattanooga = () => {
           <p className="mb-4">
             Scoopy Doo Doggy Doors serves Chattanooga, TN and North Georgia, including Hixson, Red
             Bank, Signal Mountain, Lookout Mountain, Ooltewah, East Brainerd, Soddy-Daisy, East
-            Ridge, Collegedale, Apison, and Cleveland in Tennessee, plus Ringgold, Rossville, Fort
+            Ridge, Collegedale, and Apison in Tennessee, plus Ringgold, Rossville, Fort
             Oglethorpe, and Flintstone in Georgia. We already run regular pet waste removal routes
             throughout this entire area every week.
           </p>

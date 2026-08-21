@@ -24,7 +24,7 @@ const FallYardCareChecklistChattanooga = () => {
     },
     {
       question: "Do you serve neighborhoods outside Chattanooga?",
-      answer: "Yes. In addition to Chattanooga, we serve surrounding communities such as Collegedale, Cleveland, Signal Mountain, and Soddy-Daisy in Tennessee, plus North Georgia towns including Ringgold and Flintstone."
+      answer: "Yes. In addition to Chattanooga, we serve surrounding communities such as Collegedale, Signal Mountain, and Soddy-Daisy in Tennessee, plus North Georgia towns including Ringgold and Flintstone."
     }
   ];
 

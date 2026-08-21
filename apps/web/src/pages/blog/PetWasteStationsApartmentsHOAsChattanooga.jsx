@@ -230,7 +230,7 @@ const PetWasteStationsApartmentsHOAsChattanooga = () => {
           <h2 className="text-2xl font-semibold mt-8 mb-3">Where we service commercial properties</h2>
           <p className="mb-4">
             Scoopy Doo serves multifamily and HOA properties throughout Chattanooga, Hixson, Red
-            Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, Cleveland, East Ridge,
+            Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, East Ridge,
             Collegedale, Apison, and Lookout Mountain in Tennessee, plus Ringgold, Rossville, Fort
             Oglethorpe, and Flintstone in North Georgia, with no travel surcharge for the Georgia
             communities.

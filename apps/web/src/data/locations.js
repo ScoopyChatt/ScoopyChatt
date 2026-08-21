@@ -216,31 +216,7 @@ export const locations = [
     ]
   },
 
-  {
-    id: "cleveland",
-    name: "Cleveland, TN",
-    slug: "cleveland",
-    seoTitle: "Dog Poop Removal in Cleveland, TN | Scoopy Doo Pet Waste Removal",
-    seoDescription: "Professional dog waste removal in Cleveland, TN. Scoopy Doo serves Bradley County with weekly and bi-weekly pet waste pickup. No contracts - get your free quote today.",
-    serviceDescription: "Cleveland is the heart of Bradley County and one of the fastest-growing cities in the region, with new neighborhoods expanding in every direction. Scoopy Doo serves Cleveland families with the same professional, tech-forward pet waste removal that Chattanooga trusts - on-the-way texts, gate photo confirmation, and every bit of waste double-bagged into your bin or hauled off the property for $5 a visit.",
-    localContext: "Cleveland has grown significantly in recent years, with newer subdivisions bringing more dogs and more of the pet waste challenge that comes with suburban life. Many Cleveland families have larger lots than the average Chattanooga yard, which means more ground to cover and waste that is genuinely easy to miss without a systematic approach. Scoopy Doo handles the whole yard every visit.",
-    neighborhoods: ["Cleveland proper", "Lee University area", "North Cleveland", "White Oak area", "Blythe Ferry Road corridor", "Westside"],
-    testimonial: { quote: "I did not think a service like this would come out to Cleveland but they do, every single week. Great communication and fair prices.", author: "Rachel S., Cleveland" },
-    benefits: [
-      "Regular Bradley County routes - no extra fees",
-      "Weekly and bi-weekly service available",
-      "On-the-way text before every visit",
-      "Gate secured and photo sent after every cleanup",
-      "Waste double-bagged into your bin, or hauled away for $5 a visit",
-      "No contracts - cancel anytime"
-    ],
-    faqItems: [
-      { question: "Do you service Cleveland, TN?", answer: "Yes - Cleveland is within our service area. We run routes throughout Cleveland and Bradley County and do not charge extra for distance from Chattanooga. Request a free quote online and we will confirm availability in your neighborhood." },
-      { question: "How quickly can I start service in Cleveland?", answer: "Most Cleveland customers can be added to a route within 2-5 days of requesting a quote. We respond to quote requests the same day, usually within a few hours." },
-      { question: "Do you haul the waste away or leave it bagged at the gate?", answer: "Never at the gate. Everything is double-bagged and placed in your outdoor bin as standard. Waste takeaway is $5 per visit if you would rather we remove it in our vehicle. Either way your yard is left completely clean." },
-      { question: "Is there a contract for Cleveland service?", answer: "No contracts, ever. You can start, skip, or cancel service at any time. We keep customers by doing a great job, not by locking them in." }
-    ]
-  },
+  
   {
     id: "apison",
     name: "Apison, TN",
@@ -364,6 +340,125 @@ export const locations = [
       { question: "Why does pet waste matter especially near the Tennessee River?", answer: "Storm drains in downtown Chattanooga connect directly to the Tennessee River. Dog waste left on the ground washes into the water during rain, contributing bacteria and pathogens that affect water quality for the entire city." },
       { question: "How often should downtown properties be cleaned?", answer: "Weekly service is the most popular option for downtown properties. Compact yards with one or more dogs fill up quickly, and weekly pickup keeps the space pleasant and odor-free year-round." },
       { question: "Do you service gated or secured downtown properties?", answer: "Yes. Many downtown properties have secured gates or access codes. Provide your access details at sign-up, and we use them for every visit, close the gate when done, and send a photo confirmation." }
+    ]
+  },
+  {
+    id: "st-elmo",
+    name: "St. Elmo, TN",
+    slug: "st-elmo",
+    seoTitle: "Dog Poop Removal in St. Elmo, Chattanooga | Scoopy Doo Pet Waste Removal",
+    seoDescription: "Pet waste removal in St. Elmo, Chattanooga. Weekly and every-other-week dog poop pickup for historic homes at the foot of Lookout Mountain. Free quote.",
+    serviceDescription: "St. Elmo sits at the foot of Lookout Mountain, where Victorian-era homes, deep shaded lots, and a genuinely walkable street grid make it one of Chattanooga's most distinctive neighborhoods. Mature trees and older fencing mean yards here hold moisture and leaf cover, which hides waste until it becomes a problem. Scoopy Doo runs regular St. Elmo routes and sweeps the whole yard in a grid pattern so nothing gets missed under the canopy.",
+    localContext: "Many St. Elmo lots are long and narrow with heavy tree cover, so waste breaks down slowly and odor lingers in damp shade far longer than it does in open sun. Older properties often have original fencing and side gates that take a little care to work around. We handle that the same way every visit: a text when we are on the way, a full sweep, the gate secured behind us, and a photo so you know it was done.",
+    neighborhoods: ["St. Elmo Avenue corridor", "Incline Railway area", "Alabama Avenue", "Virginia Avenue", "Guild Street area", "Ochs Highway vicinity"],
+    benefits: ["Routes built around St. Elmo's older street grid", "Grid-pattern sweeps that find waste under heavy tree cover", "Careful handling of original fences and side gates", "On-the-way text before every visit", "Gate photo confirmation when done", "Waste hauled off the property, not left in your bin"],
+    faqItems: [
+      { question: "Do you serve St. Elmo?", answer: "Yes. St. Elmo is an established part of our Chattanooga service area and we run regular routes through the neighborhood. There is no travel surcharge for St. Elmo addresses." },
+      { question: "Can you work with older fencing and gates in St. Elmo?", answer: "Yes. Many St. Elmo homes still have their original fencing and narrow side gates. We work with whatever setup you have, always latch the gate behind us, and send a photo confirmation after every visit." },
+      { question: "How often should I schedule service in St. Elmo?", answer: "Weekly is the most popular choice here. Heavy tree cover keeps St. Elmo yards damp and shaded, which slows decomposition and holds odor, so weekly pickup keeps things under control better than every-other-week." },
+      { question: "Do I need to be home for a St. Elmo visit?", answer: "No. You get a text when we are on the way, we clean the yard, close the gate, and send a photo when we finish. Most of our St. Elmo customers are at work when we come through." }
+    ]
+  },
+  {
+    id: "north-chattanooga",
+    name: "North Chattanooga, TN",
+    slug: "north-chattanooga",
+    seoTitle: "Dog Poop Removal in North Chattanooga | Scoopy Doo Pet Waste Removal",
+    seoDescription: "Pet waste removal in North Chattanooga and the Northshore. Weekly dog poop pickup near Frazier Avenue and Coolidge Park. No contracts - get a free quote.",
+    serviceDescription: "North Chattanooga, the Northshore, is one of the most dog-heavy parts of the city. Between Coolidge Park, the riverwalk, and the Frazier Avenue district, this is a neighborhood where people walk their dogs constantly and expect their own yards to be just as clean. Scoopy Doo services Northshore homes on weekly, twice-weekly, and every-other-week schedules with no contract required.",
+    localContext: "Northshore lots run small, and a lot of them back onto alleys or shared drives, so waste that sits becomes a neighbor problem quickly rather than just a personal one. Several streets here have short setbacks where the yard is essentially the front porch view. Consistent weekly pickup is what keeps a compact Northshore yard usable, and we haul everything off site rather than leaving bags in your bin.",
+    neighborhoods: ["Frazier Avenue district", "Coolidge Park area", "Cherokee Boulevard", "Hill City", "Manufacturers Road corridor", "Tremont Street area"],
+    benefits: ["Regular Northshore routes, no travel surcharge", "Built for smaller Northshore lots and alley-access yards", "Twice-weekly available for multi-dog households", "On-the-way text before every visit", "Gate photo confirmation when done", "All waste hauled off the property"],
+    faqItems: [
+      { question: "Do you serve North Chattanooga and the Northshore?", answer: "Yes. North Chattanooga is one of our core Chattanooga neighborhoods and we run regular routes there every week. Northshore addresses are covered at standard rates." },
+      { question: "Do you handle small Northshore yards?", answer: "Yes. Most Northshore lots are compact, and small yards are actually where weekly service matters most, because waste concentrates fast and there is nowhere for it to go unnoticed." },
+      { question: "Can you access a yard through an alley or shared drive?", answer: "Yes. A lot of North Chattanooga properties are accessed from the rear or from a shared drive. Tell us how to get in when you request your quote and we will route around it." },
+      { question: "Do you offer twice-weekly service in North Chattanooga?", answer: "Yes. Twice-weekly is a popular option on the Northshore for households with two or more dogs on a small lot. It runs at a lower per-visit rate than weekly service." }
+    ]
+  },
+  {
+    id: "southside",
+    name: "Southside, Chattanooga TN",
+    slug: "southside",
+    seoTitle: "Dog Poop Removal on the Southside, Chattanooga | Scoopy Doo Pet Waste Removal",
+    seoDescription: "Pet waste removal on Chattanooga's Southside. Dog poop pickup for Main Street district homes, lofts, courtyards, and small urban yards. Free online quote.",
+    serviceDescription: "The Southside, centered on the Main Street district, is where converted warehouses, infill townhomes, and courtyard-sized yards sit alongside some of the city's busiest restaurants. Yard space here is at a premium, which makes pet waste far more noticeable than it would be on a larger lot. Scoopy Doo cleans Southside courtyards, small fenced yards, and shared pet areas on a schedule that fits the property.",
+    localContext: "Southside outdoor space is often a courtyard, a strip of turf, or a shared area behind a building rather than a traditional yard. Hard surfaces do not absorb anything, so residue and odor build up quickly, especially through a humid Chattanooga summer. We work these properties on a tighter cadence and remove everything from the site, which matters when there is no room for a bin to sit unnoticed.",
+    neighborhoods: ["Main Street district", "Jefferson Heights", "Cowart Street area", "Chestnut Street corridor", "Blue Goose Hollow", "Broad Street south end"],
+    benefits: ["Service sized for courtyards and small urban lots", "Works for townhomes, lofts, and shared pet areas", "Twice-weekly option for high-traffic spaces", "On-the-way text before every visit", "Gate photo confirmation when done", "Everything hauled off site, nothing left in shared bins"],
+    faqItems: [
+      { question: "Do you service Southside courtyards and small yards?", answer: "Yes. Courtyards, small fenced yards, and turf strips are all standard for us. Smaller spaces usually need a tighter schedule because waste concentrates faster with nowhere to spread out." },
+      { question: "Can you service a shared pet area for a Southside building?", answer: "Yes. We service shared pet areas and pet relief areas for buildings and communities in addition to individual residences. Commercial and multi-unit pricing is quoted per property." },
+      { question: "Do you serve the Main Street district?", answer: "Yes. The Main Street district and the surrounding Southside blocks are all within our Chattanooga service area at standard residential rates." },
+      { question: "How do you handle waste on a property with no yard bin?", answer: "We double-bag everything and haul it completely off the property. Nothing goes into your bin or a shared dumpster, which is the setup most Southside residents want." }
+    ]
+  },
+  {
+    id: "lookout-valley",
+    name: "Lookout Valley, TN",
+    slug: "lookout-valley",
+    seoTitle: "Dog Poop Removal in Lookout Valley, Chattanooga | Scoopy Doo Pet Waste Removal",
+    seoDescription: "Pet waste removal in Lookout Valley, Chattanooga. Weekly and one-time dog waste cleanup for larger valley lots. No contracts - free quote online.",
+    serviceDescription: "Lookout Valley sits west of Lookout Mountain along the I-24 corridor, where lots run considerably larger than they do in the city and yards back up to woods and open ground. Bigger yards are not easier yards - waste spreads across more area and is harder to find in tall grass and leaf litter. Scoopy Doo sweeps Lookout Valley properties in a full grid pattern so a large yard gets covered end to end.",
+    localContext: "A half-acre Lookout Valley yard can hide a week of waste in ways a small city lot never could, which is exactly why owners here tend to fall behind and then need a one-time cleanup to reset. We handle both: a deep one-time cleanup to get the property back to zero, then weekly or every-other-week visits to hold it there. Wooded edges and drainage areas get the same attention as the open lawn.",
+    neighborhoods: ["Cummings Highway corridor", "Browns Ferry Road area", "Wauhatchie", "Elder Mountain vicinity", "Tiftonia", "Old Wauhatchie Pike"],
+    benefits: ["Full grid-pattern sweeps sized for larger valley lots", "One-time deep cleanups to reset an overgrown yard", "Every-other-week option for lower-traffic properties", "On-the-way text before every visit", "Gate photo confirmation when done", "Waste hauled off the property entirely"],
+    faqItems: [
+      { question: "Do you serve Lookout Valley?", answer: "Yes. Lookout Valley is within our standard Chattanooga service area, including the Cummings Highway and Browns Ferry Road corridors, at no additional travel charge." },
+      { question: "Do you charge more for a large Lookout Valley yard?", answer: "Pricing is based on yard size and number of dogs, so a larger property can price above the starting rate. Every quote is free and specific to your yard - there are no surprise charges after the fact." },
+      { question: "Can you clean up a yard that has been neglected for months?", answer: "Yes. That is what our one-time cleanup is for, and it is a common starting point for larger Lookout Valley properties. Most customers then move onto a weekly or every-other-week schedule to keep it that way." },
+      { question: "Do you cover wooded edges and drainage areas?", answer: "Yes. We sweep the usable yard in a grid pattern including the edges where waste tends to collect. If there is a specific area of the property you want left alone, tell us and we will skip it." }
+    ]
+  },
+  {
+    id: "riverview",
+    name: "Riverview, Chattanooga TN",
+    slug: "riverview",
+    seoTitle: "Dog Poop Removal in Riverview, Chattanooga | Scoopy Doo Pet Waste Removal",
+    seoDescription: "Pet waste removal in Riverview, Chattanooga. Discreet weekly dog waste pickup for established riverfront-area homes and larger lawns. Free quote.",
+    serviceDescription: "Riverview is one of Chattanooga's most established neighborhoods, with mature lawns, generous setbacks, and properties that are visibly well kept. Homeowners here care how the yard reads from the street and from the patio, and pet waste undercuts that faster than almost anything else. Scoopy Doo provides quiet, consistent service that keeps a Riverview lawn presentable without anyone having to think about it.",
+    localContext: "Riverview lawns are typically larger and better maintained than the city average, which means waste left in the grass does visible damage - burn spots and dead patches show plainly against healthy turf. Owners here also tend to entertain outdoors, so the standard is a yard that is ready at any time rather than one that gets cleaned before company. Weekly service is what holds that standard.",
+    neighborhoods: ["Riverview proper", "Barton Avenue area", "Hixson Pike corridor", "Chattanooga Golf and Country Club vicinity", "Minnekahda", "Dartmouth Street area"],
+    benefits: ["Quiet, consistent weekly service for established lawns", "Protects healthy turf from waste burn and dead patches", "Twice-weekly available for multi-dog households", "On-the-way text before every visit", "Gate photo confirmation when done", "Waste hauled off the property, never left in your bin"],
+    faqItems: [
+      { question: "Do you serve Riverview?", answer: "Yes. Riverview is part of our regular Chattanooga routes and is covered at standard rates with no travel surcharge." },
+      { question: "Will pet waste damage my lawn?", answer: "Yes, it will. Dog waste is high in nitrogen and salts, which burns turf and leaves dead patches that take a full season to recover. Removing it consistently is the simplest way to protect an established Riverview lawn." },
+      { question: "How discreet is the service?", answer: "Very. You get a text when we are on the way, we clean the yard, secure the gate, and send a photo when we leave. There is no door knock and no need for you to be home." },
+      { question: "Do you offer service for larger Riverview lots?", answer: "Yes. Pricing scales with yard size and number of dogs, and larger lots are quoted individually. The quote is free and you will know the exact rate before any service starts." }
+    ]
+  },
+  {
+    id: "normal-park",
+    name: "Normal Park, Chattanooga TN",
+    slug: "normal-park",
+    seoTitle: "Dog Poop Removal in Normal Park, Chattanooga | Scoopy Doo Pet Waste Removal",
+    seoDescription: "Pet waste removal in Normal Park, Chattanooga. Family-friendly weekly dog waste pickup so kids and pets can use the yard safely. Free online quote.",
+    serviceDescription: "Normal Park is a family neighborhood in North Chattanooga where the yards get heavy use - kids, dogs, and often both at once. That is precisely the situation where pet waste stops being a chore and starts being a health question, because roundworm and hookworm eggs persist in soil long after the waste itself is gone. Scoopy Doo keeps Normal Park yards clean weekly so the yard stays usable for everyone in the house.",
+    localContext: "Yards in Normal Park do double duty as play space, which changes what a clean yard actually needs to mean. Waste that gets stepped on, mowed over, or missed in the grass is the version that ends up tracked inside. We sweep the full yard in a grid pattern rather than spot-checking, sanitize our equipment between every property, and take everything off site.",
+    neighborhoods: ["Normal Park school area", "Mississippi Avenue", "Colville Street area", "Dallas Road corridor", "Bell Avenue", "Hamilton Avenue vicinity"],
+    benefits: ["Weekly service that keeps play space safe for kids", "Full grid sweeps, not spot checks", "Equipment sanitized between every yard", "On-the-way text before every visit", "Gate photo confirmation when done", "All waste removed from the property"],
+    faqItems: [
+      { question: "Do you serve Normal Park?", answer: "Yes. Normal Park is part of our regular North Chattanooga routes and is covered at standard rates." },
+      { question: "Is pet waste actually a health risk for kids?", answer: "It can be. Dog waste can carry roundworms, hookworms, giardia, and bacteria such as E. coli, and some of those eggs stay viable in soil for months after the waste is gone. Consistent removal is the practical way to reduce that exposure in a yard children use." },
+      { question: "Do you sanitize your equipment between yards?", answer: "Yes. Scooping tools and footwear are sanitized between every property we visit, which keeps us from moving parasites or bacteria from one yard into the next." },
+      { question: "What if the kids leave toys in the yard?", answer: "Not a problem. We work around whatever is in the yard and never move or discard personal items. If something needs to stay untouched, mention it when you book." }
+    ]
+  },
+  {
+    id: "brainerd",
+    name: "Brainerd, Chattanooga TN",
+    slug: "brainerd",
+    seoTitle: "Dog Poop Removal in Brainerd, Chattanooga | Scoopy Doo Pet Waste Removal",
+    seoDescription: "Pet waste removal in Brainerd, Chattanooga. Weekly dog poop pickup for the flat, open yards common along the Brainerd Road corridor. Free quote.",
+    serviceDescription: "Brainerd is a long-established East Chattanooga neighborhood built largely around mid-century ranch homes with flat, open, fenced back yards. Those yards are straightforward to service and easy to keep spotless on a weekly schedule, which is why Brainerd is one of our most efficient routes. Scoopy Doo offers weekly, twice-weekly, every-other-week, and one-time cleanups throughout the area.",
+    localContext: "The classic Brainerd back yard is flat, fully fenced, and gets full sun, which means waste dries hard and bonds to the turf rather than washing away. Left for a few weeks it becomes genuinely difficult to remove without tearing up grass. Weekly visits keep it from ever reaching that point, and a one-time cleanup can reset a yard that already has.",
+    neighborhoods: ["Brainerd Road corridor", "Eastgate area", "Belvoir", "Brainerd Hills", "Moore Road area", "Germantown Road vicinity"],
+    benefits: ["Efficient weekly routes throughout Brainerd", "Built for flat, fully fenced ranch-home yards", "One-time cleanups for yards that got away from you", "On-the-way text before every visit", "Gate photo confirmation when done", "Waste hauled off the property entirely"],
+    faqItems: [
+      { question: "Do you serve Brainerd?", answer: "Yes. Brainerd is one of our established Chattanooga service areas, including the Brainerd Road corridor and the surrounding residential streets, at standard rates." },
+      { question: "Is Brainerd different from East Brainerd for service?", answer: "They are two separate areas and we serve both. Brainerd sits closer to the city along Brainerd Road, while East Brainerd is further out toward Ooltewah. Pricing is the same for either." },
+      { question: "What if my yard has not been cleaned in months?", answer: "Start with a one-time cleanup. We reset the entire yard first, then you can move onto a weekly or every-other-week schedule to keep it that way. One-time cleanups are priced by yard size and how much has accumulated." },
+      { question: "Do you service fully fenced back yards when nobody is home?", answer: "Yes, and that is how most of our Brainerd visits work. You get a text when we are on the way, we clean, we latch the gate, and you get a photo of the closed gate when we are done." }
     ]
   }
 ];

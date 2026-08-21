@@ -110,7 +110,7 @@ const PooperScooperCostChattanooga = () => {
           <h3 className="text-xl font-medium mt-6 mb-2">Does Scoopy Doo serve areas outside Chattanooga?</h3>
           <p className="mb-4">
             Yes. Scoopy Doo serves Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd,
-            Soddy-Daisy, Cleveland, East Ridge, and Lookout Mountain TN, plus Ringgold, Rossville,
+            Soddy-Daisy, East Ridge, and Lookout Mountain TN, plus Ringgold, Rossville,
             Fort Oglethorpe, and Flintstone GA at the same rates as Tennessee.
           </p>
 

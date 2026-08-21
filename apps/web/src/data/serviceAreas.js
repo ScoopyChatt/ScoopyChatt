@@ -8,7 +8,6 @@ export const serviceAreas = [
   'Ringgold',
   'Rossville',
   'Red Bank',
-  'Cleveland',
   'East Brainerd',
   'Highland Park',
   'Apison',

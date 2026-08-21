@@ -82,10 +82,12 @@ const BLOG_POSTS = [
 ];
 
 const SERVICE_AREAS = [
-  'apison', 'chattanooga', 'cleveland', 'collegedale', 'downtown', 'east-brainerd',
+  'apison', 'chattanooga', 'collegedale', 'downtown', 'east-brainerd',
   'east-ridge', 'flintstone', 'fort-oglethorpe', 'highland-park', 'hixson',
   'lookout-mountain', 'ooltewah', 'red-bank', 'ringgold', 'rossville',
   'signal-mountain', 'soddy-daisy',
+  'st-elmo', 'north-chattanooga', 'southside', 'lookout-valley', 'riverview',
+  'normal-park', 'brainerd',
 ];
 
 // Sources of the vercel.json redirects and the /dp/* 410 handler. These must reach
