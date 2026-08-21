@@ -14,7 +14,7 @@ const FREQUENCIES = [
   { id: 'twice', label: 'Twice a week', sub: 'Maximum freshness', base: 18, extra: 1, perMonth: 8.67 },
   { id: 'weekly', label: 'Weekly', sub: 'Most popular', base: 20, extra: 2, perMonth: 4.33 },
   { id: 'biweekly', label: 'Every other week', sub: 'Budget friendly', base: 33, extra: 3, perMonth: 2.17 },
-  { id: 'onetime', label: 'One-time cleanup', sub: 'No commitment', base: 85, extra: 0, perMonth: 0 },
+  { id: 'onetime', label: 'One-time cleanup', sub: 'No commitment', base: 85, extra: 15, inc: 3, perMonth: 0 },
 ];
 
 const money = (n) => '$' + Math.round(n);
@@ -30,7 +30,7 @@ const CostCalculatorPage = () => {
   const isOneTime = frequency === 'onetime';
   const takeawayOn = takeaway && !isOneTime;
 
-  const perVisit = f.base + Math.max(0, dogs - 1) * f.extra + (takeawayOn ? TAKEAWAY_FEE : 0);
+  const perVisit = f.base + Math.max(0, dogs - (f.inc || 1)) * f.extra + (takeawayOn ? TAKEAWAY_FEE : 0);
   const monthly = isOneTime ? 0 : perVisit * f.perMonth;
 
   const dogOptions = [1, 2, 3, 4];
@@ -150,10 +150,10 @@ const CostCalculatorPage = () => {
               {isOneTime && (
                 <>
                   <div className="flex items-end gap-2 mb-1">
-                    <span className="text-5xl font-black">{money(f.base)}</span>
+                    <span className="text-5xl font-black">{money(perVisit)}</span>
                     <span className="pb-1 text-lg opacity-80">starting</span>
                   </div>
-                  <p className="opacity-90 mb-4">A single full-yard cleanup, starting at $85. Final price depends on yard size and how much buildup there is. Great before a party, a move, or starting recurring service.</p>
+                  <p className="opacity-90 mb-4">A single full-yard cleanup starting at $85, which covers up to three dogs; each dog beyond that adds $15. Haul-away is included at no extra charge. Final price depends on yard size and how much buildup there is. Great before a party, a move, or starting recurring service.</p>
                 </>
               )}
 

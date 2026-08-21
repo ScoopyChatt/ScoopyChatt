@@ -48,7 +48,7 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
         "name": "How much does a one-time yard cleanup cost before an event?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "One-time yard cleanups with Scoopy Doo start at $85. The final price depends on how long it has been since the yard was last cleaned, how large the area is, and how many dogs use it, so a yard that has gone two weeks costs less than one that has gone six months. There is no contract and no obligation to start recurring service afterward."
+          "text": "One-time yard cleanups with Scoopy Doo start at $85, and that base covers up to three dogs, with each additional dog adding $15. Haul-away is included at no extra charge. The final price also depends on how long it has been since the yard was last cleaned and how large the area is. There is no contract and no obligation to start recurring service afterward."
         }
       },
       {
@@ -159,10 +159,12 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
 
           <h2 className="text-2xl font-semibold mt-8 mb-3">How much it costs</h2>
           <p className="mb-4">
-            One-time cleanups start at $85. What moves the number is how long the yard has gone,
-            how big the area is, and how many dogs use it. A yard that has been kept up and just
-            needs a reset before guests sits near the starting price. A yard that has not been
-            touched since spring is a bigger job and prices accordingly. You get the exact figure
+            One-time cleanups start at $85, and that base covers up to three dogs. A fourth dog
+            and beyond adds $15 each. Haul-away is included, so nothing is left in your bin during
+            the party. What else moves the number is how long the yard has gone and how big the
+            area is. A yard that has been kept up and just needs a reset before guests sits near
+            the starting price. A yard that has not been touched since spring is a bigger job and
+            prices accordingly. You get the exact figure
             before we come out, so there is nothing to negotiate on the day. The full breakdown of
             one-time versus recurring rates is on the{' '}
             <Link className="text-green-700 underline font-semibold" to="/one-time-cleanup">

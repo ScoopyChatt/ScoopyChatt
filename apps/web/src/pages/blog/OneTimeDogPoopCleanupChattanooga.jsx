@@ -54,9 +54,10 @@ const OneTimeDogPoopCleanupChattanooga = () => {
 
           <h2 className="text-2xl font-semibold mt-8 mb-3">How much does a one-time cleanup cost in Chattanooga?</h2>
           <p className="mb-4">
-            One-time cleanups start at $85. The exact price depends on how long it has
-            been since the yard was last cleaned, the size of the area, and how many dogs
-            have been using it. A yard that has gone a couple of weeks costs less than one
+            One-time cleanups start at $85, and that base covers up to three dogs, with each
+            additional dog adding $15. Haul-away is included at no extra charge. The exact price
+            also depends on how long it has been since the yard was last cleaned and the size of
+            the area. A yard that has gone a couple of weeks costs less than one
             that has not been touched in several months. When you request a quote, we ask a
             few quick questions so the price you get is the price you pay, with no surprises.
           </p>

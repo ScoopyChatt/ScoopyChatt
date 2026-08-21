@@ -222,7 +222,7 @@ const DogPoopSmellInYardChattanooga = () => {
             <Link className="text-green-700 underline font-semibold" to="/blog/one-time-dog-poop-cleanup-chattanooga">
               one-time cleanup
             </Link>{' '}
-            from $85 and go from there.
+            from $85, which covers up to three dogs and includes haul-away, and go from there.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-3">A note on the smell that is not poop</h2>

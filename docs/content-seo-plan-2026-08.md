@@ -156,11 +156,12 @@ it is comparable between companies; the customer is charged once a month.
 | Twice weekly | $18 | +$1 | ~$156 |
 | Weekly | $20 | +$2 | ~$87 |
 | Every other week | $33 | +$3 | ~$72 |
-| One-time cleanup | from $85 | — | — |
+| One-time cleanup | from $85 | +$15 after the 3rd | — |
 
 Monthly figures use 4.33 weekly visits per month. Note the extra-dog rate is
 *inverse* to frequency: twice-weekly absorbs extra dogs most cheaply at $1 because
-there is less accumulation per stop.
+there is less accumulation per stop. One-time cleanups price dogs differently again
+— the $85 base covers **up to three dogs**, then $15 each.
 
 | Add-on | Rate |
 |---|---|
@@ -188,7 +189,6 @@ call — worth not picking a price fight we do not win on the number alone.
 - **A3 is the sharpest of those.** Every competitor that publishes anything bills a
   flat monthly rate; we bill per visit. Nobody has written that comparison, and it is
   the exact question a buyer asks when PooTagic quotes them a flat monthly number.
-- **One-time cleanup price is inconsistent in the code** — see section 7.
 - **Competitor prices in the comparison page are July 2026 vintage.** They still
   match what search results show, but they should be re-verified quarterly.
 - **The comparison page does not list our add-on rates.** Now that stations and
@@ -198,19 +198,27 @@ call — worth not picking a price fight we do not win on the number alone.
 
 ---
 
-## 7. Open discrepancy: one-time cleanup price
+## 7. Pricing bugs found and fixed, August 2026
 
-The two pricing surfaces disagree, and this one was not resolved in August 2026.
+Three places where the code disagreed with itself or with the published rates.
+All resolved; recorded here so the same drift is easy to spot next time.
 
-| Surface | One-time cleanup |
-|---|---|
-| `QuoteForm.jsx` (the live instant quote) | **$125** base, includes up to 3 dogs, +$15 per dog beyond 3 |
-| `CostCalculatorPage.jsx`, `/pricing`, every blog post, all JSON-LD | **from $85** |
+| Surface | Was | Now |
+|---|---|---|
+| `QuoteForm.jsx` one-time base | $125 | **$85** (3 dogs included, +$15 each after) |
+| `CostCalculatorPage.jsx` one-time | $85 flat, extra dogs never charged | **$85** with 3 included, +$15 each after |
+| `CostCalculatorPage.jsx` twice-weekly extra dog | $2 | **$1** |
 
-A visitor reading "$85" on the pricing page and then getting $125 from the quote
-form on the same site is a conversion problem and a trust problem. One of the two
-is wrong and Brandon needs to say which. Everything else on the site now agrees
-with the quote form, which is the authoritative implementation.
+The one-time gap was the worst of the three: a visitor read "from $85" on
+`/pricing`, ran the instant quote on the same site, and got $125. The calculator
+also silently ignored extra dogs on one-time jobs, so a four-dog household was
+quoted $85 where the real price is $100.
 
-Separately, `CostCalculatorPage.jsx` had the twice-weekly extra-dog rate at $2 when
-the quote form and Brandon both say $1. Fixed in August 2026.
+Both calculators now produce identical numbers for every plan and dog count:
+
+| Plan | 1 dog | 2 dogs | 3 dogs | 4 dogs |
+|---|---|---|---|---|
+| Twice weekly | $18 | $19 | $20 | $21 |
+| Weekly | $20 | $22 | $24 | $26 |
+| Every other week | $33 | $36 | $39 | $42 |
+| One-time | $85 | $85 | $85 | $100 |

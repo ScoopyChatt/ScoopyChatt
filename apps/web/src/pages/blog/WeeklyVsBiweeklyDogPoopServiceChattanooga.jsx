@@ -242,9 +242,9 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
           <h2 className="text-2xl font-semibold mt-8 mb-3">If the yard is already behind</h2>
           <p className="mb-4">
             Neither recurring plan is the right first step for a yard that has not been touched in
-            months. In that case we start with a one-time cleanup from $85 to get the yard back to
-            a baseline, and then the weekly or every-other-week rate applies from the next visit
-            forward. You can read how that works in our guide to{' '}
+            months. In that case we start with a one-time cleanup from $85, which covers up to
+            three dogs and includes haul-away, to get the yard back to a baseline. The weekly or
+            every-other-week rate applies from the next visit forward. You can read how that works in our guide to{' '}
             <Link className="text-green-700 underline font-semibold" to="/blog/one-time-dog-poop-cleanup-chattanooga">
               one-time dog poop cleanups in Chattanooga
             </Link>.
