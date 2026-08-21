@@ -53,7 +53,7 @@ const ServiceAreasPage = () => {
                     <MapPin className="w-5 h-5 text-primary mr-2" />
                     <h2 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">{location.name} Pooper Scooper Service</h2>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-4">{location.description} We offer top-tier dog waste removal services in this area.</p>
+                  <p className="text-muted-foreground text-sm mb-4">{location.serviceDescription}</p>
                   <div className="flex items-center text-sm font-medium text-primary">
                     View Details <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>

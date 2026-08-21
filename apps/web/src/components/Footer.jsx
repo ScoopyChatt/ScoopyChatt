@@ -173,7 +173,7 @@ const Footer = () => {
               />
             </a>
             <p className="text-xs text-slate-500 text-center">
-              Proud member of the Association of Professional Animal Waste Specialists
+              Proud member of aPaws, the Association of Professional Animal Waste Specialists
             </p>
           </div>
           <div className="flex space-x-4 text-sm text-slate-500">

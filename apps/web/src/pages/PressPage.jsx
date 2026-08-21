@@ -36,6 +36,26 @@ const articleSchema = {
   "mainEntityOfPage": ARTICLE_URL
 };
 
+const apawsReleaseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline:
+    "Scoopy Doo LLC Joins aPaws, Becoming the Chattanooga Area's Only Member of the National Pet Waste Removal Trade Association",
+  datePublished: "2026-08-21",
+  author: { "@type": "Organization", name: "Scoopy Doo LLC", url: BASE },
+  publisher: { "@type": "Organization", name: "Scoopy Doo LLC", url: BASE },
+  mainEntityOfPage: BASE + "/press",
+  about: {
+    "@type": "Organization",
+    name: "Association of Professional Animal Waste Specialists",
+    alternateName: "aPaws",
+    url: "https://apaws.org/",
+  },
+  articleSection: "Press Release",
+  description:
+    "Scoopy Doo LLC has joined aPaws, the Association of Professional Animal Waste Specialists. As of August 2026 the aPaws member directory lists no other member within 76 miles of Chattanooga.",
+};
+
 const wdefArticleSchema = {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
@@ -56,7 +76,7 @@ export default function PressPage() {
         title="Scoopy Doo in the News | Press and Media Coverage | Chattanooga Pet Waste Removal"
         description="See the news coverage of Scoopy Doo LLC, the largest pet waste removal company in the Chattanooga area. Featured in the Chattanoogan and on WDEF News 12."
         canonicalUrl={BASE + "/press"}
-        schema={[collectionSchema, articleSchema, wdefArticleSchema]}
+        schema={[apawsReleaseSchema, collectionSchema, articleSchema, wdefArticleSchema]}
       />
       <Header />
       <main className="flex-grow">
@@ -71,6 +91,74 @@ export default function PressPage() {
             <p className="text-lg text-muted-foreground">
               Scoopy Doo LLC is the largest and fastest-growing pet waste removal company in the Chattanooga, TN area, serving more than 150 clients with 90 five-star reviews across Chattanooga and North Georgia.
             </p>
+          </div>
+        </section>
+
+        <section className="py-12 pb-0">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <article className="border border-primary/30 bg-primary/5 rounded-2xl overflow-hidden shadow-sm">
+              <div className="p-6 md:p-8">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-3">
+                  <span className="font-semibold text-primary">Press Release</span>
+                  <span aria-hidden="true">&bull;</span>
+                  <span>August 21, 2026</span>
+                  <span aria-hidden="true">&bull;</span>
+                  <span>Ringgold, GA</span>
+                </div>
+                <h2 className="text-2xl font-bold text-foreground mb-4">
+                  Scoopy Doo LLC Joins aPaws, Becoming the Chattanooga Area&apos;s Only Member of the National Pet Waste Removal Trade Association
+                </h2>
+                <div className="space-y-4 text-muted-foreground">
+                  <p>
+                    Scoopy Doo LLC, the pet waste removal company serving Chattanooga, Tennessee and North
+                    Georgia, has joined aPaws, the Association of Professional Animal Waste Specialists. Founded
+                    in 2002, aPaws is the national trade association for the professional pet waste removal
+                    industry.
+                  </p>
+                  <p>
+                    Scoopy Doo is currently the only aPaws member serving the Chattanooga metropolitan area. A
+                    search of the public aPaws member directory for the 37421 ZIP code across a 100-mile radius
+                    returns Scoopy Doo at 6.3 miles, with the next nearest member located in Cumming, Georgia at
+                    76.9 miles and the one after that in Nashville, Tennessee at 114.5 miles. Chattanooga dog
+                    owners who want to hire an association member locally have one option in the directory.
+                  </p>
+                  <p>
+                    Membership is not automatic. aPaws screens members for insurance and requires a pledge to
+                    the association&apos;s standards of care for client properties and pets. The association also
+                    established International Pooper Scooper Week, held April 1 through 7 each year, to raise
+                    public awareness of the health risks that uncollected dog waste poses to families, pets, and
+                    local waterways.
+                  </p>
+                  <p>
+                    Scoopy Doo LLC was founded by Leighton Carter, who started the company at 14 years old with a
+                    single customer and grew it with her father Brandon into the largest pet waste removal company
+                    in the Chattanooga area in under a year. The company was featured by the Chattanoogan in June
+                    2026 and by WDEF News 12 in July 2026. It is a BBB Accredited Business with an A- rating and
+                    holds 90 five-star reviews across more than 150 active clients.
+                  </p>
+                  <p>
+                    Scoopy Doo provides weekly, twice-weekly, every-other-week, and one-time dog waste removal for
+                    homes, HOAs, apartment communities, and commercial properties across 24 service areas in
+                    Tennessee and North Georgia, along with pet waste station installation and servicing. Every
+                    visit includes an on-the-way text, a full grid-pattern sweep of the yard, and a photo of the
+                    secured gate when the visit is complete. No contracts are required.
+                  </p>
+                </div>
+                <div className="mt-6 flex flex-wrap gap-4">
+                  <a
+                    href="https://apaws.org/search/details.aspx?id=3031"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+                  >
+                    View the Scoopy Doo listing in the aPaws directory <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+                <p className="mt-6 text-sm text-muted-foreground">
+                  Media contact: Brandon Carter, Scoopy Doo LLC &mdash; info@scoopychatt.com &bull; 423-600-5040
+                </p>
+              </div>
+            </article>
           </div>
         </section>
 

@@ -44,6 +44,7 @@ const PAGES = [
 ];
 
 const BLOG_POSTS = [
+  'apaws-member-pet-waste-removal-chattanooga',
   'best-dog-parks-chattanooga-tn',
   'best-pooper-scooper-services-chattanooga',
   'chattanooga-pet-waste-removal-homeowners',

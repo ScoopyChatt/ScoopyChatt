@@ -83,6 +83,7 @@ const IsDogWasteBadForLawn = React.lazy(() => import('@/pages/blog/IsDogWasteBad
 const IsDogPoopHurtingYourChattanoogaYard = React.lazy(() => import('@/pages/blog/IsDogPoopHurtingYourChattanoogaYard.jsx'));
 const BestPooperScooperServicesChattanooga = React.lazy(() => import('@/pages/blog/BestPooperScooperServicesChattanooga.jsx'));
 const SpringPetCareChecklist = React.lazy(() => import('@/pages/blog/SpringPetCareChecklist.jsx'));
+const ApawsMemberChattanooga = React.lazy(() => import('@/pages/blog/ApawsMemberChattanooga.jsx'));
 
 // Media / Utilities
 const PodcastPage = React.lazy(() => import('@/pages/PodcastPage.jsx'));
@@ -214,6 +215,7 @@ function App() {
           <Route path="/blog/is-dog-poop-hurting-your-chattanooga-yard" element={<IsDogPoopHurtingYourChattanoogaYard />} />
           <Route path="/blog/best-pooper-scooper-services-chattanooga" element={<BestPooperScooperServicesChattanooga />} />
           <Route path="/blog/spring-pet-care-checklist" element={<SpringPetCareChecklist />} />
+          <Route path="/blog/apaws-member-pet-waste-removal-chattanooga" element={<ApawsMemberChattanooga />} />
 
           <Route path="/how-it-works" element={<HowItWorksPage />} />
 

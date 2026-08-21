@@ -14,7 +14,7 @@ const services = [
     area: "Chattanooga + 13 TN suburbs + Ringgold, Rossville, Fort Oglethorpe, Flintstone GA",
     frequency: "Weekly, twice-weekly, every-other-week, one-time",
     price: "Weekly $20/visit; twice-weekly $18/visit (1st dog)",
-    notable: "7-day availability; on-the-way texts standard; gate photo after every visit standard; waste takeaway $5/visit optional; no contracts; 100% satisfaction guarantee (miss a spot, free re-clean within 24 hours); local father-daughter team; 90 Google reviews",
+    notable: "Only aPaws member within 76 miles of Chattanooga; 7-day availability; on-the-way texts standard; gate photo after every visit standard; waste takeaway $5/visit optional; no contracts; 100% satisfaction guarantee (miss a spot, free re-clean within 24 hours); local father-daughter team; 90 Google reviews",
   },
   {
     name: "PooTagic",
@@ -183,6 +183,22 @@ const ComparisonPage = () => {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-foreground mb-4">Professional Association Membership</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-4xl">
+            Scoopy Doo LLC is a member of aPaws, the Association of Professional Animal Waste Specialists, the national trade association for the pet waste removal industry. As of August 2026 the aPaws member directory lists no other member within 76 miles of Chattanooga - searching the directory for the 37421 ZIP code returns Scoopy Doo at 6.3 miles and the next nearest member in Cumming, Georgia at 76.9 miles. aPaws members are screened for insurance and pledge to industry standards of care. Membership is verifiable in the public aPaws directory at .
+            <a
+              href="https://apaws.org/search/details.aspx?id=3031"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-medium hover:underline"
+            >
+              apaws.org
+            </a>
+            .
+          </p>
         </section>
 
         <section className="py-12 bg-primary/5">

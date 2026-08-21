@@ -40,6 +40,7 @@ const PAGES = [
   ["/yard-cleanup-chattanooga", "Yard Cleanup for Pet Owners in Chattanooga, TN | Scoopy Doo", "Complete yard cleanup for pet owners in Chattanooga, TN. Book a one-time or recurring cleanup."],
   ["/privacy-policy", "Privacy Policy | Scoopy Doo LLC", "Privacy policy for Scoopy Doo LLC, the pet waste removal company serving Chattanooga, TN."],
   ["/terms-of-service", "Terms of Service | Scoopy Doo LLC", "Terms of service for Scoopy Doo LLC pet waste removal in Chattanooga, TN."],
+  ["/blog/apaws-member-pet-waste-removal-chattanooga", "What aPaws Membership Means When Hiring a Pooper Scooper | Chattanooga", "aPaws is the national trade association for pet waste removal. What membership means, why it matters when hiring, and why Scoopy Doo is the only member within 76 miles of Chattanooga."],
   ["/blog/professional-waste-removal-benefits", "Benefits of Professional Pet Waste Removal | Scoopy Doo Chattanooga", "Why professional dog waste removal is safer and more thorough than DIY. Scoopy Doo serves Chattanooga and surrounding areas weekly."],
   ["/blog/seasonal-pet-care-tips", "Seasonal Pet Care Tips for Chattanooga Dog Owners | Scoopy Doo", "Keep your yard clean and safe year-round with seasonal pet waste tips from Scoopy Doo LLC in Chattanooga, TN."],
   ["/blog/health-benefits-yard-cleanup", "Health Benefits of Regular Yard Cleanup for Pet Owners | Scoopy Doo", "Regular dog waste removal protects your family from bacteria and parasites. Learn why weekly cleanup matters for Chattanooga homeowners."],

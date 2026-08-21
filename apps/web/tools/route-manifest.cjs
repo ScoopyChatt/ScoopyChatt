@@ -62,6 +62,7 @@ const BLOG_POSTS = [
   'best-pooper-scooper-services-chattanooga',
   'pooper-scooper-cost-chattanooga',
   'dog-poop-removal-north-georgia',
+  'apaws-member-pet-waste-removal-chattanooga',
   'professional-waste-removal-benefits',
   'health-risks-of-pet-waste',
   'lawn-health-and-pet-waste',

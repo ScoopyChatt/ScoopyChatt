@@ -74,7 +74,7 @@ export const generateSitemapData = async () => {
     'why-chattanooga-homeowners-hiring-pet-waste-removal',
     'pet-waste-removal-hoas-apartments-commercial-chattanooga',
     'spring-pet-care-checklist',
-    'professional-waste-removal-benefits',
+    'apaws-member-pet-waste-removal-chattanooga', 'professional-waste-removal-benefits',
     'seasonal-pet-care-tips',
     'health-benefits-yard-cleanup',
     'customer-success-stories',
