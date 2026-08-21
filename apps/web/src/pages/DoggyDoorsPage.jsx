@@ -26,6 +26,9 @@ import { TIERS } from '@/data/doggyDoorTiers.js';
 
 const TIER_ICONS = { good: Wrench, better: Lock, best: Wifi };
 
+// Derived from TIERS so the headline price cannot drift out of sync with the cards.
+const STARTING_PRICE = Math.min(...TIERS.map((t) => t.price));
+
 const DoggyDoorsPage = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({ name: '', email: '', phone: '', zip: '' });
@@ -155,7 +158,7 @@ const DoggyDoorsPage = () => {
                   <ul className="space-y-3 mb-8">
                     {[
                       'Professionally measured and installed for your dog',
-                      'Good, Better, and Best options at a set price - no quote calls',
+                      `Good, Better, and Best options starting at $${STARTING_PRICE} installed - no quote calls`,
                       'You already trust us with your yard - now let us handle the door',
                     ].map((line, i) => (
                       <li key={i} className="flex items-start text-foreground">

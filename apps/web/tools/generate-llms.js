@@ -29,7 +29,7 @@ const PAGES = [
   ["/quote", "Get a Free Pet Waste Removal Quote | Chattanooga, TN", "Get a fast, free quote for dog poop removal in Chattanooga, TN. No contracts required."],
   ["/one-time-cleanup", "One-Time Dog Poop Cleanup in Chattanooga, TN | Scoopy Doo", "Get a one-time dog poop cleanup in Chattanooga, TN. Perfect for spring cleaning, first-time service, or move-out yard prep."],
   ["/how-it-works", "How It Works | Scoopy Doo Pet Waste Removal Chattanooga", "Easy online quotes, secure online payment, on-the-way texts, and gate photo proof after every visit. Working with Scoopy Doo is simple."],
-  ["/doggy-doors", "Professional Dog Door Installation in Chattanooga, TN | Scoopy Doo Doggy Doors", "Professional dog door installation in Chattanooga and North Georgia. Good, Better, and Best options, professionally measured and installed."],
+  ["/doggy-doors", "Professional Dog Door Installation in Chattanooga, TN | Scoopy Doo Doggy Doors", "Professional dog door installation in Chattanooga and North Georgia. Good, Better, and Best options, professionally measured and installed. Starting at $529 installed."],
   ["/near-me", "Pooper Scooper Service Near Me in Chattanooga, TN", "Looking for a pooper scooper service near you in Chattanooga? Scoopy Doo offers reliable local dog waste removal."],
   ["/blog", "Pet Waste and Dog Care Blog | Scoopy Doo Chattanooga", "Tips on pet waste removal, yard health, and dog care for Chattanooga homeowners."],
   ["/dog-poop-removal-chattanooga", "Dog Poop Removal in Chattanooga, TN | Scoopy Doo LLC", "Professional dog poop removal in Chattanooga, TN. Dependable weekly service, fully insured."],
