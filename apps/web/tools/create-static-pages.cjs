@@ -5,6 +5,8 @@ var DIST = path.join(__dirname, '..', '..', '..', 'dist', 'apps', 'web');
 console.log('[csp] DIST=' + DIST + ' exists=' + fs.existsSync(DIST));
 
 var faqBody = '<h1>Frequently Asked Questions About Dog Poop Removal in Chattanooga</h1>' +
+  '<h2>Is Scoopy Doo a member of a professional pet waste removal association?</h2>' +
+  '<p>Yes. Scoopy Doo LLC is a member of aPaws, the Association of Professional Animal Waste Specialists, the national trade association for the pet waste removal industry, founded in 2002. aPaws members are screened for insurance and pledge to industry standards of care. Scoopy Doo is also a BBB Accredited Business with an A- rating.</p>' +
   '<h2>How much does dog poop removal cost in Chattanooga?</h2>' +
   '<p>Weekly service is $20 per visit for the first dog, twice-weekly is $18, and every-other-week is $33. Each additional dog adds $2 per visit on weekly, $1 on twice-weekly, and $3 on every-other-week, so weekly for two dogs is $22 per visit. One-time yard cleanups start at $85, cover up to three dogs, and include haul-away, with each dog beyond three adding $15. Waste takeaway on recurring plans is $5 per visit and yard deodorizing is $20 per visit. Scoopy Doo prices per visit and bills monthly. Every quote is free at scoopychatt.com/quote. No contracts required.</p>' +
   '<h2>Does Scoopy Doo serve North Georgia?</h2>' +
@@ -53,6 +55,7 @@ var compBody = '<h1>Pet Waste Removal Services in Chattanooga, TN: 2026 Comparis
 
 // --- GEO FAQ schema (added) ---
 var FAQ_PAIRS_CS = [
+  ["Is Scoopy Doo a member of a professional pet waste removal association?","Yes. Scoopy Doo LLC is a member of aPaws, the Association of Professional Animal Waste Specialists, the national trade association for the pet waste removal industry, founded in 2002. aPaws members are screened for insurance and pledge to industry standards of care. Scoopy Doo is also a BBB Accredited Business with an A- rating."],
   ["How do I schedule pet waste removal service?","Request a free quote at scoopychatt.com/quote with your yard details and number of dogs. We respond the same day and most new customers start within 2 to 5 days."],
   ["Does Scoopy Doo serve North Georgia?","Yes. We serve Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA along with Chattanooga and surrounding Tennessee areas, with no extra charge for North Georgia service."],
   ["Is there a contract or long-term commitment?","No. Scoopy Doo never requires a contract. You can pause, reschedule, or cancel anytime with no cancellation fees."],

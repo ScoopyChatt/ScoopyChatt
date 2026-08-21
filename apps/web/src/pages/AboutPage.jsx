@@ -47,7 +47,7 @@ const AboutPage = () => {
             <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-6">
                 About Scoopy Doo - Chattanooga, TN Pet Waste Removal Company
               </h1>
-            <p className="text-lg md:text-xl text-muted-foreground">A father and daughter business built on showing up, doing the work right, and making Chattanooga yards a little cleaner every week. Scoopy Doo LLC is accredited by the Better Business Bureau and fully insured.</p>
+            <p className="text-lg md:text-xl text-muted-foreground">A father and daughter business built on showing up, doing the work right, and making Chattanooga yards a little cleaner every week. Scoopy Doo LLC is accredited by the Better Business Bureau, fully insured, and a member of <a href="https://apaws.org/search/details.aspx?id=3031" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">aPaws</a>, the Association of Professional Animal Waste Specialists.</p>
           </motion.div>
         </section>
 

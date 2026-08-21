@@ -32,6 +32,10 @@ export const getFaqData = (location = 'Chattanooga') => {
         {
           question: "Is Scoopy Doo LLC BBB accredited?",
           answer: "Yes. Scoopy Doo LLC is a BBB Accredited Business with an A- rating from the Better Business Bureau of Southeast Tennessee & Northwest Georgia, accredited since June 2026. You can view our full BBB Business Review at bbb.org."
+        },
+        {
+          question: "Is Scoopy Doo a member of a professional pet waste removal association?",
+          answer: "Yes. Scoopy Doo LLC is a member of aPaws, the Association of Professional Animal Waste Specialists, the national trade association for the pet waste removal industry, founded in 2002. aPaws members are screened for insurance and pledge to industry standards of care. Scoopy Doo is also a BBB Accredited Business with an A- rating."
         }
       ]
     },

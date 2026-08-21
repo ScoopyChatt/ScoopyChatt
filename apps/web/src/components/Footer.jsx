@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Globe, Facebook, Instagram, Home, ShieldCheck } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Globe, Facebook, Instagram, Home, ShieldCheck, Award } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -76,6 +76,15 @@ const Footer = () => {
               >
                 <ShieldCheck className="w-5 h-5" />
               </a>
+              <a
+                href="https://apaws.org/search/details.aspx?id=3031"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View our aPaws member listing (Association of Professional Animal Waste Specialists)"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-[#2e7d32] hover:text-white transition-all duration-200 active:scale-95"
+              >
+                <Award className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
@@ -147,6 +156,18 @@ const Footer = () => {
           <a href="https://www.bbb.org/us/ga/ringgold/profile/pet-waste-removal/scoopy-doo-llc-0483-80013696/#sealclick" id="bbblink" className="sehzbum" target="_blank" rel="nofollow noopener">
             <img src="https://seal-chattanooga.bbb.org/logo/sehzbum/bbb-80013696.png" style={{ border: 0, maxHeight: "60px" }} alt="Scoopy Doo, LLC BBB Business Review" />
           </a>
+          <p className="text-sm text-slate-500 text-center md:text-left">
+            Proud member of{' '}
+            <a
+              href="https://apaws.org/search/details.aspx?id=3031"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors underline"
+            >
+              aPaws
+            </a>
+            , the Association of Professional Animal Waste Specialists.
+          </p>
           <div className="flex space-x-4 text-sm text-slate-500">
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>

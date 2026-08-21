@@ -14,6 +14,12 @@ export function generateLocalBusinessSchema() {
     "founder": [{ "@type": "Person", "name": "Leighton Carter" }, { "@type": "Person", "name": "Brandon Carter" }],
     "image": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png",
     "logo": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png",
+    "memberOf": {
+      "@type": "Organization",
+      "name": "Association of Professional Animal Waste Specialists",
+      "alternateName": "aPaws",
+      "url": "https://apaws.org/"
+    },
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Ringgold",
@@ -81,7 +87,8 @@ export function generateLocalBusinessSchema() {
       "https://www.bing.com/maps?ss=ypid.YNF8F072A96778C51B",
       "https://nextdoor.com/page/scoopy-doo-llc-ringgold-ga",
       "https://share.google/sOBVeLPqRabhfffPg",
-      "https://www.pooppages.com/directory/georgia/ringgold/scoopy-doo-c37smt"
+      "https://www.pooppages.com/directory/georgia/ringgold/scoopy-doo-c37smt",
+      "https://apaws.org/search/details.aspx?id=3031"
     ],
     "priceRange": "$$"
   };
