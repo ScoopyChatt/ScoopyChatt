@@ -63,6 +63,7 @@ const BLOG_POSTS = [
   'dog-door-installation-chattanooga',
   'dog-poop-cleanup-chattanooga-summer-heat',
   'dog-poop-laws-chattanooga',
+  'what-pet-waste-removal-includes-chattanooga',
   'dog-poop-removal-north-georgia',
   'fall-yard-care-checklist-chattanooga',
   'health-benefits-yard-cleanup',

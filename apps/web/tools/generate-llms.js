@@ -84,6 +84,7 @@ const PAGES = [
   ["/blog/pooper-scooper-cost-chattanooga", "How Much Does Pooper Scooper Service Cost in Chattanooga? | Scoopy Doo", "Scoopy Doo weekly service starts at $20 per visit for one dog. 2026 pricing for weekly, every-other-week, and one-time pet waste removal in Chattanooga TN."],
   ["/blog/dog-poop-removal-north-georgia", "Pet Waste Removal in Ringgold, Rossville and North Georgia | Scoopy Doo", "Scoopy Doo serves Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA. Same weekly pet waste removal as Chattanooga. Starting at $20/visit. No contracts."],
   ["/blog/podcast-blog", "Scoopy Doo Discusses Pet Waste Management on a Recent Podcast | Scoopy Doo", "Scoopy Doo father-daughter team discusses pet waste management, lawn health, and building a pet waste removal company in Chattanooga."],
+  ["/blog/what-pet-waste-removal-includes-chattanooga", "What Does Pet Waste Removal Actually Include in Chattanooga, TN? | Scoopy Doo", "Pet waste removal in Chattanooga TN covers weekly yard scooping, double-bagging, and gate photo confirmation. What is included, what it costs, and who offers it."],
 ];
 
 // Location/service-area pages

@@ -151,6 +151,7 @@ const routes = {
   '/blog/new-puppy-pet-waste-removal-chattanooga': ['New Puppy Owner Guide: Pet Waste Cleanup in Chattanooga | Scoopy Doo', 'Bringing home a new puppy in Chattanooga? Here is how to set up a pet waste cleanup routine, why it matters for house training and health, and what professional service costs.'],
   '/blog/dog-poop-removal-north-georgia': ["Dog Poop Removal in Ringgold, Fort Oglethorpe and North Georgia | Scoopy Doo", "Scoopy Doo provides dog poop removal in Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA. Weekly service from $20 per visit, no contracts required."],
 '/blog/yard-cleanup-before-selling-home-chattanooga': ["Do You Need to Clean Up Dog Waste Before Selling Your Chattanooga Home? | Scoopy Doo", "Selling a home in Chattanooga? Here is why yard cleanup and pet waste removal matter before listing photos and showings, plus a pre-listing checklist and pricing."],
+  '/blog/what-pet-waste-removal-includes-chattanooga': ["What Does Pet Waste Removal Actually Include in Chattanooga, TN? | Scoopy Doo", "Pet waste removal in Chattanooga TN covers weekly yard scooping, double-bagging, and gate photo confirmation. What is included, what it costs, and who offers it."],
 };
 
 const gaLocations = new Set(['ringgold','rossville','flintstone','fort-oglethorpe']);

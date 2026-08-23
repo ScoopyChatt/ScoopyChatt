@@ -47,6 +47,7 @@ const SERVICE_AREAS = [
 const BLOG_POSTS = [
   'dog-poop-cleanup-chattanooga-summer-heat',
   'dog-poop-laws-chattanooga',
+  'what-pet-waste-removal-includes-chattanooga',
   'best-dog-parks-chattanooga-tn',
   'winter-dog-poop-cleanup-chattanooga',
   'fall-yard-care-checklist-chattanooga',
