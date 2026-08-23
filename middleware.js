@@ -1,4 +1,5 @@
-// Vercel Edge Middleware: return a real HTTP 404 for URLs this site does not have.
+// Vercel Edge Middleware: return a real HTTP 404 for URLs this site does not have,
+// and force every request onto the single canonical host.
 //
 // The SPA rewrite in vercel.json ("/(.*)" -> "/index.html") means every URL on the
 // domain used to answer 200 OK with the app shell. Google files those as soft 404s
@@ -8,6 +9,14 @@
 // Anything not matched here falls through untouched, so prerendered pages, static
 // assets, API functions, and the vercel.json redirects behave exactly as before.
 // If this file ever throws, the request continues — it fails open, never closed.
+
+// Both scoopychatt.com (apex) and www.scoopychatt.com are live domains on the Vercel
+// project with no redirect between them, so Google indexes them as separate pages -
+// confirmed in Search Console (Aug 2026): the apex host alone pulled 165 impressions
+// and 7 clicks, plus dozens of interior pages duplicated across apex/www/http, all
+// splitting ranking signal away from the canonical URL. Force everything onto one
+// host+protocol before anything else runs.
+const CANONICAL_HOST = 'www.scoopychatt.com';
 
 const PAGES = [
   '/',
@@ -148,7 +157,17 @@ const STATIC_EXT = new Set([
 
 export default function middleware(request) {
   try {
-    const { pathname } = new URL(request.url);
+    const url = new URL(request.url);
+    const { pathname } = url;
+
+    const host = request.headers.get('host') || url.hostname;
+    const proto = request.headers.get('x-forwarded-proto') || url.protocol.replace(':', '');
+    if (
+      (host === 'scoopychatt.com' || host === CANONICAL_HOST) &&
+      (host !== CANONICAL_HOST || proto !== 'https')
+    ) {
+      return Response.redirect(`https://${CANONICAL_HOST}${pathname}${url.search}`, 301);
+    }
 
     // Static assets, API routes and Vercel internals are never our business.
     if (
