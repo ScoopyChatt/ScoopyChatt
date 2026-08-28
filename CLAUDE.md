@@ -162,7 +162,7 @@ GA cities (must NOT say TN): ringgold, rossville, flintstone, fort-oglethorpe
 - Build takes 17-20 seconds when healthy. If build fails in under 12 seconds, it is a syntax error or config issue, not a code logic problem.
 
 ### SEO (Active problems)
-- 109,106 Soft 404 pages in Search Console — old Hostinger URLs crawled as HTTP 200. SPA returns 200 for everything. Need wildcard redirects for old URL patterns.
+- 109,106 Soft 404 pages in Search Console — FIXED at commit 56ef788 (2026-08-26). `middleware.js` now returns a real HTTP 404 for any path not on its `known` allowlist (PAGES/BLOG_POSTS/SERVICE_AREAS + legacy .php/.html/.aspx-style paths), instead of letting the SPA catch-all serve 200 for everything. Same commit also forces apex `scoopychatt.com` → `www.scoopychatt.com` (both were live and indexed as separate duplicate hosts). Deployed and live; Search Console's soft-404 count will lag behind actual fix — Google needs to re-crawl the URLs before the count drops, so don't expect it to move for a while yet. If the count is still ~109K after several weeks, check the middleware is actually matching correctly before assuming it needs more work.
 - /dp/ spam URLs — 301 redirect added in vercel.json. Search Console removals submitted manually by Brandon.
 - Ringgold TN bug — fixed in inject-seo.cjs (GA state set correctly for Georgia cities)
 
@@ -199,7 +199,7 @@ Located at /how-it-works. Key differentiators to always emphasize:
 
 ## SEO TODO (Priority Order)
 
-1. Fix 109K soft 404s — add wildcard redirects for old Hostinger URL patterns to homepage
+1. ~~Fix 109K soft 404s~~ — DONE, see Known Issues above. Monitor Search Console for the count to drop over the following weeks; don't rebuild this unless it's still ~109K after a real re-crawl window.
 2. Build commercial pages: HOA pet waste, apartment dog park, pet waste station
 3. More local-intent blog posts
 4. Verify Resend domain at resend.com/domains
