@@ -162,8 +162,8 @@ GA cities (must NOT say TN): ringgold, rossville, flintstone, fort-oglethorpe
 - Build takes 17-20 seconds when healthy. If build fails in under 12 seconds, it is a syntax error or config issue, not a code logic problem.
 
 ### SEO (Active problems)
-- 109,106 Soft 404 pages in Search Console — old Hostinger URLs crawled as HTTP 200. SPA returns 200 for everything. Need wildcard redirects for old URL patterns.
-- /dp/ spam URLs — 301 redirect added in vercel.json. Search Console removals submitted manually by Brandon.
+- Soft 404s / apex-vs-www fragmentation — FIXED at commit 8d5be3f / cfe6603 / d1006e6 (Aug 26, 2026) via `middleware.js` (repo root): Edge Middleware that runs before any vercel.json routing, 404s any path not on its explicit allowlist (killing the old "SPA returns 200 for everything" soft-404 problem), and force-redirects apex→www and http→https on every request. Do not re-add a separate www/apex redirect or wildcard-junk-path handling in vercel.json — middleware.js already runs first and anything added there would be dead code. As of Aug 29 2026, Search Console showed Soft 404 at 105,906 (down from ~109,860 pre-fix) with "Validation: Started" — Google is mid-recrawl, expect the count to keep dropping over the following weeks, not instantly.
+- /dp/ and other spam URL floods (`/dp/*` Amazon-style junk, `/shop/*`, `/products/*`, `/contents/*` fake-storefront junk) — bot/scraper traffic hitting the domain with fake product-page URLs, not a real site-structure problem. `/dp/*` gets a dedicated 410 Gone via `api/dp-gone.js` (rewrite in vercel.json); everything else not on middleware.js's allowlist gets a generic 404 from middleware itself, which is sufficient. Search Console removals submitted manually by Brandon as needed.
 - Ringgold TN bug — fixed in inject-seo.cjs (GA state set correctly for Georgia cities)
 
 ### Chatbot
@@ -199,7 +199,7 @@ Located at /how-it-works. Key differentiators to always emphasize:
 
 ## SEO TODO (Priority Order)
 
-1. Fix 109K soft 404s — add wildcard redirects for old Hostinger URL patterns to homepage
+1. ~~Fix 109K soft 404s~~ — DONE, see SEO (Active problems) above. Monitor Search Console monthly until the count bottoms out.
 2. Build commercial pages: HOA pet waste, apartment dog park, pet waste station
 3. More local-intent blog posts
 4. Verify Resend domain at resend.com/domains
