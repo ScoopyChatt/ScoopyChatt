@@ -39,10 +39,10 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Pet Waste Removal & Dog Poop Removal | Chattanooga TN | Scoopy Doo</title>
-        <meta name="description" content="Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 90+ Google reviews. Weekly service from $20 per visit. Free quotes." />
+        <meta name="description" content="Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 95+ Google reviews. Weekly service from $20 per visit. Free quotes." />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content="Pet Waste Removal & Dog Poop Removal | Chattanooga TN | Scoopy Doo" />
-        <meta property="og:description" content="Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 90+ Google reviews. Weekly service from $20 per visit. Free quotes." />
+        <meta property="og:description" content="Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 95+ Google reviews. Weekly service from $20 per visit. Free quotes." />
         <meta property="og:url" content={canonicalUrl} />
         <meta name="twitter:card" content="summary" />
       </Helmet>
@@ -268,7 +268,7 @@ const HomePage = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Why choose Scoopy Doo over other pooper scooper services?</h3>
-                  <p className="text-muted-foreground leading-relaxed">Scoopy Doo is rated 5 stars across more than 90 Google reviews. We are locally owned, fully insured, and available seven days a week, with no contracts and no cancellation fees.</p>
+                  <p className="text-muted-foreground leading-relaxed">Scoopy Doo is rated 5 stars across more than 95 Google reviews. We are locally owned, fully insured, and available seven days a week, with no contracts and no cancellation fees.</p>
                 </div>
               </div>
             </div>

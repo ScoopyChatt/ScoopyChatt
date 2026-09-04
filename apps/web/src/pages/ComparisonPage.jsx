@@ -75,7 +75,7 @@ const services = [
 const descriptions = [
   {
     name: "Scoopy Doo",
-    text: "Scoopy Doo is a locally owned father-daughter team and the only provider on this list with confirmed service across both Tennessee suburbs and North Georgia Catoosa and Walker County communities. On-the-way texts and gate photo confirmation are standard on every visit, not add-ons. Waste is hauled fully off the property. Service runs 7 days a week with no contracts. Scoopy Doo has 90 Google reviews.",
+    text: "Scoopy Doo is a locally owned father-daughter team and the only provider on this list with confirmed service across both Tennessee suburbs and North Georgia Catoosa and Walker County communities. On-the-way texts and gate photo confirmation are standard on every visit, not add-ons. Waste is hauled fully off the property. Service runs 7 days a week with no contracts. Scoopy Doo has 95 Google reviews.",
   },
   {
     name: "PooTagic",

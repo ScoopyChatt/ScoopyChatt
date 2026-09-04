@@ -89,7 +89,7 @@ export default function PressPage() {
               Scoopy Doo in the News: Chattanooga&apos;s Largest Pet Waste Removal Company, Featured in the Chattanoogan and on WDEF News 12
             </h1>
             <p className="text-lg text-muted-foreground">
-              Scoopy Doo LLC is the largest and fastest-growing pet waste removal company in the Chattanooga, TN area, serving more than 150 clients with 90 five-star reviews across Chattanooga and North Georgia.
+              Scoopy Doo LLC is the largest and fastest-growing pet waste removal company in the Chattanooga, TN area, serving more than 150 clients with 95 five-star reviews across Chattanooga and North Georgia.
             </p>
           </div>
         </section>
@@ -134,7 +134,7 @@ export default function PressPage() {
                     single customer and grew it with her father Brandon into the largest pet waste removal company
                     in the Chattanooga area in under a year. The company was featured by the Chattanoogan in June
                     2026 and by WDEF News 12 in July 2026. It is a BBB Accredited Business with an A- rating and
-                    holds 90 five-star reviews across more than 150 active clients.
+                    holds 95 five-star reviews across more than 150 active clients.
                   </p>
                   <p>
                     Scoopy Doo provides weekly, twice-weekly, every-other-week, and one-time dog waste removal for
@@ -210,7 +210,7 @@ export default function PressPage() {
                   14-Year-Old Entrepreneur Builds Chattanooga&apos;s Largest Pet Waste Removal Company In Under A Year
                 </h2>
                 <p className="text-muted-foreground mb-5">
-                  What started as a 14-year-old&apos;s idea to earn her own money has become the largest pet waste removal company in the Chattanooga area. In under a year, founder Leighton Carter grew Scoopy Doo LLC from a single customer to more than 150 active clients and 90 five-star reviews, with her dad Brandon supporting her along the way, serving dog owners, HOAs, apartment communities, and commercial properties across Chattanooga and North Georgia.
+                  What started as a 14-year-old&apos;s idea to earn her own money has become the largest pet waste removal company in the Chattanooga area. In under a year, founder Leighton Carter grew Scoopy Doo LLC from a single customer to more than 150 active clients and 95 five-star reviews, with her dad Brandon supporting her along the way, serving dog owners, HOAs, apartment communities, and commercial properties across Chattanooga and North Georgia.
                 </p>
                 <a href={ARTICLE_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
                   Read the full article on Chattanoogan.com <ExternalLink className="w-4 h-4" />
