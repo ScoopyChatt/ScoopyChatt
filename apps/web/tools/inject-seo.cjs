@@ -156,6 +156,8 @@ const routes = {
   '/blog/dog-poop-removal-north-georgia': ["Dog Poop Removal in Ringgold, Fort Oglethorpe and North Georgia | Scoopy Doo", "Scoopy Doo provides dog poop removal in Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA. Weekly service from $20 per visit, no contracts required."],
 '/blog/yard-cleanup-before-selling-home-chattanooga': ["Do You Need to Clean Up Dog Waste Before Selling Your Chattanooga Home? | Scoopy Doo", "Selling a home in Chattanooga? Here is why yard cleanup and pet waste removal matter before listing photos and showings, plus a pre-listing checklist and pricing."],
   '/blog/what-pet-waste-removal-includes-chattanooga': ["What Does Pet Waste Removal Actually Include in Chattanooga, TN? | Scoopy Doo", "Pet waste removal in Chattanooga TN covers weekly yard scooping, double-bagging, and gate photo confirmation. What is included, what it costs, and who offers it."],
+  '/blog/best-dog-parks-chattanooga-tn': ['7 Best Dog Parks in Chattanooga, TN (2026 Guide) | Scoopy Doo', 'Discover the 7 best dog parks in Chattanooga, TN for 2026: off-leash areas, addresses, hours, amenities, and tips for keeping your home yard just as clean.'],
+  '/blog/pooper-scooper-cost-chattanooga': ['How Much Does Pooper Scooper Service Cost in Chattanooga? | Scoopy Doo', 'Scoopy Doo weekly service starts at $20 per visit for one dog. See 2026 pricing for weekly, bi-weekly, and one-time pet waste removal in Chattanooga TN.'],
 };
 
 const gaLocations = new Set(['ringgold','rossville','flintstone','fort-oglethorpe']);

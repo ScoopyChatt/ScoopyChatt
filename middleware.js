@@ -77,6 +77,7 @@ const BLOG_POSTS = [
   'is-dog-poop-hurting-your-chattanooga-yard',
   'is-dog-waste-bad-for-lawn',
   'lawn-health-and-pet-waste',
+  'multiple-dogs-yard-cleanup-chattanooga',
   'new-puppy-pet-waste-removal-chattanooga',
   'one-time-dog-poop-cleanup-chattanooga',
   'pet-waste-management-guide',
