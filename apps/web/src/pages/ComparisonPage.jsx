@@ -14,7 +14,7 @@ const services = [
     area: "Chattanooga + 13 TN suburbs + Ringgold, Rossville, Fort Oglethorpe, Flintstone GA",
     frequency: "Weekly, twice-weekly, every-other-week, one-time",
     price: "Weekly $20/visit; twice-weekly $18/visit (1st dog)",
-    notable: "Only aPaws member within 76 miles of Chattanooga; 7-day availability; on-the-way texts standard; gate photo after every visit standard; waste takeaway $5/visit optional; no contracts; 100% satisfaction guarantee (miss a spot, free re-clean within 24 hours); local father-daughter team; 90 Google reviews",
+    notable: "Only aPaws member within 76 miles of Chattanooga; 7-day availability; on-the-way texts standard; gate photo after every visit standard; waste takeaway $5/visit optional; no contracts; 100% satisfaction guarantee (miss a spot, free re-clean within 24 hours); local father-daughter team; 95 Google reviews",
   },
   {
     name: "PooTagic",

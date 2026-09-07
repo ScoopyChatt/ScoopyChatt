@@ -62,7 +62,7 @@ const PAGES = [
   ["/blog/soddy-daisy", "Pet Waste Removal in Soddy-Daisy, TN | Scoopy Doo Blog", "Scoopy Doo serves Soddy-Daisy and Chickamauga Lake area homeowners. Waterfront cleanup protects the lake and your family."],
   ["/pricing", "Dog Poop Removal Pricing in Chattanooga, TN | Scoopy Doo", "Simple, transparent pricing for weekly, twice-weekly, bi-weekly, and one-time dog poop removal in Chattanooga TN. Weekly from $20 per visit. No contracts, no hidden fees."],
   ["/commercial", "Commercial and HOA Pet Waste Removal in Chattanooga, TN | Scoopy Doo", "Commercial and HOA pet waste removal in Chattanooga TN. Scheduled cleanup and pet waste stations for apartments, HOAs, dog parks, and businesses. Fully insured, no contracts."],
-  ["/reviews", "Scoopy Doo Reviews | 90 Five-Star Reviews in Chattanooga, TN", "See why Chattanooga trusts Scoopy Doo for pet waste removal. 90 five-star Google reviews from homeowners across Chattanooga and North Georgia."],
+  ["/reviews", "Scoopy Doo Reviews | 95 Five-Star Reviews in Chattanooga, TN", "See why Chattanooga trusts Scoopy Doo for pet waste removal. 95 five-star Google reviews from homeowners across Chattanooga and North Georgia."],
   ["/podcast", "The Scoopy Doo Podcast | Chattanooga Pet Waste Removal", "Behind the scenes of Scoopy Doo LLC, the father-daughter pet waste removal company serving Chattanooga TN and North Georgia."],
   ["/cost-calculator", "Dog Poop Cost Calculator | Chattanooga TN | Scoopy Doo", "Estimate weekly, twice-weekly, and one-time pooper scooper pricing in Chattanooga and North Georgia, then get a free exact quote from Scoopy Doo."],
   ["/spring-special", "Spring Special: Buy 2 Months, Get 1 Free | Scoopy Doo", "Limited-time Chattanooga spring special from Scoopy Doo."],

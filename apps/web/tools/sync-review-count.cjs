@@ -12,14 +12,20 @@ var TARGETS = [
   { file: 'tools/inject-seo.cjs', patterns: [
     [/(\d+)(\+ Google reviews)/g, count + '$2'],
     [/("reviewCount":")\d+(")/g, '$1' + count + '$2'],
-    [/(\d+)( five-star reviews)/g, count + '$2']
+    [/(\d+)( five-star reviews)/g, count + '$2'],
+    [/(locally owned; )\d+( Google reviews)/g, '$1' + count + '$2']
   ]},
   { file: 'tools/create-static-pages.cjs', patterns: [
     [/(\d+)(\+ Google reviews)/g, count + '$2'],
     [/(over )\d+( Google reviews)/g, '$1' + count + '$2'],
     [/(\d+)( Five-Star Reviews)/g, count + '$2'],
     [/(\d+)( five-star Google reviews)/g, count + '$2'],
-    [/(has )\d+( five-star reviews)/g, '$1' + count + '$2']
+    [/(has )\d+( five-star reviews)/g, '$1' + count + '$2'],
+    [/(father-daughter team; )\d+( Google reviews)/g, '$1' + count + '$2']
+  ]},
+  { file: 'tools/generate-llms.js', patterns: [
+    [/(\d+)( Five-Star Reviews)/g, count + '$2'],
+    [/(\d+)( five-star Google reviews)/g, count + '$2']
   ]},
   { file: 'src/utils/schemaGenerators.js', patterns: [
     [/("reviewCount":\s*")\d+(")/g, '$1' + count + '$2']
@@ -33,7 +39,13 @@ var TARGETS = [
   ]},
   { file: 'src/pages/ComparisonPage.jsx', patterns: [
     [/(Scoopy Doo has )\d+( Google reviews)/g, '$1' + count + '$2'],
-    [/(local father-daughter team; )\d+(")/g, '$1' + count + '$2']
+    [/(local father-daughter team; )\d+( Google reviews)/g, '$1' + count + '$2']
+  ]},
+  { file: 'src/pages/blog/DogDoorInstallationChattanooga.jsx', patterns: [
+    [/(We have )\d+( five-star)/g, '$1' + count + '$2']
+  ]},
+  { file: 'src/pages/blog/WhatPetWasteRemovalIncludesChattanooga.jsx', patterns: [
+    [/(more than 150 active clients and )\d+( five-star Google reviews)/g, '$1' + count + '$2']
   ]}
 ];
 
