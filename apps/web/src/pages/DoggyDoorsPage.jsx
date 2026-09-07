@@ -20,9 +20,11 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
-import apiServerClient from '@/lib/apiServerClient.js';
 import { TIERS } from '@/data/doggyDoorTiers.js';
 
+export const DOGGY_DOOR_WEBHOOK_URL =
+  import.meta.env.VITE_DOGGY_DOOR_WEBHOOK_URL ||
+  'https://hook.us2.make.com/mjbkl6xv9xzflf4pa2ebgwj9ld7s3atb';
 
 const TIER_ICONS = { good: Wrench, better: Lock, best: Wifi };
 
@@ -37,6 +39,7 @@ const DoggyDoorsPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [chosenTier, setChosenTier] = useState(null);
   const [confirming, setConfirming] = useState(false);
+  const [leadFailed, setLeadFailed] = useState(false);
   const pricingRef = useRef(null);
 
   const handleChange = (e) => {
@@ -44,22 +47,37 @@ const DoggyDoorsPage = () => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const sendLead = async (address) => {
+  // Posts straight to the Make webhook (same transport as QuoteForm's WEBHOOK_URL) -
+  // never throws to its callers, just reports success/failure so the caller can
+  // flag the visitor without blocking them from seeing pricing or booking.
+  const sendLead = async (leadStage, tier) => {
+    const payload = {
+      full_name: form.name,
+      email: form.email,
+      phone: form.phone,
+      service_zip: form.zip,
+      lead_stage: leadStage,
+      tier_name: tier ? tier.name : '',
+      tier_price: tier ? tier.price : '',
+      tier_product: tier ? tier.product : '',
+      company_website: honeypot,
+      source: 'scoopychatt.com/doggy-doors',
+      page_url: typeof window !== 'undefined' ? window.location.href : '',
+      submitted_at: new Date().toISOString(),
+    };
     try {
-      await apiServerClient.fetch('/lead-email', {
+      const res = await fetch(DOGGY_DOOR_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          address,
-        }),
+        body: JSON.stringify(payload),
       });
+      if (!res.ok) throw new Error('Request failed with status ' + res.status);
+      return true;
     } catch (err) {
-      // Do not block the on-page experience if the notification email fails -
+      // Do not block the on-page experience if lead delivery fails -
       // the visitor still sees their pricing either way.
-      console.error('Failed to send doggy door lead email:', err);
+      console.error('Failed to send doggy door lead:', err);
+      return false;
     }
   };
 
@@ -72,7 +90,8 @@ const DoggyDoorsPage = () => {
     if (!form.name || !form.email || !form.phone || !form.zip) return;
 
     setSubmitting(true);
-    await sendLead(`ZIP ${form.zip} - Doggy Door Founding Customer interest (pricing viewed)`);
+    const delivered = await sendLead('Pricing Unlocked');
+    if (!delivered) setLeadFailed(true);
     if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', 'Lead', { content_name: 'Doggy Door Pricing Unlock' });
     }
@@ -88,13 +107,8 @@ const DoggyDoorsPage = () => {
     setConfirming(true);
     // Fire the lead notification, but never let it block the booking hand-off -
     // the customer must always reach the booking form.
-    try {
-      await sendLead(
-        `ZIP ${form.zip} - Chose ${tier.name} tier ($${tier.price}, ${tier.product}) - Doggy Door Founding Customer`
-      );
-    } catch (err) {
-      console.error('Lead notification failed (continuing to booking):', err);
-    }
+    const delivered = await sendLead('Tier Selected', tier);
+    if (!delivered) setLeadFailed(true);
     if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', 'InitiateCheckout', {
         content_name: `Doggy Door - ${tier.name}`,
@@ -320,6 +334,18 @@ const DoggyDoorsPage = () => {
           {/* PRICING (revealed after unlock) */}
           <section ref={pricingRef} className="py-20 md:py-28">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              {leadFailed && (
+                <div
+                  role="alert"
+                  className="max-w-2xl mx-auto mb-8 bg-destructive/10 border-2 border-destructive/30 rounded-2xl p-4 text-center text-sm text-foreground"
+                >
+                  We couldn't send your details automatically. Please call or text us at{' '}
+                  <a href="tel:+14236005040" className="font-bold text-primary underline">
+                    423-600-5040
+                  </a>{' '}
+                  so we don't miss your request.
+                </div>
+              )}
               {!unlocked ? (
                 <div className="text-center max-w-xl mx-auto">
                   <Lock className="w-10 h-10 text-muted-foreground mx-auto mb-4" />
