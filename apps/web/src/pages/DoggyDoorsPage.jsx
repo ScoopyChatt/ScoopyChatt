@@ -117,7 +117,12 @@ const DoggyDoorsPage = () => {
       });
     }
     setConfirming(false);
-    navigate(`/doggy-doors/book?tier=${tier.key}`);
+    // Carry the already-entered contact info to the booking form via router state
+    // (not query params, so it doesn't leak into the URL/analytics) so the customer
+    // never has to type their name/email/phone/zip a second time.
+    navigate(`/doggy-doors/book?tier=${tier.key}`, {
+      state: { name: form.name, email: form.email, phone: form.phone, zip: form.zip },
+    });
   };
 
   return (

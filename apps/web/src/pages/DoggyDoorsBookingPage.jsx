@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate, useSearchParams, Link } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, CheckCircle2, ArrowLeft, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -37,15 +37,20 @@ const INSTALL_WINDOWS = [
 const DoggyDoorsBookingPage = () => {
   const navigate = useNavigate();
   const [params] = useSearchParams();
+  const location = useLocation();
 
   const tierKey = params.get('tier');
   const tier = TIERS.find((t) => t.key === tierKey) || TIERS[1];
 
+  // Pre-fill with the contact info already entered on the pricing gate (passed via
+  // router state, see DoggyDoorsPage's handleChooseTier) so the customer doesn't
+  // have to type their name/email/phone/zip a second time.
+  const prefill = location.state || {};
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    zip: '',
+    name: prefill.name || '',
+    email: prefill.email || '',
+    phone: prefill.phone || '',
+    zip: prefill.zip || '',
     dog: '',
     doorLocation: '',
     installWindow: '',
