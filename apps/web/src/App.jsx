@@ -57,6 +57,7 @@ const DogPoopCleanupSummerHeat = React.lazy(() => import('@/pages/blog/DogPoopCl
 const DogPoopLawsChattanooga = React.lazy(() => import('@/pages/blog/DogPoopLawsChattanooga.jsx'));
 const WhatPetWasteRemovalIncludesChattanooga = React.lazy(() => import('@/pages/blog/WhatPetWasteRemovalIncludesChattanooga.jsx'));
 const DogParksChattanooga = React.lazy(() => import('@/pages/blog/DogParksChattanoogaPage.jsx'));
+const DogFriendlyTrails = React.lazy(() => import('@/pages/blog/DogFriendlyTrailsChattanoogaPage.jsx'));
 const WinterDogPoopCleanupChattanooga = React.lazy(() => import('@/pages/blog/WinterDogPoopCleanupChattanooga.jsx'));
 const PooperScooperCostChattanooga = React.lazy(() => import('@/pages/blog/PooperScooperCostChattanooga.jsx'));
 const NoContactPetWasteRemovalChattanooga = React.lazy(() => import('@/pages/blog/NoContactPetWasteRemovalChattanooga.jsx'));
@@ -195,6 +196,7 @@ function App() {
           <Route path="/blog/dog-poop-laws-chattanooga" element={<DogPoopLawsChattanooga />} />
           <Route path="/blog/what-pet-waste-removal-includes-chattanooga" element={<WhatPetWasteRemovalIncludesChattanooga />} />
           <Route path="/blog/best-dog-parks-chattanooga-tn" element={<DogParksChattanooga />} />
+          <Route path="/blog/dog-friendly-trails-chattanooga" element={<DogFriendlyTrails />} />
           <Route path="/blog/winter-dog-poop-cleanup-chattanooga" element={<WinterDogPoopCleanupChattanooga />} />
           
           <Route path="/blog/pooper-scooper-cost-chattanooga" element={<PooperScooperCostChattanooga />} />
