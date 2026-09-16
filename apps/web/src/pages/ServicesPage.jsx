@@ -48,11 +48,11 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
-        <title>Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo</title>
-        <meta name="description" content="Weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga, TN. Professional dog poop scooping with online quotes, on-the-way texts, and gate photo confirmation." />
+        <title>Dog Poop Removal Services in Chattanooga, TN | From $20</title>
+        <meta name="description" content="Weekly dog poop removal in Chattanooga from $20/visit, plus one-time, commercial, and HOA service. No contracts, gate photo after every visit. Free quote." />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo" />
-        <meta property="og:description" content="Weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga, TN. Get your free quote today." />
+        <meta property="og:title" content="Dog Poop Removal Services in Chattanooga, TN | From $20" />
+        <meta property="og:description" content="Weekly dog poop removal in Chattanooga from $20/visit, plus one-time, commercial, and HOA service. No contracts, gate photo after every visit. Free quote." />
         <meta property="og:url" content={canonicalUrl} />
               <script type="application/ld+json">{JSON.stringify(generateServiceSchema("Pet Waste Removal Services", "Weekly, bi-weekly, one-time, commercial, and HOA pet waste removal in Chattanooga TN and North Georgia with on-the-way texts and gate photo confirmation.", "https://www.scoopychatt.com/services"))}</script>
       </Helmet>
@@ -78,7 +78,7 @@ const ServicesPage = () => {
         {/* Service Plans */}
         <section className="py-24 bg-muted/30 border-y border-border/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader icon={CalendarCheck} title="Recurring Service Plans" subtitle="Pick the frequency that fits your household. All plans include waste removal from the property, on-the-way text alerts, and gate photo confirmation." />
+            <SectionHeader icon={CalendarCheck} title="How does recurring pet waste removal service work?" subtitle="Pick the frequency that fits your household. All plans include waste removal from the property, on-the-way text alerts, and gate photo confirmation." />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {plans.map((plan, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }}>
@@ -97,7 +97,7 @@ const ServicesPage = () => {
         {/* One-Time and First-Time */}
         <section className="py-24 bg-background">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader icon={RotateCcw} title="One-Time & First-Time Cleanups" subtitle="Not ready for recurring service? No problem. We offer standalone cleanups for any situation." />
+            <SectionHeader icon={RotateCcw} title="What is included in a one-time or first-time yard cleanup?" subtitle="Not ready for recurring service? No problem. We offer standalone cleanups for any situation." />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-card border border-border rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-3">One-Time Cleanup</h3>
@@ -130,7 +130,7 @@ const ServicesPage = () => {
         {/* Commercial */}
         <section className="py-24 bg-muted/30 border-y border-border/50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader icon={Building2} title="Commercial Pet Waste Removal" subtitle="Professional service for businesses, apartment communities, dog parks, and multi-property accounts." />
+            <SectionHeader icon={Building2} title="How does commercial pet waste removal work for businesses and apartments?" subtitle="Professional service for businesses, apartment communities, dog parks, and multi-property accounts." />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <p className="text-muted-foreground leading-relaxed mb-6">Scoopy Doo serves commercial properties throughout the Chattanooga metro and North Georgia. We work with apartment complexes, HOA communities, veterinary offices, dog daycares, pet-friendly businesses, and municipal dog parks to maintain clean, safe outdoor environments.</p>
@@ -175,7 +175,7 @@ const ServicesPage = () => {
         {/* HOA and Pet Waste Stations */}
         <section className="py-24 bg-background">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader icon={Sparkles} title="HOA & Apartment Pet Waste Stations" subtitle="We install, stock, and service pet waste stations so your community stays compliant and clean - with zero effort from management." />
+            <SectionHeader icon={Sparkles} title="How do pet waste stations work for HOAs and apartments?" subtitle="We install, stock, and service pet waste stations so your community stays compliant and clean - with zero effort from management." />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <p className="text-muted-foreground leading-relaxed mb-6">Pet waste stations - the bag dispensers and waste receptacles you see in well-managed communities - are only effective if they are stocked and emptied consistently. Scoopy Doo provides full-service station management so HOA boards and property managers can set it and forget it.</p>
@@ -213,7 +213,7 @@ const ServicesPage = () => {
         {/* Deodorizing and Sanitizing */}
         <section className="py-24 bg-muted/30 border-y border-border/50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader icon={Droplets} title="Deodorizing & Yard Sanitizing" subtitle="Remove odors and kill bacteria in the ground - not just the waste itself." />
+            <SectionHeader icon={Droplets} title="What does yard deodorizing and sanitizing include?" subtitle="Remove odors and kill bacteria in the ground - not just the waste itself." />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-muted-foreground leading-relaxed mb-6">Pet waste removal eliminates the source of the problem, but the bacteria and odor compounds it leaves behind in the soil can persist long after the waste is gone. Deodorizing and sanitizing treatments neutralize those residual effects and leave your yard genuinely clean - not just visually clean.</p>
@@ -246,7 +246,7 @@ const ServicesPage = () => {
         {/* Health and Safety */}
         <section className="py-24 bg-background">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader icon={AlertTriangle} title="Why Pet Waste Is a Health and Safety Issue" subtitle="Dog waste is not just unpleasant. It is classified by the EPA as a pollutant - and it creates real risks for your family." />
+            <SectionHeader icon={AlertTriangle} title="Why is pet waste a health and safety issue?" subtitle="Dog waste is not just unpleasant. It is classified by the EPA as a pollutant - and it creates real risks for your family." />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[
                 {
