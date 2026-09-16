@@ -130,11 +130,12 @@ export default function PressPage() {
                     local waterways.
                   </p>
                   <p>
-                    Scoopy Doo LLC was founded by Leighton Carter, who started the company at 14 years old with a
-                    single customer and grew it with her father Brandon into the largest pet waste removal company
-                    in the Chattanooga area in under a year. The company was featured by the Chattanoogan in June
-                    2026 and by WDEF News 12 in July 2026. It is a BBB Accredited Business with an A- rating and
-                    holds 90 five-star reviews across more than 150 active clients.
+                    Scoopy Doo LLC was co-founded by Brandon and Leighton Carter, a father-daughter team. Leighton
+                    started the company at 14 years old with a single customer, and the two grew it into the
+                    largest pet waste removal company in the Chattanooga area in under a year. The company was
+                    featured by the Chattanoogan in June 2026 and by WDEF News 12 in July 2026. It is a BBB
+                    Accredited Business with an A- rating and holds 90 five-star reviews across more than 150
+                    active clients.
                   </p>
                   <p>
                     Scoopy Doo provides weekly, twice-weekly, every-other-week, and one-time dog waste removal for
@@ -210,7 +211,7 @@ export default function PressPage() {
                   14-Year-Old Entrepreneur Builds Chattanooga&apos;s Largest Pet Waste Removal Company In Under A Year
                 </h2>
                 <p className="text-muted-foreground mb-5">
-                  What started as a 14-year-old&apos;s idea to earn her own money has become the largest pet waste removal company in the Chattanooga area. In under a year, founder Leighton Carter grew Scoopy Doo LLC from a single customer to more than 150 active clients and 90 five-star reviews, with her dad Brandon supporting her along the way, serving dog owners, HOAs, apartment communities, and commercial properties across Chattanooga and North Georgia.
+                  What started as a 14-year-old&apos;s idea to earn her own money has become the largest pet waste removal company in the Chattanooga area. In under a year, co-founders Brandon and Leighton Carter grew Scoopy Doo LLC from a single customer to more than 150 active clients and 90 five-star reviews, serving dog owners, HOAs, apartment communities, and commercial properties across Chattanooga and North Georgia.
                 </p>
                 <a href={ARTICLE_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
                   Read the full article on Chattanoogan.com <ExternalLink className="w-4 h-4" />
@@ -231,7 +232,7 @@ export default function PressPage() {
                   Father and Daughter Team Featured on WDEF News 12
                 </h2>
                 <p className="text-muted-foreground mb-5">
-                  WDEF News 12 shared the story of how 14-year-old Leighton Carter came to her dad, Brandon, wanting to start her own company, and how Scoopy Doo LLC was born. The father and daughter team now run Scoopy Doo full-time, serving more than 150 customers across the Chattanooga area with a team of three, offering weekly, bi-weekly, and twice-a-week yard cleanings.
+                  WDEF News 12 shared the story of how 14-year-old Leighton Carter came to her dad, Brandon, wanting to start a company, and how the two co-founded Scoopy Doo LLC together. The father and daughter team now run Scoopy Doo full-time, serving more than 150 customers across the Chattanooga area with a team of three, offering weekly, bi-weekly, and twice-a-week yard cleanings.
                 </p>
                 <a href={WDEF_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
                   Watch the story on WDEF.com <ExternalLink className="w-4 h-4" />
