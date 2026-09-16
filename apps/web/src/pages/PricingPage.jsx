@@ -56,8 +56,10 @@ const PricingPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <SEOHead 
+      <SEOHead
         path="/pricing"
+        title="Dog Poop Removal Pricing in Chattanooga | From $20"
+        description="Chattanooga dog poop removal pricing: weekly from $20/visit, twice-weekly $18, every-other-week $33, one-time from $85. No contracts. Get your free quote."
         faqData={faqs}
         schema={[priceRangeSchema]}
       />

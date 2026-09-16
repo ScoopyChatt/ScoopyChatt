@@ -86,8 +86,8 @@ const FAQItem = ({ q, a }) => {
 const HowItWorksPage = () => (
   <div className="min-h-screen flex flex-col bg-background">
     <SEOHead
-      title="How It Works | Scoopy Doo Pet Waste Removal Chattanooga"
-      description="Easy online quotes, secure online payment, on-the-way texts, and gate photo proof after every visit. Working with Scoopy Doo is simple."
+      title="How Dog Poop Removal Works in Chattanooga | Scoopy Doo"
+      description="See the 4 steps behind Scoopy Doo dog poop removal in Chattanooga: free quote, we scoop, an on-the-way text, and a gate photo when done. No contracts."
       canonicalUrl={CANONICAL_BASE_URL + '/how-it-works'}
     />
     <Header />

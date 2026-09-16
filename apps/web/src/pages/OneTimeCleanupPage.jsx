@@ -13,8 +13,8 @@ import { getCanonicalUrl } from '@/utils/seoHelpers.js';
 
 const OneTimeCleanupPage = () => {
   const canonicalUrl = getCanonicalUrl('/one-time-cleanup');
-  const pageTitle = "One-Time Dog Poop Cleanup in Chattanooga, TN | Scoopy Doo";
-  const pageDesc = "Overgrown yard? Get a one-time dog poop cleanup in Chattanooga, TN. Perfect for spring cleaning, move-outs, or first-time service. Book online.";
+  const pageTitle = "One-Time Dog Poop Cleanup in Chattanooga | From $85";
+  const pageDesc = "Yard overrun with dog poop? One-time cleanup in Chattanooga starts at $85, covers up to 3 dogs, includes haul-away. Most bookings scheduled in 2-5 days.";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

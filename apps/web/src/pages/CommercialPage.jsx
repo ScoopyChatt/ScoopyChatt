@@ -96,8 +96,8 @@ export default function CommercialPage() {
     <div className="min-h-screen bg-background">
       <SEOHead
         path="/commercial"
-        title="Commercial and HOA Pet Waste Removal in Chattanooga, TN | Scoopy Doo"
-        description="Commercial and HOA pet waste removal in Chattanooga, TN. Scheduled cleanup and pet waste stations for apartments, HOAs, dog parks, and businesses. Fully insured, no contracts. Free quote."
+        title="Commercial Pet Waste Removal in Chattanooga, TN"
+        description="Scheduled pet waste removal for Chattanooga apartments, HOAs and businesses. Stations from $299 installed, $10/week to service. Insured, no contracts."
         faqData={faqs}
         schema={serviceSchema}
       />

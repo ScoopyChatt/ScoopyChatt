@@ -105,8 +105,8 @@ const descriptions = [
 
 const ComparisonPage = () => {
   const canonicalUrl = getCanonicalUrl('/comparison');
-  const title = "Pet Waste Removal Services in Chattanooga, TN - 2026 Comparison | Scoopy Doo";
-  const desc = "Side-by-side comparison of pet waste removal services in Chattanooga TN and North Georgia: pricing, service areas, frequency options, and notable features for 7 local providers.";
+  const title = "Chattanooga Pet Waste Removal Companies Compared";
+  const desc = "Comparing pet waste removal in Chattanooga? See how Scoopy Doo stacks up against PooTagic, ChattaPoo, and Doo Doo Blues on price and features. Updated 2026.";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

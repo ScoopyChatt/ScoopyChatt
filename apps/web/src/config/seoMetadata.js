@@ -8,20 +8,20 @@ export const seoMetadata = {
     ogType: "website"
   },
   "/services": {
-    title: "Pet Waste Removal Services in Chattanooga, TN | Scoopy Doo",
-    description: "Weekly, bi-weekly & one-time dog poop removal, yard cleanup, and pet waste services in Chattanooga. See what Scoopy Doo offers and book today.",
+    title: "Dog Poop Removal Services in Chattanooga, TN | From $20",
+    description: "Weekly dog poop removal in Chattanooga from $20/visit, plus one-time, commercial, and HOA service. No contracts, gate photo after every visit. Free quote.",
     canonical: `${CANONICAL_BASE_URL}/services`,
     ogType: "website"
   },
   "/near-me": {
-    title: "Pooper Scooper Service Near Me in Chattanooga, TN",
-    description: "Looking for a pooper scooper service near you in Chattanooga, TN? Scoopy Doo offers reliable local dog waste removal. Check coverage and get a free quote.",
+    title: "Pooper Scooper Near Me in Chattanooga, TN | From $20",
+    description: "Local pooper scooper serving Chattanooga and North Georgia from $20/visit. Free same-day quotes, on-the-way texts, gate photo confirmation, no contracts.",
     canonical: `${CANONICAL_BASE_URL}/near-me`,
     ogType: "website"
   },
   "/one-time-cleanup": {
-    title: "One-Time Dog Poop Cleanup in Chattanooga, TN | Scoopy Doo",
-    description: "Overgrown yard? Get a one-time dog poop cleanup in Chattanooga, TN. Perfect for spring cleaning, move-outs, or first-time service. Book online.",
+    title: "One-Time Dog Poop Cleanup in Chattanooga | From $85",
+    description: "Yard overrun with dog poop? One-time cleanup in Chattanooga starts at $85, covers up to 3 dogs, includes haul-away. Most bookings scheduled in 2-5 days.",
     canonical: `${CANONICAL_BASE_URL}/one-time-cleanup`,
     ogType: "website"
   },
@@ -104,8 +104,8 @@ export const seoMetadata = {
     ogType: "website"
   },
   "/how-it-works": {
-    title: "How It Works | Scoopy Doo Pet Waste Removal Chattanooga",
-    description: "See exactly how Scoopy Doo's dog waste removal service works in 4 simple steps. Get a quote, we schedule and scoop, you enjoy a clean yard. No contracts.",
+    title: "How Dog Poop Removal Works in Chattanooga | Scoopy Doo",
+    description: "See the 4 steps behind Scoopy Doo dog poop removal in Chattanooga: free quote, we scoop, an on-the-way text, and a gate photo when done. No contracts.",
     canonical: `${CANONICAL_BASE_URL}/how-it-works`,
     ogType: "website"
   },
