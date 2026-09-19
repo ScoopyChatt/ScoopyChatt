@@ -104,7 +104,7 @@ const DogPoopSmellInYardChattanooga = () => {
 
           <figure className="mb-6">
             <img
-              src="/service-bags-removed.jpg"
+              src="/service-bags-removed.webp"
               alt="Double-bagged dog waste removed from a Chattanooga yard, the first step in clearing odor at its source"
               className="w-full rounded-lg border border-gray-200"
               loading="lazy"

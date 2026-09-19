@@ -104,7 +104,7 @@ const PetWasteStationsApartmentsHOAsChattanooga = () => {
 
           <figure className="mb-6">
             <img
-              src="/service-luxury-home.jpg"
+              src="/service-luxury-home.webp"
               alt="Scoopy Doo servicing the grounds of a pet-friendly multifamily property in Chattanooga, Tennessee"
               className="w-full rounded-lg border border-gray-200"
               loading="lazy"

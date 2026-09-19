@@ -80,9 +80,11 @@ const AboutPage = () => {
                 {/* Team photo - Chattanooga mural */}
                 <div className="rounded-2xl overflow-hidden border border-border shadow-lg aspect-[4/3] bg-muted flex items-center justify-center">
                   <img
-                    src="/team-chattanooga-mural.jpg"
+                    src="/team-chattanooga-mural.webp"
                     alt="Scoopy Doo LLC owners in front of the Chattanooga Scenic City mural - local pet waste removal company serving Chattanooga TN"
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
                   />
                   <div style={{display:'none'}} className="w-full h-full items-center justify-center text-muted-foreground text-sm p-8 text-center">
@@ -91,10 +93,10 @@ const AboutPage = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="rounded-xl overflow-hidden border border-border shadow aspect-square bg-muted">
-                    <img src="/truck-scoopydoo.jpg" alt="Scoopy Doo branded service truck" className="w-full h-full object-cover" />
+                    <img src="/truck-scoopydoo.webp" alt="Scoopy Doo branded service truck" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </div>
                   <div className="rounded-xl overflow-hidden border border-border shadow aspect-square bg-muted">
-                    <img src="/team-uniforms.jpg" alt="Scoopy Doo team in uniform" className="w-full h-full object-cover" />
+                    <img src="/team-uniforms.webp" alt="Scoopy Doo team in uniform" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </div>
                 </div>
               </motion.div>
@@ -158,13 +160,13 @@ const AboutPage = () => {
             <h2 className="text-2xl font-bold text-foreground text-center mb-8">Scoopy Doo In Action</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { src: "/service-action-yard.jpg", alt: "Scoopy Doo technician cleaning a Chattanooga yard" },
-                { src: "/service-bags-removed.jpg", alt: "Waste double-bagged and removed from property" },
-                { src: "/service-luxury-home.jpg", alt: "Scoopy Doo servicing a luxury property" },
-                { src: "/happy-customers.jpg", alt: "Happy Scoopy Doo customers with clean yard" },
+                { src: "/service-action-yard.webp", alt: "Scoopy Doo technician cleaning a Chattanooga yard" },
+                { src: "/service-bags-removed.webp", alt: "Waste double-bagged and removed from property" },
+                { src: "/service-luxury-home.webp", alt: "Scoopy Doo servicing a luxury property" },
+                { src: "/happy-customers.webp", alt: "Happy Scoopy Doo customers with clean yard" },
               ].map((img, i) => (
                 <div key={i} className="rounded-xl overflow-hidden border border-border shadow aspect-square bg-muted">
-                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
+                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
               ))}
             </div>

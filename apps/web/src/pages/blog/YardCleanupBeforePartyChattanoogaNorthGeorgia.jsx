@@ -101,7 +101,7 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
 
           <figure className="mb-6">
             <img
-              src="/happy-customers.jpg"
+              src="/happy-customers.webp"
               alt="Clean, guest-ready backyard in Chattanooga after a one-time Scoopy Doo dog waste cleanup before a party"
               className="w-full rounded-lg border border-gray-200"
               loading="lazy"
