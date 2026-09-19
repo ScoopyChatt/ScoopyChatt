@@ -42,6 +42,6 @@
       ]
     }
   ],
-  "buildCommand": "npm install --prefix apps/web && npm run build --prefix apps/web && node apps/web/tools/generate-page-dates.cjs && node apps/web/tools/inject-seo.cjs && node apps/web/tools/generate-sitemap.cjs && node apps/web/tools/create-static-pages.cjs && node apps/web/tools/verify-routes.cjs",
+  "buildCommand": "bash scripts/build.sh",
   "outputDirectory": "dist/apps/web"
 }

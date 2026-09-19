@@ -22,7 +22,7 @@
 - **Host:** Vercel (project: `scoopy-chatt`, account: `scoopychatts-projects`)
 - **Root:** `apps/web/`
 - **Node version:** 24.x (Vercel dashboard setting — do NOT add nodeVersion to vercel.json, it is an invalid property that breaks builds)
-- **Build command in vercel.json:** `npm install --prefix apps/web && npm run build --prefix apps/web && node apps/web/tools/inject-seo.cjs && node apps/web/tools/generate-sitemap.cjs && node apps/web/tools/create-static-pages.cjs && node apps/web/tools/verify-routes.cjs`
+- **Build command in vercel.json:** `bash scripts/build.sh` — the real chain (npm install, vite build, then the five SEO tools in order) lives in `scripts/build.sh`. It is NOT inline in vercel.json, because **`buildCommand` has a hard 256-character limit** — see Known Issues. Add new build steps to `scripts/build.sh`, never to vercel.json.
 - **Output dir:** `dist/apps/web`
 - **Path alias:** `@` = `apps/web/src/`
 
@@ -159,6 +159,7 @@ GA cities (must NOT say TN): ringgold, rossville, flintstone, fort-oglethorpe
 ### Build
 - Root cause of all build failures: HowItWorksPage.jsx had apostrophes inside single-quoted JS strings — FIXED at commit 64888dc
 - nodeVersion is NOT a valid vercel.json property — causes immediate schema validation failure. Set Node version in Vercel dashboard (currently 24.x).
+- **`buildCommand` in vercel.json is capped at 256 characters.** Going over fails schema validation *instantly* — the deploy dies before any build runs, with `The vercel.json schema validation failed with the following message: buildCommand should NOT be longer than 256 characters`. This is silent in the worst way: `git push` succeeds, the local build passes, and GitHub looks healthy, so the site just quietly keeps serving the last good deploy. Four commits shipped to main this way in Sept 2026 (d135330 → cee82ad) and none reached production; an external audit read the stale site and reported the work as "not fixed." Fixed at commit 5245863 by moving the chain into `scripts/build.sh`. Add build steps there, not to vercel.json. **After any deploy, confirm the deployment actually reached `READY` — a green push is not a green deploy.**
 - Build takes 17-20 seconds when healthy. If build fails in under 12 seconds, it is a syntax error or config issue, not a code logic problem.
 
 ### SEO (Active problems)
