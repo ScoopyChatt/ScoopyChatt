@@ -27,7 +27,12 @@
 - **Path alias:** `@` = `apps/web/src/`
 
 ### Backend API — Express.js
-- **Host:** Railway (service: `dynamic-ambition`)
+- **Host:** Railway — project **`precious-surprise`**, service **`ScoopyChatt`**, live at
+  `scoopychatt-production.up.railway.app`. Verified Sept 19, 2026.
+  **A second Railway project named `dynamic-ambition` also contains a service called
+  `ScoopyChatt`. It is crashed, has zero environment variables, and is NOT the live
+  site** — an earlier version of this file named it as the API host, which sent a
+  debugging session to the wrong place. Do not deploy to it or read config from it.
 - **Root:** `apps/api/`, port 8080, entry: `node src/main.js`
 - **Teardown enabled** on Railway — prevents duplicate active deployments
 - **AI:** Google Gemini 2.5 Flash via REST API (v1 endpoint, not SDK)
@@ -178,7 +183,24 @@ GA cities (must NOT say TN): ringgold, rossville, flintstone, fort-oglethorpe
 
 ### Email
 - SMTP blocked by Railway — uses Resend HTTP API instead
-- Sending from info@scoopychatt.com (verify domain in Resend dashboard if failing)
+- **Current live config (checked Sept 19, 2026), and it is fragile:**
+  - `RESEND_FROM` = `Scoopy Doo <onboarding@resend.dev>` — Resend's **sandbox** sender,
+    not an @scoopychatt.com address.
+  - `BUSINESS_EMAIL` = `brandonwesleycarter@gmail.com`.
+  - Resend's sandbox sender can only deliver to the Resend **account owner's own
+    address**. Leads currently arrive because BUSINESS_EMAIL happens to be that
+    address. Every email the API sends goes to BUSINESS_EMAIL — there are no
+    customer-facing emails — so nothing is silently bouncing today.
+- **Order matters when fixing this. Changing BUSINESS_EMAIL first will break lead
+  delivery**, because the sandbox sender cannot deliver to info@scoopychatt.com.
+  Correct sequence: (1) verify the `scoopychatt.com` domain in Resend (DNS records),
+  (2) set `RESEND_FROM` to an address at that domain, (3) only then change
+  `BUSINESS_EMAIL`, (4) send a test through each endpoint.
+- **Fix before verifying the domain:** `apps/api/src/routes/chat-summary.js` takes
+  `businessOwnerEmail` from the request body and sends to it. While the sandbox
+  sender is in use that fails harmlessly, but once the domain is verified it becomes
+  an open relay — anyone could POST arbitrary recipients. Drop that parameter and
+  always use BUSINESS_EMAIL.
 
 ---
 

@@ -26,7 +26,6 @@ const ReviewsPage = () => {
         <main className="flex-1 pt-24 pb-0">
           {/* Hero Section */}
           <section className="bg-primary/5 py-16 md:py-24 border-b border-border/50 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/noise.png')] opacity-[0.02] mix-blend-multiply pointer-events-none"></div>
             <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} 

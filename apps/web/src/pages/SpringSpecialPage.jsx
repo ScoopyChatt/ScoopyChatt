@@ -179,7 +179,6 @@ const SpringSpecialPage = () => {
 
           {/* CTA SECTION */}
           <section className="py-32 relative overflow-hidden bg-secondary text-secondary-foreground">
-            <div className="absolute inset-0 bg-[url('https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/b1670810727214d17b31497614887688.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-secondary to-secondary/90"></div>
             
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">

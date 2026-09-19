@@ -160,7 +160,6 @@ const GoogleReviewsWidget = ({ limit }) => {
 
   return (
     <section className="py-24 bg-muted/30 border-y border-border/50 overflow-hidden relative">
-      <div className="absolute inset-0 bg-[url('https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/noise.png')] opacity-[0.01] mix-blend-multiply pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" id="reviews-widget-header">
         
