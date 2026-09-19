@@ -83,6 +83,11 @@ const BLOG_POSTS = [
   'pet-waste-stations-apartments-hoas-chattanooga',
   'yard-cleanup-before-a-party-chattanooga',
   'how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga',
+  'fall-flea-tick-season-chattanooga',
+  'dog-friendly-trails-chattanooga',
+  'multiple-dogs-yard-cleanup-chattanooga',
+  'no-contact-pet-waste-removal-chattanooga',
+  'moving-to-chattanooga-with-a-dog',
 ];
 
 module.exports = { PAGES, SERVICE_AREAS, BLOG_POSTS };

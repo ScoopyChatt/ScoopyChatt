@@ -7,6 +7,11 @@
 // drifted before — 12 sitemap URLs had no route and were crawled as blank pages — so
 // the build now reports any mismatch.
 //
+// The check runs in BOTH directions. It originally only walked sitemap -> routes, so a
+// page that was routed, allowed by middleware, and fully written but simply never added
+// to route-manifest.cjs reported "all consistent" while being invisible to search. Five
+// finished blog posts were in exactly that state.
+//
 // Warn-only by design: a stale list should never block a deploy that is otherwise fine.
 
 const fs = require('fs');
@@ -42,6 +47,18 @@ function middlewareAllows(route) {
   return slug !== route && allowed.has(slug);
 }
 
+// Routed pages that are deliberately absent from the sitemap. Anything routed and
+// NOT listed here is treated as an accidental omission - that is the direction this
+// check used to miss, and five finished blog posts sat unlisted because of it.
+const SITEMAP_EXCLUDED = new Set([
+  '/sitemap.xml',          // the sitemap itself
+  '/thank-you',            // post-conversion page, noindex
+  '/spring-special',       // expired seasonal promo, noindex, kept for direct links
+  '/doggy-doors/book',     // booking form, noindex
+  '/reddit-oauth-callback',// OAuth callback, never a landing page
+  '/qb-oauth-callback',    // OAuth callback, never a landing page
+]);
+
 const problems = [];
 for (const route of sitemapRoutes) {
   if (!appRoutes.has(route)) problems.push('in sitemap but has no route in App.jsx: ' + route);
@@ -49,6 +66,10 @@ for (const route of sitemapRoutes) {
 }
 for (const route of appRoutes) {
   if (!middlewareAllows(route)) problems.push('routed in App.jsx but middleware would 404 it: ' + route);
+  if (!sitemapRoutes.has(route) && !SITEMAP_EXCLUDED.has(route)) {
+    problems.push('routed in App.jsx but missing from the sitemap: ' + route +
+      ' (add it to route-manifest.cjs, or to SITEMAP_EXCLUDED here if that is deliberate)');
+  }
 }
 
 if (problems.length) {

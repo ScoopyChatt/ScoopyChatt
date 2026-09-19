@@ -118,6 +118,7 @@ const SCHEMA = {
 };
 
 const routes = Object.assign({}, require('./seo-page-manifest.cjs').pages);
+const NOINDEX = new Set(require('./seo-page-manifest.cjs').noindex);
 
 const gaLocations = new Set(['ringgold','rossville','flintstone','fort-oglethorpe']);
 const locationPages = [
@@ -159,10 +160,13 @@ function setAttr(html, pattern, value) {
   return html.replace(pattern, function (m, before, after) { return before + value + after; });
 }
 
-function injectMeta(html, title, desc, canonical, staticHtml, schemaHtml, image) {
+function injectMeta(html, title, desc, canonical, staticHtml, schemaHtml, image, noindexRoute) {
   var result = html.replace(/<title>[^<]*<\/title>/, function () { return '<title>' + title + '<\/title>'; });
   result = setAttr(result, /(<meta name="description" content=")[^"]*(")/, desc);
   result = setAttr(result, /(<link rel="canonical" href=")[^"]*(")/, canonical);
+  if (noindexRoute) {
+    result = result.replace('<' + '/head>', '<meta name="robots" content="noindex, nofollow" \/><' + '/head>');
+  }
   result = setAttr(result, /(<meta property="og:title" content=")[^"]*(")/, title);
   result = setAttr(result, /(<meta property="og:description" content=")[^"]*(")/, desc);
   result = setAttr(result, /(<meta property="og:url" content=")[^"]*(")/, canonical);
@@ -271,7 +275,7 @@ for (var route in routes) {
   var staticHtml = SC[route] || (locSlug ? makeLocContent(locSlug) : '');
   if (isBlog && staticHtml) { staticHtml = blogBreadcrumbNav(headline) + staticHtml; }
   var schemaHtml = SCHEMA[route] || '';
-  var html = injectMeta(template, title, desc, canonical, staticHtml, schemaHtml, IMAGES[route]);
+  var html = injectMeta(template, title, desc, canonical, staticHtml, schemaHtml, IMAGES[route], NOINDEX.has(route));
   var dirPath = path.join(distDir, route);
   fs.mkdirSync(dirPath, { recursive: true });
   var __s = routeSchema(route); if (__s) { html = html.replace("</head>", __s + "</head>"); }

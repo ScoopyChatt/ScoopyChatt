@@ -11,7 +11,8 @@ import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const { pages: manifestPages } = require(path.join(__dirname, "seo-page-manifest.cjs"));
+const { pages: manifestPages, noindex } = require(path.join(__dirname, "seo-page-manifest.cjs"));
+const NOINDEX = new Set(noindex);
 
 const SUMMARY =
   "Scoopy Doo LLC is a locally owned pet waste removal company serving Chattanooga, TN " +
@@ -28,7 +29,9 @@ const BASE = "https://www.scoopychatt.com";
 
 // [url, title, description], built from the shared manifest so this list
 // can't drift from what inject-seo.cjs actually ships on each page.
-const PAGES = Object.entries(manifestPages).map(([url, [title, desc]]) => [url, title, desc]);
+const PAGES = Object.entries(manifestPages)
+  .filter(([url]) => !NOINDEX.has(url))
+  .map(([url, [title, desc]]) => [url, title, desc]);
 
 // Location/service-area pages
 const NEIGHBORHOODS = {

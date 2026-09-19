@@ -77,4 +77,13 @@ const pages = {
   '/blog/pooper-scooper-cost-chattanooga': ["How Much Does Pooper Scooper Service Cost? | Scoopy Doo", "Scoopy Doo weekly service starts at $20 per visit for one dog. 2026 pricing for weekly, every-other-week, and one-time pet waste removal in Chattanooga TN."],
 };
 
-module.exports = { pages };
+// Routes that stay live and reachable but must never be indexed. Setting
+// noindex only through <SEOHead noindex> is not enough: that runs in React, so
+// the HTML the crawler is served has no robots tag at all. inject-seo.cjs reads
+// this list and writes a real <meta name="robots"> into the built file.
+// Keep these out of route-manifest.cjs (sitemap) and generate-llms.js too.
+const noindex = [
+  '/spring-special',
+];
+
+module.exports = { pages, noindex };

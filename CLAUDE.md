@@ -125,16 +125,20 @@ silent: the page works when you click it locally and is broken for crawlers.
 **Then verify — do not skip this:**
 
 ```
-npm install --prefix apps/web && npm run build --prefix apps/web \
-  && node apps/web/tools/inject-seo.cjs \
-  && node apps/web/tools/generate-sitemap.cjs \
-  && node apps/web/tools/create-static-pages.cjs \
-  && node apps/web/tools/verify-routes.cjs
+bash scripts/build.sh
 ```
 
+That is the same chain Vercel runs, so if it passes locally the deploy should build.
+
 `verify-routes.cjs` cross-checks the manifest against App.jsx and middleware.js and
-catches steps 2, 3 and 4 — it exits non-zero and names the offending URL. It cannot see
-steps 5 through 8, so check those by hand: after the build, confirm
+catches steps 2, 3 and 4, in **both** directions — a page in the sitemap with no route,
+and a routed page missing from the sitemap. **It is warn-only: it prints problems and
+still exits 0**, deliberately, so a stale list never blocks an otherwise-fine deploy.
+That means nothing fails the build — you have to actually read the output. A deliberate
+sitemap omission goes in its `SITEMAP_EXCLUDED` list, which is also the list of every
+route that is intentionally unindexed.
+
+It cannot see steps 5 through 8, so check those by hand: after the build, confirm
 `dist/apps/web/<slug>/index.html` exists and carries the right `<title>` and canonical.
 
 There is no `apps/web/public/sitemap.xml`. The sitemap is generated into `dist` by
