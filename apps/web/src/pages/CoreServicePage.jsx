@@ -7,7 +7,6 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import CTAButton from '@/components/CTAButton.jsx';
 import LocationSection from '@/components/LocationSection.jsx';
-import { generateServiceSchema } from '@/utils/schemaGenerators.js';
 
 const faqs = [
   {
@@ -28,7 +27,7 @@ const faqs = [
   },
   {
     question: "Is Scoopy Doo dog waste removal safe for kids and pets?",
-    answer: "Yes. We sanitize all scooping equipment between every yard to prevent cross-contamination. We never use harmful chemicals in your yard, and we haul all waste fully off the property. A clean yard is a safer yard - dog waste carries bacteria and parasites that are hazardous to children and other animals."
+    answer: "Yes. We sanitize all scooping equipment between every yard to prevent cross-contamination. We never use harmful chemicals in your yard, and all waste is double-bagged and placed in your outdoor bin, with off-property haul-away available for $5 per visit. A clean yard is a safer yard - dog waste carries bacteria and parasites that are hazardous to children and other animals."
   },
   {
     question: "How much does pooper scooper service cost in Chattanooga?",
@@ -62,32 +61,9 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const CoreServicePage = () => {
-  const serviceSchema = generateServiceSchema(
-    "Dog Poop Removal",
-    "Professional weekly, every-other-week, and one-time pet waste removal services.",
-    "Chattanooga Metro",
-    "$$"
-  );
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(f => ({
-      "@type": "Question",
-      "name": f.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": f.answer
-      }
-    }))
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <SEOHead
-        path="/"
-        schema={[serviceSchema, faqSchema]}
-      />
+      <SEOHead path="/" />
       <Helmet>
         <script src="https://elfsightcdn.com/platform.js" async></script>
       </Helmet>
