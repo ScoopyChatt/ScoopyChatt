@@ -223,6 +223,34 @@ var BLOG_LD_CSP = {
   'pet-waste-stations-apartments-hoas-chattanooga': '<script type="application/ld+json">' + '{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Pet Waste Stations for Chattanooga Apartments and HOAs: Placement, Servicing, and Cost", "description": "How many pet waste stations a Chattanooga apartment community or HOA needs, where to place them, what servicing includes, and how commercial pricing is quoted.", "url": "https://www.scoopychatt.com/blog/pet-waste-stations-apartments-hoas-chattanooga", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.scoopychatt.com/blog/pet-waste-stations-apartments-hoas-chattanooga"}, "datePublished": "2026-08-21", "dateModified": "2026-08-21", "inLanguage": "en-US", "author": {"@type": "Organization", "name": "Scoopy Doo LLC", "url": "https://www.scoopychatt.com"}, "publisher": {"@id": "https://www.scoopychatt.com/#business"}}' + '</' + 'script>' + '<script type="application/ld+json">' + '{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who installs and maintains pet waste stations for apartment complexes near Chattanooga?", "acceptedAnswer": {"@type": "Answer", "text": "Scoopy Doo LLC installs, stocks, and empties pet waste stations for apartment communities, HOAs, condo associations, and dog parks across Chattanooga TN and North Georgia, including Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA. Stations are serviced on a scheduled route so they do not overflow, and the same visit can include a sweep of common areas. Scoopy Doo is fully insured and proof of insurance is available to boards and property managers on request."}}, {"@type": "Question", "name": "How many pet waste stations does an apartment community need?", "acceptedAnswer": {"@type": "Answer", "text": "A practical rule is one station for every 40 to 50 pet-friendly units, positioned so no resident walks more than about 150 feet from a dog-walking route to reach one. Communities with a dedicated dog park usually need one at the entrance and one inside. The right number for a specific property comes out of a walkthrough."}}, {"@type": "Question", "name": "How much does pet waste station service cost for an HOA in Chattanooga?", "acceptedAnswer": {"@type": "Answer", "text": "Pet waste stations start at $299 per station installed, which covers the station, post, mounting, and initial bag stock. Servicing is $10 per station per week, so a community with four stations is $40 a week or about $173 a month. The common-area sweep that runs alongside the stations is quoted per property after a free walkthrough, since it depends on how much ground is covered and how often. Most commercial clients run month-to-month with no long-term contract."}}, {"@type": "Question", "name": "Do HOAs need a contract for pet waste removal service?", "acceptedAnswer": {"@type": "Answer", "text": "Not with Scoopy Doo. Most commercial and HOA clients use simple month-to-month scheduling with no long-term commitment, which lets a board trial the service for a season before committing budget. If your association requires a formal written agreement for its records, we will work with that."}}]}' + '</' + 'script>',
   'yard-cleanup-before-a-party-chattanooga': '<script type="application/ld+json">' + '{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "One-Time Yard Cleanup Before a Party in Chattanooga or North Georgia: When to Book and What It Costs", "description": "One-time dog poop cleanups start at $85. How far ahead of an event to book, what gets done on the visit, and how to handle yard smell in summer humidity.", "url": "https://www.scoopychatt.com/blog/yard-cleanup-before-a-party-chattanooga", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.scoopychatt.com/blog/yard-cleanup-before-a-party-chattanooga"}, "datePublished": "2026-08-21", "dateModified": "2026-08-21", "inLanguage": "en-US", "author": {"@type": "Organization", "name": "Scoopy Doo LLC", "url": "https://www.scoopychatt.com"}, "publisher": {"@id": "https://www.scoopychatt.com/#business"}}' + '</' + 'script>' + '<script type="application/ld+json">' + '{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can someone clean up my yard before a party this weekend in Chattanooga or North Georgia?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Scoopy Doo books one-time yard cleanups seven days a week across Chattanooga TN and North Georgia, and most new customers are on the schedule within two to five days. For a weekend event, request a quote by Tuesday or Wednesday to be safe. Same-week bookings are often possible."}}, {"@type": "Question", "name": "How much does a one-time yard cleanup cost before an event?", "acceptedAnswer": {"@type": "Answer", "text": "One-time yard cleanups with Scoopy Doo start at $85, and that base covers up to three dogs, with each additional dog adding $15. Haul-away is included at no extra charge. The final price also depends on how long it has been since the yard was last cleaned and how large the area is. There is no contract and no obligation to start recurring service afterward."}}, {"@type": "Question", "name": "How far ahead of a party should I schedule dog poop cleanup?", "acceptedAnswer": {"@type": "Answer", "text": "The day before the event is ideal. Cleaning one to two days ahead means the yard is clear when guests arrive but the grass has had time to dry and settle. Cleaning a week ahead defeats the purpose if you have dogs, and cleaning the morning of leaves no margin if the weather turns."}}, {"@type": "Question", "name": "Will a one-time cleanup get rid of the smell in my yard?", "acceptedAnswer": {"@type": "Answer", "text": "Removing the waste removes the source, which handles most of it. In Chattanooga humidity a heavily used yard can still hold odor compounds in the grass and topsoil right after a cleanup. For most yards the fix is time plus water: clean a day or two ahead and water the affected areas well. For yards with years of buildup, Scoopy Doo also offers deodorizing and sanitizing at $20 per visit."}}]}' + '</' + 'script>',
 };
+// Baseline BlogPosting schema for any blog post in `pages` that has no explicit
+// entry in BLOG_LD_CSP or SVC_LD_CSP already, using real dates from
+// generate-page-dates.cjs (must run before this script, same source vercel.json
+// runs for inject-seo.cjs).
+var pageDatesPath = path.join(__dirname, 'page-dates.json');
+var pageDates = fs.existsSync(pageDatesPath) ? JSON.parse(fs.readFileSync(pageDatesPath, 'utf8')) : {};
+function blogPostingSchema(slug, title, desc) {
+  var route = '/blog/' + slug;
+  var dates = pageDates[route];
+  var url = 'https://www.scoopychatt.com' + route;
+  var obj = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title.replace(/ \| Scoopy Doo.*$/, ''),
+    "description": desc,
+    "url": url,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": url },
+    "inLanguage": "en-US",
+    "author": { "@type": "Organization", "name": "Scoopy Doo LLC", "url": "https://www.scoopychatt.com" },
+    "publisher": { "@id": "https://www.scoopychatt.com/#business" }
+  };
+  if (dates) {
+    obj.datePublished = dates.published;
+    obj.dateModified = dates.modified;
+  }
+  return '<script type="application/ld+json">' + JSON.stringify(obj) + '</' + 'script>';
+}
+
 for (var i = 0; i < pages.length; i++) {
   try {
     var p = pages[i];
@@ -244,7 +272,11 @@ for (var i = 0; i < pages.length; i++) {
     fs.mkdirSync(outDir, { recursive: true });
     if (pages[i] && pages[i].slug === "faq") { html = html.replace("</head>", FAQ_LD + "</head>"); }
       if (SVC_LD_CSP[p.slug]) { html = html.replace('</head>', SVC_LD_CSP[p.slug] + '</head>'); }
-    if (p.slug.indexOf('blog/') === 0 && BLOG_LD_CSP[p.slug.slice(5)]) { html = html.replace('</head>', BLOG_LD_CSP[p.slug.slice(5)] + '</head>'); }
+    if (p.slug.indexOf('blog/') === 0) {
+      var blogSlug = p.slug.slice(5);
+      if (BLOG_LD_CSP[blogSlug]) { html = html.replace('</head>', BLOG_LD_CSP[blogSlug] + '</head>'); }
+      else if (!SVC_LD_CSP[p.slug]) { html = html.replace('</head>', blogPostingSchema(blogSlug, p.title, p.desc) + '</head>'); }
+    }
     if (PAGE_LD_CSP[p.slug]) { html = html.replace('</head>', PAGE_LD_CSP[p.slug] + '</head>'); }
     if (p.slug === 'quote') { html = html.replace(/<script src="https:\/\/widgets\.leadconnectorhq\.com[^>]*><\/script>/g, ''); }
       fs.writeFileSync(path.join(outDir, 'index.html'), html);

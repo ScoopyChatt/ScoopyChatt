@@ -3,6 +3,7 @@ node_modules/
 
 # Build output
 dist/
+apps/web/tools/page-dates.json
 
 # Environment variables - NEVER commit these
 .env

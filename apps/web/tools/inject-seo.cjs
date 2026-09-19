@@ -215,6 +215,33 @@ function routeSchema(route){
 }
 // --- end GEO schema injection ---
 
+// BlogPosting schema for every /blog/ route, using real dates from
+// generate-page-dates.cjs (must run before this script). create-static-pages.cjs
+// fully rewrites the ~22 blog routes it owns, so this is redundant-but-harmless
+// for those; it is the only source of BlogPosting schema for the rest.
+var pageDatesPath = path.join(__dirname, 'page-dates.json');
+var pageDates = fs.existsSync(pageDatesPath) ? JSON.parse(fs.readFileSync(pageDatesPath, 'utf8')) : {};
+function blogPostingSchema(route, title, desc) {
+  var dates = pageDates[route];
+  var url = BASE + route;
+  var obj = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title.replace(/ \| Scoopy Doo.*$/, ''),
+    "description": desc,
+    "url": url,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": url },
+    "inLanguage": "en-US",
+    "author": { "@type": "Organization", "name": "Scoopy Doo LLC", "url": BASE },
+    "publisher": { "@id": BASE + "/#business" }
+  };
+  if (dates) {
+    obj.datePublished = dates.published;
+    obj.dateModified = dates.modified;
+  }
+  return ldScript(obj);
+}
+
 for (var route in routes) {
   var parts = routes[route];
   var title = parts[0];
@@ -227,6 +254,7 @@ for (var route in routes) {
   var dirPath = path.join(distDir, route);
   fs.mkdirSync(dirPath, { recursive: true });
   var __s = routeSchema(route); if (__s) { html = html.replace("</head>", __s + "</head>"); }
+  if (route.indexOf('/blog/') === 0) { html = html.replace("</head>", blogPostingSchema(route, title, desc) + "</head>"); }
       fs.writeFileSync(path.join(dirPath, 'index.html'), html);
   count++;
 }
