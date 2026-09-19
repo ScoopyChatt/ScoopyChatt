@@ -26,7 +26,8 @@ const PAGES = [
   '/pet-waste-removal-chattanooga',
   '/dog-poop-scooping-chattanooga',
   '/yard-cleanup-chattanooga',
-  '/spring-special',
+  // '/spring-special' intentionally excluded from the sitemap - noindexed
+  // stale seasonal promo, kept live for direct links, not for search.
   '/pet-safe-checklist',
   '/dog-park-guide',
   '/blog',

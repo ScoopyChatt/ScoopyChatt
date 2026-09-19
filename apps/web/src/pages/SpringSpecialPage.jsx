@@ -43,7 +43,7 @@ const SpringSpecialPage = () => {
 
   return (
     <>
-      <SEOHead path="/spring-special" />
+      <SEOHead path="/spring-special" noindex={true} />
 
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
