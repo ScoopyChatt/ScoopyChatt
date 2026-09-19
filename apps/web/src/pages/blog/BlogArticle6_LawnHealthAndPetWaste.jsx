@@ -4,7 +4,7 @@ import BlogPostTemplate from '@/components/BlogPostTemplate.jsx';
 
 const BlogArticle6_LawnHealthAndPetWaste = () => {
   const meta = {
-    title: "Why Regular Pet Waste Removal is Essential for Your Lawn's Health",
+    title: "How Pet Waste Affects Your Lawn Health",
     description: "Learn how pet waste causes nitrogen burn and damages your grass, and discover why professional pet waste removal is essential for maintaining a healthy lawn.",
     author: "Scoopy Doo Team",
     datePublished: "2026-05-09",

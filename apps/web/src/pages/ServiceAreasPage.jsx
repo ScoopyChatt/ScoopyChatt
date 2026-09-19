@@ -13,6 +13,7 @@ const ServiceAreasPage = () => {
   const canonicalUrl = getCanonicalUrl('/service-areas');
   const pageTitle = "Service Areas | Dog Poop Removal Coverage | Scoopy Doo";
   const pageDesc = "We provide professional dog poop removal services across the Chattanooga metro area, including Hixson, Red Bank, Ooltewah, and North Georgia.";
+  // Kept in sync with apps/web/tools/seo-page-manifest.cjs's '/service-areas' entry
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

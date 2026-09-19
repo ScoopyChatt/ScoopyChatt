@@ -38,7 +38,7 @@ const allPosts = [
 
 const BlogListPage = () => (
   <div className="min-h-screen flex flex-col bg-background">
-    <SEOHead title="Pet Waste & Dog Care Blog | Scoopy Doo Chattanooga" description="Tips on pet waste removal, yard health, and dog care for Chattanooga homeowners from the Scoopy Doo blog." canonicalUrl={`${CANONICAL_BASE_URL}/blog`} />
+    <SEOHead title="Pet Waste & Dog Care Blog | Scoopy Doo Chattanooga" description="Chattanooga pet care tips: yard health, dog waste removal, seasonal guides, and local resources for dog owners from the Scoopy Doo blog." canonicalUrl={`${CANONICAL_BASE_URL}/blog`} />
     <Header />
     <main className="flex-grow py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

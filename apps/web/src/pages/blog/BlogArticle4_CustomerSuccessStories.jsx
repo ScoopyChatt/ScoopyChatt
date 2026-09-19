@@ -4,7 +4,7 @@ import BlogPostTemplate from '@/components/BlogPostTemplate.jsx';
 
 const BlogArticle4_CustomerSuccessStories = () => {
   const meta = {
-    title: "Real Results: Scoopy Chatt Customer Success Stories",
+    title: "Customer Success Stories",
     description: "Read how professional pet waste removal solved real problems for families, busy professionals, and pet owners across the Chattanooga area.",
     author: "Scoopy Chatt Team",
     datePublished: "2026-04-24",

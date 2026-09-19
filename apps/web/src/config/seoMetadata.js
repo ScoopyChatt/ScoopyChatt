@@ -2,8 +2,8 @@ import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
 export const seoMetadata = {
   "/": {
-    title: "Dog Poop Removal & Pooper Scooper Service | Chattanooga TN",
-    description: "Professional dog poop removal & pooper scooper service in Chattanooga, TN. Reliable weekly pet waste cleanup. Get your free quote from Scoopy Doo today.",
+    title: "Pet Waste & Dog Poop Removal | Chattanooga TN | Scoopy Doo",
+    description: "Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 90+ Google reviews. Weekly service from $20 per visit. Free quotes.",
     canonical: `${CANONICAL_BASE_URL}/`,
     ogType: "website"
   },
@@ -39,25 +39,25 @@ export const seoMetadata = {
   },
   "/dog-poop-scooping-chattanooga": {
     title: "Dog Poop Scooping Service in Chattanooga, TN | Scoopy Doo",
-    description: "Reliable dog poop scooping in Chattanooga, TN. Weekly and bi-weekly pooper scooper service you can count on. Get your free quote today.",
+    description: "Dog poop scooping in Chattanooga from $20 a visit weekly. On-the-way text, gate photo when done, and a free re-clean if we miss a spot. Get a free quote.",
     canonical: `${CANONICAL_BASE_URL}/dog-poop-scooping-chattanooga`,
     ogType: "website"
   },
   "/yard-cleanup-chattanooga": {
     title: "Yard Cleanup for Pet Owners in Chattanooga, TN | Scoopy Doo",
-    description: "Complete yard cleanup for pet owners in Chattanooga, TN. Remove built-up dog waste and reclaim your yard. Book a one-time or recurring cleanup.",
+    description: "One-time dog waste yard cleanup in Chattanooga from $85 with free haul-away, or ongoing service from $20 a visit. Great for move-ins and spring cleans.",
     canonical: `${CANONICAL_BASE_URL}/yard-cleanup-chattanooga`,
     ogType: "website"
   },
   "/service-areas": {
-    title: "Service Areas | Pet Waste Removal Around Chattanooga, TN",
-    description: "Scoopy Doo serves Chattanooga and surrounding areas with dog waste removal. See the neighborhoods and cities we cover and check your address.",
+    title: "Service Areas | Dog Poop Removal Coverage | Scoopy Doo",
+    description: "We provide professional dog poop removal services across the Chattanooga metro area, including Hixson, Red Bank, Ooltewah, and North Georgia.",
     canonical: `${CANONICAL_BASE_URL}/service-areas`,
     ogType: "website"
   },
   "/about": {
     title: "About Scoopy Doo | Chattanooga Pet Waste Removal",
-    description: "Meet Scoopy Doo LLC, Chattanooga's locally owned pet waste removal company. Learn our story, values, and commitment to clean, safe yards. Get a quote!",
+    description: "Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company. 80+ five-star reviews, two branded service vehicles, serving 17+ communities.",
     canonical: `${CANONICAL_BASE_URL}/about`,
     ogType: "website"
   },
@@ -75,31 +75,31 @@ export const seoMetadata = {
   },
   "/spring-special": {
     title: "Spring Special: Buy 2 Months, Get 1 Free | Scoopy Doo",
-    description: "Limited-time Chattanooga spring special from Scoopy Doo: buy 2 months of pet waste removal, get 1 month free. Start fresh this spring.",
+    description: "Scoopy Doo's spring special for Chattanooga pet owners: buy 2 months of dog waste removal, get 1 month free. Limited time offer.",
     canonical: `${CANONICAL_BASE_URL}/spring-special`,
     ogType: "website"
   },
   "/podcast": {
-    title: "Scoopy Doo Founder on the Podcast | Chattanooga, TN",
-    description: "Hear the Scoopy Doo LLC founder share the story behind Chattanooga's pet waste removal service in this recent podcast appearance.",
+    title: "The Scoopy Doo Podcast | Chattanooga Pet Waste Removal",
+    description: "Behind the scenes of Scoopy Doo LLC, the father-daughter pet waste removal company serving Chattanooga TN and North Georgia.",
     canonical: `${CANONICAL_BASE_URL}/podcast`,
     ogType: "video.other"
   },
   "/pet-safe-checklist": {
     title: "Pet-Safe Yard Checklist | Scoopy Doo Chattanooga",
-    description: "A free pet-safe yard checklist for Chattanooga dog owners. Simple steps to keep your yard clean, healthy, and safe for your pets.",
+    description: "Free pet-safe yard checklist for Chattanooga dog owners: toxic plants to avoid, fence-securing tips, and pet-safe lawn care product picks.",
     canonical: `${CANONICAL_BASE_URL}/pet-safe-checklist`,
     ogType: "website"
   },
   "/dog-park-guide": {
     title: "Chattanooga Dog Park Guide for Dog Owners | Scoopy Doo",
-    description: "Discover Chattanooga's best dog parks and outdoor spots. A local guide for dog owners from the team at Scoopy Doo pet waste removal.",
+    description: "Free guide to Chattanooga's best dog parks, including Tennessee Riverpark, Warner Park, and Signal Mountain's Cumberland Trail. Maps and local tips.",
     canonical: `${CANONICAL_BASE_URL}/dog-park-guide`,
     ogType: "website"
   },
   "/blog": {
     title: "Pet Waste & Dog Care Blog | Scoopy Doo Chattanooga",
-    description: "Tips on pet waste removal, yard health, and dog care for Chattanooga homeowners from the Scoopy Doo blog.",
+    description: "Chattanooga pet care tips: yard health, dog waste removal, seasonal guides, and local resources for dog owners from the Scoopy Doo blog.",
     canonical: `${CANONICAL_BASE_URL}/blog`,
     ogType: "website"
   },

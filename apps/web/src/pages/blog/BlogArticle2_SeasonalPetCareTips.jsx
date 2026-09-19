@@ -4,7 +4,7 @@ import BlogPostTemplate from '@/components/BlogPostTemplate.jsx';
 
 const BlogArticle2_SeasonalPetCareTips = () => {
   const meta = {
-    title: "Seasonal Pet Care Guide for Chattanooga Residents",
+    title: "Seasonal Pet Care Tips for Chattanooga Dog Owners",
     description: "From summer heat to winter freezes, learn how to protect your pet and maintain a clean, safe yard in the Greater Chattanooga area year-round.",
     author: "Scoopy Chatt Team",
     datePublished: "2026-04-18",
