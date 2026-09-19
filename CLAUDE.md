@@ -172,7 +172,30 @@ GA cities (must NOT say TN): ringgold, rossville, flintstone, fort-oglethorpe
 - Build takes 17-20 seconds when healthy. If build fails in under 12 seconds, it is a syntax error or config issue, not a code logic problem.
 
 ### SEO (Active problems)
-- Soft 404s / apex-vs-www fragmentation — FIXED at commit 8d5be3f / cfe6603 / d1006e6 (Aug 26, 2026) via `middleware.js` (repo root): Edge Middleware that runs before any vercel.json routing, returns a real HTTP 404 for any path not on its `known` allowlist (PAGES/BLOG_POSTS/SERVICE_AREAS + legacy .php/.html/.aspx-style paths) instead of letting the SPA catch-all serve 200 for everything, and force-redirects apex `scoopychatt.com` → `www.scoopychatt.com` plus http→https on every request. Do not re-add a separate www/apex redirect or wildcard-junk-path handling in vercel.json — middleware.js already runs first and anything added there would be dead code (learned this the hard way — see commit 3e86ab7). Deployed and live; Search Console's count lags the fix since Google has to re-crawl before it drops. As of Aug 29 2026: Soft 404 at 105,906, "Crawled – currently not indexed" at 73,622, "Blocked by robots.txt" at 99,017, "Not found (404)" at 528,894 — down from ~109,860 pre-fix on the soft-404 count specifically, "Validation: Started" on the recrawl. Give it several more weeks before assuming the middleware isn't matching correctly.
+- Soft 404s / apex-vs-www fragmentation — FIXED at commit 8d5be3f / cfe6603 / d1006e6 (Aug 26, 2026) via `middleware.js` (repo root): Edge Middleware that runs before any vercel.json routing, returns a real HTTP 404 for any path not on its `known` allowlist (PAGES/BLOG_POSTS/SERVICE_AREAS + legacy .php/.html/.aspx-style paths) instead of letting the SPA catch-all serve 200 for everything, and force-redirects apex `scoopychatt.com` → `www.scoopychatt.com` plus http→https on every request. Do not re-add a separate www/apex redirect or wildcard-junk-path handling in vercel.json — middleware.js already runs first and anything added there would be dead code (learned this the hard way — see commit 3e86ab7). Deployed and live; Search Console's count lags the fix since Google has to re-crawl before it drops. As of Aug 29 2026: Soft 404 at 105,906, "Crawled – currently not indexed" at 73,622, "Blocked by robots.txt" at 99,017, "Not found (404)" at 528,894 — down from ~109,860 pre-fix on the soft-404 count specifically, "Validation: Started" on the recrawl.
+
+**VERIFIED WORKING Sept 19, 2026 — stop re-investigating this.** Soft 404 had moved
+only 105,906 → 105,903 in three weeks, which looks like a broken fix. It is not.
+Two checks settled it: (1) every junk pattern from Search Console was run through
+`middleware.js` locally (`/shop/*`, `/products/*`, `/contents/*`, `*.aspx`, `*.php`,
+`*.html`, `/wp-admin/`, unknown `/service/*` and `/blog/*` slugs) and all returned
+404, while real pages, static assets, legacy redirect sources and apex→www
+canonicalization all behaved correctly; (2) loading a junk URL on the live site
+returns the middleware's own 404 page — bare, no site header, two green buttons —
+rather than the SPA's `NotFoundPage`, which renders `<Header />`. **That visual
+difference is the fastest way to re-confirm it: site nav present = middleware not
+running; no nav = running.**
+
+`robots.txt` was also checked and is not impeding the drain — it disallows only
+`/reddit-oauth-callback`, `/qb-oauth-callback` and `/thank-you`. The 99K "Blocked by
+robots.txt" entries are leftovers from the old Hostinger site's rules and will
+recrawl into 404s like the rest.
+
+So the count is purely a re-crawl timing problem. Google knows ~730K URLs on this
+domain and deprioritizes known junk, so the long tail drains over months. The only
+legitimate accelerator is re-running "Validate Fix" on the Soft 404 issue in Search
+Console. Worth keeping in perspective: the real pages are indexed and ranking
+position 1.0–2.4 for brand terms, so this backlog is cosmetic, not a blocker.
 - /dp/ and other spam URL floods (`/dp/*` Amazon-style junk, `/shop/*`, `/products/*`, `/contents/*` fake ASP.NET-storefront junk, e.g. `storeSearch/KeepCriteriaInput.aspx`) — bot/scraper traffic hitting the domain with fake product-page URLs, not a real site-structure problem, and not something a sitemap or internal link is generating (Search Console shows no referring sitemap or page for these). `/dp/*` gets a dedicated 410 Gone via `api/dp-gone.js` (rewrite in vercel.json); everything else not on middleware.js's allowlist gets a generic 404 from middleware itself, which is sufficient — don't add per-pattern handling for new junk prefixes you spot in Search Console, they're already covered. Search Console removals submitted manually by Brandon as needed.
 - Ringgold TN bug — fixed in inject-seo.cjs (GA state set correctly for Georgia cities)
 
