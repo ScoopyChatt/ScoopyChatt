@@ -56,20 +56,18 @@ var compBody = '<h1>Pet Waste Removal Services in Chattanooga, TN: 2026 Comparis
 
 
 // --- GEO FAQ schema (added) ---
-var FAQ_PAIRS_CS = [
-  ["Is Scoopy Doo a member of a professional pet waste removal association?","Yes. Scoopy Doo LLC is a member of aPaws, the Association of Professional Animal Waste Specialists, the national trade association for the pet waste removal industry, founded in 2002. aPaws members are screened for insurance and pledge to industry standards of care. Scoopy Doo is also a BBB Accredited Business with an A- rating."],
-  ["How do I schedule pet waste removal service?","Request a free quote at scoopychatt.com/quote with your yard details and number of dogs. We respond the same day and most new customers start within 2 to 5 days."],
-  ["Does Scoopy Doo serve North Georgia?","Yes. We serve Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA along with Chattanooga and surrounding Tennessee areas, with no extra charge for North Georgia service."],
-  ["Is there a contract or long-term commitment?","No. Scoopy Doo never requires a contract. You can pause, reschedule, or cancel anytime with no cancellation fees."],
-  ["How much does dog poop removal cost in Chattanooga?","Pricing is per visit and billing is monthly. Weekly service is $20 per visit for the first dog, twice-weekly is $18, and every-other-week is $33. Additional dogs add $2 per visit on weekly, $1 on twice-weekly, and $3 on every-other-week. Waste takeaway is $5 per visit and yard deodorizing is $20 per visit. There are no contracts. Request a free quote for exact pricing."],
-  ["How often should I have my yard cleaned?","Weekly service is the most popular and keeps your yard consistently clean and safe. Homes with multiple dogs or heavy use often choose twice-weekly, while every-other-week works for lighter needs."],
-  ["What happens on each visit?","You get an on-the-way text before we arrive, a full grid-pattern sweep of your entire yard, all waste double-bagged into your outdoor bin, and a gate photo confirmation when we finish. Waste takeaway, where we haul the bags off the property instead, is $5 per visit."],
-  ["Do you offer one-time cleanups?","Yes. One-time yard cleanups are great for spring cleaning, move-outs, or before an event, and a good way to start fresh before beginning recurring service."],
-  ["Do you handle commercial and HOA properties?","Yes. Scoopy Doo provides pet waste removal for apartments, HOAs, dog parks, and shared common areas with flexible scheduling and no contracts. Pet waste stations are $299 per station installed and $10 per station per week to service."],
-  ["Do you offer yard deodorizing?","Yes. Deodorizing and sanitizing is $20 per visit. It neutralizes the odor compounds and bacteria left in the soil after the waste itself is removed, and it can be added to any recurring plan or to a one-time cleanup."],
-  ["Is Scoopy Doo LLC BBB accredited?","Yes. Scoopy Doo LLC is a BBB Accredited Business with an A- rating from the Better Business Bureau of Southeast Tennessee & Northwest Georgia, accredited since June 2026."]
-];
-function faqLdCS(){var items=[];for(var i=0;i<FAQ_PAIRS_CS.length;i++){items.push({"@type":"Question","name":FAQ_PAIRS_CS[i][0],"acceptedAnswer":{"@type":"Answer","text":FAQ_PAIRS_CS[i][1]}});}var o={"@context":"https://schema.org","@type":"FAQPage","mainEntity":items};return '<script type="application/ld+json">'+JSON.stringify(o)+'</'+'script>';}
+// Pulled straight from faqBody's own <h2>question</h2><p>answer</p> markup so the
+// schema can never list different questions than what is actually visible on /faq.
+function extractQAPairsFromHtml(html){
+  var pairs=[];
+  var re=/<h2>([^<]*)<\/h2><p>([\s\S]*?)<\/p>/g;
+  var m;
+  while((m=re.exec(html))!==null){
+    pairs.push([m[1], m[2].replace(/<[^>]+>/g,'')]);
+  }
+  return pairs;
+}
+function faqLdCS(){var pairs=extractQAPairsFromHtml(faqBody);var items=[];for(var i=0;i<pairs.length;i++){items.push({"@type":"Question","name":pairs[i][0],"acceptedAnswer":{"@type":"Answer","text":pairs[i][1]}});}var o={"@context":"https://schema.org","@type":"FAQPage","mainEntity":items};return '<script type="application/ld+json">'+JSON.stringify(o)+'</'+'script>';}
 var FAQ_LD = faqLdCS();
 // --- end GEO FAQ schema ---
 
@@ -175,7 +173,12 @@ var pages = [
 // Removes the per-page content inject-seo.cjs adds to the homepage so this script
 // can reuse dist/index.html as a neutral template.
 function stripHomepageInjections(html) {
-  var out = html.replace(/<div id="scoopy-content"[\s\S]*?<\/div>/g, '');
+  // inject-seo.cjs now writes the homepage's real content inside #root itself
+  // (not a separate hidden sibling div), so reset root to empty before this
+  // script injects its own per-route content into it below. Safe as a
+  // non-greedy match up to the first </div>: injected content is intentionally
+  // flat (h1/h2/p/ul/li/blockquote/a only, no nested <div>s).
+  var out = html.replace(/<div id="root">[\s\S]*?<\/div>/, '<div id="root"></div>');
   out = out.replace(/<script type="application\/ld\+json">(?:(?!<\/script>)[\s\S])*?"@type":"FAQPage"(?:(?!<\/script>)[\s\S])*?<\/script>/g, '');
   return out;
 }
@@ -236,7 +239,7 @@ for (var i = 0; i < pages.length; i++) {
     html = setAttr(html, /(<meta property="og:url" content=")[^"]*(")/, p.canonical);
     html = setAttr(html, /(<meta name="twitter:title" content=")[^"]*(")/, p.title);
     html = setAttr(html, /(<meta name="twitter:description" content=")[^"]*(")/, p.desc);
-    html = html.replace('</body>', '<div id="scoopy-geo" style="display:none" aria-hidden="true">' + p.body + '</div></body>');
+    html = html.replace('<div id="root"></div>', '<div id="root">' + p.body + '</div>');
     var outDir = path.join(DIST, p.slug);
     fs.mkdirSync(outDir, { recursive: true });
     if (pages[i] && pages[i].slug === "faq") { html = html.replace("</head>", FAQ_LD + "</head>"); }
