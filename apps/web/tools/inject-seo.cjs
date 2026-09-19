@@ -61,6 +61,13 @@ const SC = {
 "/terms-of-service": "<h1>Terms of Service</h1><p>Welcome to Scoopy Chatt, doing business as Scoopy Doo Pet Waste Removal. By accessing our website, booking our services, or interacting with our platform, you agree to be bound by these Terms of Service. We provide professional pet waste removal services for residential and commercial properties in the Greater Chattanooga Metro Area, including scheduled visits (weekly, bi-weekly, or one-time) to locate and remove pet waste, with secure bagging and off-site disposal or disposal in your designated outdoor receptacle depending on your selected service plan.</p>",
 };
 
+// Must stay in sync with the hero <img> in CoreServicePage.jsx: same srcset and sizes,
+// or the browser preloads one file and then downloads a different one.
+const HERO_PRELOAD =
+  '<link rel="preload" as="image" href="/hero-chattanooga-1600.webp"' +
+  ' imagesrcset="/hero-chattanooga-800.webp 800w, /hero-chattanooga-1600.webp 1600w"' +
+  ' imagesizes="(max-width: 768px) 100vw, 768px" fetchpriority="high" />';
+
 function escapeHtml(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
@@ -311,6 +318,13 @@ for (var route in routes) {
   if (isBlog && staticHtml) { staticHtml = blogBreadcrumbNav(headline) + staticHtml; }
   var schemaHtml = SCHEMA[route] || '';
   var html = injectMeta(template, title, desc, canonical, staticHtml, schemaHtml, IMAGES[route], NOINDEX.has(route));
+  // The homepage hero is the LCP element, and React renders it - so without this the
+  // browser cannot even discover it until the bundle has parsed and mounted. Preloading
+  // it in the served HTML starts the download during head parse instead. Homepage only:
+  // on any other route this would be a wasted download.
+  if (route === '/') {
+    html = html.replace('<' + '/head>', HERO_PRELOAD + '<' + '/head>');
+  }
   var dirPath = path.join(distDir, route);
   fs.mkdirSync(dirPath, { recursive: true });
   var __s = routeSchema(route); if (__s) { html = html.replace("</head>", __s + "</head>"); }
