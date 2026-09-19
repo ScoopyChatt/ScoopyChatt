@@ -53,6 +53,12 @@ const SC = {
 "/blog/is-dog-poop-hurting-your-chattanooga-yard": "<h1>Is Dog Poop Hurting Your Chattanooga Yard?</h1><p>Dog waste is not just an unpleasant chore to put off. It is actively damaging lawns, soil, and the local environment throughout Chattanooga. Here is what is really happening beneath the surface.</p><h2>Myth: Dog Poop Is a Natural Fertilizer</h2><p>This claim gets repeated often, and it is mostly wrong. Cow and horse manure, when composted, can improve soil. Dog waste is different. Dogs are carnivores, and their waste is highly acidic and loaded with pathogens. It does not break down into useful nutrients. Instead, it introduces harmful bacteria and burns the grass directly where it sits. Dead yellow or brown patches that reappear in the same spots are usually caused by this.</p><h2>Nitrogen Burn</h2><p>Dog poop contains high concentrations of nitrogen. A little nitrogen feeds grass, but too much concentrated in the same spots week after week causes nitrogen burn, scorching the roots and leaving dead patches that require reseeding, resodding, or months of recovery. During hot Chattanooga summers this process accelerates, and waste that might take weeks to damage a lawn in a cooler climate can start killing grass within days once temperatures pass 80 degrees Fahrenheit.</p><h2>Parasites That Outlast the Poop Itself</h2><p>Long after solid waste has broken down in rain or heat, the parasite eggs it contained remain viable in soil, sometimes for months or even years. Roundworms (Toxocara canis) are the most common. Their eggs survive mild Chattanooga winters and can infect humans through skin contact or accidental ingestion, putting children who play in the yard and then touch their faces at particular risk. Hookworm larvae can also penetrate bare feet and skin directly. Regular scooping interrupts this cycle before eggs can hatch and spread.</p><h2>Water Runoff Carries Waste Into Local Waterways</h2><p>Chattanooga gets over 50 inches of rain per year. Each rainfall carries whatever is sitting in a yard into storm drains, local creeks, and eventually the Tennessee River and its tributaries. The EPA classifies dog waste as a non-point source pollutant, in the same category as fertilizer runoff and oil leaks, and runoff from yards carries E. coli, giardia, salmonella, and fecal coliform bacteria into water sources other people and animals use.</p><h2>The Smell Problem Is a Soil Problem</h2><p>A backyard with a persistent smell even after cleanup means bacteria have already worked into the soil, and surface-level cleanup is no longer enough. This typically happens after waste has sat for weeks or months without removal. Consistent weekly removal prevents it from reaching that stage. Scoopy Doo serves Chattanooga and surrounding areas with weekly, bi-weekly, and one-time cleanup services, walking each yard in a grid pattern and hauling the waste away entirely.</p>",
 "/blog/best-pooper-scooper-services-chattanooga": "<h1>Best Pooper Scooper Services in Chattanooga</h1><p>Chattanooga has a growing population of dog owners, and with that comes the need for reliable, professional pet waste removal. Here is what to look for when choosing a service.</p><h2>What Makes a Great Pooper Scooper Service</h2><p>Not all yard cleanup services are created equal. Key factors that separate professional operations from less reliable alternatives include:</p><ul><li>Grid-pattern scooping, not just a walk-through, so every corner of the yard is checked.</li><li>Waste removed from the property entirely, not just bagged and left by the gate.</li><li>Consistent scheduling, with weekly or bi-weekly service that can be relied on.</li><li>Local ownership, with a company rooted in the Chattanooga community that stands behind its work.</li><li>Transparent pricing, with no hidden fees and no required contracts.</li><li>Verified customer reviews, especially from neighborhoods a homeowner recognizes.</li></ul><h2>Service Areas to Look For</h2><p>The best Chattanooga pooper scooper services cover a wide footprint, including the suburbs where dog ownership rates are highest, such as East Brainerd, Hixson, Ooltewah, Signal Mountain, Red Bank, Ringgold, and Soddy-Daisy, not just downtown zip codes. Scoopy Doo serves all of these areas and more.</p><h2>Weekly Versus Bi-Weekly Service</h2><p>For most Chattanooga households with one or two dogs, weekly service is the sweet spot, keeping bacteria and odor under control without being excessive. Households with three or more dogs, a small yard, or young children who play outside regularly should strongly consider weekly service. Bi-weekly service works well for single-dog households with larger yards, especially when the dog tends to use the same area consistently. One-time cleanups are also available for spring cleaning, move-outs, pre-event yard prep, or trying the service before committing to a schedule.</p><h2>Why Scoopy Doo</h2><p>Scoopy Doo is a locally owned and operated pet waste removal company serving residential yards, HOAs, apartment complexes, and commercial properties throughout the greater Chattanooga area. Customers consistently mention thoroughness, reliability, and the fact that the waste is hauled away rather than left bagged behind. Scoopy Doo is fully insured, uses sanitized equipment between yards, and offers flexible scheduling with no long-term contracts.</p>",
 "/blog/spring-pet-care-checklist": "<h1>Spring Pet Care Checklist for Chattanooga Dog Owners</h1><p>Spring in Chattanooga arrives fast, bringing warmer weather, more time outdoors, and a backyard that has been accumulating winter waste under leaves and frost. Before a dog reclaims the yard, this checklist helps make sure the outdoor space is safe, clean, and ready for the season.</p><h2>Yard Safety Checklist</h2><ul><li>Deep-clean winter waste: winter waste does not disappear, it freezes and thaws. A spring deep-clean removes months of accumulated bacteria before warmer temperatures accelerate bacterial growth.</li><li>Check for toxic spring plants: azaleas, sago palms, and lantana are common in Chattanooga landscaping and highly toxic to dogs. Walk the yard and identify anything that bloomed over winter.</li><li>Inspect the fence line: winter weather can shift fence posts and create gaps. Check every section, especially near the bottom, before letting a dog out unsupervised.</li><li>Review lawn care products: pre-emergent weed killers and fertilizers applied in spring can be dangerous to pets. Choose pet-safe formulas and keep dogs off treated areas for the recommended drying time.</li><li>Schedule routine vet visits: spring is heartworm and tick season in Tennessee, so preventatives should be current before outdoor time increases.</li><li>Start a regular waste removal schedule: if cleanup slid over winter, spring is the time to establish a routine, or hand it off to a professional service.</li></ul><h2>Do Not Start Spring Behind on Waste</h2><p>One of the biggest spring yard mistakes Chattanooga dog owners make is waiting too long to address winter waste buildup. By the time temperatures hit the mid-70s, bacteria from months of accumulated waste are already multiplying rapidly. A one-time spring cleanup, followed by a regular weekly schedule, gets a yard back to a healthy baseline fast. Scoopy Doo offers one-time cleanups and ongoing weekly or bi-weekly service throughout Chattanooga and surrounding areas.</p>",
+"/podcast": "<h1>Scoopy Doo LLC Founder on Recent Podcast</h1><p>Founder Brandon Carter shares the origin story of Scoopy Doo, the hidden dangers of pet waste, and why professional yard cleanup is changing weekends for families in Chattanooga.</p>",
+"/spring-special": "<h1>Spring Into Clean - Buy 2 Months, Get 1 Month FREE!</h1><p>Limited time spring cleaning special. Reclaim your yard this season with Chattanooga's most trusted pet waste removal team. Let us handle the mess while you enjoy the sunshine.</p>",
+"/pet-safe-checklist": "<h1>Create the Perfect Yard for Your Pet</h1><p>A free downloadable checklist for Chattanooga dog owners covering yard safety and pet-safe outdoor spaces.</p><h2>Inside, You Will Discover</h2><ul><li>The 5 most common garden plants that are toxic to dogs</li><li>A simple trick to secure any fence from digging or climbing</li><li>How to choose lawn care products that are 100% pet-safe</li><li>The number one health reason to keep your yard free of pet waste</li></ul>",
+"/dog-park-guide": "<h1>Discover Chattanooga's Best Kept Secrets for Dog Owners</h1><p>A local guide to the best off-leash areas and dog-friendly spots around Chattanooga, Tennessee, from the Tennessee River waterfront to the mountain trails above the city.</p><h2>Chattanooga's Best Dog Parks and Off-Leash Areas</h2><p>The Tennessee Riverpark stretches over 10 miles along the Tennessee River with dogs welcome on leash throughout the paved trail system, connecting Chickamauga Dam to downtown. Warner Park and Stringer's Ridge, just minutes from downtown, offer miles of wooded hiking trails with leashed dogs welcome and views of the city and river valley. East Brainerd, Ooltewah, and Collegedale are home to several community parks and greenways including the East Brainerd Greenway, a flat paved path through a quiet residential corridor. Signal Mountain and Lookout Mountain offer trail access connecting to the Cumberland Trail and through Point Park and Reflection Riding Arboretum, with dogs required to be leashed in most areas.</p>",
+"/blog": "<h1>Chattanooga Pet Care Tips and Dog Owner Resources</h1><p>Tips on pet waste removal, yard health, and dog care for Chattanooga homeowners from the Scoopy Doo blog.</p>",
+"/terms-of-service": "<h1>Terms of Service</h1><p>Welcome to Scoopy Chatt, doing business as Scoopy Doo Pet Waste Removal. By accessing our website, booking our services, or interacting with our platform, you agree to be bound by these Terms of Service. We provide professional pet waste removal services for residential and commercial properties in the Greater Chattanooga Metro Area, including scheduled visits (weekly, bi-weekly, or one-time) to locate and remove pet waste, with secure bagging and off-site disposal or disposal in your designated outdoor receptacle depending on your selected service plan.</p>",
 };
 
 // Location data for static content generation
@@ -86,7 +92,8 @@ const LOC = {
 function makeLocContent(slug) {
   var d = LOC[slug];
   if (!d) return "";
-  var h = "<h1>Dog Poop Removal in " + d.name + " | Scoopy Doo Pet Waste Removal</h1>";
+  var h = '<nav aria-label="breadcrumb"><a href="/">Home</a> / <a href="/service-areas">Service Areas</a> / ' + d.name + '</nav>';
+  h += "<h1>Dog Poop Removal in " + d.name + " | Scoopy Doo Pet Waste Removal</h1>";
   h += "<p>" + d.desc + "</p>";
   h += "<h2>Neighborhoods We Serve in " + d.name + "</h2><ul>";
   d.hoods.forEach(function(n){ h += "<li>" + n + "</li>"; });
@@ -206,8 +213,9 @@ function routeSchema(route){
     var d=(typeof LOC!=="undefined")?LOC[slug]:null;
     if(!d){return "";}
     var city=titleCaseSlug(slug);
-    var svc={"@context":"https://schema.org","@type":"Service","serviceType":"Pet waste removal","name":"Dog Poop Removal in "+city,"description":d.desc,"url":base+route,"areaServed":{"@type":"City","name":city},"provider":{"@type":"LocalBusiness","name":"Scoopy Doo LLC","telephone":"+1-423-600-5040","url":base,"priceRange":"$$"}};
-    var out=ldScript(svc);
+    var svc={"@context":"https://schema.org","@type":"Service","serviceType":"Pet waste removal","name":"Dog Poop Removal in "+city,"description":d.desc,"url":base+route,"areaServed":{"@type":"City","name":city},"provider":{"@id":base+"/#business"}};
+    var breadcrumb={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":base+"/"},{"@type":"ListItem","position":2,"name":"Service Areas","item":base+"/service-areas"},{"@type":"ListItem","position":3,"name":d.name,"item":base+route}]};
+    var out=ldScript(svc)+ldScript(breadcrumb);
     if(d.faqs&&d.faqs.length){out+=ldScript(faqSchema(d.faqs));}
     return out;
   }
@@ -242,19 +250,35 @@ function blogPostingSchema(route, title, desc) {
   return ldScript(obj);
 }
 
+// Breadcrumb nav (Home > Blog > Post) for every /blog/ route, visible markup
+// plus a matching BreadcrumbList schema - same real headline both places.
+function blogBreadcrumbNav(headline) {
+  return '<nav aria-label="breadcrumb"><a href="/">Home</a> / <a href="/blog">Blog</a> / ' + headline + '</nav>';
+}
+function blogBreadcrumbSchema(route, headline) {
+  var url = BASE + route;
+  return ldScript({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":BASE+"/"},{"@type":"ListItem","position":2,"name":"Blog","item":BASE+"/blog"},{"@type":"ListItem","position":3,"name":headline,"item":url}]});
+}
+
 for (var route in routes) {
   var parts = routes[route];
   var title = parts[0];
   var desc = parts[1];
   var canonical = BASE + route;
   var locSlug = route.startsWith('/service/') ? route.replace('/service/', '') : null;
+  var isBlog = route.indexOf('/blog/') === 0;
+  var headline = title.replace(/ \| Scoopy Doo.*$/, '');
   var staticHtml = SC[route] || (locSlug ? makeLocContent(locSlug) : '');
+  if (isBlog && staticHtml) { staticHtml = blogBreadcrumbNav(headline) + staticHtml; }
   var schemaHtml = SCHEMA[route] || '';
   var html = injectMeta(template, title, desc, canonical, staticHtml, schemaHtml, IMAGES[route]);
   var dirPath = path.join(distDir, route);
   fs.mkdirSync(dirPath, { recursive: true });
   var __s = routeSchema(route); if (__s) { html = html.replace("</head>", __s + "</head>"); }
-  if (route.indexOf('/blog/') === 0) { html = html.replace("</head>", blogPostingSchema(route, title, desc) + "</head>"); }
+  if (isBlog) {
+    html = html.replace("</head>", blogBreadcrumbSchema(route, headline) + "</head>");
+    html = html.replace("</head>", blogPostingSchema(route, title, desc) + "</head>");
+  }
       fs.writeFileSync(path.join(dirPath, 'index.html'), html);
   count++;
 }

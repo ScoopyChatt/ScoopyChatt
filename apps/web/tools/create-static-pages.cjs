@@ -251,6 +251,17 @@ function blogPostingSchema(slug, title, desc) {
   return '<script type="application/ld+json">' + JSON.stringify(obj) + '</' + 'script>';
 }
 
+// Breadcrumb nav (Home > Blog > Post) for every blog post, visible markup plus
+// a matching BreadcrumbList schema - same real headline both places.
+function blogBreadcrumbNav(headline) {
+  return '<nav aria-label="breadcrumb"><a href="/">Home</a> / <a href="/blog">Blog</a> / ' + headline + '</nav>';
+}
+function blogBreadcrumbSchema(slug, headline) {
+  var url = 'https://www.scoopychatt.com/blog/' + slug;
+  var obj = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.scoopychatt.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.scoopychatt.com/blog"},{"@type":"ListItem","position":3,"name":headline,"item":url}]};
+  return '<script type="application/ld+json">' + JSON.stringify(obj) + '</' + 'script>';
+}
+
 for (var i = 0; i < pages.length; i++) {
   try {
     var p = pages[i];
@@ -267,13 +278,17 @@ for (var i = 0; i < pages.length; i++) {
     html = setAttr(html, /(<meta property="og:url" content=")[^"]*(")/, p.canonical);
     html = setAttr(html, /(<meta name="twitter:title" content=")[^"]*(")/, p.title);
     html = setAttr(html, /(<meta name="twitter:description" content=")[^"]*(")/, p.desc);
-    html = html.replace('<div id="root"></div>', '<div id="root">' + p.body + '</div>');
+    var body = p.body;
+    if (p.slug.indexOf('blog/') === 0) { body = blogBreadcrumbNav(p.title.replace(/ \| Scoopy Doo.*$/, '')) + body; }
+    html = html.replace('<div id="root"></div>', '<div id="root">' + body + '</div>');
     var outDir = path.join(DIST, p.slug);
     fs.mkdirSync(outDir, { recursive: true });
     if (pages[i] && pages[i].slug === "faq") { html = html.replace("</head>", FAQ_LD + "</head>"); }
       if (SVC_LD_CSP[p.slug]) { html = html.replace('</head>', SVC_LD_CSP[p.slug] + '</head>'); }
     if (p.slug.indexOf('blog/') === 0) {
       var blogSlug = p.slug.slice(5);
+      var headline = p.title.replace(/ \| Scoopy Doo.*$/, '');
+      html = html.replace('</head>', blogBreadcrumbSchema(blogSlug, headline) + '</head>');
       if (BLOG_LD_CSP[blogSlug]) { html = html.replace('</head>', BLOG_LD_CSP[blogSlug] + '</head>'); }
       else if (!SVC_LD_CSP[p.slug]) { html = html.replace('</head>', blogPostingSchema(blogSlug, p.title, p.desc) + '</head>'); }
     }
