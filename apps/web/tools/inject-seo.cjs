@@ -99,6 +99,24 @@ function homeFaqPairs() {
   return pairs;
 }
 
+// The hero <img> is emitted into the served HTML too, not just rendered by React.
+// LCP sat at ~13s because the largest element only exists after 417KB of JS has
+// downloaded, parsed and mounted - so HERO_PRELOAD alone did nothing, since the
+// file arrived early with nothing to paint it. Putting the same <img> in #root lets
+// it paint before React boots; React then replaces #root with equivalent markup, so
+// the browser does not record a second, later paint.
+// Keep src/srcset/sizes identical to HERO_PRELOAD and to the hero in
+// CoreServicePage.jsx, or the browser preloads one file and paints another.
+const HERO_IMG =
+  '<img src="/hero-chattanooga-1600.webp"' +
+  ' srcset="/hero-chattanooga-800.webp 800w, /hero-chattanooga-1600.webp 1600w"' +
+  ' sizes="(max-width: 768px) 100vw, 768px"' +
+  ' width="1600" height="1200" fetchpriority="high" decoding="async"' +
+  ' style="max-width:100%;height:auto"' +
+  ' alt="Scoopy Doo LLC, a father-daughter pet waste removal company, at the Chattanooga Scenic City mural" />';
+
+SC['/'] = SC['/'].replace('<' + '/h1>', '<' + '/h1>' + HERO_IMG);
+
 SC['/'] = SC['/'] + homeFaqPairs().map(function (f) {
   return '<h2>' + escapeHtml(f.question) + '</h2><p>' + escapeHtml(f.answer) + '</p>';
 }).join('');
