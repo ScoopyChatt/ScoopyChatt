@@ -63,7 +63,7 @@ const PetSafeChecklistLandingPage = () => {
               <div className="relative rounded-3xl overflow-hidden shadow-lg border border-border/60 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-12 aspect-[4/3]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.1)_0,transparent_100%)] pointer-events-none" />
                 <img 
-                  src="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png" 
+                  src="/scoopy-logo.webp" 
                   alt="Scoopy Chatt Logo" 
                   className="w-full max-w-[260px] md:max-w-[300px] h-auto object-contain relative z-10 drop-shadow-sm transition-transform duration-700 hover:scale-105"
                 />

@@ -12,8 +12,8 @@ export function generateLocalBusinessSchema() {
     "telephone": "+14236005040",
     "email": "info@scoopychatt.com",
     "founder": [{ "@type": "Person", "name": "Leighton Carter", "jobTitle": "President" }, { "@type": "Person", "name": "Brandon Carter", "jobTitle": "Owner" }],
-    "image": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png",
-    "logo": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png",
+    "image": "https://www.scoopychatt.com/scoopy-logo.png",
+    "logo": "https://www.scoopychatt.com/scoopy-logo.png",
     "memberOf": {
       "@type": "Organization",
       "name": "Association of Professional Animal Waste Specialists",
@@ -192,7 +192,7 @@ export function generateArticleSchema(title, description, author, datePublished,
       "name": "Scoopy Doo LLC",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png"
+        "url": "https://www.scoopychatt.com/scoopy-logo.png"
       }
     },
     "datePublished": datePublished,

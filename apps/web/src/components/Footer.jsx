@@ -13,9 +13,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <img 
-              src="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/7f889d94bae15b826df9c1daf461a7b9.png" 
-              alt="Scoopy Chatt - Professional Pooper Scooper Service Logo" 
-              className="w-32 h-auto bg-white/10 rounded-lg p-2" 
+              src="/scoopy-logo.webp"
+              alt="Scoopy Doo - Professional Pooper Scooper Service Logo"
+              width="400"
+              height="373"
+              loading="lazy"
+              className="w-32 h-auto bg-white/10 rounded-lg p-2"
             />
             <p className="text-sm text-slate-500 leading-relaxed">
               Professional pet waste removal service making yards cleaner, safer, and more enjoyable for families and their pets. We are your trusted poop pick up company.
