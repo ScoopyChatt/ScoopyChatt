@@ -100,7 +100,7 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
           <figure className="mb-6">
             <img
               src="/service-action-yard.webp"
-              alt="Scoopy Doo technician walking a fenced Chattanooga backyard in a grid pattern during a weekly dog poop removal visit"
+              alt="Scoopy Doo crew arriving with scoopers for a scheduled dog waste removal visit in Chattanooga"
               className="w-full rounded-lg border border-gray-200"
               loading="lazy"
               width="1200"

@@ -93,7 +93,7 @@ const AboutPage = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="rounded-xl overflow-hidden border border-border shadow aspect-square bg-muted">
-                    <img src="/truck-scoopydoo.webp" alt="Scoopy Doo branded service truck" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                    <img src="/truck-scoopydoo.webp" alt="Scoopy Doo LLC service truck with branded door magnet and phone number" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </div>
                   <div className="rounded-xl overflow-hidden border border-border shadow aspect-square bg-muted">
                     <img src="/team-uniforms.webp" alt="Scoopy Doo team in uniform" className="w-full h-full object-cover" loading="lazy" decoding="async" />
@@ -160,8 +160,8 @@ const AboutPage = () => {
             <h2 className="text-2xl font-bold text-foreground text-center mb-8">Scoopy Doo In Action</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { src: "/service-action-yard.webp", alt: "Scoopy Doo technician cleaning a Chattanooga yard" },
-                { src: "/service-bags-removed.webp", alt: "Waste double-bagged and removed from property" },
+                { src: "/service-action-yard.webp", alt: "Scoopy Doo crew arriving with scoopers to clean a Chattanooga property" },
+                { src: "/service-bags-removed.webp", alt: "Double-bagged pet waste loaded at the Scoopy Doo truck for off-property disposal" },
                 { src: "/service-luxury-home.webp", alt: "Scoopy Doo servicing a luxury property" },
                 { src: "/happy-customers.webp", alt: "Happy Scoopy Doo customers with clean yard" },
               ].map((img, i) => (
