@@ -227,6 +227,63 @@ position 1.0–2.4 for brand terms, so this backlog is cosmetic, not a blocker.
 
 ---
 
+## Local SEO / Google Business Profile
+
+Audited Sept 21, 2026. **The website is not the constraint on local visibility — the
+GBP is.** Search Console (3 months) shows the homepage at 1,760 impressions and the
+four keyword pages at 33 impressions with zero clicks combined, while
+"dog poop removal near me" sits at average position 1.5 with **10 impressions in
+three months**. Google barely shows the site for the commercial queries, which is a
+map-pack problem, not an on-page one.
+
+Map pack, searched from the Chattanooga metro:
+
+| Query | Result |
+|---|---|
+| "dog poop removal near me" | #2 of 3 — PooTagic (49 reviews), **Scoopy Doo (98)**, The Poo Whisperer (11) |
+| "pooper scooper chattanooga" | **Not in the pack — 9th.** PooTagic (49), Doggie Doos (3), Captain Scoop A Poop (0) |
+
+**Reviews are not the limiting factor.** 98 five-star reviews loses to a competitor
+with zero. Do not spend effort chasing more reviews to fix map-pack placement.
+
+Most likely cause is category relevance: **primary category is "Waste management
+service" — an industrial/commercial-waste category — and the secondary category slot
+is empty.** Check what PooTagic uses (they rank #1 for both queries) and match it.
+Distance is the other factor and is harder to move: the profile is based in Ringgold
+GA while competitors sit inside Chattanooga.
+
+**Never put keywords in the business name to chase this.** Competitors rank partly on
+"Scoop"/"Poo" in their names, and Google does weight that, but renaming violates GBP
+guidelines and risks suspension of a listing carrying 98 reviews.
+
+### GBP service area vs the site — these disagree
+
+GBP lists 18 cities. Differences that matter:
+
+- **Cleveland is on the GBP but is NOT a service area** (see below — `/service/cleveland`
+  301s to `/service-areas`). Remove it, or you are advertising work you have to decline.
+- **On the site with full pages, missing from GBP:** East Brainerd, East Ridge,
+  Rossville, Fort Oglethorpe, Flintstone.
+- **On GBP with no presence on the site:** Dalton, Dunlap, Tunnel Hill, Graysville,
+  McDonald, Harrison, Northshore.
+
+Other profile state as of the audit: 98 reviews / 5.0, ~60 photos (latest 24 days
+old), Posts roughly weekly (latest 5 days old), Services filled out with correct
+pricing. Those are all healthy and are not what needs work.
+
+### Unverified testimonials
+
+Six named testimonials appear across the blog posts — "The Garcia Family from
+Cleveland, TN" (a city not served, and it says "Scoopy Chatt"), "Sarah M. from Signal
+Mountain", "John D. from Hixson", "Emily R. from Ringgold", "Michelle T. from
+Ooltewah", "Robert M. from Soddy". They read like template filler from the original
+site build. **Nobody has confirmed whether these are real customers.** If they are
+not, they are fabricated social proof on live commercial pages and should be replaced
+with quotes from the 98 genuine Google reviews. Flagged, deliberately not removed —
+only Brandon can say.
+
+---
+
 ## Service Area Pages
 
 Dynamic route: /service/:slug via LocationTemplate.jsx → src/data/locations.js
@@ -249,9 +306,33 @@ Located at /how-it-works. Key differentiators to always emphasize:
 
 ## SEO TODO (Priority Order)
 
-1. ~~Fix 109K soft 404s~~ — DONE, see Known Issues above. Monitor Search Console for the count to drop over the following weeks; don't rebuild this unless it's still ~109K after a real re-crawl window.
-2. Build commercial pages: HOA pet waste, apartment dog park, pet waste station
-3. More local-intent blog posts
-4. Verify Resend domain at resend.com/domains
-5. Update Google Business Profile URL to www.scoopychatt.com
-6. After every deploy: Search Console URL Inspection → Request Indexing for key pages
+Reordered Sept 21, 2026 against real Search Console and map-pack data. The site's
+technical SEO is in good shape (SEO score 100 on PageSpeed, pages indexed, schema
+valid). **The ceiling is local visibility, not the website.**
+
+1. **Fix the GBP category** — primary is "Waste management service" with an empty
+   secondary slot, and the profile misses the map pack for "pooper scooper
+   chattanooga" behind businesses with 0 and 3 reviews. See Local SEO above. Free,
+   fast, highest leverage of anything on this list.
+2. **Reconcile the GBP service area with the site** — drop Cleveland, add East
+   Brainerd, East Ridge, Rossville, Fort Oglethorpe, Flintstone.
+3. **Confirm whether the blog testimonials are real customers**, and replace them
+   with real Google review quotes if not. See Local SEO above.
+4. Verify the `scoopychatt.com` domain in Resend, then fix `RESEND_FROM` — and read
+   the ordering warning under Email first, or lead delivery breaks.
+5. Drop the request-body recipient in `chat-summary.js` before that domain is
+   verified, or the endpoint becomes an open relay.
+6. More local-intent blog posts.
+7. After every deploy: Search Console URL Inspection → Request Indexing for key pages.
+
+~~Fix 109K soft 404s~~ — DONE and verified working; it is a re-crawl timing problem
+now, not a code problem. ~~Build commercial pages~~ — DONE: `/commercial` plus three
+HOA/apartment/station posts already exist. ~~Update GBP URL to www~~ — DONE, the
+profile already points at `https://www.scoopychatt.com/`.
+
+**Do not spend effort on:** more reviews (98 at 5.0 already loses to a competitor
+with zero — it is not the lever), consolidating the overlapping Chattanooga pages
+(they earn 33 impressions and zero clicks, so there is nothing to gain or lose), or
+migrating the SPA to prerendering (the 12.8s mobile LCP is Lighthouse's simulated
+slow-4G estimate; the observed breakdown sums to ~2.5s, and CrUX has no field data
+either way).
