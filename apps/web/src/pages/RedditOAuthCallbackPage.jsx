@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle2, Copy, AlertCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from '@/components/motion.jsx';
 
 const RedditOAuthCallbackPage = () => {
   const [searchParams] = useSearchParams();

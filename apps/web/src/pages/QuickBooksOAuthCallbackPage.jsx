@@ -2,7 +2,7 @@ import React from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle2, AlertCircle, Copy, Home } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from '@/components/motion.jsx';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 

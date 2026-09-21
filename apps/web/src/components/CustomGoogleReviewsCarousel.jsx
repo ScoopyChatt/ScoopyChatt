@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Star, ChevronLeft, ChevronRight, AlertCircle, Quote } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from '@/components/motion.jsx';
 import apiServerClient from '@/lib/apiServerClient.js';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';

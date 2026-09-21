@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from '@/components/motion.jsx';
 import { MessageCircle, X, Send, Loader2, ShieldCheck } from 'lucide-react';
 import IntegratedAiChat from '@/components/integrated-ai-chat.jsx';
 import { useLeadCapture } from '@/hooks/useLeadCapture.js';

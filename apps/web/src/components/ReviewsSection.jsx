@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/components/motion.jsx';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Star, Quote, ChevronLeft, ChevronRight, MessageSquare as MessageSquareOff } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';

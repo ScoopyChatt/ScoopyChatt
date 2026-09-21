@@ -1,4 +1,4 @@
-import { animate } from 'framer-motion';
+import { animate } from '@/components/motion.jsx';
 import { useEffect, useRef, useState } from 'react';
 
 function useAnimatedText(text) {

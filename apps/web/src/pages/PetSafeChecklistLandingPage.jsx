@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { CheckCircle2, Star } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from '@/components/motion.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
 
 const PetSafeChecklistLandingPage = () => {

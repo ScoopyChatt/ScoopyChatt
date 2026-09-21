@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from '@/components/motion.jsx';
 import { ClipboardList, CalendarCheck, MessageSquare, Camera, CreditCard, ShieldCheck, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';

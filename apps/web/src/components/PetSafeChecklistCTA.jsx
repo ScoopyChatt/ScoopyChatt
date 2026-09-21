@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from '@/components/motion.jsx';
 import { toast } from 'sonner';
 import { Loader2, Download, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
