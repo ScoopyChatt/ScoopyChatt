@@ -89,6 +89,7 @@ export function generateLocalBusinessSchema() {
     "sameAs": [
       "https://www.facebook.com/profile.php?id=61578292444117",
       "https://www.instagram.com/scoopychatt/",
+      "https://www.tiktok.com/@scoopy.doo.llc4",
       "https://www.yelp.com/biz/scoopy-doo-ringgold",
       "https://www.bbb.org/us/ga/ringgold/profile/pet-waste-removal/scoopy-doo-llc-0483-80013696",
       "https://www.bing.com/maps?ss=ypid.YNF8F072A96778C51B",
