@@ -8,7 +8,7 @@
 //
 // Anything not matched here falls through untouched, so prerendered pages, static
 // assets, API functions, and the vercel.json redirects behave exactly as before.
-// If this file ever throws, the request continues ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ it fails open, never closed.
+// If this file ever throws, the request continues ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ it fails open, never closed.
 
 // Both scoopychatt.com (apex) and www.scoopychatt.com are live domains on the Vercel
 // project with no redirect between them, so Google indexes them as separate pages -
@@ -95,6 +95,7 @@ const BLOG_POSTS = [
   'yard-cleanup-before-selling-home-chattanooga',
   'dog-friendly-trails-chattanooga',
   'fall-flea-tick-season-chattanooga',
+'dog-waste-removal-rental-properties-chattanooga',
 ];
 
 const SERVICE_AREAS = [
