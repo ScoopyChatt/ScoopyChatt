@@ -189,12 +189,28 @@ const locationPages = [
   'st-elmo','north-chattanooga','southside','lookout-valley','riverview','normal-park','brainerd',
   'ringgold','rossville','flintstone','fort-oglethorpe'
 ];
+// Each city in src/data/locations.js has its own hand-written seoDescription,
+// which the React app uses at runtime. Read those here so the static HTML that
+// crawlers see carries the same unique text instead of one template per city
+// (24 near-identical descriptions read as thin duplicate pages).
+const locationDescriptions = (function() {
+  const src = fs.readFileSync(path.join(__dirname, '../src/data/locations.js'), 'utf8');
+  const str = '("(?:[^"\\\\]|\\\\.)*"|\'(?:[^\'\\\\]|\\\\.)*\')';
+  const re = new RegExp('slug:\\s*["\']([^"\']+)["\'][\\s\\S]*?seoDescription:\\s*' + str, 'g');
+  const out = {};
+  let m;
+  // m[2] is a JS string literal from our own source file; evaluate it as one.
+  while ((m = re.exec(src))) out[m[1]] = Function('return ' + m[2])();
+  return out;
+})();
 locationPages.forEach(function(loc) {
   var city = loc.split('-').map(function(w){return w[0].toUpperCase()+w.slice(1);}).join(' ');
   var state = gaLocations.has(loc) ? 'GA' : 'TN';
+  if (!locationDescriptions[loc]) console.warn('[inject-seo] no seoDescription in locations.js for ' + loc + ', using template');
   routes['/service/' + loc] = [
     'Dog Poop Removal ' + city + ' ' + state + ' | Scoopy Doo',
-    'Professional pet waste removal in ' + city + ', ' + state + '. Weekly & every-other-week pooper scooper service. Get your free quote today.'
+    locationDescriptions[loc] ||
+      'Professional pet waste removal in ' + city + ', ' + state + '. Weekly & every-other-week pooper scooper service. Get your free quote today.'
   ];
 });
 
