@@ -88,6 +88,7 @@ const BLOG_POSTS = [
   'multiple-dogs-yard-cleanup-chattanooga',
   'no-contact-pet-waste-removal-chattanooga',
   'moving-to-chattanooga-with-a-dog',
+'dog-waste-removal-rental-properties-chattanooga',
 ];
 
 module.exports = { PAGES, SERVICE_AREAS, BLOG_POSTS };
