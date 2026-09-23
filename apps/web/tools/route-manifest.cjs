@@ -89,6 +89,7 @@ const BLOG_POSTS = [
   'no-contact-pet-waste-removal-chattanooga',
   'moving-to-chattanooga-with-a-dog',
 'dog-waste-removal-rental-properties-chattanooga',
+'eco-friendly-dog-waste-disposal-chattanooga',
 ];
 
 module.exports = { PAGES, SERVICE_AREAS, BLOG_POSTS };

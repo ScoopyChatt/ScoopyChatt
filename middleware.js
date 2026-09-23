@@ -96,6 +96,7 @@ const BLOG_POSTS = [
   'dog-friendly-trails-chattanooga',
   'fall-flea-tick-season-chattanooga',
 'dog-waste-removal-rental-properties-chattanooga',
+'eco-friendly-dog-waste-disposal-chattanooga',
 ];
 
 const SERVICE_AREAS = [

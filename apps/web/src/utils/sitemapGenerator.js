@@ -92,7 +92,9 @@ export const generateSitemapData = async () => {
     'dog-friendly-trails-chattanooga',
     'multiple-dogs-yard-cleanup-chattanooga',
     'no-contact-pet-waste-removal-chattanooga',
-    'moving-to-chattanooga-with-a-dog'
+    'moving-to-chattanooga-with-a-dog',
+    'dog-waste-removal-rental-properties-chattanooga',
+    'eco-friendly-dog-waste-disposal-chattanooga'
   ];
 
   liveBlogSlugs.forEach(slug => {
