@@ -75,6 +75,7 @@ const pages = {
   '/blog/what-pet-waste-removal-includes-chattanooga': ["What Does Pet Waste Removal Actually Include? | Scoopy Doo", "Pet waste removal in Chattanooga TN covers weekly yard scooping, double-bagging, and gate photo confirmation. What is included, what it costs, and who offers it."],
   '/blog/best-dog-parks-chattanooga-tn': ["7 Best Dog Parks in Chattanooga, TN (2026 Guide) | Scoopy Doo", "The best dog parks in Chattanooga TN for 2026, including Barks and Tails, Greenway Farms, and Bark City, with verified hours and addresses."],
   '/blog/pooper-scooper-cost-chattanooga': ["How Much Does Pooper Scooper Service Cost? | Scoopy Doo", "Scoopy Doo weekly service starts at $20 per visit for one dog. 2026 pricing for weekly, every-other-week, and one-time pet waste removal in Chattanooga TN."],
+'/blog/dog-waste-removal-rental-properties-chattanooga': ["Who Handles Dog Waste at a Rental Property? | Scoopy Doo", "Landlord or tenant: who handles dog waste cleanup at a Chattanooga rental? How uncleaned yards cost landlords money and how Scoopy Doo services rental portfolios, from $20 a visit."],
 };
 
 // Routes that stay live and reachable but must never be indexed. Setting
