@@ -27,7 +27,7 @@ const FAQS = [
   },
   {
     q: "What does Scoopy Doo do with the dog waste it collects?",
-    a: "Every pickup is double-bagged. As standard, the bags go in your outdoor trash bin, never left at the gate. For $5 per visit, Scoopy Doo takes the bags away with us instead, and haul-away is included on one-time cleanups. Scoopy Doo does not compost collected waste today."
+    a: "Every pickup is double-bagged. As standard, the bags go in your outdoor trash bin, never left at the gate. For $5 per visit, Scoopy Doo takes the bags away with us instead, and haul-away is included on one-time cleanups. Hauled-away waste goes to a municipal landfill. Scoopy Doo does not compost collected waste today."
   }
 ];
 
@@ -188,7 +188,9 @@ const EcoFriendlyDogWasteDisposalChattanooga = () => {
             </Link>.
           </p>
           <p className="mb-4">
-            To be straightforward about it: we do not compost collected waste today. If that
+            Either way, the waste ends up in a municipal landfill: through your trash pickup, or
+            through ours when we haul it away. To be straightforward about it: we do not compost
+            collected waste today. If that
             changes, this page will say so. What we can say is that the service itself does the
             thing that matters most. A yard cleaned every week does not send waste into storm
             drains, and we sanitize our tools and footwear between every yard so we are not
