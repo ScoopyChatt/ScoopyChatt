@@ -13,6 +13,7 @@ const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const { pages: manifestPages, noindex } = require(path.join(__dirname, "seo-page-manifest.cjs"));
 const NOINDEX = new Set(noindex);
+const LOC_DESCRIPTIONS = require(path.join(__dirname, "location-descriptions.cjs"));
 
 const SUMMARY =
   "Scoopy Doo LLC is a locally owned pet waste removal company serving Chattanooga, TN " +
@@ -64,14 +65,16 @@ for (const slug of LOC_SLUGS) {
     PAGES.push([
       "/service/" + slug,
       "Dog Poop Removal in " + override[0] + (override[0].indexOf("Chattanooga") >= 0 ? ", TN" : ", Chattanooga TN") + " | Scoopy Doo",
-      "Professional pet waste removal in " + override[0] + ", " + override[1] +
+      LOC_DESCRIPTIONS[slug] ||
+        "Professional pet waste removal in " + override[0] + ", " + override[1] +
         ". Weekly, twice-weekly, every-other-week, and one-time dog waste removal from Scoopy Doo. Free online quote."
     ]);
   } else {
     PAGES.push([
       "/service/" + slug,
       "Dog Poop Removal in " + city + ", " + state + " | Scoopy Doo",
-      "Professional pet waste removal in " + city + ", " + state + ". Weekly and bi-weekly pooper scooper service from Scoopy Doo. Get your free online quote today."
+      LOC_DESCRIPTIONS[slug] ||
+        "Professional pet waste removal in " + city + ", " + state + ". Weekly and bi-weekly pooper scooper service from Scoopy Doo. Get your free online quote today."
     ]);
   }
 }
