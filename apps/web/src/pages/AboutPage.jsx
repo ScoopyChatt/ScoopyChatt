@@ -6,6 +6,7 @@ import { CheckCircle2, Star, Heart, Shield, Phone } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import { Button } from '@/components/ui/button';
+import ElfsightReviewsWidget from '@/components/ElfsightReviewsWidget.jsx';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
 
 const AboutPage = () => {
@@ -113,18 +114,8 @@ const AboutPage = () => {
             </div>
             <h2 className="text-2xl font-bold text-foreground mb-2">99 Five-Star Google Reviews</h2>
             <p className="text-muted-foreground mb-8">Hundreds of Chattanooga families trust us with their yards every week. Here is what they say.</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-              {[
-                { quote: "I have two big dogs and a small yard. Scoopy Doo shows up every week without fail - I literally never think about it anymore.", author: "Sarah M.", location: "Highland Park" },
-                { quote: "Our HOA was getting complaints about dog waste in the common areas. Scoopy Doo solved it in week one. We have had zero complaints since.", author: "HOA Board", location: "Cambridge Square, Ooltewah" },
-                { quote: "I was skeptical at first but after the first visit I was sold. They get every single spot. My yard looks better than it has in years.", author: "Tony R.", location: "East Ridge" },
-              ].map((review, i) => (
-                <div key={i} className="bg-card border border-border rounded-2xl p-6">
-                  <div className="flex gap-0.5 mb-3">{[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
-                  <p className="text-foreground text-sm leading-relaxed mb-4 italic">"{review.quote}"</p>
-                  <div className="text-xs text-muted-foreground font-medium">{review.author} - {review.location}</div>
-                </div>
-              ))}
+            <div className="text-left">
+              <ElfsightReviewsWidget />
             </div>
             <div className="mt-8">
               <a href="https://share.google/sOBVeLPqRabhfffPg" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline font-semibold">
