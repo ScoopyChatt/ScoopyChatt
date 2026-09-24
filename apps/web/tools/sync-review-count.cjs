@@ -12,14 +12,25 @@ var TARGETS = [
   { file: 'tools/inject-seo.cjs', patterns: [
     [/(\d+)(\+ Google reviews)/g, count + '$2'],
     [/("reviewCount":")\d+(")/g, '$1' + count + '$2'],
-    [/(\d+)( five-star reviews)/g, count + '$2']
+    [/(\d+)( five-star reviews)/g, count + '$2'],
+    [/(locally owned; )\d+( Google reviews)/g, '$1' + count + '$2']
   ]},
   { file: 'tools/create-static-pages.cjs', patterns: [
     [/(\d+)(\+ Google reviews)/g, count + '$2'],
     [/(over )\d+( Google reviews)/g, '$1' + count + '$2'],
     [/(\d+)( Five-Star Reviews)/g, count + '$2'],
     [/(\d+)( five-star Google reviews)/g, count + '$2'],
-    [/(has )\d+( five-star reviews)/g, '$1' + count + '$2']
+    [/(has )\d+( five-star reviews)/g, '$1' + count + '$2'],
+    [/(father-daughter team; )\d+( Google reviews)/g, '$1' + count + '$2']
+  ]},
+  { file: 'tools/seo-page-manifest.cjs', patterns: [
+    [/(rated with )\d+(\+ Google reviews)/g, '$1' + count + '$2'],
+    [/(\d+)( Five-Star Reviews)/g, count + '$2'],
+    [/(\d+)( five-star Google reviews)/g, count + '$2']
+  ]},
+  { file: 'src/config/seoMetadata.js', patterns: [
+    [/(rated with )\d+(\+ Google reviews)/g, '$1' + count + '$2'],
+    [/(\d+)( five-star reviews)/g, count + '$2']
   ]},
   { file: 'src/utils/schemaGenerators.js', patterns: [
     [/("reviewCount":\s*")\d+(")/g, '$1' + count + '$2']
@@ -28,12 +39,21 @@ var TARGETS = [
     [/(with )\d+(\+ Google reviews)/g, '$1' + count + '$2'],
     [/(more than )\d+( Google reviews)/g, '$1' + count + '$2']
   ]},
+  { file: 'src/pages/AboutPage.jsx', patterns: [
+    [/(value: ")\d+\+?(", label: "Five-Star Google Reviews")/g, '$1' + count + '$2'],
+    [/(>)\d+\+?( Five-Star Google Reviews<)/g, '$1' + count + '$2'],
+    [/(\d+)( five-star reviews)/g, count + '$2']
+  ]},
   { file: 'src/pages/PressPage.jsx', patterns: [
     [/(\d+)( five-star reviews)/g, count + '$2']
   ]},
   { file: 'src/pages/ComparisonPage.jsx', patterns: [
     [/(Scoopy Doo has )\d+( Google reviews)/g, '$1' + count + '$2'],
-    [/(local father-daughter team; )\d+(")/g, '$1' + count + '$2']
+    [/(local father-daughter team; )\d+(")/g, '$1' + count + '$2'],
+    [/(local father-daughter team; )\d+( Google reviews)/g, '$1' + count + '$2']
+  ]},
+  { file: 'src/pages/blog/WhatPetWasteRemovalIncludesChattanooga.jsx', patterns: [
+    [/(\d+)( five-star Google reviews)/g, count + '$2']
   ]}
 ];
 

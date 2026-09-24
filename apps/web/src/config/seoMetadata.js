@@ -3,7 +3,7 @@ import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 export const seoMetadata = {
   "/": {
     title: "Pet Waste & Dog Poop Removal | Chattanooga TN | Scoopy Doo",
-    description: "Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 90+ Google reviews. Weekly service from $20 per visit. Free quotes.",
+    description: "Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 99+ Google reviews. Weekly service from $20 per visit. Free quotes.",
     canonical: `${CANONICAL_BASE_URL}/`,
     ogType: "website"
   },

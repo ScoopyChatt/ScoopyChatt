@@ -7,7 +7,7 @@
 // patterns differ slightly between the two use cases.
 const pages = {
   '/press': ['Scoopy Doo in the News | Chattanooga Pet Waste Removal', 'See news coverage of Scoopy Doo LLC, the largest pet waste removal company in the Chattanooga area. Featured in the Chattanoogan and on WDEF News 12.'],
-  '/': ['Pet Waste & Dog Poop Removal | Chattanooga TN | Scoopy Doo', 'Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 90+ Google reviews. Weekly service from $20 per visit. Free quotes.'],
+  '/': ['Pet Waste & Dog Poop Removal | Chattanooga TN | Scoopy Doo', 'Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 99+ Google reviews. Weekly service from $20 per visit. Free quotes.'],
   '/services': ['Dog Poop Removal Services in Chattanooga, TN | From $20', 'Weekly dog poop removal in Chattanooga from $20/visit, plus one-time, commercial, and HOA service. No contracts, gate photo after every visit. Free quote.'],
   '/podcast': ["The Scoopy Doo Podcast | Chattanooga Pet Waste Removal", "Behind the scenes of Scoopy Doo LLC, the father-daughter pet waste removal company serving Chattanooga TN and North Georgia."],
   '/near-me': ['Pooper Scooper Near Me in Chattanooga, TN | From $20', 'Local pooper scooper serving Chattanooga and North Georgia from $20/visit. Free same-day quotes, on-the-way texts, gate photo confirmation, no contracts.'],
