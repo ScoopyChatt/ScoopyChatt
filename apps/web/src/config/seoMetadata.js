@@ -57,7 +57,7 @@ export const seoMetadata = {
   },
   "/about": {
     title: "About Scoopy Doo | Chattanooga Pet Waste Removal",
-    description: "Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company. 80+ five-star reviews, two branded service vehicles, serving 17+ communities.",
+    description: "Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company. 99 five-star reviews, two branded service vehicles, serving 17+ communities.",
     canonical: `${CANONICAL_BASE_URL}/about`,
     ogType: "website"
   },

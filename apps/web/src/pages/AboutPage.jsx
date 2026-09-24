@@ -12,7 +12,7 @@ const AboutPage = () => {
   const canonicalUrl = getCanonicalUrl('/about');
 
   const stats = [
-    { value: "80+", label: "Five-Star Google Reviews" },
+    { value: "99", label: "Five-Star Google Reviews" },
     { value: "2", label: "Branded Service Vehicles" },
     { value: "17+", label: "Communities Served" },
     { value: "100%", label: "Satisfaction Guarantee" },
@@ -29,7 +29,7 @@ const AboutPage = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
         <title>About Scoopy Doo | Chattanooga Pet Waste Removal</title>
-        <meta name="description" content="Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company. 80+ five-star reviews, two branded service vehicles, serving 17+ communities." />
+        <meta name="description" content="Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company. 99 five-star reviews, two branded service vehicles, serving 17+ communities." />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content="About Scoopy Doo | Chattanooga Pet Waste Removal" />
         <meta property="og:description" content="Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company." />
@@ -111,7 +111,7 @@ const AboutPage = () => {
             <div className="flex justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
             </div>
-            <h2 className="text-2xl font-bold text-foreground mb-2">80+ Five-Star Google Reviews</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-2">99 Five-Star Google Reviews</h2>
             <p className="text-muted-foreground mb-8">Hundreds of Chattanooga families trust us with their yards every week. Here is what they say.</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
               {[
