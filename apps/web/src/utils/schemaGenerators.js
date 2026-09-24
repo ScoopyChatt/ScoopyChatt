@@ -96,7 +96,8 @@ export function generateLocalBusinessSchema() {
       "https://nextdoor.com/page/scoopy-doo-llc-ringgold-ga",
       "https://share.google/sOBVeLPqRabhfffPg",
       "https://www.pooppages.com/directory/georgia/ringgold/scoopy-doo-c37smt",
-      "https://apaws.org/search/details.aspx?id=3031"
+      "https://apaws.org/search/details.aspx?id=3031",
+      "https://www.reddit.com/r/PetWastePros/"
     ],
     "priceRange": "$$"
   };
