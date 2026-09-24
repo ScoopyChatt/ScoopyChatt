@@ -25,7 +25,7 @@ const pages = {
   '/faq': ['Pet Waste Removal FAQs | Scoopy Doo Chattanooga', 'Answers to common questions about dog poop removal in Chattanooga: pricing, scheduling, and more.'],
   '/commercial': ['Commercial Pet Waste Removal in Chattanooga, TN', 'Scheduled pet waste removal for Chattanooga apartments, HOAs and businesses. Stations from $299 installed, $10/week to service. Insured, no contracts.'],
   '/pricing': ['Dog Poop Removal Pricing in Chattanooga | From $20', 'Chattanooga dog poop removal pricing: weekly from $20/visit, twice-weekly $18, every-other-week $33, one-time from $85. No contracts. Get your free quote.'],
-  '/reviews': ['Scoopy Doo Reviews | 90 Five-Star Reviews in Chattanooga, TN', 'See why Chattanooga trusts Scoopy Doo for pet waste removal. 90 five-star Google reviews from homeowners across Chattanooga and North Georgia.'],
+  '/reviews': ['Scoopy Doo Reviews | 99 Five-Star Reviews in Chattanooga, TN', 'See why Chattanooga trusts Scoopy Doo for pet waste removal. 99 five-star Google reviews from homeowners across Chattanooga and North Georgia.'],
   '/quote': ['Get a Free Pet Waste Removal Quote | Chattanooga, TN', 'Get a fast, free quote for dog poop removal in Chattanooga, TN.'],
   '/spring-special': ['Spring Special: Buy 2 Months, Get 1 Free | Scoopy Doo', "Scoopy Doo's spring special for Chattanooga pet owners: buy 2 months of dog waste removal, get 1 month free. Limited time offer."],
   '/pet-safe-checklist': ['Pet-Safe Yard Checklist | Scoopy Doo Chattanooga', 'Free pet-safe yard checklist for Chattanooga dog owners: toxic plants to avoid, fence-securing tips, and pet-safe lawn care product picks.'],
