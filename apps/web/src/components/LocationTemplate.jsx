@@ -3,7 +3,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from '@/components/motion.jsx';
-import { MapPin, CheckCircle2, Loader2, Star, MessageSquare } from 'lucide-react';
+import { MapPin, CheckCircle2, Loader2, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Header from '@/components/Header.jsx';
@@ -51,7 +51,7 @@ const LocationTemplate = ({ city: propCity }) => {
     );
   }
 
-  const { name, seoTitle, seoDescription, serviceDescription, localContext, neighborhoods, testimonial, benefits, faqItems } = locationData;
+  const { name, seoTitle, seoDescription, serviceDescription, localContext, neighborhoods, benefits, faqItems } = locationData;
   const canonicalUrl = getCanonicalUrl('/service/' + locationData.slug);
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://www.scoopychatt.com/' },
@@ -203,21 +203,6 @@ const LocationTemplate = ({ city: propCity }) => {
             </div>
           </div>
         </section>
-
-        {/* Testimonial */}
-        {testimonial && (
-          <section className="py-14 bg-primary/5 px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="flex justify-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
-              </div>
-              <blockquote className="text-xl md:text-2xl font-medium text-foreground italic mb-4">
-                "{testimonial.quote}"
-              </blockquote>
-              <cite className="text-muted-foreground not-italic text-sm"> - {testimonial.author}</cite>
-            </div>
-          </section>
-        )}
 
         <ReviewsSection />
 
