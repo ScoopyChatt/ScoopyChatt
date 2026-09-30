@@ -51,6 +51,7 @@ const BLOG_POSTS = [
   'what-pet-waste-removal-includes-chattanooga',
   'best-dog-parks-chattanooga-tn',
   'winter-dog-poop-cleanup-chattanooga',
+  'fall-leaves-hide-dog-poop-chattanooga',
   'fall-yard-care-checklist-chattanooga',
   'how-often-scoop-dog-poop-chattanooga',
   'is-dog-poop-hurting-your-chattanooga-yard',
