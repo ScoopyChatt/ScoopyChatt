@@ -92,6 +92,7 @@ const BLOG_POSTS = [
   'weekly-vs-biweekly-dog-poop-service-chattanooga',
   'yard-cleanup-before-a-party-chattanooga',
   'winter-dog-poop-cleanup-chattanooga',
+  'fall-leaves-hide-dog-poop-chattanooga',
   'yard-cleanup-before-selling-home-chattanooga',
   'dog-friendly-trails-chattanooga',
   'fall-flea-tick-season-chattanooga',
