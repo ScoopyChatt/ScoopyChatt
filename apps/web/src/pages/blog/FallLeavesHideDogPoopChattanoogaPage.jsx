@@ -32,6 +32,13 @@ const FallLeavesHideDogPoopChattanooga = () => {
             Leaf season is beautiful in Chattanooga, but it is also when dog poop goes missing in your own backyard. Here is why fallen leaves make dog waste a bigger problem, how to find it, and what it costs to have a local pro handle it.
           </p>
 
+          <img
+            src="/images/blog/fall-leaves-yard-scooping-chattanooga.jpg"
+            alt="Scoopy Doo team member scooping dog waste in a Chattanooga backyard in the fall"
+            className="w-full rounded-lg my-6"
+            loading="lazy"
+          />
+
           <h2 className="text-2xl font-semibold mt-8 mb-4">Why Fall Is the Worst Season to Lose Track of Dog Poop</h2>
           <p>
             Every October and November, Chattanooga yards disappear under a blanket of oak, maple, and hickory leaves. Most people focus on the raking. Dog owners have a second problem: your dog keeps going to the bathroom in the same yard, and now every pile is hidden under leaves, where you cannot see it and cannot easily scoop it.
