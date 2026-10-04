@@ -18,8 +18,8 @@ export const comparison = {
   h1: "Pet Waste Removal Services in Chattanooga, TN",
   h1Sub: "2026 Comparison",
   updated: "October 4, 2026",
-  intro: "Seven providers serve the Chattanooga area. The table compares them by service area, frequency options, published pricing and standout features, with a link to each company's own website so you can check the details yourself.",
-  disclosure: "Disclosure: this comparison is published by Scoopy Doo LLC, one of the companies listed, so we have an interest in the result. Scoopy Doo's details were checked on October 4, 2026 against our pricing page, service areas page and Google Business Profile. The other companies' details are what each one has published on its own website, recorded earlier in 2026 and not re-checked in the October 4 update. Confirm current prices and coverage directly with each provider. To report a correction, email info@scoopychatt.com.",
+  intro: "Eight providers serve the Chattanooga area. The table compares them by service area, frequency options, published pricing and standout features, with a link to each company's own website so you can check the details yourself.",
+  disclosure: "Disclosure: this comparison is published by Scoopy Doo LLC, one of the companies listed, so we have an interest in the result. Scoopy Doo's details were checked on October 4, 2026 against our pricing page, service areas page and Google Business Profile. The other companies' details are what each one has published on its own website, recorded earlier in 2026 and not re-checked in the October 4 update. Doggie Doos of Chatt was added on October 4, 2026 from a search of its website and has not been independently re-checked. Confirm current prices and coverage directly with each provider. To report a correction, email info@scoopychatt.com.",
   tableNote: "Competitor rows reflect each company's own website as recorded earlier in 2026 (not re-checked October 4, 2026). Review counts are intentionally omitted because they change often.",
   providers: [
     {
@@ -38,6 +38,19 @@ export const comparison = {
         { label: "aPaws listing", url: "https://apaws.org/search/details.aspx?id=3031" },
       ],
       summary: "Scoopy Doo LLC is a locally owned father-daughter company based in Ringgold, GA, serving the Chattanooga metro and nearby North Georgia. Every visit includes an on-the-way text and a gate photo. Recurring waste goes double-bagged into your outdoor bin by default; haul-away is $5 per visit, and one-time cleanups include it. No contracts. Reviews: 99 on Google as of October 4, 2026.",
+    },
+    {
+      name: "Doggie Doos of Chatt",
+      url: "https://www.doggiedoosofchatt.com/",
+      local: true,
+      area: "Chattanooga and North Georgia",
+      frequency: "Not recorded",
+      price: "$21 per visit, plus $3 per extra dog",
+      notable: "Founded in 2017; insured and bonded; no contracts; advertises a poop inspection with each visit",
+      checked: null,
+      status: "As relayed from a search of its website on October 4, 2026; not independently re-checked by us.",
+      sources: [{ label: "doggiedoosofchatt.com", url: "https://www.doggiedoosofchatt.com/" }],
+      summary: "Doggie Doos of Chatt is a local company that, according to its website, was founded in 2017, is insured and bonded, and requires no contracts. It lists $21 per visit plus $3 per extra dog, advertises a poop inspection with each visit, and covers Chattanooga and North Georgia.",
     },
     {
       name: "PooTagic",
