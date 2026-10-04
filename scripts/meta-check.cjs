@@ -22,7 +22,6 @@ const arg = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] :
 const BASE = (arg('--base', 'http://localhost:4173')).replace(/\/$/, '');
 const CAPTURE = args.includes('--capture');
 const SNAP = path.join(__dirname, '..', 'apps', 'web', 'tools', 'rendered-meta.json');
-const BASE_HOST = BASE.includes('localhost');
 
 const dec = (s) => (s == null ? s : s.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim());
 const norm = (u) => (u || '').replace(/\/$/, '');
@@ -32,7 +31,11 @@ const norm = (u) => (u || '').replace(/\/$/, '');
   const routes = [...sm.matchAll(/<loc>https?:\/\/[^/<]+([^<]*)<\/loc>/g)].map((m) => m[1] || '/');
   const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, args: ['--no-sandbox'] });
   const ctx = await browser.newContext();
-  if (BASE_HOST) await ctx.route('**/*', (r) => (/localhost/.test(r.request().url()) ? r.continue() : r.abort()));
+  // Only the site's own origin is loaded. Third-party widgets (chat, reviews, pixels, ads) are
+  // blocked: they are irrelevant to head tags and make page loads slow or flaky in CI.
+  const ownHost = new URL(BASE).host;
+  await ctx.route('**/*', (r) => { try { return new URL(r.request().url()).host === ownHost ? r.continue() : r.abort(); } catch (e) { return r.abort(); } });
+  ctx.setDefaultTimeout(20000);
   const snap = {}; const problems = [];
   for (const r of routes) {
     const url = BASE + r + (r.endsWith('/') ? '' : '/');
@@ -40,13 +43,18 @@ const norm = (u) => (u || '').replace(/\/$/, '');
     const g = (re) => dec((rawHtml.match(re) || [])[1] || null);
     const raw = { title: g(/<title>([\s\S]*?)<\/title>/), desc: g(/<meta name="description" content="([^"]*)"/), canon: g(/<link rel="canonical" href="([^"]*)"/) };
     const page = await ctx.newPage();
-    await page.goto(url, { waitUntil: 'load' }); await page.waitForTimeout(1500);
-    const live = await page.evaluate(() => {
+    let live;
+    try {
+      await page.goto(url, { waitUntil: 'load' }); await page.waitForTimeout(1500);
+      live = await page.evaluate(() => {
       const q = (s) => document.head.querySelectorAll(s).length;
       return { title: document.title, desc: document.head.querySelector('meta[name=description]')?.content || null,
         canon: document.head.querySelector('link[rel=canonical]')?.href || null,
         dup: { description: q('meta[name=description]'), canonical: q('link[rel=canonical]'), ogTitle: q('meta[property="og:title"]'), ogUrl: q('meta[property="og:url"]') } };
-    });
+      });
+    } catch (e) {
+      await page.close(); problems.push(['page failed to load', r, e.message.split('\n')[0], '']); continue;
+    }
     await page.close();
     snap[r] = { title: live.title, description: live.desc };
     if (raw.title !== live.title) problems.push(['title', r, raw.title, live.title]);
