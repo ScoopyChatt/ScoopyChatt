@@ -56,6 +56,17 @@ const apawsReleaseSchema = {
     "Scoopy Doo LLC has joined aPaws, the Association of Professional Animal Waste Specialists. As of August 2026 the aPaws member directory lists no other member within 76 miles of Chattanooga.",
 };
 
+const sixAmArticleSchema = {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Teen launches Chattanooga pet waste removal business",
+  "url": "https://6amcity.com/tn/chattanooga/business/teen-launches-chattanooga-pet-waste-removal-business",
+  "datePublished": "2026-07-08",
+  "publisher": { "@type": "NewsMediaOrganization", "name": "6AM City", "url": "https://6amcity.com" },
+  "about": { "@type": "LocalBusiness", "name": "Scoopy Doo LLC", "url": BASE },
+  "mainEntityOfPage": "https://6amcity.com/tn/chattanooga/business/teen-launches-chattanooga-pet-waste-removal-business"
+};
+
 const wdefArticleSchema = {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
@@ -76,7 +87,7 @@ export default function PressPage() {
         title="Scoopy Doo in the News | Press and Media Coverage | Chattanooga Pet Waste Removal"
         description="See the news coverage of Scoopy Doo LLC, the largest pet waste removal company in the Chattanooga area. Featured in the Chattanoogan and on WDEF News 12."
         canonicalUrl={BASE + "/press"}
-        schema={[apawsReleaseSchema, collectionSchema, articleSchema, wdefArticleSchema]}
+        schema={[apawsReleaseSchema, collectionSchema, articleSchema, wdefArticleSchema, sixAmArticleSchema]}
       />
       <Header />
       <main className="flex-grow">
@@ -243,6 +254,8 @@ export default function PressPage() {
             <article className="mt-10 bg-card border border-border rounded-xl p-6 md:p-8">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground mb-3">
                 <span className="font-semibold text-foreground">6AM City / NOOGAtoday</span>
+                <span>&bull;</span>
+                <span>July 8, 2026</span>
                 <span>&bull;</span>
                 <span>Local News</span>
               </div>
