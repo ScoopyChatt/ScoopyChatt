@@ -25,10 +25,10 @@ export const locations = [
     serviceDescription: "Hixson is one of Chattanooga's most established suburban communities, with sprawling yards, maturing trees, and lots of dogs. Those same wooded lots that make Hixson so appealing also make dog waste incredibly easy to miss — especially under leaf cover or near tree lines. Scoopy Doo uses a systematic grid-pattern approach so nothing gets skipped.",
     localContext: "Hixson sits along the Tennessee River corridor and borders Chickamauga Lake — two waterways where what happens in your yard matters downstream. Dog waste left on the ground washes into storm drains and directly into the lake during rain. Hixson homeowners who care about water quality and clean yards trust Scoopy Doo to handle the part nobody wants to deal with.",
     neighborhoods: ['Middle Valley', 'Thrasher Pike area', 'Curtain Pole Road area', 'Hixson Pike corridor', 'Highway 153 corridor'],
-    // Not Hixson neighborhoods: Harrison and the Wolftever Creek area sit east of Hixson around
-    // Ooltewah and Harrison, so they are shown as nearby areas served. Town Creek and the
-    // Shallowford Road corridor could not be placed from a map and are listed as nearby too.
-    nearbyAreas: ['Harrison', 'Town Creek area', 'Shallowford Road corridor', 'Wolftever Creek area (Ooltewah)'],
+    // Harrison is its own community east of Hixson (the quote form already routes it), so it is shown
+    // as a nearby area, not a Hixson neighborhood. Town Creek, Shallowford Road and Wolftever Creek
+    // were removed: they are not Hixson areas and Brandon does not recognise them as served areas.
+    nearbyAreas: ['Harrison'],
     benefits: ['Grid-pattern search covers wooded and open areas completely', 'Chickamauga Lake waterway protection', 'Text notification before every visit', 'Gate photo confirmation after every cleanup', 'Weekly and bi-weekly service available', 'No contracts — cancel anytime'],
     faqItems: [
       { question: 'Do you service wooded yards in Hixson?', answer: "Absolutely. Our technicians use a systematic grid-pattern approach that covers your entire yard, including wooded sections and areas near tree lines where waste is easiest to miss." },
