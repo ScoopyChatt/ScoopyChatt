@@ -26,7 +26,7 @@ production and READY on Vercel (`dpl_J5beGH84aEE2S7gT99knsntkuhYB`, `dpl_7RZ5Bwu
 | 1e | Scoopy Doo's own facts verified | Pricing checked against `/pricing`; 99 Google reviews and hours checked against your GBP screenshot (Oct 4). aPaws result dated August 2026. | Dated "October 4, 2026" on the page. |
 | 1f | Review counts | Competitor review counts removed (they go stale). Scoopy Doo's 99 kept, dated. | Production raw HTML. |
 | 2 | `/service/hixson` | Harrison, Wolftever Creek, Town Creek and Shallowford Road moved out of the neighborhood list into "Nearby Areas We Also Serve". Neighborhoods now: Middle Valley, Thrasher Pike area, Curtain Pole Road area, Hixson Pike corridor, Highway 153 corridor. | Production raw HTML. See "Still needed" for the geography caveat. |
-| 3 | Titles | Raw HTML and browser-rendered titles disagreed on **49 of 96 pages** (descriptions on a similar number). Added `scripts/meta-check.cjs` and `rendered-meta.json`; the build now writes the rendered title/description into the raw HTML. Shortened the 10 rendered titles most likely to truncate (e.g. 99 → 67 characters). Neighborhood-page titles now end "\| Scoopy Doo" instead of "\| Scoopy Doo Pet Waste Removal". No blind character cap: 26 titles of 61–71 characters were left alone. | Local real-browser check: **96 of 96 routes, 0 raw-vs-rendered differences, 0 duplicate tags**. Production re-check: see section 4. |
+| 3 | Titles | Raw HTML and browser-rendered titles disagreed on **49 of 96 pages** (descriptions on a similar number). Added `scripts/meta-check.cjs` and `rendered-meta.json`; the build now writes the rendered title/description into the raw HTML. Shortened the 10 rendered titles most likely to truncate (e.g. 99 → 67 characters). Neighborhood-page titles now end "\| Scoopy Doo" instead of "\| Scoopy Doo Pet Waste Removal". No blind character cap: 26 titles of 61–71 characters were left alone. | Local real-browser check: **96 of 96 routes, 0 raw-vs-rendered differences, 0 duplicate tags**. Production re-check: passed (section 4). |
 | 3b | Bug found by that check | `/blog/podcast-blog` rendered canonical `/blog/undefined`. Fixed. | Local check passes on that route. |
 | 4 | Service pages | `/commercial`, `/near-me`, `/one-time-cleanup`, `/doggy-doors` each gained a Q&A block answering open customer questions, using only facts already on the site (`serviceFaqs.js`). No case study, testimonial or result was invented. | Production raw HTML of `/commercial` and `/near-me` fetched and contains the new blocks; local check confirmed all four in raw and rendered. |
 | 5 | Business facts and hours | Footer, homepage schema and generated schema all say Mon–Fri 7am–8pm, Sat–Sun 9am–9pm; GBP shows the same plus "Online service hours: Open 24 hours". Phone 423-600-5040, Ringgold base, founders, LLC name consistent. Old Inc. phone/address: 0 hits. Dalton as a service area: 0 hits (appears only as a competitor's coverage). | Repo grep; production schema read from fetched HTML; user confirmed footer live earlier. |
@@ -53,7 +53,7 @@ production and READY on Vercel (`dpl_J5beGH84aEE2S7gT99knsntkuhYB`, `dpl_7RZ5Bwu
 
 - Competitor facts on `/comparison` (see above).
 - Hixson "nearby" labels beyond what is stated.
-- Full-sitemap production crawl of internal links: done on the local build (0 broken among 97 pages) but not on every production URL; production spot-checks only.
+- Internal-link resolution on production: checked on the local build (0 broken among 97 pages) and for the five production pages read directly; not tested for every production URL.
 - Quote flow in production: not exercised (no fake submissions). Locally the form renders all fields and the submit button is gated; nothing was sent.
 - Footer hours in the production JavaScript bundle (the footer is rendered by React); confirmed live by you earlier and in the local build.
 
@@ -62,14 +62,17 @@ production and READY on Vercel (`dpl_J5beGH84aEE2S7gT99knsntkuhYB`, `dpl_7RZ5Bwu
 Production URLs fetched and read: `/comparison`, `/service/hixson`, `/commercial`, `/near-me`, `/sitemap.xml`
 (all HTTP 200, no-cache or revalidate headers, served by Vercel at `www.scoopychatt.com`).
 
-**Production browser check (raw HTML vs rendered page, all 96 sitemap URLs).** The first post-deploy run did not finish:
-it waited on third-party widgets (chat, reviews, pixels) on every page. The script now loads only the site's own origin
-and times out per page (fix in the PR that adds this report). The same check passes on the local build of this exact code:
-**96 of 96 routes, 0 differences in title, description or canonical, 0 duplicate head tags.** A manual re-run against
-production is pending; its result is recorded in the "Update" line below. Until then, production-wide raw-vs-rendered
-agreement is **unverified**, though the five pages read from production above matched their local builds.
+**Production browser check (raw HTML vs rendered page, all 96 sitemap URLs): PASSED, twice.**
+The `Verify page metadata` workflow drives a real Chromium against `https://www.scoopychatt.com`, compares each sitemap
+page's raw HTML title, description and canonical with the rendered page, and fails on duplicate head tags. It exits with an
+error on any difference, so a green run means zero differences across all 96 URLs.
+- Deploy of `fff6f49` (PR #14): run 37211960701, success, 2026-10-04 15:14-15:18 UTC.
+- Deploy of `7298e76` (PR #15): run 37212115244, success, 2026-10-04 15:17-15:21 UTC.
+The same check also passes on the local build (96 of 96, 0 problems). The log line itself was not readable through the
+tools available, so "zero differences" is inferred from the success exit status.
+Note: I first misread those runs as hung (the status I saw was stale), and hardened the script anyway: it now loads only the
+site's own origin, times out per page and has a 20-minute job cap. That change did not alter any result.
 
-Update: (pending)
 
 
 ## 5. Files changed (PR #14 and #15)
