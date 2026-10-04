@@ -21,8 +21,8 @@ const AboutPage = () => {
 
   const values = [
     { title: "We show up, every time", body: "Rain, cold, heat - we are on your route every scheduled week without exception. Our customers never have to wonder if we showed up." },
-    { title: "We treat your property with respect", body: "We close and photograph your gate after every visit. We sanitize our equipment between every yard. We haul all waste off your property entirely." },
-    { title: "We are genuinely local", body: "We live in the Chattanooga area. We know the neighborhoods, the terrain, and the community. This is not a franchise - it is our business and our reputation." },
+    { title: "We treat your property with respect", body: "We close and photograph your gate after every visit. We sanitize our equipment between every yard. All waste is double-bagged into your outdoor bin, or hauled off your property for $5 a visit." },
+    { title: "We are genuinely local", body: "We are based in Ringgold, GA and work the Chattanooga metro every week. We know the neighborhoods, the terrain, and the community. This is not a franchise - it is our business and our reputation." },
     { title: "No contracts, no games", body: "We earn your business every single week. There are no lock-in contracts, no cancellation fees, and no confusing pricing. You get what you pay for and nothing you did not agree to." },
   ];
 
@@ -61,6 +61,25 @@ const AboutPage = () => {
                 <div className="text-sm text-muted-foreground">{s.label}</div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Company facts - plain, quotable entity facts */}
+        <section className="py-16 px-4 bg-card border-y border-border">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-foreground mb-6">Scoopy Doo LLC at a Glance</h2>
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 text-muted-foreground">
+              <div><dt className="font-bold text-foreground">Company</dt><dd>Scoopy Doo LLC, a locally owned pet waste removal company</dd></div>
+              <div><dt className="font-bold text-foreground">Founded</dt><dd>2025, by Brandon Carter and his daughter Leighton Carter</dd></div>
+              <div><dt className="font-bold text-foreground">Based in</dt><dd>Ringgold, GA, serving the Chattanooga, TN metro area and nearby North Georgia</dd></div>
+              <div><dt className="font-bold text-foreground">Clients</dt><dd>More than 150 active clients, including homes, HOAs, apartments and commercial properties</dd></div>
+              <div><dt className="font-bold text-foreground">Reviews</dt><dd>99 five-star Google reviews</dd></div>
+              <div><dt className="font-bold text-foreground">Credentials</dt><dd>BBB accredited, fully insured, member of aPaws (Association of Professional Animal Waste Specialists)</dd></div>
+              <div><dt className="font-bold text-foreground">Services</dt><dd><Link to="/services" className="underline hover:text-primary">Residential pet waste removal</Link>, <Link to="/one-time-cleanup" className="underline hover:text-primary">one-time cleanups</Link>, <Link to="/commercial" className="underline hover:text-primary">commercial, HOA and apartment service</Link></dd></div>
+              <div><dt className="font-bold text-foreground">Contracts</dt><dd>None. Cancel any time. See <Link to="/pricing" className="underline hover:text-primary">pricing</Link>.</dd></div>
+              <div><dt className="font-bold text-foreground">Choosing a provider</dt><dd>Read our <Link to="/guides/how-to-choose-pet-waste-removal-company-chattanooga" className="underline hover:text-primary">guide to choosing a pet waste removal company</Link></dd></div>
+              <div className="sm:col-span-2"><dt className="font-bold text-foreground">In the news</dt><dd>Featured by <a href="https://www.wdef.com/scoopy-doo-llc-pet-waste-removal/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">WDEF News 12</a> and <a href="https://www.chattanoogan.com/2026/6/23/520251/14-Year-Old-Entrepreneur-Builds.aspx" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">the Chattanoogan</a>. More on our <Link to="/press" className="underline hover:text-primary">press page</Link>.</dd></div>
+            </dl>
           </div>
         </section>
 
@@ -113,7 +132,7 @@ const AboutPage = () => {
               {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
             </div>
             <h2 className="text-2xl font-bold text-foreground mb-2">99 Five-Star Google Reviews</h2>
-            <p className="text-muted-foreground mb-8">Hundreds of Chattanooga families trust us with their yards every week. Here is what they say.</p>
+            <p className="text-muted-foreground mb-8">More than 150 active clients across Chattanooga and North Georgia trust us with their yards every week. Here is what they say.</p>
             <div className="text-left">
               <ElfsightReviewsWidget />
             </div>

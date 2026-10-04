@@ -252,6 +252,46 @@ var BLOG_LD_CSP = {
     ]
   });
 })();
+// "How to choose" guide: body and JSON-LD come from src/data/chooseGuide.js, the same
+// data ChooseGuidePage.jsx renders, so crawler HTML and the visible page cannot drift.
+(function () {
+  var base = 'https://www.scoopychatt.com';
+  var code = fs.readFileSync(path.join(__dirname, '../src/data/chooseGuide.js'), 'utf8')
+    .replace('export const chooseGuide =', 'module.exports =');
+  var mod = { exports: null };
+  Function('module', code)(mod);
+  var g = mod.exports;
+  function esc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  var b = '<nav aria-label="breadcrumb"><a href="/">Home</a> / <a href="/blog">Guides</a> / How to choose</nav>';
+  b += '<h1>' + esc(g.h1) + '</h1><p>' + esc(g.intro) + '</p>';
+  g.sections.forEach(function (s) { b += '<h2>' + esc(s.h) + '</h2>'; s.p.forEach(function (t) { b += '<p>' + esc(t) + '</p>'; }); });
+  b += '<h2>' + esc(g.howWeDo.h) + '</h2>';
+  g.howWeDo.p.forEach(function (t) { b += '<p>' + esc(t) + '</p>'; });
+  b += '<ul>' + g.howWeDo.items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
+  b += '<p>See <a href="/pricing">full pricing</a>, <a href="/commercial">commercial and HOA service</a>, <a href="/about">about Scoopy Doo LLC</a>, our <a href="/press">press coverage</a>, <a href="/service/chattanooga">pet waste removal in Chattanooga</a>, or an <a href="/comparison">honest comparison of local providers</a>.</p>';
+  b += '<h2>Frequently asked questions</h2>';
+  g.faqs.forEach(function (f) { b += '<h3>' + esc(f.q) + '</h3><p>' + esc(f.a) + '</p>'; });
+  b += '<p>Ready to compare? <a href="/quote">Get a free quote</a>. We reply the same day.</p>';
+  var slug = g.path.replace(/^\//, '');
+  pages.push({ slug: slug, title: g.title, desc: g.description, canonical: base + g.path, body: b });
+  function ld(o) { return '<script type="application/ld+json">' + JSON.stringify(o) + '</' + 'script>'; }
+  PAGE_LD_CSP[slug] = ld({
+    '@context': 'https://schema.org', '@type': 'Article', headline: g.h1, description: g.description,
+    url: base + g.path, mainEntityOfPage: base + g.path, datePublished: g.datePublished, dateModified: g.datePublished,
+    author: { '@id': base + '/#business' }, publisher: { '@id': base + '/#business' },
+    about: { '@type': 'Service', serviceType: 'Pet waste removal', areaServed: { '@type': 'City', name: 'Chattanooga' } }
+  }) + ld({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base + '/' },
+      { '@type': 'ListItem', position: 2, name: 'Guides', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: g.h1, item: base + g.path }
+    ]
+  }) + ld({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: g.faqs.map(function (f) { return { '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }; })
+  });
+})();
 // Baseline BlogPosting schema for any blog post in `pages` that has no explicit
 // entry in BLOG_LD_CSP or SVC_LD_CSP already, using real dates from
 // generate-page-dates.cjs (must run before this script, same source vercel.json

@@ -24,6 +24,7 @@ const PAGES = [
   '/blog',
   '/commercial',
   '/comparison',
+  '/guides/how-to-choose-pet-waste-removal-company-chattanooga',
   '/cost-calculator',
   '/dog-park-guide',
   '/dog-poop-removal-chattanooga',
