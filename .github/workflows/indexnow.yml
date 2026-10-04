@@ -1,0 +1,25 @@
+name: IndexNow
+
+# After a push to main that changes the website, wait for Vercel to publish it, then tell
+# IndexNow (Bing and others) which URLs to recrawl. Also runnable by hand from the Actions tab.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/web/**'
+      - 'middleware.js'
+      - 'vercel.json'
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Wait for the Vercel deploy to go live
+        run: sleep 180
+      - name: Submit URLs
+        run: node scripts/indexnow.cjs
