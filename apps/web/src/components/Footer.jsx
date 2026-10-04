@@ -166,6 +166,12 @@ const Footer = () => {
                   <span>Google My Business</span>
                 </a>
               </li>
+              <li className="flex items-start">
+                <a href="https://www.petworks.com/listing/scoopy-doo-professional-dog-waste-removal-service-chattanooga-tn" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors text-sm">
+                  <Globe className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                  <span>Scoopy Doo on PetWorks</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
