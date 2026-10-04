@@ -161,7 +161,7 @@ export default function DogFriendlyTrailsChattanoogaPage() {
                 </li>
               </ul>
               <Link
-                to="/quoterequest"
+                to="/quote"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:opacity-90 transition"
               >
                 Get a Free Quote

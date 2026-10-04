@@ -157,7 +157,7 @@ const CostCalculatorPage = () => {
                 </>
               )}
 
-              <Link to="/quoterequest">
+              <Link to="/quote">
                 <Button className="w-full bg-background text-foreground hover:bg-background/90 font-bold text-base py-6">
                   Get my exact free quote <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
@@ -182,7 +182,7 @@ const CostCalculatorPage = () => {
           </p>
           <div className="bg-muted rounded-2xl p-6 text-center">
             <p className="font-bold text-lg mb-3">Ready for an exact price for your yard?</p>
-            <Link to="/quoterequest">
+            <Link to="/quote">
               <Button className="bg-primary text-primary-foreground font-bold px-8 py-6 text-base">
                 Request a free quote <ArrowRight className="w-4 h-4 ml-1" />
               </Button>

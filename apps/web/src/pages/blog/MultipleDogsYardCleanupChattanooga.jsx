@@ -181,8 +181,8 @@ const MultipleDogsYardCleanupChattanooga = () => {
             </p>
             <p className="mb-2">
               Request a quote at{' '}
-              <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quoterequest">
-                scoopychatt.com/quoterequest
+              <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
+                scoopychatt.com/quote
               </a>{' '}
               or call{' '}
               <a className="text-green-700 underline font-semibold" href="tel:4236005040">

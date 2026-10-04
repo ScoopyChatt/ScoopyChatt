@@ -113,8 +113,8 @@ const WinterDogPoopCleanupChattanooga = () => {
           <p>
             The easiest way to avoid a spring cleanup nightmare is to not let waste pile up in the
             first place. Get a free quote at{" "}
-            <Link to="/quoterequest" className="text-blue-600 underline">
-              scoopychatt.com/quoterequest
+            <Link to="/quote" className="text-blue-600 underline">
+              scoopychatt.com/quote
             </Link>{" "}
             or call{" "}
             <a href="tel:4236005040" className="text-blue-600 underline">
