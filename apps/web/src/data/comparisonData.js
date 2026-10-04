@@ -19,7 +19,7 @@ export const comparison = {
   h1Sub: "2026 Comparison",
   updated: "October 4, 2026",
   intro: "Eight providers serve the Chattanooga area. The table compares them by service area, frequency options, published pricing and standout features, with a link to each company's own website so you can check the details yourself.",
-  disclosure: "Disclosure: this comparison is published by Scoopy Doo LLC, one of the companies listed, so we have an interest in the result. Scoopy Doo's details were checked on October 4, 2026 against our pricing page, service areas page and Google Business Profile. The other companies' details are what each one has published on its own website, recorded earlier in 2026 and not re-checked in the October 4 update. Doggie Doos of Chatt was added on October 4, 2026 from a search of its website and has not been independently re-checked. Confirm current prices and coverage directly with each provider. To report a correction, email info@scoopychatt.com.",
+  disclosure: "Disclosure: this comparison is published by Scoopy Doo LLC, one of the companies listed, so we have an interest in the result. Scoopy Doo's details were checked on October 4, 2026 against our pricing page, service areas page and Google Business Profile. The other companies' details are what each one has published on its own website, recorded earlier in 2026 and not re-checked in the October 4 update. Doggie Doos of Chatt was added on October 4, 2026 with a general description only; its specific prices and details have not been verified. Confirm current prices and coverage directly with each provider. To report a correction, email info@scoopychatt.com.",
   tableNote: "Competitor rows reflect each company's own website as recorded earlier in 2026 (not re-checked October 4, 2026). Review counts are intentionally omitted because they change often.",
   providers: [
     {
@@ -43,14 +43,14 @@ export const comparison = {
       name: "Doggie Doos of Chatt",
       url: "https://www.doggiedoosofchatt.com/",
       local: true,
-      area: "Chattanooga and North Georgia",
+      area: "Chattanooga area",
       frequency: "Not recorded",
-      price: "$21 per visit, plus $3 per extra dog",
-      notable: "Founded in 2017; insured and bonded; no contracts; advertises a poop inspection with each visit",
+      price: "Published on its website (not recorded here)",
+      notable: "Its website describes its history, owner, services, testimonials, pricing and insured and bonded status",
       checked: null,
-      status: "As relayed from a search of its website on October 4, 2026; not independently re-checked by us.",
+      status: "General description only. Specific prices, dates and coverage are not shown because they have not been verified.",
       sources: [{ label: "doggiedoosofchatt.com", url: "https://www.doggiedoosofchatt.com/" }],
-      summary: "Doggie Doos of Chatt is a local company that, according to its website, was founded in 2017, is insured and bonded, and requires no contracts. It lists $21 per visit plus $3 per extra dog, advertises a poop inspection with each visit, and covers Chattanooga and North Georgia.",
+      summary: "Doggie Doos of Chatt is a local pet waste removal company serving the Chattanooga area. Its website describes its history, owner, services, testimonials, pricing and insured and bonded status. Check its site directly for current details.",
     },
     {
       name: "PooTagic",
