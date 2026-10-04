@@ -242,7 +242,7 @@ export default function PressPage() {
 
             <article className="mt-10 bg-card border border-border rounded-xl p-6 md:p-8">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground mb-3">
-                <span className="font-semibold text-foreground">6AM City</span>
+                <span className="font-semibold text-foreground">6AM City / NOOGAtoday</span>
                 <span>&bull;</span>
                 <span>Local News</span>
               </div>
@@ -250,7 +250,7 @@ export default function PressPage() {
                 Featured by 6AM City
               </h2>
               <p className="text-muted-foreground mb-5">
-                6AM City, the Chattanooga daily newsletter and local business news site, covered the launch of Scoopy Doo LLC as a teen-started pet waste removal business in Chattanooga.
+                6AM City (published on its NOOGAtoday site) covered Scoopy Doo LLC as a teen-started pet waste removal business. The article reports that the business has grown to more than 150 customers across Chattanooga and North Georgia, and quotes co-founder Leighton Carter: &ldquo;I wanted to prove that a kid could run a real business and do it well.&rdquo;
               </p>
               <a href="https://6amcity.com/tn/chattanooga/business/teen-launches-chattanooga-pet-waste-removal-business" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
                 Read the story on 6AM City <ExternalLink className="w-4 h-4" />
