@@ -1,0 +1,30 @@
+name: Verify page metadata
+
+# After a push to main that changes the website, wait for Vercel to publish, then compare every
+# sitemap page's raw HTML (title, description, canonical) with what a real browser renders, and
+# fail on duplicate head tags. Catches the two copies drifting apart. Also runnable by hand.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/web/**'
+      - 'middleware.js'
+      - 'vercel.json'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install a browser
+        run: |
+          npm i --no-save playwright-core
+          npx playwright-core install --with-deps chromium
+      - name: Wait for the Vercel deploy to go live
+        run: sleep 240
+      - name: Compare raw HTML with the rendered page
+        run: node scripts/meta-check.cjs --base https://www.scoopychatt.com

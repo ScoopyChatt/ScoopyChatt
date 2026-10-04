@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { getCanonicalUrl } from '@/utils/seoHelpers';
 
-const PAGE_TITLE = "Eco-Friendly Dog Waste Disposal in Chattanooga: What Actually Works | Scoopy Doo";
+const PAGE_TITLE = "Eco-Friendly Dog Waste Disposal in Chattanooga | Scoopy Doo";
 const PAGE_DESC = "Trash, flushing, composting, digesters, or leaving it on the lawn: an honest look at dog waste disposal in Chattanooga, and what Scoopy Doo does with the waste it collects.";
 
 const FAQS = [

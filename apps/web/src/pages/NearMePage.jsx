@@ -1,5 +1,6 @@
 
 import React from 'react';
+import ServiceFaqSection from '@/components/ServiceFaqSection.jsx';
 import { Link } from 'react-router-dom';
 import SEOHead from '@/components/SEOHead.jsx';
 import Header from '@/components/Header.jsx';
@@ -74,6 +75,7 @@ const NearMePage = () => {
           </ul>
         </div>
       </nav>
+      <ServiceFaqSection route="/near-me" />
       <Footer />
     </div>
   );

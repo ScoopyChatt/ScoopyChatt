@@ -1,6 +1,10 @@
 'use strict';
 var fs = require('fs');
 var CRAWL_NAV = require('./crawl-nav.cjs');
+var faqHtml = require('./service-faqs.cjs');
+var RENDERED_META = (function () {
+  try { return JSON.parse(require('fs').readFileSync(require('path').join(__dirname, 'rendered-meta.json'), 'utf8')); } catch (e) { return {}; }
+})();
 var path = require('path');
 var DIST = path.join(__dirname, '..', '..', '..', 'dist', 'apps', 'web');
 console.log('[csp] DIST=' + DIST + ' exists=' + fs.existsSync(DIST));
@@ -31,30 +35,34 @@ var faqBody = '<h1>Frequently Asked Questions About Dog Poop Removal in Chattano
   '<h2>What does a one-time cleanup cost?</h2>' +
   '<p>One-time yard cleanups start at $85, which covers up to three dogs. Each additional dog adds $15. Haul-away is included at no extra charge, unlike recurring plans where takeaway is $5 per visit. Request yours at scoopychatt.com/one-time-cleanup.</p>';
 
-var compBody = '<h1>Pet Waste Removal Services in Chattanooga, TN: 2026 Comparison</h1>' +
-  '<p>Several pet waste removal providers serve Chattanooga TN and North Georgia. The table below compares them by service area, frequency options, pricing, and notable features so you can choose the right fit.</p>' +
-  '<table><thead><tr><th>Service</th><th>Service Area</th><th>Frequency</th><th>Starting Price</th><th>Notable</th></tr></thead>' +
-  '<tbody>' +
-  '<tr><td>Scoopy Doo (aPaws member)</td><td>Chattanooga, Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, East Ridge, Lookout Mountain TN; Ringgold, Rossville, Fort Oglethorpe, Flintstone GA</td><td>Weekly, every-other-week, twice-weekly, one-time</td><td>Weekly from $20/visit, twice-weekly from $18/visit (1 dog)</td><td>On-the-way texts; gate photo every visit; optional waste takeaway at $5/visit; no contracts; 7-day availability; locally owned father-daughter team; 99 Google reviews</td></tr>' +
-  '<tr><td>ChattaPoo</td><td>Chattanooga TN/GA metro, based on Signal Mountain TN</td><td>Weekly, every-other-week, one-time</td><td>Weekly from $21/visit (1 dog)</td><td>Pet waste bag station installation and maintenance, public park maintenance, 10% discount on auto-billed monthly plan, 1 Google review</td></tr>' +
-  '<tr><td>PooTagic</td><td>Chattanooga, East Ridge, Red Bank, Hixson, Signal Mountain, Lookout Mountain, Soddy-Daisy, Ooltewah, Harrison, Collegedale, Apison, Cleveland TN, plus Ringgold, Rossville, Fort Oglethorpe, Chickamauga GA</td><td>Not listed</td><td>Quote required</td><td>Poo-Fume deodorizing and sanitizing add-on, scoops rain or shine, flat monthly billing, 49 Google reviews</td></tr>' +
-  '<tr><td>Doo Doo Blues</td><td>Chattanooga TN and surrounding areas</td><td>Weekly</td><td>Starting at $9.99</td><td>Grid-pattern scooping, national franchise, first cleaning free, no contracts, deodorizing on request</td></tr>' +
-  '<tr><td>Cooper Scoopers</td><td>Chattanooga TN (dedicated city page offline as of July 2026)</td><td>One-time, weekly, bi-weekly</td><td>Not listed</td><td>National franchise headquartered in Virginia Beach VA, booking online, by text, or by phone</td></tr>' +
-  '<tr><td>Scoop Smart</td><td>Chattanooga TN and North Georgia</td><td>Twice-weekly, weekly, bi-weekly, monthly</td><td>Not listed</td><td>Broad frequency options including monthly</td></tr>' +
-  '<tr><td>Call of Doody</td><td>Chattanooga, Hixson, East Brainerd, Ooltewah TN, plus Dalton, Tunnel Hill, Ringgold GA</td><td>Weekly, bi-weekly, monthly, one-time</td><td>Weekly from $18/visit</td><td>Text and email confirmations, gate photo on request, 24-hour make-it-right guarantee, sanitizing add-on</td></tr>' +
-  '</tbody></table>' +
-  '<h2>Professional Association Membership</h2>' +
-  '<p>Scoopy Doo LLC is a member of aPaws, the Association of Professional Animal Waste Specialists, the national trade association for the pet waste removal industry. As of August 2026 the aPaws member directory lists no other member within 76 miles of Chattanooga - searching the directory for the 37421 ZIP code returns Scoopy Doo at 6.3 miles and the next nearest member in Cumming, Georgia at 76.9 miles. aPaws members are screened for insurance and pledge to industry standards of care. Membership is verifiable in the public aPaws directory at apaws.org.</p>' +
-  '<h2>About Scoopy Doo</h2>' +
-  '<p>Scoopy Doo is a locally owned pet waste removal company serving Chattanooga TN and North Georgia. Service is available 7 days a week. Every visit includes an on-the-way text and gate photo confirmation. Waste is double-bagged into your outdoor bin, or hauled off the property for $5 per visit. No contracts required. Free quotes at scoopychatt.com/quote.</p>' +
-  '<h2>How the other services compare</h2>' +
-  '<p>ChattaPoo is based on Signal Mountain and serves the greater Chattanooga TN/GA metro area. Published rates start at $21 per weekly visit for one dog, with every-other-week and one-time options. The company also installs and maintains pet waste bag stations for parks, neighborhoods, and businesses, and its auto-billed monthly plan carries a 10% discount.</p>' +
-  '<p>PooTagic is a local, family-owned company serving Chattanooga and many surrounding Tennessee communities plus Ringgold, Rossville, Fort Oglethorpe, and Chickamauga in North Georgia. Pricing is quote-based with flat monthly billing. A professional deodorizing and sanitizing add-on called Poo-Fume is available, and the team scoops rain or shine.</p>' +
-  '<p>Doo Doo Blues is a national franchise with a Chattanooga location. Its published starting rate of $9.99 is the lowest on this list and the first cleaning is free. Service focuses on weekly visits with no contracts, and its listed Georgia markets are in the Atlanta area rather than the North Georgia communities near Chattanooga.</p>' +
-  '<p>Cooper Scoopers is a national franchise headquartered in Virginia Beach VA offering one-time, weekly, and bi-weekly service booked online, by text, or by phone. As of July 2026 the brand no longer publishes a dedicated Chattanooga page or local pricing, so confirm availability directly.</p>' +
-  '<p>Scoop Smart is a locally owned Chattanooga company serving Chattanooga TN and North Georgia with the broadest frequency menu on this list, including twice-weekly, weekly, bi-weekly, and monthly service. There are no contracts or cancellation fees. Pricing is not published online.</p>' +
-  '<p>Call of Doody is a family-owned company serving Chattanooga plus Dalton, Tunnel Hill, and Ringgold GA. Weekly service starts at $18 per visit, with bi-weekly, monthly, and one-time deep clean options. Text and email confirmations are standard, gate photos are available on request, and service is backed by a 24-hour make-it-right guarantee.</p>';
-
+// /comparison: built from src/data/comparisonData.js, the same data ComparisonPage.jsx
+// renders, so the crawler HTML and the visible page carry identical facts and sources.
+var compData = (function () {
+  var code = fs.readFileSync(path.join(__dirname, '../src/data/comparisonData.js'), 'utf8')
+    .replace('export const comparison =', 'module.exports =');
+  var mod = { exports: null };
+  Function('module', code)(mod);
+  return mod.exports;
+})();
+function escHtml(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+var compBody = (function () {
+  var d = compData;
+  var h = '<h1>' + escHtml(d.h1) + ': ' + escHtml(d.h1Sub) + '</h1>';
+  h += '<p>' + escHtml(d.intro) + '</p>';
+  h += '<p><strong>' + escHtml(d.disclosure) + '</strong></p>';
+  h += '<table><thead><tr><th>Service</th><th>Service area</th><th>Frequency</th><th>Starting price</th><th>Notable</th><th>Source and status</th></tr></thead><tbody>';
+  d.providers.forEach(function (p) {
+    h += '<tr><td><a href="' + p.url + '">' + escHtml(p.name) + '</a></td><td>' + escHtml(p.area) + '</td><td>' + escHtml(p.frequency) +
+      '</td><td>' + escHtml(p.price) + '</td><td>' + escHtml(p.notable) + '</td><td>' +
+      p.sources.map(function (s) { return '<a href="' + s.url + '">' + escHtml(s.label) + '</a>'; }).join(', ') + '. ' + escHtml(p.status) + '</td></tr>';
+  });
+  h += '</tbody></table><p>' + escHtml(d.tableNote) + ' Last updated ' + escHtml(d.updated) + '.</p>';
+  h += '<h2>About Each Service</h2>';
+  d.providers.forEach(function (p) { h += '<h3>' + escHtml(p.name) + '</h3><p>' + escHtml(p.summary) + '</p>'; });
+  h += '<h2>' + escHtml(d.association.h) + '</h2><p>' + escHtml(d.association.text) + ' <a href="' + d.association.source.url + '">' + escHtml(d.association.source.label) + '</a>.</p>';
+  h += '<h2>Get a Free Quote from Scoopy Doo</h2><p>Serving Chattanooga TN and North Georgia with no contracts. Read our <a href="/guides/how-to-choose-pet-waste-removal-company-chattanooga">guide to choosing a pet waste removal company</a>, see <a href="/pricing">pricing</a>, or <a href="/quote">get a free quote</a>.</p>';
+  return h;
+})();
 
 // --- GEO FAQ schema (added) ---
 // Pulled straight from faqBody's own <h2>question</h2><p>answer</p> markup so the
@@ -133,7 +141,7 @@ var pages = [
 { slug: 'pricing', title: 'Dog Poop Removal Pricing in Chattanooga | From $20', desc: 'Chattanooga dog poop removal pricing: weekly from $20/visit, twice-weekly $18, every-other-week $33, one-time from $85. No contracts. Get your free quote.', canonical: 'https://www.scoopychatt.com/pricing', body: '<h1>Dog Poop Removal Pricing in Chattanooga, TN</h1><p>Scoopy Doo offers simple, transparent pricing for dog poop removal in Chattanooga TN with no contracts and no hidden fees. Weekly service starts at $20 per visit for one dog. Twice-weekly service starts at $18 per visit, every-other-week (bi-weekly) service starts at $33 per visit, and one-time yard cleanups start at $85. Final pricing depends on yard size and number of dogs.</p><h2>Pricing by Service Frequency</h2><table><thead><tr><th>Service</th><th>Starting Price (1 dog)</th><th>Best For</th></tr></thead><tbody><tr><td>Twice-Weekly</td><td>$18 per visit</td><td>Multiple dogs or high-traffic yards</td></tr><tr><td>Weekly</td><td>$20 per visit</td><td>Most homes with 1-2 dogs</td></tr><tr><td>Bi-Weekly (every other week)</td><td>$33 per visit</td><td>Smaller yards or one dog</td></tr><tr><td>One-Time Cleanup</td><td>Starting at $85</td><td>Spring cleaning, before an event, or a first reset</td></tr></tbody></table><h2>What Every Visit Includes</h2><ul><li>On-the-way text before the technician arrives</li><li>Full grid-pattern sweep of your entire yard</li><li>All waste double-bagged into your outdoor bin, or hauled off the property for $5 per visit</li><li>Gate photo confirmation after every visit</li></ul><p>No contracts and no cancellation fees. Commercial, HOA, and apartment pricing is custom. Request a free quote at scoopychatt.com/quote.</p><h2>How does billing work?</h2><p>Scoopy Doo prices per visit, because that is the number you can compare between companies, and bills once a month. A card is kept securely on file and charged monthly, with a receipt by email. There are no contracts and no cancellation fees.</p><h2>What do extra dogs cost?</h2><p>The base rates include your first dog. Weekly service adds $2 per visit for each additional dog, twice-weekly adds $1, and every-other-week adds $3. So weekly for two dogs is $22 per visit and for three dogs is $24 per visit. Twice-weekly absorbs extra dogs most cheaply at $1 each, because more frequent visits mean less accumulation per stop. One-time cleanups work differently: the $85 base covers up to three dogs and each dog beyond three adds $15.</p><h2>What add-ons are available and what do they cost?</h2><p>Waste takeaway is $5 per visit. By default the double-bagged waste goes into your outdoor bin; takeaway means it leaves the property with us instead. Haul-away is already included on one-time cleanups at no extra charge. Yard deodorizing and sanitizing is $20 per visit and can be added to any recurring plan or to a one-time cleanup. Pet waste stations for HOAs, apartment communities, and dog parks are $299 per station installed and $10 per station per week to service.</p><h2>Weekly or every other week: which schedule should I choose?</h2><p>Weekly service is $20 per visit for the first dog and every-other-week service is $33 per visit. Over a full year that is $1,040 versus $858, so the plans are only about $15 a month apart for twice as many visits. Every-other-week costs more per stop because two weeks of accumulated waste is a bigger job. Weekly suits most homes with one or two dogs; every-other-week works for a single dog on a larger yard. Full comparison at scoopychatt.com/blog/weekly-vs-biweekly-dog-poop-service-chattanooga.</p>' },
 { slug: 'commercial', title: 'Commercial Pet Waste Removal in Chattanooga, TN', desc: 'Scheduled pet waste removal for Chattanooga apartments, HOAs and businesses. Stations from $299 installed, $10/week to service. Insured, no contracts.', canonical: 'https://www.scoopychatt.com/commercial', body: '<h1>Commercial and HOA Pet Waste Removal in Chattanooga, TN</h1><p>Scoopy Doo provides scheduled commercial and HOA pet waste removal in Chattanooga TN and North Georgia for apartments, homeowners associations, dog parks, and businesses. We install, stock, and empty pet waste stations, keep common areas clean, and bill month-to-month with no long-term contracts. Scoopy Doo is fully insured, with proof of insurance available on request.</p><h2>Properties We Serve</h2><ul><li>HOAs and neighborhoods: scheduled common-area and green-space cleanup, pet waste station installation and restocking</li><li>Apartments and multifamily: regular grounds and dog-run cleanup, waste station setup and restocking, flexible schedules for any property size</li><li>Businesses and dog parks: scheduled routes that fit your hours for offices, dog-friendly businesses, and public dog parks</li></ul><h2>Why Property Managers Choose Scoopy Doo</h2><p>Scoopy Doo is a locally owned, full-time pet waste removal company serving the Chattanooga metro and North Georgia, including Hixson, Ooltewah, East Brainerd, Red Bank, Signal Mountain, Ringgold, Rossville, and Fort Oglethorpe. Service is reliable and scheduled, fully insured, and requires no long-term contract.</p><h2>Get a Commercial Quote</h2><p>Call or text 423-600-5040, or request a free walkthrough and custom quote at scoopychatt.com/quote.</p><h2>How many pet waste stations does a community need, and who services them?</h2><p>A practical rule is one station for every 40 to 50 pet-friendly units, placed so no resident walks more than about 150 feet off their normal dog-walking route. Scoopy Doo installs the stations, restocks the bag dispensers, empties and re-lines the receptacles, and hauls all waste off the property, then sweeps common areas on the same visit. Pet waste stations are $299 per station installed and $10 per station per week to service, so a four-station community runs $40 a week. Any common-area sweep alongside the stations is quoted per property after a free walkthrough, yard deodorizing and sanitizing is available at $20 per visit, and most clients run month-to-month with no long-term contract. Full guide at scoopychatt.com/blog/pet-waste-stations-apartments-hoas-chattanooga.</p><h2>What a property manager says</h2><blockquote><p>Scoopy Doo does a great job collecting at our community! Thank you for the attention to detail and keeping our apartments clean!</p><p>- Populus Waterside, property manager</p></blockquote>' },
   { slug: 'faq', title: 'Pet Waste Removal FAQs | Scoopy Doo Chattanooga', desc: 'Common questions about dog poop removal cost, scheduling, service area, and what to expect on each visit in Chattanooga TN.', canonical: 'https://www.scoopychatt.com/faq', body: faqBody },
-  { slug: 'comparison', title: 'Chattanooga Pet Waste Removal Companies Compared', desc: 'Comparing pet waste removal in Chattanooga? See how Scoopy Doo stacks up against PooTagic, ChattaPoo, and Doo Doo Blues on price and features. Updated 2026.', canonical: 'https://www.scoopychatt.com/comparison', body: compBody }
+  { slug: 'comparison', title: compData.title, desc: compData.description, canonical: 'https://www.scoopychatt.com/comparison', body: compBody }
 ,
   { slug: 'blog/pooper-scooper-cost-chattanooga', title: 'How Much Does Pooper Scooper Service Cost in Chattanooga? | Scoopy Doo', desc: 'Scoopy Doo weekly service starts at $20 per visit for one dog. 2026 pricing for weekly, every-other-week, and one-time pet waste removal in Chattanooga TN.', canonical: 'https://www.scoopychatt.com/blog/pooper-scooper-cost-chattanooga', body: '<h1>How Much Does Pooper Scooper Service Cost in Chattanooga? (2026 Pricing Guide)</h1><p>Scoopy Doo weekly service starts at $20 per visit for one dog in Chattanooga. Twice-weekly service is $18 per visit and every-other-week service starts at $33 per visit. One-time yard cleanups start at $85, covering up to three dogs, with each additional dog adding $15 and haul-away included. The final price also depends on yard size and how long the yard has gone. Every quote is free at scoopychatt.com/quote. No contracts required.</p><h2>2026 Scoopy Doo Pricing in Chattanooga</h2><table><thead><tr><th>Service</th><th>Starting Price (1 dog)</th><th>Best For</th></tr></thead><tbody><tr><td>Weekly</td><td>$20 per visit</td><td>Most homes with 1-2 dogs</td></tr><tr><td>Every-Other-Week</td><td>$33 per visit</td><td>Smaller yards or fewer dogs</td></tr><tr><td>One-Time Cleanup</td><td>Starting at $85</td><td>Spring cleaning, before a party, before listing a home</td></tr></tbody></table><h2>What Affects the Cost?</h2><p>Three factors determine your price: service frequency (weekly vs. every-other-week vs. one-time), number of dogs, and yard size. No fuel surcharges, seasonal fees, or hidden charges.</p><h2>What Is Included at Every Visit?</h2><ul><li>On-the-way text when your technician is heading to your yard</li><li>Full yard scooped in a systematic grid pattern</li><li>All waste double-bagged into your outdoor bin, or hauled off the property for $5 per visit</li><li>Gate photo confirmation sent after every visit</li></ul><p>No contracts. Cancel or pause any time with no fees.</p><h2>How Does the Cost Compare?</h2><p>Scoopy Doo weekly service at $20 per visit (1 dog) is among the lowest rates in the Chattanooga area. ChattaPoo starts at $21 per visit for weekly service. Other local providers require a quote without listing rates online. Scoopy Doo also covers more territory, serving Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA at the same rates as Tennessee.</p><h2>Frequently Asked Questions</h2><h3>Is there a contract?</h3><p>No contracts, ever. Start, pause, or cancel at any time with no fees.</p><h3>Do you charge extra for multiple dogs?</h3><p>Yes, there is a small additional fee per extra dog. Your free quote will show the exact price for your yard size and dog count.</p><h3>How do I get a quote?</h3><p>Request a free quote at scoopychatt.com/quote. Scoopy Doo responds the same day and most new customers start within 2 to 5 days.</p><h3>Does Scoopy Doo serve areas outside Chattanooga?</h3><p>Yes. Scoopy Doo serves Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, East Ridge, and Lookout Mountain TN, plus Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA at the same rates.</p>' }
 ,
@@ -229,20 +237,19 @@ var BLOG_LD_CSP = {
 // points at the canonical business node; competitors get only name, url and city.
 (function () {
   var base = 'https://www.scoopychatt.com';
-  var src = fs.readFileSync(path.join(__dirname, '../src/pages/ComparisonPage.jsx'), 'utf8');
-  var re = /name:\s*"([^"]+)",\s*url:\s*"([^"]+)"/g, m, items = [];
-  while ((m = re.exec(src)) !== null) {
-    var node = m[1] === 'Scoopy Doo' ? { '@id': base + '/#business' }
-      : { '@type': 'LocalBusiness', name: m[1], url: m[2], areaServed: { '@type': 'City', name: 'Chattanooga' } };
-    items.push({ '@type': 'ListItem', position: items.length + 1, name: m[1], item: node });
-  }
+  var items = compData.providers.map(function (p, n) {
+    var node = p.name === 'Scoopy Doo' ? { '@id': base + '/#business' }
+      : { '@type': 'LocalBusiness', name: p.name, url: p.url, areaServed: { '@type': 'City', name: 'Chattanooga' } };
+    return { '@type': 'ListItem', position: n + 1, name: p.name, item: node };
+  });
   if (!items.length) return;
   function ld(o) { return '<script type="application/ld+json">' + JSON.stringify(o) + '</' + 'script>'; }
   PAGE_LD_CSP['comparison'] = ld({
     '@context': 'https://schema.org', '@type': 'WebPage',
-    name: 'Pet Waste Removal Services in Chattanooga, TN: 2026 Comparison',
+    name: compData.h1 + ': ' + compData.h1Sub,
     url: base + '/comparison',
-    description: 'Pet waste removal providers serving Chattanooga TN and North Georgia compared by service area, frequency, published pricing and standout features.',
+    description: compData.description,
+    dateModified: '2026-10-04',
     mainEntity: { '@type': 'ItemList', name: 'Pet waste removal companies serving Chattanooga, TN',
       itemListOrder: 'https://schema.org/ItemListUnordered', numberOfItems: items.length, itemListElement: items }
   }) + ld({
@@ -340,6 +347,8 @@ for (var i = 0; i < pages.length; i++) {
     // here would overwrite both with a second copy of the same content.
     if (!p.slug) { console.log('[csp] skipping homepage (owned by inject-seo.cjs)'); continue; }
     var html = template;
+    var __rm = RENDERED_META['/' + p.slug];
+    if (__rm && __rm.title) { p.title = __rm.title; if (__rm.description) p.desc = __rm.description; }
     html = html.replace(/<title>[^<]*<\/title>/, function(){ return '<title>' + p.title + '<\/title>'; });
     html = setAttr(html, /(<meta name="description" content=")[^"]*(")/, p.desc);
     html = setAttr(html, /(<link rel="canonical" href=")[^"]*(")/, p.canonical);
@@ -348,7 +357,7 @@ for (var i = 0; i < pages.length; i++) {
     html = setAttr(html, /(<meta property="og:url" content=")[^"]*(")/, p.canonical);
     html = setAttr(html, /(<meta name="twitter:title" content=")[^"]*(")/, p.title);
     html = setAttr(html, /(<meta name="twitter:description" content=")[^"]*(")/, p.desc);
-    var body = p.body + CRAWL_NAV;
+    var body = p.body + faqHtml('/' + p.slug) + CRAWL_NAV;
     if (p.slug.indexOf('blog/') === 0) { body = blogBreadcrumbNav(p.title.replace(/ \| Scoopy Doo.*$/, '')) + body; }
     html = html.replace('<div id="root"></div>', '<div id="root">' + body + '</div>');
     var outDir = path.join(DIST, p.slug);

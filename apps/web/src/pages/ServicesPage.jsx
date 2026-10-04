@@ -24,7 +24,7 @@ const ServicesPage = () => {
     {
       title: 'Weekly Service',
       description: "Our most popular option. We visit once a week and remove all waste from your yard - every time, without fail.",
-      benefits: ['Prevents buildup and odor between visits', 'Best for homes with 2+ dogs', 'Scheduled to the same day each week', 'Waste hauled fully off property'],
+      benefits: ['Prevents buildup and odor between visits', 'Best for homes with 2+ dogs', 'Scheduled to the same day each week', 'Waste double-bagged into your bin (haul-away $5/visit)'],
       mostPopular: true
     },
     {

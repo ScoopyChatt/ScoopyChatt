@@ -109,14 +109,15 @@ const PodcastBlogPost = () => {
   return (
     <>
       <SEOHead 
-        title="Scoopy Doo LLC Founder Discusses Pet Waste Management on Recent Podcast"
+        title="Scoopy Doo LLC Founder on a Pet Waste Management Podcast"
         description="Listen to the Scoopy Doo LLC founder discuss pet waste management, yard cleanup, and business insights on this recent podcast episode."
         canonicalUrl={`${CANONICAL_BASE_URL}/blog/podcast-blog`}
         schema={schemaData}
       />
       <BlogPostTemplate 
-        title="Scoopy Doo LLC Founder Discusses Pet Waste Management on Recent Podcast"
+        title="Scoopy Doo LLC Founder on a Pet Waste Management Podcast"
         description="Listen to the Scoopy Doo LLC founder discuss pet waste management, yard cleanup, and business insights."
+        slug="podcast-blog"
         date="May 15, 2026"
         author="Scoopy Doo Team"
         content={content}

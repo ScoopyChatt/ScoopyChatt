@@ -10,7 +10,7 @@ const FallFleaTickSeasonChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>Fall Flea and Tick Season in Chattanooga: Why Yard Cleanup Matters | Scoopy Doo</title>
+        <title>Fall Flea and Tick Season in Chattanooga | Scoopy Doo</title>
         <meta name="description" content="Chattanooga falls stay warm long after colder regions cool down, keeping fleas and ticks active into November. See why regular dog poop removal helps and what it costs, from $20 a visit." />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
