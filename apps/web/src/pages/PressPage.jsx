@@ -84,7 +84,7 @@ export default function PressPage() {
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
         path="/press"
-        title="Scoopy Doo in the News | Press and Media Coverage | Chattanooga Pet Waste Removal"
+        title="Scoopy Doo in the News | Chattanooga Pet Waste Removal"
         description="See the news coverage of Scoopy Doo LLC, the largest pet waste removal company in the Chattanooga area. Featured in the Chattanoogan and on WDEF News 12."
         canonicalUrl={BASE + "/press"}
         schema={[apawsReleaseSchema, collectionSchema, articleSchema, wdefArticleSchema, sixAmArticleSchema]}

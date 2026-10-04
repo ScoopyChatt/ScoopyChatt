@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { getCanonicalUrl } from '@/utils/seoHelpers';
 
-const PAGE_TITLE = "Pet Waste Stations for Chattanooga Apartments and HOAs: Placement, Servicing, and Cost | Scoopy Doo";
+const PAGE_TITLE = "Pet Waste Stations for Chattanooga Apartments and HOAs | Scoopy Doo";
 const PAGE_DESC = "How pet waste stations work for apartment communities and HOAs in Chattanooga and North Georgia: how many you need, where to put them, who restocks them, and how service is quoted.";
 
 const PetWasteStationsApartmentsHOAsChattanooga = () => {

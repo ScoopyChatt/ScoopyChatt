@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { getCanonicalUrl } from '@/utils/seoHelpers';
 
-const PAGE_TITLE = "How to Get Rid of Dog Poop Smell in a Chattanooga Yard (What Actually Works) | Scoopy Doo";
+const PAGE_TITLE = "How to Get Rid of Dog Poop Smell in a Chattanooga Yard | Scoopy Doo";
 const PAGE_DESC = "Why a Chattanooga yard still smells after you scoop, what actually clears it, and when a paid deodorizing treatment at $20 per visit is worth it. Honest, in order of what to try first.";
 
 const DogPoopSmellInYardChattanooga = () => {

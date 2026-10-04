@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { getCanonicalUrl } from '@/utils/seoHelpers';
 
-const PAGE_TITLE = "One-Time Yard Cleanup Before a Party in Chattanooga or North Georgia: When to Book | Scoopy Doo";
+const PAGE_TITLE = "One-Time Yard Cleanup Before a Party in Chattanooga | Scoopy Doo";
 const PAGE_DESC = "Hosting a cookout, graduation, or wedding shower? One-time dog poop cleanups start at $85. Here is how far ahead to book, what gets done, and how to keep the smell down in Chattanooga humidity.";
 
 const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {

@@ -10,7 +10,7 @@ const OneTimeDogPoopCleanupChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>One-Time Dog Poop Cleanup in Chattanooga: Cost & How It Works | Scoopy Doo</title>
+        <title>One-Time Dog Poop Cleanup Cost in Chattanooga | Scoopy Doo</title>
         <meta name="description" content="What a one-time dog poop cleanup costs in Chattanooga, when to book one, and how it works. One-time yard cleanups from $85 with no contract. Call 423-600-5040." />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>

@@ -1,4 +1,5 @@
 import React from 'react';
+import ServiceFaqSection from '@/components/ServiceFaqSection.jsx';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header.jsx';
@@ -251,6 +252,7 @@ export default function CommercialPage() {
             </p>
           </div>
         </section>
+      <ServiceFaqSection route="/commercial" />
       </main>
 
       <Footer />

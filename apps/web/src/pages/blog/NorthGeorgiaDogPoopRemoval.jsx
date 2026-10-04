@@ -10,7 +10,7 @@ const NorthGeorgiaDogPoopRemoval = () => {
   return (
     <>
       <Helmet>
-        <title>Dog Poop Removal in Ringgold, Fort Oglethorpe and North Georgia | Scoopy Doo</title>
+        <title>Dog Poop Removal in Ringgold and North Georgia | Scoopy Doo</title>
         <meta name="description" content="Scoopy Doo provides dog poop removal in Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA. Weekly service from $20 per visit, no contracts required." />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>

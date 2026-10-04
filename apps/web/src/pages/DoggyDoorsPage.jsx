@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import ServiceFaqSection from '@/components/ServiceFaqSection.jsx';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from '@/components/motion.jsx';
 import {
@@ -457,6 +458,7 @@ const DoggyDoorsPage = () => {
           </section>
 
           <ReviewsSection />
+          <ServiceFaqSection route="/doggy-doors" />
         </main>
 
         <Footer />

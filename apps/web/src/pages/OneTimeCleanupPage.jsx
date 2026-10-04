@@ -1,5 +1,6 @@
 
 import React from 'react';
+import ServiceFaqSection from '@/components/ServiceFaqSection.jsx';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from '@/components/motion.jsx';
@@ -91,6 +92,7 @@ const OneTimeCleanupPage = () => {
           </div>
         </section>
 
+        <ServiceFaqSection route="/one-time-cleanup" />
         <ReviewsSection />
       </main>
 

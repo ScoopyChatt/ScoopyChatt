@@ -51,7 +51,7 @@ const LocationTemplate = ({ city: propCity }) => {
     );
   }
 
-  const { name, seoTitle, seoDescription, serviceDescription, localContext, neighborhoods, benefits, faqItems } = locationData;
+  const { name, seoTitle, seoDescription, serviceDescription, localContext, neighborhoods, nearbyAreas, benefits, faqItems } = locationData;
   const canonicalUrl = getCanonicalUrl('/service/' + locationData.slug);
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://www.scoopychatt.com/' },
@@ -179,6 +179,18 @@ const LocationTemplate = ({ city: propCity }) => {
                   </span>
                 ))}
               </div>
+              {nearbyAreas && nearbyAreas.length > 0 && (
+                <div className="mt-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">Nearby Areas We Also Serve</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {nearbyAreas.map((n, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-background border border-border rounded-full text-sm text-muted-foreground">
+                        {n}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
               <p className="mt-4 text-sm text-muted-foreground">Not sure if we cover your street? <Link to="/quote" className="text-primary hover:underline font-medium">Request a free quote</Link> and we will confirm your address.</p>
             </div>
           </section>
