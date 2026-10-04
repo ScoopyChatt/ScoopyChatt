@@ -20,6 +20,7 @@ const AboutPage = React.lazy(() => import('@/pages/AboutPage.jsx'));
 const PressPage = React.lazy(() => import('@/pages/PressPage.jsx'));
 const FAQPage = React.lazy(() => import('@/pages/FAQPage.jsx'));
 const ComparisonPage = React.lazy(() => import('@/pages/ComparisonPage.jsx'));
+const ChooseGuidePage = React.lazy(() => import('@/pages/ChooseGuidePage.jsx'));
 const QuoteRequestPage = React.lazy(() => import('@/pages/QuoteRequestPage.jsx'));
 const ThankYouPage = React.lazy(() => import('@/pages/ThankYouPage.jsx'));
 const SpringSpecialPage = React.lazy(() => import('@/pages/SpringSpecialPage.jsx'));
@@ -163,6 +164,7 @@ function App() {
           <Route path="/press" element={<PressPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/comparison" element={<ComparisonPage />} />
+          <Route path="/guides/how-to-choose-pet-waste-removal-company-chattanooga" element={<ChooseGuidePage />} />
           <Route path="/quote" element={<QuoteRequestPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/spring-special" element={<SpringSpecialPage />} />
