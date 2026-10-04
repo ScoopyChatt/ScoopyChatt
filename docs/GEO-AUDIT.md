@@ -115,22 +115,21 @@ throw away URLs with indexing history. Dalton is not a service area anywhere; it
 
 ## 8. Remaining tasks only Brandon can do
 
-1. **6AM City / NOOGAtoday**: send the article URL and publish date. It is not on the site, so I
-   could not add it to `/press` without inventing details.
+1. **6AM City**: added to `/press` and About as a link with neutral wording. The article could not be
+   opened from the audit environment, so it has no date or quote. Add the publish date and one
+   verified sentence when convenient. NOOGAtoday is still not on the site (needs a URL).
 2. **Google Business Profile**: keep it a service-area business with the address hidden; remove
    Cleveland; add East Brainerd, East Ridge, Rossville, Fort Oglethorpe, Flintstone.
-3. **Decide on the schema ZIP/coordinates**: if you do not want a Ringgold ZIP and coordinates in
-   public markup, tell me and I will remove `postalCode` and `geo`.
+3. ~~Schema ZIP/coordinates~~ Decided: keep Ringgold as the base. Chattanooga remains the primary
+   market in all copy; Ringgold is stated only as where the owners are based.
 4. **Bing Webmaster Tools**: verify the site, submit `sitemap.xml`, and use IndexNow. Several AI
    assistants retrieve through Bing or other third-party indexes; confirm which ones your target
    assistants use.
 5. **Google Search Console**: Request Indexing for `/guides/how-to-choose-pet-waste-removal-company-chattanooga`,
    `/about`, `/comparison`, `/service/chattanooga`.
-6. **Jobber**: in Jobber, unpublish the old public website (or set it to redirect/noindex) and
-   check no Jobber page ranks for "Scoopy Doo". Redirects and canonicals for a Jobber-hosted
-   site cannot be set from this repository.
-7. Confirm the "Scoopy Doo, Inc." listings (old Yelp/Facebook/Google/aggregator entries at the
-   closed business) are marked closed or claimed, so they stop competing with you.
+6. ~~Jobber~~ Confirmed unpublished long ago; nothing to do.
+7. "Scoopy Doo, Inc." is an unrelated company closed for years. Nothing on the site refers to it. If
+   old third-party listings for it still surface in search, report them as closed to that platform.
 
 ## 9. Third-party citation cleanup
 
