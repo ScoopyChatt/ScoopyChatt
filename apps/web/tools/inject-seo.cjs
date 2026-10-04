@@ -151,18 +151,62 @@ const LOC = {
   "downtown":         { name:"Downtown Chattanooga, TN", desc:"Downtown Chattanooga is one of the most walkable dog-friendly urban environments in Tennessee. Scoopy Doo provides professional pet waste removal for downtown homes, condos with private outdoor spaces, and townhomes throughout the core and adjacent neighborhoods.", hoods:["Downtown proper","Bluff View","Southside","MLK District","North Shore","Riverfront area"], faqs:[["Do you service downtown Chattanooga homes and condos?","Yes. We service private yards, townhome outdoor spaces, and residential properties throughout downtown Chattanooga and adjacent neighborhoods including Southside, Bluff View, and the MLK District."],["Why does pet waste matter near the Tennessee River?","Storm drains in downtown Chattanooga connect directly to the Tennessee River. Dog waste washes into the water during rain, contributing bacteria and pathogens that affect water quality."],["How often should downtown properties be cleaned?","Weekly service is most popular for downtown properties. Compact yards with dogs fill up quickly and weekly pickup keeps the space pleasant year-round."]] }
 };
 
+// City pages: the crawler-visible block is built from src/data/locations.js, the same
+// data the React page renders, so crawlers see the full page and nothing is written twice.
+const LOCDATA = (function () {
+  try {
+    var src = fs.readFileSync(path.join(__dirname, '../src/data/locations.js'), 'utf8')
+      .replace('export const locations =', 'module.exports =');
+    var mod = { exports: null };
+    Function('module', src)(mod);
+    return mod.exports;
+  } catch (e) {
+    console.warn('[inject-seo] could not load locations.js, city pages fall back to LOC: ' + e.message);
+    return [];
+  }
+})();
+const LOCBYSLUG = {};
+LOCDATA.forEach(function (l) { LOCBYSLUG[l.slug] = l; });
+// Keep the JSON-LD (Service description + FAQPage) in step with what the page shows.
+LOCDATA.forEach(function (l) {
+  LOC[l.slug] = {
+    name: l.name,
+    desc: l.serviceDescription,
+    hoods: l.neighborhoods,
+    faqs: l.faqItems.map(function (f) { return [f.question, f.answer]; })
+  };
+});
+
 function makeLocContent(slug) {
-  var d = LOC[slug];
-  if (!d) return "";
-  var h = '<nav aria-label="breadcrumb"><a href="/">Home</a> / <a href="/service-areas">Service Areas</a> / ' + d.name + '</nav>';
-  h += "<h1>Dog Poop Removal in " + d.name + " | Scoopy Doo Pet Waste Removal</h1>";
-  h += "<p>" + d.desc + "</p>";
-  h += "<h2>Neighborhoods We Serve in " + d.name + "</h2><ul>";
-  d.hoods.forEach(function(n){ h += "<li>" + n + "</li>"; });
+  var l = LOCBYSLUG[slug];
+  if (!l) return "";
+  var n = l.name;
+  var h = '<nav aria-label="breadcrumb"><a href="/">Home</a> / <a href="/service-areas">Service Areas</a> / ' + n + '</nav>';
+  h += "<h1>Dog Poop Removal in " + n + " | Scoopy Doo Pet Waste Removal</h1>";
+  h += "<p>" + l.serviceDescription + "</p>";
+  h += "<h2>Why " + n + " Pet Owners Need Professional Cleanup</h2><p>" + l.localContext + "</p>";
+  h += "<h2>Dog Poop Removal Pricing in " + n + "</h2>";
+  h += "<p>Scoopy Doo weekly dog poop removal in " + n + " starts at $20 per visit for one dog. Twice-weekly service starts at $18 per visit, every-other-week service starts at $33 per visit, and one-time yard cleanups start at $85. Extra dogs add $2 per weekly visit. Final pricing depends on yard size and number of dogs. There are no contracts and no cancellation fees, and billing is once a month.</p>";
+  h += "<h2>What Every Visit Includes</h2><ul>";
+  h += "<li>An on-the-way text before the technician arrives</li>";
+  h += "<li>A full grid-pattern sweep of your entire yard</li>";
+  h += "<li>All waste double-bagged into your outdoor bin, or hauled off the property for $5 per visit</li>";
+  h += "<li>Gate secured and a photo sent to your phone when done</li></ul>";
+  h += "<h2>Why " + n + " Chooses Scoopy Doo</h2><ul>";
+  l.benefits.forEach(function (b) { h += "<li>" + b + "</li>"; });
   h += "</ul>";
-  h += "<h2>Frequently Asked Questions</h2>";
-  d.faqs.forEach(function(f){ h += "<h3>" + f[0] + "</h3><p>" + f[1] + "</p>"; });
-  h += "<p>Get a free quote at scoopychatt.com/quoterequest. We respond the same day.</p>";
+  h += "<h2>Neighborhoods We Serve in " + n + "</h2><ul>";
+  l.neighborhoods.forEach(function (x) { h += "<li>" + x + "</li>"; });
+  h += "</ul>";
+  h += "<h2>Frequently Asked Questions About Dog Poop Removal in " + n + "</h2>";
+  l.faqItems.forEach(function (f) { h += "<h3>" + f.question + "</h3><p>" + f.answer + "</p>"; });
+  h += "<h2>Nearby Areas We Serve</h2><ul>";
+  var sameState = /, GA$/.test(n);
+  LOCDATA.filter(function (o) { return o.slug !== slug && /, GA$/.test(o.name) === sameState; }).slice(0, 8).forEach(function (o) {
+    h += '<li><a href="/service/' + o.slug + '">Dog poop removal in ' + o.name + '</a></li>';
+  });
+  h += "</ul>";
+  h += '<p>Get a free quote at <a href="/quote">scoopychatt.com/quote</a>. We respond the same day. See all <a href="/pricing">pricing</a> and <a href="/service-areas">service areas</a>.</p>';
   return h;
 }
 
