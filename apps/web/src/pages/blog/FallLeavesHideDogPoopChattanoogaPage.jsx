@@ -92,8 +92,8 @@ const FallLeavesHideDogPoopChattanooga = () => {
           <h2 className="text-2xl font-semibold mt-8 mb-4">Get a Free Quote</h2>
           <p>
             We scoop. You relax. Get a free quote at{" "}
-            <Link to="/quoterequest" className="text-blue-600 underline">
-              scoopychatt.com/quoterequest
+            <Link to="/quote" className="text-blue-600 underline">
+              scoopychatt.com/quote
             </Link>{" "}
             or call{" "}
             <a href="tel:4236005040" className="text-blue-600 underline">

@@ -26,7 +26,7 @@ const PooperScooperCostChattanooga = () => {
             Bi-weekly service starts at $33 per visit. One-time yard cleanups start at $85.
             Pricing is based on yard size and number of dogs.
             Every quote is free at{' '}
-            <a href="/quoterequest" className="text-green-700 underline">scoopychatt.com/quoterequest</a>.
+            <a href="/quote" className="text-green-700 underline">scoopychatt.com/quote</a>.
             No contracts required.
           </p>
 
@@ -103,7 +103,7 @@ const PooperScooperCostChattanooga = () => {
           <h3 className="text-xl font-medium mt-6 mb-2">How do I get a quote?</h3>
           <p className="mb-4">
             Request a free quote at{' '}
-            <a href="/quoterequest" className="text-green-700 underline">scoopychatt.com/quoterequest</a>.
+            <a href="/quote" className="text-green-700 underline">scoopychatt.com/quote</a>.
             Scoopy Doo responds the same day and most new customers start within 2 to 5 days.
           </p>
 
@@ -118,7 +118,7 @@ const PooperScooperCostChattanooga = () => {
             <p className="font-semibold text-lg mb-2">Get a free quote today</p>
             <p className="mb-4">Most Chattanooga customers start within 2 to 5 days. Prices start at $20 per visit. No contracts.</p>
             <a
-              href="/quoterequest"
+              href="/quote"
               className="inline-block bg-green-700 text-white px-6 py-3 rounded font-semibold hover:bg-green-800 transition-colors"
             >
               Request a Free Quote

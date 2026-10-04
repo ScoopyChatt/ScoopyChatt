@@ -97,7 +97,7 @@ const NorthGeorgiaDogPoopRemoval = () => {
           <p className="font-semibold text-lg mb-2">Get a free quote today</p>
           <p className="mb-2">
             Request a quote online at{" "}
-            <a href="/quoterequest" className="text-green-700 underline">scoopychatt.com/quoterequest</a>
+            <a href="/quote" className="text-green-700 underline">scoopychatt.com/quote</a>
             {" "}or call or text 423-600-5040. Tell us your city and we will confirm same-week availability for your street.
           </p>
         </div>

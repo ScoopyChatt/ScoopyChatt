@@ -158,7 +158,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Clock className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">24/7 Always available for service</span>
+                <span className="text-sm">Service Mon-Fri 7am-8pm, Sat-Sun 9am-9pm. Online quotes and booking 24/7.</span>
               </li>
               <li className="flex items-start">
                 <a href="https://share.google/sOBVeLPqRabhfffPg" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors text-sm">

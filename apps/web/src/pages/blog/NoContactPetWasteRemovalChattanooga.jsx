@@ -144,12 +144,12 @@ const NoContactPetWasteRemovalChattanooga = () => {
 
           <p>
             Ready to stop thinking about the yard? Get a free, no-obligation quote at{' '}
-            <a href="https://scoopychatt.com/quoterequest">scoopychatt.com/quoterequest</a> or
+            <a href="https://scoopychatt.com/quote">scoopychatt.com/quote</a> or
             call/text 423-600-5040.
           </p>
 
           <p>
-            <Link to="/quoterequest">Request Your Free Quote</Link>
+            <Link to="/quote">Request Your Free Quote</Link>
           </p>
         </article>
       </main>

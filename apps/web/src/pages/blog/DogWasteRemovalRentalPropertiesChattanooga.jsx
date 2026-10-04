@@ -153,12 +153,12 @@ gives landlords a simple photo record of upkeep.
 
 <p>
 Managing dog waste across one rental or a whole portfolio? Get a free quote at{' '}
-<a href="https://scoopychatt.com/quoterequest">scoopychatt.com/quoterequest</a> or
+<a href="https://scoopychatt.com/quote">scoopychatt.com/quote</a> or
 call/text 423-600-5040.
 </p>
 
 <p>
-<Link to="/quoterequest">Request Your Free Quote</Link>
+<Link to="/quote">Request Your Free Quote</Link>
 </p>
 </article>
 </main>

@@ -151,8 +151,8 @@ const DogDoorInstallationChattanooga = () => {
               423-600-5040
             </a>. And if your yard could use a hand too, Scoopy Doo also offers weekly pet waste
             removal across the same Chattanooga and North Georgia service area — see{' '}
-            <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quoterequest">
-              scoopychatt.com/quoterequest
+            <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
+              scoopychatt.com/quote
             </a>{' '}
             for a free quote.
           </p>
