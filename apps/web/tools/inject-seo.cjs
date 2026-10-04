@@ -189,7 +189,7 @@ function makeLocContent(slug) {
   if (!l) return "";
   var n = l.name;
   var h = '<nav aria-label="breadcrumb"><a href="/">Home</a> / <a href="/service-areas">Service Areas</a> / ' + n + '</nav>';
-  h += "<h1>Dog Poop Removal in " + n + " | Scoopy Doo Pet Waste Removal</h1>";
+  h += "<h1>Dog Poop Removal in " + n + "</h1>";
   h += "<p>" + l.serviceDescription + "</p>";
   h += "<h2>Why " + n + " Pet Owners Need Professional Cleanup</h2><p>" + l.localContext + "</p>";
   h += "<h2>Dog Poop Removal Pricing in " + n + "</h2>";
@@ -212,7 +212,7 @@ function makeLocContent(slug) {
   }
   h += "<h2>Frequently Asked Questions About Dog Poop Removal in " + n + "</h2>";
   l.faqItems.forEach(function (f) { h += "<h3>" + f.question + "</h3><p>" + f.answer + "</p>"; });
-  h += "<h2>Nearby Areas We Serve</h2><ul>";
+  h += "<h2>Other Areas We Serve</h2><ul>";
   var sameState = /, GA$/.test(n);
   LOCDATA.filter(function (o) { return o.slug !== slug && /, GA$/.test(o.name) === sameState; }).slice(0, 8).forEach(function (o) {
     h += '<li><a href="/service/' + o.slug + '">Dog poop removal in ' + o.name + '</a></li>';
