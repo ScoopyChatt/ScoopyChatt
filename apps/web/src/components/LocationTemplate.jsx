@@ -16,6 +16,7 @@ import { getCanonicalUrl } from '@/utils/seoHelpers.js';
 import { generateFAQPageSchema, generateBreadcrumbSchema, generateLocationSchema } from '@/utils/schemaGenerators.js';
 import { locations } from '@/data/locations.js';
 import NotFoundPage from '@/pages/NotFoundPage.jsx';
+import { GuaranteeBadge, guarantee } from '@/components/Guarantee.jsx';
 
 const LocationTemplate = ({ city: propCity }) => {
   const { slug } = useParams();
@@ -58,7 +59,9 @@ const LocationTemplate = ({ city: propCity }) => {
     { name: 'Service Areas', url: 'https://www.scoopychatt.com/service-areas' },
     { name: name, url: canonicalUrl }
   ]);
-  const faqSchema = faqItems && faqItems.length > 0 ? generateFAQPageSchema(faqItems) : null;
+  // The guarantee Q&A is rendered on every city page by FAQSection (src/data/faqData.js),
+  // so it belongs in the FAQPage schema alongside the city-specific questions.
+  const faqSchema = generateFAQPageSchema([...(faqItems || []), guarantee.faq]);
   const locationSchema = generateLocationSchema(locationData);
 
   return (
@@ -131,6 +134,9 @@ const LocationTemplate = ({ city: propCity }) => {
                   <Button asChild variant="outline" size="lg" className="bg-transparent border-border text-foreground hover:bg-muted hover:text-foreground h-14 px-8 text-lg rounded-xl transition-all active:scale-[0.98]">
                     <a href="tel:423-600-5040">Call (423) 600-5040</a>
                   </Button>
+                </div>
+                <div className="mt-6">
+                  <GuaranteeBadge />
                 </div>
               </motion.div>
             </div>

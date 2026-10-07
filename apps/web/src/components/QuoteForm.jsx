@@ -11,6 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { toast } from 'sonner';
 import { AnimatePresence, motion } from '@/components/motion.jsx';
 import { CheckCircle2, MapPin } from 'lucide-react';
+import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 
 export const SERVICE_AREA = {
   "37350": { area: "Lookout Mountain", day: "Tuesday" },
@@ -377,6 +378,9 @@ const QuoteForm = () => {
             <p className="text-xl font-semibold text-foreground">We will put together a custom quote for you.</p>
           )}
         </div>
+        <div className="text-center">
+          <GuaranteeBadge />
+        </div>
         <div className="text-left relative" ref={addressFieldRef}>
             <label className="mb-1 block text-sm font-medium text-foreground">Street Address *</label>
             <input
@@ -616,6 +620,9 @@ const QuoteForm = () => {
           >
             {isSubmitting ? 'Getting your price...' : 'See My Price'}
           </Button>
+        </div>
+        <div className="text-center">
+          <GuaranteeBadge />
         </div>
       </form>
     </Form>

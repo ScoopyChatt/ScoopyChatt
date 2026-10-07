@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
+import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 
 const ThankYouPage = () => {
   return (
@@ -35,9 +36,12 @@ const ThankYouPage = () => {
               <p className="text-xl text-muted-foreground mb-2">
                 Your quote request has been successfully received.
               </p>
-              <p className="text-lg font-medium text-foreground mb-12">
+              <p className="text-lg font-medium text-foreground mb-6">
                 We will be in touch with you shortly.
               </p>
+              <div className="mb-12">
+                <GuaranteeBadge />
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div className="flex flex-col items-center text-center p-6 bg-muted/50 rounded-2xl">

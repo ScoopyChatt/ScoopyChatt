@@ -294,6 +294,16 @@ Cleveland TN is NOT a service area. It was removed in Aug 2026 and /service/clev
 
 ---
 
+## No-Poop-Left-Behind Guarantee
+
+Wording lives in one place: `apps/web/src/data/guarantee.json` (name, short, full, tagline,
+FAQ entry). Never retype it. React uses `<GuaranteeBadge />`, `<GuaranteeBanner />` and
+`<GuaranteeTagline />` from `src/components/Guarantee.jsx`; the build reads the same JSON via
+`tools/guarantee-seo.cjs` (prerendered copy and FAQPage schema), `tools/crawl-nav.cjs`
+(site-wide line) and `tools/generate-llms.js` (llms.txt section). The one hardcoded copy is
+the FAQ entry in `CoreServicePage.jsx`, because inject-seo.cjs parses that array as plain
+source. Change it there too if the wording ever changes.
+
 ## How It Works Page
 
 Located at /how-it-works. Key differentiators to always emphasize:

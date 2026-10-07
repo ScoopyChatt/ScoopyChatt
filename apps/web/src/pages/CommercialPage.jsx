@@ -8,6 +8,7 @@ import FloatingCTA from '@/components/FloatingCTA.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
 import FAQAccordion from '@/components/FAQAccordion.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
+import { GuaranteeBadge, guarantee } from '@/components/Guarantee.jsx';
 
 const segments = [
   {
@@ -55,6 +56,7 @@ const faqs = [
     question: 'How is commercial pricing determined?',
     answer: 'Pet waste stations are $299 per station installed and $10 per station per week to service, so a four-station community runs $40 a week. The common-area sweep alongside them is quoted per property based on size and frequency, and yard deodorizing is available at $20 per visit. Reach out for a free walkthrough and a custom quote.',
   },
+  guarantee.faq,
   {
     question: 'What areas do you cover for commercial service?',
     answer: 'We serve the entire Chattanooga metro and North Georgia, including Hixson, Ooltewah, East Brainerd, Red Bank, Signal Mountain, Ringgold, Rossville, and Fort Oglethorpe, with no extra charge for Georgia.',
@@ -126,6 +128,9 @@ export default function CommercialPage() {
                 <Button asChild size="lg" variant="outline" className="h-14 px-8 text-lg rounded-xl">
                   <a href="tel:423-600-5040">Call or Text 423-600-5040</a>
                 </Button>
+              </div>
+              <div className="mt-6">
+                <GuaranteeBadge />
               </div>
             </div>
           </div>
@@ -231,6 +236,9 @@ export default function CommercialPage() {
               <Button asChild size="lg" variant="outline" className="h-14 px-8 text-lg rounded-xl">
                 <a href="tel:423-600-5040">Call or Text 423-600-5040</a>
               </Button>
+            </div>
+            <div className="mt-6">
+              <GuaranteeBadge />
             </div>
           </div>
         </section>

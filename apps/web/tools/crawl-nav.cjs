@@ -45,4 +45,7 @@ if (locations.length) {
     locations.map((l) => '<li><a href="/service/' + l.slug + '">Dog poop removal in ' + l.name + '</a></li>').join('') +
     '</ul></nav>';
 }
+// Site-wide guarantee line, matching the React footer.
+const guarantee = require('../src/data/guarantee.json');
+html += '<p><strong>' + guarantee.entity + ':</strong> ' + guarantee.short + '</p><p>' + guarantee.tagline + '</p>';
 module.exports = html;

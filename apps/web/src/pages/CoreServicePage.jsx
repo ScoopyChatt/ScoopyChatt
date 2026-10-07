@@ -7,6 +7,7 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import CTAButton from '@/components/CTAButton.jsx';
 import LocationSection from '@/components/LocationSection.jsx';
+import { GuaranteeBadge, GuaranteeBanner } from '@/components/Guarantee.jsx';
 
 const faqs = [
   {
@@ -32,6 +33,10 @@ const faqs = [
   {
     question: "How much does pooper scooper service cost in Chattanooga?",
     answer: "Pricing is based on yard size and the number of dogs. Twice-weekly service starts at $18 per visit, weekly at $20, every-other-week at $33, and one-time cleanups at $85. Most Chattanooga homeowners pay between $18 and $36 per visit, depending on frequency and number of dogs. The fastest way to get your exact price is to submit a free quote request - we respond the same day, usually within a few hours."
+  },
+  {
+    question: "Do you guarantee your work?",
+    answer: "Yes. The No-Poop-Left-Behind Guarantee: If we missed it, we'll come back for it. Free. Just tell us within 24 hours."
   },
   {
     question: "Do you service HOAs and apartment communities?",
@@ -109,6 +114,9 @@ const CoreServicePage = () => {
               <CTAButton size="lg" className="h-14 px-8 text-lg w-full sm:w-auto">Get Your Free Quote</CTAButton>
               <CTAButton size="lg" variant="outline" to="/services" className="h-14 px-8 text-lg w-full sm:w-auto bg-background/50 backdrop-blur">View Services</CTAButton>
             </div>
+            <div className="mt-6">
+              <GuaranteeBadge />
+            </div>
 
             <a
               href="https://www.bbb.org/us/ga/ringgold/profile/pet-waste-removal/scoopy-doo-llc-0483-80013696"
@@ -185,7 +193,7 @@ const CoreServicePage = () => {
               <div className="md:col-span-2 bg-muted p-8 rounded-2xl border border-border">
                 <Shield className="w-10 h-10 text-primary mb-4" />
                 <h3 className="mb-3 text-xl font-bold">Our Dog Poop Scooping Process</h3>
-                <p className="text-muted-foreground leading-relaxed">If we ever miss a spot, let us know within 24 hours and we'll come back and re-clean it at no extra charge. We meticulously grid-walk your yard to ensure nothing is missed during our pet waste removal visits.</p>
+                <p className="text-muted-foreground leading-relaxed">We meticulously grid-walk your yard to ensure nothing is missed during our pet waste removal visits, and our work is backed by the No-Poop-Left-Behind Guarantee.</p>
               </div>
               <div className="bg-muted p-8 rounded-2xl border border-border">
                 <Clock className="w-10 h-10 text-primary mb-4" />
@@ -193,6 +201,13 @@ const CoreServicePage = () => {
                 <p className="text-muted-foreground leading-relaxed">We show up on your scheduled day, rain or shine. No guessing when your yard will be clean.</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* No-Poop-Left-Behind Guarantee */}
+        <section className="py-16 bg-background">
+          <div className="container-shell max-w-3xl">
+            <GuaranteeBanner />
           </div>
         </section>
 

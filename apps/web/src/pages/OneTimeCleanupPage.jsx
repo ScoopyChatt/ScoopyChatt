@@ -11,6 +11,7 @@ import Footer from '@/components/Footer.jsx';
 import FloatingCTA from '@/components/FloatingCTA.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
+import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 
 const OneTimeCleanupPage = () => {
   const canonicalUrl = getCanonicalUrl('/one-time-cleanup');
@@ -49,6 +50,9 @@ const OneTimeCleanupPage = () => {
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg">
                 <Link to="/quote">Get a Free Quote</Link>
               </Button>
+              <div className="mt-6">
+                <GuaranteeBadge />
+              </div>
             </motion.div>
           </div>
         </section>

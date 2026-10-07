@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { GuaranteeBadge, GuaranteeTagline } from '@/components/Guarantee.jsx';
 import { MapPin, Phone, Mail, Clock, Globe, Facebook, Instagram, Home, ShieldCheck, Award } from 'lucide-react';
 
 const Footer = () => {
@@ -174,6 +175,11 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+        </div>
+
+        <div className="pb-8 flex flex-col items-center gap-2 text-center">
+          <GuaranteeBadge />
+          <GuaranteeTagline className="text-slate-500" />
         </div>
 
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">

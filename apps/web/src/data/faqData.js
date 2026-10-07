@@ -1,3 +1,5 @@
+import guarantee from '@/data/guarantee.json';
+
 export const getFaqData = (location = 'Chattanooga') => {
   const baseLocation = location.split(',')[0].trim();
 
@@ -84,6 +86,7 @@ export const getFaqData = (location = 'Chattanooga') => {
     {
       title: "Trust & Process",
       faqs: [
+        guarantee.faq,
         {
           question: "Best pet waste company near me?",
           answer: `When choosing a pet waste removal company, look for several key qualities: reliability and consistent scheduling, professional staff who arrive on time, transparent pricing with no hidden fees, and excellent customer service. A trustworthy pet waste company should be insured and bonded, use eco-friendly disposal methods, and offer flexible service options (weekly, every-other-week, or monthly). They should communicate clearly about their service area and respond promptly to customer inquiries. Scoopy Doo LLC is a trusted local pet waste removal company serving the ${baseLocation} area with a reputation for dependable service, friendly staff, and commitment to keeping your yard clean and safe. We understand the unique needs of ${baseLocation} pet owners and provide customized service plans that fit your schedule and budget. Choose a local company that knows your community and prioritizes your family's health and satisfaction.`

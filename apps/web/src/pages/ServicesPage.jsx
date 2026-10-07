@@ -8,6 +8,7 @@ import Footer from '@/components/Footer.jsx';
 import ServiceCard from '@/components/ServiceCard.jsx';
 import { Button } from '@/components/ui/button';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
+import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 
 const SectionHeader = ({ icon: Icon, title, subtitle }) => (
   <div className="text-center mb-12">
@@ -70,6 +71,9 @@ const ServicesPage = () => {
             <Button asChild size="lg" className="rounded-xl px-8 h-14 text-base font-bold">
               <Link to="/quote">Get Your Free Quote</Link>
             </Button>
+            <div className="mt-6">
+              <GuaranteeBadge />
+            </div>
           </motion.div>
         </section>
 
@@ -321,6 +325,9 @@ const ServicesPage = () => {
               <Button asChild size="lg" variant="outline" className="rounded-xl px-10 h-14 text-base font-bold border-white/40 text-white hover:bg-white/10">
                 <a href="tel:423-600-5040">Call (423) 600-5040</a>
               </Button>
+            </div>
+            <div className="mt-8">
+              <GuaranteeBadge tone="onPrimary" />
             </div>
           </div>
         </section>

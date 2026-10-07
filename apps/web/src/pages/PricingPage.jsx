@@ -7,6 +7,7 @@ import Footer from '@/components/Footer.jsx';
 import PricingTable from '@/components/PricingTable.jsx';
 import FAQAccordion from '@/components/FAQAccordion.jsx';
 import CTAButton from '@/components/CTAButton.jsx';
+import { GuaranteeBanner, guarantee } from '@/components/Guarantee.jsx';
 import { generatePriceRangeSchema } from '@/utils/schemaGenerators.js';
 
 const PricingPage = () => {
@@ -46,6 +47,7 @@ const PricingPage = () => {
 
   const faqs = [
     { question: "Are there any hidden fees or contracts?", answer: "No! We believe in transparent pricing. There are no contracts, and you can cancel or pause service anytime." },
+    guarantee.faq,
     { question: "How does billing work?", answer: "We price per visit so the number is easy to compare, and we bill monthly. We securely keep a card on file, charge once a month for that month of service, and email you a receipt. There is no contract, so you can pause or cancel anytime." },
     { question: "Does the price change if I have multiple dogs?", answer: "On recurring plans, yes. The rates above include your first dog, and each additional dog adds $2 per visit on weekly, $1 on twice-weekly, and $3 on every-other-week, so weekly for two dogs is $22 per visit and for three dogs is $24. One-time cleanups work differently: the $85 base covers up to three dogs, and each dog beyond three adds $15." },
     { question: "What if my yard is overgrown or very large?", answer: "We provide custom quotes for significantly oversized yards or properties with tall grass/weeds that make scooping significantly more difficult." },
@@ -59,7 +61,7 @@ const PricingPage = () => {
       <SEOHead
         path="/pricing"
         title="Dog Poop Removal Pricing in Chattanooga | From $20"
-        description="Chattanooga dog poop removal pricing: weekly from $20/visit, twice-weekly $18, every-other-week $33, one-time from $85. No contracts. Get your free quote."
+        description="Chattanooga dog poop removal pricing: weekly $20/visit, twice-weekly $18, every-other-week $33, one-time $85. No contracts. No-Poop-Left-Behind Guarantee."
         faqData={faqs}
         schema={[priceRangeSchema]}
       />
@@ -79,6 +81,7 @@ const PricingPage = () => {
         <section className="section-spacing">
           <div className="container-shell max-w-5xl">
             <PricingTable tiers={pricingTiers} />
+            <GuaranteeBanner showTagline className="mt-10 max-w-3xl mx-auto" />
             <div className="mt-10 max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold mb-3">Add-ons</h2>
               <ul className="space-y-2 text-muted-foreground">

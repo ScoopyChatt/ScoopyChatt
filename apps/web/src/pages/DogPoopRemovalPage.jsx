@@ -10,6 +10,7 @@ import FloatingCTA from '@/components/FloatingCTA.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
 import FAQAccordion from '@/components/FAQAccordion.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
+import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 
 const DogPoopRemovalPage = () => {
   const faqs = [
@@ -49,6 +50,9 @@ const DogPoopRemovalPage = () => {
                   <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg">
                     <Link to="/quote">Get Your Free Quote <ArrowRight className="ml-2 w-5 h-5" /></Link>
                   </Button>
+                  <div className="mt-6">
+                    <GuaranteeBadge />
+                  </div>
                 </motion.div>
                 <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
                   <img src="https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/a31a7ef9578ab021774966b3677f99c1.jpg" alt="ScoopyChatt team providing dog poop removal services in Chattanooga, TN" className="w-full h-full object-cover" />

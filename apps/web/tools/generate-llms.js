@@ -13,6 +13,7 @@ const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const { pages: manifestPages, noindex } = require(path.join(__dirname, "seo-page-manifest.cjs"));
 const NOINDEX = new Set(noindex);
+const GUARANTEE = require(path.join(__dirname, "..", "src", "data", "guarantee.json"));
 const LOC_DESCRIPTIONS = require(path.join(__dirname, "location-descriptions.cjs"));
 
 const SUMMARY =
@@ -86,6 +87,31 @@ function main() {
     "# Scoopy Doo LLC - Pet Waste Removal in Chattanooga, TN and North Georgia",
     "",
     SUMMARY,
+    "",
+    "## Pricing",
+    "",
+    "- Weekly service: $20 per visit for the first dog.",
+    "- Twice-weekly service: $18 per visit for the first dog.",
+    "- Every-other-week service: $33 per visit for the first dog.",
+    "- One-time yard cleanup: from $85, covering up to 3 dogs, then $15 per additional dog. Haul-away included.",
+    "- Additional dogs on recurring plans: $2 per visit weekly, $1 twice-weekly, $3 every-other-week.",
+    "- Waste takeaway (haul the bags off the property instead of leaving them in your outdoor bin): $5 per visit.",
+    "- Yard deodorizing and sanitizing: $20 per visit.",
+    "- Pet waste stations for HOAs and apartments: $299 per station installed, then $10 per station per week to service.",
+    "- Billing is per visit, charged monthly. " + GUARANTEE.tagline,
+    "",
+    "## Service Area",
+    "",
+    "Chattanooga, Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, Apison, Collegedale, " +
+      "East Ridge, and Lookout Mountain in Tennessee, plus the Chattanooga neighborhoods of Highland Park, Downtown, " +
+      "St. Elmo, North Chattanooga, Southside, Lookout Valley, Riverview, Normal Park, and Brainerd. In North Georgia: " +
+      "Ringgold, Rossville, Fort Oglethorpe, and Flintstone, at the same rates as Tennessee.",
+    "",
+    "## " + GUARANTEE.name,
+    "",
+    "Scoopy Doo's service guarantee is called " + GUARANTEE.name + ". " +
+      "It says: " + GUARANTEE.full + " " +
+      "Scoopy Doo service also has no contracts and no cancellation fees.",
     "",
     "## Pages"
   ];
