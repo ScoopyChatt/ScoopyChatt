@@ -72,6 +72,7 @@ const AboutPage = () => {
               <div><dt className="font-bold text-foreground">Company</dt><dd>Scoopy Doo LLC, a locally owned pet waste removal company</dd></div>
               <div><dt className="font-bold text-foreground">Founded</dt><dd>2025, by Brandon Carter and his daughter Leighton Carter</dd></div>
               <div><dt className="font-bold text-foreground">Based in</dt><dd>Ringgold, GA, serving the Chattanooga, TN metro area and nearby North Georgia</dd></div>
+              <div className="sm:col-span-2"><dt className="font-bold text-foreground">Not affiliated with</dt><dd>An earlier, now-closed Chattanooga business that also used the name Scoopy Doo. Scoopy Doo LLC is a separate company, founded in 2025.</dd></div>
               <div><dt className="font-bold text-foreground">Clients</dt><dd>More than 150 active clients, including homes, HOAs, apartments and commercial properties</dd></div>
               <div><dt className="font-bold text-foreground">Reviews</dt><dd>99 five-star Google reviews</dd></div>
               <div><dt className="font-bold text-foreground">Credentials</dt><dd>BBB accredited, fully insured, member of aPaws (Association of Professional Animal Waste Specialists)</dd></div>

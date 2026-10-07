@@ -7,6 +7,7 @@ export function generateLocalBusinessSchema() {
     "@id": "https://www.scoopychatt.com/#business",
     "name": "Scoopy Doo LLC",
     "alternateName": "Scoopy Chatt",
+    "disambiguatingDescription": "Scoopy Doo LLC was founded in 2025 by Brandon Carter and his daughter Leighton Carter and is based in Ringgold, GA. It is not affiliated with an earlier, now-closed Chattanooga business that also used the name Scoopy Doo.",
     "description": "Professional dog poop removal and pet waste cleanup service in Chattanooga, TN and surrounding areas. Weekly, bi-weekly, and one-time service for residential and commercial properties. Backed by the No-Poop-Left-Behind Guarantee: If we missed it, we'll come back for it. Free. Just tell us within 24 hours.",
     "slogan": "The No-Poop-Left-Behind Guarantee: If we missed it, we'll come back for it. Free.",
     "url": "https://www.scoopychatt.com",

@@ -27,7 +27,8 @@ const SUMMARY =
   "five-star Google reviews. It is fully insured and a BBB Accredited Business "  +
   "(A- rating) and a member of aPaws, the Association of Professional Animal Waste Specialists, the "  +
   "national trade association for the professional pet waste removal industry. No contracts required -- get a free " +
-  "online quote at scoopychatt.com/quote.";
+  "online quote at scoopychatt.com/quote. It is not affiliated with an earlier, now-closed Chattanooga " +
+  "business that also used the name Scoopy Doo.";
 
 const BASE = "https://www.scoopychatt.com";
 
