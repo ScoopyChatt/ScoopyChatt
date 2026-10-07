@@ -398,7 +398,8 @@ function blogBreadcrumbSchema(route, headline) {
 var GUARANTEE_BADGE_ROUTES = {
   '/services': true, '/commercial': true, '/quote': true, '/one-time-cleanup': true,
   '/dog-poop-removal-chattanooga': true, '/pet-waste-removal-chattanooga': true,
-  '/dog-poop-scooping-chattanooga': true, '/yard-cleanup-chattanooga': true
+  '/dog-poop-scooping-chattanooga': true, '/yard-cleanup-chattanooga': true,
+  '/terms-of-service': true
 };
 var GUARANTEE_FAQ_ROUTES = { '/faq': true, '/pricing': true, '/commercial': true };
 

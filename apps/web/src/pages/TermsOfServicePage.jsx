@@ -8,9 +8,10 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import FloatingCTA from '@/components/FloatingCTA.jsx';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
+import guarantee from '@/data/guarantee.json';
 
 const TermsOfServicePage = () => {
-  const lastUpdated = "June 7, 2026";
+  const lastUpdated = "October 7, 2026";
   const canonicalUrl = getCanonicalUrl('/terms-of-service');
   const pageTitle = "Terms of Service | Scoopy Doo Pet Waste Removal";
   const pageDesc = "Read the terms of service and user agreement for Scoopy Doo pet waste removal services in Chattanooga.";
@@ -45,6 +46,9 @@ const TermsOfServicePage = () => {
             <li>Secure bagging and off-site disposal or disposal in your designated outdoor receptacle, depending on your selected service plan.</li>
             <li>Sanitization of tools and equipment between yards to prevent cross-contamination.</li>
           </ul>
+          <p className="mb-4 text-muted-foreground leading-relaxed">
+            <strong>{guarantee.name}:</strong> {guarantee.full}
+          </p>
           <p className="text-muted-foreground leading-relaxed">
             Service schedules may occasionally shift due to severe weather, holidays, or unexpected routing adjustments. We will notify you promptly if a scheduled visit must be moved.
           </p>
@@ -63,7 +67,7 @@ const TermsOfServicePage = () => {
           <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
             <li><strong>Yard Access:</strong> Gates must be unlocked on your scheduled service day. If we cannot access your yard, we will attempt to contact you, but the visit may be skipped and charged as normal.</li>
             <li><strong>Aggressive Pets:</strong> For the safety of our team, aggressive or overly protective dogs must be kept inside during our visit. If a technician feels unsafe, we reserve the right to leave the property and skip the service for that day.</li>
-            <li><strong>Overgrown Grass/Leaves:</strong> We cannot guarantee the removal of waste that is hidden in tall grass, heavy leaf cover, or debris. Yards must be reasonably maintained.</li>
+            <li><strong>Overgrown Grass/Leaves:</strong> Yards must be reasonably maintained. Tall grass, heavy leaf cover, and debris make waste harder to find, and significantly overgrown yards may require a custom quote. If we miss anything, the {guarantee.entity} in Section 2 applies.</li>
           </ul>
         </>
       )

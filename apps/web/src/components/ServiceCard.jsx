@@ -27,23 +27,27 @@ const ServiceCard = ({ title, description, benefits, mostPopular }) => {
       >
         {/* Enhanced Most Popular Badge */}
         {mostPopular && (
+          // Centering lives on this wrapper, not the motion.div: the entrance animation sets an
+          // inline transform, which would wipe out -translate-x-1/2 and push the ribbon off
+          // the right edge of the screen on phones.
+          <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="absolute -top-6 left-1/2 -translate-x-1/2 z-20"
           >
             <div className="relative">
               {/* Glow background */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-lg opacity-60 animate-pulse" />
               
               {/* Badge container */}
-              <div className="relative bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-3 rounded-full font-bold text-lg shadow-2xl shadow-primary/40 border-2 border-primary-foreground/20 flex items-center gap-2 whitespace-nowrap">
-                <span className="text-2xl">⭐</span>
-                <span className="tracking-wide text-xl">MOST POOPULAR</span>
+              <div className="relative bg-gradient-to-r from-primary to-accent text-primary-foreground px-5 py-2 sm:px-8 sm:py-3 rounded-full font-bold text-base sm:text-lg shadow-2xl shadow-primary/40 border-2 border-primary-foreground/20 flex items-center gap-2 whitespace-nowrap">
+                <span className="text-xl sm:text-2xl">⭐</span>
+                <span className="tracking-wide text-base sm:text-xl">MOST POOPULAR</span>
               </div>
             </div>
           </motion.div>
+          </div>
         )}
 
         <div className="flex-1">
