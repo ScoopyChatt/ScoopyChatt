@@ -116,6 +116,26 @@ function gitHistoryLooksReliable() {
   }
 }
 
+// Shared files that carry a page's main content, not just layout. An edit to one of
+// these is a real content change on that page, so its date counts toward "modified".
+// (Header/Footer are deliberately absent: they are on every page, and bumping every
+// lastmod for a footer tweak is the unreliable-lastmod problem this file avoids.)
+const SRC = path.join(__dirname, '..', 'src');
+const CONTENT_DEPS = {
+  '/quote': [path.join(SRC, 'components', 'QuoteForm.jsx')],
+  '/faq': [path.join(SRC, 'data', 'faqData.js')],
+  __locations__: [path.join(SRC, 'components', 'LocationTemplate.jsx'), path.join(SRC, 'data', 'faqData.js')],
+};
+
+// Push dates.modified forward to the newest git date among the route's content deps.
+function withContentDeps(key, dates) {
+  for (const dep of CONTENT_DEPS[key] || []) {
+    const d = fs.existsSync(dep) ? gitDates(dep) : null;
+    if (d && d.modified > dates.modified) dates = { published: dates.published, modified: d.modified };
+  }
+  return dates;
+}
+
 function main() {
   const routeFileMap = buildRouteFileMap();
   const result = {};
@@ -130,7 +150,7 @@ function main() {
       fromSource++;
     } else if (trustGit) {
       dates = gitDates(filePath);
-      if (dates) fromGit++;
+      if (dates) { fromGit++; dates = withContentDeps(route, dates); }
       else { skipped++; continue; }
     } else {
       skipped++; continue;
@@ -145,7 +165,7 @@ function main() {
     const locationsFile = path.join(__dirname, '..', 'src', 'data', 'locations.js');
     if (fs.existsSync(locationsFile)) {
       const d = gitDates(locationsFile);
-      if (d) result['__locations__'] = d;
+      if (d) result['__locations__'] = withContentDeps('__locations__', d);
     }
   }
 
