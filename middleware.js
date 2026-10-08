@@ -84,6 +84,7 @@ const BLOG_POSTS = [
   'pet-waste-management-guide',
   'pet-waste-stations-apartments-hoas-chattanooga',
   'podcast-blog',
+  'dog-poop-attract-rodents-pests-chattanooga',
   'pooper-scooper-cost-chattanooga',
   'professional-waste-removal-benefits',
   'seasonal-pet-care-tips',
