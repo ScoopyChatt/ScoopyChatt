@@ -30,7 +30,7 @@ const BlogArticle1_ProfessionalWasteRemovalBenefits = () => {
 
     <h2>Health Risks of Accumulated Pet Waste</h2>
     <p>
-      Many homeowners mistakenly believe that dog waste is a natural fertilizer. In reality, a dog's high-protein diet results in highly acidic waste that burns grass and creates dead spots. More importantly, it is a significant biohazard. The EPA classifies dog waste in the same category as toxic chemicals and oil spills due to the pathogens it carries. A single gram of dog waste can contain up to 23 million fecal coliform bacteria, alongside potential parasites like hookworms, roundworms, and giardia that can persist in the soil for years.
+      Many homeowners mistakenly believe that dog waste is a natural fertilizer. In reality, a dog's high-protein diet results in highly acidic waste that burns grass and creates dead spots. More importantly, it is a significant biohazard. Pet waste carries pathogens and is a recognized source of bacteria in urban waterways. A single gram of dog waste can contain up to 23 million fecal coliform bacteria, alongside potential parasites like hookworms, roundworms, and giardia that can persist in the soil for years.
     </p>
 
     <blockquote>

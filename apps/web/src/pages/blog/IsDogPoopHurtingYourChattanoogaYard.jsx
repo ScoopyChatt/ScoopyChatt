@@ -48,7 +48,7 @@ const IsDogPoopHurtingYourChattanoogaYard = () => {
 
             <h2 className="text-2xl font-bold mt-10 mb-4">Water Runoff: The Problem That Leaves Your Yard</h2>
             <p>Chattanooga gets over 50 inches of rain per year. Every time it rains, whatever is sitting in your yard gets picked up and carried somewhere - into storm drains, into local creeks, and eventually into the Tennessee River and its tributaries.</p>
-            <p>The EPA has classified dog waste as a non-point source pollutant, in the same category as fertilizer runoff and oil leaks. When waste runs off your yard, it carries E. coli, giardia, salmonella, and fecal coliform bacteria into water sources that other people - and other animals - use.</p>
+            <p>Pet waste is a recognized source of bacteria in urban waterways, and the EPA lists it among the contributors to nonpoint source pollution. When waste runs off your yard, it carries E. coli, giardia, salmonella, and fecal coliform bacteria into water sources that other people - and other animals - use.</p>
 
             <h2 className="text-2xl font-bold mt-10 mb-4">The Smell Problem Is a Soil Problem</h2>
             <p>If your backyard has a persistent smell even after you clean it up, the bacteria have already worked their way into the soil. Surface-level cleanup isn't enough at that point. This typically happens after waste has been sitting for weeks or months without removal.</p>

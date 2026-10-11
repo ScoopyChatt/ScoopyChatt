@@ -29,7 +29,7 @@ const IsDogWasteBadForLawn = () => (
           <p>In Chattanooga's hot summers, this damage happens faster. Temperatures above 80°F accelerate the chemical reactions that scorch grass roots, meaning a few days of waste sitting in the same spot can kill a patch that takes weeks to recover. Consistent removal is the only way to prevent permanent damage.</p>
 
           <h2 className="text-2xl font-bold mt-10 mb-4">The Bacteria and Pathogen Problem</h2>
-          <p>The EPA classifies dog waste as a dangerous non-point source pollutant - in the same category as toxic chemicals and oil spills. A single gram of dog feces can contain up to 23 million fecal coliform bacteria, including E. coli, Salmonella, and Campylobacter. These pathogens don't just sit on the surface. They leach into your soil and can remain viable for months or even years.</p>
+          <p>Pet waste is a recognized source of bacteria in urban waterways, and the EPA lists it among the contributors to nonpoint source pollution. A single gram of dog feces can contain up to 23 million fecal coliform bacteria, including E. coli, Salmonella, and Campylobacter. These pathogens don't just sit on the surface. They leach into your soil and can remain viable for months or even years.</p>
           <p>Roundworm (Toxocara canis) eggs are particularly dangerous. They survive Chattanooga's mild winters and can infect humans through skin contact or accidental ingestion. Children playing in the yard - touching soil and then their faces - are at the highest risk. Hookworm larvae can also penetrate bare skin directly.</p>
 
           <h2 className="text-2xl font-bold mt-10 mb-4">Water Runoff: Leaving Your Yard Behind</h2>

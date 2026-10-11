@@ -37,8 +37,8 @@ const steps = [
     number: '04',
     icon: ShieldCheck,
     title: 'We Scoop Every Inch',
-    desc: "Our techs walk your entire yard in a systematic grid - no shortcuts, no missed spots. All waste is double-bagged and hauled away from your property.",
-    highlight: "Full yard coverage. Waste removed from property. Equipment sanitized between every yard.",
+    desc: "Our techs walk your entire yard in a systematic grid - no shortcuts, no missed spots. All waste is double-bagged and placed in your outdoor bin, or hauled away for $5 per visit (included on one-time cleanups).",
+    highlight: "Full yard coverage. Waste double-bagged, never left by the gate. Equipment sanitized between every yard.",
     color: 'bg-amber-500/10 text-amber-600',
   },
   {
@@ -57,7 +57,7 @@ const perks = [
   { icon: '📱', label: 'On the Way Texts', desc: 'Heads-up before every single visit' },
   { icon: '📸', label: 'Gate Photo Proof', desc: 'Photo of your secured gate when done' },
   { icon: '🧹', label: 'Full Yard Coverage', desc: 'Grid-pattern - zero missed spots' },
-  { icon: '🗑️', label: 'Waste Removed', desc: 'Hauled away, not left by the gate' },
+  { icon: '🗑️', label: 'Waste Bagged', desc: 'Double-bagged in your bin, never left by the gate' },
 ];
 
 const faqs = [

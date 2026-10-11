@@ -36,7 +36,7 @@ const ServicesPage = () => {
     {
       title: 'Bi-Weekly Service',
       description: "A great balance of cleanliness and value for smaller yards or single-dog homes.",
-      benefits: ['Every two weeks', 'Thorough grid-pattern cleanup', 'Waste removed from property', 'Easy online scheduling'],
+      benefits: ['Every two weeks', 'Thorough grid-pattern cleanup', 'Waste double-bagged into your bin, or hauled away for $5 a visit', 'Easy online scheduling'],
     },
     {
       title: 'One-Time Cleanup',
@@ -103,9 +103,9 @@ const ServicesPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-card border border-border rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-3">One-Time Cleanup</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">Perfect for moving in or out, hosting an event, seasonal yard resets, or just trying us out before committing to regular service. Same thorough grid-pattern process as recurring visits - all waste removed from the property.</p>
+                <p className="text-muted-foreground leading-relaxed mb-6">Perfect for moving in or out, hosting an event, seasonal yard resets, or just trying us out before committing to regular service. Same thorough grid-pattern process as recurring visits - all waste is hauled away at no extra charge on one-time cleanups.</p>
                 <ul className="space-y-2 mb-6">
-                  {["No commitment or contract required", "Waste fully removed from property", "Gate secured and photo sent when done", "Usually scheduled within 2-5 days"].map((item, i) => (
+                  {["No commitment or contract required", "Haul-away included, no extra charge", "Gate secured and photo sent when done", "Usually scheduled within 2-5 days"].map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-foreground"><CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />{item}</li>
                   ))}
                 </ul>
@@ -248,7 +248,7 @@ const ServicesPage = () => {
         {/* Health and Safety */}
         <section className="py-24 bg-background">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionHeader icon={AlertTriangle} title="Why is pet waste a health and safety issue?" subtitle="Dog waste is not just unpleasant. It is classified by the EPA as a pollutant - and it creates real risks for your family." />
+            <SectionHeader icon={AlertTriangle} title="Why is pet waste a health and safety issue?" subtitle="Dog waste is not just unpleasant. It carries bacteria and parasites that wash into local waterways - and it creates real risks for your family." />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[
                 {
@@ -261,7 +261,7 @@ const ServicesPage = () => {
                 },
                 {
                   title: "It pollutes local waterways",
-                  body: "Rain washes dog waste from yards into storm drains that flow directly to rivers, lakes, and streams. The EPA lists dog waste alongside herbicides and insecticides as a major nonpoint source of water pollution. In Chattanooga, that means the Tennessee River."
+                  body: "Rain washes dog waste from yards into storm drains that flow directly to rivers, lakes, and streams. Pet waste is a recognized contributor to bacteria in urban runoff. In Chattanooga, that means the Tennessee River."
                 }
               ].map((card, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}

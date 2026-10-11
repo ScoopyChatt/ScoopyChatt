@@ -13,9 +13,9 @@ const BlogArticle7_HealthRisksOfPetWaste = () => {
   };
 
   const content = `
-    <h2>Dog Waste Is an EPA-Classified Pollutant - Here Is What That Means for Your Yard</h2>
+    <h2>Dog Waste Is a Water Pollutant - Here Is What That Means for Your Yard</h2>
     <p>
-      A single gram of dog feces contains up to 23 million fecal coliform bacteria - including E. coli, Salmonella, and Campylobacter. The EPA classifies dog waste alongside toxic chemicals and oil spills as a dangerous non-point source pollutant. In Chattanooga's warm, wet climate, averaging over 50 inches of rain per year, these pathogens spread through soil, onto patios, and into your home on shoes and paws within days.
+      A single gram of dog feces contains up to 23 million fecal coliform bacteria - including E. coli, Salmonella, and Campylobacter. Pet waste is a recognized source of bacteria in urban waterways, and the EPA lists it among the contributors to nonpoint source pollution. In Chattanooga's warm, wet climate, averaging over 50 inches of rain per year, these pathogens spread through soil, onto patios, and into your home on shoes and paws within days.
     </p>
 
     <h2>Which Diseases Can Humans Catch from Dog Waste?</h2>
@@ -36,7 +36,7 @@ const BlogArticle7_HealthRisksOfPetWaste = () => {
 
     <h2>Does Dog Waste Contaminate Local Waterways?</h2>
     <p>
-      Yes. Chattanooga receives over 50 inches of rain annually - well above the U.S. average of 38 inches. Every rainfall event washes accumulated waste into storm drains that empty directly into Chattanooga Creek and the Tennessee River without treatment. Research has found pet waste accounts for up to 20-30% of bacterial contamination in urban waterways. This affects water quality used for recreation and wildlife downstream of every Chattanooga neighborhood.
+      Yes. Chattanooga receives over 50 inches of rain annually - well above the U.S. average of 38 inches. Heavy rain can wash accumulated waste into storm drains that carry runoff to local creeks and the Tennessee River. Research has found pet waste accounts for up to 20-30% of bacterial contamination in urban waterways. This affects water quality used for recreation and wildlife downstream of every Chattanooga neighborhood.
     </p>
 
     <h2>Is Dog Waste a Fertilizer? No - Here Is Why</h2>
