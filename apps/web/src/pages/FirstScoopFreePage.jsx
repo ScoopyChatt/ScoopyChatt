@@ -13,13 +13,13 @@ import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 
 const steps = [
   { icon: CalendarCheck, title: "1. Request your quote", body: "Tell us about your yard and dogs. We reply the same day with your exact price." },
-  { icon: CreditCard, title: "2. Pay your first month", body: "Start recurring service and pay your first month up front, just like any other month." },
-  { icon: Gift, title: "3. One visit comes off", body: "The price of one visit is deducted from that first month, so your first scoop is on us." },
+  { icon: CreditCard, title: "2. Pay your first month", body: "Choose weekly or twice-weekly service and purchase your entire first month up front." },
+  { icon: Gift, title: "3. One visit comes off", body: "The price of one visit is credited against that first month, so your first scoop is on us." },
 ];
 
 const faqs = [
-  { q: "Who qualifies for the first scoop free offer?", a: "Every new Scoopy Doo customer who starts recurring service qualifies. There is nothing to apply for and no code to enter." },
-  { q: "How does the free scoop work?", a: "You pay for your first month of service. One visit is then deducted from that first month, so you get a free first scoop." },
+  { q: "Who qualifies for the first scoop free offer?", a: "Every new Scoopy Doo customer who signs up for weekly or twice-weekly service qualifies. Every-other-week and one-time cleanups are not included. There is nothing to apply for and no code to enter." },
+  { q: "How does the free scoop work?", a: "You purchase your entire first month of service. To receive the credit, the full first month must be purchased. One visit is then credited against it, so you get a free first scoop." },
   { q: "Is there a contract?", a: "No. There are no contracts and no cancellation fees. You can pause or cancel any time." },
   { q: "What do I get on every visit?", a: "An on-the-way text, a full grid-pattern sweep of the yard, double-bagged waste placed in your outdoor bin (haul-away is $5 per visit), and a gate photo when we are done." },
 ];
@@ -27,7 +27,7 @@ const faqs = [
 const FirstScoopFreePage = () => {
   const canonicalUrl = getCanonicalUrl('/first-scoop-free');
   const pageTitle = "First Scoop Free | Dog Poop Removal in Chattanooga | Scoopy Doo";
-  const pageDesc = "New customers get their first scoop free. Start dog poop removal in Chattanooga or North Georgia, pay your first month, and one visit is deducted. No contracts.";
+  const pageDesc = "New customers on weekly or twice-weekly service get their first scoop free: buy the full first month and one visit is credited. No contracts.";
 
   const schema = {
     "@context": "https://schema.org",
@@ -58,7 +58,7 @@ const FirstScoopFreePage = () => {
                 Your First Scoop Is on Us. Dog Poop Removal in Chattanooga, TN
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-[55ch] mx-auto font-medium mb-8">
-                Start recurring service, pay your first month, and we deduct one visit from it. Open to every new customer in Chattanooga and North Georgia.
+                Sign up for weekly or twice-weekly service, purchase your entire first month, and we credit one visit. Open to every new customer in Chattanooga and North Georgia.
               </p>
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg">
                 <Link to="/quote">Claim My Free First Scoop</Link>
