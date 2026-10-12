@@ -115,6 +115,16 @@ const RouteTracker = () => {
     trackPageView();
   }, [location, trackPageView]);
 
+  // Google Ads call tracking: re-run the phone-number swap after each in-app page change,
+  // since this SPA renders new phone links without a full page load. Config is in index.html.
+  useEffect(() => {
+    if (typeof window.gtag !== 'function') return undefined;
+    const t = setTimeout(() => {
+      window.gtag('config', 'AW-990906138/JfeaCND6k4McEJqOwNgD', { phone_conversion_number: '423-600-5040' });
+    }, 800);
+    return () => clearTimeout(t);
+  }, [location.pathname]);
+
   return null;
 };
 
