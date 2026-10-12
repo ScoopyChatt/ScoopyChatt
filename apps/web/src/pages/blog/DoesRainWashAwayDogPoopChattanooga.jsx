@@ -39,7 +39,7 @@ const DoesRainWashAwayDogPoopChattanooga = () => {
             Chattanooga sits among hills, creeks, and the Tennessee River, and many neighborhoods drain through storm sewers that empty into local waterways. The EPA lists pet waste as a source of bacteria and nutrients in stormwater runoff, which is one reason many cities encourage owners to pick it up. Fall and winter rains in our area are frequent, so waste left on the ground has plenty of chances to wash somewhere you do not want it.
           </p>
           <p className="mb-4">
-            Wet weather also keeps waste from drying out, so it stays smelly longer. If your yard has a lingering odor after storms, our guide on <a href="/blog/dog-poop-smell-in-yard-chattanooga" className="text-green-700 underline">dog poop smell in Chattanooga yards</a> explains what to do.
+            Wet weather also keeps waste from drying out, so it stays smelly longer. If your yard has a lingering odor after storms, our guide on <a href="/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga" className="text-green-700 underline">dog poop smell in Chattanooga yards</a> explains what to do.
           </p>
           <h2 className="text-2xl font-semibold mt-8 mb-4">Health Risks After a Rainy Week</h2>
           <p className="mb-4">
