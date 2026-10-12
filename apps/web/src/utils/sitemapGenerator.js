@@ -38,7 +38,8 @@ export const generateSitemapData = async () => {
     '/pet-waste-removal-chattanooga',
     '/dog-poop-scooping-chattanooga',
     '/yard-cleanup-chattanooga',
-    '/one-time-cleanup'
+    '/one-time-cleanup',
+    '/first-scoop-free'
   ];
 
   servicePages.forEach(path => {

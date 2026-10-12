@@ -35,6 +35,7 @@ const PAGES = [
   '/how-it-works',
   '/near-me',
   '/one-time-cleanup',
+  '/first-scoop-free',
   '/pet-safe-checklist',
   '/pet-waste-removal-chattanooga',
   '/podcast',

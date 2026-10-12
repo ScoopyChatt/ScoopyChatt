@@ -21,6 +21,7 @@ const PAGES = [
   '/service-areas',
   '/near-me',
   '/one-time-cleanup',
+  '/first-scoop-free',
   '/cost-calculator',
   '/doggy-doors',
   '/dog-poop-removal-chattanooga',
