@@ -122,6 +122,7 @@ const RouteTracker = () => {
     if (typeof window.gtag !== 'function') return undefined;
     const t = setTimeout(() => {
       window.gtag('config', 'AW-990906138/JfeaCND6k4McEJqOwNgD', { phone_conversion_number: '423-600-5040' });
+      window.gtag('config', 'AW-990906138/JfeaCND6k4McEJqOwNgD', { phone_conversion_number: '(423) 600-5040' });
     }, 800);
     return () => clearTimeout(t);
   }, [location.pathname]);
