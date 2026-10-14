@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 // A MutationObserver is used in addition to an immediate check because
 // the third-party widget loader script can inject its div a moment
 // after route change, which a one-time check would miss.
-const HIDDEN_ROUTES = ['/quote'];
+const HIDDEN_ROUTES = ['/quote', '/lp/first-scoop-free'];
 
 let storedNode = null;
 let storedParent = null;

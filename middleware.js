@@ -34,6 +34,7 @@ const PAGES = [
   '/faq',
   '/how-it-works',
   '/near-me',
+  '/lp/first-scoop-free',
   '/one-time-cleanup',
   '/first-scoop-free',
   '/pet-safe-checklist',

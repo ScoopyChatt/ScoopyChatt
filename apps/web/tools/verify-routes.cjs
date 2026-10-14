@@ -53,6 +53,7 @@ function middlewareAllows(route) {
 const SITEMAP_EXCLUDED = new Set([
   '/sitemap.xml',          // the sitemap itself
   '/thank-you',            // post-conversion page, noindex
+  '/lp/first-scoop-free',  // Google Ads landing page, noindex, paid traffic only
   '/spring-special',       // expired seasonal promo, noindex, kept for direct links
   '/doggy-doors/book',     // booking form, noindex
   '/reddit-oauth-callback',// OAuth callback, never a landing page
