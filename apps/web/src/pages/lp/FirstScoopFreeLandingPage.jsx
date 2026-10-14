@@ -11,6 +11,9 @@ import { testimonials } from '@/data/testimonials.js';
 // the phone number. Noindex in three places (Helmet here, the built HTML via
 // seo-page-manifest.cjs, and the sitemap exclusion list in verify-routes.cjs).
 
+// Only these plans qualify for the offer, so only these appear in the form.
+const OFFER_SERVICES = ['weekly', 'twice-weekly'];
+
 const PHONE_DISPLAY = '423-600-5040';
 const PHONE_HREF = 'tel:+14236005040';
 
@@ -21,8 +24,8 @@ const trust = [
 
 const steps = [
   { n: '1', title: 'Get your quote', body: 'Fill out the form above. We reply the same day with your exact price.' },
-  { n: '2', title: 'Pick your day', body: 'Choose a weekly or twice-weekly schedule. No contracts, cancel anytime.' },
-  { n: '3', title: 'Relax', body: 'We scoop, secure the gate and text you a photo. One visit is credited to your first month.' },
+  { n: '2', title: 'Pick your day', body: 'Choose weekly or 2X-weekly service. No contracts, cancel anytime.' },
+  { n: '3', title: 'Relax', body: 'We scoop, secure the gate and text you a photo. One visit is credited against your first month.' },
 ];
 
 // Real Google reviews, verbatim, from the shared testimonials file.
@@ -54,7 +57,7 @@ const FirstScoopFreeLandingPage = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Your First Scoop Is Free | Scoopy Doo Chattanooga</title>
-        <meta name="description" content="New customers get their first scoop free. Weekly dog poop removal in Chattanooga and North Georgia. No contracts." />
+        <meta name="description" content="New weekly and 2X-weekly customers get their first scoop free. Chattanooga and North Georgia. No contracts." />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
@@ -79,13 +82,13 @@ const FirstScoopFreeLandingPage = () => {
               Your First Scoop Is FREE
             </h1>
             <p className="mx-auto mt-3 max-w-[40ch] text-center text-base font-medium text-muted-foreground">
-              Weekly or twice-weekly dog poop removal in Chattanooga &amp; North Georgia. No contracts.
+              Weekly &amp; 2X-weekly dog poop removal in Chattanooga &amp; North Georgia. No contracts.
             </p>
             <div className="mt-5 rounded-2xl border border-primary/20 bg-card p-5 shadow-lg">
-              <QuoteForm />
+              <QuoteForm allowedServices={OFFER_SERVICES} />
             </div>
             <p className="mt-3 text-center text-xs text-muted-foreground">
-              Offer for new weekly and twice-weekly customers: purchase your full first month and one visit is credited.
+              New customers on weekly or 2X-weekly service only. Purchase your full first month and one visit is credited. Not valid on every-other-week or one-time service.
             </p>
             <div className="mt-5 text-center">
               <p className="mb-2 text-sm text-muted-foreground">Prefer to talk? Call us:</p>

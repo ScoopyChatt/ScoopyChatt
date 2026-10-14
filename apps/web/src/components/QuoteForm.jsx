@@ -141,7 +141,9 @@ const formSchema = z.object({
   additionalNotes: z.string().optional(),
 });
 
-const QuoteForm = () => {
+// allowedServices: optional list of serviceType values to offer in the dropdown
+// (used by the paid landing page so only offer-eligible plans can be picked).
+const QuoteForm = ({ allowedServices } = {}) => {
   const navigate = useNavigate();
   const honeypotRef = useRef(null);
   const [quote, setQuote] = useState(null);
@@ -544,11 +546,17 @@ const QuoteForm = () => {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="twice-weekly">2X Weekly Service</SelectItem>
-                    <SelectItem value="weekly">Weekly Service</SelectItem>
-                    <SelectItem value="biweekly">Bi-Weekly Service</SelectItem>
-                    <SelectItem value="onetime">One-Time Cleanup</SelectItem>
-                    <SelectItem value="custom">Custom Service</SelectItem>
+                    {[
+                      ['twice-weekly', '2X Weekly Service'],
+                      ['weekly', 'Weekly Service'],
+                      ['biweekly', 'Bi-Weekly Service'],
+                      ['onetime', 'One-Time Cleanup'],
+                      ['custom', 'Custom Service'],
+                    ]
+                      .filter(([value]) => !allowedServices || allowedServices.includes(value))
+                      .map(([value, label]) => (
+                        <SelectItem key={value} value={value}>{label}</SelectItem>
+                      ))}
                   </SelectContent>
                 </Select>
                 <FormMessage />
