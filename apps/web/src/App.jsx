@@ -8,6 +8,7 @@ import ChatWidgetGate from '@/components/ChatWidgetGate.jsx';
 
 import { useGTM } from '@/hooks/useGTM.js';
 import { usePixel } from '@/hooks/usePixel.js';
+import { captureAdClickIds } from '@/utils/adClickIds.js';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
 // Lazy loaded pages for code splitting
@@ -115,6 +116,11 @@ const RouteTracker = () => {
   useEffect(() => {
     trackPageView();
   }, [location, trackPageView]);
+
+  // Save the Google Ads click ID from the landing URL so the quote form can pass it on.
+  useEffect(() => {
+    captureAdClickIds();
+  }, [location.search]);
 
   // Google Ads call tracking: re-run the phone-number swap after each in-app page change,
   // since this SPA renders new phone links without a full page load. Config is in index.html.

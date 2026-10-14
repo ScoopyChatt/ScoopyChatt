@@ -12,6 +12,7 @@ import { toast } from 'sonner';
 import { AnimatePresence, motion } from '@/components/motion.jsx';
 import { CheckCircle2, MapPin } from 'lucide-react';
 import { GuaranteeBadge } from '@/components/Guarantee.jsx';
+import { getAdClickIds } from '@/utils/adClickIds.js';
 
 export const SERVICE_AREA = {
   "37350": { area: "Lookout Mountain", day: "Tuesday" },
@@ -285,6 +286,7 @@ const QuoteForm = () => {
       service_label: SERVICE_LABELS[v.serviceType] || 'Custom Pet Waste Removal Service',
       ready_to_book: true, lead_stage: 'Ready to Book', take_away: takeAway ? 'Yes (+$5/visit)' : 'No', company_website: '',
       source: 'scoopychatt.com/quote', submitted_at: new Date().toISOString(),
+      ...getAdClickIds(),
     };
     const postJson = (url) => fetch(url, {
       method: 'POST',
@@ -337,6 +339,7 @@ const QuoteForm = () => {
       source: 'scoopychatt.com/quote',
       page_url: typeof window !== 'undefined' ? window.location.href : '',
       submitted_at: new Date().toISOString(),
+      ...getAdClickIds(),
     };
 
     try {
