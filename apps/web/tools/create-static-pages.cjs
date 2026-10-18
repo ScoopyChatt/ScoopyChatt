@@ -184,12 +184,23 @@ var pages = [
 // Removes the per-page content inject-seo.cjs adds to the homepage so this script
 // can reuse dist/index.html as a neutral template.
 function stripHomepageInjections(html) {
-  // inject-seo.cjs now writes the homepage's real content inside #root itself
-  // (not a separate hidden sibling div), so reset root to empty before this
-  // script injects its own per-route content into it below. Safe as a
-  // non-greedy match up to the first </div>: injected content is intentionally
-  // flat (h1/h2/p/ul/li/blockquote/a only, no nested <div>s).
-  var out = html.replace(/<div id="root">[\s\S]*?<\/div>/, '<div id="root"></div>');
+  // inject-seo.cjs writes the homepage's real content inside #root itself, so reset root
+  // to empty before this script injects its own per-route content into it below. The
+  // closing tag is found by counting divs: the homepage block contains a <div> (the
+  // guarantee banner), and a plain non-greedy match stopped at that inner </div>, leaving
+  // ~8 KB of homepage FAQ and nav stranded after #root on every page written here.
+  var open = '<div id="root">';
+  var a = html.indexOf(open);
+  var out = html;
+  if (a >= 0) {
+    var re = /<\/?div\b[^>]*>/g;
+    re.lastIndex = a + open.length;
+    var depth = 1, m;
+    while ((m = re.exec(html))) {
+      depth += m[0][1] === '/' ? -1 : 1;
+      if (depth === 0) { out = html.slice(0, a) + open + '</div>' + html.slice(m.index + m[0].length); break; }
+    }
+  }
   out = out.replace(/<script type="application\/ld\+json">(?:(?!<\/script>)[\s\S])*?"@type":"FAQPage"(?:(?!<\/script>)[\s\S])*?<\/script>/g, '');
   return out;
 }
