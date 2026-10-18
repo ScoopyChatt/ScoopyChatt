@@ -16,4 +16,6 @@ node apps/web/tools/generate-page-dates.cjs
 node apps/web/tools/inject-seo.cjs
 node apps/web/tools/generate-sitemap.cjs
 node apps/web/tools/create-static-pages.cjs
+node apps/web/tools/prerender.mjs
+node apps/web/tools/page-schema.cjs
 node apps/web/tools/verify-routes.cjs

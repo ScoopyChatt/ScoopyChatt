@@ -33,7 +33,7 @@ const FallLeavesHideDogPoopChattanooga = () => {
           </p>
 
           <img
-            src="/images/blog/fall-leaves-yard-scooping-chattanooga.jpg"
+            src="/images/blog/fall-leaves-yard-scooping-chattanooga.webp"
             alt="Scoopy Doo team member scooping dog waste in a Chattanooga backyard in the fall"
             className="w-full rounded-lg my-6"
             loading="lazy"

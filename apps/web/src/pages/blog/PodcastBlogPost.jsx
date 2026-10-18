@@ -25,7 +25,7 @@ const PodcastBlogPost = () => {
     "video": {
       "@type": "VideoObject",
       "name": "Scoopy Doo LLC Founder on Recent Podcast",
-      "description": "Listen to the Scoopy Doo LLC founder discuss pet waste management, yard cleanup, and business insights.",
+      "description": "Listen to Scoopy Doo LLC founder Brandon Carter discuss pet waste management, lawn health, yard cleanup and building a Chattanooga small business.",
       "thumbnailUrl": "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/8088ef4935a7739f1747caefac1fdcc6.jpg",
       "uploadDate": "2026-05-15",
       "embedUrl": "https://www.youtube.com/embed/BlLL2Yzc5YI"
@@ -109,14 +109,14 @@ const PodcastBlogPost = () => {
   return (
     <>
       <SEOHead 
-        title="Scoopy Doo LLC Founder on a Pet Waste Management Podcast"
+        title="Scoopy Doo Founder on a Pet Waste Podcast"
         description="Listen to the Scoopy Doo LLC founder discuss pet waste management, yard cleanup, and business insights on this recent podcast episode."
         canonicalUrl={`${CANONICAL_BASE_URL}/blog/podcast-blog`}
         schema={schemaData}
       />
       <BlogPostTemplate 
-        title="Scoopy Doo LLC Founder on a Pet Waste Management Podcast"
-        description="Listen to the Scoopy Doo LLC founder discuss pet waste management, yard cleanup, and business insights."
+        title="Scoopy Doo Founder on a Pet Waste Podcast"
+        description="Listen to Scoopy Doo LLC founder Brandon Carter discuss pet waste management, lawn health, yard cleanup and building a Chattanooga small business."
         slug="podcast-blog"
         date="May 15, 2026"
         author="Scoopy Doo Team"

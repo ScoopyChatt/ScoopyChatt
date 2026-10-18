@@ -10,8 +10,8 @@ const DogDoorInstallationChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>Dog Door Installation in Chattanooga, TN: Cost & Guide | Scoopy Doo</title>
-        <meta name="description" content="How much does dog door installation cost in Chattanooga? Good, Better, and Best options from $529 installed, professionally measured, sealed, and tested. Call 423-600-5040." />
+        <title>Dog Door Installation Cost in Chattanooga | Scoopy Doo</title>
+        <meta name="description" content="What dog door installation costs in Chattanooga: Good, Better and Best options from $529 installed, professionally measured, sealed and tested." />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
       <Header />

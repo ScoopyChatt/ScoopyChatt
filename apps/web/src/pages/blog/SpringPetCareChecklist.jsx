@@ -8,7 +8,7 @@ import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
 const SpringPetCareChecklist = () => (
   <div className="min-h-screen flex flex-col bg-background">
-    <SEOHead title="Spring Pet Care Checklist for Chattanooga Dog Owners | Scoopy Doo" description="Get your yard spring-ready with this complete checklist for Chattanooga pet owners. Toxic plants, lawn safety, waste cleanup, and more." canonicalUrl={`${CANONICAL_BASE_URL}/blog/spring-pet-care-checklist`} />
+    <SEOHead title="Spring Pet Care Checklist for Chattanooga | Scoopy Doo" description="Get your yard spring-ready with this complete checklist for Chattanooga pet owners. Toxic plants, lawn safety, waste cleanup, and more." canonicalUrl={`${CANONICAL_BASE_URL}/blog/spring-pet-care-checklist`} />
     <Header />
     <main className="flex-grow py-20">
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

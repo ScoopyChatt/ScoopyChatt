@@ -57,7 +57,7 @@ export const seoMetadata = {
   },
   "/about": {
     title: "About Scoopy Doo | Chattanooga Pet Waste Removal",
-    description: "Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company. 99 five-star reviews, two branded service vehicles, serving 17+ communities.",
+    description: "Meet Scoopy Doo LLC, Chattanooga's locally owned father and daughter pet waste removal company. 99 five-star reviews, serving 17+ communities.",
     canonical: `${CANONICAL_BASE_URL}/about`,
     ogType: "website"
   },
@@ -110,7 +110,7 @@ export const seoMetadata = {
     ogType: "website"
   },
   "/doggy-doors": {
-    title: "Dog Door & Pet Door Installation in Chattanooga, TN | Scoopy Doo",
+    title: "Dog Door Installation in Chattanooga, TN | Scoopy Doo",
     description: "Dog door and pet door installation in Chattanooga, TN and North Georgia. Locally owned, not a franchise. Set pricing from $529 installed, no quote calls.",
     canonical: `${CANONICAL_BASE_URL}/doggy-doors`,
     image: "https://www.scoopychatt.com/images/doggy-doors-hero.jpg",

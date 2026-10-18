@@ -60,8 +60,8 @@ const ApawsMemberChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>What aPaws Membership Means When Hiring a Pooper Scooper | Chattanooga</title>
-        <meta name="description" content="aPaws is the national trade association for pet waste removal. Here is what membership means, why it matters when hiring, and why Scoopy Doo is the only member within 76 miles of Chattanooga." />
+        <title>What aPaws Membership Means When Hiring a Pooper Scooper</title>
+        <meta name="description" content="aPaws is the national trade association for pet waste removal. What membership means, and why Scoopy Doo is the only member within 76 miles of Chattanooga." />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

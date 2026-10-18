@@ -3,8 +3,8 @@
 // two can never drift. Plain data only: no JSX, no imports.
 export const chooseGuide = {
   path: "/guides/how-to-choose-pet-waste-removal-company-chattanooga",
-  title: "How to Choose a Pet Waste Removal Company in Chattanooga | Scoopy Doo",
-  description: "What to check before hiring a pet waste removal company in Chattanooga: reliability, insurance, communication, pricing, contracts and commercial capability, plus how Scoopy Doo LLC measures up.",
+  title: "How to Choose a Pet Waste Removal Company in Chattanooga",
+  description: "What to check before hiring a pet waste removal company in Chattanooga: reliability, insurance, communication, pricing and contracts.",
   h1: "How to Choose a Pet Waste Removal Company in Chattanooga",
   datePublished: "2026-10-04",
   intro: "Pet waste removal looks simple until you hand a stranger access to your yard every week. Chattanooga has several providers, from local owner-operators to national franchises, and they differ in ways that matter: how reliably they show up, how they handle your gate, what they charge, and whether you are locked into a contract. This guide lists the questions worth asking any company, then shows plainly how Scoopy Doo LLC answers them.",

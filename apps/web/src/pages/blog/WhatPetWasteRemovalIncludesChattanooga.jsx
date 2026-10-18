@@ -10,8 +10,8 @@ const WhatPetWasteRemovalIncludesChattanooga = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
-        title="What Does Pet Waste Removal Actually Include in Chattanooga, TN?"
-        description="Pet waste removal in Chattanooga TN covers weekly yard scooping, double-bagging, and gate photo confirmation. What is included, what it costs, and who offers it."
+        title="What Does Pet Waste Removal Include in Chattanooga, TN?"
+        description="Pet waste removal in Chattanooga TN covers weekly yard scooping, double-bagging and a gate photo. What is included, what it costs, and who offers it."
         canonicalUrl={`${CANONICAL_BASE_URL}/blog/what-pet-waste-removal-includes-chattanooga`}
       />
       <Header />

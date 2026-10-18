@@ -10,8 +10,8 @@ const DogPoopAttractRodentsPestsChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>Does Dog Poop Attract Rats and Pests in Chattanooga? | Scoopy Doo</title>
-        <meta name="description" content="Yes, dog poop can attract rodents, flies, and other pests. Learn what to watch for in Chattanooga and North Georgia yards, and how weekly scooping from $20 per visit helps." />
+        <title>Does Dog Poop Attract Rats in Chattanooga? | Scoopy Doo</title>
+        <meta name="description" content="Yes, dog poop can attract rodents, flies and other pests. What to watch for in Chattanooga and North Georgia yards, and how weekly scooping helps." />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
       <Header />
@@ -24,7 +24,7 @@ const DogPoopAttractRodentsPestsChattanooga = () => {
           <p className="mb-4">
             Yes, it can. Dog waste left in a yard is a food and breeding source for rodents and flies, and a steady scent that draws other wildlife. If you have noticed more rats, mice, or flies around your Chattanooga or North Georgia yard, uneaten dog poop is one of the first things worth checking. Scoopy Doo removes it for you, with weekly service starting at <strong>$20 per visit</strong> for one dog.
           </p>
-          <img src="/images/blog/dog-poop-attract-rodents-pests-chattanooga.jpg" alt="Scoopy Doo technician scooping dog waste from a fenced backyard lawn in Chattanooga TN" className="w-full rounded-lg my-6" loading="lazy" />
+          <img src="/images/blog/dog-poop-attract-rodents-pests-chattanooga.webp" alt="Scoopy Doo technician scooping dog waste from a fenced backyard lawn in Chattanooga TN" className="w-full rounded-lg my-6" loading="lazy" />
           <h2 className="text-2xl font-semibold mt-8 mb-4">Why Dog Poop Attracts Pests</h2>
           <p className="mb-4">
             Dog feces is not just waste, it is a food source. Dogs digest food incompletely, so their droppings still contain nutrients and moisture that rodents and insects will eat or lay eggs in. Pest control sources commonly list pet waste as one of the things that draws rats and mice to residential yards, right alongside open trash and bird feeders.

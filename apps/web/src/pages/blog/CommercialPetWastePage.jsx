@@ -36,7 +36,7 @@ const CommercialPetWastePage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead 
-        title="Pet Waste Removal for HOAs, Apartments & Commercial Properties"
+        title="Pet Waste Removal for HOAs, Apartments and Businesses"
         description="Pet waste removal for HOAs, apartments & commercial properties in Chattanooga. Professional cleanup solutions for multi-unit properties."
         canonicalUrl={`${CANONICAL_BASE_URL}/blog/commercial-pet-waste-removal-chattanooga`}
       />

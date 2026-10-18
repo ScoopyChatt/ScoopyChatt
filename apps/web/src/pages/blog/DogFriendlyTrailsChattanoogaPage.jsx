@@ -7,7 +7,7 @@ import Footer from "@/components/Footer.jsx";
 import FloatingCTA from "@/components/FloatingCTA.jsx";
 import { getCanonicalUrl } from "@/utils/seoHelpers.js";
 
-const pageTitle = "Best Dog-Friendly Trails in Chattanooga and North Georgia | Scoopy Doo";
+const pageTitle = "Dog-Friendly Trails in Chattanooga and North Georgia";
 const pageDesc = "A local guide to the best dog-friendly trails in Chattanooga and North Georgia, plus leash rules and tips for keeping your yard clean after the hike.";
 
 const articleSchema = {

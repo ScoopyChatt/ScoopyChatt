@@ -22,7 +22,7 @@
 - **Host:** Vercel (project: `scoopy-chatt`, account: `scoopychatts-projects`)
 - **Root:** `apps/web/`
 - **Node version:** 24.x (Vercel dashboard setting — do NOT add nodeVersion to vercel.json, it is an invalid property that breaks builds)
-- **Build command in vercel.json:** `bash scripts/build.sh` — the real chain (npm install, vite build, then the five SEO tools in order) lives in `scripts/build.sh`. It is NOT inline in vercel.json, because **`buildCommand` has a hard 256-character limit** — see Known Issues. Add new build steps to `scripts/build.sh`, never to vercel.json.
+- **Build command in vercel.json:** `bash scripts/build.sh` — the real chain (npm install, vite build, then the SEO tools in order) lives in `scripts/build.sh`. It is NOT inline in vercel.json, because **`buildCommand` has a hard 256-character limit** — see Known Issues. Add new build steps to `scripts/build.sh`, never to vercel.json.
 - **Output dir:** `dist/apps/web`
 - **Path alias:** `@` = `apps/web/src/`
 
@@ -108,6 +108,9 @@ silent: the page works when you click it locally and is broken for crawlers.
    Skip it and the page inherits the homepage title tag.
 6. `apps/web/tools/create-static-pages.cjs` — the crawlable prerendered body. This is a
    React SPA with no SSR, so without it a crawler sees an empty shell.
+   **Blog posts skip this step:** `tools/prerender.mjs` renders every post in `BLOG_POSTS`
+   (and `/blog` itself) from its React component at build time and writes the full article
+   into the prebuilt HTML. A post just needs its slug in the manifest and a route in App.jsx.
 7. `apps/web/tools/generate-llms.js` — `PAGES`, so AI crawlers can find it. This is the
    GEO surface; it is what ChatGPT and Perplexity read.
 8. `apps/web/src/utils/sitemapGenerator.js` — `liveBlogSlugs`, for blog posts. Powers the

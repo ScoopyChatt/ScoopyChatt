@@ -10,7 +10,7 @@ const DogPoopCleanupSummerHeatChattanooga = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
-        title="Dog Poop Cleanup in Chattanooga During Hot, Humid Weather | Scoopy Doo"
+        title="Dog Poop Cleanup in Chattanooga Summer Heat | Scoopy Doo"
         description="Summer heat and humidity make dog waste more dangerous and harder to ignore. Learn why Chattanooga yards need regular cleanup during the hot months."
         canonicalUrl={`${CANONICAL_BASE_URL}/blog/dog-poop-cleanup-chattanooga-summer-heat`}
       />

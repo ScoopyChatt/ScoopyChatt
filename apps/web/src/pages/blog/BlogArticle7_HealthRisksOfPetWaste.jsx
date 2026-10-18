@@ -5,7 +5,7 @@ import BlogPostTemplate from '@/components/BlogPostTemplate.jsx';
 const BlogArticle7_HealthRisksOfPetWaste = () => {
   const meta = {
     title: "Health Risks of Unmanaged Pet Waste",
-    description: "Dog waste contains up to 23 million fecal coliform bacteria per gram and 11 human-transmissible pathogens. Here is what is actually living in your Chattanooga yard.",
+    description: "Dog waste carries up to 23 million fecal coliform bacteria per gram and 11 human-transmissible pathogens. What is living in your Chattanooga yard.",
     author: "Scoopy Doo Team",
     datePublished: "2026-05-09",
     slug: "health-risks-of-pet-waste",

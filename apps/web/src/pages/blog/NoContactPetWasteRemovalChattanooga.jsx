@@ -12,10 +12,10 @@ const NoContactPetWasteRemovalChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>Do You Need to Be Home for Dog Poop Removal? | Scoopy Doo Chattanooga</title>
+        <title>Do You Need to Be Home for Dog Poop Removal? | Scoopy Doo</title>
         <meta
           name="description"
-          content="No, Scoopy Doo does not require you to be home. See exactly how our no-contact pooper scooper service works in Chattanooga and North Georgia, with gate photos and on-the-way texts."
+          content="No, you do not need to be home. How the Scoopy Doo no-contact pooper scooper service works in Chattanooga, with on-the-way texts and gate photos."
         />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>

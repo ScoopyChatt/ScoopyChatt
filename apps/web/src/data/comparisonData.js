@@ -14,7 +14,7 @@
 
 export const comparison = {
   title: "Chattanooga Pet Waste Removal Companies Compared",
-  description: "Pet waste removal companies serving Chattanooga and North Georgia compared by service area, frequency and published pricing. Published by Scoopy Doo LLC, one of the companies listed.",
+  description: "Pet waste removal companies serving Chattanooga and North Georgia, compared by service area, frequency and pricing. Published by Scoopy Doo LLC.",
   h1: "Pet Waste Removal Services in Chattanooga, TN",
   h1Sub: "2026 Comparison",
   updated: "October 4, 2026",

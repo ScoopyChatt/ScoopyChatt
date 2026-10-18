@@ -26,7 +26,7 @@ const faqs = [
 
 const FirstScoopFreePage = () => {
   const canonicalUrl = getCanonicalUrl('/first-scoop-free');
-  const pageTitle = "First Scoop Free | Dog Poop Removal in Chattanooga | Scoopy Doo";
+  const pageTitle = "First Scoop Free: Dog Poop Removal in Chattanooga";
   const pageDesc = "New customers on weekly or twice-weekly service get their first scoop free: buy the full first month and one visit is credited. No contracts.";
 
   const schema = {

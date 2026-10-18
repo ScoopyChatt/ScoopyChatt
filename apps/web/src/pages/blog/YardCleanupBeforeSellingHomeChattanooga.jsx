@@ -31,8 +31,8 @@ answer: "Yes. We regularly coordinate cleanup timing around listing photos and s
 return (
 <div className="flex flex-col min-h-screen">
 <SEOHead
-title="Do You Need to Clean Up Dog Waste Before Selling Your Chattanooga Home?"
-description="Selling a home in Chattanooga? Here is why yard cleanup and pet waste removal matter before listing photos and showings, plus a pre-listing checklist and pricing."
+title="Dog Waste Cleanup Before Selling a Chattanooga Home"
+description="Selling a home in Chattanooga? Why pet waste cleanup matters before listing photos and showings, plus a pre-listing yard checklist and pricing."
 canonicalUrl={`${CANONICAL_BASE_URL}/blog/yard-cleanup-before-selling-home-chattanooga`}
 />
 <Header />

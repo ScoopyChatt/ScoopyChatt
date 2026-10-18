@@ -36,7 +36,7 @@ const ChattanoogaHomeownersPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead 
-        title="Why Chattanooga Homeowners Are Hiring Pet Waste Removal Services"
+        title="Why Chattanooga Homeowners Hire Pet Waste Removal"
         description="Why Chattanooga homeowners are hiring professional pet waste removal services. Learn the benefits of weekly dog poop cleanup for your lawn."
         canonicalUrl={`${CANONICAL_BASE_URL}/blog/chattanooga-pet-waste-removal-homeowners`}
       />

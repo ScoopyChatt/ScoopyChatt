@@ -10,7 +10,7 @@ const PooperScooperCostChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>How Much Does Pooper Scooper Service Cost in Chattanooga? | Scoopy Doo</title>
+        <title>Pooper Scooper Service Cost in Chattanooga | Scoopy Doo</title>
         <meta name="description" content="Scoopy Doo weekly service starts at $20 per visit for one dog. See 2026 pricing for weekly, bi-weekly, and one-time pet waste removal in Chattanooga TN." />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
