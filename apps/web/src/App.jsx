@@ -2,7 +2,6 @@
 import React, { useEffect, Suspense } from 'react';
 import { Route, Routes, BrowserRouter as Router, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Toaster } from '@/components/ui/sonner';
 import ScrollToTop from '@/components/ScrollToTop.jsx';
 import ChatWidgetGate from '@/components/ChatWidgetGate.jsx';
 
@@ -109,7 +108,9 @@ const QuickBooksOAuthCallbackPage = React.lazy(() => import('@/pages/QuickBooksO
 // Sitemap Route
 const SitemapXML = React.lazy(() => import('@/pages/SitemapXML.jsx'));
 const NotFoundPage = React.lazy(() => import('@/pages/NotFoundPage.jsx'));
-import HowItWorksPage from '@/pages/HowItWorksPage.jsx';
+const HowItWorksPage = React.lazy(() => import('@/pages/HowItWorksPage.jsx'));
+// The toast library is only needed once a form is submitted, so keep it out of the main bundle.
+const Toaster = React.lazy(() => import('@/components/ui/sonner').then((m) => ({ default: m.Toaster })));
 
 const RouteTracker = () => {
   const location = useLocation();
@@ -278,7 +279,9 @@ function App() {
       
       <AppRoutes />
       
-      <Toaster />
+      <Suspense fallback={null}>
+        <Toaster />
+      </Suspense>
     </Router>
   );
 }

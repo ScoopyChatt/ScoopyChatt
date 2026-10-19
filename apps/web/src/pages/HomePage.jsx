@@ -12,6 +12,7 @@ import FloatingCTA from '@/components/FloatingCTA.jsx';
 import PetSafeChecklistCTA from '@/components/PetSafeChecklistCTA.jsx';
 import CustomGoogleReviewsCarousel from '@/components/CustomGoogleReviewsCarousel.jsx';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
+import { REVIEW_PHRASE } from '@/data/reviews.js';
 
 const HomePage = () => {
   const services = [{
@@ -39,10 +40,10 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Pet Waste Removal & Dog Poop Removal | Chattanooga TN | Scoopy Doo</title>
-        <meta name="description" content="Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 99+ Google reviews. Weekly service from $20 per visit. Free quotes." />
+        <meta name="description" content={"Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. " + REVIEW_PHRASE + ". Weekly service from $20 per visit. Free quotes."} />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content="Pet Waste Removal & Dog Poop Removal | Chattanooga TN | Scoopy Doo" />
-        <meta property="og:description" content="Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. 5-star rated with 99+ Google reviews. Weekly service from $20 per visit. Free quotes." />
+        <meta property="og:description" content={"Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia. " + REVIEW_PHRASE + ". Weekly service from $20 per visit. Free quotes."} />
         <meta property="og:url" content={canonicalUrl} />
         <meta name="twitter:card" content="summary" />
       </Helmet>
@@ -122,22 +123,22 @@ const HomePage = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
                 <div className="flex flex-col items-center gap-2 p-4">
-                  <span className="text-3xl">â­</span>
+                  <span className="text-3xl">⭐</span>
                   <div className="font-extrabold text-lg text-foreground">5-Star Rated</div>
                   <div className="text-sm text-muted-foreground">on Google Reviews</div>
                 </div>
                 <div className="flex flex-col items-center gap-2 p-4">
-                  <span className="text-3xl">ð¨âð§</span>
+                  <span className="text-3xl">👨‍👧</span>
                   <div className="font-extrabold text-lg text-foreground">Family Owned</div>
                   <div className="text-sm text-muted-foreground">Local father & daughter team</div>
                 </div>
                 <div className="flex flex-col items-center gap-2 p-4">
-                  <span className="text-3xl">ð</span>
+                  <span className="text-3xl">📍</span>
                   <div className="font-extrabold text-lg text-foreground">17+ Communities</div>
                   <div className="text-sm text-muted-foreground">Chattanooga metro & North GA</div>
                 </div>
                 <div className="flex flex-col items-center gap-2 p-4">
-                  <span className="text-3xl">ð«</span>
+                  <span className="text-3xl">🚫</span>
                   <div className="font-extrabold text-lg text-foreground">No Contracts</div>
                   <div className="text-sm text-muted-foreground">Cancel or change anytime</div>
                 </div>
@@ -268,7 +269,7 @@ const HomePage = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Why choose Scoopy Doo over other pooper scooper services?</h3>
-                  <p className="text-muted-foreground leading-relaxed">Scoopy Doo is rated 5 stars across more than 99 Google reviews. We are locally owned, fully insured, and available seven days a week, with no contracts and no cancellation fees.</p>
+                  <p className="text-muted-foreground leading-relaxed">Scoopy Doo has {REVIEW_PHRASE}. We are locally owned, fully insured, and available seven days a week, with no contracts and no cancellation fees.</p>
                 </div>
               </div>
             </div>

@@ -11,6 +11,7 @@ import { GOOGLE_REVIEW_URL } from '@/config/googleBusiness.js';
 import { testimonials } from '@/data/testimonials.js';
 import SEOHead from '@/components/SEOHead.jsx';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
+import { REVIEW_PHRASE } from '@/data/reviews.js';
 
 const ReviewsPage = () => {
   return (
@@ -40,7 +41,7 @@ const ReviewsPage = () => {
                   See Why Chattanooga Trusts Us
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[65ch] mx-auto mb-8">
-                  We take pride in keeping local yards clean, safe, and ready to enjoy. With over 100 five-star Google reviews, here is what Chattanooga dog owners say about our pet waste removal service.
+                  We take pride in keeping local yards clean, safe, and ready to enjoy. With {REVIEW_PHRASE}, here is what Chattanooga dog owners say about our pet waste removal service.
                 </p>
                 <Button
                   asChild

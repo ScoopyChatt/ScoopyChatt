@@ -14,6 +14,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const { pages: manifestPages, noindex } = require(path.join(__dirname, "seo-page-manifest.cjs"));
 const NOINDEX = new Set(noindex);
 const GUARANTEE = require(path.join(__dirname, "..", "src", "data", "guarantee.json"));
+const REVIEWS = require(path.join(__dirname, "..", "src", "data", "reviewStats.json"));
 const LOC_DESCRIPTIONS = require(path.join(__dirname, "location-descriptions.cjs"));
 
 const SUMMARY =
@@ -23,8 +24,8 @@ const SUMMARY =
   "Flintstone, and Fort Oglethorpe (GA). Services include weekly, bi-weekly, one-time, " +
   "commercial, and HOA dog poop removal and yard cleanup. Every visit includes on-the-way " +
   "text notifications and a gate photo confirmation. Scoopy Doo LLC was founded in 2025 by Brandon Carter and " +
-  "his daughter Leighton Carter, is based in Ringgold, GA, and serves more than 150 active clients with 99 " +
-  "five-star Google reviews. It is fully insured and a BBB Accredited Business "  +
+  "his daughter Leighton Carter, is based in Ringgold, GA, and serves more than 150 active clients with " +
+  REVIEWS.phrase + ". It is fully insured and a BBB Accredited Business "  +
   "(A- rating) and a member of aPaws, the Association of Professional Animal Waste Specialists, the "  +
   "national trade association for the professional pet waste removal industry. No contracts required -- get a free " +
   "online quote at scoopychatt.com/quote. It is not affiliated with an earlier, now-closed Chattanooga " +

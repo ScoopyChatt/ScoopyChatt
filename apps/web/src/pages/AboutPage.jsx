@@ -8,12 +8,13 @@ import Footer from '@/components/Footer.jsx';
 import { Button } from '@/components/ui/button';
 import ElfsightReviewsWidget from '@/components/ElfsightReviewsWidget.jsx';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
+import { REVIEW_PHRASE, REVIEW_PHRASE_TITLE } from '@/data/reviews.js';
 
 const AboutPage = () => {
   const canonicalUrl = getCanonicalUrl('/about');
 
   const stats = [
-    { value: "99", label: "Five-Star Google Reviews" },
+    { value: "100+", label: "Five-Star Google Reviews" },
     { value: "2", label: "Branded Service Vehicles" },
     { value: "17+", label: "Communities Served" },
     { value: "100%", label: "Satisfaction Guarantee" },
@@ -30,10 +31,10 @@ const AboutPage = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
         <title>About Scoopy Doo | Chattanooga Pet Waste Removal</title>
-        <meta name="description" content="Meet Scoopy Doo LLC, Chattanooga's locally owned father and daughter pet waste removal company. 99 five-star reviews, serving 17+ communities." />
+        <meta name="description" content={"Meet Scoopy Doo LLC, Chattanooga's locally owned father and daughter pet waste removal company. " + REVIEW_PHRASE + ", serving 17+ communities."} />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content="About Scoopy Doo | Chattanooga Pet Waste Removal" />
-        <meta property="og:description" content="Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company." />
+        <meta property="og:description" content={"Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company."} />
         <meta property="og:url" content={canonicalUrl} />
       </Helmet>
 
@@ -74,7 +75,7 @@ const AboutPage = () => {
               <div><dt className="font-bold text-foreground">Based in</dt><dd>Ringgold, GA, serving the Chattanooga, TN metro area and nearby North Georgia</dd></div>
               <div className="sm:col-span-2"><dt className="font-bold text-foreground">Not affiliated with</dt><dd>An earlier, now-closed Chattanooga business that also used the name Scoopy Doo. Scoopy Doo LLC is a separate company, founded in 2025.</dd></div>
               <div><dt className="font-bold text-foreground">Clients</dt><dd>More than 150 active clients, including homes, HOAs, apartments and commercial properties</dd></div>
-              <div><dt className="font-bold text-foreground">Reviews</dt><dd>99 five-star Google reviews</dd></div>
+              <div><dt className="font-bold text-foreground">Reviews</dt><dd>{REVIEW_PHRASE}</dd></div>
               <div><dt className="font-bold text-foreground">Credentials</dt><dd>BBB accredited, fully insured, member of aPaws (Association of Professional Animal Waste Specialists)</dd></div>
               <div><dt className="font-bold text-foreground">Services</dt><dd><Link to="/services" className="underline hover:text-primary">Residential pet waste removal</Link>, <Link to="/one-time-cleanup" className="underline hover:text-primary">one-time cleanups</Link>, <Link to="/commercial" className="underline hover:text-primary">commercial, HOA and apartment service</Link></dd></div>
               <div><dt className="font-bold text-foreground">Contracts</dt><dd>None. Cancel any time. See <Link to="/pricing" className="underline hover:text-primary">pricing</Link>.</dd></div>
@@ -132,7 +133,7 @@ const AboutPage = () => {
             <div className="flex justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
             </div>
-            <h2 className="text-2xl font-bold text-foreground mb-2">99 Five-Star Google Reviews</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-2">{REVIEW_PHRASE_TITLE}</h2>
             <p className="text-muted-foreground mb-8">More than 150 active clients across Chattanooga and North Georgia trust us with their yards every week. Here is what they say.</p>
             <div className="text-left">
               <ElfsightReviewsWidget />

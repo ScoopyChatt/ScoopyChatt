@@ -1,7 +1,7 @@
 {
   "/": {
     "title": "Pet Waste & Dog Poop Removal | Chattanooga TN | Scoopy Doo",
-    "description": "Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia from $20/visit. 5-star rated with 99+ Google reviews. No-Poop-Left-Behind Guarantee."
+    "description": "Pet waste removal & dog poop pickup in Chattanooga TN & North Georgia from $20/visit. 100+ five-star Google reviews. No-Poop-Left-Behind Guarantee."
   },
   "/services": {
     "title": "Dog Poop Removal Services in Chattanooga, TN | From $20",
@@ -31,13 +31,17 @@
     "title": "Customer Reviews | Scoopy Doo Dog Poop Removal Chattanooga",
     "description": "Read customer reviews for Scoopy Doo's dog poop removal service in Chattanooga. Trusted, eco-friendly pet waste removal. See what clients say!"
   },
+  "/contact": {
+    "title": "Contact Scoopy Doo | Ask a Question | Chattanooga, TN",
+    "description": "Questions about dog poop removal, HOA service or doggy doors in Chattanooga? Call or text 423-600-5040, email info@scoopychatt.com, or send us a message."
+  },
   "/faq": {
     "title": "Pet Waste Removal FAQs | Scoopy Doo Chattanooga",
     "description": "Answers to common questions about dog poop removal in Chattanooga: pricing, scheduling, service areas, gate access, pets, and more."
   },
   "/about": {
     "title": "About Scoopy Doo | Chattanooga Pet Waste Removal",
-    "description": "Meet Scoopy Doo LLC, Chattanooga's locally owned father and daughter pet waste removal company. 99 five-star reviews, serving 17+ communities."
+    "description": "Meet Scoopy Doo LLC, Chattanooga's locally owned father and daughter pet waste removal company. 100+ five-star Google reviews, serving 17+ communities."
   },
   "/press": {
     "title": "Scoopy Doo in the News | Chattanooga Pet Waste Removal",
@@ -62,6 +66,10 @@
   "/one-time-cleanup": {
     "title": "One-Time Dog Poop Cleanup in Chattanooga | From $85",
     "description": "Yard overrun with dog poop? One-time cleanup in Chattanooga starts at $85, covers up to 3 dogs, includes haul-away. Most bookings scheduled in 2-5 days."
+  },
+  "/first-scoop-free": {
+    "title": "First Scoop Free: Dog Poop Removal in Chattanooga",
+    "description": "New customers on weekly or twice-weekly service get their first scoop free: buy the full first month and one visit is credited. No contracts."
   },
   "/cost-calculator": {
     "title": "Dog Poop Removal Cost Calculator | Chattanooga | Scoopy Doo",
@@ -271,6 +279,14 @@
     "title": "Best Pooper Scooper Services in Chattanooga | Scoopy Doo",
     "description": "Looking for the best pooper scooper service in Chattanooga? Here's what to look for - and why Scoopy Doo is the area's top-rated choice."
   },
+  "/blog/dog-poop-attract-rodents-pests-chattanooga": {
+    "title": "Does Dog Poop Attract Rats in Chattanooga? | Scoopy Doo",
+    "description": "Yes, dog poop can attract rodents, flies and other pests. What to watch for in Chattanooga and North Georgia yards, and how weekly scooping helps."
+  },
+  "/blog/does-rain-wash-away-dog-poop-chattanooga": {
+    "title": "Does Rain Wash Away Dog Poop? A Chattanooga Yard Guide",
+    "description": "Rain does not make dog poop go away. See what really happens to pet waste in Chattanooga and North Georgia yards, plus weekly scooping from $20 per visit."
+  },
   "/blog/pooper-scooper-cost-chattanooga": {
     "title": "Pooper Scooper Service Cost in Chattanooga | Scoopy Doo",
     "description": "Scoopy Doo weekly service starts at $20 per visit for one dog. See 2026 pricing for weekly, bi-weekly, and one-time pet waste removal in Chattanooga TN."
@@ -321,7 +337,7 @@
   },
   "/blog/customer-success-stories": {
     "title": "Customer Success Stories | Scoopy Doo",
-    "description": "Read how professional pet waste removal solved real problems for families, busy professionals, and pet owners across the Chattanooga area."
+    "description": "What Chattanooga customers say about Scoopy Doo pet waste removal, quoted word for word from our Google reviews."
   },
   "/blog/podcast-blog": {
     "title": "Scoopy Doo Founder on a Pet Waste Podcast | Scoopy Doo",
@@ -382,16 +398,5 @@
   "/blog/eco-friendly-dog-waste-disposal-chattanooga": {
     "title": "Eco-Friendly Dog Waste Disposal in Chattanooga | Scoopy Doo",
     "description": "Trash, flushing, composting, digesters or leaving it on the lawn: an honest look at dog waste disposal in Chattanooga, and what we do with ours."
-  },
-  "/first-scoop-free": {
-    "title": "First Scoop Free: Dog Poop Removal in Chattanooga"
-  },
-  "/blog/dog-poop-attract-rodents-pests-chattanooga": {
-    "title": "Does Dog Poop Attract Rats in Chattanooga? | Scoopy Doo",
-    "description": "Yes, dog poop can attract rodents, flies and other pests. What to watch for in Chattanooga and North Georgia yards, and how weekly scooping helps."
-  },
-  "/blog/does-rain-wash-away-dog-poop-chattanooga": {
-    "title": "Does Rain Wash Away Dog Poop? A Chattanooga Yard Guide",
-    "description": "Rain does not make dog poop go away. See what really happens to pet waste in Chattanooga and North Georgia yards, plus weekly scooping from $20 per visit."
   }
 }

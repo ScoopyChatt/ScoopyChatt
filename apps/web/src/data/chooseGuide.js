@@ -1,6 +1,9 @@
+import { REVIEW_PHRASE } from '@/data/reviews.js';
+
 // Single source for the "How to choose" guide. The React page renders it and
 // tools/create-static-pages.cjs reads it for the crawlable HTML and JSON-LD, so the
-// two can never drift. Plain data only: no JSX, no imports.
+// two can never drift. Plain data only: no JSX, and no imports except REVIEW_PHRASE,
+// which the build tool strips and supplies itself.
 export const chooseGuide = {
   path: "/guides/how-to-choose-pet-waste-removal-company-chattanooga",
   title: "How to Choose a Pet Waste Removal Company in Chattanooga",
@@ -51,7 +54,7 @@ export const chooseGuide = {
       "Pricing: published per-visit rates. Weekly starts at $20 per visit for one dog, twice-weekly at $18, every-other-week at $33, and one-time cleanups at $85. Waste goes into your bin by default, or leaves with us for $5 a visit.",
       "Contracts: none, and no cancellation fees.",
       "Commercial: HOA, apartment and business service, including pet waste station installation and servicing.",
-      "Track record: more than 150 active clients, 99 five-star Google reviews, BBB accreditation, and coverage from WDEF News 12 and the Chattanoogan.",
+      "Track record: more than 150 active clients, " + REVIEW_PHRASE + ", BBB accreditation, and coverage from WDEF News 12 and the Chattanoogan.",
     ],
   },
   faqs: [

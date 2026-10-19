@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import apiServerClient from '@/lib/apiServerClient.js';
 import { afterInteraction, loadElfsight } from '@/utils/thirdParty.js';
+import { REVIEW_PHRASE } from '@/data/reviews.js';
 
 const formatDate = (dateString) => {
   if (!dateString) return '';
@@ -169,7 +170,7 @@ const ReviewsSection = () => {
             ) : (
               <div className="text-center py-12 bg-card rounded-2xl border border-border/50 shadow-sm">
                 <Star className="mx-auto w-10 h-10 text-yellow-500 fill-current mb-4" />
-                <h3 className="text-lg font-medium text-foreground mb-4">Over 100 five-star reviews on Google</h3>
+                <h3 className="text-lg font-medium text-foreground mb-4">{REVIEW_PHRASE}</h3>
                 <Button asChild>
                   <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">Read our Google reviews</a>
                 </Button>

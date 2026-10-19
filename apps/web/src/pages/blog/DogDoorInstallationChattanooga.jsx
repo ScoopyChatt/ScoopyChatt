@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { getCanonicalUrl } from '@/utils/seoHelpers';
+import { REVIEW_PHRASE } from '@/data/reviews.js';
 
 const DogDoorInstallationChattanooga = () => {
   const canonicalUrl = getCanonicalUrl('/blog/dog-door-installation-chattanooga');
@@ -105,8 +106,8 @@ const DogDoorInstallationChattanooga = () => {
           <h2 className="text-2xl font-semibold mt-8 mb-3">Common Questions About Dog Door Installation</h2>
           <p className="mb-4">
             <strong>Who installs dog doors in Chattanooga?</strong> Scoopy Doo LLC, a locally owned,
-            family-run business, not a national franchise or installer network. We have 90 five-star
-            reviews and more than 150 active customers in the Chattanooga area, and were featured by
+            family-run business, not a national franchise or installer network. We have {REVIEW_PHRASE}
+             and more than 150 active customers in the Chattanooga area, and were featured by
             the Chattanoogan in June 2026 and WDEF News 12 in July 2026.
           </p>
           <p className="mb-4">

@@ -1,3 +1,5 @@
+import { REVIEW_COUNT } from '@/data/reviews.js';
+
 // Schema.org structured data generators for Scoopy Doo LLC
 
 export function generateLocalBusinessSchema() {
@@ -70,7 +72,7 @@ export function generateLocalBusinessSchema() {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5",
-      "reviewCount": "99",
+      "reviewCount": String(REVIEW_COUNT),
       "bestRating": "5",
       "worstRating": "1"
     },
@@ -218,7 +220,7 @@ export function generateLocationSchema(locationData) {
       "@id": "https://www.scoopychatt.com/#business",
       "name": "Scoopy Doo LLC"
     },
-    areaServed: [{ "@type": "City", name: locationData.name }].concat((locationData.neighborhoods || []).map(function (n) { return { "@type": "Place", name: n + ", " + locationData.name }; })),
+    areaServed: [Object.assign({ "@type": "City", name: locationData.name }, locationData.localLandmark ? { containsPlace: { "@type": locationData.localLandmark.type, name: locationData.localLandmark.name } } : {})].concat((locationData.neighborhoods || []).map(function (n) { return { "@type": "Place", name: n + ", " + locationData.name }; })),
     "url": "https://www.scoopychatt.com/service/" + locationData.slug
   };
 }
