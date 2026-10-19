@@ -1,10 +1,9 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from '@/components/motion.jsx';
-import { CheckCircle2, Phone, Mail, Clock, ArrowLeft } from 'lucide-react';
+import { CheckCircle2, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
 import { GuaranteeBadge } from '@/components/Guarantee.jsx';
@@ -15,12 +14,33 @@ const ThankYouPage = () => {
   const recap = state && Array.isArray(state.recap) ? state.recap : null;
   const isDoggyDoor = state && state.kind === 'doggy-door';
 
+  // Conversion event for GTM / Google Ads / Meta. Only fires when a form actually sent
+  // the person here (a refresh or a typed URL has no recap), so leads aren't double-counted.
+  useEffect(() => {
+    if (!recap || typeof window === 'undefined') return;
+    const value = Number(state.value) || 0;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'generate_lead', lead_type: isDoggyDoor ? 'doggy_door' : 'quote', value, currency: 'USD' });
+    if (window.fbq) window.fbq('track', 'Lead', { content_name: isDoggyDoor ? 'Doggy Door Booking' : 'Quote Start Date Request', value, currency: 'USD' });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <>
       <SEOHead path="/thank-you" noindex={true} />
 
       <div className="min-h-screen flex flex-col">
-        <Header />
+        {/* Stripped-down header: no site nav or quote button right after someone got a price. */}
+        <header className="border-b border-border bg-card">
+          <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-2">
+            <Link to="/" aria-label="Scoopy Doo home">
+              <img src="/scoopy-logo.webp" alt="Scoopy Doo pet waste removal logo" width="400" height="373" className="h-12 w-auto" />
+            </Link>
+            <a href="tel:423-600-5040" className="inline-flex items-center gap-2 rounded-xl bg-foreground px-4 py-2 text-sm font-bold text-background">
+              <Phone className="h-4 w-4" />
+              423-600-5040
+            </a>
+          </div>
+        </header>
 
         <main className="flex-1 flex items-center justify-center py-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -54,44 +74,21 @@ const ThankYouPage = () => {
                 {isDoggyDoor ? ' install date' : ' first visit date'}.
               </p>
               <p className="text-muted-foreground mb-6">
-                Nothing is charged today. Questions in the meantime? Call or text (423) 600-5040.
+                Nothing is charged today.
               </p>
-              <div className="mb-12">
+              <div className="mb-10">
                 <GuaranteeBadge />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div className="flex flex-col items-center text-center p-6 bg-muted/50 rounded-2xl">
-                  <Phone className="w-6 h-6 text-primary mb-4" />
-                  <h3 className="font-semibold text-foreground mb-2">Phone</h3>
-                  <a href="tel:423-600-5040" className="text-muted-foreground hover:text-primary transition-colors duration-200">
-                    423-600-5040
-                  </a>
-                </div>
-                
-                <div className="flex flex-col items-center text-center p-6 bg-muted/50 rounded-2xl">
-                  <Mail className="w-6 h-6 text-primary mb-4" />
-                  <h3 className="font-semibold text-foreground mb-2">Email</h3>
-                  <a href="mailto:info@scoopychatt.com" className="text-muted-foreground hover:text-primary transition-colors duration-200">
-                    info@scoopychatt.com
-                  </a>
-                </div>
-                
-                <div className="flex flex-col items-center text-center p-6 bg-muted/50 rounded-2xl">
-                  <Clock className="w-6 h-6 text-primary mb-4" />
-                  <h3 className="font-semibold text-foreground mb-2">Business Hours</h3>
-                  <span className="text-muted-foreground">
-                    Mon-Fri 7am-8pm, Sat-Sun 9am-9pm
-                  </span>
-                </div>
-              </div>
-
-              <Button asChild size="lg" variant="outline" className="transition-all duration-200 active:scale-[0.98] h-14 px-8 rounded-xl">
-                <Link to="/" className="flex items-center">
-                  <ArrowLeft className="mr-2 h-5 w-5" />
-                  Return to Home
-                </Link>
+              <Button asChild size="lg" className="h-auto min-h-14 w-full sm:w-auto whitespace-normal px-6 py-4 rounded-xl font-bold">
+                <a href="sms:+14236005040" className="flex items-center">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Questions? Call or text (423) 600-5040
+                </a>
               </Button>
+              <p className="mt-4 text-sm text-muted-foreground">
+                We reply Mon-Fri 7am-8pm and Sat-Sun 9am-9pm. <Link to="/" className="underline hover:text-foreground">Back to the home page</Link>
+              </p>
             </motion.div>
           </div>
         </main>
