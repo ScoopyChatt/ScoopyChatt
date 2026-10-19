@@ -95,7 +95,7 @@ const AboutPage = () => {
                 <p className="text-muted-foreground leading-relaxed mb-4">We run two branded service vehicles across 17+ communities in the Chattanooga metro area and North Georgia. Our team shows up in uniform, follows a systematic grid-pattern process on every yard, and never cuts corners - because this is our community too, and our name is on every truck.</p>
                 <p className="text-muted-foreground leading-relaxed mb-6">We built the business around a simple promise: make it easy. Online quotes. Online payment. A text when we are on the way. A photo of your secured gate when we are done. No contracts. No surprises.</p>
                 <Button asChild size="lg" className="rounded-xl px-8 font-bold">
-                  <Link to="/quote">Get Your Free Quote</Link>
+                  <Link to="/quote">Get My Instant Price</Link>
                 </Button>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-4">
@@ -192,9 +192,9 @@ const AboutPage = () => {
             <p className="text-lg opacity-90 mb-8">Get a free quote in under 2 minutes. We respond the same day.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="rounded-xl px-8 h-14 font-bold">
-                <Link to="/quote">Get My Free Quote</Link>
+                <Link to="/quote">Get My Instant Price</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-xl px-8 h-14 font-bold border-white/40 text-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline" className="bg-transparent rounded-xl px-8 h-14 font-bold border-white/40 text-white hover:bg-white/10">
                 <a href="tel:423-600-5040"><Phone className="mr-2 w-4 h-4" />Call (423) 600-5040</a>
               </Button>
             </div>

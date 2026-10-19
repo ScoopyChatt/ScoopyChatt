@@ -6,7 +6,7 @@ const BlogArticle5_DIYVsProfessional = () => {
   const meta = {
     title: "DIY vs Professional Dog Waste Removal",
     description: "For a household with two dogs, DIY cleanup takes 26 to 39 hours per year. Here is the real cost and time comparison versus professional service in Chattanooga.",
-    author: "Scoopy Chatt Team",
+    author: "Scoopy Doo Team",
     datePublished: "2026-04-28",
     slug: "diy-vs-professional",
     category: "Guides"

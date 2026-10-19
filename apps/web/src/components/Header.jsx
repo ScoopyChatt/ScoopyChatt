@@ -8,15 +8,15 @@ const Header = () => {
   const location = useLocation();
 
   const mainLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Dog Poop Removal', path: '/services' },
-{ name: 'Pricing', path: '/pricing' },
+    { name: 'Services', path: '/services' },
+    { name: 'Pricing', path: '/pricing' },
     { name: 'How It Works', path: '/how-it-works' },
-    { name: 'Service Areas', path: '/near-me' },
+    { name: 'Reviews', path: '/reviews' },
+    { name: 'Service Areas', path: '/service-areas' },
     { name: 'One-Time Cleanup', path: '/one-time-cleanup' },
     { name: 'Doggy Doors', path: '/doggy-doors' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/quote' }
+    { name: 'Contact', path: '/contact' }
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -27,7 +27,7 @@ const Header = () => {
         <div className="flex flex-col min-[1400px]:flex-row items-center justify-between py-3 min-[1400px]:h-20 min-[1400px]:py-0 gap-3 min-[1400px]:gap-0">
           
           {/* Logo & CTA Row (Mobile view keeps them inline) */}
-          <div className="flex items-center justify-between w-full min-[1400px]:w-auto shrink-0">
+          <div className="flex items-center justify-between w-full min-[1400px]:w-auto shrink-0 min-[1400px]:mr-10">
             <Link to="/" className="flex items-center space-x-2 transition-opacity hover:opacity-90 outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary">
               <img 
                 src="/scoopy-logo.webp"
@@ -44,7 +44,7 @@ const Header = () => {
                 <Phone className="h-5 w-5" />
               </a>
               <Button asChild size="sm" className="bg-primary text-primary-foreground font-bold shadow-md h-9">
-                <Link to="/quote">Get INSTANT Quote</Link>
+                <Link to="/quote">Get My Instant Price</Link>
               </Button>
             </div>
           </div>
@@ -74,7 +74,7 @@ const Header = () => {
               <span>423-600-5040</span>
             </a>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 px-6 rounded-xl font-bold shadow-md">
-              <Link to="/quote">Get INSTANT Quote</Link>
+              <Link to="/quote">Get My Instant Price</Link>
             </Button>
           </div>
 

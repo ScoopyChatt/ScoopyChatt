@@ -121,7 +121,7 @@ const MovingToChattanoogaWithADog = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg">
-                <Link to="/quote">Get a Free Quote</Link>
+                <Link to="/quote">Get My Instant Price</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-14 px-8 text-lg rounded-xl">
                 <a href="tel:4236005040">Call (423) 600-5040</a>

@@ -6,7 +6,7 @@ const BlogArticle4_CustomerSuccessStories = () => {
   const meta = {
     title: "Customer Success Stories",
     description: "Read how professional pet waste removal solved real problems for families, busy professionals, and pet owners across the Chattanooga area.",
-    author: "Scoopy Chatt Team",
+    author: "Scoopy Doo Team",
     datePublished: "2026-04-24",
     slug: "customer-success-stories",
     category: "Community"
@@ -14,7 +14,7 @@ const BlogArticle4_CustomerSuccessStories = () => {
 
   const content = `
     <p class="lead">
-      At Scoopy Chatt, we measure our success by the peace of mind we bring to our clients. Here are a few real stories from families across the Greater Chattanooga area who reclaimed their backyards.
+      At Scoopy Doo, we measure our success by the peace of mind we bring to our clients. Here are a few real stories from families across the Greater Chattanooga area who reclaimed their backyards.
     </p>
 
     <h2>The Johnsons: Taming the 1-Acre Challenge</h2>

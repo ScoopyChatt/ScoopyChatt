@@ -149,7 +149,7 @@ const NoContactPetWasteRemovalChattanooga = () => {
           </p>
 
           <p>
-            <Link to="/quote">Request Your Free Quote</Link>
+            <Link to="/quote">Get My Instant Price</Link>
           </p>
         </article>
       </main>

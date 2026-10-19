@@ -14,7 +14,7 @@ const FloatingCTA = () => {
         <Button asChild className="flex-1 bg-[#FF9E30] text-white hover:bg-[#FF9E30]/90 shadow-lg active:scale-95 transition-transform">
           <Link to="/quote">
             <CalendarCheck className="h-4 w-4 mr-2" />
-            Get INSTANT Quote
+            Get My Instant Price
           </Link>
         </Button>
       </div>

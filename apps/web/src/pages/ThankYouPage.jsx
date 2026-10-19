@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from '@/components/motion.jsx';
 import { CheckCircle2, Phone, Mail, Clock, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -10,6 +10,11 @@ import SEOHead from '@/components/SEOHead.jsx';
 import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 
 const ThankYouPage = () => {
+  // QuoteForm and the doggy door booking form pass a short recap of what was booked.
+  const { state } = useLocation();
+  const recap = state && Array.isArray(state.recap) ? state.recap : null;
+  const isDoggyDoor = state && state.kind === 'doggy-door';
+
   return (
     <>
       <SEOHead path="/thank-you" noindex={true} />
@@ -30,14 +35,26 @@ const ThankYouPage = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance tracking-tight">
-                Thank You!
+                {isDoggyDoor ? 'Your Install Request Is In' : 'Your Start Date Request Is In'}
               </h1>
-              
-              <p className="text-xl text-muted-foreground mb-2">
-                Your quote request has been successfully received.
+
+              {recap && (
+                <dl className="max-w-md mx-auto mb-6 text-left rounded-2xl border border-border/60 divide-y divide-border/60">
+                  {recap.map(([label, value]) => (
+                    <div key={label} className="flex justify-between gap-4 px-5 py-3">
+                      <dt className="text-muted-foreground">{label}</dt>
+                      <dd className="font-medium text-foreground text-right">{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+
+              <p className="text-lg font-medium text-foreground mb-2">
+                What happens next: we will text you at the number you gave us to confirm your
+                {isDoggyDoor ? ' install date' : ' first visit date'}.
               </p>
-              <p className="text-lg font-medium text-foreground mb-6">
-                We will be in touch with you shortly.
+              <p className="text-muted-foreground mb-6">
+                Nothing is charged today. Questions in the meantime? Call or text (423) 600-5040.
               </p>
               <div className="mb-12">
                 <GuaranteeBadge />
@@ -64,12 +81,12 @@ const ThankYouPage = () => {
                   <Clock className="w-6 h-6 text-primary mb-4" />
                   <h3 className="font-semibold text-foreground mb-2">Business Hours</h3>
                   <span className="text-muted-foreground">
-                    Mon - Fri: 8:00 AM - 6:00 PM
+                    Mon-Fri 7am-8pm, Sat-Sun 9am-9pm
                   </span>
                 </div>
               </div>
 
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-14 px-8 rounded-xl">
+              <Button asChild size="lg" variant="outline" className="transition-all duration-200 active:scale-[0.98] h-14 px-8 rounded-xl">
                 <Link to="/" className="flex items-center">
                   <ArrowLeft className="mr-2 h-5 w-5" />
                   Return to Home

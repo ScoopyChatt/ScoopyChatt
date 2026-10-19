@@ -33,7 +33,7 @@ const FAQSection = ({ location = 'Chattanooga', showHeader = true }) => {
               {category.title}
             </h3>
             
-            <Accordion type="single" collapsible className="w-full space-y-4">
+            <Accordion type="multiple" className="w-full space-y-4">
               {category.faqs.map((faq, index) => (
                 <AccordionItem 
                   key={index} 

@@ -13,6 +13,7 @@ export const generateSitemapData = async () => {
     '/services', 
     '/quote', 
     '/reviews', 
+    '/contact',
     '/faq', 
     '/service-areas', 
     '/blog', 

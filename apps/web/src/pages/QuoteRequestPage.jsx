@@ -96,7 +96,7 @@ const QuoteRequestPage = () => {
             <li><Link to="/" className="text-primary hover:underline font-medium text-sm">Home</Link></li>
             <li><Link to="/services" className="text-primary hover:underline font-medium text-sm">Services</Link></li>
             <li><Link to="/pricing" className="text-primary hover:underline font-medium text-sm">Pricing</Link></li>
-            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get a Quote</Link></li>
+            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get My Instant Price</Link></li>
             <li><Link to="/faq" className="text-primary hover:underline font-medium text-sm">FAQ</Link></li>
             <li><Link to="/reviews" className="text-primary hover:underline font-medium text-sm">Reviews</Link></li>
             <li><Link to="/service-areas" className="text-primary hover:underline font-medium text-sm">Service Areas</Link></li>

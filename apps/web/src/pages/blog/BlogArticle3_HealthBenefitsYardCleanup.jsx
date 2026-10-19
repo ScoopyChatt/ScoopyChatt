@@ -6,7 +6,7 @@ const BlogArticle3_HealthBenefitsYardCleanup = () => {
   const meta = {
     title: "Health Benefits of Regular Yard Cleanup",
     description: "Why regular pet waste removal protects your family from bacteria, keeps play areas safe for children, and keeps your dogs healthy.",
-    author: "Scoopy Chatt Team",
+    author: "Scoopy Doo Team",
     datePublished: "2026-04-21",
     slug: "health-benefits-yard-cleanup",
     category: "Health"

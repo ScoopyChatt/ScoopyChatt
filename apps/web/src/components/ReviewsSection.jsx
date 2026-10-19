@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from '@/components/motion.jsx';
+import { GOOGLE_PROFILE_URL } from '@/config/googleBusiness.js';
 import useEmblaCarousel from 'embla-carousel-react';
-import { Star, Quote, ChevronLeft, ChevronRight, MessageSquare as MessageSquareOff } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import apiServerClient from '@/lib/apiServerClient.js';
@@ -166,10 +167,12 @@ const ReviewsSection = () => {
                 </div>
               </>
             ) : (
-              <div className="text-center py-16 bg-card rounded-2xl border border-border/50 shadow-sm">
-                <MessageSquareOff className="mx-auto w-12 h-12 text-muted-foreground mb-4" />
-                <h3 className="text-lg font-medium text-foreground mb-2">No reviews available</h3>
-                <p className="text-muted-foreground">Check back later to see what our customers have to say.</p>
+              <div className="text-center py-12 bg-card rounded-2xl border border-border/50 shadow-sm">
+                <Star className="mx-auto w-10 h-10 text-yellow-500 fill-current mb-4" />
+                <h3 className="text-lg font-medium text-foreground mb-4">Over 100 five-star reviews on Google</h3>
+                <Button asChild>
+                  <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">Read our Google reviews</a>
+                </Button>
               </div>
             )}
           </motion.div>

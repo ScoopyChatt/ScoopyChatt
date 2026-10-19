@@ -59,12 +59,12 @@ const PetSafeChecklistLandingPage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col space-y-8"
             >
-              {/* Scoopy Chatt Logo Graphic */}
+              {/* Scoopy Doo Logo Graphic */}
               <div className="relative rounded-3xl overflow-hidden shadow-lg border border-border/60 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center p-12 aspect-[4/3]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.1)_0,transparent_100%)] pointer-events-none" />
                 <img 
                   src="/scoopy-logo.webp" 
-                  alt="Scoopy Chatt Logo" 
+                  alt="Scoopy Doo Logo" 
                   className="w-full max-w-[260px] md:max-w-[300px] h-auto object-contain relative z-10 drop-shadow-sm transition-transform duration-700 hover:scale-105"
                 />
               </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin } from 'lucide-react';
 import ServiceAreaGrid from '@/components/ServiceAreaGrid.jsx';
 import CTAButton from '@/components/CTAButton.jsx';
@@ -16,11 +17,14 @@ const LocationSection = () => {
             <p className="text-muted-foreground mb-8">
               We provide professional dog waste removal services across the Greater Chattanooga area. Check our list to see if we're currently scooping in your neighborhood.
             </p>
-            <CTAButton to="/quote" className="w-full sm:w-auto">Check Availability</CTAButton>
+            <CTAButton to="/quote" className="w-full sm:w-auto">Get My Instant Price</CTAButton>
           </div>
           
           <div className="lg:col-span-8">
             <ServiceAreaGrid areas={serviceAreas} />
+            <p className="mt-6 text-center lg:text-left">
+              <Link to="/service-areas" className="text-primary font-semibold hover:underline">See all service areas</Link>
+            </p>
           </div>
         </div>
       </div>

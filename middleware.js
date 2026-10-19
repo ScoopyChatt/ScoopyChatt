@@ -24,6 +24,7 @@ const PAGES = [
   '/blog',
   '/commercial',
   '/comparison',
+  '/contact',
   '/guides/how-to-choose-pet-waste-removal-company-chattanooga',
   '/cost-calculator',
   '/dog-park-guide',
@@ -117,7 +118,7 @@ const SERVICE_AREAS = [
 // Sources of the vercel.json redirects and the /dp/* 410 handler. These must reach
 // their handler rather than being answered with a 404 here.
 const LEGACY = [
-  '/about-us', '/our-services', '/contact', '/contact-us', '/service-area', '/quoterequest',
+  '/about-us', '/our-services', '/contact-us', '/service-area', '/quoterequest',
 ];
 
 const known = new Set([

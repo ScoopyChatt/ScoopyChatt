@@ -125,7 +125,7 @@ Let Scoopy Doo handle the yard so you can focus on training, vet visits, and enj
 </p>
 <div className="flex flex-col sm:flex-row gap-4 justify-center">
 <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg">
-<Link to="/quote">Get Your Free Quote</Link>
+<Link to="/quote">Get My Instant Price</Link>
 </Button>
 <Button asChild variant="outline" size="lg" className="bg-transparent border-secondary-foreground/20 text-white hover:bg-white/10 h-14 px-8 text-lg rounded-xl">
 <a href="tel:423-600-5040">Call (423) 600-5040</a>

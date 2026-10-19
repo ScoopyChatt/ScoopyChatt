@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from '@/components/motion.jsx';
-import { Shield, Database, Lock, Eye, FileText, Bell, Phone, MapPin, MessageSquare } from 'lucide-react';
+import { Shield, Database, Lock, Eye, FileText, Bell, Phone, Mail, MapPin, MessageSquare } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import FloatingCTA from '@/components/FloatingCTA.jsx';
@@ -182,7 +182,7 @@ const PrivacyPolicyPage = () => {
               className="prose prose-lg dark:prose-invert max-w-none mb-16"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Welcome to Scoopy Doo (also operating as Scoopy Chatt). As Chattanooga's trusted pet waste removal service, we know that inviting us onto your property requires trust. Part of that trust involves being completely transparent about how we collect, use, and protect the personal information of our clients in Chattanooga, Tennessee, and the surrounding areas.
+                Welcome to Scoopy Doo LLC (formerly Scoopy Chatt). As Chattanooga's trusted pet waste removal service, we know that inviting us onto your property requires trust. Part of that trust involves being completely transparent about how we collect, use, and protect the personal information of our clients in Chattanooga, Tennessee, and the surrounding areas.
               </p>
             </motion.div>
 
@@ -229,7 +229,13 @@ const PrivacyPolicyPage = () => {
                   <span className="text-sm text-muted-foreground mt-1">Call or Text</span>
                 </a>
 
-                <div className="flex flex-col items-center p-6 bg-muted/50 rounded-xl">
+                <a href="mailto:info@scoopychatt.com" className="flex flex-col items-center p-6 bg-muted/50 rounded-xl hover:bg-primary/5 hover:text-primary transition-colors group">
+                  <Mail className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
+                  <span className="font-bold text-lg text-foreground group-hover:text-primary transition-colors break-all">info@scoopychatt.com</span>
+                  <span className="text-sm text-muted-foreground mt-1">Email</span>
+                </a>
+
+                <div className="flex flex-col items-center p-6 bg-muted/50 rounded-xl md:col-span-2">
                   <MapPin className="w-8 h-8 text-primary mb-3" />
                   <span className="font-bold text-lg text-foreground">Chattanooga, TN</span>
                   <span className="text-sm text-muted-foreground mt-1">Local Headquarters</span>
@@ -249,7 +255,7 @@ const PrivacyPolicyPage = () => {
             <li><Link to="/" className="text-primary hover:underline font-medium text-sm">Home</Link></li>
             <li><Link to="/services" className="text-primary hover:underline font-medium text-sm">Services</Link></li>
             <li><Link to="/pricing" className="text-primary hover:underline font-medium text-sm">Pricing</Link></li>
-            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get a Quote</Link></li>
+            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get My Instant Price</Link></li>
             <li><Link to="/faq" className="text-primary hover:underline font-medium text-sm">FAQ</Link></li>
             <li><Link to="/reviews" className="text-primary hover:underline font-medium text-sm">Reviews</Link></li>
             <li><Link to="/service-areas" className="text-primary hover:underline font-medium text-sm">Service Areas</Link></li>
