@@ -12,7 +12,7 @@ import SEOHead from '@/components/SEOHead.jsx';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 import { WEBHOOK_URL } from '@/components/QuoteForm.jsx';
 import { getAdClickIds } from '@/utils/adClickIds.js';
-import { isValidUsPhone, isValidEmail, PHONE_ERROR } from '@/utils/contactValidation.js';
+import { isValidUsPhone, isValidEmail, PHONE_ERROR, formatUsPhone, emailTypoSuggestion } from '@/utils/contactValidation.js';
 
 // A short "just ask a question" form, separate from the quote form, for people who
 // are not ready for a price: existing customers, HOA and property managers, doggy
@@ -173,12 +173,21 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <Label htmlFor="contact-phone">Phone</Label>
-                        <Input id="contact-phone" name="phone" type="tel" autoComplete="tel" placeholder="e.g. 423-555-0100" value={form.phone} onChange={change} className={field} required />
+                        <Input id="contact-phone" name="phone" type="tel" autoComplete="tel" placeholder="e.g. 423-555-0100" inputMode="tel" value={form.phone} onChange={(e) => setForm((f) => ({ ...f, phone: formatUsPhone(e.target.value) }))} className={field} required />
                       </div>
                     </div>
                     <div>
                       <Label htmlFor="contact-email">Email (optional)</Label>
                       <Input id="contact-email" name="email" type="email" autoComplete="email" value={form.email} onChange={change} className={field} />
+                      {emailTypoSuggestion(form.email) && (
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          {'Did you mean '}
+                          <button type="button" className="font-semibold text-primary hover:underline" onClick={() => setForm((f) => ({ ...f, email: emailTypoSuggestion(f.email) }))}>
+                            {emailTypoSuggestion(form.email)}
+                          </button>
+                          ?
+                        </p>
+                      )}
                     </div>
                     <div>
                       <Label htmlFor="contact-topic">What is it about?</Label>
