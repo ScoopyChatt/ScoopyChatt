@@ -10,7 +10,7 @@ const DoesRainWashAwayDogPoopChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>Does Rain Wash Away Dog Poop? Chattanooga Yard Guide | Scoopy Doo</title>
+        <title>Does Rain Wash Away Dog Poop? A Chattanooga Yard Guide</title>
         <meta name="description" content="Rain does not make dog poop go away. See what really happens to pet waste in Chattanooga and North Georgia yards, plus weekly scooping from $20 per visit." />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
@@ -24,7 +24,7 @@ const DoesRainWashAwayDogPoopChattanooga = () => {
           <p className="mb-4">
             No. Rain does not make dog poop disappear. It softens the waste, breaks it into smaller pieces, and spreads bacteria and nutrients across your lawn and into storm drains. If your Chattanooga or North Georgia yard has been soggy this fall, the mess is likely still there, just harder to see. Scoopy Doo removes it for you, with weekly service starting at <strong>$20 per visit</strong> for one dog.
           </p>
-          <img src="/images/blog/does-rain-wash-away-dog-poop-chattanooga.jpg" alt="Green backyard lawn in Chattanooga TN being cleaned of dog waste by Scoopy Doo" className="w-full rounded-lg my-6" loading="lazy" />
+          <img src="/images/blog/does-rain-wash-away-dog-poop-chattanooga.webp" alt="Green backyard lawn in Chattanooga TN being cleaned of dog waste by Scoopy Doo" className="w-full rounded-lg my-6" loading="lazy" />
           <h2 className="text-2xl font-semibold mt-8 mb-4">What Rain Actually Does to Dog Poop</h2>
           <p className="mb-4">
             Dog waste is mostly water, fiber, bacteria, and undigested food. A heavy rain does not dissolve it the way it might rinse dirt off a driveway. Instead, three things happen:

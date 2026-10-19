@@ -14,7 +14,7 @@ const TermsOfServicePage = () => {
   const lastUpdated = "October 7, 2026";
   const canonicalUrl = getCanonicalUrl('/terms-of-service');
   const pageTitle = "Terms of Service | Scoopy Doo Pet Waste Removal";
-  const pageDesc = "Read the terms of service and user agreement for Scoopy Doo pet waste removal services in Chattanooga.";
+  const pageDesc = "Terms of service for Scoopy Doo LLC pet waste removal in Chattanooga TN and North Georgia: scheduling, billing, cancellation, yard access and liability.";
 
   const sections = [
     {

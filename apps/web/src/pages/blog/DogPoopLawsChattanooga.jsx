@@ -11,7 +11,7 @@ const DogPoopLawsChattanooga = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead
         title="Is It Illegal to Not Pick Up Dog Poop in Chattanooga?"
-        description="Yes, Chattanooga law requires dog owners to pick up after their pets. Here is what City Code Chapter 7 says, the fines you could face, and how to stay compliant."
+        description="Yes, Chattanooga law requires dog owners to pick up after their pets. What City Code Chapter 7 says, the fines you could face, and how to comply."
         canonicalUrl={`${CANONICAL_BASE_URL}/blog/dog-poop-laws-chattanooga`}
       />
       <Header />

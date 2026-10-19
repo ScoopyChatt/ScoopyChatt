@@ -30,7 +30,7 @@ const AboutPage = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
         <title>About Scoopy Doo | Chattanooga Pet Waste Removal</title>
-        <meta name="description" content="Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company. 99 five-star reviews, two branded service vehicles, serving 17+ communities." />
+        <meta name="description" content="Meet Scoopy Doo LLC, Chattanooga's locally owned father and daughter pet waste removal company. 99 five-star reviews, serving 17+ communities." />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content="About Scoopy Doo | Chattanooga Pet Waste Removal" />
         <meta property="og:description" content="Meet Scoopy Doo LLC - Chattanooga's locally owned father and daughter pet waste removal company." />

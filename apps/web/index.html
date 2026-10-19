@@ -33,8 +33,6 @@
 				<meta name="google-site-verification" content="googlee48bcc2b9818fe2e" />
 		<title>Dog Poop Removal & Pooper Scooper Service | Chattanooga TN</title>
 
-		<!-- Elfsight Widget Platform -->
-		<script src="https://elfsightcdn.com/platform.js" async></script>
 
 		<!-- Meta Pixel Code -->
 		<script>
@@ -81,6 +79,37 @@
 		<div id="root"></div>
 		<script type="module" src="/src/main.jsx"></script>
 	  <script type="text/javascript" src="https://seal-chattanooga.bbb.org/inc/legacy.js" defer></script>
-    <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a605270c6e06ac8e831a6bc" data-source="WEB_USER" async></script>
+    <!-- The GHL chat widget, and the Elfsight reviews on pages that show them (via
+         src/utils/thirdParty.js), load on the visitor's first scroll, tap or keypress (or 10s
+         after load), not with the page, so they stay out of the way of the first paint on mobile. The chat widget never loads on /quote or /lp/first-scoop-free:
+         A2P 10DLC review flags a chat widget next to a phone-collecting form (see ChatWidgetGate.jsx). -->
+    <script>
+      (function () {
+        var done = false;
+        var events = ['scroll', 'pointerdown', 'keydown', 'touchstart', 'mousemove'];
+        function add(src, attrs) {
+          var el = document.createElement('script');
+          el.src = src; el.async = true;
+          for (var k in attrs) el.setAttribute(k, attrs[k]);
+          document.body.appendChild(el);
+        }
+        function load() {
+          if (done) return;
+          done = true;
+          events.forEach(function (e) { window.removeEventListener(e, load); });
+          window.__scoopyInteracted = true;
+          window.dispatchEvent(new Event('scoopy:interact'));
+          if (!/^\/(quote|lp\/first-scoop-free)\/?$/.test(location.pathname)) {
+            add('https://widgets.leadconnectorhq.com/loader.js', {
+              'data-resources-url': 'https://widgets.leadconnectorhq.com/chat-widget/loader.js',
+              'data-widget-id': '6a605270c6e06ac8e831a6bc',
+              'data-source': 'WEB_USER'
+            });
+          }
+        }
+        events.forEach(function (e) { window.addEventListener(e, load, { passive: true }); });
+        window.addEventListener('load', function () { setTimeout(load, 10000); });
+      })();
+    </script>
   </body>
 </html>

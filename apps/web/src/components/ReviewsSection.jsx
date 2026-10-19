@@ -6,6 +6,7 @@ import { Star, Quote, ChevronLeft, ChevronRight, MessageSquare as MessageSquareO
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import apiServerClient from '@/lib/apiServerClient.js';
+import { afterInteraction, loadElfsight } from '@/utils/thirdParty.js';
 
 const formatDate = (dateString) => {
   if (!dateString) return '';
@@ -50,27 +51,21 @@ const ReviewsSection = () => {
       })
       .catch(err => console.error('[ReviewsSection] Failed to fetch fallback reviews:', err));
 
-    // 2. Inject Elfsight script safely
-    const scriptId = 'elfsight-script';
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = 'https://elfsightcdn.com/platform.js';
-      script.async = true;
-      script.onerror = () => setShowFallback(true);
-      document.body.appendChild(script);
-    }
+    // 2. Load Elfsight after the visitor first interacts (see utils/thirdParty.js), then
+    // 3. check whether it actually rendered anything; it often fails in preview
+    // environments or behind adblockers, and the fallback carousel takes over.
+    let checkTimer;
+    const stop = loadElfsight({ onError: () => setShowFallback(true) });
+    const stopCheck = afterInteraction(() => {
+      checkTimer = setTimeout(() => {
+        const widget = document.querySelector('.elfsight-app-8240dd2e-e144-493a-add7-52c8fd1b05f7');
+        if (!widget || widget.children.length === 0) {
+          setShowFallback(true);
+        }
+      }, 3500);
+    });
 
-    // 3. Setup a timeout to check if Elfsight actually rendered anything
-    // (It often fails in preview environments or due to adblockers)
-    const checkTimer = setTimeout(() => {
-      const widget = document.querySelector('.elfsight-app-8240dd2e-e144-493a-add7-52c8fd1b05f7');
-      if (!widget || widget.children.length === 0) {
-        setShowFallback(true);
-      }
-    }, 3500);
-
-    return () => clearTimeout(checkTimer);
+    return () => { stop(); stopCheck(); clearTimeout(checkTimer); };
   }, []);
 
   return (

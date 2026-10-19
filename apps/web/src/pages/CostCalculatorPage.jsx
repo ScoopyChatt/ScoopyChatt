@@ -38,8 +38,8 @@ const CostCalculatorPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Helmet>
-        <title>Dog Poop Removal Cost Calculator | Chattanooga TN | Scoopy Doo</title>
-        <meta name="description" content="Free dog poop removal cost calculator for Chattanooga TN. Estimate your twice-weekly, weekly, bi-weekly, or one-time pooper scooper service price by number of dogs." />
+        <title>Dog Poop Removal Cost Calculator | Chattanooga | Scoopy Doo</title>
+        <meta name="description" content="Free dog poop removal cost calculator for Chattanooga TN. Estimate twice-weekly, weekly, every-other-week or one-time pricing by number of dogs." />
         <link rel="canonical" href={getCanonicalUrl('/cost-calculator')} />
       </Helmet>
 
