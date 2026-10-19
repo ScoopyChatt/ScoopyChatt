@@ -13,7 +13,7 @@ import { AnimatePresence, motion } from '@/components/motion.jsx';
 import { CheckCircle2, MapPin } from 'lucide-react';
 import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 import { getAdClickIds } from '@/utils/adClickIds.js';
-import { isValidUsPhone, PHONE_ERROR } from '@/utils/contactValidation.js';
+import { isValidUsPhone, PHONE_ERROR, formatUsPhone, emailTypoSuggestion } from '@/utils/contactValidation.js';
 
 export const SERVICE_AREA = {
   "37350": { area: "Lookout Mountain", day: "Tuesday" },
@@ -287,6 +287,32 @@ const QuoteForm = ({ allowedServices } = {}) => {
     setStreetAddress(suggestion.mainText);
     setAddressSuggestions([]);
     setShowSuggestions(false);
+    checkAddressZip(suggestion.placeId);
+  };
+
+  // Look up the picked address's zip and warn if it doesn't match the zip the price was
+  // quoted for, or falls outside the service area. Best effort: any failure shows nothing.
+  const [addressZipNote, setAddressZipNote] = useState('');
+  const checkAddressZip = async (placeId) => {
+    setAddressZipNote('');
+    try {
+      const res = await fetch('https://places.googleapis.com/v1/places/' + encodeURIComponent(placeId), {
+        headers: { 'X-Goog-Api-Key': GOOGLE_PLACES_API_KEY, 'X-Goog-FieldMask': 'addressComponents' },
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      const zipPart = (data.addressComponents || []).find((c) => (c.types || []).includes('postal_code'));
+      const placeZip = zipPart ? zipPart.shortText || zipPart.longText : '';
+      if (!placeZip) return;
+      const quotedZip = form.getValues('serviceZipCode');
+      if (!SERVICE_AREA[placeZip]) {
+        setAddressZipNote('That address looks like it is in zip ' + placeZip + ', which is outside our service area. Please double-check it, or call or text 423-600-5040.');
+      } else if (placeZip !== quotedZip) {
+        setAddressZipNote('That address looks like it is in zip ' + placeZip + ', not ' + quotedZip + '. Please double-check it. Your price does not change.');
+      }
+    } catch (err) {
+      console.error('Address zip check error:', err);
+    }
   };
 
   const form = useForm({
@@ -463,7 +489,7 @@ const QuoteForm = ({ allowedServices } = {}) => {
               required
               autoComplete="off"
               value={streetAddress}
-              onChange={(e) => setStreetAddress(e.target.value)}
+              onChange={(e) => { setStreetAddress(e.target.value); setAddressZipNote(''); }}
               onFocus={() => { if (addressSuggestions.length) setShowSuggestions(true); }}
               placeholder="Start typing your address..."
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground"
@@ -488,6 +514,9 @@ const QuoteForm = ({ allowedServices } = {}) => {
               </div>
             )}
             <p className="mt-1 text-xs text-muted-foreground">Pick your address from the dropdown, or type the street number and name only (no city, state, or zip - we already have those). We need this to schedule your first visit; it is not shared or used for anything else.</p>
+            {addressZipNote ? (
+              <p className="mt-1 text-sm font-medium text-orange-700 dark:text-orange-300">{addressZipNote}</p>
+            ) : null}
             {addressWasTrimmed ? (
               <p className="mt-1 text-xs text-muted-foreground">We'll use: <span className="font-medium text-foreground">{sanitizedStreetAddress}</span></p>
             ) : null}
@@ -545,6 +574,15 @@ const QuoteForm = ({ allowedServices } = {}) => {
                     {...field} 
                   />
                 </FormControl>
+                {emailTypoSuggestion(field.value) && (
+                  <p className="text-sm text-muted-foreground">
+                    {'Did you mean '}
+                    <button type="button" className="font-semibold text-primary hover:underline" onClick={() => form.setValue('email', emailTypoSuggestion(field.value), { shouldValidate: true })}>
+                      {emailTypoSuggestion(field.value)}
+                    </button>
+                    ?
+                  </p>
+                )}
                 <FormMessage />
               </FormItem>
             )}
@@ -559,9 +597,11 @@ const QuoteForm = ({ allowedServices } = {}) => {
                 <FormControl>
                   <Input 
                     type="tel" 
-                    placeholder="(555) 123-4567" 
+                    inputMode="tel"
+                    placeholder="(423) 555-0100" 
                     className="text-foreground" 
                     {...field} 
+                    onChange={(e) => field.onChange(formatUsPhone(e.target.value))}
                   />
                 </FormControl>
                 <FormMessage />
@@ -595,7 +635,7 @@ const QuoteForm = ({ allowedServices } = {}) => {
                   {isCompleteZip && !matchedArea && (
                     <motion.div key="unmatched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="mt-2 flex items-start gap-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-sm text-muted-foreground">
                       <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                      <span>We serve the greater Chattanooga and North Georgia area. Send your details and we will confirm your service day with your quote.</span>
+                      <span>That zip is outside our service area right now. We serve the greater Chattanooga and North Georgia area. If you think we should reach you, call or text 423-600-5040.</span>
                     </motion.div>
                   )}
                 </AnimatePresence>
