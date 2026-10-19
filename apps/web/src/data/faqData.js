@@ -110,7 +110,7 @@ export const getFaqData = (location = 'Chattanooga') => {
         },
         {
           question: "Can my dog stay in the yard while you clean?",
-          answer: "Tell us where your dogs will be during service when you sign up, and we add it to your account notes. Aggressive or overly protective dogs must be kept inside during our visit. If a dog is unexpectedly loose in the yard, our tech will not go in; we text you and reschedule that visit at no extra charge."
+          answer: "We love dogs, but we ask that they stay inside while we clean. When you sign up, tell us where your dogs will be during visits and we add it to your account notes. If a dog is out in the yard when we arrive, our tech will not go in; we text you and reschedule that visit at no extra charge."
         },
         {
           question: "Are the products you use safe for pets, kids, and lawns?",

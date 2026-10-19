@@ -32,7 +32,7 @@ var faqBody = '<h1>Frequently Asked Questions About Dog Poop Removal in Chattano
   '<h2>Is Scoopy Doo insured?</h2>' +
   '<p>Yes. Scoopy Doo is fully insured on every visit.</p>' +
   '<h2>Can my dog stay in the yard while you clean?</h2>' +
-  '<p>Tell us where your dogs will be during service when you sign up, and we add it to your account notes. Aggressive or overly protective dogs must be kept inside during our visit. If a dog is unexpectedly loose in the yard, our tech will not go in; we text you and reschedule that visit at no extra charge.</p>' +
+  '<p>We love dogs, but we ask that they stay inside while we clean. When you sign up, tell us where your dogs will be during visits and we add it to your account notes. If a dog is out in the yard when we arrive, our tech will not go in; we text you and reschedule that visit at no extra charge.</p>' +
   '<h2>Are the products you use safe for pets, kids, and lawns?</h2>' +
   '<p>Yes. Regular scooping puts no chemicals on your yard at all: we pick up the waste, double-bag it, and sanitize our scooping equipment between every yard so nothing is carried from one property to the next. The only treatment we ever apply to a lawn is the optional deodorizing and sanitizing add-on ($20 per visit), which is safe for pets, children, and lawn health. Waste haul-away for off-site disposal is $5 per visit.</p>' +
   '<h2>Do you offer yard deodorizing?</h2>' +
