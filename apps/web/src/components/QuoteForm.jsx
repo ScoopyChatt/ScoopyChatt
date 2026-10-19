@@ -154,7 +154,8 @@ const formSchema = z.object({
 
 // allowedServices: optional list of serviceType values to offer in the dropdown
 // (used by the paid landing page so only offer-eligible plans can be picked).
-const QuoteForm = ({ allowedServices } = {}) => {
+// firstScoopFree: show the one-visit credit on the price card (first-scoop-free offer).
+const QuoteForm = ({ allowedServices, firstScoopFree = false } = {}) => {
   const navigate = useNavigate();
   const honeypotRef = useRef(null);
   const [quote, setQuote] = useState(null);
@@ -398,6 +399,11 @@ const QuoteForm = ({ allowedServices } = {}) => {
             <>
               <p ref={resultRef} className="text-4xl font-bold text-foreground">{'$' + quote.price}<span className="text-lg font-medium text-muted-foreground"> {quote.cadence}</span></p>
               <p className="text-sm text-muted-foreground mt-2">For {quote.note}{quote.takeAway ? ' with waste haul-away' : ''}{entry && entry.day ? (' - our trucks are in ' + entry.area + ' on ' + entry.day + 's') : ''}.</p>
+              {firstScoopFree && (
+                <p className="mt-3 rounded-lg bg-primary/10 px-3 py-2 text-sm font-semibold text-foreground">
+                  Your first scoop is free: one visit comes off your first month.
+                </p>
+              )}
               <p className="text-xs text-muted-foreground mt-3">Most yards start the same week. A one-time initial cleanup may apply for very overgrown yards - we will confirm before your first visit.</p>
             </>
           ) : (
