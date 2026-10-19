@@ -11,6 +11,7 @@ import { toast } from 'sonner';
 import { AnimatePresence, motion } from '@/components/motion.jsx';
 import { CheckCircle2, MapPin } from 'lucide-react';
 import { GuaranteeBadge } from '@/components/Guarantee.jsx';
+import TrustBadges from '@/components/TrustBadges.jsx';
 import { getAdClickIds } from '@/utils/adClickIds.js';
 import { isValidUsPhone, PHONE_ERROR, formatUsPhone, emailTypoSuggestion } from '@/utils/contactValidation.js';
 
@@ -182,6 +183,8 @@ const QuoteForm = ({ allowedServices } = {}) => {
   const [takeAway, setTakeAway] = useState(false);
   const [manyDogs, setManyDogs] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
+  const [addressMissing, setAddressMissing] = useState(false);
+  const addressInputRef = useRef(null);
 
   // The price card repeats what the person picked, and the haul-away add-on lives on the
   // card so they see the price change instead of guessing at it before any price exists.
@@ -337,7 +340,7 @@ const QuoteForm = ({ allowedServices } = {}) => {
     },
   });
 
-  const { isValid, isSubmitting } = form.formState;
+  const { isSubmitting } = form.formState;
 
   const zipValue = form.watch('serviceZipCode');
   const isCompleteZip = (zipValue || '').length === 5;
@@ -351,7 +354,8 @@ const QuoteForm = ({ allowedServices } = {}) => {
 
   const requestStart = async () => {
     if (!isAddressValid) {
-      toast.error('Please enter your street address so we can schedule your visit.');
+      setAddressMissing(true);
+      addressInputRef.current?.focus();
       return;
     }
     const v = form.getValues();
@@ -457,8 +461,10 @@ const QuoteForm = ({ allowedServices } = {}) => {
     }
   };
 
-  const onError = () => {
-    toast.error('Please fill in all required fields correctly.');
+  const FIELD_NAMES = { serviceZipCode: 'zip code', serviceType: 'service type', numberOfDogs: 'number of dogs', name: 'name', phone: 'phone', email: 'email' };
+  const onError = (errors) => {
+    const missing = Object.keys(FIELD_NAMES).filter((k) => errors[k]).map((k) => FIELD_NAMES[k]);
+    toast.error(missing.length ? 'Please check: ' + missing.join(', ') + '.' : 'Please fill in all required fields correctly.');
   };
 
   if (quote) {
@@ -490,9 +496,6 @@ const QuoteForm = ({ allowedServices } = {}) => {
             <p className="text-xl font-semibold text-foreground">We will put together a custom quote for you.</p>
           )}
         </div>
-        <div className="text-center">
-          <GuaranteeBadge />
-        </div>
         <div className="text-left relative" ref={addressFieldRef}>
             <label className="mb-1 block text-sm font-medium text-foreground">Street Address *</label>
             <input
@@ -500,7 +503,9 @@ const QuoteForm = ({ allowedServices } = {}) => {
               required
               autoComplete="off"
               value={streetAddress}
-              onChange={(e) => { setStreetAddress(e.target.value); setAddressZipNote(''); }}
+              ref={addressInputRef}
+              aria-invalid={addressMissing}
+              onChange={(e) => { setStreetAddress(e.target.value); setAddressZipNote(''); setAddressMissing(false); }}
               onFocus={() => { if (addressSuggestions.length) setShowSuggestions(true); }}
               placeholder="Start typing your address..."
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground"
@@ -525,6 +530,9 @@ const QuoteForm = ({ allowedServices } = {}) => {
               </div>
             )}
             <p className="mt-1 text-xs text-muted-foreground">Pick your address from the dropdown, or type the street number and name only (no city, state, or zip - we already have those). We need this to schedule your first visit; it is not shared or used for anything else.</p>
+            {addressMissing ? (
+              <p className="mt-1 text-sm font-medium text-destructive">Enter your street address to request your start date.</p>
+            ) : null}
             {addressZipNote ? (
               <p className="mt-1 text-sm font-medium text-orange-700 dark:text-orange-300">{addressZipNote}</p>
             ) : null}
@@ -532,16 +540,7 @@ const QuoteForm = ({ allowedServices } = {}) => {
               <p className="mt-1 text-xs text-muted-foreground">We'll use: <span className="font-medium text-foreground">{sanitizedStreetAddress}</span></p>
             ) : null}
           </div>
-          <div
-            className="relative"
-            onClick={() => {
-              if (!isAddressValid) {
-                toast.error('Please enter your street address so we can schedule your visit.');
-              }
-            }}
-          >
-            <Button onClick={requestStart} disabled={!isAddressValid} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base disabled:opacity-50 disabled:cursor-not-allowed">Request my start date</Button>
-          </div>
+          <Button onClick={requestStart} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base">Request my start date</Button>
         <button type="button" onClick={() => setQuote(null)} className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors">Back to edit my details</button>
       </div>
     );
@@ -756,26 +755,17 @@ const QuoteForm = ({ allowedServices } = {}) => {
           </button>
         )}
 
-        {/* Wrapper div to capture clicks when button is disabled so we can show the toast */}
-        <div 
-          className="relative" 
-          onClick={() => {
-            if (!isValid && !isSubmitting) {
-              toast.error('Please fill in all required fields correctly.');
-              form.trigger();
-            }
-          }}
+        {/* Always enabled: pressing it with something missing marks every missing field. */}
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base disabled:opacity-70"
         >
-          <Button 
-            type="submit" 
-            disabled={!isValid || isSubmitting} 
-            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isSubmitting ? 'Getting your price...' : 'See My Instant Price'}
-          </Button>
-        </div>
-        <div className="text-center">
+          {isSubmitting ? 'Getting your price...' : 'See My Instant Price'}
+        </Button>
+        <div className="space-y-4 text-center">
           <GuaranteeBadge />
+          <TrustBadges />
         </div>
       </form>
     </Form>

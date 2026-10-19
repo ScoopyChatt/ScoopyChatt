@@ -1,8 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Phone, Camera, MessageSquare, ShieldCheck } from 'lucide-react';
+import { Phone, Camera, MessageSquare } from 'lucide-react';
 import QuoteForm from '@/components/QuoteForm.jsx';
-import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
 import { testimonials } from '@/data/testimonials.js';
 
@@ -105,13 +104,6 @@ const FirstScoopFreeLandingPage = () => {
                 <p className="font-medium text-foreground">{text}</p>
               </div>
             ))}
-            <div className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
-              <ShieldCheck className="mt-0.5 h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
-              <div>
-                <p className="mb-2 font-medium text-foreground">100% satisfaction guarantee</p>
-                <GuaranteeBadge />
-              </div>
-            </div>
           </div>
         </section>
 

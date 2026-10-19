@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GuaranteeBadge, GuaranteeTagline } from '@/components/Guarantee.jsx';
+import { GuaranteeTagline } from '@/components/Guarantee.jsx';
 import { MapPin, Phone, Mail, Clock, Globe, Facebook, Instagram, Home, ShieldCheck, Award } from 'lucide-react';
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
-                className="inline-flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-primary hover:text-white transition-all duration-200 active:scale-95"
+                className="inline-flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-primary hover:text-primary-foreground transition-all duration-200 active:scale-95"
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -40,7 +40,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
-                className="inline-flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-primary hover:text-white transition-all duration-200 active:scale-95"
+                className="inline-flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-primary hover:text-primary-foreground transition-all duration-200 active:scale-95"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -49,7 +49,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on TikTok"
-                className="inline-flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-primary hover:text-white transition-all duration-200 active:scale-95"
+                className="inline-flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-slate-200 text-slate-600 hover:bg-primary hover:text-primary-foreground transition-all duration-200 active:scale-95"
               >
                 {/* lucide dropped brand icons, so this one is inline */}
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -180,7 +180,6 @@ const Footer = () => {
         </div>
 
         <div className="pb-8 flex flex-col items-center gap-2 text-center">
-          <GuaranteeBadge />
           <GuaranteeTagline className="text-slate-500" />
         </div>
 

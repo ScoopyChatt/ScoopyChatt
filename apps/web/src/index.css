@@ -18,7 +18,7 @@
     
     /* Primary: Scoopy Doo Orange */
     --primary: 32 100% 59%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 222 47% 11%;
     
     /* Secondary: Deep Blue/Navy */
     --secondary: 217 32% 17%;
@@ -51,7 +51,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
     --primary: 32 100% 59%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 222 47% 11%;
     --secondary: 217 32% 17%;
     --secondary-foreground: 210 40% 98%;
     --muted: 210 40% 96.1%;

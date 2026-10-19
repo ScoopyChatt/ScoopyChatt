@@ -6,7 +6,6 @@ import { CheckCircle2, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Footer from '@/components/Footer.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
-import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 
 const ThankYouPage = () => {
   // QuoteForm and the doggy door booking form pass a short recap of what was booked.
@@ -77,9 +76,6 @@ const ThankYouPage = () => {
                 Nothing is charged today.
                 {isDoggyDoor ? '' : ' Your first 4 weeks are billed once we confirm your first visit date, then every 4 weeks after that.'}
               </p>
-              <div className="mb-10">
-                <GuaranteeBadge />
-              </div>
 
               <Button asChild size="lg" className="h-auto min-h-14 w-full sm:w-auto whitespace-normal px-6 py-4 rounded-xl font-bold">
                 <a href="sms:+14236005040" className="flex items-center">
