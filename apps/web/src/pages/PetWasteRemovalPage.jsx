@@ -110,7 +110,7 @@ const PetWasteRemovalPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg">
-                  <Link to="/quote">Get Your Free Quote <ArrowRight className="ml-2 w-5 h-5" /></Link>
+                  <Link to="/quote">Get My Instant Price <ArrowRight className="ml-2 w-5 h-5" /></Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="h-14 px-8 text-lg rounded-xl">
                   <Link to="/pricing">See Full Pricing</Link>

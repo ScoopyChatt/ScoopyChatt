@@ -29,7 +29,7 @@ const Page = () => (
           <p>In Soddy-Daisy's humid climate, dog waste left on the lawn for more than a few days begins causing real problems: nitrogen burn kills grass, bacteria multiply rapidly in the heat, and heavy rains carry pathogens into local waterways. Weekly or bi-weekly professional removal prevents all of this before it becomes a problem.</p>
           <h2 className="text-2xl font-bold mt-10 mb-4">Flexible Plans, No Contracts</h2>
           <p>We offer weekly, bi-weekly, and one-time cleanup services with no long-term commitment required. Most Soddy-Daisy customers start with a one-time cleanup to see the difference, then sign up for recurring service. We bag and remove all waste from your property entirely - no smelly bags left by the gate.</p>
-          <p>Request your free quote today and we'll have pricing to you the same day.</p>
+          <p>Get your instant price online today, then request a start date.</p>
           <div className="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
             <p className="text-lg font-semibold text-foreground mb-2">Ready for a cleaner yard in Soddy-Daisy?</p>
             <Link to="/quote" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold hover:bg-primary/90 transition-colors">Get your free quote →</Link>

@@ -120,9 +120,9 @@ const PricingPage = () => {
 
         <section className="py-20 text-center">
           <div className="container-shell">
-            <h2 className="mb-6">Need a custom quote?</h2>
-            <p className="text-muted-foreground mb-8 text-lg">Every yard is unique. Let us give you an exact price tailored to your property.</p>
-            <CTAButton>Get Your Exact Price Now</CTAButton>
+            <h2 className="mb-6">See your exact price</h2>
+            <p className="text-muted-foreground mb-8 text-lg">Enter your zip, plan and number of dogs, and your price shows up right away.</p>
+            <CTAButton>Get My Instant Price</CTAButton>
           </div>
         </section>
       </main>

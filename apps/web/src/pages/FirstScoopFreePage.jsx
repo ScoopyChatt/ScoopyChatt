@@ -12,7 +12,7 @@ import { getCanonicalUrl } from '@/utils/seoHelpers.js';
 import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 
 const steps = [
-  { icon: CalendarCheck, title: "1. Request your quote", body: "Tell us about your yard and dogs. We reply the same day with your exact price." },
+  { icon: CalendarCheck, title: "1. See your instant price", body: "Enter your zip, plan and number of dogs. Your exact price shows up right away." },
   { icon: CreditCard, title: "2. Pay your first month", body: "Choose weekly or twice-weekly service and purchase your entire first month up front." },
   { icon: Gift, title: "3. One visit comes off", body: "The price of one visit is credited against that first month, so your first scoop is on us." },
 ];

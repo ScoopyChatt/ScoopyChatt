@@ -189,7 +189,7 @@ const AboutPage = () => {
         <section className="py-20 px-4 bg-primary text-primary-foreground text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl font-extrabold mb-4">Ready to Meet Your New Yard Crew?</h2>
-            <p className="text-lg opacity-90 mb-8">Get a free quote in under 2 minutes. We respond the same day.</p>
+            <p className="text-lg opacity-90 mb-8">See your price in under 2 minutes, then request your start date.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="rounded-xl px-8 h-14 font-bold">
                 <Link to="/quote">Get My Instant Price</Link>

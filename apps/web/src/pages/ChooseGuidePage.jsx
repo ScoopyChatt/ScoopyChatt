@@ -63,7 +63,7 @@ const ChooseGuidePage = () => {
           </section>
 
           <p className="text-muted-foreground">
-            Ready to compare? <Link to="/quote" className="underline text-primary font-semibold">Get a free quote</Link>. We reply the same day.
+            Ready to compare? <Link to="/quote" className="underline text-primary font-semibold">Get your instant price</Link>, then request your start date.
           </p>
         </article>
       </main>

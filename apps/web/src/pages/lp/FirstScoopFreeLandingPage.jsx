@@ -23,8 +23,8 @@ const trust = [
 ];
 
 const steps = [
-  { n: '1', title: 'Get your quote', body: 'Fill out the form above. We reply the same day with your exact price.' },
-  { n: '2', title: 'Pick your day', body: 'Choose weekly or 2X-weekly service. No contracts, cancel anytime.' },
+  { n: '1', title: 'See your price', body: 'Fill out the form above. Your exact price shows up right away.' },
+  { n: '2', title: 'Request your start date', body: 'We text you within 2 business hours to confirm it. No contracts, cancel anytime.' },
   { n: '3', title: 'Relax', body: 'We scoop, secure the gate and text you a photo. One visit is credited against your first month.' },
 ];
 

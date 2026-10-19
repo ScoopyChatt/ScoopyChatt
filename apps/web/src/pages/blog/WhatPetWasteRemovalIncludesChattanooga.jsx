@@ -70,7 +70,7 @@ const WhatPetWasteRemovalIncludesChattanooga = () => {
 
             <div className="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
               <p className="text-lg font-semibold text-foreground mb-2">See exactly what pet waste removal costs for your yard</p>
-              <p className="mb-4">Free quote, no contract, response the same day. Most new customers start within 2 to 5 days.</p>
+              <p className="mb-4">Instant price online, no contract. Most new customers start within 2 to 5 days.</p>
               <Link to="/quote" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold hover:bg-primary/90 transition-colors">
                 Get a free quote from Scoopy Doo →
               </Link>

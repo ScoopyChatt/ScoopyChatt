@@ -44,7 +44,7 @@ const BestPooperScooperServicesChattanooga = () => (
 
           <h2 className="text-2xl font-bold mt-10 mb-4">Service Areas to Look For</h2>
           <p>The best Chattanooga pooper scooper services cover a wide footprint - including the suburbs where dog ownership rates are highest. Look for coverage in East Brainerd, Hixson, Ooltewah, Signal Mountain, Red Bank, Ringgold, and Soddy-Daisy, not just downtown zip codes.</p>
-          <p>Scoopy Doo serves all of these areas and more. If you're not sure whether your neighborhood is covered, the fastest way to find out is to request a free quote - turnaround is usually the same day.</p>
+          <p>Scoopy Doo serves all of these areas and more. If you're not sure whether your neighborhood is covered, the fastest way to find out is to enter your zip on the instant price form. It tells you right away.</p>
 
           <h2 className="text-2xl font-bold mt-10 mb-4">Weekly vs. Bi-Weekly: What's Right for You?</h2>
           <p>For most Chattanooga households with one or two dogs, weekly service is the sweet spot - enough to keep bacteria and odor under control without being excessive. If you have three or more dogs, a small yard, or young children who play outside regularly, weekly is strongly recommended.</p>

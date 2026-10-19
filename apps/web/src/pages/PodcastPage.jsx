@@ -130,7 +130,7 @@ const PodcastPage = () => {
                   <h3 className="font-bold text-2xl mb-4 text-foreground">Reclaim Your Weekend</h3>
                   <p className="text-muted-foreground mb-6">Inspired by the podcast? Let us handle the dirty work so you can enjoy your yard again.</p>
                   <Button asChild size="lg" className="w-full bg-[#FF9E30] text-white hover:bg-[#FF9E30]/90">
-                    <Link to="/quote">Get a Free Quote <ArrowRight className="w-4 h-4 ml-2" /></Link>
+                    <Link to="/quote">Get My Instant Price <ArrowRight className="w-4 h-4 ml-2" /></Link>
                   </Button>
                 </div>
               </div>

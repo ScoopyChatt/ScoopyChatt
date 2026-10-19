@@ -9,7 +9,7 @@ export const getFaqData = (location = 'Chattanooga') => {
       faqs: [
         {
           question: "How do I schedule a service?",
-          answer: "Booking is easy! Visit our Quote Request page, fill out your details including your yard size and number of dogs, and we'll get back to you within 24 hours to confirm your schedule and pricing."
+          answer: "Booking is easy! Go to our Instant Price page, enter your zip, plan and number of dogs, and your price shows up right away. Then add your address and request a start date, and we text you within 2 business hours to confirm it."
         },
         {
           question: "Does Scoopy Doo serve North Georgia?",
