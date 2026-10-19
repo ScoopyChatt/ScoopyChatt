@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from '@/components/motion.jsx';
+import { GOOGLE_PROFILE_URL } from '@/config/googleBusiness.js';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import apiServerClient from '@/lib/apiServerClient.js';
-import { GOOGLE_PROFILE_URL } from '@/config/googleBusiness.js';
 
 const formatDate = (dateString) => {
   if (!dateString) return '';
