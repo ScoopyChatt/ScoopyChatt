@@ -7,14 +7,15 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import CTAButton from '@/components/CTAButton.jsx';
 import TestimonialCard from '@/components/TestimonialCard.jsx';
+import { testimonials } from '@/data/testimonials.js';
 import LocationSection from '@/components/LocationSection.jsx';
 
 const NearMePage = () => {
-  const localReviews = [
-    { author: "Michael T.", location: "Signal Mountain", quote: "Fast, local, and incredibly dependable. The best scooping service near me." },
-    { author: "Jessica R.", location: "Hixson", quote: "Love supporting a local business that does exactly what they promise." },
-    { author: "David P.", location: "East Brainerd", quote: "They always lock the gate and leave the yard spotless. Highly recommended in the area." }
-  ];
+  // Verbatim Google reviews from the shared testimonials file.
+  const localReviews = ['Richard Hadden', 'Deidre Whitmire', 'Nathaniel Powers']
+    .map((name) => testimonials.find((t) => t.author === name))
+    .filter(Boolean)
+    .map((t) => ({ author: t.author, location: 'Google review, ' + t.date, quote: t.quote }));
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

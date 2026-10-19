@@ -24,8 +24,8 @@ const BlogArticle2_SeasonalPetCareTips = () => {
     </p>
 
     <blockquote>
-      "Summer was overwhelming with the heat and trying to keep up with yard maintenance. Having Scoopy Chatt handle the waste removal gave us peace of mind, and we could actually enjoy our patio without the smell."
-      <br/> - Michelle T. from Ooltewah
+      "Great communication and consistent service!"
+      <br/> - Nathaniel Powers, Google review
     </blockquote>
 
     <h2>Fall: Preparation for Cooler Months</h2>

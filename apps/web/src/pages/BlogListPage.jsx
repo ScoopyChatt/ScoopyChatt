@@ -65,6 +65,35 @@ const TOPICS = [
 ];
 const PAGE_SIZE = 12;
 
+// Card photos are real Scoopy Doo job photos in public/images/blog/cards. Each category
+// draws from a pool in turn so neighboring cards don't repeat; a post can set its own `img`.
+const PHOTO_POOLS = {
+  yard: ['scooping-along-fence', 'scooping-flower-border', 'scooping-under-trees', 'scooper-front-yard', 'scooping-by-hydrangeas', 'scooping-garden-arch', 'scooping-patio-fountain'],
+  dogs: ['dogs-playing-in-yard', 'scooper-at-work-side-yard', 'family-with-dogs', 'scooper-by-iron-fence', 'dog-with-family'],
+  local: ['chattanooga-mural-team', 'scooping-by-the-pond', 'scoopy-doo-team', 'scooping-large-lawn'],
+  service: ['scooping-large-lawn', 'scooping-fenced-yard', 'two-scoopers-at-gate'],
+  commercial: ['scoopy-doo-truck', 'two-scoopers-at-gate', 'scoopy-doo-team'],
+};
+const CAT_POOL = {
+  'Yard Tips': 'yard', 'Lawn Health': 'yard', Health: 'dogs', Tips: 'dogs', 'Homeowner Tips': 'dogs',
+  'Local Guide': 'local', 'Service Areas': 'local', Guides: 'local',
+  Pricing: 'service', Services: 'service', 'One-Time': 'service', 'Doggy Doors': 'dogs', Commercial: 'commercial',
+};
+const OWN_PHOTOS = {
+  '/blog/does-rain-wash-away-dog-poop-chattanooga': '/images/blog/does-rain-wash-away-dog-poop-chattanooga.webp',
+  '/blog/dog-poop-attract-rodents-pests-chattanooga': '/images/blog/dog-poop-attract-rodents-pests-chattanooga.webp',
+  '/blog/fall-leaves-hide-dog-poop-chattanooga': '/images/blog/fall-leaves-yard-scooping-chattanooga.webp',
+};
+const used = {};
+allPosts.forEach((p) => {
+  if (OWN_PHOTOS[p.slug]) { p.img = OWN_PHOTOS[p.slug]; return; }
+  const key = CAT_POOL[p.cat] || 'yard';
+  const pool = PHOTO_POOLS[key];
+  const n = used[key] || 0;
+  used[key] = n + 1;
+  p.img = '/images/blog/cards/' + pool[n % pool.length] + '.webp';
+});
+
 const BlogListPage = () => {
   const [topic, setTopic] = useState('All');
   const [shown, setShown] = useState(PAGE_SIZE);
@@ -102,6 +131,15 @@ const BlogListPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post, i) => (
               <Link key={post.slug} to={post.slug} className={(i >= shown ? 'hidden ' : '') + 'group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1'}>
+                <img
+                  src={post.img}
+                  alt=""
+                  width="640"
+                  height="400"
+                  loading={i < 3 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  className="aspect-[16/10] w-full object-cover bg-muted"
+                />
                 <div className="p-6 flex flex-col flex-grow">
                   <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider mb-4 w-fit">{post.cat}</span>
                   <h2 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h2>
