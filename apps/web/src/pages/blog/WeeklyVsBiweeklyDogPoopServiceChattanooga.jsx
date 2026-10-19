@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { getCanonicalUrl } from '@/utils/seoHelpers';
 
-const PAGE_TITLE = "Weekly vs Every-Other-Week Dog Poop Service in Chattanooga | Scoopy Doo";
-const PAGE_DESC = "Weekly dog poop removal in Chattanooga runs $20 per visit and every-other-week runs $33 per visit, a difference of about $15 a month for twice the visits. Here is how to choose.";
+const PAGE_TITLE = "Weekly vs Every-Other-Week Dog Poop Service | Scoopy Doo";
+const PAGE_DESC = "Weekly dog poop removal in Chattanooga is $20 per visit and every-other-week is $33, about $15 a month apart for twice the visits. How to choose.";
 
 const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
   const canonicalUrl = getCanonicalUrl('/blog/weekly-vs-biweekly-dog-poop-service-chattanooga');

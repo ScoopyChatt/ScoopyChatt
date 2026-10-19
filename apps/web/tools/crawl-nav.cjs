@@ -36,10 +36,31 @@ const MAIN = [
   ['/quote', 'Get a free quote'],
 ];
 
+// Service and offer pages. These had no links in the prebuilt HTML at all, so to a crawler
+// that does not run JavaScript they existed only in the sitemap.
+const SERVICES = [
+  ['/dog-poop-removal-chattanooga', 'Dog poop removal in Chattanooga'],
+  ['/pet-waste-removal-chattanooga', 'Pet waste removal in Chattanooga'],
+  ['/dog-poop-scooping-chattanooga', 'Dog poop scooping in Chattanooga'],
+  ['/yard-cleanup-chattanooga', 'Yard cleanup in Chattanooga'],
+  ['/one-time-cleanup', 'One-time yard cleanup'],
+  ['/first-scoop-free', 'First scoop free'],
+  ['/cost-calculator', 'Cost calculator'],
+  ['/near-me', 'Pooper scooper near me'],
+  ['/doggy-doors', 'Doggy door installation'],
+  ['/podcast', 'Podcast'],
+  ['/pet-safe-checklist', 'Pet-safe yard checklist'],
+  ['/dog-park-guide', 'Chattanooga dog park guide'],
+];
+const LEGAL = [
+  ['/privacy-policy', 'Privacy policy'],
+  ['/terms-of-service', 'Terms of service'],
+];
+const list = (links) => '<ul>' + links.map((l) => '<li><a href="' + l[0] + '">' + l[1] + '</a></li>').join('') + '</ul>';
+
 const locations = loadLocations();
-let html = '<nav aria-label="Site">' +
-  '<ul>' + MAIN.map((l) => '<li><a href="' + l[0] + '">' + l[1] + '</a></li>').join('') + '</ul>' +
-  '</nav>';
+let html = '<nav aria-label="Site">' + list(MAIN) + '</nav>' +
+  '<nav aria-label="Services"><h2>Services</h2>' + list(SERVICES) + '</nav>';
 if (locations.length) {
   html += '<nav aria-label="Areas we serve"><h2>Areas We Serve</h2><ul>' +
     locations.map((l) => '<li><a href="/service/' + l.slug + '">Dog poop removal in ' + l.name + '</a></li>').join('') +
@@ -47,5 +68,6 @@ if (locations.length) {
 }
 // Site-wide guarantee line, matching the React footer.
 const guarantee = require('../src/data/guarantee.json');
+html += '<nav aria-label="Legal">' + list(LEGAL) + '</nav>';
 html += '<p><strong>' + guarantee.entity + ':</strong> ' + guarantee.short + '</p><p>' + guarantee.tagline + '</p>';
 module.exports = html;

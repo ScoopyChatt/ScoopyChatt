@@ -10,8 +10,8 @@ const HOAPetWasteRemovalChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>HOA Pet Waste Removal in Chattanooga: A Board Guide | Scoopy Doo</title>
-        <meta name="description" content="How HOA and community pet waste removal works in Chattanooga: what is included, how pricing is quoted, and how to set up service for common areas and dog stations. Call 423-600-5040." />
+        <title>HOA Pet Waste Removal in Chattanooga | Scoopy Doo</title>
+        <meta name="description" content="How HOA pet waste removal works in Chattanooga: what is included, how pricing is quoted, and how to set up service for common areas and dog stations." />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
       <Header />

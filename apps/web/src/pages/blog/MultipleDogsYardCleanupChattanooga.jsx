@@ -12,10 +12,10 @@ const MultipleDogsYardCleanupChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>Two or Three Dogs? Multi-Dog Yard Cleanup in Chattanooga | Scoopy Doo</title>
-        <meta name="description" content="How multiple dogs change yard cleanup in Chattanooga: how much waste to expect, how often to scoop, and what multi-dog pooper scooper service costs. Weekly from $20 a visit, no contracts. Call 423-600-5040." />
+        <title>Multi-Dog Yard Cleanup in Chattanooga | Scoopy Doo</title>
+        <meta name="description" content="How multiple dogs change yard cleanup in Chattanooga: how much waste to expect, how often to scoop, and what multi-dog service costs. From $20 a visit." />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Two or Three Dogs? Multi-Dog Yard Cleanup in Chattanooga | Scoopy Doo" />
+        <meta property="og:title" content="Multi-Dog Yard Cleanup in Chattanooga | Scoopy Doo" />
         <meta property="og:description" content="How much waste multiple dogs produce, how often to scoop, and what multi-dog pet waste removal costs in Chattanooga and North Georgia." />
         <meta property="og:url" content={canonicalUrl} />
         <meta name="twitter:card" content="summary" />

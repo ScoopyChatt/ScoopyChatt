@@ -147,6 +147,113 @@ const PageLoader = () => (
   </div>
 );
 
+// The page routes on their own, without the browser-only wrappers around them, so
+// tools/prerender.mjs can render the same routes at build time for crawlers.
+export function AppRoutes() {
+  return (
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        <Route path="/sitemap.xml" element={<SitemapXML />} />
+
+        <Route path="/" element={<CoreServicePage />} />
+        <Route path="/near-me" element={<NearMePage />} />
+        <Route path="/one-time-cleanup" element={<OneTimeCleanupPage />} />
+        <Route path="/first-scoop-free" element={<FirstScoopFreePage />} />
+        <Route path="/cost-calculator" element={<CostCalculatorPage />} />
+
+        <Route path="/services" element={<ServicesPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/commercial" element={<CommercialPage />} />
+        <Route path="/reviews" element={<ReviewsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/press" element={<PressPage />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/comparison" element={<ComparisonPage />} />
+        <Route path="/guides/how-to-choose-pet-waste-removal-company-chattanooga" element={<ChooseGuidePage />} />
+        <Route path="/quote" element={<QuoteRequestPage />} />
+        <Route path="/thank-you" element={<ThankYouPage />} />
+        <Route path="/lp/first-scoop-free" element={<FirstScoopFreeLandingPage />} />
+        <Route path="/spring-special" element={<SpringSpecialPage />} />
+        <Route path="/doggy-doors" element={<DoggyDoorsPage />} />
+        <Route path="/doggy-doors/book" element={<DoggyDoorsBookingPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+
+        <Route path="/dog-poop-removal-chattanooga" element={<DogPoopRemovalPage />} />
+        <Route path="/pet-waste-removal-chattanooga" element={<PetWasteRemovalPage />} />
+        <Route path="/dog-poop-scooping-chattanooga" element={<DogPoopScoopingPage />} />
+        <Route path="/yard-cleanup-chattanooga" element={<YardCleanupPage />} />
+
+        <Route path="/pet-safe-checklist" element={<PetSafeChecklistLandingPage />} />
+        <Route path="/dog-park-guide" element={<DogParkGuideLandingPage />} />
+
+        <Route path="/podcast" element={<PodcastPage />} />
+
+        <Route path="/reddit-oauth-callback" element={<RedditOAuthCallbackPage />} />
+        <Route path="/qb-oauth-callback" element={<QuickBooksOAuthCallbackPage />} />
+
+        <Route path="/service-areas" element={<ServiceAreasPage />} />
+        <Route path="/service/:slug" element={<LocationTemplate />} />
+
+        <Route path="/blog" element={<BlogListPage />} />
+        <Route path="/blog/chattanooga-pet-waste-removal-homeowners" element={<ChattanoogaHomeownersPage />} />
+        <Route path="/blog/commercial-pet-waste-removal-chattanooga" element={<CommercialPetWastePage />} />
+      <Route path="/blog/fall-yard-care-checklist-chattanooga" element={<FallYardCareChecklistChattanooga />} />
+    <Route path="/blog/moving-to-chattanooga-with-a-dog" element={<MovingToChattanoogaWithADog />} />
+        <Route path="/blog/how-often-clean-yard" element={<HowOftenCleanYard />} />
+        <Route path="/blog/podcast-blog" element={<PodcastBlogPost />} />
+        <Route path="/blog/signal-mountain" element={<BlogSignalMountain />} />
+        <Route path="/blog/soddy-daisy" element={<BlogSoddyDaisy />} />
+        <Route path="/blog/dog-poop-cleanup-chattanooga-summer-heat" element={<DogPoopCleanupSummerHeat />} />
+        <Route path="/blog/dog-poop-laws-chattanooga" element={<DogPoopLawsChattanooga />} />
+        <Route path="/blog/what-pet-waste-removal-includes-chattanooga" element={<WhatPetWasteRemovalIncludesChattanooga />} />
+        <Route path="/blog/best-dog-parks-chattanooga-tn" element={<DogParksChattanooga />} />
+        <Route path="/blog/dog-friendly-trails-chattanooga" element={<DogFriendlyTrails />} />
+        <Route path="/blog/winter-dog-poop-cleanup-chattanooga" element={<WinterDogPoopCleanupChattanooga />} />
+        <Route path="/blog/fall-leaves-hide-dog-poop-chattanooga" element={<FallLeavesHideDogPoopChattanooga />} />
+
+        <Route path="/blog/dog-poop-attract-rodents-pests-chattanooga" element={<DogPoopAttractRodentsPestsChattanooga />} />
+        <Route path="/blog/does-rain-wash-away-dog-poop-chattanooga" element={<DoesRainWashAwayDogPoopChattanooga />} />
+        <Route path="/blog/pooper-scooper-cost-chattanooga" element={<PooperScooperCostChattanooga />} />
+        <Route path="/blog/no-contact-pet-waste-removal-chattanooga" element={<NoContactPetWasteRemovalChattanooga />} />
+        <Route path="/blog/dog-poop-removal-north-georgia" element={<NorthGeorgiaDogPoopRemoval />} />
+        <Route path="/blog/one-time-dog-poop-cleanup-chattanooga" element={<OneTimeDogPoopCleanupChattanooga />} />
+        <Route path="/blog/fall-flea-tick-season-chattanooga" element={<FallFleaTickSeasonChattanooga />} />
+        <Route path="/blog/multiple-dogs-yard-cleanup-chattanooga" element={<MultipleDogsYardCleanupChattanooga />} />
+        <Route path="/blog/hoa-pet-waste-removal-chattanooga" element={<HOAPetWasteRemovalChattanooga />} />
+        <Route path="/blog/dog-door-installation-chattanooga" element={<DogDoorInstallationChattanooga />} />
+        <Route path="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga" element={<WeeklyVsBiweeklyDogPoopServiceChattanooga />} />
+        <Route path="/blog/pet-waste-stations-apartments-hoas-chattanooga" element={<PetWasteStationsApartmentsHOAsChattanooga />} />
+        <Route path="/blog/yard-cleanup-before-a-party-chattanooga" element={<YardCleanupBeforePartyChattanoogaNorthGeorgia />} />
+        <Route path="/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga" element={<DogPoopSmellInYardChattanooga />} />
+  <Route path="/blog/new-puppy-pet-waste-removal-chattanooga" element={<NewPuppyOwnerGuideChattanooga />} />
+  <Route path="/blog/yard-cleanup-before-selling-home-chattanooga" element={<YardCleanupBeforeSellingHomeChattanooga />} />
+  <Route path="/blog/dog-waste-removal-rental-properties-chattanooga" element={<DogWasteRemovalRentalPropertiesChattanooga />} />
+  <Route path="/blog/eco-friendly-dog-waste-disposal-chattanooga" element={<EcoFriendlyDogWasteDisposalChattanooga />} />
+        <Route path="/blog/professional-waste-removal-benefits" element={<ProfessionalWasteRemovalBenefits />} />
+        <Route path="/blog/seasonal-pet-care-tips" element={<SeasonalPetCareTips />} />
+        <Route path="/blog/health-benefits-yard-cleanup" element={<HealthBenefitsYardCleanup />} />
+        <Route path="/blog/customer-success-stories" element={<CustomerSuccessStories />} />
+        <Route path="/blog/diy-vs-professional" element={<DIYVsProfessional />} />
+        <Route path="/blog/lawn-health-and-pet-waste" element={<LawnHealthAndPetWaste />} />
+        <Route path="/blog/health-risks-of-pet-waste" element={<HealthRisksOfPetWaste />} />
+        <Route path="/blog/pet-waste-management-guide" element={<PetWasteManagementGuide />} />
+        <Route path="/blog/how-often-scoop-dog-poop-chattanooga" element={<HowOftenScoopDogPoopChattanooga />} />
+        <Route path="/blog/is-dog-waste-bad-for-lawn" element={<IsDogWasteBadForLawn />} />
+        <Route path="/blog/is-dog-poop-hurting-your-chattanooga-yard" element={<IsDogPoopHurtingYourChattanoogaYard />} />
+        <Route path="/blog/best-pooper-scooper-services-chattanooga" element={<BestPooperScooperServicesChattanooga />} />
+        <Route path="/blog/spring-pet-care-checklist" element={<SpringPetCareChecklist />} />
+        <Route path="/blog/apaws-member-pet-waste-removal-chattanooga" element={<ApawsMemberChattanooga />} />
+
+        <Route path="/how-it-works" element={<HowItWorksPage />} />
+
+        <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+    </Suspense>
+  );
+}
+
 function App() {
   useGTM('GTM-59B5PDXS');
 
@@ -159,7 +266,7 @@ function App() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL_BASE_URL} />
       </Helmet>
-      
+
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -169,106 +276,7 @@ function App() {
         <ChatWidgetGate />
       <RouteTracker />
       
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          <Route path="/sitemap.xml" element={<SitemapXML />} />
-
-          <Route path="/" element={<CoreServicePage />} />
-          <Route path="/near-me" element={<NearMePage />} />
-          <Route path="/one-time-cleanup" element={<OneTimeCleanupPage />} />
-          <Route path="/first-scoop-free" element={<FirstScoopFreePage />} />
-          <Route path="/cost-calculator" element={<CostCalculatorPage />} />
-
-          <Route path="/services" element={<ServicesPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/commercial" element={<CommercialPage />} />
-          <Route path="/reviews" element={<ReviewsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/press" element={<PressPage />} />
-          <Route path="/faq" element={<FAQPage />} />
-          <Route path="/comparison" element={<ComparisonPage />} />
-          <Route path="/guides/how-to-choose-pet-waste-removal-company-chattanooga" element={<ChooseGuidePage />} />
-          <Route path="/quote" element={<QuoteRequestPage />} />
-          <Route path="/thank-you" element={<ThankYouPage />} />
-          <Route path="/lp/first-scoop-free" element={<FirstScoopFreeLandingPage />} />
-          <Route path="/spring-special" element={<SpringSpecialPage />} />
-          <Route path="/doggy-doors" element={<DoggyDoorsPage />} />
-          <Route path="/doggy-doors/book" element={<DoggyDoorsBookingPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-          
-          <Route path="/dog-poop-removal-chattanooga" element={<DogPoopRemovalPage />} />
-          <Route path="/pet-waste-removal-chattanooga" element={<PetWasteRemovalPage />} />
-          <Route path="/dog-poop-scooping-chattanooga" element={<DogPoopScoopingPage />} />
-          <Route path="/yard-cleanup-chattanooga" element={<YardCleanupPage />} />
-
-          <Route path="/pet-safe-checklist" element={<PetSafeChecklistLandingPage />} />
-          <Route path="/dog-park-guide" element={<DogParkGuideLandingPage />} />
-          
-          <Route path="/podcast" element={<PodcastPage />} />
-
-          <Route path="/reddit-oauth-callback" element={<RedditOAuthCallbackPage />} />
-          <Route path="/qb-oauth-callback" element={<QuickBooksOAuthCallbackPage />} />
-          
-          <Route path="/service-areas" element={<ServiceAreasPage />} />
-          <Route path="/service/:slug" element={<LocationTemplate />} />
-
-          <Route path="/blog" element={<BlogListPage />} />
-          <Route path="/blog/chattanooga-pet-waste-removal-homeowners" element={<ChattanoogaHomeownersPage />} />
-          <Route path="/blog/commercial-pet-waste-removal-chattanooga" element={<CommercialPetWastePage />} />
-        <Route path="/blog/fall-yard-care-checklist-chattanooga" element={<FallYardCareChecklistChattanooga />} />
-      <Route path="/blog/moving-to-chattanooga-with-a-dog" element={<MovingToChattanoogaWithADog />} />
-          <Route path="/blog/how-often-clean-yard" element={<HowOftenCleanYard />} />
-          <Route path="/blog/podcast-blog" element={<PodcastBlogPost />} />
-          <Route path="/blog/signal-mountain" element={<BlogSignalMountain />} />
-          <Route path="/blog/soddy-daisy" element={<BlogSoddyDaisy />} />
-          <Route path="/blog/dog-poop-cleanup-chattanooga-summer-heat" element={<DogPoopCleanupSummerHeat />} />
-          <Route path="/blog/dog-poop-laws-chattanooga" element={<DogPoopLawsChattanooga />} />
-          <Route path="/blog/what-pet-waste-removal-includes-chattanooga" element={<WhatPetWasteRemovalIncludesChattanooga />} />
-          <Route path="/blog/best-dog-parks-chattanooga-tn" element={<DogParksChattanooga />} />
-          <Route path="/blog/dog-friendly-trails-chattanooga" element={<DogFriendlyTrails />} />
-          <Route path="/blog/winter-dog-poop-cleanup-chattanooga" element={<WinterDogPoopCleanupChattanooga />} />
-          <Route path="/blog/fall-leaves-hide-dog-poop-chattanooga" element={<FallLeavesHideDogPoopChattanooga />} />
-          
-          <Route path="/blog/dog-poop-attract-rodents-pests-chattanooga" element={<DogPoopAttractRodentsPestsChattanooga />} />
-          <Route path="/blog/does-rain-wash-away-dog-poop-chattanooga" element={<DoesRainWashAwayDogPoopChattanooga />} />
-          <Route path="/blog/pooper-scooper-cost-chattanooga" element={<PooperScooperCostChattanooga />} />
-          <Route path="/blog/no-contact-pet-waste-removal-chattanooga" element={<NoContactPetWasteRemovalChattanooga />} />
-          <Route path="/blog/dog-poop-removal-north-georgia" element={<NorthGeorgiaDogPoopRemoval />} />
-          <Route path="/blog/one-time-dog-poop-cleanup-chattanooga" element={<OneTimeDogPoopCleanupChattanooga />} />
-          <Route path="/blog/fall-flea-tick-season-chattanooga" element={<FallFleaTickSeasonChattanooga />} />
-          <Route path="/blog/multiple-dogs-yard-cleanup-chattanooga" element={<MultipleDogsYardCleanupChattanooga />} />
-          <Route path="/blog/hoa-pet-waste-removal-chattanooga" element={<HOAPetWasteRemovalChattanooga />} />
-          <Route path="/blog/dog-door-installation-chattanooga" element={<DogDoorInstallationChattanooga />} />
-          <Route path="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga" element={<WeeklyVsBiweeklyDogPoopServiceChattanooga />} />
-          <Route path="/blog/pet-waste-stations-apartments-hoas-chattanooga" element={<PetWasteStationsApartmentsHOAsChattanooga />} />
-          <Route path="/blog/yard-cleanup-before-a-party-chattanooga" element={<YardCleanupBeforePartyChattanoogaNorthGeorgia />} />
-          <Route path="/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga" element={<DogPoopSmellInYardChattanooga />} />
-<Route path="/blog/new-puppy-pet-waste-removal-chattanooga" element={<NewPuppyOwnerGuideChattanooga />} />
-<Route path="/blog/yard-cleanup-before-selling-home-chattanooga" element={<YardCleanupBeforeSellingHomeChattanooga />} />
-<Route path="/blog/dog-waste-removal-rental-properties-chattanooga" element={<DogWasteRemovalRentalPropertiesChattanooga />} />
-<Route path="/blog/eco-friendly-dog-waste-disposal-chattanooga" element={<EcoFriendlyDogWasteDisposalChattanooga />} />
-          <Route path="/blog/professional-waste-removal-benefits" element={<ProfessionalWasteRemovalBenefits />} />
-          <Route path="/blog/seasonal-pet-care-tips" element={<SeasonalPetCareTips />} />
-          <Route path="/blog/health-benefits-yard-cleanup" element={<HealthBenefitsYardCleanup />} />
-          <Route path="/blog/customer-success-stories" element={<CustomerSuccessStories />} />
-          <Route path="/blog/diy-vs-professional" element={<DIYVsProfessional />} />
-          <Route path="/blog/lawn-health-and-pet-waste" element={<LawnHealthAndPetWaste />} />
-          <Route path="/blog/health-risks-of-pet-waste" element={<HealthRisksOfPetWaste />} />
-          <Route path="/blog/pet-waste-management-guide" element={<PetWasteManagementGuide />} />
-          <Route path="/blog/how-often-scoop-dog-poop-chattanooga" element={<HowOftenScoopDogPoopChattanooga />} />
-          <Route path="/blog/is-dog-waste-bad-for-lawn" element={<IsDogWasteBadForLawn />} />
-          <Route path="/blog/is-dog-poop-hurting-your-chattanooga-yard" element={<IsDogPoopHurtingYourChattanoogaYard />} />
-          <Route path="/blog/best-pooper-scooper-services-chattanooga" element={<BestPooperScooperServicesChattanooga />} />
-          <Route path="/blog/spring-pet-care-checklist" element={<SpringPetCareChecklist />} />
-          <Route path="/blog/apaws-member-pet-waste-removal-chattanooga" element={<ApawsMemberChattanooga />} />
-
-          <Route path="/how-it-works" element={<HowItWorksPage />} />
-
-          <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-      </Suspense>
+      <AppRoutes />
       
       <Toaster />
     </Router>

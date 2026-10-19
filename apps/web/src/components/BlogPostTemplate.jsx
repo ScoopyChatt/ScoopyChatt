@@ -5,7 +5,9 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import { getCanonicalUrl, generateArticleSchema } from '@/utils/seoHelpers.js';
 
-const BlogPostTemplate = ({ title, description, slug, author, datePublished, image, content }) => {
+const BlogPostTemplate = ({ title, description, slug, author, datePublished, date, image, content }) => {
+  // Some posts pass `date` instead of `datePublished`; without this the byline read "Invalid Date".
+  const published = datePublished || date;
   const url = getCanonicalUrl(`/blog/${slug}`);
   const articleSchema = generateArticleSchema(title, description, author, datePublished, image, url);
   const defaultImage = image || "https://horizons-cdn.hostinger.com/d0188638-a120-4cbd-8c61-d1420711a271/8088ef4935a7739f1747caefac1fdcc6.jpg";
@@ -37,14 +39,23 @@ const BlogPostTemplate = ({ title, description, slug, author, datePublished, ima
             <div className="flex items-center justify-center text-muted-foreground space-x-4">
               <span>By {author || 'Scoopy Doo Team'}</span>
               <span>•</span>
-              <time dateTime={datePublished}>{new Date(datePublished).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+              {published && (
+                <time dateTime={published}>{new Date(published).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+              )}
             </div>
           </header>
           
-          <div 
-            className="prose prose-lg dark:prose-invert max-w-none prose-headings:text-balance prose-headings:font-bold prose-p:leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: content }} 
-          />
+          {/* Most posts pass an HTML string; the podcast post passes JSX, which used to render as "[object Object]". */}
+          {typeof content === 'string' ? (
+            <div
+              className="prose prose-lg dark:prose-invert max-w-none prose-headings:text-balance prose-headings:font-bold prose-p:leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          ) : (
+            <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:text-balance prose-headings:font-bold prose-p:leading-relaxed">
+              {content}
+            </div>
+          )}
         </article>
       </main>
 

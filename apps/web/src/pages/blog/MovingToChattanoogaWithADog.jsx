@@ -35,7 +35,7 @@ const MovingToChattanoogaWithADog = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEOHead
-        title="Moving to Chattanooga With a Dog: New Resident Guide | Scoopy Doo"
+        title="Moving to Chattanooga With a Dog | Scoopy Doo"
         description="New to Chattanooga with a dog? Get local tips on neighborhoods, yard care, and pet waste rules, plus how professional dog poop removal makes settling in easier."
         canonicalUrl={`${CANONICAL_BASE_URL}/blog/moving-to-chattanooga-with-a-dog`}
       />

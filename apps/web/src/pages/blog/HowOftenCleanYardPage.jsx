@@ -8,7 +8,7 @@ import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
 const HowOftenCleanYard = () => (
   <div className="min-h-screen flex flex-col bg-background">
-    <SEOHead title="How Often Should You Clean Your Yard of Pet Waste? | Scoopy Doo" description="Expert guidance on cleanup frequency based on dog count, yard size, and Chattanooga's climate. Most experts recommend at least once a week." canonicalUrl={`${CANONICAL_BASE_URL}/blog/how-often-clean-yard`} />
+    <SEOHead title="How Often to Clean Your Yard of Pet Waste | Scoopy Doo" description="Expert guidance on cleanup frequency based on dog count, yard size, and Chattanooga's climate. Most experts recommend at least once a week." canonicalUrl={`${CANONICAL_BASE_URL}/blog/how-often-clean-yard`} />
     <Header />
     <main className="flex-grow py-20">
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

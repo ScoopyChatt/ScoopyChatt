@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
+import { loadElfsight } from '@/utils/thirdParty.js';
 
 const ElfsightReviewsWidget = () => {
-  useEffect(() => {
-    const scriptId = 'elfsight-platform-script';
-    
-    const initWidget = () => {
+  useEffect(() => loadElfsight({
+    onLoad: () => {
       if (window.ELFSight) {
         try {
           window.ELFSight.reload();
@@ -12,28 +11,9 @@ const ElfsightReviewsWidget = () => {
           console.error('Error reloading Elfsight widget:', err);
         }
       }
-    };
-
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = 'https://elfsightcdn.com/platform.js';
-      script.async = true;
-      
-      script.onload = () => {
-        initWidget();
-      };
-      
-      script.onerror = (err) => {
-        console.error('Failed to load Elfsight reviews script:', err);
-      };
-      
-      document.body.appendChild(script);
-    } else {
-      // Script already exists, just try to re-initialize
-      initWidget();
-    }
-  }, []);
+    },
+    onError: (err) => console.error('Failed to load Elfsight reviews script:', err),
+  }), []);
 
   return (
     <div 

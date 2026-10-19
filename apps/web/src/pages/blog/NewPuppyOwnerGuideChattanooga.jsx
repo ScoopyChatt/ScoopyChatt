@@ -35,8 +35,8 @@ answer: "We serve the greater Chattanooga area, including Ooltewah, East Brainer
 return (
 <div className="min-h-screen flex flex-col bg-background">
 <SEOHead
-title="New Puppy Owner Guide: Pet Waste Cleanup in Chattanooga | Scoopy Doo"
-description="Bringing home a new puppy in Chattanooga? Here is how to set up a pet waste cleanup routine, why it matters for house training and health, and what professional service costs."
+title="New Puppy Pet Waste Cleanup in Chattanooga | Scoopy Doo"
+description="New puppy in Chattanooga? How to set up a pet waste cleanup routine, why it matters for house training and health, and what professional service costs."
 canonicalUrl={`${CANONICAL_BASE_URL}/blog/new-puppy-pet-waste-removal-chattanooga`}
 />
 <Header />

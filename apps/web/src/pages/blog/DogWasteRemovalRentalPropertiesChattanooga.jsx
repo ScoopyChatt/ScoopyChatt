@@ -12,10 +12,10 @@ const canonicalUrl = getCanonicalUrl('/blog/dog-waste-removal-rental-properties-
 return (
 <>
 <Helmet>
-<title>Who Handles Dog Waste at a Rental Property? | Scoopy Doo Chattanooga</title>
+<title>Who Handles Dog Waste at a Chattanooga Rental Property?</title>
 <meta
 name="description"
-content="Landlord or tenant: who is responsible for dog waste cleanup at a Chattanooga rental? See how uncleaned yards cost landlords money and how Scoopy Doo services rental properties and multi-unit portfolios."
+content="Landlord or tenant: who is responsible for dog waste at a Chattanooga rental, what uncleaned yards cost owners, and how Scoopy Doo services rentals."
 />
 <link rel="canonical" href={canonicalUrl} />
 </Helmet>

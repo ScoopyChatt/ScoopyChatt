@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { getCanonicalUrl } from '@/utils/seoHelpers';
 
-const PAGE_TITLE = "One-Time Yard Cleanup Before a Party in Chattanooga | Scoopy Doo";
-const PAGE_DESC = "Hosting a cookout, graduation, or wedding shower? One-time dog poop cleanups start at $85. Here is how far ahead to book, what gets done, and how to keep the smell down in Chattanooga humidity.";
+const PAGE_TITLE = "Yard Cleanup Before a Party in Chattanooga | Scoopy Doo";
+const PAGE_DESC = "Hosting a cookout or graduation? One-time dog poop cleanups start at $85. How far ahead to book, what gets done, and how to keep the smell down.";
 
 const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
   const canonicalUrl = getCanonicalUrl('/blog/yard-cleanup-before-a-party-chattanooga');
@@ -106,7 +106,7 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
               className="w-full rounded-lg border border-gray-200"
               loading="lazy"
               width="1200"
-              height="675"
+              height="900"
             />
             <figcaption className="text-sm text-gray-600 mt-2">
               A one-time cleanup is a single visit with no schedule and no commitment.

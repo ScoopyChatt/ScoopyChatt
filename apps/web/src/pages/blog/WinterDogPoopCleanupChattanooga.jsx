@@ -15,7 +15,7 @@ const WinterDogPoopCleanupChattanooga = () => {
         <title>Winter Dog Poop Cleanup in Chattanooga | Scoopy Doo</title>
         <meta
           name="description"
-          content="Cold weather does not stop dog waste from piling up. Learn why Chattanooga yards need winter pet waste removal and what Scoopy Doo service costs from 18 dollars a visit."
+          content="Cold weather does not stop dog waste from piling up. Why Chattanooga yards need winter pet waste removal, and what Scoopy Doo service costs."
         />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>

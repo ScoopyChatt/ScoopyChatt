@@ -1,6 +1,5 @@
 
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Shield, Clock, ChevronDown } from 'lucide-react';
 import SEOHead from '@/components/SEOHead.jsx';
@@ -9,6 +8,7 @@ import Footer from '@/components/Footer.jsx';
 import CTAButton from '@/components/CTAButton.jsx';
 import LocationSection from '@/components/LocationSection.jsx';
 import { GuaranteeBadge, GuaranteeBanner } from '@/components/Guarantee.jsx';
+import { loadElfsight } from '@/utils/thirdParty.js';
 
 const faqs = [
   {
@@ -67,12 +67,11 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const CoreServicePage = () => {
+  useEffect(() => loadElfsight(), []);
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEOHead path="/" />
-      <Helmet>
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-      </Helmet>
 
       <Header />
 
