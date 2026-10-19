@@ -189,6 +189,7 @@ LOCDATA.forEach(function (l) {
     name: l.name,
     desc: l.serviceDescription,
     hoods: l.neighborhoods,
+    landmark: l.localLandmark,
     faqs: l.faqItems.map(function (f) { return [f.question, f.answer]; })
   };
 });
@@ -201,6 +202,7 @@ function makeLocContent(slug) {
   h += "<h1>Dog Poop Removal in " + n + "</h1>";
   h += "<p>" + l.serviceDescription + "</p>";
   h += "<h2>Why " + n + " Pet Owners Need Professional Cleanup</h2><p>" + l.localContext + "</p>";
+  if (l.localLandmark) h += "<p>" + l.localLandmark.text + "</p>";
   h += "<h2>Dog Poop Removal Pricing in " + n + "</h2>";
   h += "<p>Scoopy Doo weekly dog poop removal in " + n + " starts at $20 per visit for one dog. Twice-weekly service starts at $18 per visit, every-other-week service starts at $33 per visit, and one-time yard cleanups start at $85. Extra dogs add $2 per weekly visit. Final pricing depends on yard size and number of dogs. There are no contracts and no cancellation fees, and billing is once a month.</p>";
   h += "<h2>What Every Visit Includes</h2><ul>";
@@ -348,7 +350,7 @@ function routeSchema(route){
     var d=(typeof LOC!=="undefined")?LOC[slug]:null;
     if(!d){return "";}
     var city=titleCaseSlug(slug);
-    var svc={"@context":"https://schema.org","@type":"Service","serviceType":"Pet waste removal","name":"Dog Poop Removal in "+city,"description":d.desc+GUARANTEE_SENTENCE,"url":base+route,"areaServed":{"@type":"City","name":city},"provider":{"@id":base+"/#business"}};
+    var svc={"@context":"https://schema.org","@type":"Service","serviceType":"Pet waste removal","name":"Dog Poop Removal in "+city,"description":d.desc+GUARANTEE_SENTENCE,"url":base+route,"areaServed":Object.assign({"@type":"City","name":city},d.landmark?{"containsPlace":{"@type":d.landmark.type,"name":d.landmark.name}}:{}),"provider":{"@id":base+"/#business"}};
     var breadcrumb={"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":base+"/"},{"@type":"ListItem","position":2,"name":"Service Areas","item":base+"/service-areas"},{"@type":"ListItem","position":3,"name":d.name,"item":base+route}]};
     var out=ldScript(svc)+ldScript(breadcrumb);
     if(d.faqs&&d.faqs.length){out+=ldScript(faqSchema(d.faqs));}

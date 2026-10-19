@@ -220,7 +220,7 @@ export function generateLocationSchema(locationData) {
       "@id": "https://www.scoopychatt.com/#business",
       "name": "Scoopy Doo LLC"
     },
-    areaServed: [{ "@type": "City", name: locationData.name }].concat((locationData.neighborhoods || []).map(function (n) { return { "@type": "Place", name: n + ", " + locationData.name }; })),
+    areaServed: [Object.assign({ "@type": "City", name: locationData.name }, locationData.localLandmark ? { containsPlace: { "@type": locationData.localLandmark.type, name: locationData.localLandmark.name } } : {})].concat((locationData.neighborhoods || []).map(function (n) { return { "@type": "Place", name: n + ", " + locationData.name }; })),
     "url": "https://www.scoopychatt.com/service/" + locationData.slug
   };
 }

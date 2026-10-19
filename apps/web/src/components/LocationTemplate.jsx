@@ -52,7 +52,7 @@ const LocationTemplate = ({ city: propCity }) => {
     );
   }
 
-  const { name, seoTitle, seoDescription, serviceDescription, localContext, neighborhoods, nearbyAreas, benefits, faqItems } = locationData;
+  const { name, seoTitle, seoDescription, serviceDescription, localContext, localLandmark, neighborhoods, nearbyAreas, benefits, faqItems } = locationData;
   const canonicalUrl = getCanonicalUrl('/service/' + locationData.slug);
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://www.scoopychatt.com/' },
@@ -190,6 +190,9 @@ const LocationTemplate = ({ city: propCity }) => {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Why {name} Pet Owners Need Professional Cleanup</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">{localContext}</p>
+              {localLandmark && (
+                <p className="text-lg text-muted-foreground leading-relaxed mt-4">{localLandmark.text}</p>
+              )}
             </div>
           </section>
         )}
