@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin } from 'lucide-react';
 import ServiceAreaGrid from '@/components/ServiceAreaGrid.jsx';
 import CTAButton from '@/components/CTAButton.jsx';
@@ -21,6 +22,9 @@ const LocationSection = () => {
           
           <div className="lg:col-span-8">
             <ServiceAreaGrid areas={serviceAreas} />
+            <p className="mt-6 text-center lg:text-left">
+              <Link to="/service-areas" className="text-primary font-semibold hover:underline">See all service areas</Link>
+            </p>
           </div>
         </div>
       </div>

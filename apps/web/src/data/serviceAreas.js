@@ -1,16 +1,5 @@
+import { locations } from '@/data/locations.js';
 
-export const serviceAreas = [
-  'Chattanooga',
-  'Hixson',
-  'Ooltewah',
-  'Signal Mountain',
-  'Soddy-Daisy',
-  'Ringgold',
-  'Rossville',
-  'Red Bank',
-  'East Brainerd',
-  'Highland Park',
-  'Apison',
-  'Collegedale',
-  'Flintstone'
-];
+// Built from locations.js so the area tiles (near-me, service pages) always match
+// the /service-areas hub and the /service/:slug pages. Add a new area there, not here.
+export const serviceAreas = locations.map(({ name, slug }) => ({ name, slug }));

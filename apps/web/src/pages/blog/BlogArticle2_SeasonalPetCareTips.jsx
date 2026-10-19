@@ -6,7 +6,7 @@ const BlogArticle2_SeasonalPetCareTips = () => {
   const meta = {
     title: "Seasonal Pet Care Tips for Chattanooga Dog Owners",
     description: "From summer heat to winter freezes, learn how to protect your pet and maintain a clean, safe yard in the Greater Chattanooga area year-round.",
-    author: "Scoopy Chatt Team",
+    author: "Scoopy Doo Team",
     datePublished: "2026-04-18",
     slug: "seasonal-pet-care-tips",
     category: "Pet Care"
