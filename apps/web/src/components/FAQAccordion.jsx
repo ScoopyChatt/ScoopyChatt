@@ -11,7 +11,7 @@ const FAQAccordion = ({ faqs }) => {
   if (!faqs || faqs.length === 0) return null;
 
   return (
-    <Accordion type="single" collapsible className="w-full">
+    <Accordion type="multiple" className="w-full">
       {faqs.map((faq, index) => (
         <AccordionItem key={index} value={`item-${index}`} className="border-border">
           <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">

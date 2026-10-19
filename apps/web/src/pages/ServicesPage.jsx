@@ -69,7 +69,7 @@ const ServicesPage = () => {
               </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">Weekly, bi-weekly, one-time, commercial, and HOA service - all with online quotes, on-the-way texts, and gate photo confirmation. No contracts, ever.</p>
             <Button asChild size="lg" className="rounded-xl px-8 h-14 text-base font-bold">
-              <Link to="/quote">Get Your Free Quote</Link>
+              <Link to="/quote">Get My Instant Price</Link>
             </Button>
             <div className="mt-6">
               <GuaranteeBadge />
@@ -90,7 +90,7 @@ const ServicesPage = () => {
             </div>
             <div className="text-center">
               <Button asChild size="lg" className="rounded-xl px-8 h-12 font-bold">
-                <Link to="/quote">Get Pricing for My Yard</Link>
+                <Link to="/quote">Get My Instant Price</Link>
               </Button>
             </div>
           </div>
@@ -320,9 +320,9 @@ const ServicesPage = () => {
             <p className="text-lg opacity-90 mb-8">Get a free quote in under 2 minutes. We serve all of Chattanooga and surrounding areas including Hixson, Ooltewah, East Brainerd, Signal Mountain, Red Bank, East Ridge, Soddy-Daisy, Ringgold, Fort Oglethorpe, Rossville, and Lookout Mountain.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="rounded-xl px-10 h-14 text-base font-bold">
-                <Link to="/quote">Get My Free Quote</Link>
+                <Link to="/quote">Get My Instant Price</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-xl px-10 h-14 text-base font-bold border-white/40 text-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline" className="bg-transparent rounded-xl px-10 h-14 text-base font-bold border-white/40 text-white hover:bg-white/10">
                 <a href="tel:423-600-5040">Call (423) 600-5040</a>
               </Button>
             </div>

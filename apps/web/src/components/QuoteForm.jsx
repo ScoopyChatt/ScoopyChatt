@@ -13,6 +13,7 @@ import { AnimatePresence, motion } from '@/components/motion.jsx';
 import { CheckCircle2, MapPin } from 'lucide-react';
 import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 import { getAdClickIds } from '@/utils/adClickIds.js';
+import { isValidUsPhone, PHONE_ERROR } from '@/utils/contactValidation.js';
 
 export const SERVICE_AREA = {
   "37350": { area: "Lookout Mountain", day: "Tuesday" },
@@ -115,6 +116,16 @@ const PRICING = {
   'onetime': { base: 85, extra: 15, inc: 3, cadence: 'one-time', note: 'a one-time cleanup' },
 };
 
+// What the customer sees. "Bi-weekly" is avoided because many people read it as twice
+// a week; SERVICE_LABELS below is what Jobber receives and is left unchanged.
+const SERVICE_OPTIONS = [
+  ['twice-weekly', 'Twice-a-Week Service'],
+  ['weekly', 'Weekly Service'],
+  ['biweekly', 'Every-Other-Week Service'],
+  ['onetime', 'One-Time Cleanup'],
+  ['custom', 'Custom Service'],
+];
+
 const SERVICE_LABELS = {
   'weekly': 'Weekly Pet Waste Removal',
   'twice-weekly': 'Twice-Weekly Pet Waste Removal',
@@ -134,7 +145,7 @@ function computeQuote(serviceType, dogs, takeAway) {
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(10, 'Please enter a valid phone number'),
+  phone: z.string().refine(isValidUsPhone, PHONE_ERROR),
   serviceZipCode: z.string().regex(/^\d{5}$/, 'Must be a valid 5-digit zip code'),
   serviceType: z.string().min(1, 'Please select a service type'),
   numberOfDogs: z.string().min(1, 'Please select the number of dogs'),
@@ -307,7 +318,17 @@ const QuoteForm = ({ allowedServices } = {}) => {
     try {
       await Promise.allSettled([postJson(WEBHOOK_URL), postForm(JOBBER_ZAPIER_URL)]);
     } catch (error) { console.error(error); }
-    navigate('/thank-you');
+    const dogs = parseInt(v.numberOfDogs, 10);
+    navigate('/thank-you', {
+      state: {
+        recap: [
+          ['Plan', ((SERVICE_OPTIONS.find(([val]) => val === v.serviceType) || [])[1] || 'Pet waste removal') + (takeAway ? ', with haul-away' : '')],
+          ['Dogs', String(dogs)],
+          ['Price', quote && quote.price ? '$' + quote.price + ' ' + quote.cadence : 'Custom quote'],
+          ['Address', sanitizedStreetAddress + ', ' + v.serviceZipCode],
+        ],
+      },
+    });
   };
 
   const onSubmit = async (values) => {
@@ -546,13 +567,7 @@ const QuoteForm = ({ allowedServices } = {}) => {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    {[
-                      ['twice-weekly', '2X Weekly Service'],
-                      ['weekly', 'Weekly Service'],
-                      ['biweekly', 'Bi-Weekly Service'],
-                      ['onetime', 'One-Time Cleanup'],
-                      ['custom', 'Custom Service'],
-                    ]
+                    {SERVICE_OPTIONS
                       .filter(([value]) => !allowedServices || allowedServices.includes(value))
                       .map(([value, label]) => (
                         <SelectItem key={value} value={value}>{label}</SelectItem>

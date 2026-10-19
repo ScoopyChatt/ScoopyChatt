@@ -22,6 +22,8 @@ import Footer from '@/components/Footer.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
 import ReviewsSection from '@/components/ReviewsSection.jsx';
 import { TIERS } from '@/data/doggyDoorTiers.js';
+import { toast } from 'sonner';
+import { isValidUsPhone, isValidZip, isValidEmail, PHONE_ERROR, ZIP_ERROR } from '@/utils/contactValidation.js';
 
 export const DOGGY_DOOR_WEBHOOK_URL =
   import.meta.env.VITE_DOGGY_DOOR_WEBHOOK_URL ||
@@ -89,6 +91,18 @@ const DoggyDoorsPage = () => {
       return;
     }
     if (!form.name || !form.email || !form.phone || !form.zip) return;
+    if (!isValidEmail(form.email)) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+    if (!isValidUsPhone(form.phone)) {
+      toast.error(PHONE_ERROR + '.');
+      return;
+    }
+    if (!isValidZip(form.zip)) {
+      toast.error(ZIP_ERROR + '.');
+      return;
+    }
 
     setSubmitting(true);
     const delivered = await sendLead('Pricing Unlocked');
@@ -243,7 +257,7 @@ const DoggyDoorsPage = () => {
                               type="email"
                               value={form.email}
                               onChange={handleChange}
-                              placeholder="you@email.com"
+                              placeholder="e.g. you@email.com"
                               required
                               className="mt-1"
                             />
@@ -256,7 +270,7 @@ const DoggyDoorsPage = () => {
                               type="tel"
                               value={form.phone}
                               onChange={handleChange}
-                              placeholder="423-555-0100"
+                              placeholder="e.g. 423-555-0100"
                               required
                               className="mt-1"
                             />
@@ -266,9 +280,11 @@ const DoggyDoorsPage = () => {
                             <Input
                               id="dd-zip"
                               name="zip"
+                              inputMode="numeric"
+                              maxLength={5}
                               value={form.zip}
                               onChange={handleChange}
-                              placeholder="37402"
+                              placeholder="e.g. 37402"
                               required
                               className="mt-1"
                             />

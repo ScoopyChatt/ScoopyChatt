@@ -119,12 +119,14 @@ const Footer = () => {
             <h3 className="text-slate-900 font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="hover:text-primary transition-colors text-sm">Home</Link></li>
-<li><Link to="/pricing" className="hover:text-primary transition-colors text-sm">Pricing</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Dog Poop Removal</Link></li>
-              <li><Link to="/near-me" className="hover:text-primary transition-colors text-sm">Service Areas</Link></li>
+              <li><Link to="/pricing" className="hover:text-primary transition-colors text-sm">Pricing</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Services</Link></li>
+              <li><Link to="/service-areas" className="hover:text-primary transition-colors text-sm">Service Areas</Link></li>
+              <li><Link to="/reviews" className="hover:text-primary transition-colors text-sm">Reviews</Link></li>
               <li><Link to="/blog" className="hover:text-primary transition-colors text-sm">Blog</Link></li>
               <li><Link to="/faq" className="hover:text-primary transition-colors text-sm">FAQ</Link></li>
               <li><Link to="/about" className="hover:text-primary transition-colors text-sm">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors text-sm">Contact / Ask a Question</Link></li>
             </ul>
           </div>
 
@@ -147,11 +149,11 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">(423) 600-5040</span>
+                <a href="tel:423-600-5040" className="text-sm hover:text-primary transition-colors">(423) 600-5040</a>
               </li>
               <li className="flex items-start">
                 <Mail className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-sm">info@scoopychatt.com</span>
+                <a href="mailto:info@scoopychatt.com" className="text-sm hover:text-primary transition-colors">info@scoopychatt.com</a>
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />

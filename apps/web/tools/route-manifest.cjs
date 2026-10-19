@@ -13,6 +13,7 @@ const PAGES = [
   '/comparison',
   '/guides/how-to-choose-pet-waste-removal-company-chattanooga',
   '/reviews',
+  '/contact',
   '/faq',
   '/about',
   '/press',

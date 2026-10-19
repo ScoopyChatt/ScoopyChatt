@@ -12,8 +12,8 @@ const steps = [
   {
     number: '01',
     icon: ClipboardList,
-    title: 'Get a Free Quote Online',
-    desc: "No phone calls, no waiting on hold. Fill out our quick form with your zip code, number of dogs, and yard size and we send back your price, usually within a few hours.",
+    title: 'See Your Price Instantly',
+    desc: "No phone calls, no waiting on hold. Fill out our quick form with your zip code, plan, and number of dogs and your exact per-visit price shows up right away.",
     highlight: "100% online - quote, schedule, and pay without picking up the phone.",
     color: 'bg-blue-500/10 text-blue-600',
   },
@@ -21,7 +21,7 @@ const steps = [
     number: '02',
     icon: CreditCard,
     title: 'Pick a Plan & Pay Online',
-    desc: "Choose weekly, bi-weekly, or one-time service. Pay securely online - no checks, no cash at the door. We send your confirmation and put you on the schedule.",
+    desc: "Choose twice-a-week, weekly, every-other-week, or one-time service. Pay securely online - no checks, no cash at the door. We send your confirmation and put you on the schedule.",
     highlight: "Secure online payment. No contracts. Cancel anytime.",
     color: 'bg-green-500/10 text-green-600',
   },
@@ -64,7 +64,7 @@ const faqs = [
   { q: 'Do I need to be home during the service?', a: "No. We just need access to your backyard - an unlocked gate or a code you provide. Most customers are at work when we show up. You get an on-the-way text before we arrive and a gate photo when we are done." },
   { q: 'How does the gate photo work?', a: "After every visit, our tech closes and latches your gate, then snaps a photo and texts it to you. It is your confirmation that the job is done and your yard is secure." },
   { q: 'When do I get the on-the-way text?', a: "We send it when we are en route to your address, so you have a few minutes notice. It lets you know we are coming without you having to guess which day or time." },
-  { q: 'Can I pay online?', a: "Yes - everything is handled online. You request a quote, receive pricing by email, and pay securely online before service begins. No checks, no cash, no awkward in-person payment." },
+  { q: 'Can I pay online?', a: "Yes - everything is handled online. You see your price instantly on the quote form, request your start date, and pay securely online before service begins. No checks, no cash, no awkward in-person payment." },
   { q: 'Is there a contract?', a: "No contracts, ever. You can pause, change, or cancel your service at any time." },
   { q: 'What if it rains on my service day?', a: "We show up rain or shine. Weather does not cancel your service - rainy days are actually when cleanup matters most, since runoff carries bacteria across your lawn." },
   { q: 'Do you service my neighborhood?', a: "We cover all of Chattanooga and surrounding areas: Hixson, Ooltewah, East Brainerd, Signal Mountain, Red Bank, Soddy-Daisy, Ringgold, Highland Park, Apison, Collegedale, Fort Oglethorpe, Rossville, and more." },
@@ -99,7 +99,7 @@ const HowItWorksPage = () => (
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 leading-tight">Working With Us Is Simple</h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">Online quotes. Online payment. A text before we arrive. A photo of your secured gate when we leave. You do not have to do anything except enjoy your yard.</p>
           <Button asChild size="lg" className="rounded-xl px-8 h-14 text-base font-bold">
-            <Link to="/quote">Get Your Free Quote</Link>
+            <Link to="/quote">Get My Instant Price</Link>
           </Button>
         </motion.div>
       </section>
@@ -162,7 +162,7 @@ const HowItWorksPage = () => (
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Ready? It Takes 2 Minutes.</h2>
           <p className="text-lg opacity-90 mb-8">Get a free quote online right now. No phone calls, no commitments. Just a clean yard.</p>
           <Button asChild size="lg" variant="secondary" className="rounded-xl px-10 h-14 text-base font-bold">
-            <Link to="/quote">Get My Free Quote</Link>
+            <Link to="/quote">Get My Instant Price</Link>
           </Button>
         </div>
       </section>

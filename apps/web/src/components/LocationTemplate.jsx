@@ -117,7 +117,7 @@ const LocationTemplate = ({ city: propCity }) => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                <div className="inline-flex items-center space-x-2 bg-primary/20 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-6 border border-primary/30 shadow-sm">
+                <div className="inline-flex items-center space-x-2 bg-primary/20 text-foreground px-4 py-2 rounded-full text-sm font-medium mb-6 border border-primary/30 shadow-sm">
                   <MapPin className="w-4 h-4" />
                   <span>Now Serving {name} & Surrounding Areas</span>
                 </div>
@@ -129,7 +129,7 @@ const LocationTemplate = ({ city: propCity }) => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
-                    <Link to="/quote">Get a Free Quote</Link>
+                    <Link to="/quote">Get My Instant Price</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="bg-transparent border-border text-foreground hover:bg-muted hover:text-foreground h-14 px-8 text-lg rounded-xl transition-all active:scale-[0.98]">
                     <a href="tel:423-600-5040">Call (423) 600-5040</a>
@@ -238,7 +238,7 @@ const LocationTemplate = ({ city: propCity }) => {
                 </div>
               </div>
               <Button asChild variant="secondary" size="lg" className="bg-white text-primary hover:bg-gray-100 h-12 px-8 rounded-xl font-semibold shadow-sm">
-                <Link to="/quote">Get My Free Quote</Link>
+                <Link to="/quote">Get My Instant Price</Link>
               </Button>
             </div>
           </div>
@@ -253,7 +253,7 @@ const LocationTemplate = ({ city: propCity }) => {
                   {name} Pet Waste Removal FAQs
                 </h2>
               </div>
-              <Accordion type="single" collapsible className="w-full space-y-4">
+              <Accordion type="multiple" className="w-full space-y-4">
                 {faqItems.map((faq, index) => (
                   <AccordionItem
                     key={index}

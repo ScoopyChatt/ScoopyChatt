@@ -160,8 +160,8 @@ const DogPoopScoopingPage = () => {
                       View on Google
                     </a>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 transition-all duration-200 active:scale-[0.98] h-14 px-8 rounded-xl">
-                    <Link to="/quote">Get a Free Quote</Link>
+                  <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 transition-all duration-200 active:scale-[0.98] h-14 px-8 rounded-xl">
+                    <Link to="/quote">Get My Instant Price</Link>
                   </Button>
                 </div>
               </motion.div>

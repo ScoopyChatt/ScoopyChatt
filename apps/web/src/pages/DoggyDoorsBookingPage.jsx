@@ -11,6 +11,7 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import SEOHead from '@/components/SEOHead.jsx';
 import { TIERS } from '@/data/doggyDoorTiers.js';
+import { isValidUsPhone, isValidEmail, PHONE_ERROR } from '@/utils/contactValidation.js';
 import {
   SERVICE_AREA,
   sanitizeStreetAddress,
@@ -149,8 +150,12 @@ const DoggyDoorsBookingPage = () => {
       toast.error('Please fill in your name, email, and phone.');
       return;
     }
-    if (!/^\S+@\S+\.\S+$/.test(form.email)) {
+    if (!isValidEmail(form.email)) {
       toast.error('Please enter a valid email address.');
+      return;
+    }
+    if (!isValidUsPhone(form.phone)) {
+      toast.error(PHONE_ERROR + '.');
       return;
     }
     if (form.zip.length !== 5 || !SERVICE_AREA[form.zip]) {
@@ -237,7 +242,16 @@ const DoggyDoorsBookingPage = () => {
       });
     }
     setSubmitting(false);
-    navigate('/thank-you');
+    navigate('/thank-you', {
+      state: {
+        kind: 'doggy-door',
+        recap: [
+          ['Door', tier.name + ' - ' + tier.product],
+          ['Price', '$' + tier.price + ' installed'],
+          ['Address', street + ', ' + form.zip],
+        ],
+      },
+    });
   };
 
   const field = 'w-full';

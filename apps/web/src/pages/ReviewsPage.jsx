@@ -6,7 +6,8 @@ import { Shield, ThumbsUp, HeartHandshake, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
-import GoogleReviewsWidget from '@/components/GoogleReviewsWidget.jsx';
+import ReviewsSection from '@/components/ReviewsSection.jsx';
+import { GOOGLE_REVIEW_URL } from '@/config/googleBusiness.js';
 import { testimonials } from '@/data/testimonials.js';
 import SEOHead from '@/components/SEOHead.jsx';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
@@ -39,7 +40,7 @@ const ReviewsPage = () => {
                   See Why Chattanooga Trusts Us
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[65ch] mx-auto mb-8">
-                  We take pride in keeping local yards clean, safe, and ready to enjoy. Discover what hundreds of homeowners have to say about our dedicated pet waste removal service.
+                  We take pride in keeping local yards clean, safe, and ready to enjoy. With over 100 five-star Google reviews, here is what Chattanooga dog owners say about our pet waste removal service.
                 </p>
                 <Button
                   asChild
@@ -47,7 +48,7 @@ const ReviewsPage = () => {
                   className="gap-2 bg-[#FF9E30] text-white hover:bg-[#FF9E30]/90"
                 >
                   <a
-                    href="https://www.google.com/maps/place/ChIJS6mO-bZgYYgRba6PiaitAAM/reviews"
+                    href={GOOGLE_REVIEW_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -87,9 +88,8 @@ const ReviewsPage = () => {
             </div>
           </section>
 
-          {/* Main Widget Section */}
-          {/* The widget provides its own container and background styling */}
-          <GoogleReviewsWidget />
+          {/* Live Google reviews (Elfsight, same feed as the rest of the site) */}
+          <ReviewsSection />
 
           {/* Value Props Section */}
           <section className="py-16 bg-muted/30 border-t border-border/50">
@@ -129,7 +129,7 @@ const ReviewsPage = () => {
             <li><Link to="/" className="text-primary hover:underline font-medium text-sm">Home</Link></li>
             <li><Link to="/services" className="text-primary hover:underline font-medium text-sm">Services</Link></li>
             <li><Link to="/pricing" className="text-primary hover:underline font-medium text-sm">Pricing</Link></li>
-            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get a Quote</Link></li>
+            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get My Instant Price</Link></li>
             <li><Link to="/faq" className="text-primary hover:underline font-medium text-sm">FAQ</Link></li>
             <li><Link to="/reviews" className="text-primary hover:underline font-medium text-sm">Reviews</Link></li>
             <li><Link to="/service-areas" className="text-primary hover:underline font-medium text-sm">Service Areas</Link></li>

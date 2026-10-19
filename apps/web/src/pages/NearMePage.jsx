@@ -29,7 +29,7 @@ const NearMePage = () => {
             <p className="text-xl text-muted-foreground mb-8">
               We're your local, neighborhood pet waste removal experts. Proudly serving Chattanooga and surrounding areas so you never have to search for a scooper again.
             </p>
-            <CTAButton>Check My Zip Code</CTAButton>
+            <CTAButton>Get My Instant Price</CTAButton>
           </div>
         </section>
 
@@ -54,7 +54,7 @@ const NearMePage = () => {
             <p className="text-muted-foreground mb-8 text-lg">
               Being local means we understand the area, the weather, and our community. We respond quickly and provide a level of service national franchises can't match.
             </p>
-            <CTAButton variant="default">Hire Your Local Scooper</CTAButton>
+            <CTAButton variant="default">Get My Instant Price</CTAButton>
           </div>
         </section>
       </main>
@@ -67,7 +67,7 @@ const NearMePage = () => {
             <li><Link to="/" className="text-primary hover:underline font-medium text-sm">Home</Link></li>
             <li><Link to="/services" className="text-primary hover:underline font-medium text-sm">Services</Link></li>
             <li><Link to="/pricing" className="text-primary hover:underline font-medium text-sm">Pricing</Link></li>
-            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get a Quote</Link></li>
+            <li><Link to="/quote" className="text-primary hover:underline font-medium text-sm">Get My Instant Price</Link></li>
             <li><Link to="/faq" className="text-primary hover:underline font-medium text-sm">FAQ</Link></li>
             <li><Link to="/reviews" className="text-primary hover:underline font-medium text-sm">Reviews</Link></li>
             <li><Link to="/service-areas" className="text-primary hover:underline font-medium text-sm">Service Areas</Link></li>

@@ -16,7 +16,7 @@ const LocationSection = () => {
             <p className="text-muted-foreground mb-8">
               We provide professional dog waste removal services across the Greater Chattanooga area. Check our list to see if we're currently scooping in your neighborhood.
             </p>
-            <CTAButton to="/quote" className="w-full sm:w-auto">Check Availability</CTAButton>
+            <CTAButton to="/quote" className="w-full sm:w-auto">Get My Instant Price</CTAButton>
           </div>
           
           <div className="lg:col-span-8">

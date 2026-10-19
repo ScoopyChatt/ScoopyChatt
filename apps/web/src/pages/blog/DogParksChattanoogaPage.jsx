@@ -489,7 +489,7 @@ const DogParksChattanoogaPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg rounded-xl shadow-lg">
-                  <Link to="/quote">Get a Free Quote</Link>
+                  <Link to="/quote">Get My Instant Price</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="bg-transparent border-border text-foreground hover:bg-muted h-14 px-8 text-lg rounded-xl">
                   <Link to="/service-areas">View All Service Areas</Link>
