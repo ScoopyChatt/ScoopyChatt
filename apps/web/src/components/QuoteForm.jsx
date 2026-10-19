@@ -133,6 +133,15 @@ const VISITS_PER_4_WEEKS = { 'twice-weekly': 8, 'weekly': 4, 'biweekly': 2 };
 // against their first 4 weeks. Empty this list when the special ends.
 const FIRST_SCOOP_FREE_PLANS = ['weekly', 'twice-weekly'];
 
+// The first 4-week bill for a recurring plan, with the free first visit taken off when it applies.
+function firstBillFor(serviceType, price) {
+  const visits = VISITS_PER_4_WEEKS[serviceType];
+  if (!visits || !price) return null;
+  const full = price * visits;
+  const free = FIRST_SCOOP_FREE_PLANS.includes(serviceType);
+  return { visits, full, free, first: free ? full - price : full };
+}
+
 const SERVICE_LABELS = {
   'weekly': 'Weekly Pet Waste Removal',
   'twice-weekly': 'Twice-Weekly Pet Waste Removal',
@@ -182,15 +191,13 @@ const QuoteForm = ({ allowedServices } = {}) => {
     return plan + ', ' + dogs + (dogs === 1 ? ' dog' : ' dogs') + (takeAway ? ', with haul-away' : '') + '.';
   };
   const firstBill = () => {
-    const type = form.getValues('serviceType');
-    const visits = VISITS_PER_4_WEEKS[type];
-    if (!visits || !quote || !quote.price) return null;
-    const full = quote.price * visits;
-    const free = FIRST_SCOOP_FREE_PLANS.includes(type);
+    const bill = quote ? firstBillFor(form.getValues('serviceType'), quote.price) : null;
+    if (!bill) return null;
+    const { visits, full, free, first } = bill;
     return (
       <div className="mt-3 rounded-lg bg-primary/10 px-3 py-2 text-sm text-foreground">
         <p className="font-semibold">
-          {'First 4 weeks: $' + (free ? full - quote.price : full) + ' for ' + visits + ' visits'}{free ? ', first scoop free' : ''}
+          {'First 4 weeks: $' + first + ' for ' + visits + ' visits'}{free ? ', first scoop free' : ''}
         </p>
         <p className="text-muted-foreground">{'Billed upfront every 4 weeks. After that, $' + full + ' every 4 weeks.'}</p>
       </div>
@@ -381,12 +388,15 @@ const QuoteForm = ({ allowedServices } = {}) => {
       await Promise.allSettled([postJson(WEBHOOK_URL), postForm(JOBBER_ZAPIER_URL)]);
     } catch (error) { console.error(error); }
     const dogs = parseInt(v.numberOfDogs, 10);
+    const bill = quote ? firstBillFor(v.serviceType, quote.price) : null;
     navigate('/thank-you', {
       state: {
+        value: bill ? bill.first : (quote && quote.price) || 0,
         recap: [
           ['Plan', ((SERVICE_OPTIONS.find(([val]) => val === v.serviceType) || [])[1] || 'Pet waste removal') + (takeAway ? ', with haul-away' : '')],
           ['Dogs', String(dogs)],
           ['Price', quote && quote.price ? '$' + quote.price + ' ' + quote.cadence : 'Custom quote'],
+          ...(bill ? [['First 4 weeks', '$' + bill.first + (bill.free ? ' (first scoop free)' : '')]] : []),
           ['Address', sanitizedStreetAddress + ', ' + v.serviceZipCode],
         ],
       },
