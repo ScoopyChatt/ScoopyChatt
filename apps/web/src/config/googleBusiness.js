@@ -4,8 +4,7 @@
 //
 // GOOGLE_REVIEW_URL should be the direct "write a review" link from the Business
 // Profile (Share review form / Ask for reviews), which looks like
-// https://g.page/r/<code>/review. Until that is filled in it falls back to the
-// profile link, where visitors can tap "Write a review" themselves.
+// https://g.page/r/<code>/review.
 export const GOOGLE_PROFILE_URL = 'https://share.google/sOBVeLPqRabhfffPg';
 
-export const GOOGLE_REVIEW_URL = GOOGLE_PROFILE_URL;
+export const GOOGLE_REVIEW_URL = 'https://g.page/r/CfegQ_ruaO9rEBM/review';
