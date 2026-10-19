@@ -122,7 +122,7 @@ const PetSafeChecklistCTA = () => {
           <div className="lg:w-1/2 relative min-h-[300px] sm:min-h-[400px] lg:min-h-full bg-muted">
             <img 
               src="https://images.unsplash.com/photo-1628040668080-ce0f5bccfa70" 
-              alt="happy dog playing in clean green yard" 
+              alt="Happy dog playing in a clean, pet-safe backyard in Chattanooga" 
               className="absolute inset-0 w-full h-full object-cover"
             />
             {/* Subtle gradient overlay to blend image with the card on desktop */}

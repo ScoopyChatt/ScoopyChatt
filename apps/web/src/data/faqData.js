@@ -109,6 +109,14 @@ export const getFaqData = (location = 'Chattanooga') => {
           answer: "We know that your dogs are beloved family members, and their safety is our absolute highest priority. The biggest fear for any pet owner hiring a service is a gate being left open. Scoopy Doo LLC has instituted a strict \"Double-Check\" gate policy. Our technicians physically verify that every latch is completely engaged and secure both when we enter your yard and immediately after we exit. We never prop gates open while we work. Furthermore, our staff is trained to be highly aware of their surroundings and to ensure no pets slip past them while entering or exiting. You can trust that when we leave your property, your yard is not only meticulously clean but completely secure for your furry friends to run and play."
         },
         {
+          question: "Can my dog stay in the yard while you clean?",
+          answer: "Tell us where your dogs will be during service when you sign up, and we add it to your account notes. Aggressive or overly protective dogs must be kept inside during our visit. If a dog is unexpectedly loose in the yard, our tech will not go in; we text you and reschedule that visit at no extra charge."
+        },
+        {
+          question: "Are the products you use safe for pets, kids, and lawns?",
+          answer: "Yes. Regular scooping puts no chemicals on your yard at all: we pick up the waste, double-bag it, and sanitize our scooping equipment between every yard so nothing is carried from one property to the next. The only treatment we ever apply to a lawn is the optional deodorizing and sanitizing add-on ($20 per visit), which is safe for pets, children, and lawn health. Waste haul-away for off-site disposal is $5 per visit."
+        },
+        {
           question: "How will I know when you've completed the service?",
           answer: "We believe in transparent, proactive communication so you never have to guess if we've been there. When you partner with Scoopy Doo LLC, you'll receive a confirmation notification (via email or text, depending on your preference) as soon as our technician completes the cleaning of your yard and secures your gate. This real-time alert provides immense peace of mind, especially for clients who are at work during our visits. You'll know exactly when it's safe to let the dogs out or allow the kids to go play in the freshly cleaned grass. Our reliable communication system is just one of the ways we build trust and demonstrate our commitment to exceptional customer service."
         },
