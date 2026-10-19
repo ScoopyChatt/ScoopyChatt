@@ -1,3 +1,5 @@
+import { REVIEW_COUNT } from '@/data/reviews.js';
+
 // Schema.org structured data generators for Scoopy Doo LLC
 
 export function generateLocalBusinessSchema() {
@@ -70,7 +72,7 @@ export function generateLocalBusinessSchema() {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5",
-      "reviewCount": "99",
+      "reviewCount": String(REVIEW_COUNT),
       "bestRating": "5",
       "worstRating": "1"
     },

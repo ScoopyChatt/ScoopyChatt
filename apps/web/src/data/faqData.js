@@ -1,4 +1,5 @@
 import guarantee from '@/data/guarantee.json';
+import { REVIEW_PHRASE } from '@/data/reviews.js';
 
 export const getFaqData = (location = 'Chattanooga') => {
   const baseLocation = location.split(',')[0].trim();
@@ -129,7 +130,7 @@ export const getFaqData = (location = 'Chattanooga') => {
         },
         {
           question: "How many 5-star reviews do you have?",
-          answer: `Scoopy Doo LLC has proudly earned dozens of verified 5-star reviews from thrilled pet owners throughout the greater ${baseLocation} area. These reviews reflect our unwavering commitment to showing up on time, doing an incredibly thorough job, and treating our clients' pets and properties with the utmost respect. We don't just aim to pick up dog waste; we aim to deliver an exceptional customer experience from the moment you request a quote to the weekly completion notifications. Our growing wall of 5-star reviews is a testament to our position as the most trusted, reliable, and professional pet waste removal service in the region. We invite you to read them and see why your neighbors trust us!`
+          answer: `Scoopy Doo LLC has proudly earned ${REVIEW_PHRASE} from thrilled pet owners throughout the greater ${baseLocation} area. These reviews reflect our unwavering commitment to showing up on time, doing an incredibly thorough job, and treating our clients' pets and properties with the utmost respect. We don't just aim to pick up dog waste; we aim to deliver an exceptional customer experience from the moment you request a quote to the weekly completion notifications. Our growing wall of 5-star reviews is a testament to our position as the most trusted, reliable, and professional pet waste removal service in the region. We invite you to read them and see why your neighbors trust us!`
         }
       ]
     }

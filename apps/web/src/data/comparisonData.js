@@ -1,6 +1,9 @@
+import { REVIEW_PHRASE } from '@/data/reviews.js';
+
 // Single source for /comparison. ComparisonPage.jsx renders it and
 // tools/create-static-pages.cjs reads it for the crawlable HTML and JSON-LD, so the
-// visible page and the initial HTML cannot drift. Plain data only: no JSX, no imports.
+// visible page and the initial HTML cannot drift. Plain data only: no JSX, and no imports
+// except REVIEW_PHRASE, which the build tool strips and supplies itself.
 //
 // Verification rules:
 //  - Scoopy Doo facts were checked on 2026-10-04 against scoopychatt.com/pricing,
@@ -29,7 +32,7 @@ export const comparison = {
       area: "Chattanooga, Hixson, Red Bank, Signal Mountain, Ooltewah, East Brainerd, Soddy-Daisy, East Ridge, Lookout Mountain and nearby TN neighborhoods; Ringgold, Rossville, Fort Oglethorpe and Flintstone, GA",
       frequency: "Weekly, twice-weekly, every-other-week, one-time",
       price: "Weekly from $20/visit, twice-weekly from $18, every-other-week from $33 (1 dog); one-time cleanups from $85",
-      notable: "Waste is double-bagged into your outdoor bin by default; haul-away is $5 per visit, and one-time cleanups include it. On-the-way text and gate photo on every visit; no contracts; free re-clean if a spot is missed (report within 24 hours); open 7 days a week; locally owned father-daughter team; aPaws member; 99 Google reviews",
+      notable: "Waste is double-bagged into your outdoor bin by default; haul-away is $5 per visit, and one-time cleanups include it. On-the-way text and gate photo on every visit; no contracts; free re-clean if a spot is missed (report within 24 hours); open 7 days a week; locally owned father-daughter team; aPaws member; " + REVIEW_PHRASE,
       checked: "October 4, 2026",
       status: "Verified October 4, 2026 against our pricing page, service areas page and Google Business Profile (99 reviews).",
       sources: [
