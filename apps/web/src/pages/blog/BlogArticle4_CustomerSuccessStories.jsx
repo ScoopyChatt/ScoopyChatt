@@ -5,53 +5,60 @@ import BlogPostTemplate from '@/components/BlogPostTemplate.jsx';
 const BlogArticle4_CustomerSuccessStories = () => {
   const meta = {
     title: "Customer Success Stories",
-    description: "Read how professional pet waste removal solved real problems for families, busy professionals, and pet owners across the Chattanooga area.",
+    description: "What Chattanooga customers say about Scoopy Doo pet waste removal, quoted word for word from our Google reviews.",
     author: "Scoopy Doo Team",
     datePublished: "2026-04-24",
     slug: "customer-success-stories",
     category: "Community"
   };
 
+  // Every quote here is a verbatim Google review (see src/data/testimonials.js).
   const content = `
     <p class="lead">
-      At Scoopy Doo, we measure our success by the peace of mind we bring to our clients. Here are a few real stories from families across the Greater Chattanooga area who reclaimed their backyards.
+      At Scoopy Doo, we measure success by the peace of mind we bring to our clients. Here is what customers across the Chattanooga area have said about us on Google, quoted word for word.
     </p>
 
-    <h2>The Johnsons: Taming the 1-Acre Challenge</h2>
-    <p><strong>Location:</strong> Signal Mountain, TN</p>
-    <p><strong>The Challenge:</strong> The Johnsons recently moved into a beautiful property with a sprawling 1-acre fenced backyard. With four active rescue dogs and two demanding careers, yard maintenance quickly fell behind. The yard became a minefield, and their young children were restricted to playing on the concrete patio.</p>
-    <p><strong>The Solution:</strong> We implemented a twice-weekly cleaning schedule to tackle the high volume of waste produced by four dogs on a large property.</p>
-    <p><strong>The Result:</strong> After just three weeks, the grass began to recover from burn spots, and the ambient odor disappeared. The kids were finally able to use their playset safely.</p>
+    <h2>Busy Schedules, Handled</h2>
+    <p>Most of our customers are working families who simply ran out of time to keep up with the yard.</p>
     <blockquote>
-      "I was embarrassed by the state of our yard. Scoopy Chatt came in with no judgment and got us back to baseline. Now, our kids can run barefoot in the grass safely."
+      "They do amazing! Come out, get the job done in a reasonable amount of time and we don't have to worry about our yard being picked up with our work schedules!"
+      <br/> - Deidre Whitmire, Google review
     </blockquote>
 
-    <h2>Marcus & James: Reclaiming the Weekend</h2>
-    <p><strong>Location:</strong> East Brainerd, TN</p>
-    <p><strong>The Challenge:</strong> Marcus and James are young professionals who travel frequently for work. Their two Golden Retrievers were cared for by a dog walker during the day, but the yard waste accumulated rapidly during the week, leaving the couple to spend their entire Saturday morning cleaning instead of relaxing.</p>
-    <p><strong>The Solution:</strong> A weekly Friday afternoon service ensures the yard is pristine right before the weekend begins.</p>
-    <p><strong>The Result:</strong> The couple gained back their Saturday mornings. They can now host spontaneous weekend barbecues without a frantic pre-party yard sweep.</p>
+    <h2>On Schedule, Every Time</h2>
+    <p>Every visit starts with an on-the-way text and ends with a photo of your secured gate, so you always know the job is done.</p>
     <blockquote>
-      "We used to dread Saturday mornings because we knew we had to go scoop the yard. Handing that chore off gave us our weekends back. Totally worth the investment."
+      "The service is great and they are always on schedule and keep you informed of the completed service."
+      <br/> - Richard Hadden, Google review
+    </blockquote>
+    <blockquote>
+      "Great communication and consistent service!"
+      <br/> - Nathaniel Powers, Google review
+    </blockquote>
+    <blockquote>
+      "They do a great job each and everytime. Very happy !"
+      <br/> - Melody Scarborough, Google review
     </blockquote>
 
-    <h2>Eleanor T.: Independence and Safety</h2>
-    <p><strong>Location:</strong> Red Bank, TN</p>
-    <p><strong>The Challenge:</strong> Eleanor, an elderly homeowner with limited mobility, loves her senior Beagle, Buster. However, bending over to scoop the yard became physically painful and dangerous for her balance. She was worried she might have to give up her dog or hire expensive landscaping crews.</p>
-    <p><strong>The Solution:</strong> A budget-friendly, once-a-week scooping service tailored to a small yard.</p>
-    <p><strong>The Result:</strong> Eleanor can safely let Buster out without navigating a hazardous yard, and she enjoys a brief, friendly chat with our technicians every week.</p>
+    <h2>A Local Owner You Can Reach</h2>
+    <p>Scoopy Doo is locally owned, and customers deal with the owner directly.</p>
     <blockquote>
-      "They are so polite and thorough. I don't have to strain my back anymore, and I know my yard is clean for Buster. They treat us like family."
+      "Scoopy Doo is an excellent business!! Brandon, the owner, was professional, polite, and courteous..."
+      <br/> - Erin Peabody, Google review
+    </blockquote>
+    <blockquote>
+      "They are an incredible service! Quick to respond and always great at communicating..."
+      <br/> - Alyssa Hoffer, Google review
     </blockquote>
 
-    <h2>The Patel Family: Breaking the Parasite Cycle</h2>
-    <p><strong>Location:</strong> Collegedale, TN</p>
-    <p><strong>The Challenge:</strong> The Patel family's new puppy kept getting reinfected with roundworms. Despite veterinary treatments, the puppy would go out to the yard and pick up the parasite eggs left behind in the soil from missed waste.</p>
-    <p><strong>The Solution:</strong> An intensive, twice-weekly clean combined with pet-safe yard sanitization spray.</p>
-    <p><strong>The Result:</strong> By removing the waste immediately and treating the yard, the parasite life cycle was broken. The puppy received a clean bill of health at the next vet visit.</p>
+    <h2>Apartments and HOAs</h2>
+    <p>We also service common areas and pet waste stations for apartment communities and HOAs.</p>
     <blockquote>
-      "Our vet bills were adding up from treating the roundworms. Scoopy Chatt helped us break the cycle. The yard is clean, and our puppy is finally healthy and growing."
+      "Scoopy Doo does a great job collecting at our community! Thank you for the attention to detail and keeping our apartments clean!"
+      <br/> - Populus Waterside, property manager, Google review
     </blockquote>
+
+    <p>Read every review, or leave your own, on our <a href="/reviews">reviews page</a>. Ready to start? <a href="/quote">Get your instant price</a>.</p>
   `;
 
   return (

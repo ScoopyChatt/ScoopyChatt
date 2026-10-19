@@ -24,8 +24,8 @@ const BlogArticle3_HealthBenefitsYardCleanup = () => {
     </p>
 
     <blockquote>
-      "As parents of two young kids and three dogs, this service is essential. We feel confident letting our children play outside barefoot, knowing the yard is actually clean."
-      <br/> - David & Lisa K. from Downtown Chattanooga
+      "They do a great job each and everytime. Very happy !"
+      <br/> - Melody Scarborough, Google review
     </blockquote>
 
     <h2>Pet Health Benefits</h2>
@@ -34,8 +34,8 @@ const BlogArticle3_HealthBenefitsYardCleanup = () => {
     </p>
 
     <blockquote>
-      "Our vet actually recommended professional waste removal to reduce our dog's parasite exposure. Since we started, her checkups have been perfectly clear."
-      <br/> - Emily R. from Ringgold
+      "Scoopy Doo is an excellent business!! Brandon, the owner, was professional, polite, and courteous..."
+      <br/> - Erin Peabody, Google review
     </blockquote>
 
     <h2>Mental Health and Property Value</h2>

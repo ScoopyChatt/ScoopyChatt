@@ -167,10 +167,10 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
             prices accordingly. You get the exact figure
             before we come out, so there is nothing to negotiate on the day. The full breakdown of
             one-time versus recurring rates is on the{' '}
-            <Link className="text-green-700 underline font-semibold" to="/one-time-cleanup">
+            <Link className="text-orange-700 underline font-semibold" to="/one-time-cleanup">
               one-time dog poop cleanup page
             </Link>, and every plan is listed on the{' '}
-            <Link className="text-green-700 underline font-semibold" to="/pricing">pricing page</Link>.
+            <Link className="text-orange-700 underline font-semibold" to="/pricing">pricing page</Link>.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-3">What actually gets done</h2>
@@ -211,7 +211,7 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
             for a Saturday party, ask by Tuesday or Wednesday. If it is later than that, ask anyway.
             The schedule shifts daily and short-notice requests work out more often than people
             expect. More on our Georgia coverage is on the{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/dog-poop-removal-north-georgia">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/dog-poop-removal-north-georgia">
               North Georgia dog poop removal page
             </Link>.
           </p>
@@ -223,14 +223,14 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
             one dog and every-other-week runs $33 per visit, both with no contract, so the yard is
             simply always ready and you stop scheduling around it. We compared the two schedules in
             detail in{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga">
               weekly vs every-other-week dog poop service
             </Link>. Plenty of customers book a one-time cleanup for an event, like how the yard
             looks, and stay on. There is no pressure to, and the one-time price is the one-time
             price either way.
           </p>
 
-          <div className="mt-10 p-6 bg-green-50 rounded-lg border border-green-200">
+          <div className="mt-10 p-6 bg-primary/5 rounded-lg border border-primary/30">
             <h2 className="text-2xl font-semibold mb-3">Get the yard guest-ready</h2>
             <p className="mb-4">
               Tell us your event date and we will get you on the schedule for the day before. One
@@ -238,11 +238,11 @@ const YardCleanupBeforePartyChattanoogaNorthGeorgia = () => {
             </p>
             <p className="mb-2">
               Request a quote at{' '}
-              <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
+              <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
                 scoopychatt.com/quote
               </a>{' '}
               or call{' '}
-              <a className="text-green-700 underline font-semibold" href="tel:4236005040">
+              <a className="text-orange-700 underline font-semibold" href="tel:4236005040">
                 423-600-5040
               </a>.
             </p>

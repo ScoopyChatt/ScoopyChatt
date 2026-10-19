@@ -93,11 +93,11 @@ const NorthGeorgiaDogPoopRemoval = () => {
           Reach out anyway with your address. North Georgia coverage keeps expanding as new customers join, and we can usually tell you within a day whether your street fits an existing route.
         </p>
 
-        <div className="mt-10 p-6 bg-green-50 rounded-lg border border-green-200">
+        <div className="mt-10 p-6 bg-primary/5 rounded-lg border border-primary/30">
           <p className="font-semibold text-lg mb-2">Get a free quote today</p>
           <p className="mb-2">
             Request a quote online at{" "}
-            <a href="/quote" className="text-green-700 underline">scoopychatt.com/quote</a>
+            <a href="/quote" className="text-orange-700 underline">scoopychatt.com/quote</a>
             {" "}or call or text 423-600-5040. Tell us your city and we will confirm same-week availability for your street.
           </p>
         </div>

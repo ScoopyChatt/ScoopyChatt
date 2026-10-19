@@ -152,14 +152,14 @@ const MultipleDogsYardCleanupChattanooga = () => {
           <h2 className="text-2xl font-semibold mt-8 mb-3">Start with a one-time cleanup if you are behind</h2>
           <p className="mb-4">
             If the yard has gotten away from you over a busy summer, a{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/one-time-dog-poop-cleanup-chattanooga">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/one-time-dog-poop-cleanup-chattanooga">
               one-time cleanup
             </Link>{' '}
             resets it. Starting at $85, we clear everything that has piled up so your
             recurring service starts from a clean yard instead of a backlog. Most
             multi-dog customers do exactly this, then drop into weekly or twice-weekly
             from there. If you are still deciding between schedules, our{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga">
               weekly versus bi-weekly comparison
             </Link>{' '}
             breaks down the tradeoffs.
@@ -173,7 +173,7 @@ const MultipleDogsYardCleanupChattanooga = () => {
             Ringgold, Rossville, Fort Oglethorpe, and Flintstone.
           </p>
 
-          <div className="mt-10 p-6 rounded-lg bg-green-50 border border-green-200">
+          <div className="mt-10 p-6 rounded-lg bg-primary/5 border border-primary/30">
             <h2 className="text-2xl font-semibold mb-3">Ready to hand it off?</h2>
             <p className="mb-2">
               Tell us how many dogs you have and where you are, and we will get you a
@@ -181,11 +181,11 @@ const MultipleDogsYardCleanupChattanooga = () => {
             </p>
             <p className="mb-2">
               Request a quote at{' '}
-              <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
+              <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
                 scoopychatt.com/quote
               </a>{' '}
               or call{' '}
-              <a className="text-green-700 underline font-semibold" href="tel:4236005040">
+              <a className="text-orange-700 underline font-semibold" href="tel:4236005040">
                 423-600-5040
               </a>.
             </p>

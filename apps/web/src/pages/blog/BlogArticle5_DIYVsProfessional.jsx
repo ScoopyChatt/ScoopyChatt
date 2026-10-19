@@ -24,8 +24,8 @@ const BlogArticle5_DIYVsProfessional = () => {
     </p>
 
     <blockquote>
-      "I spent every weekend managing waste until I realized how much time I was losing. It was the chore everyone in the house fought over. Professional service is worth every penny just for the peace in our household."
-      <br/> - Robert M. from Soddy-Daisy
+      "They are an incredible service! Quick to respond and always great at communicating..."
+      <br/> - Alyssa Hoffer, Google review
     </blockquote>
 
     <h2>Is Professional Pooper Scooper Service Worth the Cost in Chattanooga?</h2>
@@ -48,8 +48,8 @@ const BlogArticle5_DIYVsProfessional = () => {
     </p>
 
     <blockquote>
-      "We tried to do it ourselves, but we always fell behind. One week turned into three, and the yard became a disaster zone. Since hiring Scoopy Chatt, the yard is just magically clean every Thursday."
-      <br/> - The Garcia Family from Cleveland, TN
+      "They do amazing! Come out, get the job done in a reasonable amount of time and we don't have to worry about our yard being picked up with our work schedules!"
+      <br/> - Deidre Whitmire, Google review
     </blockquote>
 
     <h2>Can You Compost Dog Waste?</h2>

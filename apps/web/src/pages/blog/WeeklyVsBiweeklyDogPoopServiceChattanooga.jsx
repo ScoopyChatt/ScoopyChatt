@@ -170,7 +170,7 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
             roughly double every-other-week, but it does not, because two weeks of accumulated
             waste is a genuinely bigger job per stop. The real gap is $182 a year. Full rates for
             every plan, including additional dogs, are on the{' '}
-            <Link className="text-green-700 underline font-semibold" to="/pricing">Scoopy Doo pricing page</Link>.
+            <Link className="text-orange-700 underline font-semibold" to="/pricing">Scoopy Doo pricing page</Link>.
           </p>
 
           <h3 className="text-xl font-semibold mt-6 mb-2">Why the per-visit rate is higher every other week</h3>
@@ -209,7 +209,7 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
             waste become infectious in the soil after days, not minutes, so shortening the window
             between cleanups is the practical way to reduce that exposure. We wrote more about that
             in our guide to the{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/health-risks-of-pet-waste">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/health-risks-of-pet-waste">
               health risks of unmanaged pet waste
             </Link>.
           </p>
@@ -232,11 +232,11 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
             off the property instead. The gate is latched and you get a photo of it so you know.
             You do not need to be home, and you can leave your dogs out if that is easier. See the
             full process on the{' '}
-            <Link className="text-green-700 underline font-semibold" to="/services">
+            <Link className="text-orange-700 underline font-semibold" to="/services">
               Scoopy Doo services page
             </Link>{' '}
             or in{' '}
-            <Link className="text-green-700 underline font-semibold" to="/how-it-works">how it works</Link>.
+            <Link className="text-orange-700 underline font-semibold" to="/how-it-works">how it works</Link>.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-3">If the yard is already behind</h2>
@@ -245,7 +245,7 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
             months. In that case we start with a one-time cleanup from $85, which covers up to
             three dogs and includes haul-away, to get the yard back to a baseline. The weekly or
             every-other-week rate applies from the next visit forward. You can read how that works in our guide to{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/one-time-dog-poop-cleanup-chattanooga">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/one-time-dog-poop-cleanup-chattanooga">
               one-time dog poop cleanups in Chattanooga
             </Link>.
           </p>
@@ -277,12 +277,12 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
             Yes, and at the same rates. Ringgold, Rossville, Fort Oglethorpe, and Flintstone GA get
             the same weekly, twice-weekly, and every-other-week options as Chattanooga with no
             travel surcharge. Details are on our{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/dog-poop-removal-north-georgia">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/dog-poop-removal-north-georgia">
               North Georgia dog poop removal page
             </Link>.
           </p>
 
-          <div className="mt-10 p-6 bg-green-50 rounded-lg border border-green-200">
+          <div className="mt-10 p-6 bg-primary/5 rounded-lg border border-primary/30">
             <h2 className="text-2xl font-semibold mb-3">Not sure which plan fits your yard?</h2>
             <p className="mb-4">
               Tell us how many dogs you have and roughly how big the yard is, and we will tell you
@@ -290,11 +290,11 @@ const WeeklyVsBiweeklyDogPoopServiceChattanooga = () => {
             </p>
             <p className="mb-2">
               Get a free quote at{' '}
-              <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
+              <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
                 scoopychatt.com/quote
               </a>{' '}
               or call{' '}
-              <a className="text-green-700 underline font-semibold" href="tel:4236005040">
+              <a className="text-orange-700 underline font-semibold" href="tel:4236005040">
                 423-600-5040
               </a>.
             </p>

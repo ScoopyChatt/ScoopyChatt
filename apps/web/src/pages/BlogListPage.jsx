@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import Header from '@/components/Header.jsx';
@@ -55,38 +55,119 @@ const allPosts = [
   { slug: '/blog/soddy-daisy', title: 'Pet Waste Removal in Soddy-Daisy, TN', desc: 'Professional dog poop removal service available throughout Soddy-Daisy and surrounding communities.', date: 'Oct 2025', cat: 'Service Areas' },
 ];
 
-const BlogListPage = () => (
-  <div className="min-h-screen flex flex-col bg-background">
-    <SEOHead title="Pet Waste & Dog Care Blog | Scoopy Doo Chattanooga" description="Chattanooga pet care tips: yard health, dog waste removal, seasonal guides, and local resources for dog owners from the Scoopy Doo blog." canonicalUrl={`${CANONICAL_BASE_URL}/blog`} />
-    <Header />
-    <main className="flex-grow py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mb-6"><BookOpen className="w-7 h-7" /></div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4">
-                Chattanooga Pet Care Tips and Dog Owner Resources | Scoopy Doo Blog
-              </h1>
-          <p className="text-lg text-muted-foreground">Tips on pet waste removal, yard health, and dog care for Chattanooga homeowners.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {allPosts.map((post) => (
-            <Link key={post.slug} to={post.slug} className="group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <div className="p-6 flex flex-col flex-grow">
-                <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider mb-4 w-fit">{post.cat}</span>
-                <h2 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h2>
-                <p className="text-muted-foreground text-sm flex-grow leading-relaxed">{post.desc}</p>
-                <div className="flex items-center justify-between mt-6 pt-4 border-t border-border">
-                  <span className="text-xs text-muted-foreground">{post.date}</span>
-                  <span className="inline-flex items-center text-primary text-sm font-semibold gap-1 group-hover:gap-2 transition-all">Read <ArrowRight className="w-4 h-4" /></span>
+// The posts carry fine-grained categories; the filter row groups them into a few topics.
+const TOPICS = [
+  ['All', null],
+  ['Yard & Health', ['Yard Tips', 'Lawn Health', 'Tips', 'Homeowner Tips', 'Guides', 'Health']],
+  ['Local Guides', ['Local Guide', 'Service Areas']],
+  ['Pricing & Services', ['Pricing', 'Services', 'One-Time', 'Doggy Doors']],
+  ['Commercial & HOA', ['Commercial']],
+];
+const PAGE_SIZE = 12;
+
+// Card photos are real Scoopy Doo job photos in public/images/blog/cards. Each category
+// draws from a pool in turn so neighboring cards don't repeat; a post can set its own `img`.
+const PHOTO_POOLS = {
+  yard: ['scooping-along-fence', 'scooping-flower-border', 'scooping-under-trees', 'scooper-front-yard', 'scooping-by-hydrangeas', 'scooping-garden-arch', 'scooping-patio-fountain'],
+  dogs: ['dogs-playing-in-yard', 'scooper-at-work-side-yard', 'family-with-dogs', 'scooper-by-iron-fence', 'dog-with-family'],
+  local: ['chattanooga-mural-team', 'scooping-by-the-pond', 'scoopy-doo-team', 'scooping-large-lawn'],
+  service: ['scooping-large-lawn', 'scooping-fenced-yard', 'two-scoopers-at-gate'],
+  commercial: ['scoopy-doo-truck', 'two-scoopers-at-gate', 'scoopy-doo-team'],
+};
+const CAT_POOL = {
+  'Yard Tips': 'yard', 'Lawn Health': 'yard', Health: 'dogs', Tips: 'dogs', 'Homeowner Tips': 'dogs',
+  'Local Guide': 'local', 'Service Areas': 'local', Guides: 'local',
+  Pricing: 'service', Services: 'service', 'One-Time': 'service', 'Doggy Doors': 'dogs', Commercial: 'commercial',
+};
+const OWN_PHOTOS = {
+  '/blog/does-rain-wash-away-dog-poop-chattanooga': '/images/blog/does-rain-wash-away-dog-poop-chattanooga.webp',
+  '/blog/dog-poop-attract-rodents-pests-chattanooga': '/images/blog/dog-poop-attract-rodents-pests-chattanooga.webp',
+  '/blog/fall-leaves-hide-dog-poop-chattanooga': '/images/blog/fall-leaves-yard-scooping-chattanooga.webp',
+};
+const used = {};
+allPosts.forEach((p) => {
+  if (OWN_PHOTOS[p.slug]) { p.img = OWN_PHOTOS[p.slug]; return; }
+  const key = CAT_POOL[p.cat] || 'yard';
+  const pool = PHOTO_POOLS[key];
+  const n = used[key] || 0;
+  used[key] = n + 1;
+  p.img = '/images/blog/cards/' + pool[n % pool.length] + '.webp';
+});
+
+const BlogListPage = () => {
+  const [topic, setTopic] = useState('All');
+  const [shown, setShown] = useState(PAGE_SIZE);
+  const cats = (TOPICS.find(([name]) => name === topic) || [])[1];
+  const posts = cats ? allPosts.filter((p) => cats.includes(p.cat)) : allPosts;
+  const pickTopic = (name) => { setTopic(name); setShown(PAGE_SIZE); };
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      <SEOHead title="Pet Waste & Dog Care Blog | Scoopy Doo Chattanooga" description="Chattanooga pet care tips: yard health, dog waste removal, seasonal guides, and local resources for dog owners from the Scoopy Doo blog." canonicalUrl={`${CANONICAL_BASE_URL}/blog`} />
+      <Header />
+      <main className="flex-grow py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mb-6"><BookOpen className="w-7 h-7" /></div>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4">
+              Chattanooga Pet Care Tips and Dog Owner Resources
+            </h1>
+            <p className="text-lg text-muted-foreground">Tips on pet waste removal, yard health, and dog care for Chattanooga homeowners.</p>
+          </div>
+          <div className="mb-10 flex flex-wrap justify-center gap-2" role="group" aria-label="Filter posts by topic">
+            {TOPICS.map(([name]) => (
+              <button
+                key={name}
+                type="button"
+                aria-pressed={topic === name}
+                onClick={() => pickTopic(name)}
+                className={'rounded-full border px-4 py-2 text-sm font-semibold transition-colors ' + (topic === name ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-card text-foreground hover:border-primary/50')}
+              >
+                {name}
+              </button>
+            ))}
+          </div>
+          {/* Posts past the first page stay in the HTML (hidden) so crawlers still see every link. */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post, i) => (
+              <Link key={post.slug} to={post.slug} className={(i >= shown ? 'hidden ' : '') + 'group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1'}>
+                <img
+                  src={post.img}
+                  alt=""
+                  width="640"
+                  height="400"
+                  loading={i < 3 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  className="aspect-[16/10] w-full object-cover bg-muted"
+                />
+                <div className="p-6 flex flex-col flex-grow">
+                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider mb-4 w-fit">{post.cat}</span>
+                  <h2 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h2>
+                  <p className="text-muted-foreground text-sm flex-grow leading-relaxed">{post.desc}</p>
+                  <div className="flex items-center justify-between mt-6 pt-4 border-t border-border">
+                    <span className="text-xs text-muted-foreground">{post.date}</span>
+                    <span className="inline-flex items-center text-primary text-sm font-semibold gap-1 group-hover:gap-2 transition-all">Read <ArrowRight className="w-4 h-4" /></span>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
+          {shown < posts.length && (
+            <div className="mt-12 text-center">
+              <button
+                type="button"
+                onClick={() => setShown(shown + PAGE_SIZE)}
+                className="rounded-xl border-2 border-primary px-6 py-3 font-semibold text-foreground hover:bg-primary/10 transition-colors"
+              >
+                {'Show more posts (' + (posts.length - shown) + ' more)'}
+              </button>
+            </div>
+          )}
         </div>
-      </div>
-    </main>
-    <Footer />
-  </div>
-);
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
 export default BlogListPage;

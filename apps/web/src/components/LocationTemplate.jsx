@@ -114,7 +114,7 @@ const LocationTemplate = ({ city: propCity }) => {
             <div className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] rounded-full bg-primary/10 blur-3xl opacity-50 mix-blend-screen" />
             <div className="absolute -bottom-1/2 -left-1/4 w-[800px] h-[800px] rounded-full bg-blue-900/20 blur-3xl opacity-50 mix-blend-screen" />
           </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 lg:grid lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-center lg:gap-12">
             <div className="max-w-3xl">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
                 <div className="inline-flex items-center space-x-2 bg-primary/20 text-foreground px-4 py-2 rounded-full text-sm font-medium mb-6 border border-primary/30 shadow-sm">
@@ -140,6 +140,30 @@ const LocationTemplate = ({ city: propCity }) => {
                 </div>
               </motion.div>
             </div>
+
+            {/* Fills the right half on wide screens with the facts people compare first. */}
+            <motion.aside initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} className="hidden lg:block rounded-2xl border border-border bg-card p-6 shadow-lg">
+              <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">{'Prices in ' + name}</p>
+              <dl className="mt-4 divide-y divide-border">
+                {[
+                  ['Weekly', 'from $20 / visit'],
+                  ['Twice a week', 'from $18 / visit'],
+                  ['Every other week', 'from $33 / visit'],
+                  ['One-time cleanup', '$85, up to 3 dogs'],
+                ].map(([plan, price]) => (
+                  <div key={plan} className="flex items-baseline justify-between gap-4 py-2.5">
+                    <dt className="text-foreground">{plan}</dt>
+                    <dd className="font-semibold text-foreground">{price}</dd>
+                  </div>
+                ))}
+              </dl>
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                {['On-the-way text before every visit', 'Gate photo when we finish', 'No contracts, cancel anytime'].map((t) => (
+                  <li key={t} className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 flex-shrink-0 text-primary" />{t}</li>
+                ))}
+              </ul>
+              <Link to="/quote" className="mt-5 block text-center text-sm font-semibold text-foreground underline underline-offset-4 hover:text-primary">See your exact price</Link>
+            </motion.aside>
           </div>
         </section>
 

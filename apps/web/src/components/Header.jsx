@@ -1,35 +1,58 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone } from 'lucide-react';
+import { Phone, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+
+// Services sit under one menu on desktop so the quote button stands out; the blog
+// lives in the footer. On phones the links scroll in one row, so they stay flat.
+const serviceLinks = [
+  { name: 'Recurring Scooping', path: '/services' },
+  { name: 'One-Time Cleanup', path: '/one-time-cleanup' },
+  { name: 'Commercial & HOA', path: '/commercial' },
+  { name: 'Doggy Doors', path: '/doggy-doors' },
+  { name: 'How It Works', path: '/how-it-works' },
+];
+
+const topLinks = [
+  { name: 'Pricing', path: '/pricing' },
+  { name: 'Service Areas', path: '/service-areas' },
+  { name: 'Reviews', path: '/reviews' },
+  { name: 'Contact', path: '/contact' },
+];
+
+const mobileLinks = [
+  { name: 'Services', path: '/services' },
+  ...topLinks.slice(0, 3),
+  { name: 'One-Time Cleanup', path: '/one-time-cleanup' },
+  { name: 'Doggy Doors', path: '/doggy-doors' },
+  { name: 'How It Works', path: '/how-it-works' },
+  topLinks[3],
+];
 
 const Header = () => {
   const location = useLocation();
-
-  const mainLinks = [
-    { name: 'Services', path: '/services' },
-    { name: 'Pricing', path: '/pricing' },
-    { name: 'How It Works', path: '/how-it-works' },
-    { name: 'Reviews', path: '/reviews' },
-    { name: 'Service Areas', path: '/service-areas' },
-    { name: 'One-Time Cleanup', path: '/one-time-cleanup' },
-    { name: 'Doggy Doors', path: '/doggy-doors' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' }
-  ];
-
   const isActive = (path) => location.pathname === path;
+  const servicesActive = serviceLinks.some((l) => isActive(l.path));
+  const linkClass = (active) =>
+    `px-3 py-2 text-sm font-semibold whitespace-nowrap rounded-lg transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary shrink-0 ${
+      active ? 'text-primary bg-primary/10' : 'text-foreground hover:text-primary hover:bg-muted'
+    }`;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="max-w-7xl min-[1400px]:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col min-[1400px]:flex-row items-center justify-between py-3 min-[1400px]:h-20 min-[1400px]:py-0 gap-3 min-[1400px]:gap-0">
-          
+      <div className="mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-36">
+        <div className="flex flex-col lg:flex-row items-center justify-between py-3 lg:h-20 lg:py-0 gap-3 lg:gap-0">
+
           {/* Logo & CTA Row (Mobile view keeps them inline) */}
-          <div className="flex items-center justify-between w-full min-[1400px]:w-auto shrink-0 min-[1400px]:mr-10">
+          <div className="flex items-center justify-between w-full lg:w-auto shrink-0 lg:mr-10">
             <Link to="/" className="flex items-center space-x-2 transition-opacity hover:opacity-90 outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary">
-              <img 
+              <img
                 src="/scoopy-logo.webp"
                 alt="Scoopy Doo pet waste removal logo"
                 width="400"
@@ -37,10 +60,10 @@ const Header = () => {
                 className="w-[60px] md:w-[75px] h-auto object-contain"
               />
             </Link>
-            
+
             {/* Mobile Actions */}
-            <div className="flex min-[1400px]:hidden items-center space-x-3">
-              <a href="tel:423-600-5040" className="text-primary hover:text-primary/80 transition-colors p-2">
+            <div className="flex lg:hidden items-center space-x-3">
+              <a href="tel:423-600-5040" className="text-primary hover:text-primary/80 transition-colors p-2" aria-label="Call 423-600-5040">
                 <Phone className="h-5 w-5" />
               </a>
               <Button asChild size="sm" className="bg-primary text-primary-foreground font-bold shadow-md h-9">
@@ -49,23 +72,40 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Horizontal Navigation */}
-          <nav className="flex items-center justify-start min-[1400px]:justify-center space-x-1 sm:space-x-2 min-[1400px]:space-x-1 overflow-x-auto no-scrollbar w-full min-[1400px]:w-auto min-w-0 -mx-4 px-4 min-[1400px]:mx-0 min-[1400px]:px-0 pb-1 min-[1400px]:pb-0" aria-label="Main Navigation">
-            {mainLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-3 sm:px-4 min-[1400px]:px-2.5 py-2 text-sm font-semibold whitespace-nowrap rounded-lg transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary shrink-0 ${
-                  isActive(link.path) ? 'text-primary bg-primary/10' : 'text-foreground hover:text-primary hover:bg-muted'
-                }`}
-              >
+          {/* Mobile Navigation: one scrolling row */}
+          <nav className="flex lg:hidden items-center space-x-1 sm:space-x-2 overflow-x-auto no-scrollbar w-full min-w-0 -mx-4 px-4 pb-1" aria-label="Main Navigation">
+            {mobileLinks.map((link) => (
+              <Link key={link.path} to={link.path} className={linkClass(isActive(link.path))}>
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex flex-1 items-center gap-1" aria-label="Main Navigation">
+            <DropdownMenu modal={false}>
+              <DropdownMenuTrigger className={linkClass(servicesActive) + ' inline-flex items-center gap-1'}>
+                Services <ChevronDown className="h-4 w-4" aria-hidden="true" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="min-w-[13rem] p-2">
+                {serviceLinks.map((link) => (
+                  <DropdownMenuItem key={link.path} asChild>
+                    <Link to={link.path} className="cursor-pointer rounded-md px-3 py-2 text-sm font-medium">
+                      {link.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            {topLinks.map((link) => (
+              <Link key={link.path} to={link.path} className={linkClass(isActive(link.path))}>
                 {link.name}
               </Link>
             ))}
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden min-[1400px]:flex items-center space-x-4 shrink-0">
+          <div className="hidden lg:flex items-center space-x-4 shrink-0">
             <a
               href="tel:423-600-5040"
               className="flex items-center space-x-2 px-3 py-2 text-sm font-bold text-foreground hover:text-primary transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"

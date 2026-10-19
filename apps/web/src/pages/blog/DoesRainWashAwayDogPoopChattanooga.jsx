@@ -39,14 +39,14 @@ const DoesRainWashAwayDogPoopChattanooga = () => {
             Chattanooga sits among hills, creeks, and the Tennessee River, and many neighborhoods drain through storm sewers that empty into local waterways. The EPA lists pet waste as a source of bacteria and nutrients in stormwater runoff, which is one reason many cities encourage owners to pick it up. Fall and winter rains in our area are frequent, so waste left on the ground has plenty of chances to wash somewhere you do not want it.
           </p>
           <p className="mb-4">
-            Wet weather also keeps waste from drying out, so it stays smelly longer. If your yard has a lingering odor after storms, our guide on <a href="/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga" className="text-green-700 underline">dog poop smell in Chattanooga yards</a> explains what to do.
+            Wet weather also keeps waste from drying out, so it stays smelly longer. If your yard has a lingering odor after storms, our guide on <a href="/blog/how-to-get-rid-of-dog-poop-smell-in-yard-chattanooga" className="text-orange-700 underline">dog poop smell in Chattanooga yards</a> explains what to do.
           </p>
           <h2 className="text-2xl font-semibold mt-8 mb-4">Health Risks After a Rainy Week</h2>
           <p className="mb-4">
             Dog waste can carry parasites such as roundworms and giardia, along with bacteria like E. coli. When rain breaks waste apart, those organisms spread through soil and mud where kids play, where dogs lie down, and where shoes pick them up. That is a good reason to clean up after storms rather than waiting for the yard to dry on its own.
           </p>
           <p className="mb-4">
-            If you want the lawn-damage side of the story, see <a href="/blog/is-dog-waste-bad-for-lawn" className="text-green-700 underline">is dog waste bad for your lawn</a>.
+            If you want the lawn-damage side of the story, see <a href="/blog/is-dog-waste-bad-for-lawn" className="text-orange-700 underline">is dog waste bad for your lawn</a>.
           </p>
           <h2 className="text-2xl font-semibold mt-8 mb-4">How to Handle Dog Waste in Wet Weather</h2>
           <ol className="list-decimal pl-6 mb-4 space-y-2">
@@ -70,7 +70,7 @@ const DoesRainWashAwayDogPoopChattanooga = () => {
             <li><strong>One-time cleanup:</strong> from $85, a good reset after a stretch of wet weather</li>
           </ul>
           <p className="mb-4">
-            Prices depend on yard size and number of dogs. For a full breakdown, read our <a href="/blog/pooper-scooper-cost-chattanooga" className="text-green-700 underline">pooper scooper cost guide</a>.
+            Prices depend on yard size and number of dogs. For a full breakdown, read our <a href="/blog/pooper-scooper-cost-chattanooga" className="text-orange-700 underline">pooper scooper cost guide</a>.
           </p>
           <h2 className="text-2xl font-semibold mt-8 mb-4">Where We Serve</h2>
           <p className="mb-4">
@@ -90,12 +90,12 @@ const DoesRainWashAwayDogPoopChattanooga = () => {
             Yes. One-time cleanups start at $85, and you can move to weekly or bi-weekly service afterward with no contract.
           </p>
 
-          <div className="mt-10 p-6 bg-green-50 rounded-lg border border-green-200">
+          <div className="mt-10 p-6 bg-primary/5 rounded-lg border border-primary/30">
             <p className="font-semibold text-lg mb-2">Get a free quote today</p>
             <p className="mb-4">Call 423-600-5040 or request a quote online. Prices start at $20 per visit. No contracts.</p>
             <a
               href="/quoterequest"
-              className="inline-block bg-green-700 text-white px-6 py-3 rounded font-semibold hover:bg-green-800 transition-colors"
+              className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded font-semibold hover:bg-primary/90 transition-colors"
             >
               Request a Free Quote
             </a>
