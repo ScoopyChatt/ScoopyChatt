@@ -109,7 +109,7 @@ const ComparisonPage = () => {
 
         <section className="py-12 bg-primary/5">
           <div className="max-w-2xl mx-auto px-4 text-center">
-            <h2 className="text-2xl font-bold text-foreground mb-3">Get a Free Quote from Scoopy Doo</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-3">Get Your Instant Price from Scoopy Doo</h2>
             <p className="text-muted-foreground mb-6">
               Serving Chattanooga TN and North Georgia with no contracts. Not sure what to look for? Read our{' '}
               <Link to="/guides/how-to-choose-pet-waste-removal-company-chattanooga" className="underline text-primary">guide to choosing a pet waste removal company</Link>
@@ -119,7 +119,7 @@ const ComparisonPage = () => {
               to="/quote"
               className="inline-block bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
             >
-              Get a Free Quote
+              Get My Instant Price
             </Link>
           </div>
         </section>

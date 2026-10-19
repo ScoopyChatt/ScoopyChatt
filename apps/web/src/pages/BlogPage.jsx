@@ -128,7 +128,7 @@ const BlogPage = () => {
                     <Podcast className="w-3 h-3 mr-2" /> Featured Podcast
                   </div>
                   <div className="absolute inset-0 bg-black/10 flex items-center justify-center group pointer-events-none">
-                    <div className="w-16 h-16 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 rounded-full bg-primary/90 text-primary-foreground flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                       <PlayCircle className="w-8 h-8" />
                     </div>
                   </div>

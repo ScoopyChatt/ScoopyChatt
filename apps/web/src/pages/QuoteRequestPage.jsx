@@ -41,7 +41,7 @@ const QuoteRequestPage = () => {
                 className="text-center mb-12"
               >
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-balance" style={{ letterSpacing: '-0.02em' }}>
-                  Get a Free Pet Waste Removal Quote in Chattanooga, TN
+                  Get Your Instant Pet Waste Removal Price in Chattanooga, TN
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-[65ch] mx-auto">
                   Answer a few quick questions below and see your price instantly, right on this page. No obligation, no pressure.
@@ -56,7 +56,7 @@ const QuoteRequestPage = () => {
                   className="lg:col-span-2 bg-card rounded-2xl p-8 shadow-lg border border-primary/20"
                 >
                   <h2 className="text-2xl font-semibold mb-2">Your Information</h2>
-                  <p className="text-sm text-muted-foreground mb-6">Please provide accurate details so we can give you the best quote.</p>
+                  <p className="text-sm text-muted-foreground mb-6">Your price shows up right away. Then pick a start date and we text you to confirm it.</p>
                   <QuoteForm />
                 </motion.div>
 

@@ -6,12 +6,12 @@ import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { toast } from 'sonner';
 import { AnimatePresence, motion } from '@/components/motion.jsx';
 import { CheckCircle2, MapPin } from 'lucide-react';
 import { GuaranteeBadge } from '@/components/Guarantee.jsx';
+import TrustBadges from '@/components/TrustBadges.jsx';
 import { getAdClickIds } from '@/utils/adClickIds.js';
 import { isValidUsPhone, PHONE_ERROR, formatUsPhone, emailTypoSuggestion } from '@/utils/contactValidation.js';
 
@@ -181,6 +181,10 @@ const QuoteForm = ({ allowedServices } = {}) => {
     }
   }, [quote]);
   const [takeAway, setTakeAway] = useState(false);
+  const [manyDogs, setManyDogs] = useState(false);
+  const [showNotes, setShowNotes] = useState(false);
+  const [addressMissing, setAddressMissing] = useState(false);
+  const addressInputRef = useRef(null);
 
   // The price card repeats what the person picked, and the haul-away add-on lives on the
   // card so they see the price change instead of guessing at it before any price exists.
@@ -336,7 +340,7 @@ const QuoteForm = ({ allowedServices } = {}) => {
     },
   });
 
-  const { isValid, isSubmitting } = form.formState;
+  const { isSubmitting } = form.formState;
 
   const zipValue = form.watch('serviceZipCode');
   const isCompleteZip = (zipValue || '').length === 5;
@@ -350,7 +354,8 @@ const QuoteForm = ({ allowedServices } = {}) => {
 
   const requestStart = async () => {
     if (!isAddressValid) {
-      toast.error('Please enter your street address so we can schedule your visit.');
+      setAddressMissing(true);
+      addressInputRef.current?.focus();
       return;
     }
     const v = form.getValues();
@@ -456,8 +461,10 @@ const QuoteForm = ({ allowedServices } = {}) => {
     }
   };
 
-  const onError = () => {
-    toast.error('Please fill in all required fields correctly.');
+  const FIELD_NAMES = { serviceZipCode: 'zip code', serviceType: 'service type', numberOfDogs: 'number of dogs', name: 'name', phone: 'phone', email: 'email' };
+  const onError = (errors) => {
+    const missing = Object.keys(FIELD_NAMES).filter((k) => errors[k]).map((k) => FIELD_NAMES[k]);
+    toast.error(missing.length ? 'Please check: ' + missing.join(', ') + '.' : 'Please fill in all required fields correctly.');
   };
 
   if (quote) {
@@ -489,9 +496,6 @@ const QuoteForm = ({ allowedServices } = {}) => {
             <p className="text-xl font-semibold text-foreground">We will put together a custom quote for you.</p>
           )}
         </div>
-        <div className="text-center">
-          <GuaranteeBadge />
-        </div>
         <div className="text-left relative" ref={addressFieldRef}>
             <label className="mb-1 block text-sm font-medium text-foreground">Street Address *</label>
             <input
@@ -499,7 +503,9 @@ const QuoteForm = ({ allowedServices } = {}) => {
               required
               autoComplete="off"
               value={streetAddress}
-              onChange={(e) => { setStreetAddress(e.target.value); setAddressZipNote(''); }}
+              ref={addressInputRef}
+              aria-invalid={addressMissing}
+              onChange={(e) => { setStreetAddress(e.target.value); setAddressZipNote(''); setAddressMissing(false); }}
               onFocus={() => { if (addressSuggestions.length) setShowSuggestions(true); }}
               placeholder="Start typing your address..."
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground"
@@ -524,6 +530,9 @@ const QuoteForm = ({ allowedServices } = {}) => {
               </div>
             )}
             <p className="mt-1 text-xs text-muted-foreground">Pick your address from the dropdown, or type the street number and name only (no city, state, or zip - we already have those). We need this to schedule your first visit; it is not shared or used for anything else.</p>
+            {addressMissing ? (
+              <p className="mt-1 text-sm font-medium text-destructive">Enter your street address to request your start date.</p>
+            ) : null}
             {addressZipNote ? (
               <p className="mt-1 text-sm font-medium text-orange-700 dark:text-orange-300">{addressZipNote}</p>
             ) : null}
@@ -531,38 +540,159 @@ const QuoteForm = ({ allowedServices } = {}) => {
               <p className="mt-1 text-xs text-muted-foreground">We'll use: <span className="font-medium text-foreground">{sanitizedStreetAddress}</span></p>
             ) : null}
           </div>
-          <div
-            className="relative"
-            onClick={() => {
-              if (!isAddressValid) {
-                toast.error('Please enter your street address so we can schedule your visit.');
-              }
-            }}
-          >
-            <Button onClick={requestStart} disabled={!isAddressValid} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base disabled:opacity-50 disabled:cursor-not-allowed">Request my start date</Button>
-          </div>
+          <Button onClick={requestStart} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base">Request my start date</Button>
         <button type="button" onClick={() => setQuote(null)} className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors">Back to edit my details</button>
       </div>
     );
   }
+
+  const serviceChoices = SERVICE_OPTIONS.filter(([value]) => !allowedServices || allowedServices.includes(value));
+  const choiceClass = (selected) =>
+    'rounded-xl border-2 px-3 py-3 text-left transition-colors ' +
+    (selected ? 'border-primary bg-primary/10 text-foreground' : 'border-border bg-background text-foreground hover:border-primary/50');
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit, onError)} className="space-y-6">
         {/* Honeypot - hidden from humans; bots fill it and get dropped */}
         <input ref={honeypotRef} type="text" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+
+        {/* Zip first: the "yes, we serve you" answer comes before any personal details. */}
+        <FormField
+          control={form.control}
+          name="serviceZipCode"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Service Zip Code *</FormLabel>
+              <FormControl>
+                <Input
+                  inputMode="numeric"
+                  maxLength={5}
+                  placeholder="e.g. 37402"
+                  className="text-foreground md:max-w-xs"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+              <AnimatePresence mode="wait">
+                {isCompleteZip && matchedArea && (
+                  <motion.p key="matched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="flex items-center gap-2 text-sm font-medium text-foreground">
+                    <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-accent" />
+                    <span>{'We serve ' + matchedArea + (matchedDay ? '. Trucks there on ' + matchedDay + 's.' : '.')}</span>
+                  </motion.p>
+                )}
+                {isCompleteZip && !matchedArea && (
+                  <motion.p key="unmatched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                    <span>That zip is outside our service area right now. If you think we should reach you, call or text <a href="tel:+14236005040" className="font-semibold text-primary hover:underline">423-600-5040</a>.</span>
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="serviceType"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Service Type *</FormLabel>
+              <div role="radiogroup" className="grid grid-cols-2 gap-3">
+                {serviceChoices.map(([value, label]) => (
+                  <button
+                    type="button"
+                    role="radio"
+                    aria-checked={field.value === value}
+                    key={value}
+                    onClick={() => field.onChange(value)}
+                    className={choiceClass(field.value === value)}
+                  >
+                    <span className="block text-sm font-semibold">{label.replace(/ Service$/, '')}</span>
+                    <span className="block text-xs text-muted-foreground">
+                      {PRICING[value] ? 'From $' + PRICING[value].base + (value === 'onetime' ? '' : ' / visit') : 'We price it for you'}
+                    </span>
+                  </button>
+                ))}
+              </div>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="numberOfDogs"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Number of Dogs *</FormLabel>
+              <div role="radiogroup" className="grid grid-cols-5 gap-2 sm:grid-cols-9">
+                {['1', '2', '3', '4', '5', '6', '7', '8'].map((num) => (
+                  <button
+                    type="button"
+                    role="radio"
+                    aria-checked={!manyDogs && field.value === num}
+                    key={num}
+                    onClick={() => { setManyDogs(false); field.onChange(num); }}
+                    className={choiceClass(!manyDogs && field.value === num) + ' text-center font-semibold'}
+                  >
+                    {num}
+                  </button>
+                ))}
+                <button
+                  type="button"
+                  role="radio"
+                  aria-checked={manyDogs}
+                  onClick={() => { setManyDogs(true); field.onChange(''); }}
+                  className={choiceClass(manyDogs) + ' text-center font-semibold'}
+                >
+                  9+
+                </button>
+              </div>
+              {manyDogs ? (
+                <p className="text-sm text-muted-foreground">
+                  For 9 or more dogs, call or text <a href="tel:+14236005040" className="font-semibold text-primary hover:underline">423-600-5040</a> and we will price your yard for you.
+                </p>
+              ) : <FormMessage />}
+            </FormItem>
+          )}
+        />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="md:col-span-2">
                 <FormLabel>Full Name *</FormLabel>
                 <FormControl>
-                  <Input 
-                    placeholder="Enter your full name" 
-                    className="text-foreground" 
-                    {...field} 
+                  <Input
+                    placeholder="Enter your full name"
+                    autoComplete="name"
+                    className="text-foreground"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone Number *</FormLabel>
+                <FormControl>
+                  <Input
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    placeholder="(423) 555-0100"
+                    className="text-foreground"
+                    {...field}
+                    onChange={(e) => field.onChange(formatUsPhone(e.target.value))}
                   />
                 </FormControl>
                 <FormMessage />
@@ -577,11 +707,12 @@ const QuoteForm = ({ allowedServices } = {}) => {
               <FormItem>
                 <FormLabel>Email Address *</FormLabel>
                 <FormControl>
-                  <Input 
-                    type="email" 
-                    placeholder="your.email@example.com" 
-                    className="text-foreground" 
-                    {...field} 
+                  <Input
+                    type="email"
+                    autoComplete="email"
+                    placeholder="your.email@example.com"
+                    className="text-foreground"
+                    {...field}
                   />
                 </FormControl>
                 {emailTypoSuggestion(field.value) && (
@@ -597,152 +728,44 @@ const QuoteForm = ({ allowedServices } = {}) => {
               </FormItem>
             )}
           />
-
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Phone Number *</FormLabel>
-                <FormControl>
-                  <Input 
-                    type="tel" 
-                    inputMode="tel"
-                    placeholder="(423) 555-0100" 
-                    className="text-foreground" 
-                    {...field} 
-                    onChange={(e) => field.onChange(formatUsPhone(e.target.value))}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="serviceZipCode"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Service Zip Code *</FormLabel>
-                <FormControl>
-                  <Input 
-                    inputMode="numeric"
-                    maxLength={5}
-                    placeholder="e.g. 37402" 
-                    className="text-foreground" 
-                    {...field} 
-                  />
-                </FormControl>
-                <FormMessage />
-                <AnimatePresence mode="wait">
-                  {isCompleteZip && matchedArea && (
-                    <motion.div key="matched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="mt-2 flex items-start gap-2 rounded-lg border border-accent/30 bg-accent/10 px-3 py-2 text-sm text-foreground">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
-                      <span>{matchedDay ? (<>Great news - our trucks are in <strong>{matchedArea}</strong> ({zipValue}) this coming <strong>{matchedDay}</strong>! We batch neighbors on the same route day, so entering your info now locks in your spot on that run.</>) : (<>Great news - we service <strong>{matchedArea}</strong> ({zipValue}) regularly! Enter your info to see your price and reserve your spot, and we will confirm your exact service day when we send your quote.</>)}</span>
-                    </motion.div>
-                  )}
-                  {isCompleteZip && !matchedArea && (
-                    <motion.div key="unmatched" initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }} className="mt-2 flex items-start gap-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-sm text-muted-foreground">
-                      <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                      <span>That zip is outside our service area right now. We serve the greater Chattanooga and North Georgia area. If you think we should reach you, call or text 423-600-5040.</span>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="serviceType"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Service Type *</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="text-foreground">
-                      <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {SERVICE_OPTIONS
-                      .filter(([value]) => !allowedServices || allowedServices.includes(value))
-                      .map(([value, label]) => (
-                        <SelectItem key={value} value={value}>{label}</SelectItem>
-                      ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="numberOfDogs"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Number of Dogs *</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="text-foreground">
-                      <SelectValue placeholder="Select number of dogs" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
-                      <SelectItem key={num} value={num.toString()}>
-                        {num} {num === 1 ? 'Dog' : 'Dogs'}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
         </div>
 
-        <FormField
-          control={form.control}
-          name="additionalNotes"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Additional Notes</FormLabel>
-              <FormControl>
-                <Textarea 
-                  placeholder="Tell us about your yard size, gate access, or any special requirements..." 
-                  className="text-foreground resize-none" 
-                  rows={4}
-                  {...field} 
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        {showNotes || form.getValues('additionalNotes') ? (
+          <FormField
+            control={form.control}
+            name="additionalNotes"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Notes</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Gate code, yard size, anything we should know..."
+                    className="text-foreground resize-none"
+                    rows={3}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        ) : (
+          <button type="button" onClick={() => setShowNotes(true)} className="text-sm font-semibold text-primary hover:underline">
+            + Add a note (gate code, yard details)
+          </button>
+        )}
 
-        {/* Wrapper div to capture clicks when button is disabled so we can show the toast */}
-        <div 
-          className="relative" 
-          onClick={() => {
-            if (!isValid && !isSubmitting) {
-              toast.error('Please fill in all required fields correctly.');
-              form.trigger();
-            }
-          }}
+        {/* Always enabled: pressing it with something missing marks every missing field. */}
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base disabled:opacity-70"
         >
-          <Button 
-            type="submit" 
-            disabled={!isValid || isSubmitting} 
-            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isSubmitting ? 'Getting your price...' : 'See My Price'}
-          </Button>
-        </div>
-        <div className="text-center">
+          {isSubmitting ? 'Getting your price...' : 'See My Instant Price'}
+        </Button>
+        <div className="space-y-4 text-center">
           <GuaranteeBadge />
+          <TrustBadges />
         </div>
       </form>
     </Form>

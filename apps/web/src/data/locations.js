@@ -51,7 +51,7 @@ export const locations = [
       { question: 'Do you serve HOAs and subdivisions in Ooltewah?', answer: "Yes — we service HOA common areas, green spaces, and dog-walking paths in Ooltewah subdivisions. We can work directly with HOA boards on scheduling and invoicing." },
       { question: 'Can Ooltewah service help us avoid HOA violations?', answer: "Absolutely. Consistent professional cleanup is the most reliable way to stay compliant with HOA pet waste rules. We keep records of every visit if you ever need documentation." },
       { question: 'Do you service Georgetown and Snow Hill areas of Ooltewah?', answer: "Yes. We cover all major Ooltewah neighborhoods including Cambridge Square, Hamilton on Hunter, Snow Hill, Georgetown, and surrounding areas." },
-      { question: 'What does service cost in Ooltewah?', answer: "Pricing is based on yard size and number of dogs. The fastest way to get exact pricing is to submit a free quote request — we respond the same day, usually within a few hours." }
+      { question: 'What does service cost in Ooltewah?', answer: "Pricing is based on yard size and number of dogs. The instant price form at scoopychatt.com/quote shows your exact price right away." }
     ]
   },
   {
@@ -66,7 +66,7 @@ export const locations = [
     benefits: ['Serving all major East Brainerd subdivisions', 'On-the-way text before every visit', 'Gate secured and photo sent when done', 'Perfect for busy family schedules', 'Weekly, bi-weekly, and one-time options', 'No contracts — cancel anytime'],
     faqItems: [
       { question: 'Do you service the subdivisions along Gunbarrel Road?', answer: "Yes — we have regular routes throughout East Brainerd including neighborhoods along Gunbarrel Road, Ooltewah-Georgetown Road, Jenkins Road, and surrounding areas." },
-      { question: 'How do I get started in East Brainerd?', answer: "Request a free quote online. We respond the same day with pricing, and most new East Brainerd customers can start within 2-5 days." },
+      { question: 'How do I get started in East Brainerd?', answer: "Get your instant price online, then request a start date. Most new East Brainerd customers can start within 2-5 days." },
       { question: 'Do you handle first-time or overgrown yard cleanups?', answer: "Yes. If your yard has not been cleaned in a while, we offer one-time deep-clean visits to start fresh before setting up recurring service." },
       { question: 'What if I need to skip a week?', answer: "No problem. Just let us know and we will pause your service. There are no fees for skipping, and we will be back on your regular schedule the following week." }
     ]
@@ -100,7 +100,7 @@ export const locations = [
     benefits: ['Regular East Ridge routes — fast start times', 'Grid-pattern cleanup catches everything', 'On-the-way text before every visit', 'Gate photo confirmation when done', 'Weekly and bi-weekly service available', 'Affordable pricing for single-dog homes'],
     faqItems: [
       { question: 'Do you service East Ridge neighborhoods near the Georgia line?', answer: "Yes — East Ridge is well within our service area. We run regular routes throughout East Ridge including neighborhoods near the Georgia border." },
-      { question: 'What is your pricing for East Ridge?', answer: "Pricing depends on yard size and number of dogs. We offer competitive rates for East Ridge families — request a free quote online and we will respond the same day." },
+      { question: 'What is your pricing for East Ridge?', answer: "Pricing depends on yard size and number of dogs. We offer competitive rates for East Ridge families — the instant price form shows your exact price right away." },
       { question: 'Can I get a one-time cleanup before starting regular service?', answer: "Yes. Many new customers start with a one-time deep clean to get the yard back to baseline, then move to weekly service. We make that easy." },
       { question: 'Do you sanitize your equipment between yards?', answer: "Yes, always. We sanitize all scooping tools between every yard to prevent the spread of bacteria and parasites. This is a standard part of every visit." }
     ]
@@ -170,7 +170,7 @@ export const locations = [
       { question: 'Do you service Ringgold, GA?', answer: "Yes — Ringgold is one of our core service areas. We run regular routes throughout Ringgold and Catoosa County and do not charge extra for North Georgia locations." },
       { question: 'Is there any extra charge for Georgia locations?', answer: "No. Our pricing for Ringgold is the same as our Tennessee locations — based on yard size and number of dogs, not on which side of the state line you are on." },
       { question: 'Do you service rural or larger Catoosa County properties?', answer: "Yes. We service a range of property sizes in Catoosa County. If you have a larger rural property, we will price accordingly based on the area to be cleaned." },
-      { question: 'How quickly can you start service in Ringgold?', answer: "Most Ringgold customers can be added to a route within 2-5 days of requesting a quote. Request yours online and we respond the same day." }
+      { question: 'How quickly can you start service in Ringgold?', answer: "Most Ringgold customers can be added to a route within 2-5 days of requesting a start date. Get your instant price online to begin." }
     ]
   },
   {
@@ -186,7 +186,7 @@ export const locations = [
     faqItems: [
       { question: 'Do you service Rossville, GA?', answer: "Yes. Rossville is within our North Georgia service area. We run regular routes and do not charge additional fees for Georgia locations." },
       { question: 'Do you service homes with multiple large dogs?', answer: "Absolutely. Multi-dog households are some of our best customers. Our pricing scales reasonably for additional dogs, and we cover the full yard every visit." },
-      { question: 'How do I get started in Rossville?', answer: "Request a free quote online. We respond the same day with pricing, and most Rossville customers can start within a few days." },
+      { question: 'How do I get started in Rossville?', answer: "Get your instant price online, then request a start date. Most Rossville customers can start within a few days." },
       { question: 'Do you remove the waste from the property?', answer: "We double-bag all waste and place it in your outdoor bin as standard — it is never left by your gate. Waste takeaway is $5 per visit if you would rather it leave the property with us." }
     ]
   },
@@ -203,7 +203,7 @@ export const locations = [
     faqItems: [
       { question: 'Do you service Fort Oglethorpe, GA?', answer: "Yes — Fort Oglethorpe is within our regular North Georgia service area. We run established routes and do not charge extra for Catoosa County locations." },
       { question: 'Do you work with HOAs in Fort Oglethorpe?', answer: "Yes. We service HOA common areas, dog-walking paths, and pet waste stations throughout Fort Oglethorpe. Contact us for HOA and multi-property pricing." },
-      { question: 'How quickly can service start in Fort Oglethorpe?', answer: "Most Fort Oglethorpe customers are added to a route within 2-5 days of requesting a quote. Request yours online and we respond the same day." },
+      { question: 'How quickly can service start in Fort Oglethorpe?', answer: "Most Fort Oglethorpe customers are added to a route within 2-5 days of requesting a start date. Get your instant price online to begin." },
       { question: 'Do you service newer Fort Oglethorpe subdivisions?', answer: "Yes. We actively service newer Fort Oglethorpe developments along Battlefield Parkway, Barnhardt Road, LaFayette Road, and other growing corridors." }
     ]
   },
@@ -227,10 +227,10 @@ export const locations = [
       "No contracts - cancel anytime"
     ],
     faqItems: [
-      { question: "Do you service Apison, TN?", answer: "Yes. Apison is within our East Hamilton County service area. We run regular routes through the area and can typically start new customers within 2-5 days of a quote request." },
+      { question: "Do you service Apison, TN?", answer: "Yes. Apison is within our East Hamilton County service area. We run regular routes through the area and can typically start new customers within 2-5 days of requesting a start date." },
       { question: "Do you offer discounts for multiple dogs?", answer: "Yes. Our pricing scales affordably for households with multiple dogs. The base price covers one dog and the yard size, with reasonable add-ons for each additional dog. Request a free quote for your exact pricing." },
       { question: "Can you handle larger rural lots in the Apison area?", answer: "Absolutely. We service a range of property sizes, including larger lots typical in the Apison and East Hamilton County area. We price based on the area to be cleaned and use a grid approach to cover every section." },
-      { question: "How do I get started in Apison?", answer: "Request a free quote at scoopychatt.com. We respond the same day and can usually schedule your first visit within a few days." }
+      { question: "How do I get started in Apison?", answer: "Get your instant price at scoopychatt.com/quote, then request a start date. We can usually schedule your first visit within a few days." }
     ]
   },
   {
@@ -302,7 +302,7 @@ export const locations = [
       { question: "Do you service Flintstone, GA?", answer: "Yes. Flintstone is within our North Georgia service coverage. We do not charge extra fees for Walker County locations - pricing is based on yard size and number of dogs, just like our Tennessee service areas." },
       { question: "Do you sanitize your equipment between yards?", answer: "Yes, always. We sanitize all tools and footwear between every single yard to prevent the spread of bacteria and parasites. This is standard on every visit." },
       { question: "Can you handle larger rural properties in Walker County?", answer: "Yes. We service a range of property sizes including larger rural lots. We price based on the area to be cleaned and use a grid-pattern approach to make sure nothing is missed." },
-      { question: "How do I get a quote for Flintstone service?", answer: "Request a free quote at scoopychatt.com. We respond the same day and can typically start new Flintstone customers within a few days." }
+      { question: "How do I get a price for Flintstone service?", answer: "Get your instant price at scoopychatt.com/quote, then request a start date. We can typically start new Flintstone customers within a few days." }
     ]
   },
   {

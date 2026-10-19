@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils.js';
 
 const CTAButton = ({ 
   to = '/quote', 
-  children = 'Get a Free Quote', 
+  children = 'Get My Instant Price', 
   variant = 'default', 
   size = 'lg', 
   className,

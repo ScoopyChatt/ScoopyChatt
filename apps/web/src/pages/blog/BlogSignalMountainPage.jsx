@@ -29,7 +29,7 @@ const Page = () => (
           <p>Signal Mountain's terrain means that rainwater runoff carries bacteria from pet waste directly into the natural areas and creeks that make this community special. Proper, regular pet waste disposal protects the local environment and keeps shared green spaces safe for everyone.</p>
           <h2 className="text-2xl font-bold mt-10 mb-4">Service Options for Signal Mountain Residents</h2>
           <p>We offer weekly, bi-weekly, and one-time cleanup services. Most Signal Mountain households with one or two dogs do great on our weekly plan. If you have more dogs or a smaller yard, we can customize a schedule that keeps your property consistently clean year-round - through the mountain's rainy springs, hot summers, and leafy falls.</p>
-          <p>Getting started is easy: request a free quote online, and we'll typically have a response to you the same day.</p>
+          <p>Getting started is easy: get your instant price online, then request a start date.</p>
           <div className="mt-10 p-6 bg-primary/5 rounded-xl border border-primary/20">
             <p className="text-lg font-semibold text-foreground mb-2">Ready for a cleaner yard in Signal Mountain?</p>
             <Link to="/quote" className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold hover:bg-primary/90 transition-colors">Get your free quote →</Link>

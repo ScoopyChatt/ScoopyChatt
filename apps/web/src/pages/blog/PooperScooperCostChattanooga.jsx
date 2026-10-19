@@ -102,9 +102,9 @@ const PooperScooperCostChattanooga = () => {
 
           <h3 className="text-xl font-medium mt-6 mb-2">How do I get a quote?</h3>
           <p className="mb-4">
-            Request a free quote at{' '}
+            Get your instant price at{' '}
             <a href="/quote" className="text-green-700 underline">scoopychatt.com/quote</a>.
-            Scoopy Doo responds the same day and most new customers start within 2 to 5 days.
+            Then request a start date. Most new customers start within 2 to 5 days.
           </p>
 
           <h3 className="text-xl font-medium mt-6 mb-2">Does Scoopy Doo serve areas outside Chattanooga?</h3>

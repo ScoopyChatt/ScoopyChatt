@@ -159,7 +159,7 @@ const CostCalculatorPage = () => {
 
               <Link to="/quote">
                 <Button className="w-full bg-background text-foreground hover:bg-background/90 font-bold text-base py-6">
-                  Get my exact free quote <ArrowRight className="w-4 h-4 ml-1" />
+                  Get my instant price <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
               </Link>
               <p className="text-xs opacity-75 mt-3 text-center">No contracts. No cancellation fees. Locally owned.</p>

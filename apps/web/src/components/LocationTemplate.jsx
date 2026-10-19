@@ -197,7 +197,7 @@ const LocationTemplate = ({ city: propCity }) => {
                   </div>
                 </div>
               )}
-              <p className="mt-4 text-sm text-muted-foreground">Not sure if we cover your street? <Link to="/quote" className="text-primary hover:underline font-medium">Request a free quote</Link> and we will confirm your address.</p>
+              <p className="mt-4 text-sm text-muted-foreground">Not sure if we cover your street? <Link to="/quote" className="text-primary hover:underline font-medium">Enter your zip on the instant price form</Link> and it will tell you right away.</p>
             </div>
           </section>
         )}

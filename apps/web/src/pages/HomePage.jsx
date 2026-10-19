@@ -107,7 +107,7 @@ const HomePage = () => {
                   <Button asChild size="lg" className="bg-[#FF9E30] text-white hover:bg-[#FF9E30]/90 transition-all duration-200 active:scale-[0.98] h-14 px-8 text-lg rounded-xl shadow-xl w-full sm:w-auto">
                     <Link to="/quote" className="flex items-center">
                       <ClipboardCheck className="mr-2 h-5 w-5" />
-                      Get Your Free Pooper Scooper Quote
+                      Get My Instant Price
                     </Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className="transition-all duration-200 active:scale-[0.98] h-14 px-8 text-lg rounded-xl w-full sm:w-auto bg-background/50 backdrop-blur-sm">
@@ -196,7 +196,7 @@ const HomePage = () => {
               <div className="text-center">
                 <Button asChild variant="outline" size="lg" className="transition-all duration-200 active:scale-[0.98] h-12 px-8 rounded-xl bg-background">
                   <Link to="/quote" className="flex items-center">
-                    Ready to get started? Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
+                    Ready to get started? Get My Instant Price <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </div>

@@ -14,14 +14,14 @@ const steps = [
     icon: ClipboardList,
     title: 'See Your Price Instantly',
     desc: "No phone calls, no waiting on hold. Fill out our quick form with your zip code, plan, and number of dogs and your exact per-visit price shows up right away.",
-    highlight: "100% online - quote, schedule, and pay without picking up the phone.",
+    highlight: "100% online - see your price, schedule, and pay without picking up the phone.",
     color: 'bg-blue-500/10 text-blue-600',
   },
   {
     number: '02',
     icon: CreditCard,
-    title: 'Pick a Plan & Pay Online',
-    desc: "Choose twice-a-week, weekly, every-other-week, or one-time service. Pay securely online - no checks, no cash at the door. We send your confirmation and put you on the schedule.",
+    title: 'Request Your Start Date',
+    desc: "Like your price? Add your street address and request a start date. We text you within 2 business hours to confirm your first visit. Nothing is charged until then, and you pay securely online - no checks, no cash at the door.",
     highlight: "Secure online payment. No contracts. Cancel anytime.",
     color: 'bg-green-500/10 text-green-600',
   },
@@ -52,7 +52,7 @@ const steps = [
 ];
 
 const perks = [
-  { icon: '💻', label: 'Online Quotes', desc: 'Fast pricing with no phone tag' },
+  { icon: '💻', label: 'Instant Pricing', desc: 'Your price on screen, no phone tag' },
   { icon: '💳', label: 'Online Payment', desc: 'Secure, no contracts, cancel anytime' },
   { icon: '📱', label: 'On the Way Texts', desc: 'Heads-up before every single visit' },
   { icon: '📸', label: 'Gate Photo Proof', desc: 'Photo of your secured gate when done' },
@@ -64,7 +64,7 @@ const faqs = [
   { q: 'Do I need to be home during the service?', a: "No. We just need access to your backyard - an unlocked gate or a code you provide. Most customers are at work when we show up. You get an on-the-way text before we arrive and a gate photo when we are done." },
   { q: 'How does the gate photo work?', a: "After every visit, our tech closes and latches your gate, then snaps a photo and texts it to you. It is your confirmation that the job is done and your yard is secure." },
   { q: 'When do I get the on-the-way text?', a: "We send it when we are en route to your address, so you have a few minutes notice. It lets you know we are coming without you having to guess which day or time." },
-  { q: 'Can I pay online?', a: "Yes - everything is handled online. You see your price instantly on the quote form, request your start date, and pay securely online before service begins. No checks, no cash, no awkward in-person payment." },
+  { q: 'Can I pay online?', a: "Yes - everything is handled online. You see your price instantly, request your start date, and pay securely online before service begins. No checks, no cash, no awkward in-person payment." },
   { q: 'Is there a contract?', a: "No contracts, ever. You can pause, change, or cancel your service at any time." },
   { q: 'What if it rains on my service day?', a: "We show up rain or shine. Weather does not cancel your service - rainy days are actually when cleanup matters most, since runoff carries bacteria across your lawn." },
   { q: 'Do you service my neighborhood?', a: "We cover all of Chattanooga and surrounding areas: Hixson, Ooltewah, East Brainerd, Signal Mountain, Red Bank, Soddy-Daisy, Ringgold, Highland Park, Apison, Collegedale, Fort Oglethorpe, Rossville, and more." },
@@ -117,7 +117,7 @@ const HowItWorksPage = () => (
       </section>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-foreground text-center mb-14">From Quote to Clean Yard in 5 Steps</h2>
+        <h2 className="text-3xl font-bold text-foreground text-center mb-14">From Instant Price to Clean Yard in 5 Steps</h2>
         <div className="space-y-6">
           {steps.map((step, i) => (
             <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }}
@@ -160,7 +160,7 @@ const HowItWorksPage = () => (
       <section className="py-20 px-4 bg-primary text-primary-foreground text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Ready? It Takes 2 Minutes.</h2>
-          <p className="text-lg opacity-90 mb-8">Get a free quote online right now. No phone calls, no commitments. Just a clean yard.</p>
+          <p className="text-lg opacity-90 mb-8">See your price online right now. No phone calls, no commitments. Just a clean yard.</p>
           <Button asChild size="lg" variant="secondary" className="rounded-xl px-10 h-14 text-base font-bold">
             <Link to="/quote">Get My Instant Price</Link>
           </Button>

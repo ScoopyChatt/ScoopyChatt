@@ -178,8 +178,8 @@ const ApawsMemberChattanooga = () => {
             You can see every area we cover on our{' '}
             <Link to="/service-areas" className="text-primary hover:underline">service areas page</Link>,
             or{' '}
-            <Link to="/quote" className="text-primary hover:underline">request a free quote</Link>{' '}
-            and we will send your exact price the same day. No contracts, ever.
+            <Link to="/quote" className="text-primary hover:underline">get your instant price</Link>{' '}
+            and see your exact price right away. No contracts, ever.
           </p>
         </article>
       </main>

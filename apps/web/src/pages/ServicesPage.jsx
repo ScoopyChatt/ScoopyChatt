@@ -317,7 +317,7 @@ const ServicesPage = () => {
         <section className="py-20 px-4 bg-primary text-primary-foreground text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Ready to Reclaim Your Yard?</h2>
-            <p className="text-lg opacity-90 mb-8">Get a free quote in under 2 minutes. We serve all of Chattanooga and surrounding areas including Hixson, Ooltewah, East Brainerd, Signal Mountain, Red Bank, East Ridge, Soddy-Daisy, Ringgold, Fort Oglethorpe, Rossville, and Lookout Mountain.</p>
+            <p className="text-lg opacity-90 mb-8">See your price in under 2 minutes. We serve all of Chattanooga and surrounding areas including Hixson, Ooltewah, East Brainerd, Signal Mountain, Red Bank, East Ridge, Soddy-Daisy, Ringgold, Fort Oglethorpe, Rossville, and Lookout Mountain.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="rounded-xl px-10 h-14 text-base font-bold">
                 <Link to="/quote">Get My Instant Price</Link>
