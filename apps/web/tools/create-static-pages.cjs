@@ -31,6 +31,10 @@ var faqBody = '<h1>Frequently Asked Questions About Dog Poop Removal in Chattano
   '<p>Most new customers start within 2 to 5 days. Get your instant price at scoopychatt.com/quote and request your start date. Scoopy Doo texts you within 2 business hours to confirm it.</p>' +
   '<h2>Is Scoopy Doo insured?</h2>' +
   '<p>Yes. Scoopy Doo is fully insured on every visit.</p>' +
+  '<h2>Can my dog stay in the yard while you clean?</h2>' +
+  '<p>We love dogs, but we ask that they stay inside while we clean. When you sign up, tell us where your dogs will be during visits and we add it to your account notes. If a dog is out in the yard when we arrive, our tech will not go in; we text you and reschedule that visit at no extra charge.</p>' +
+  '<h2>Are the products you use safe for pets, kids, and lawns?</h2>' +
+  '<p>Yes. Regular scooping puts no chemicals on your yard at all: we pick up the waste, double-bag it, and sanitize our scooping equipment between every yard so nothing is carried from one property to the next. The only treatment we ever apply to a lawn is the optional deodorizing and sanitizing add-on ($20 per visit), which is safe for pets, children, and lawn health. Waste haul-away for off-site disposal is $5 per visit.</p>' +
   '<h2>Do you offer yard deodorizing?</h2>' +
   '<p>Yes. Deodorizing and sanitizing is $20 per visit. It neutralizes the odor compounds and bacteria left behind in the soil after the waste itself is removed, and it can be added to any recurring plan or to a one-time cleanup. It is most worthwhile for heavily used yards, areas near a patio, and yards being prepared for an event or a home sale.</p>' +
   '<h2>What do pet waste stations cost for an HOA or apartment community?</h2>' +
