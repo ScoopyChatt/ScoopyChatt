@@ -70,11 +70,12 @@ const ThankYouPage = () => {
               )}
 
               <p className="text-lg font-medium text-foreground mb-2">
-                What happens next: we will text you at the number you gave us to confirm your
+                What happens next: we will text you within 2 business hours to confirm your
                 {isDoggyDoor ? ' install date' : ' first visit date'}.
               </p>
               <p className="text-muted-foreground mb-6">
                 Nothing is charged today.
+                {isDoggyDoor ? '' : ' Your first 4 weeks are billed once we confirm your first visit date, then every 4 weeks after that.'}
               </p>
               <div className="mb-10">
                 <GuaranteeBadge />
