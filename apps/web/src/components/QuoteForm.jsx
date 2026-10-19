@@ -126,6 +126,13 @@ const SERVICE_OPTIONS = [
   ['custom', 'Custom Service'],
 ];
 
+// Recurring plans are pre-billed every 4 weeks, so the card shows the first 4-week bill.
+const VISITS_PER_4_WEEKS = { 'twice-weekly': 8, 'weekly': 4, 'biweekly': 2 };
+
+// Fall onboarding special: new weekly and twice-weekly customers get one visit credited
+// against their first 4 weeks. Empty this list when the special ends.
+const FIRST_SCOOP_FREE_PLANS = ['weekly', 'twice-weekly'];
+
 const SERVICE_LABELS = {
   'weekly': 'Weekly Pet Waste Removal',
   'twice-weekly': 'Twice-Weekly Pet Waste Removal',
@@ -154,8 +161,7 @@ const formSchema = z.object({
 
 // allowedServices: optional list of serviceType values to offer in the dropdown
 // (used by the paid landing page so only offer-eligible plans can be picked).
-// firstScoopFree: show the one-visit credit on the price card (first-scoop-free offer).
-const QuoteForm = ({ allowedServices, firstScoopFree = false } = {}) => {
+const QuoteForm = ({ allowedServices } = {}) => {
   const navigate = useNavigate();
   const honeypotRef = useRef(null);
   const [quote, setQuote] = useState(null);
@@ -174,6 +180,21 @@ const QuoteForm = ({ allowedServices, firstScoopFree = false } = {}) => {
     const plan = ((SERVICE_OPTIONS.find(([val]) => val === v.serviceType) || [])[1] || 'Pet waste removal').replace(/ Service$/, '');
     const dogs = parseInt(v.numberOfDogs, 10) || 1;
     return plan + ', ' + dogs + (dogs === 1 ? ' dog' : ' dogs') + (takeAway ? ', with haul-away' : '') + '.';
+  };
+  const firstBill = () => {
+    const type = form.getValues('serviceType');
+    const visits = VISITS_PER_4_WEEKS[type];
+    if (!visits || !quote || !quote.price) return null;
+    const full = quote.price * visits;
+    const free = FIRST_SCOOP_FREE_PLANS.includes(type);
+    return (
+      <div className="mt-3 rounded-lg bg-primary/10 px-3 py-2 text-sm text-foreground">
+        <p className="font-semibold">
+          {'First 4 weeks: $' + (free ? full - quote.price : full) + ' for ' + visits + ' visits'}{free ? ', first scoop free' : ''}
+        </p>
+        <p className="text-muted-foreground">{'Billed upfront every 4 weeks. After that, $' + full + ' every 4 weeks.'}</p>
+      </div>
+    );
   };
   const changeTakeAway = (checked) => {
     setTakeAway(checked);
@@ -425,12 +446,8 @@ const QuoteForm = ({ allowedServices, firstScoopFree = false } = {}) => {
                   <span className="text-sm text-foreground">Haul the waste away for me <span className="font-semibold">(+$5 per visit)</span>. Otherwise we double-bag it and leave it in your bin.</span>
                 </label>
               )}
-              {firstScoopFree && (
-                <p className="mt-3 rounded-lg bg-primary/10 px-3 py-2 text-sm font-semibold text-foreground">
-                  Your first scoop is free: one visit comes off your first month.
-                </p>
-              )}
-              <p className="text-xs text-muted-foreground mt-3">Most yards start the same week. A one-time initial cleanup may apply for very overgrown yards - we will confirm before your first visit.</p>
+              {firstBill()}
+              <p className="text-xs text-muted-foreground mt-3">Most yards start the same week. If your yard is very overgrown, a one-time $85 initial cleanup may apply. We will confirm before your first visit.</p>
             </>
           ) : (
             <p className="text-xl font-semibold text-foreground">We will put together a custom quote for you.</p>
