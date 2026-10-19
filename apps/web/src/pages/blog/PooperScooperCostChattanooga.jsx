@@ -26,7 +26,7 @@ const PooperScooperCostChattanooga = () => {
             Bi-weekly service starts at $33 per visit. One-time yard cleanups start at $85.
             Pricing is based on yard size and number of dogs.
             Every quote is free at{' '}
-            <a href="/quote" className="text-green-700 underline">scoopychatt.com/quote</a>.
+            <a href="/quote" className="text-orange-700 underline">scoopychatt.com/quote</a>.
             No contracts required.
           </p>
 
@@ -34,10 +34,10 @@ const PooperScooperCostChattanooga = () => {
           <div className="overflow-x-auto mb-6">
             <table className="w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-green-700 text-white">
-                  <th className="p-3 text-left border border-green-600">Service</th>
-                  <th className="p-3 text-left border border-green-600">Starting Price (1 dog)</th>
-                  <th className="p-3 text-left border border-green-600">Best For</th>
+                <tr className="bg-primary text-primary-foreground">
+                  <th className="p-3 text-left border border-primary/40">Service</th>
+                  <th className="p-3 text-left border border-primary/40">Starting Price (1 dog)</th>
+                  <th className="p-3 text-left border border-primary/40">Best For</th>
                 </tr>
               </thead>
               <tbody>
@@ -103,7 +103,7 @@ const PooperScooperCostChattanooga = () => {
           <h3 className="text-xl font-medium mt-6 mb-2">How do I get a quote?</h3>
           <p className="mb-4">
             Get your instant price at{' '}
-            <a href="/quote" className="text-green-700 underline">scoopychatt.com/quote</a>.
+            <a href="/quote" className="text-orange-700 underline">scoopychatt.com/quote</a>.
             Then request a start date. Most new customers start within 2 to 5 days.
           </p>
 
@@ -114,12 +114,12 @@ const PooperScooperCostChattanooga = () => {
             Fort Oglethorpe, and Flintstone GA at the same rates as Tennessee.
           </p>
 
-          <div className="mt-10 p-6 bg-green-50 rounded-lg border border-green-200">
+          <div className="mt-10 p-6 bg-primary/5 rounded-lg border border-primary/30">
             <p className="font-semibold text-lg mb-2">Get a free quote today</p>
             <p className="mb-4">Most Chattanooga customers start within 2 to 5 days. Prices start at $20 per visit. No contracts.</p>
             <a
               href="/quote"
-              className="inline-block bg-green-700 text-white px-6 py-3 rounded font-semibold hover:bg-green-800 transition-colors"
+              className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded font-semibold hover:bg-primary/90 transition-colors"
             >
               Request a Free Quote
             </a>

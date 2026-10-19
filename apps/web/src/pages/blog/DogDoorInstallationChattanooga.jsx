@@ -69,7 +69,7 @@ const DogDoorInstallationChattanooga = () => {
           <p className="mb-4">
             Founding Customer pricing is available for a limited number of installs. Full details and
             current offers are posted at{' '}
-            <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/doggy-doors">
+            <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/doggy-doors">
               scoopychatt.com/doggy-doors
             </a>.
           </p>
@@ -113,7 +113,7 @@ const DogDoorInstallationChattanooga = () => {
             <strong>How much does dog door installation cost in Chattanooga?</strong> Pricing starts
             at $529 installed for the Good tier, with Better at $699 and Best at $749, each a flat,
             set price rather than a custom quote. Sizing and tier options are listed at{' '}
-            <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/doggy-doors">
+            <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/doggy-doors">
               scoopychatt.com/doggy-doors
             </a>.
           </p>
@@ -128,14 +128,14 @@ const DogDoorInstallationChattanooga = () => {
           </p>
           <p className="mb-4">
             <strong>How do I get started?</strong> Request installation at{' '}
-            <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/doggy-doors">
+            <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/doggy-doors">
               scoopychatt.com/doggy-doors
             </a>, or reach us at{' '}
-            <a className="text-green-700 underline font-semibold" href="mailto:info@scoopychatt.com">
+            <a className="text-orange-700 underline font-semibold" href="mailto:info@scoopychatt.com">
               info@scoopychatt.com
             </a>{' '}
             or{' '}
-            <a className="text-green-700 underline font-semibold" href="tel:4236005040">
+            <a className="text-orange-700 underline font-semibold" href="tel:4236005040">
               423-600-5040
             </a>.
           </p>
@@ -143,15 +143,15 @@ const DogDoorInstallationChattanooga = () => {
           <h2 className="text-2xl font-semibold mt-8 mb-3">Ready for a Dog Door?</h2>
           <p className="mb-2">
             If you are already tired of playing doorman for your dog, request installation at{' '}
-            <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/doggy-doors">
+            <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/doggy-doors">
               scoopychatt.com/doggy-doors
             </a>{' '}
             or call{' '}
-            <a className="text-green-700 underline font-semibold" href="tel:4236005040">
+            <a className="text-orange-700 underline font-semibold" href="tel:4236005040">
               423-600-5040
             </a>. And if your yard could use a hand too, Scoopy Doo also offers weekly pet waste
             removal across the same Chattanooga and North Georgia service area — see{' '}
-            <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
+            <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
               scoopychatt.com/quote
             </a>{' '}
             for a free quote.

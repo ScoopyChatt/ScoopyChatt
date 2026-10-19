@@ -183,7 +183,7 @@ const EcoFriendlyDogWasteDisposalChattanooga = () => {
             the bags go in your outdoor trash bin, never left at the gate. If you would rather the
             waste leave the property entirely, waste takeaway is $5 per visit and we haul the bags
             away with us instead of putting them in your cans. Haul-away is already included on{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/one-time-dog-poop-cleanup-chattanooga">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/one-time-dog-poop-cleanup-chattanooga">
               one-time cleanups
             </Link>.
           </p>
@@ -199,9 +199,9 @@ const EcoFriendlyDogWasteDisposalChattanooga = () => {
           <p className="mb-4">
             Weekly service is $20 per visit for the first dog and every-other-week is $33 per visit,
             with no contracts. The full breakdown is on the{' '}
-            <Link className="text-green-700 underline font-semibold" to="/pricing">pricing page</Link>, and if you
+            <Link className="text-orange-700 underline font-semibold" to="/pricing">pricing page</Link>, and if you
             are deciding between schedules, we compared them in{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga">
               weekly vs every-other-week dog poop service
             </Link>.
           </p>
@@ -214,7 +214,7 @@ const EcoFriendlyDogWasteDisposalChattanooga = () => {
             </div>
           ))}
 
-          <div className="mt-10 p-6 bg-green-50 rounded-lg border border-green-200">
+          <div className="mt-10 p-6 bg-primary/5 rounded-lg border border-primary/30">
             <h2 className="text-2xl font-semibold mb-3">Want it picked up every week?</h2>
             <p className="mb-4">
               We serve Chattanooga and North Georgia, including Hixson, Ooltewah, East Brainerd,
@@ -223,11 +223,11 @@ const EcoFriendlyDogWasteDisposalChattanooga = () => {
             </p>
             <p className="mb-2">
               Get a free quote at{' '}
-              <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
+              <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
                 scoopychatt.com/quote
               </a>{' '}
               or call{' '}
-              <a className="text-green-700 underline font-semibold" href="tel:4236005040">
+              <a className="text-orange-700 underline font-semibold" href="tel:4236005040">
                 423-600-5040
               </a>.
             </p>

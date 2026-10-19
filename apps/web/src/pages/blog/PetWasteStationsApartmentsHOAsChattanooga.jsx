@@ -199,7 +199,7 @@ const PetWasteStationsApartmentsHOAsChattanooga = () => {
             numbers do not move: $299 to install each one, $10 per station per week to service it.
             Most commercial clients run month-to-month with no long-term contract, so a board can
             trial a season before committing budget. Full details are on the{' '}
-            <Link className="text-green-700 underline font-semibold" to="/commercial">
+            <Link className="text-orange-700 underline font-semibold" to="/commercial">
               commercial and HOA pet waste removal page
             </Link>.
           </p>
@@ -211,7 +211,7 @@ const PetWasteStationsApartmentsHOAsChattanooga = () => {
             needs a written scope for its records or a vendor packet for approval, ask when you
             request the walkthrough and we will put it together. If you are building the case for
             the board rather than signing off yourself, our{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/hoa-pet-waste-removal-chattanooga">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/hoa-pet-waste-removal-chattanooga">
               HOA pet waste removal guide for community boards
             </Link>{' '}
             walks through how to present it.
@@ -236,7 +236,7 @@ const PetWasteStationsApartmentsHOAsChattanooga = () => {
             communities.
           </p>
 
-          <div className="mt-10 p-6 bg-green-50 rounded-lg border border-green-200">
+          <div className="mt-10 p-6 bg-primary/5 rounded-lg border border-primary/30">
             <h2 className="text-2xl font-semibold mb-3">Book a free property walkthrough</h2>
             <p className="mb-4">
               We will walk the grounds with you, recommend a station count and placement, and send a
@@ -244,11 +244,11 @@ const PetWasteStationsApartmentsHOAsChattanooga = () => {
             </p>
             <p className="mb-2">
               Request a walkthrough at{' '}
-              <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
+              <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
                 scoopychatt.com/quote
               </a>{' '}
               or call{' '}
-              <a className="text-green-700 underline font-semibold" href="tel:4236005040">
+              <a className="text-orange-700 underline font-semibold" href="tel:4236005040">
                 423-600-5040
               </a>.
             </p>

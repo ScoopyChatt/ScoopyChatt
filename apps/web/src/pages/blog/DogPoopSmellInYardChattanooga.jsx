@@ -193,11 +193,11 @@ const DogPoopSmellInYardChattanooga = () => {
             the odor compounds and kills the bacteria producing them in the soil, rather than masking
             them with fragrance, and it is safe for pets, children, and lawn health. You can add it
             to any recurring plan or to a one-time cleanup. Details are on the{' '}
-            <Link className="text-green-700 underline font-semibold" to="/services">
+            <Link className="text-orange-700 underline font-semibold" to="/services">
               Scoopy Doo services page
             </Link>{' '}
             and it is listed with our other rates on the{' '}
-            <Link className="text-green-700 underline font-semibold" to="/pricing">pricing page</Link>.
+            <Link className="text-orange-700 underline font-semibold" to="/pricing">pricing page</Link>.
           </p>
           <p className="mb-4">
             Worth saying plainly: if your yard is on a weekly or every-other-week schedule and you
@@ -216,10 +216,10 @@ const DogPoopSmellInYardChattanooga = () => {
             Weekly service is $20 per visit for the first dog and every-other-week is $33 per visit,
             neither with a contract. If you are choosing between them, we compared the two in detail
             in{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/weekly-vs-biweekly-dog-poop-service-chattanooga">
               weekly vs every-other-week dog poop service
             </Link>. If the yard is badly behind right now, start with a{' '}
-            <Link className="text-green-700 underline font-semibold" to="/blog/one-time-dog-poop-cleanup-chattanooga">
+            <Link className="text-orange-700 underline font-semibold" to="/blog/one-time-dog-poop-cleanup-chattanooga">
               one-time cleanup
             </Link>{' '}
             from $85, which covers up to three dogs and includes haul-away, and go from there.
@@ -233,7 +233,7 @@ const DogPoopSmellInYardChattanooga = () => {
             are what burn the grass, and dilution is the only thing that moves them.
           </p>
 
-          <div className="mt-10 p-6 bg-green-50 rounded-lg border border-green-200">
+          <div className="mt-10 p-6 bg-primary/5 rounded-lg border border-primary/30">
             <h2 className="text-2xl font-semibold mb-3">Tried the water and it is still there?</h2>
             <p className="mb-4">
               Tell us how long the yard has gone and roughly where the bad area is. We will tell you
@@ -242,11 +242,11 @@ const DogPoopSmellInYardChattanooga = () => {
             </p>
             <p className="mb-2">
               Get a free quote at{' '}
-              <a className="text-green-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
+              <a className="text-orange-700 underline font-semibold" href="https://www.scoopychatt.com/quote">
                 scoopychatt.com/quote
               </a>{' '}
               or call{' '}
-              <a className="text-green-700 underline font-semibold" href="tel:4236005040">
+              <a className="text-orange-700 underline font-semibold" href="tel:4236005040">
                 423-600-5040
               </a>.
             </p>

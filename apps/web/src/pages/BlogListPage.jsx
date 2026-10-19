@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import Header from '@/components/Header.jsx';
@@ -55,38 +55,81 @@ const allPosts = [
   { slug: '/blog/soddy-daisy', title: 'Pet Waste Removal in Soddy-Daisy, TN', desc: 'Professional dog poop removal service available throughout Soddy-Daisy and surrounding communities.', date: 'Oct 2025', cat: 'Service Areas' },
 ];
 
-const BlogListPage = () => (
-  <div className="min-h-screen flex flex-col bg-background">
-    <SEOHead title="Pet Waste & Dog Care Blog | Scoopy Doo Chattanooga" description="Chattanooga pet care tips: yard health, dog waste removal, seasonal guides, and local resources for dog owners from the Scoopy Doo blog." canonicalUrl={`${CANONICAL_BASE_URL}/blog`} />
-    <Header />
-    <main className="flex-grow py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mb-6"><BookOpen className="w-7 h-7" /></div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4">
-                Chattanooga Pet Care Tips and Dog Owner Resources | Scoopy Doo Blog
-              </h1>
-          <p className="text-lg text-muted-foreground">Tips on pet waste removal, yard health, and dog care for Chattanooga homeowners.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {allPosts.map((post) => (
-            <Link key={post.slug} to={post.slug} className="group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <div className="p-6 flex flex-col flex-grow">
-                <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider mb-4 w-fit">{post.cat}</span>
-                <h2 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h2>
-                <p className="text-muted-foreground text-sm flex-grow leading-relaxed">{post.desc}</p>
-                <div className="flex items-center justify-between mt-6 pt-4 border-t border-border">
-                  <span className="text-xs text-muted-foreground">{post.date}</span>
-                  <span className="inline-flex items-center text-primary text-sm font-semibold gap-1 group-hover:gap-2 transition-all">Read <ArrowRight className="w-4 h-4" /></span>
+// The posts carry fine-grained categories; the filter row groups them into a few topics.
+const TOPICS = [
+  ['All', null],
+  ['Yard & Health', ['Yard Tips', 'Lawn Health', 'Tips', 'Homeowner Tips', 'Guides', 'Health']],
+  ['Local Guides', ['Local Guide', 'Service Areas']],
+  ['Pricing & Services', ['Pricing', 'Services', 'One-Time', 'Doggy Doors']],
+  ['Commercial & HOA', ['Commercial']],
+];
+const PAGE_SIZE = 12;
+
+const BlogListPage = () => {
+  const [topic, setTopic] = useState('All');
+  const [shown, setShown] = useState(PAGE_SIZE);
+  const cats = (TOPICS.find(([name]) => name === topic) || [])[1];
+  const posts = cats ? allPosts.filter((p) => cats.includes(p.cat)) : allPosts;
+  const pickTopic = (name) => { setTopic(name); setShown(PAGE_SIZE); };
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      <SEOHead title="Pet Waste & Dog Care Blog | Scoopy Doo Chattanooga" description="Chattanooga pet care tips: yard health, dog waste removal, seasonal guides, and local resources for dog owners from the Scoopy Doo blog." canonicalUrl={`${CANONICAL_BASE_URL}/blog`} />
+      <Header />
+      <main className="flex-grow py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mb-6"><BookOpen className="w-7 h-7" /></div>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4">
+              Chattanooga Pet Care Tips and Dog Owner Resources
+            </h1>
+            <p className="text-lg text-muted-foreground">Tips on pet waste removal, yard health, and dog care for Chattanooga homeowners.</p>
+          </div>
+          <div className="mb-10 flex flex-wrap justify-center gap-2" role="group" aria-label="Filter posts by topic">
+            {TOPICS.map(([name]) => (
+              <button
+                key={name}
+                type="button"
+                aria-pressed={topic === name}
+                onClick={() => pickTopic(name)}
+                className={'rounded-full border px-4 py-2 text-sm font-semibold transition-colors ' + (topic === name ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-card text-foreground hover:border-primary/50')}
+              >
+                {name}
+              </button>
+            ))}
+          </div>
+          {/* Posts past the first page stay in the HTML (hidden) so crawlers still see every link. */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post, i) => (
+              <Link key={post.slug} to={post.slug} className={(i >= shown ? 'hidden ' : '') + 'group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1'}>
+                <div className="p-6 flex flex-col flex-grow">
+                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider mb-4 w-fit">{post.cat}</span>
+                  <h2 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h2>
+                  <p className="text-muted-foreground text-sm flex-grow leading-relaxed">{post.desc}</p>
+                  <div className="flex items-center justify-between mt-6 pt-4 border-t border-border">
+                    <span className="text-xs text-muted-foreground">{post.date}</span>
+                    <span className="inline-flex items-center text-primary text-sm font-semibold gap-1 group-hover:gap-2 transition-all">Read <ArrowRight className="w-4 h-4" /></span>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
+          {shown < posts.length && (
+            <div className="mt-12 text-center">
+              <button
+                type="button"
+                onClick={() => setShown(shown + PAGE_SIZE)}
+                className="rounded-xl border-2 border-primary px-6 py-3 font-semibold text-foreground hover:bg-primary/10 transition-colors"
+              >
+                {'Show more posts (' + (posts.length - shown) + ' more)'}
+              </button>
+            </div>
+          )}
         </div>
-      </div>
-    </main>
-    <Footer />
-  </div>
-);
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
 export default BlogListPage;

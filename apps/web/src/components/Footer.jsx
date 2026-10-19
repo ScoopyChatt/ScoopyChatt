@@ -134,12 +134,11 @@ const Footer = () => {
           <div>
             <h3 className="text-slate-900 font-bold text-lg mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Pooper Scooper Service</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Dog Poop Removal</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Pet Waste Removal</Link></li>
-              <li><Link to="/one-time-cleanup" className="hover:text-primary transition-colors text-sm">One-Time Poop Pick Up Service</Link></li>
-              <li><Link to="/doggy-doors" className="hover:text-primary transition-colors text-sm">Doggy Door Installation</Link></li>
-              <li><Link to="/commercial" className="hover:text-primary transition-colors text-sm">Commercial &amp; HOA Service</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors text-sm">Recurring Scooping</Link></li>
+              <li><Link to="/one-time-cleanup" className="hover:text-primary transition-colors text-sm">One-Time Cleanup</Link></li>
+              <li><Link to="/commercial" className="hover:text-primary transition-colors text-sm">Commercial &amp; HOA</Link></li>
+              <li><Link to="/doggy-doors" className="hover:text-primary transition-colors text-sm">Doggy Doors</Link></li>
+              <li><Link to="/how-it-works" className="hover:text-primary transition-colors text-sm">How It Works</Link></li>
             </ul>
           </div>
 

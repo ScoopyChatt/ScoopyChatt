@@ -132,7 +132,7 @@ const CoreServicePage = () => {
                 className="h-24 sm:h-28 w-auto"
                 loading="lazy"
               />
-              <span className="text-sm font-semibold text-foreground">A- Rating</span>
+              <span className="text-lg font-bold text-foreground">BBB Accredited, A- Rating</span>
             </a>
           </div>
         </section>
