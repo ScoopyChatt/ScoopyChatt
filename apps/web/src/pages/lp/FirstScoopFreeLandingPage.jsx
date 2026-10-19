@@ -82,13 +82,13 @@ const FirstScoopFreeLandingPage = () => {
               Your First Scoop Is FREE
             </h1>
             <p className="mx-auto mt-3 max-w-[40ch] text-center text-base font-medium text-muted-foreground">
-              Weekly &amp; 2X-weekly dog poop removal in Chattanooga &amp; North Georgia. No contracts.
+              Sign up for weekly or 2X-weekly service and your first visit is on us. Chattanooga &amp; North Georgia. No contracts.
             </p>
             <div className="mt-5 rounded-2xl border border-primary/20 bg-card p-5 shadow-lg">
-              <QuoteForm allowedServices={OFFER_SERVICES} />
+              <QuoteForm allowedServices={OFFER_SERVICES} firstScoopFree />
             </div>
             <p className="mt-3 text-center text-xs text-muted-foreground">
-              New customers on weekly or 2X-weekly service only. Purchase your full first month and one visit is credited. Not valid on every-other-week or one-time service.
+              New customers only. Buy your full first month and one visit is credited.
             </p>
             <div className="mt-5 text-center">
               <p className="mb-2 text-sm text-muted-foreground">Prefer to talk? Call us:</p>
