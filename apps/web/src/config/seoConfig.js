@@ -19,11 +19,17 @@ export const seoConfig = {
     latitude: '34.9159',
     longitude: '-85.1091'
   },
+  // Must match the Google Business Profile and schemaGenerators.js.
   businessHours: [
     {
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '08:00',
-      closes: '18:00'
+      opens: '07:00',
+      closes: '20:00'
+    },
+    {
+      dayOfWeek: ['Saturday', 'Sunday'],
+      opens: '09:00',
+      closes: '21:00'
     }
   ],
   socialProfiles: [
