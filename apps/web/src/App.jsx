@@ -64,6 +64,7 @@ const DogParksChattanooga = React.lazy(() => import('@/pages/blog/DogParksChatta
 const DogFriendlyTrails = React.lazy(() => import('@/pages/blog/DogFriendlyTrailsChattanoogaPage.jsx'));
 const WinterDogPoopCleanupChattanooga = React.lazy(() => import('@/pages/blog/WinterDogPoopCleanupChattanooga.jsx'));
 const FallLeavesHideDogPoopChattanooga = React.lazy(() => import('@/pages/blog/FallLeavesHideDogPoopChattanoogaPage.jsx'));
+const ThanksgivingYardDogPoopCleanupChattanooga = React.lazy(() => import('@/pages/blog/ThanksgivingYardDogPoopCleanupChattanooga.jsx'));
 const DogPoopAttractRodentsPestsChattanooga = React.lazy(() => import('@/pages/blog/DogPoopAttractRodentsPestsChattanooga.jsx'));
 const DoesRainWashAwayDogPoopChattanooga = React.lazy(() => import('@/pages/blog/DoesRainWashAwayDogPoopChattanooga.jsx'));
 const PooperScooperCostChattanooga = React.lazy(() => import('@/pages/blog/PooperScooperCostChattanooga.jsx'));
@@ -214,6 +215,7 @@ export function AppRoutes() {
         <Route path="/blog/winter-dog-poop-cleanup-chattanooga" element={<WinterDogPoopCleanupChattanooga />} />
         <Route path="/blog/fall-leaves-hide-dog-poop-chattanooga" element={<FallLeavesHideDogPoopChattanooga />} />
 
+        <Route path="/blog/thanksgiving-yard-dog-poop-cleanup-chattanooga" element={<ThanksgivingYardDogPoopCleanupChattanooga />} />
         <Route path="/blog/dog-poop-attract-rodents-pests-chattanooga" element={<DogPoopAttractRodentsPestsChattanooga />} />
         <Route path="/blog/does-rain-wash-away-dog-poop-chattanooga" element={<DoesRainWashAwayDogPoopChattanooga />} />
         <Route path="/blog/pooper-scooper-cost-chattanooga" element={<PooperScooperCostChattanooga />} />
