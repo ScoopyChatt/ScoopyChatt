@@ -30,6 +30,10 @@ export const trackQuoteSubmitted = ({ email, phone, formName }) => {
     if (cleanPhone) userData.phone_number = cleanPhone;
 
     window.dataLayer = window.dataLayer || [];
+    // Enhanced conversions: the Google tag reads user_data set this way and hashes it.
+    if (typeof window.gtag === 'function' && Object.keys(userData).length) {
+      window.gtag('set', 'user_data', userData);
+    }
     window.dataLayer.push({
       event: 'quote_submitted',
       lead_id: makeLeadId(),
