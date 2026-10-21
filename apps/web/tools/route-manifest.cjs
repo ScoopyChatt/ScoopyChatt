@@ -66,6 +66,7 @@ const BLOG_POSTS = [
   'yard-cleanup-before-selling-home-chattanooga',
   'is-dog-waste-bad-for-lawn',
   'best-pooper-scooper-services-chattanooga',
+  'thanksgiving-yard-dog-poop-cleanup-chattanooga',
   'dog-poop-attract-rodents-pests-chattanooga',
   'does-rain-wash-away-dog-poop-chattanooga',
   'pooper-scooper-cost-chattanooga',
