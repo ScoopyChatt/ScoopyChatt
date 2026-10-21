@@ -24,8 +24,11 @@ export const captureAdClickIds = () => {
   }
 };
 
+// click_captured_at = when the visitor landed with the click ID (UTC ISO 8601). The
+// Google offline-conversion uploader uses it to check the 90-day import window, so it is
+// only sent when a click ID is present.
 export const getAdClickIds = () => {
-  const empty = { gclid: '', gbraid: '', wbraid: '' };
+  const empty = { gclid: '', gbraid: '', wbraid: '', click_captured_at: '' };
   if (typeof window === 'undefined') return empty;
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -36,6 +39,7 @@ export const getAdClickIds = () => {
       gclid: saved.gclid || '',
       gbraid: saved.gbraid || '',
       wbraid: saved.wbraid || '',
+      click_captured_at: new Date(saved.ts).toISOString(),
     };
   } catch (e) {
     return empty;
