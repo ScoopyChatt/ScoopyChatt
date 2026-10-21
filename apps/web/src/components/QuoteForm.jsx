@@ -13,6 +13,7 @@ import { CheckCircle2, MapPin } from 'lucide-react';
 import { GuaranteeBadge } from '@/components/Guarantee.jsx';
 import TrustBadges from '@/components/TrustBadges.jsx';
 import { getAdClickIds } from '@/utils/adClickIds.js';
+import { trackQuoteSubmitted } from '@/utils/trackLead.js';
 import { isValidUsPhone, PHONE_ERROR, formatUsPhone, emailTypoSuggestion } from '@/utils/contactValidation.js';
 
 export const SERVICE_AREA = {
@@ -453,6 +454,7 @@ const QuoteForm = ({ allowedServices } = {}) => {
         throw new Error('Request failed with status ' + response.status);
       }
 
+      trackQuoteSubmitted({ email: values.email, phone: values.phone, formName: 'quote' });
       setQuote(computeQuote(values.serviceType, values.numberOfDogs, takeAway));
       toast.success('Got it - here is your instant price!');
     } catch (error) {

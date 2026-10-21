@@ -11,7 +11,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
 
 const PrivacyPolicyPage = () => {
-  const lastUpdated = "June 7, 2026";
+  const lastUpdated = "October 20, 2026";
   const canonicalUrl = getCanonicalUrl('/privacy-policy');
   const pageTitle = "Privacy Policy | Scoopy Doo Pet Waste Removal";
   const pageDesc = "Read our privacy policy to understand how Scoopy Doo protects and uses your information while providing pet waste removal services.";
@@ -101,7 +101,9 @@ const PrivacyPolicyPage = () => {
             <li>Payment processors for secure billing.</li>
             <li>Routing and dispatch software providers to schedule our technicians.</li>
             <li>Email and SMS delivery services for service notifications.</li>
+            <li>Advertising platforms (Google Ads and Meta) to measure how well our ads work.</li>
           </ul>
+          <p><strong className="text-foreground">Advertising measurement:</strong> Our website uses Google and Meta tags and cookies to understand which ads lead to quote requests. When you request a quote or become a customer, we may share your email address and phone number with Google and Meta in hashed (scrambled, one-way encrypted) form, along with the ad click ID, so they can match the result to the ad you clicked. They use this only to report and improve ad results for us. You can limit ad personalization at <a href="https://myadcenter.google.com" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">myadcenter.google.com</a> and in your Facebook ad preferences, or ask us to stop by contacting us.</p>
           <p>These providers are contractually obligated to keep your information confidential and use it solely for the specific services they perform for Scoopy Doo. Mobile opt-in data and consent are never shared with third parties for marketing purposes.</p>
         </div>
       )

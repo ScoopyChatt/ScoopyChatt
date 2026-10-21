@@ -12,6 +12,7 @@ import SEOHead from '@/components/SEOHead.jsx';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 import { WEBHOOK_URL } from '@/components/QuoteForm.jsx';
 import { getAdClickIds } from '@/utils/adClickIds.js';
+import { trackQuoteSubmitted } from '@/utils/trackLead.js';
 import { isValidUsPhone, isValidEmail, PHONE_ERROR, formatUsPhone, emailTypoSuggestion } from '@/utils/contactValidation.js';
 
 // A short "just ask a question" form, separate from the quote form, for people who
@@ -82,6 +83,7 @@ const ContactPage = () => {
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error('Request failed with status ' + res.status);
+      trackQuoteSubmitted({ email: form.email, phone: form.phone, formName: 'contact' });
       setSent(true);
     } catch (err) {
       console.error('Contact form error:', err);
