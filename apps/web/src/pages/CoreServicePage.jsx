@@ -84,13 +84,13 @@ const CoreServicePage = () => {
             <span className="hidden sm:inline text-muted-foreground">&amp;</span>
             <a href="https://www.wdef.com/scoopy-doo-llc-pet-waste-removal/" target="_blank" rel="noopener" className="font-semibold text-foreground hover:text-primary">WDEF News 12</a>
             <span className="hidden sm:inline text-muted-foreground" aria-hidden="true"> - </span>
-            <a href="/press" className="text-primary font-medium hover:underline">Chattanooga&apos;s largest pet waste removal company &rarr;</a>
+            <a href="/press" className="text-primary-ink font-medium hover:underline">Chattanooga&apos;s largest pet waste removal company &rarr;</a>
           </div>
         </section>
         {/* Hero Section */}
         <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-muted/30">
           <div className="container-shell relative z-10 text-center max-w-4xl mx-auto">
-            <Link to="/first-scoop-free" className="inline-block mb-6 rounded-full bg-primary/10 px-5 py-2 text-sm font-semibold text-primary hover:bg-primary/20 transition-colors">New customers: your first scoop is free</Link>
+            <Link to="/first-scoop-free" className="inline-block mb-6 rounded-full bg-primary/10 px-5 py-2 text-sm font-semibold text-primary-ink hover:bg-primary/20 transition-colors">New customers: your first scoop is free</Link>
             <h1 className="mb-8 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-balance">Professional Pet Waste Removal & Dog Poop Removal in Chattanooga, TN</h1>
 
             <div className="mb-10 mx-auto max-w-3xl">
@@ -168,7 +168,9 @@ const CoreServicePage = () => {
               <div className="order-1 md:order-2">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-border bg-muted">
                   <img
-                    src="/service-bags-removed.webp"
+                    src="/service-bags-removed-800.webp"
+                    srcSet="/service-bags-removed-800.webp 800w, /service-bags-removed.webp 1400w"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     alt="Scoopy Doo scoopers and double-bagged waste beside the branded service truck in Chattanooga"
                     title="Professional Pet Waste Removal Equipment - Scoopy Doo LLC"
                     width="1400"

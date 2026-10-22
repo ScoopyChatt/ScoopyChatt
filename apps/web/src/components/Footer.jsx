@@ -14,14 +14,16 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <img 
-              src="/scoopy-logo.webp"
+              src="/scoopy-logo-256.webp"
+              srcSet="/scoopy-logo-256.webp 256w, /scoopy-logo.webp 400w"
+              sizes="128px"
               alt="Scoopy Doo - Professional Pooper Scooper Service Logo"
               width="400"
               height="373"
               loading="lazy"
               className="w-32 h-auto bg-white/10 rounded-lg p-2"
             />
-            <p className="text-sm text-slate-500 leading-relaxed">
+            <p className="text-sm text-slate-600 leading-relaxed">
               Professional pet waste removal service making yards cleaner, safer, and more enjoyable for families and their pets. We are your trusted poop pick up company.
             </p>
             {/* Social Media Links */}
@@ -179,11 +181,11 @@ const Footer = () => {
         </div>
 
         <div className="pb-8 flex flex-col items-center gap-2 text-center">
-          <GuaranteeTagline className="text-slate-500" />
+          <GuaranteeTagline className="text-slate-600" />
         </div>
 
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-600">
             &copy; {currentYear} Scoopy Doo LLC. All rights reserved.
           </p>
           <a href="https://www.bbb.org/us/ga/ringgold/profile/pet-waste-removal/scoopy-doo-llc-0483-80013696/#sealclick" id="bbblink" className="sehzbum" target="_blank" rel="nofollow noopener">
@@ -205,11 +207,11 @@ const Footer = () => {
                 className="h-auto w-[180px] sm:w-[220px]"
               />
             </a>
-            <p className="text-xs text-slate-500 text-center">
+            <p className="text-xs text-slate-600 text-center">
               Proud member of aPaws, the Association of Professional Animal Waste Specialists
             </p>
           </div>
-          <div className="flex space-x-4 text-sm text-slate-500">
+          <div className="flex space-x-4 text-sm text-slate-600">
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>

@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet-async';
 import ScrollToTop from '@/components/ScrollToTop.jsx';
 import ChatWidgetGate from '@/components/ChatWidgetGate.jsx';
 
-import { useGTM } from '@/hooks/useGTM.js';
 import { usePixel } from '@/hooks/usePixel.js';
 import { captureAdClickIds } from '@/utils/adClickIds.js';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
@@ -258,8 +257,8 @@ export function AppRoutes() {
 }
 
 function App() {
-  useGTM('GTM-59B5PDXS');
-
+  // GTM loads once, from the snippet in index.html. A second loader here used to
+  // inject the same container again, which doubled every tag it fires.
   return (
     <Router>
       <Helmet>
