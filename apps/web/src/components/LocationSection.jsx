@@ -9,7 +9,7 @@ const LocationSection = () => {
       <div className="container-shell">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4 lg:sticky lg:top-24">
-            <div className="inline-flex items-center px-3 py-1 mb-6 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-wide uppercase">
+            <div className="inline-flex items-center px-3 py-1 mb-6 rounded-full bg-primary/10 text-primary-ink text-sm font-semibold tracking-wide uppercase">
               <MapPin className="w-4 h-4 mr-2" />
               Service Areas
             </div>
@@ -23,7 +23,7 @@ const LocationSection = () => {
           <div className="lg:col-span-8">
             <ServiceAreaGrid areas={serviceAreas} />
             <p className="mt-6 text-center lg:text-left">
-              <Link to="/service-areas" className="text-primary font-semibold hover:underline">See all service areas</Link>
+              <Link to="/service-areas" className="text-primary-ink font-semibold hover:underline">See all service areas</Link>
             </p>
           </div>
         </div>

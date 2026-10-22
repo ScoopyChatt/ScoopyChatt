@@ -53,7 +53,9 @@ const Header = () => {
           <div className="flex items-center justify-between w-full lg:w-auto shrink-0 lg:mr-10">
             <Link to="/" className="flex items-center space-x-2 transition-opacity hover:opacity-90 outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary">
               <img
-                src="/scoopy-logo.webp"
+                src="/scoopy-logo-160.webp"
+                srcSet="/scoopy-logo-160.webp 160w, /scoopy-logo.webp 400w"
+                sizes="75px"
                 alt="Scoopy Doo pet waste removal logo"
                 width="400"
                 height="373"
