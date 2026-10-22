@@ -36,6 +36,8 @@ export default defineConfig({
         '@babel/types',
       ],
     },
+    // tools/route-preload.cjs reads this to preload each page's chunks, then deletes it.
+    manifest: true,
     outDir: '../../dist/apps/web',
     emptyOutDir: true,
   },
