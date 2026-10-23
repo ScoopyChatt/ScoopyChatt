@@ -3,11 +3,29 @@
 <html lang="en">
 	<head>
 		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-59B5PDXS');</script><!-- End Google Tag Manager -->
+		<script>
+			// GTM, the Google Ads tag and the Meta Pixel load after the page is interactive (first tap/scroll/key,
+			// or 4s after the load event) so they stay off the critical path. dataLayer and fbq queue every event
+			// pushed before then, so no conversion or pageview is lost.
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+			(function(){
+				var done = false;
+				function add(src){ var j = document.createElement('script'); j.async = true; j.src = src; document.head.appendChild(j); }
+				function load(){
+					if (done) return; done = true;
+					['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ removeEventListener(e, load); });
+					add('https://www.googletagmanager.com/gtm.js?id=GTM-59B5PDXS');
+					add('https://www.googletagmanager.com/gtag/js?id=AW-990906138');
+					add('https://connect.facebook.net/en_US/fbevents.js');
+				}
+				['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ addEventListener(e, load, {passive:true, once:true}); });
+				addEventListener('load', function(){ setTimeout(load, 4000); });
+			})();
+		</script><!-- End Google Tag Manager -->
 
 		<!-- Google Ads tag + website call tracking (conversion action "Calls From Site").
 		     Swaps 423-600-5040 for a Google forwarding number only for visitors who came from a Google ad. -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-990906138"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
@@ -46,9 +64,7 @@
 			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-			n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			n.queue=[]}(window, document,'script',
 			'https://connect.facebook.net/en_US/fbevents.js');
 			fbq('init', '1220314736525743');
 			// Note: Initial PageView is handled by the React Router hook in App.jsx
