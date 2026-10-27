@@ -122,7 +122,7 @@ const LocationTemplate = ({ city: propCity }) => {
                   <span>Now Serving {name} & Surrounding Areas</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tight mb-6 text-balance" style={{ letterSpacing: '-0.02em' }}>
-                  Dog Poop Removal in {name}
+                  Pet Waste &amp; Dog Poop Removal in {name}
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl">
                   {serviceDescription}
