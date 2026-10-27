@@ -52,7 +52,8 @@ const LocationTemplate = ({ city: propCity }) => {
     );
   }
 
-  const { name, seoTitle, seoDescription, serviceDescription, localContext, localLandmark, neighborhoods, nearbyAreas, benefits, faqItems } = locationData;
+  const { name, seoTitle, seoDescription, serviceDescription, localContext, localLandmark, neighborhoods, nearbyAreas, benefits, faqItems, localReviews } = locationData;
+  const shortName = name.replace(/, (TN|GA)$/, '');
   const canonicalUrl = getCanonicalUrl('/service/' + locationData.slug);
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://www.scoopychatt.com/' },
@@ -248,6 +249,25 @@ const LocationTemplate = ({ city: propCity }) => {
             </div>
           </div>
         </section>
+
+        {/* Real Google reviews from customers in this area */}
+        {localReviews && localReviews.length > 0 && (
+          <section className="py-16 bg-muted/40">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold mb-2 text-center">What {shortName} Customers Say</h2>
+              <p className="text-muted-foreground text-center mb-10">5-star Google reviews from Scoopy Doo customers in {shortName}.</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {localReviews.map((review, index) => (
+                  <figure key={index} className="bg-card p-6 rounded-2xl border border-border shadow-sm">
+                    <div className="text-yellow-500 mb-3" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote className="text-foreground leading-relaxed">&ldquo;{review.text}&rdquo;</blockquote>
+                    <figcaption className="mt-4 text-sm text-muted-foreground">{review.name}, {shortName} &middot; Google review</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <ReviewsSection />
 

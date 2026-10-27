@@ -213,6 +213,11 @@ function makeLocContent(slug) {
   h += "<h2>Why " + n + " Chooses Scoopy Doo</h2><ul>";
   l.benefits.forEach(function (b) { h += "<li>" + b + "</li>"; });
   h += "</ul>";
+  if (l.localReviews && l.localReviews.length) {
+    var sn = n.replace(/, (TN|GA)$/, '');
+    h += "<h2>What " + sn + " Customers Say</h2>";
+    l.localReviews.forEach(function (r) { h += "<blockquote><p>&ldquo;" + r.text + "&rdquo;</p><footer>" + r.name + ", " + sn + " (5-star Google review)</footer></blockquote>"; });
+  }
   h += "<h2>Neighborhoods We Serve in " + n + "</h2><ul>";
   l.neighborhoods.forEach(function (x) { h += "<li>" + x + "</li>"; });
   h += "</ul>";

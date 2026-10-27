@@ -3,6 +3,11 @@ export const locations = [
     id: 'chattanooga',
     name: 'Chattanooga, TN',
     slug: 'chattanooga',
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "Jes D.", text: "Signed up for Scoopy Chatt because I just did not have time to consistently clean up my yard. They have done an excellent job picking everything up, and even picked up the wind blown trash that shows up in our yard. They have also been great to work with on scheduling. Definitely recommend this service!" },
+      { name: "Jill W.", text: "Started with a very nice phone call with Brandon to get a quote, and it was such a simple process and easy to book. They just left my house and it looks great!" }
+    ],
     seoTitle: 'Pet Waste & Dog Poop Removal in Chattanooga, TN | Scoopy Doo',
     seoDescription: "Chattanooga's trusted dog poop removal service. Weekly, every-other-week and one-time pet waste cleanup for homes and HOAs. Get a free quote today.",
     serviceDescription: "Chattanooga is booming — new families, new neighborhoods, and a whole lot of dogs. Scoopy Doo is the local pet waste removal company keeping Chattanooga yards clean, safe, and ready for play. From the Tennessee River corridors to the historic hillside neighborhoods, we run regular routes throughout the city and know your streets by name.",
@@ -21,6 +26,11 @@ export const locations = [
     id: 'hixson',
     name: 'Hixson, TN',
     slug: 'hixson',
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "Nancy H.", text: "We’ve been using Scoppy Doo for about a year. They do an amazing job and make my life so much easier. Easy to make an appointment. Showed up on time and completed the job." },
+      { name: "Audra J.", text: "They came in the rain and did a great job cleaning my backyard. They were communicative and delivered on what they promised I highly recommend Scoopy Doo" }
+    ],
     seoTitle: 'Pet Waste & Dog Poop Removal in Hixson, TN | Scoopy Doo',
     seoDescription: "Professional dog waste removal in Hixson, TN. Weekly and every-other-week pooper scooper service for Hixson neighborhoods. No contracts, free quote.",
     serviceDescription: "Hixson is one of Chattanooga's most established suburban communities, with sprawling yards, maturing trees, and lots of dogs. Those same wooded lots that make Hixson so appealing also make dog waste incredibly easy to miss — especially under leaf cover or near tree lines. Scoopy Doo uses a systematic grid-pattern approach so nothing gets skipped.",
@@ -43,6 +53,11 @@ export const locations = [
     id: 'ooltewah',
     name: 'Ooltewah, TN',
     slug: 'ooltewah',
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "Betsy W.", text: "The daddy daughter duo was prompt and professional. They were so fast, and it had been a long time (maybe a year or more) since the job had been done. … There was no poo poo left in the yard when they were done, and I looked." },
+      { name: "Deidre W.", text: "They do amazing! Come out, get the job done in a reasonable amount of time and we don’t have to worry about our yard being picked up with our work schedules!" }
+    ],
     seoTitle: 'Pet Waste & Dog Poop Removal in Ooltewah, TN | Scoopy Doo',
     seoDescription: "Pet waste removal in Ooltewah, TN. Scoopy Doo serves Ooltewah neighborhoods and HOA communities with professional dog poop pickup. Weekly service, no contracts.",
     serviceDescription: "Ooltewah has become one of the fastest-growing communities in the Chattanooga region, with master-planned neighborhoods, active HOAs, and high standards for community appearance. Scoopy Doo helps Ooltewah families and HOA boards keep shared spaces and private yards consistently clean — without anyone having to think about it.",
@@ -61,6 +76,11 @@ export const locations = [
     id: 'east-brainerd',
     name: 'East Brainerd, TN',
     slug: 'east-brainerd',
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "Brian C.", text: "Scoopy Doo was awesome to work with! It was super easy to set up a schedule, and everything was handled through phone and text I didn’t even have to be home. … Very professional and smooth process from start to finish." },
+      { name: "Allison W.", text: "AMAZING! First time service was today, they were efficient, fast & so kind. My yard looks SO much better!" }
+    ],
     seoTitle: 'Pet Waste & Dog Poop Removal in East Brainerd, TN | Scoopy Doo',
     seoDescription: "Dog poop removal in East Brainerd, TN. Weekly and every-other-week pet waste pickup from Scoopy Doo. No contracts, free quote.",
     serviceDescription: "East Brainerd is one of Chattanooga's busiest suburban corridors — full of growing families, newer subdivisions, and busy schedules that leave no time for yard cleanup. Scoopy Doo keeps East Brainerd yards consistently clean on a schedule that fits your life, with text alerts before we arrive and a gate photo when we are done.",
@@ -79,6 +99,11 @@ export const locations = [
     id: 'red-bank',
     name: 'Red Bank, TN',
     slug: 'red-bank',
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "Natasha P.", text: "Brandon & Brianne did an awesome job cleaning up after my two big dogs. Super reliable and easy to work with — glad I found them and highly recommend their services!" },
+      { name: "Barbara E.", text: "A nice clean back yard now! Scoops doo is great!" }
+    ],
     seoTitle: 'Pet Waste & Dog Poop Removal in Red Bank, TN | Scoopy Doo',
     seoDescription: "Pet waste removal in Red Bank, TN. Scoopy Doo provides weekly dog poop pickup for Red Bank homeowners. Reliable, professional, no contracts — get a free quote.",
     serviceDescription: "Red Bank is a tight-knit city inside the greater Chattanooga area where neighbors know each other and community standards matter. Scoopy Doo serves Red Bank homeowners with the same professional, reliable service we bring to the entire metro — showing up every week, closing your gate, and sending a photo so you never have to wonder.",
@@ -97,6 +122,10 @@ export const locations = [
     id: 'east-ridge',
     name: 'East Ridge, TN',
     slug: 'east-ridge',
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "Liz C.", text: "Very efficient very sweet very kind and I look forward to a very long business relationship" }
+    ],
     seoTitle: 'Pet Waste & Dog Poop Removal in East Ridge, TN | Scoopy Doo',
     seoDescription: "Dog poop removal in East Ridge, TN. Weekly and every-other-week pet waste pickup from Scoopy Doo for East Ridge homes. No contracts, free quote.",
     serviceDescription: "East Ridge sits on the Tennessee-Georgia border with a dense, proud residential community that takes care of its neighborhoods. Scoopy Doo runs regular routes through East Ridge, keeping yards clean for families who want more time for the things they actually enjoy — and less time dealing with what their dogs left behind.",
@@ -115,6 +144,11 @@ export const locations = [
     id: 'signal-mountain',
     name: 'Signal Mountain, TN',
     slug: 'signal-mountain',
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "Jesse G.", text: "Great service! Quick response time, easy to communicate with…I would recommend to anyone in need. A very reasonable price for what I consider a luxury!" },
+      { name: "Deborah W.", text: "I am very happy to have found Scoopy Doo I have two dogs and their service helps me very much." }
+    ],
     seoTitle: 'Pet Waste & Dog Poop Removal in Signal Mountain, TN | Scoopy Doo',
     seoDescription: "Pet waste removal on Signal Mountain, TN. We handle wooded lots, steep terrain and large properties. Weekly service with a gate photo. Free quote.",
     serviceDescription: "Signal Mountain properties are beautiful — and that same terrain that makes them beautiful makes pet waste cleanup genuinely difficult. Wooded lots, uneven grades, and extensive ground cover create dozens of places for waste to hide. Scoopy Doo's technicians are experienced with Signal Mountain terrain and use a thorough grid-pattern approach to find and remove everything.",
@@ -151,6 +185,11 @@ export const locations = [
     id: 'soddy-daisy',
     name: 'Soddy-Daisy, TN',
     slug: 'soddy-daisy',
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "Kelsey H.", text: "I had such a great experience with this dog waste removal company! It’s a wonderful small father-daughter business, and they were able to come out on just one day’s notice. … Super friendly, professional, and reliable—I highly recommend them to anyone looking for a trustworthy pet waste service!" },
+      { name: "Marsha H.", text: "Scoop Doo arrived when scheduled, cleaned up the poo and disposed the mess." }
+    ],
     seoTitle: 'Pet Waste & Dog Poop Removal in Soddy-Daisy, TN | Scoopy Doo',
     seoDescription: "Pet waste removal in Soddy-Daisy, TN. Scoopy Doo serves Soddy-Daisy neighborhoods and lakefront properties. Weekly dog poop pickup — no contracts, free quote.",
     serviceDescription: "Soddy-Daisy stretches along beautiful Chickamauga Lake with a mix of lakefront homes and inland neighborhoods. Whether you are on the water or in a subdivision down the road, Scoopy Doo provides the consistent, reliable pet waste pickup that keeps your yard clean and the lake healthy. We know Soddy-Daisy and run regular routes throughout the community.",
@@ -169,6 +208,11 @@ export const locations = [
     id: 'ringgold',
     name: 'Ringgold, GA',
     slug: 'ringgold',
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "Samantha T.", text: "We had a great experience with Scoopy Doo! They showed up right on time and made sure they covered all areas of the yard we needed done. They checked with us after finishing to make sure there was no where else we wanted them to take care of." },
+      { name: "Jeska D.", text: "Love this! They are so great at maintaining my yard and having it look brand new every visit!" }
+    ],
     seoTitle: 'Pet Waste & Dog Poop Removal in Ringgold, GA | Scoopy Doo',
     seoDescription: "Dog poop removal in Ringgold, GA. Scoopy Doo serves Ringgold and Catoosa County with weekly pet waste pickup. No contracts, free quote.",
     serviceDescription: "Ringgold is the heart of Catoosa County — a growing community about 15 miles south of Chattanooga that has seen rapid residential development while keeping its small-town character. Scoopy Doo proudly serves Ringgold homeowners with the same professional, tech-forward pet waste removal service we bring to the entire Chattanooga region.",
@@ -187,6 +231,11 @@ export const locations = [
     id: 'rossville',
     name: 'Rossville, GA',
     slug: 'rossville',
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "April H.", text: "Brandon and Leigton are very dependable-here every week. Never have to ask where they are or if they’re coming- they always communicate any change in schedule." },
+      { name: "Larry T.", text: "… they take their time and Clean Every Square inch of my yard from front to back im Grateful to have a service like this. Kudos & Thank You!" }
+    ],
     seoTitle: 'Pet Waste & Dog Poop Removal in Rossville, GA | Scoopy Doo',
     seoDescription: "Dog poop removal in Rossville, GA. Scoopy Doo provides weekly pet waste pickup for Rossville homeowners. Professional, reliable — no contracts, free quote.",
     serviceDescription: "Rossville sits right on the Tennessee-Georgia border, moments from Chattanooga, with established residential neighborhoods and a community that takes care of its properties. Scoopy Doo runs regular North Georgia routes and serves Rossville homeowners with the same reliable, professional service we bring to the entire Chattanooga metro.",
@@ -250,6 +299,10 @@ export const locations = [
     id: "collegedale",
     name: "Collegedale, TN",
     slug: "collegedale",
+    // Real 5-star Google reviews from customers in this area (name = first name + last initial).
+    localReviews: [
+      { name: "Kimberly H.", text: "They came out within the week and cleaned up and offered a phone number in case I was unhappy with any of the results. I’m very happy with the results. … It is greatly helping me because I’m working full-time outside the home and don’t have a lot of time to clean up the yard." }
+    ],
     seoTitle: "Pet Waste & Dog Poop Removal in Collegedale, TN | Scoopy Doo",
     seoDescription: "Pet waste removal in Collegedale, TN. Scoopy Doo serves Collegedale homeowners with professional weekly dog poop pickup. No contracts - free quote.",
     serviceDescription: "Collegedale is a small, community-focused city east of Chattanooga with well-maintained neighborhoods and high standards for how the community looks. Scoopy Doo serves Collegedale families with reliable weekly and bi-weekly pet waste removal - the kind of service that keeps your yard looking great without taking up your weekend.",
