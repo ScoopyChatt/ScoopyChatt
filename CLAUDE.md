@@ -359,3 +359,10 @@ either way).
 - Weekly GBP posts run on a scheduled automation.
 - Petworks listing is claimed (Scoopy Doo is the only local company on it).
 - City pages (/service/:slug) title and H1 lead with "Pet Waste & Dog Poop Removal".
+- City pages carry `localReviews` (verbatim 5-star Google reviews, first name + last initial,
+  matched to the city by the customer's Jobber service address/ZIP) and `zipCodes` in
+  `src/data/locations.js`. Main content is 91-96% unique across the 24 pages (Oct 27, 2026).
+  Do not add reviews that mention a customer's health or disability.
+- Indexing (Oct 27, 2026): only 27 of 101 sitemap pages were indexed; most city pages were
+  "Discovered - currently not indexed". A daily scheduled task "Daily Search Console indexing
+  requests" submits ~10 URLs/day through Nov 4. Re-check Search Console > Pages after that.
