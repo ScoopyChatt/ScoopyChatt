@@ -203,13 +203,9 @@ function makeLocContent(slug) {
   h += "<p>" + l.serviceDescription + "</p>";
   h += "<h2>Why " + n + " Pet Owners Need Professional Cleanup</h2><p>" + l.localContext + "</p>";
   if (l.localLandmark) h += "<p>" + l.localLandmark.text + "</p>";
-  h += "<h2>Dog Poop Removal Pricing in " + n + "</h2>";
-  h += "<p>Scoopy Doo weekly dog poop removal in " + n + " starts at $20 per visit for one dog. Twice-weekly service starts at $18 per visit, every-other-week service starts at $33 per visit, and one-time yard cleanups start at $85. Extra dogs add $2 per weekly visit. Final pricing depends on yard size and number of dogs. There are no contracts and no cancellation fees, and billing is once a month.</p>";
-  h += "<h2>What Every Visit Includes</h2><ul>";
-  h += "<li>An on-the-way text before the technician arrives</li>";
-  h += "<li>A full grid-pattern sweep of your entire yard</li>";
-  h += "<li>All waste double-bagged into your outdoor bin, or hauled off the property for $5 per visit</li>";
-  h += "<li>Gate secured and a photo sent to your phone when done</li></ul>";
+  var sn0 = n.replace(/, (TN|GA)$/, '');
+  h += "<h2>Dog Poop Removal Pricing in " + sn0 + "</h2>";
+  h += "<p>" + sn0 + " homes pay the same rates as the rest of our service area: weekly service from $20 per visit, every other week from $33, twice weekly from $18, and one-time cleanups from $85. Every visit includes an on-the-way text, a full-yard sweep, waste double-bagged into your bin (or hauled away for $5), and a gate photo. No contracts. See <a href=\"/pricing\">full pricing</a>.</p>";
   h += "<h2>Why " + n + " Chooses Scoopy Doo</h2><ul>";
   l.benefits.forEach(function (b) { h += "<li>" + b + "</li>"; });
   h += "</ul>";
@@ -221,6 +217,7 @@ function makeLocContent(slug) {
   h += "<h2>Neighborhoods We Serve in " + n + "</h2><ul>";
   l.neighborhoods.forEach(function (x) { h += "<li>" + x + "</li>"; });
   h += "</ul>";
+  if (l.zipCodes && l.zipCodes.length) h += "<p>ZIP " + (l.zipCodes.length > 1 ? "codes" : "code") + " served in " + n + ": " + l.zipCodes.join(", ") + "</p>";
   if (l.nearbyAreas && l.nearbyAreas.length) {
     h += "<h3>Nearby Areas We Also Serve</h3><ul>";
     l.nearbyAreas.forEach(function (x) { h += "<li>" + x + "</li>"; });

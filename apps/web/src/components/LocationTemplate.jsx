@@ -52,7 +52,7 @@ const LocationTemplate = ({ city: propCity }) => {
     );
   }
 
-  const { name, seoTitle, seoDescription, serviceDescription, localContext, localLandmark, neighborhoods, nearbyAreas, benefits, faqItems, localReviews } = locationData;
+  const { name, seoTitle, seoDescription, serviceDescription, localContext, localLandmark, neighborhoods, nearbyAreas, benefits, faqItems, localReviews, zipCodes } = locationData;
   const shortName = name.replace(/, (TN|GA)$/, '');
   const canonicalUrl = getCanonicalUrl('/service/' + locationData.slug);
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -224,6 +224,9 @@ const LocationTemplate = ({ city: propCity }) => {
                     ))}
                   </div>
                 </div>
+              )}
+              {zipCodes && zipCodes.length > 0 && (
+                <p className="mt-6 text-foreground"><span className="font-semibold">ZIP {zipCodes.length > 1 ? 'codes' : 'code'} served in {name}:</span> {zipCodes.join(', ')}</p>
               )}
               <p className="mt-4 text-sm text-muted-foreground">Not sure if we cover your street? <Link to="/quote" className="text-primary hover:underline font-medium">Enter your zip on the instant price form</Link> and it will tell you right away.</p>
             </div>
