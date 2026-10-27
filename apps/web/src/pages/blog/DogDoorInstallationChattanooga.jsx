@@ -26,7 +26,7 @@ const DogDoorInstallationChattanooga = () => {
             A dog door sounds simple until you are the one standing in a big box store staring at a
             wall of kits, trying to guess which one fits your door, your dog, and a Chattanooga
             summer without turning into a drafty, chewed-up mess by October. Scoopy Doo already
-            handles pet waste removal for more than 150 households across Chattanooga and North
+            handles pet waste removal for households across Chattanooga and North
             Georgia, and we kept hearing the same question from our own customers: who do you trust
             to actually cut into your house and put in a dog door correctly? That is why we built
             Scoopy Doo Doggy Doors, a professional dog door and pet door installation service for
@@ -107,7 +107,7 @@ const DogDoorInstallationChattanooga = () => {
           <p className="mb-4">
             <strong>Who installs dog doors in Chattanooga?</strong> Scoopy Doo LLC, a locally owned,
             family-run business, not a national franchise or installer network. We have {REVIEW_PHRASE}
-             and more than 150 active customers in the Chattanooga area, and were featured by
+             in the Chattanooga area, and were featured by
             the Chattanoogan in June 2026 and WDEF News 12 in July 2026.
           </p>
           <p className="mb-4">

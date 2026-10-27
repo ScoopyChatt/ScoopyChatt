@@ -54,7 +54,7 @@ export const chooseGuide = {
       "Pricing: published per-visit rates. Weekly starts at $20 per visit for one dog, twice-weekly at $18, every-other-week at $33, and one-time cleanups at $85. Waste goes into your bin by default, or leaves with us for $5 a visit.",
       "Contracts: none, and no cancellation fees.",
       "Commercial: HOA, apartment and business service, including pet waste station installation and servicing.",
-      "Track record: more than 150 active clients, " + REVIEW_PHRASE + ", BBB accreditation, and coverage from WDEF News 12 and the Chattanoogan.",
+      "Track record: " + REVIEW_PHRASE + ", BBB accreditation, and coverage from WDEF News 12 and the Chattanoogan.",
     ],
   },
   faqs: [

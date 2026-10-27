@@ -8,13 +8,13 @@ import Footer from '@/components/Footer.jsx';
 import { Button } from '@/components/ui/button';
 import ElfsightReviewsWidget from '@/components/ElfsightReviewsWidget.jsx';
 import { getCanonicalUrl } from '@/utils/seoHelpers.js';
-import { REVIEW_PHRASE, REVIEW_PHRASE_TITLE } from '@/data/reviews.js';
+import { REVIEW_COUNT, REVIEW_PHRASE, REVIEW_PHRASE_TITLE } from '@/data/reviews.js';
 
 const AboutPage = () => {
   const canonicalUrl = getCanonicalUrl('/about');
 
   const stats = [
-    { value: "100+", label: "Five-Star Google Reviews" },
+    { value: `${REVIEW_COUNT}+`, label: "Five-Star Google Reviews" },
     { value: "2", label: "Branded Service Vehicles" },
     { value: "17+", label: "Communities Served" },
     { value: "100%", label: "Satisfaction Guarantee" },
@@ -74,7 +74,7 @@ const AboutPage = () => {
               <div><dt className="font-bold text-foreground">Founded</dt><dd>2025, by Brandon Carter and his daughter Leighton Carter</dd></div>
               <div><dt className="font-bold text-foreground">Based in</dt><dd>Ringgold, GA, serving the Chattanooga, TN metro area and nearby North Georgia</dd></div>
               <div className="sm:col-span-2"><dt className="font-bold text-foreground">Not affiliated with</dt><dd>An earlier, now-closed Chattanooga business that also used the name Scoopy Doo. Scoopy Doo LLC is a separate company, founded in 2025.</dd></div>
-              <div><dt className="font-bold text-foreground">Clients</dt><dd>More than 150 active clients, including homes, HOAs, apartments and commercial properties</dd></div>
+              <div><dt className="font-bold text-foreground">Clients</dt><dd>Homes, HOAs, apartments and commercial properties</dd></div>
               <div><dt className="font-bold text-foreground">Reviews</dt><dd>{REVIEW_PHRASE}</dd></div>
               <div><dt className="font-bold text-foreground">Credentials</dt><dd>BBB accredited, fully insured, member of aPaws (Association of Professional Animal Waste Specialists)</dd></div>
               <div><dt className="font-bold text-foreground">Services</dt><dd><Link to="/services" className="underline hover:text-primary">Residential pet waste removal</Link>, <Link to="/one-time-cleanup" className="underline hover:text-primary">one-time cleanups</Link>, <Link to="/commercial" className="underline hover:text-primary">commercial, HOA and apartment service</Link></dd></div>
@@ -91,7 +91,7 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                 <h2 className="text-3xl font-bold text-foreground mb-6">Our Story</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">Scoopy Doo LLC was co-founded by Brandon and Leighton Carter, a father-daughter team. Leighton started the business at just 14 years old with a single customer, and in under a year the two grew it into Chattanooga's largest pet waste removal company, serving more than 150 active clients across Chattanooga and North Georgia. Their story has been featured by the Chattanoogan and WDEF News 12.</p>
+                <p className="text-muted-foreground leading-relaxed mb-4">Scoopy Doo LLC was co-founded by Brandon and Leighton Carter, a father-daughter team. Leighton started the business at just 14 years old with a single customer, and in under a year the two grew it into Chattanooga's largest pet waste removal company, serving homes, HOAs and businesses across Chattanooga and North Georgia. Their story has been featured by the Chattanoogan and WDEF News 12.</p>
                 <p className="text-muted-foreground leading-relaxed mb-4">Brandon also founded and moderates <a href="https://www.reddit.com/r/PetWastePros/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">r/PetWastePros</a>, the largest pet waste industry community on Reddit.</p>
                 <p className="text-muted-foreground leading-relaxed mb-4">We run two branded service vehicles across 17+ communities in the Chattanooga metro area and North Georgia. Our team shows up in uniform, follows a systematic grid-pattern process on every yard, and never cuts corners - because this is our community too, and our name is on every truck.</p>
                 <p className="text-muted-foreground leading-relaxed mb-6">We built the business around a simple promise: make it easy. Online quotes. Online payment. A text when we are on the way. A photo of your secured gate when we are done. No contracts. No surprises.</p>
@@ -134,7 +134,7 @@ const AboutPage = () => {
               {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
             </div>
             <h2 className="text-2xl font-bold text-foreground mb-2">{REVIEW_PHRASE_TITLE}</h2>
-            <p className="text-muted-foreground mb-8">More than 150 active clients across Chattanooga and North Georgia trust us with their yards every week. Here is what they say.</p>
+            <p className="text-muted-foreground mb-8">Homeowners across Chattanooga and North Georgia trust us with their yards every week. Here is what they say.</p>
             <div className="text-left">
               <ElfsightReviewsWidget />
             </div>

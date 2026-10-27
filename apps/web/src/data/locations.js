@@ -360,7 +360,7 @@ export const locations = [
       "On-the-way text before every visit",
       "Gate photo confirmation when done",
       "Waste double-bagged into your bin, or hauled away for $5 a visit",
-      "Locally owned Chattanooga business"
+      "Locally owned, based in Ringgold, GA and serving Chattanooga"
     ],
     faqItems: [
       { question: "Do you service small urban yards in Highland Park?", answer: "Yes. We service yards of all sizes, including the smaller urban lots typical in Highland Park. Smaller yards often mean waste is more concentrated and more important to keep clean consistently." },

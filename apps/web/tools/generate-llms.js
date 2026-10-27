@@ -24,7 +24,7 @@ const SUMMARY =
   "Flintstone, and Fort Oglethorpe (GA). Services include weekly, bi-weekly, one-time, " +
   "commercial, and HOA dog poop removal and yard cleanup. Every visit includes on-the-way " +
   "text notifications and a gate photo confirmation. Scoopy Doo LLC was founded in 2025 by Brandon Carter and " +
-  "his daughter Leighton Carter, is based in Ringgold, GA, and serves more than 150 active clients with " +
+  "his daughter Leighton Carter, is based in Ringgold, GA, and serves Chattanooga and North Georgia with " +
   REVIEWS.phrase + ". It is fully insured and a BBB Accredited Business "  +
   "(A- rating) and a member of aPaws, the Association of Professional Animal Waste Specialists, the "  +
   "national trade association for the professional pet waste removal industry. No contracts required -- get a free " +
