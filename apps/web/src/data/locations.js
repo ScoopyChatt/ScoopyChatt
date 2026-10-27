@@ -27,6 +27,7 @@ export const locations = [
     id: 'hixson',
     name: 'Hixson, TN',
     slug: 'hixson',
+    relatedGuide: { href: '/blog/dog-poop-removal-hixson-tn', title: 'Dog Poop Removal in Hixson, TN: Keeping Wooded Yards Clean This Fall' },
     zipCodes: ["37343"],
     // Real 5-star Google reviews from customers in this area (name = first name + last initial).
     localReviews: [

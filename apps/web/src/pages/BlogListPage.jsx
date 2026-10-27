@@ -7,6 +7,7 @@ import SEOHead from '@/components/SEOHead.jsx';
 import { CANONICAL_BASE_URL } from '@/config/seoConfig.js';
 
 const allPosts = [
+  { slug: '/blog/dog-poop-removal-hixson-tn', title: "Dog Poop Removal in Hixson, TN: Keeping Wooded Yards Clean This Fall", desc: "Why Hixson yards are hard to keep clean in fall, what every visit includes, pricing from $20 a visit, and real reviews from Hixson customers.", date: 'Oct 2026', cat: 'Local Guide' },
   { slug: '/blog/does-rain-wash-away-dog-poop-chattanooga', title: 'Does Rain Wash Away Dog Poop? What Chattanooga and North Georgia Yards Need to Know', desc: 'Rain does not make dog poop go away. What really happens to pet waste in a wet Chattanooga yard, and why weekly scooping still matters.', date: 'Oct 2026', cat: 'Yard Tips' },
   { slug: '/blog/dog-poop-attract-rodents-pests-chattanooga', title: 'Does Dog Poop Attract Rats and Other Pests in Chattanooga and North Georgia?', desc: 'Yes, dog poop can attract rodents, flies, and other pests. What to watch for in Chattanooga and North Georgia yards and how regular scooping helps.', date: 'Oct 2026', cat: 'Health' },
   { slug: '/blog/fall-leaves-hide-dog-poop-chattanooga', title: 'Fall Leaves Hiding Dog Poop in Your Chattanooga Yard? Here Is What to Do', desc: 'Leaf season buries dog waste in Chattanooga yards. The risks, how to find it, and how to keep the yard clean until spring.', date: 'Sep 2026', cat: 'Yard Tips' },

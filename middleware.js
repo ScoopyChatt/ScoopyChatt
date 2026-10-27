@@ -105,6 +105,7 @@ const BLOG_POSTS = [
   'fall-flea-tick-season-chattanooga',
 'dog-waste-removal-rental-properties-chattanooga',
 'eco-friendly-dog-waste-disposal-chattanooga',
+'dog-poop-removal-hixson-tn',
 ];
 
 const SERVICE_AREAS = [

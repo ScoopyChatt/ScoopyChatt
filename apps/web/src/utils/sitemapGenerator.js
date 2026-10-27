@@ -96,7 +96,8 @@ export const generateSitemapData = async () => {
     'no-contact-pet-waste-removal-chattanooga',
     'moving-to-chattanooga-with-a-dog',
     'dog-waste-removal-rental-properties-chattanooga',
-    'eco-friendly-dog-waste-disposal-chattanooga'
+    'eco-friendly-dog-waste-disposal-chattanooga',
+    'dog-poop-removal-hixson-tn'
   ];
 
   liveBlogSlugs.forEach(slug => {

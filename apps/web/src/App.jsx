@@ -82,6 +82,7 @@ const NewPuppyOwnerGuideChattanooga = React.lazy(() => import('@/pages/blog/NewP
 const YardCleanupBeforeSellingHomeChattanooga = React.lazy(() => import('@/pages/blog/YardCleanupBeforeSellingHomeChattanooga.jsx'));
 const DogWasteRemovalRentalPropertiesChattanooga = React.lazy(() => import('@/pages/blog/DogWasteRemovalRentalPropertiesChattanooga.jsx'));
 const EcoFriendlyDogWasteDisposalChattanooga = React.lazy(() => import('@/pages/blog/EcoFriendlyDogWasteDisposalChattanooga.jsx'));
+const DogPoopRemovalHixsonTN = React.lazy(() => import('@/pages/blog/DogPoopRemovalHixsonTN.jsx'));
 
 // Blog posts that shipped as components but were never routed (they used to fall
 // through to /blog/:slug and render an empty template titled "undefined")
@@ -233,6 +234,7 @@ export function AppRoutes() {
   <Route path="/blog/yard-cleanup-before-selling-home-chattanooga" element={<YardCleanupBeforeSellingHomeChattanooga />} />
   <Route path="/blog/dog-waste-removal-rental-properties-chattanooga" element={<DogWasteRemovalRentalPropertiesChattanooga />} />
   <Route path="/blog/eco-friendly-dog-waste-disposal-chattanooga" element={<EcoFriendlyDogWasteDisposalChattanooga />} />
+  <Route path="/blog/dog-poop-removal-hixson-tn" element={<DogPoopRemovalHixsonTN />} />
         <Route path="/blog/professional-waste-removal-benefits" element={<ProfessionalWasteRemovalBenefits />} />
         <Route path="/blog/seasonal-pet-care-tips" element={<SeasonalPetCareTips />} />
         <Route path="/blog/health-benefits-yard-cleanup" element={<HealthBenefitsYardCleanup />} />

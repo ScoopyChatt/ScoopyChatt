@@ -217,6 +217,7 @@ function makeLocContent(slug) {
   h += "<h2>Neighborhoods We Serve in " + n + "</h2><ul>";
   l.neighborhoods.forEach(function (x) { h += "<li>" + x + "</li>"; });
   h += "</ul>";
+  if (l.relatedGuide) h += '<p>Local guide: <a href="' + l.relatedGuide.href + '">' + l.relatedGuide.title + '</a></p>';
   if (l.zipCodes && l.zipCodes.length) h += "<p>ZIP " + (l.zipCodes.length > 1 ? "codes" : "code") + " served in " + n + ": " + l.zipCodes.join(", ") + "</p>";
   if (l.nearbyAreas && l.nearbyAreas.length) {
     h += "<h3>Nearby Areas We Also Serve</h3><ul>";

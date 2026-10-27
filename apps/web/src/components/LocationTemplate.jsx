@@ -52,7 +52,7 @@ const LocationTemplate = ({ city: propCity }) => {
     );
   }
 
-  const { name, seoTitle, seoDescription, serviceDescription, localContext, localLandmark, neighborhoods, nearbyAreas, benefits, faqItems, localReviews, zipCodes } = locationData;
+  const { name, seoTitle, seoDescription, serviceDescription, localContext, localLandmark, neighborhoods, nearbyAreas, benefits, faqItems, localReviews, zipCodes, relatedGuide } = locationData;
   const shortName = name.split(',')[0].trim();
   const canonicalUrl = getCanonicalUrl('/service/' + locationData.slug);
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -224,6 +224,9 @@ const LocationTemplate = ({ city: propCity }) => {
                     ))}
                   </div>
                 </div>
+              )}
+              {relatedGuide && (
+                <p className="mt-4 text-foreground">Local guide: <Link to={relatedGuide.href} className="text-primary hover:underline font-medium">{relatedGuide.title}</Link></p>
               )}
               {zipCodes && zipCodes.length > 0 && (
                 <p className="mt-6 text-foreground"><span className="font-semibold">ZIP {zipCodes.length > 1 ? 'codes' : 'code'} served in {name}:</span> {zipCodes.join(', ')}</p>

@@ -85,6 +85,7 @@ const pages = {
   '/blog/does-rain-wash-away-dog-poop-chattanooga': ["Does Rain Wash Away Dog Poop? A Chattanooga Yard Guide", "Rain does not make dog poop go away. See what really happens to pet waste in Chattanooga and North Georgia yards, plus weekly scooping from $20 per visit."],
   '/blog/pooper-scooper-cost-chattanooga': ["How Much Does Pooper Scooper Service Cost? | Scoopy Doo", "Scoopy Doo weekly service starts at $20 per visit for one dog. 2026 pricing for weekly, every-other-week, and one-time pet waste removal in Chattanooga TN."],
 '/blog/eco-friendly-dog-waste-disposal-chattanooga': ["Eco-Friendly Dog Waste Disposal in Chattanooga | Scoopy Doo", "Trash, flushing, composting, digesters or leaving it on the lawn: an honest look at dog waste disposal in Chattanooga, and what we do with ours."],
+'/blog/dog-poop-removal-hixson-tn': ["Dog Poop Removal in Hixson, TN | Scoopy Doo Pet Waste Removal", "Weekly dog poop removal in Hixson, TN from $20 a visit. Scoopy Doo cleans wooded and leaf-covered yards across Hixson and Middle Valley. No contracts."],
 '/blog/dog-waste-removal-rental-properties-chattanooga': ["Who Handles Dog Waste at a Rental Property? | Scoopy Doo", "Landlord or tenant: who handles dog waste cleanup at a Chattanooga rental? How uncleaned yards cost landlords money and how Scoopy Doo services rental portfolios, from $20 a visit."],
 };
 
