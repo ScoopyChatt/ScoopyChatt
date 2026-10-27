@@ -199,7 +199,7 @@ function makeLocContent(slug) {
   if (!l) return "";
   var n = l.name;
   var h = '<nav aria-label="breadcrumb"><a href="/">Home</a> / <a href="/service-areas">Service Areas</a> / ' + n + '</nav>';
-  h += "<h1>Dog Poop Removal in " + n + "</h1>";
+  h += "<h1>Pet Waste &amp; Dog Poop Removal in " + n + "</h1>";
   h += "<p>" + l.serviceDescription + "</p>";
   h += "<h2>Why " + n + " Pet Owners Need Professional Cleanup</h2><p>" + l.localContext + "</p>";
   if (l.localLandmark) h += "<p>" + l.localLandmark.text + "</p>";
