@@ -325,9 +325,10 @@ valid). **The ceiling is local visibility, not the website.**
    waste removal category. Primary stays "Waste management service", secondary is
    "Garbage collection service". Every competitor uses the same primary.
 2. ~~Reconcile the GBP service area~~ — DONE Oct 26, 2026: Cleveland removed, East
-   Ridge and 37421 (East Brainerd) added. GBP is at the 20-area cap; Rossville, Fort
-   Oglethorpe and Flintstone still need a slot (swap out Dunlap/Tunnel Hill/McDonald
-   if Brandon approves).
+   Ridge, 37421 (East Brainerd), Rossville, Fort Oglethorpe and Flintstone added;
+   Dunlap, Tunnel Hill and McDonald removed (Brandon approved). GBP is at the
+   20-area cap. GBP description says waste goes in the bin or is hauled away for $5
+   (haul-away is a $5 add-on, matching the site).
 3. **Confirm whether the blog testimonials are real customers**, and replace them
    with real Google review quotes if not. See Local SEO above.
 4. Verify the `scoopychatt.com` domain in Resend, then fix `RESEND_FROM` — and read
