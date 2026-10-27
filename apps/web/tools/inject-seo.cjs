@@ -203,14 +203,14 @@ function makeLocContent(slug) {
   h += "<p>" + l.serviceDescription + "</p>";
   h += "<h2>Why " + n + " Pet Owners Need Professional Cleanup</h2><p>" + l.localContext + "</p>";
   if (l.localLandmark) h += "<p>" + l.localLandmark.text + "</p>";
-  var sn0 = n.replace(/, (TN|GA)$/, '');
+  var sn0 = n.split(',')[0].trim();
   h += "<h2>Dog Poop Removal Pricing in " + sn0 + "</h2>";
   h += "<p>" + sn0 + " homes pay the same rates as the rest of our service area: weekly service from $20 per visit, every other week from $33, twice weekly from $18, and one-time cleanups from $85. Every visit includes an on-the-way text, a full-yard sweep, waste double-bagged into your bin (or hauled away for $5), and a gate photo. No contracts. See <a href=\"/pricing\">full pricing</a>.</p>";
   h += "<h2>Why " + n + " Chooses Scoopy Doo</h2><ul>";
   l.benefits.forEach(function (b) { h += "<li>" + b + "</li>"; });
   h += "</ul>";
   if (l.localReviews && l.localReviews.length) {
-    var sn = n.replace(/, (TN|GA)$/, '');
+    var sn = n.split(',')[0].trim();
     h += "<h2>What " + sn + " Customers Say</h2>";
     l.localReviews.forEach(function (r) { h += "<blockquote><p>&ldquo;" + r.text + "&rdquo;</p><footer>" + r.name + ", " + sn + " (5-star Google review)</footer></blockquote>"; });
   }

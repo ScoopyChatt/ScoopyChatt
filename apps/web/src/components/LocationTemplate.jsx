@@ -53,7 +53,7 @@ const LocationTemplate = ({ city: propCity }) => {
   }
 
   const { name, seoTitle, seoDescription, serviceDescription, localContext, localLandmark, neighborhoods, nearbyAreas, benefits, faqItems, localReviews, zipCodes } = locationData;
-  const shortName = name.replace(/, (TN|GA)$/, '');
+  const shortName = name.split(',')[0].trim();
   const canonicalUrl = getCanonicalUrl('/service/' + locationData.slug);
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://www.scoopychatt.com/' },
