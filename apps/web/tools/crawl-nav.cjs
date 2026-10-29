@@ -33,6 +33,7 @@ const MAIN = [
   ['/guides/how-to-choose-pet-waste-removal-company-chattanooga', 'How to choose a pet waste removal company'],
   ['/blog', 'Blog'],
   ['/press', 'Press'],
+  ['/contact', 'Contact us'],
   ['/quote', 'Get a free quote'],
 ];
 
@@ -69,5 +70,7 @@ if (locations.length) {
 // Site-wide guarantee line, matching the React footer.
 const guarantee = require('../src/data/guarantee.json');
 html += '<nav aria-label="Legal">' + list(LEGAL) + '</nav>';
+// Name and phone on every page, matching the schema (consistent NAP for local search).
+html += '<p>Scoopy Doo LLC, pet waste removal in Chattanooga and North Georgia. Call or text <a href="tel:+14236005040">423-600-5040</a>.</p>';
 html += '<p><strong>' + guarantee.entity + ':</strong> ' + guarantee.short + '</p><p>' + guarantee.tagline + '</p>';
 module.exports = html;
