@@ -186,6 +186,10 @@ const QuoteForm = ({ allowedServices } = {}) => {
   const [showNotes, setShowNotes] = useState(false);
   const [addressMissing, setAddressMissing] = useState(false);
   const addressInputRef = useRef(null);
+  // Guards "Request my start date" so a double-click or impatient re-click only
+  // sends the booking once (each send creates a Zapier -> Jobber run).
+  const startSentRef = useRef(false);
+  const [starting, setStarting] = useState(false);
 
   // The price card repeats what the person picked, and the haul-away add-on lives on the
   // card so they see the price change instead of guessing at it before any price exists.
@@ -359,6 +363,9 @@ const QuoteForm = ({ allowedServices } = {}) => {
       addressInputRef.current?.focus();
       return;
     }
+    if (startSentRef.current) return;
+    startSentRef.current = true;
+    setStarting(true);
     const v = form.getValues();
     const entry = SERVICE_AREA[v.serviceZipCode];
     const readyPayload = {
@@ -542,7 +549,7 @@ const QuoteForm = ({ allowedServices } = {}) => {
               <p className="mt-1 text-xs text-muted-foreground">We'll use: <span className="font-medium text-foreground">{sanitizedStreetAddress}</span></p>
             ) : null}
           </div>
-          <Button onClick={requestStart} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base">Request my start date</Button>
+          <Button onClick={requestStart} disabled={starting} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 active:scale-[0.98] h-12 text-base disabled:opacity-70">{starting ? 'Sending...' : 'Request my start date'}</Button>
         <button type="button" onClick={() => setQuote(null)} className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors">Back to edit my details</button>
       </div>
     );

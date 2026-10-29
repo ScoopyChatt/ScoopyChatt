@@ -249,10 +249,8 @@ Map pack, searched from the Chattanooga metro:
 **Reviews are not the limiting factor.** 98 five-star reviews loses to a competitor
 with zero. Do not spend effort chasing more reviews to fix map-pack placement.
 
-Most likely cause is category relevance: **primary category is "Waste management
-service" — an industrial/commercial-waste category — and the secondary category slot
-is empty.** Check what PooTagic uses (they rank #1 for both queries) and match it.
-Distance is the other factor and is harder to move: the profile is based in Ringgold
+Category is NOT the fix: Google has no pet waste removal category (checked; Brandon
+has confirmed this more than once, do not suggest it). Distance is the main factor and is harder to move: the profile is based in Ringgold
 GA while competitors sit inside Chattanooga.
 
 **Never put keywords in the business name to chase this.** Competitors rank partly on
@@ -323,12 +321,14 @@ Reordered Sept 21, 2026 against real Search Console and map-pack data. The site'
 technical SEO is in good shape (SEO score 100 on PageSpeed, pages indexed, schema
 valid). **The ceiling is local visibility, not the website.**
 
-1. **Fix the GBP category** — primary is "Waste management service" with an empty
-   secondary slot, and the profile misses the map pack for "pooper scooper
-   chattanooga" behind businesses with 0 and 3 reviews. See Local SEO above. Free,
-   fast, highest leverage of anything on this list.
-2. **Reconcile the GBP service area with the site** — drop Cleveland, add East
-   Brainerd, East Ridge, Rossville, Fort Oglethorpe, Flintstone.
+1. ~~Fix the GBP category~~ — **SETTLED, do not raise again.** Google has NO pet
+   waste removal category. Primary stays "Waste management service", secondary is
+   "Garbage collection service". Every competitor uses the same primary.
+2. ~~Reconcile the GBP service area~~ — DONE Oct 26, 2026: Cleveland removed, East
+   Ridge, 37421 (East Brainerd), Rossville, Fort Oglethorpe and Flintstone added;
+   Dunlap, Tunnel Hill and McDonald removed (Brandon approved). GBP is at the
+   20-area cap. GBP description says waste goes in the bin or is hauled away for $5
+   (haul-away is a $5 add-on, matching the site).
 3. **Confirm whether the blog testimonials are real customers**, and replace them
    with real Google review quotes if not. See Local SEO above.
 4. Verify the `scoopychatt.com` domain in Resend, then fix `RESEND_FROM` — and read
@@ -357,3 +357,20 @@ links, slow mobile networks. The prerendered hero in #root already paints the LC
 before React boots. `tools/route-preload.cjs` (last build step before verify-routes)
 preloads each page's lazy JS chunks so React finishes sooner. It needs
 `build.manifest: true` in vite.config.js and deletes the manifest afterwards.
+
+### Already in place (Oct 26, 2026) — do not recommend these as new ideas
+- Every review gets an automatic reply from GHL Reviews AI (Reputation > Settings >
+  Reviews AI > "Legacy Reviews AI" agent). Its prompt now mentions the town when the
+  review names one, otherwise "the Chattanooga area". 80 past replies were edited to
+  include the customer's town (matched from Jobber addresses).
+- Every customer is asked for a review automatically.
+- Weekly GBP posts run on a scheduled automation.
+- Petworks listing is claimed (Scoopy Doo is the only local company on it).
+- City pages (/service/:slug) title and H1 lead with "Pet Waste & Dog Poop Removal".
+- City pages carry `localReviews` (verbatim 5-star Google reviews, first name + last initial,
+  matched to the city by the customer's Jobber service address/ZIP) and `zipCodes` in
+  `src/data/locations.js`. Main content is 91-96% unique across the 24 pages (Oct 27, 2026).
+  Do not add reviews that mention a customer's health or disability.
+- Indexing (Oct 27, 2026): only 27 of 101 sitemap pages were indexed; most city pages were
+  "Discovered - currently not indexed". A daily scheduled task "Daily Search Console indexing
+  requests" submits ~10 URLs/day through Nov 4. Re-check Search Console > Pages after that.

@@ -3,37 +3,27 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<!-- Tracking scripts (Google Tag Manager, Google Ads tag, Meta Pixel) download after the
-		     page has finished loading, or on the visitor's first tap if that comes sooner, so on
-		     slow phones they don't compete with the page and hero photo for bandwidth. The
-		     dataLayer, gtag() and fbq() queues below exist from the start, so every event fired
-		     before then is kept and sent once the scripts arrive. -->
+		<!-- Google Tag Manager -->
 		<script>
+			// GTM, the Google Ads tag and the Meta Pixel load after the page is interactive (first tap/scroll/key,
+			// or 4s after the load event) so they stay off the critical path. dataLayer and fbq queue every event
+			// pushed before then, so no conversion or pageview is lost.
 			window.dataLayer = window.dataLayer || [];
 			window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-			(function () {
+			(function(){
 				var done = false;
-				function add(src) {
-					var el = document.createElement('script');
-					el.async = true; el.src = src;
-					document.head.appendChild(el);
-				}
-				function loadTracking() {
-					if (done) return;
-					done = true;
-					window.removeEventListener('pointerdown', loadTracking);
-					window.removeEventListener('keydown', loadTracking);
+				function add(src){ var j = document.createElement('script'); j.async = true; j.src = src; document.head.appendChild(j); }
+				function load(){
+					if (done) return; done = true;
+					['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ removeEventListener(e, load); });
 					add('https://www.googletagmanager.com/gtm.js?id=GTM-59B5PDXS');
 					add('https://www.googletagmanager.com/gtag/js?id=AW-990906138');
 					add('https://connect.facebook.net/en_US/fbevents.js');
 				}
-				window.addEventListener('pointerdown', loadTracking, { passive: true });
-				window.addEventListener('keydown', loadTracking);
-				if (document.readyState === 'complete') setTimeout(loadTracking, 0);
-				else window.addEventListener('load', function () { setTimeout(loadTracking, 0); });
+				['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ addEventListener(e, load, {passive:true, once:true}); });
+				addEventListener('load', function(){ setTimeout(load, 4000); });
 			})();
-		</script>
-		<!-- End tracking loader -->
+		</script><!-- End Google Tag Manager -->
 
 		<!-- Google Ads tag + website call tracking (conversion action "Calls From Site").
 		     Swaps 423-600-5040 for a Google forwarding number only for visitors who came from a Google ad. -->
@@ -70,12 +60,12 @@
 
 		<!-- Meta Pixel Code -->
 		<script>
-			// Standard Meta stub without the script injection; fbevents.js is added by the
-			// tracking loader at the top of <head>.
-			!function(f){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-			n.queue=[]}(window);
+			n.queue=[]}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
 			fbq('init', '1220314736525743');
 			// Note: Initial PageView is handled by the React Router hook in App.jsx
 		</script>
