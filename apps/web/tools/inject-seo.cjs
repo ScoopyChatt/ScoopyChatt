@@ -274,13 +274,13 @@ locationPages.forEach(function(loc) {
 });
 
 // Neighborhood pages whose generated title/description would not match the page.
-routes["/service/st-elmo"] = ["Pet Waste & Dog Poop Removal in St. Elmo, Chattanooga | Scoopy Doo", "Pet waste removal in St. Elmo, Chattanooga. Weekly and every-other-week dog poop pickup for historic homes at the foot of Lookout Mountain. Free quote."];
+routes["/service/st-elmo"] = ["Pet Waste & Dog Poop Removal in St. Elmo | Scoopy Doo", "Pet waste removal in St. Elmo, Chattanooga. Weekly and every-other-week dog poop pickup for historic homes at the foot of Lookout Mountain. Free quote."];
 routes["/service/north-chattanooga"] = ["Pet Waste & Dog Poop Removal in North Chattanooga | Scoopy Doo", "Pet waste removal in North Chattanooga and the Northshore. Weekly dog poop pickup near Frazier Avenue and Coolidge Park. No contracts - get a free quote."];
-routes["/service/southside"] = ["Pet Waste & Dog Poop Removal on the Southside, Chattanooga | Scoopy Doo", "Pet waste removal on Chattanooga's Southside. Dog poop pickup for Main Street district homes, lofts, courtyards, and small urban yards. Free online quote."];
-routes["/service/lookout-valley"] = ["Pet Waste & Dog Poop Removal in Lookout Valley, Chattanooga | Scoopy Doo", "Pet waste removal in Lookout Valley, Chattanooga. Weekly and one-time dog waste cleanup for larger valley lots. No contracts - free quote online."];
-routes["/service/riverview"] = ["Pet Waste & Dog Poop Removal in Riverview, Chattanooga | Scoopy Doo", "Pet waste removal in Riverview, Chattanooga. Discreet weekly dog waste pickup for established riverfront-area homes and larger lawns. Free quote."];
-routes["/service/normal-park"] = ["Pet Waste & Dog Poop Removal in Normal Park, Chattanooga | Scoopy Doo", "Pet waste removal in Normal Park, Chattanooga. Family-friendly weekly dog waste pickup so kids and pets can use the yard safely. Free online quote."];
-routes["/service/brainerd"] = ["Pet Waste & Dog Poop Removal in Brainerd, Chattanooga | Scoopy Doo", "Pet waste removal in Brainerd, Chattanooga. Weekly dog poop pickup for the flat, open yards common along the Brainerd Road corridor. Free quote."];
+routes["/service/southside"] = ["Pet Waste & Dog Poop Removal on the Southside | Scoopy Doo", "Pet waste removal on Chattanooga's Southside. Dog poop pickup for Main Street district homes, lofts, courtyards, and small urban yards. Free online quote."];
+routes["/service/lookout-valley"] = ["Pet Waste & Dog Poop Removal in Lookout Valley | Scoopy Doo", "Pet waste removal in Lookout Valley, Chattanooga. Weekly and one-time dog waste cleanup for larger valley lots. No contracts - free quote online."];
+routes["/service/riverview"] = ["Pet Waste & Dog Poop Removal in Riverview | Scoopy Doo", "Pet waste removal in Riverview, Chattanooga. Discreet weekly dog waste pickup for established riverfront-area homes and larger lawns. Free quote."];
+routes["/service/normal-park"] = ["Pet Waste & Dog Poop Removal in Normal Park | Scoopy Doo", "Pet waste removal in Normal Park, Chattanooga. Family-friendly weekly dog waste pickup so kids and pets can use the yard safely. Free online quote."];
+routes["/service/brainerd"] = ["Pet Waste & Dog Poop Removal in Brainerd | Scoopy Doo", "Pet waste removal in Brainerd, Chattanooga. Weekly dog poop pickup for the flat, open yards common along the Brainerd Road corridor. Free quote."];
 
 // Per-route social share image. Routes not listed here keep the site default
 // og:image from index.html. Crawlers read this static HTML, not the React app,

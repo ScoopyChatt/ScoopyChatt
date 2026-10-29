@@ -10,7 +10,7 @@ const ThanksgivingYardDogPoopCleanupChattanooga = () => {
   return (
     <>
       <Helmet>
-        <title>Thanksgiving Yard Prep: Dog Poop Cleanup in Chattanooga | Scoopy Doo</title>
+        <title>Thanksgiving Dog Poop Cleanup in Chattanooga | Scoopy Doo</title>
         <meta name="description" content="Hosting Thanksgiving in Chattanooga or North Georgia? How to get a dog-friendly yard guest-ready before the holiday, plus one-time cleanup pricing from $85." />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>

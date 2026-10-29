@@ -13,7 +13,7 @@ const DogPoopRemovalHixsonTN = () => {
   return (
     <>
       <Helmet>
-        <title>Dog Poop Removal in Hixson, TN | Scoopy Doo Pet Waste Removal</title>
+        <title>Dog Poop Removal in Hixson, TN | Scoopy Doo</title>
         <meta name="description" content="Weekly dog poop removal in Hixson, TN from $20 a visit. Scoopy Doo cleans wooded and leaf-covered yards across Hixson and Middle Valley. No contracts." />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
