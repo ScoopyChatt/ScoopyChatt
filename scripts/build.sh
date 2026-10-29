@@ -18,4 +18,5 @@ node apps/web/tools/generate-sitemap.cjs
 node apps/web/tools/create-static-pages.cjs
 node apps/web/tools/prerender.mjs
 node apps/web/tools/page-schema.cjs
+node apps/web/tools/route-preload.cjs
 node apps/web/tools/verify-routes.cjs

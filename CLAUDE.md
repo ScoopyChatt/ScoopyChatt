@@ -347,8 +347,16 @@ profile already points at `https://www.scoopychatt.com/`.
 with zero — it is not the lever), consolidating the overlapping Chattanooga pages
 (they earn 33 impressions and zero clicks, so there is nothing to gain or lose), or
 migrating the SPA to prerendering (the 12.8s mobile LCP is Lighthouse's simulated
-slow-4G estimate; the observed breakdown sums to ~2.5s, and CrUX has no field data
-either way).
+slow-4G estimate; the observed breakdown sums to ~2.5s).
+
+**Field data now exists (Oct 21, 2026).** The homepage fails Core Web Vitals on real
+visitors: LCP 3.2s, FCP 2.4s, TTFB 1.6s, CLS 0 (28-day CrUX). The server is not the
+TTFB problem, since the HTML is an edge-cache HIT. Field TTFB includes redirect and
+connection time, so it comes from how visitors arrive: ad-click redirects, apex/http
+links, slow mobile networks. The prerendered hero in #root already paints the LCP image
+before React boots. `tools/route-preload.cjs` (last build step before verify-routes)
+preloads each page's lazy JS chunks so React finishes sooner. It needs
+`build.manifest: true` in vite.config.js and deletes the manifest afterwards.
 
 ### Already in place (Oct 26, 2026) — do not recommend these as new ideas
 - Every review gets an automatic reply from GHL Reviews AI (Reputation > Settings >
